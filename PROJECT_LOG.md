@@ -18,6 +18,17 @@ The project is structured as a lightweight, performant, static client-side web a
 
 ## 🪵 Changelog & Version History
 
+### [v1.5.0] — 2026-06-13 (CompTIA Exam Simulator Question Bank Expansion)
+#### Added
+- **Minimum 20 Questions per Syllabus Section**: Expanded the exam simulator question bank (`questions.js`) to ensure all 11 syllabus sections (Sections 2 through 12) have a minimum of 20 high-quality, psychometrically-sound CompTIA Security+ questions, totaling 220 questions (an increase of 160 questions).
+- **CompTIA Psychometric Alignment**: Formulated all new questions to mirror the Security+ certification exam layout, utilizing:
+  - Scenario-based practical situations (avoiding direct theoretical questions).
+  - Upper-case critical modifiers (e.g., FIRST, BEST, MOST likely, LEAST, EXCEPT).
+  - Plausible distractor anatomy (1 correct choice, 1 close distractor, 1 conceptual error, 1 invented technical term/acronym).
+  - Zero-based answer index mapping.
+  - Comprehensive, English explanations detailing the correct option justification and key distractor dismissal.
+- **Database Consistency & Verification Audit**: Executed automated validation checks to verify structural consistency, key presence, unique sequential IDs, options integrity, and value ranges for all 220 items.
+
 ### [v1.4.0] — 2026-06-13 (Portability, UI Responsive Polish & Full Syllabus Integration)
 #### Added
 - **Full Syllabus Integration (Sections 9-12)**: Compiled and integrated S9 (Risk Management), S10 (Third-Party Vendor Risks), S11 (Governance and Compliance), and S12 (Asset and Change Management) into `data.js` via the parser.
