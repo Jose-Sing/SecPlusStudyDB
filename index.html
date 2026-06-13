@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CertifyHero | CompTIA Security+ SY0-701</title>
+    
+    <!-- Offline CSS & Framework fallbacks -->
+    <script src="tailwind.js"></script>
+    <script src="data.js"></script>
+    <script src="questions.js"></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#07006c",
+                      "on-error": "#690005",
+                      "surface-container-high": "#222a3d",
+                      "surface-variant": "#2d3449",
+                      "on-tertiary-container": "#0d0096",
+                      "inverse-on-surface": "#283044",
+                      "surface-bright": "#31394d",
+                      "outline": "#8c909f",
+                      "surface-container-low": "#131b2e",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#8083ff",
+                      "surface-tint": "#adc6ff",
+                      "inverse-surface": "#dae2fd",
+                      "on-tertiary": "#1000a9",
+                      "inverse-primary": "#005ac2",
+                      "secondary-container": "#39485a",
+                      "on-secondary-container": "#a7b6cc",
+                      "primary-container": "#4d8eff",
+                      "surface-container-lowest": "#060e20",
+                      "surface": "#0b1326",
+                      "on-secondary": "#233143",
+                      "on-error-container": "#ffdad6",
+                      "outline-variant": "#424754",
+                      "secondary": "#b9c8de",
+                      "on-primary-container": "#00285d",
+                      "background": "#0b1326",
+                      "surface-dim": "#0b1326",
+                      "on-surface": "#dae2fd",
+                      "on-surface-variant": "#c2c6d6",
+                      "tertiary-fixed-dim": "#c0c1ff",
+                      "tertiary": "#c0c1ff",
+                      "primary-fixed": "#d8e2ff",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#004395",
+                      "primary-fixed-dim": "#adc6ff",
+                      "primary": "#adc6ff",
+                      "surface-container": "#171f33",
+                      "on-primary": "#002e6a",
+                      "secondary-fixed-dim": "#b9c8de",
+                      "surface-container-highest": "#2d3449",
+                      "on-secondary-fixed-variant": "#39485a",
+                      "on-tertiary-fixed-variant": "#2f2ebe",
+                      "on-primary-fixed": "#001a42",
+                      "on-secondary-fixed": "#0d1c2d",
+                      "tertiary-fixed": "#e1e0ff",
+                      "on-background": "#dae2fd",
+                      "secondary-fixed": "#d4e4fa"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px",
+                      "container-max-width": "1280px",
+                      "base": "8px",
+                      "gutter": "24px"
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        /* Collapsible Main Sidebar */
+        .sidebar-collapsed #sidebar-panel {
+            width: 4.5rem !important;
+        }
+        .sidebar-collapsed #sidebar-panel .sidebar-text {
+            display: none !important;
+        }
+        .sidebar-collapsed #sidebar-panel h1 {
+            justify-content: center !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .sidebar-collapsed #sidebar-panel nav button {
+            justify-content: center !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .sidebar-collapsed #content-container {
+            margin-left: 4.5rem !important;
+        }
+        /* Sidebar Z-Index Stacking Context overrides */
+        #sidebar-panel {
+            z-index: 100 !important;
+        }
+        #sidebar-backdrop {
+            z-index: 90 !important;
+        }
+        #top-app-bar {
+            z-index: 70 !important;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(77, 142, 255, 0.4);
+            background: rgba(45, 55, 72, 0.7);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.5s ease;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .flashcard-inner {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flashcard-flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0b1326;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        /* Custom animation for notifications */
+        .pulse-light {
+            animation: pulse-border 2s infinite;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(77, 142, 255, 0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(77, 142, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(77, 142, 255, 0); }
+        }
+    </style>
+</head>
+<body class="block min-h-screen relative selection:bg-primary/30 select-none md:select-text">
+
+<!-- SVG Assets Map (Helper for Offline Rendering) -->
+<div class="hidden" id="svg-assets">
+    <div id="svg-home"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg></div>
+    <div id="svg-library"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
+    <div id="svg-practice"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg></div>
+    <div id="svg-simulator"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+    <div id="svg-settings"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+    <div id="svg-search"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div>
+    <div id="svg-streak"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path></svg></div>
+    <div id="svg-bell"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg></div>
+    <div id="svg-sparkles"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg></div>
+    <div id="svg-cloud"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg></div>
+    <div id="svg-calendar"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+    <div id="svg-history"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+    <div id="svg-play"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg></div>
+    <div id="svg-chevron-right"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg></div>
+    <div id="svg-lock"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
+</div>
+
+<!-- Mobile Sidebar Backdrop Overlay -->
+<div id="sidebar-backdrop" onclick="toggleSidebar()" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-30 transition-opacity duration-300"></div>
+
+<!-- Desktop SideNavBar -->
+<aside id="sidebar-panel" class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 z-[60] bg-surface-container border-r border-outline-variant py-base gap-2 transition-all duration-300 ease-in-out shadow-2xl md:shadow-none">
+    <div class="px-6 py-8 flex flex-col min-h-[96px] justify-center">
+        <h1 class="font-headline-md text-2xl font-bold text-primary flex items-center gap-2">
+            🛡️ <span class="sidebar-text">CertifyHero</span>
+        </h1>
+        <p class="font-label-md text-on-surface-variant mt-1 text-xs sidebar-text">Security+ SY0-701 Hub</p>
+    </div>
+    <nav class="flex-1 px-2 space-y-1">
+        <button onclick="showView('dashboard')" data-view="dashboard" class="nav-link w-full flex items-center gap-3 text-on-surface-variant py-3 px-4 rounded-lg hover:bg-surface-variant transition-colors text-left">
+            <span class="nav-icon-slot" data-icon="home"></span>
+            <span class="font-label-md text-label-md sidebar-text">Dashboard</span>
+        </button>
+        <button onclick="showView('library')" data-view="library" class="nav-link w-full flex items-center gap-3 text-on-surface-variant py-3 px-4 rounded-lg hover:bg-surface-variant transition-colors text-left">
+            <span class="nav-icon-slot" data-icon="library"></span>
+            <span class="font-label-md text-label-md sidebar-text">Library</span>
+        </button>
+        <button onclick="showView('practice')" data-view="practice" class="nav-link w-full flex items-center gap-3 text-on-surface-variant py-3 px-4 rounded-lg hover:bg-surface-variant transition-colors text-left">
+            <span class="nav-icon-slot" data-icon="practice"></span>
+            <span class="font-label-md text-label-md sidebar-text">Practice Lab</span>
+        </button>
+        <button onclick="showView('simulator')" data-view="simulator" class="nav-link w-full flex items-center gap-3 text-on-surface-variant py-3 px-4 rounded-lg hover:bg-surface-variant transition-colors text-left">
+            <span class="nav-icon-slot" data-icon="simulator"></span>
+            <span class="font-label-md text-label-md sidebar-text">Exam Simulator</span>
+        </button>
+    </nav>
+    <div class="px-4 py-4 border-t border-outline-variant mt-auto space-y-2 sidebar-text">
+        <div class="bg-surface-container-high/40 p-3 rounded-lg border border-outline-variant/30 text-xs">
+            <span class="text-on-surface-variant block uppercase tracking-widest font-bold">Offline Sync</span>
+            <span class="text-primary flex items-center gap-1.5 mt-1">
+                <span class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+                Active Database (Local)
+            </span>
+        </div>
+    </div>
+</aside>
+
+<!-- App Content Container -->
+<div id="content-container" class="flex-1 md:ml-64 flex flex-col min-h-screen transition-all duration-300 ease-in-out">
+    
+    <!-- TopAppBar -->
+    <header id="top-app-bar" class="sticky top-0 z-50 w-full h-16 bg-surface flex justify-between items-center px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+        <div class="flex items-center gap-4">
+            <button onclick="toggleSidebar()" class="text-primary hover:bg-surface-variant/40 p-2 rounded-lg transition-colors" title="Toggle Sidebar">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            
+            <!-- Global Search (Searches across all summaries!) -->
+            <div class="flex items-center bg-surface-variant rounded-full px-4 py-1.5 gap-2 border border-outline-variant">
+                <span class="nav-icon-slot text-on-surface-variant" data-icon="search"></span>
+                <input id="global-search-input" oninput="handleGlobalSearch()" class="bg-transparent border-none text-sm focus:outline-none focus:ring-0 w-44 md:w-64 text-on-surface" placeholder="Search study notes..." type="text"/>
+            </div>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <!-- Profile / Avatar -->
+            <div class="flex items-center gap-2.5">
+                <span class="text-sm font-semibold text-on-surface hidden sm:inline">Jose Sing</span>
+                <div class="h-8 w-8 rounded-full overflow-hidden border border-primary bg-primary/20 flex items-center justify-center font-bold text-xs text-primary" title="Jose Sing">
+                    JS
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Global Search Results Panel (Hidden by default) -->
+    <div id="search-overlay" class="hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex justify-center items-start pt-20 px-4">
+        <div class="bg-surface-container border border-outline-variant w-full max-w-2xl max-h-[80vh] rounded-xl flex flex-col shadow-2xl overflow-hidden">
+            <div class="p-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-high">
+                <h3 class="font-headline-md text-lg font-bold text-primary flex items-center gap-2">
+                    Search Results for "<span id="search-query-text"></span>"
+                </h3>
+                <button onclick="closeSearch()" class="text-on-surface-variant hover:text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="search-results-list" class="p-4 overflow-y-auto custom-scrollbar space-y-4 flex-1">
+                <!-- Matches injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Views Container -->
+    <main class="p-margin-mobile md:p-margin-desktop max-w-[1280px] mx-auto w-full space-y-gutter flex-1">
+        
+        <!-- ==================== DASHBOARD VIEW ==================== -->
+        <div id="dashboard-view" class="app-view space-y-gutter">
+            <!-- Welcome Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h2 class="font-headline-lg text-3xl font-bold text-on-surface">Welcome back, Specialist</h2>
+                    <p class="font-body-md text-on-surface-variant mt-1">Reviewing CompTIA Security+ study material. 100% of summaries integrated.</p>
+                </div>
+                <div class="flex items-center gap-2 bg-primary-container/20 text-primary px-4 py-2 rounded-lg border border-primary/30">
+                    <span class="nav-icon-slot text-primary" data-icon="sparkles"></span>
+                    <span class="font-label-md text-sm font-semibold">AI Tip: Focus on malware and cryptographic data states next.</span>
+                </div>
+            </div>
+
+            <!-- Dashboard Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <!-- Target Certification Card -->
+                <div class="md:col-span-8 glass-card p-6 rounded-xl flex flex-col justify-between min-h-[240px]">
+                    <div class="flex justify-between items-start">
+                        <div class="flex gap-4">
+                            <div class="h-12 w-12 bg-on-primary-container/10 flex items-center justify-center rounded-lg border border-primary/20 text-primary">
+                                <span class="nav-icon-slot text-primary" data-icon="cloud"></span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline-md text-2xl font-bold text-on-surface">CompTIA Security+</h3>
+                                <p class="font-label-md text-xs text-on-surface-variant uppercase tracking-wider mt-0.5">SY0-701 Exam Preparation</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-primary font-bold text-3xl font-mono">14</div>
+                            <div class="font-label-sm text-xs text-on-surface-variant">DAYS TO MOCK</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 space-y-4">
+                        <div class="flex justify-between font-label-md text-sm text-on-surface-variant">
+                            <span>Study Syllabus Progress</span>
+                            <span id="syllabus-progress-text" class="text-primary font-bold">0 / 0 Sections Completed</span>
+                        </div>
+                        <div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+                            <div id="syllabus-progress-bar" class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 0%"></div>
+                        </div>
+                        <div class="flex gap-6 pt-4">
+                            <div class="flex items-center gap-1.5 font-label-sm text-xs text-on-surface-variant">
+                                <span class="nav-icon-slot text-on-surface-variant" data-icon="calendar"></span>
+                                Target Exam: Mid-July 2026
+                            </div>
+                            <div class="flex items-center gap-1.5 font-label-sm text-xs text-on-surface-variant">
+                                <span class="nav-icon-slot text-on-surface-variant" data-icon="history"></span>
+                                85h Studied
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Ring Card -->
+                <div class="md:col-span-4 glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                    <h3 class="font-label-md text-xs text-on-surface-variant mb-4 uppercase tracking-widest font-bold">Concept Readiness</h3>
+                    <div class="relative flex items-center justify-center">
+                        <svg class="w-40 h-40">
+                            <circle class="text-surface-container-high" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="12"></circle>
+                            <circle id="readiness-circle" class="text-primary progress-ring-circle" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="440" stroke-linecap="round" stroke-width="12"></circle>
+                        </svg>
+                        <div class="absolute flex flex-col items-center">
+                            <span id="readiness-pct-text" class="text-4xl font-bold text-on-surface font-mono">0%</span>
+                            <span class="text-xs text-on-surface-variant mt-0.5">Mastered</span>
+                        </div>
+                    </div>
+                    <button onclick="showView('practice')" class="mt-6 w-full py-2.5 bg-secondary-container text-on-secondary-container font-semibold rounded-lg hover:bg-surface-variant transition-colors text-sm">
+                        Start Flashcards Practice
+                    </button>
+                </div>
+
+                <!-- Continue Learning Section -->
+                <div class="md:col-span-12 lg:col-span-7">
+                    <h3 class="font-headline-md text-xl font-bold mb-4">Resume Study Section</h3>
+                    <div class="relative overflow-hidden glass-card rounded-xl group">
+                        <div class="absolute inset-0 opacity-20 pointer-events-none bg-gradient-to-br from-primary/20 to-transparent"></div>
+                        <div class="relative p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div class="space-y-4 max-w-md">
+                                <div class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full font-label-sm text-xs font-bold uppercase tracking-wider">
+                                    CURRENTLY STUDYING
+                                </div>
+                                <div>
+                                    <h4 id="resume-section-title" class="font-headline-md text-2xl font-bold text-on-surface">Section 2: Fundamentals of Security</h4>
+                                    <p id="resume-section-desc" class="font-body-md text-sm text-on-surface-variant mt-2">Study CIA triad, authorization models, and zero trust architectures.</p>
+                                </div>
+                            </div>
+                            <button id="resume-section-btn" onclick="resumeReading('S2')" class="flex items-center justify-center gap-2 bg-primary text-on-primary font-bold px-8 py-4 rounded-xl shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all text-base flex-shrink-0">
+                                <span class="nav-icon-slot" data-icon="play"></span>
+                                <span id="resume-section-btn-text">Start Reading</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Tasks Section -->
+                <div class="md:col-span-12 lg:col-span-5">
+                    <h3 class="font-headline-md text-xl font-bold mb-4">Syllabus Study Check-List</h3>
+                    <div class="glass-card rounded-xl divide-y divide-outline-variant/30 overflow-hidden" id="dashboard-checklist">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== LIBRARY VIEW ==================== -->
+        <div id="library-view" class="app-view hidden flex flex-col md:flex-row gap-gutter">
+            
+            <!-- Library Sub-Sidebar -->
+            <aside id="library-sidebar" class="w-full md:w-64 sticky top-16 md:top-20 z-30 md:z-auto md:self-start md:max-h-[calc(100vh-7rem)] md:overflow-y-auto bg-surface-container border border-outline-variant/40 rounded-xl p-2 md:p-4 flex flex-col gap-2 md:gap-4 flex-shrink-0 custom-scrollbar">
+                <div class="hidden md:block">
+                    <h3 class="font-label-md text-xs font-bold text-primary uppercase tracking-widest opacity-80 mb-2">Sections</h3>
+                    <div class="h-0.5 bg-outline-variant/30 w-full mb-2"></div>
+                </div>
+                <nav id="library-sections-nav" class="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible gap-2 custom-scrollbar pb-2 md:pb-0">
+                    <!-- Section links injected here -->
+                </nav>
+            </aside>
+
+            <!-- Library Content Area -->
+            <div class="flex-1 flex flex-col gap-4">
+                
+                <!-- Content Toolbar controls -->
+                <div class="flex flex-wrap items-center justify-between gap-4 p-4 bg-surface-container border border-outline-variant/40 rounded-xl">
+                    <div class="flex items-center bg-surface-variant/45 rounded-lg px-3 py-1.5 border border-outline-variant/30">
+                        <span class="nav-icon-slot text-on-surface-variant" data-icon="search"></span>
+                        <input id="library-search-input" oninput="handleLibrarySearch()" class="bg-transparent text-sm focus:outline-none focus:ring-0 ml-2 text-on-surface" placeholder="Filter this section..." type="text"/>
+                    </div>
+                    
+                    <div class="flex items-center gap-2">
+                        <!-- Text size -->
+                        <button onclick="toggleFontSize()" class="p-2 text-on-surface-variant hover:text-primary transition-colors flex flex-col items-center gap-0.5 rounded hover:bg-surface-variant" title="Toggle Font Size">
+                            <span class="text-xs font-bold font-mono">Aa</span>
+                        </button>
+                        <div class="w-[1px] h-6 bg-outline-variant/30"></div>
+                        
+                        <!-- Focus Mode -->
+                        <button onclick="toggleFocusMode()" class="p-2 text-on-surface-variant hover:text-primary transition-colors flex flex-col items-center rounded hover:bg-surface-variant" title="Focus Mode">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </button>
+                        <div class="w-[1px] h-6 bg-outline-variant/30"></div>
+
+                        <!-- Theme Toggle -->
+                        <button onclick="toggleTheme()" class="p-2 text-on-surface-variant hover:text-primary transition-colors flex flex-col items-center rounded hover:bg-surface-variant" title="Toggle Light/Dark Theme">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Section Title -->
+                <div class="bg-surface-container/30 border border-outline-variant/20 p-6 rounded-xl">
+                    <h2 id="library-section-title" class="font-headline-lg text-2xl font-bold text-on-surface">Section Name</h2>
+                    <p id="library-section-meta" class="text-xs text-on-surface-variant mt-1.5 font-mono"></p>
+                </div>
+
+                <!-- Reading Container -->
+                <div id="library-concepts-list" class="space-y-gutter transition-all duration-300">
+                    <!-- Concept cards injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PRACTICE VIEW (FLASHCARDS) ==================== -->
+        <div id="practice-view" class="app-view hidden flex flex-col items-center justify-center">
+            
+            <div class="w-full max-w-2xl mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div class="flex flex-col">
+                    <span class="font-headline-md text-2xl font-bold text-on-surface">Flashcards Practice Lab</span>
+                    <span id="practice-card-counter" class="text-sm text-on-surface-variant font-mono mt-0.5">Card 0 of 0</span>
+                </div>
+                
+                <div class="flex gap-2 flex-wrap">
+                    <!-- Section Filter dropdown -->
+                    <select id="practice-section-filter" onchange="loadPracticeDeck()" class="bg-surface-container border border-outline-variant text-on-surface text-sm rounded-lg px-3 py-1.5 focus:ring-primary focus:border-primary">
+                        <option value="all">All Sections</option>
+                        <!-- Loaded dynamically -->
+                    </select>
+                    
+                    <button onclick="shufflePracticeDeck()" class="bg-surface-container border border-outline-variant hover:bg-surface-variant px-3 py-1.5 rounded-lg text-sm transition-colors text-on-surface flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7.89M9 11l3-3 3 3m-3-3v12"></path></svg>
+                        Shuffle
+                    </button>
+                </div>
+            </div>
+
+            <!-- Flashcard Perspective Box -->
+            <div class="w-full max-w-2xl h-[400px] perspective-1000 cursor-pointer" id="flashcard-box" onclick="flipCard()">
+                <div class="flashcard-inner relative w-full h-full shadow-2xl rounded-2xl duration-500">
+                    
+                    <!-- Card Front -->
+                    <div class="flashcard-front absolute w-full h-full bg-surface-container border border-outline-variant rounded-2xl flex flex-col items-center justify-center p-8 md:p-12 text-center">
+                        <div class="absolute top-4 left-4 opacity-15">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"></path></svg>
+                        </div>
+                        
+                        <div class="absolute top-4 right-4" id="card-confidence-badge"></div>
+                        
+                        <span id="card-front-section" class="text-xs text-primary font-bold uppercase tracking-widest font-mono mb-4">SECTION NAME</span>
+                        <h3 id="card-front-title" class="font-headline-lg text-2xl md:text-3xl font-bold text-on-surface leading-snug max-w-lg">
+                            Concept Question
+                        </h3>
+                        <p class="mt-8 text-sm text-on-surface-variant font-mono animate-pulse">Click card or press Space to flip</p>
+                        
+                        <!-- Hint button -->
+                        <button onclick="showCardHint(event)" class="absolute bottom-4 bg-primary/10 hover:bg-primary/25 border border-primary/20 text-xs px-3 py-1.5 rounded-full text-primary font-bold transition-all">
+                            Reveal Analogy Hint
+                        </button>
+                    </div>
+
+                    <!-- Card Back -->
+                    <div class="flashcard-back absolute w-full h-full bg-surface-container-highest border border-primary/30 rounded-2xl flex flex-col p-8 md:p-12 overflow-y-auto custom-scrollbar">
+                        <span class="text-xs text-primary font-bold uppercase tracking-widest font-mono mb-3">EXPLANATION</span>
+                        <h4 id="card-back-title" class="font-headline-md text-xl font-bold text-on-surface mb-4">Concept Name</h4>
+                        
+                        <div class="space-y-4 text-left w-full">
+                            <p id="card-back-def" class="font-body-lg text-sm md:text-base text-on-surface leading-relaxed">
+                                Detailed definition text.
+                            </p>
+                            
+                            <!-- Analogy Callout inside card back -->
+                            <div id="card-back-analogy-box" class="bg-primary/5 border border-primary/20 p-3.5 rounded-lg flex items-start gap-2.5">
+                                <div class="text-primary mt-0.5 flex-shrink-0">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                                </div>
+                                <p id="card-back-analogy" class="text-xs text-on-surface-variant italic leading-normal"></p>
+                            </div>
+                        </div>
+                        
+                        <p class="mt-auto text-xs text-on-surface-variant text-center pt-4 font-mono">Click card again to flip front</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Controls -->
+            <div class="w-full max-w-2xl mt-8 flex flex-col items-center gap-6" id="card-controls">
+                <!-- Flip Action -->
+                <button onclick="flipCard()" class="bg-primary hover:bg-primary/95 active:scale-95 text-on-primary px-10 py-3.5 rounded-xl font-bold transition-all shadow-lg shadow-primary/20 flex items-center gap-2" id="flip-btn">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7.89M9 11l3-3 3 3m-3-3v12"></path></svg>
+                    Flip Card
+                </button>
+                
+                <!-- Confidence Ratings (Hidden initially, shown when flipped) -->
+                <div class="hidden flex flex-wrap justify-center gap-4 w-full" id="difficulty-actions">
+                    <button onclick="rateCard('hard')" class="flex flex-col items-center gap-1 px-5 py-3 rounded-xl border border-outline-variant bg-surface-container-high hover:bg-error-container/20 hover:border-error transition-all group min-w-[120px]">
+                        <span class="text-sm font-bold text-error">Hard</span>
+                        <span class="text-[10px] text-on-surface-variant group-hover:text-error">Flag for Review</span>
+                    </button>
+                    <button onclick="rateCard('medium')" class="flex flex-col items-center gap-1 px-5 py-3 rounded-xl border border-outline-variant bg-surface-container-high hover:bg-tertiary-container/20 hover:border-tertiary transition-all group min-w-[120px]">
+                        <span class="text-sm font-bold text-tertiary">Medium</span>
+                        <span class="text-[10px] text-on-surface-variant group-hover:text-tertiary">Keep Practicing</span>
+                    </button>
+                    <button onclick="rateCard('easy')" class="flex flex-col items-center gap-1 px-5 py-3 rounded-xl border border-outline-variant bg-surface-container-high hover:bg-primary/20 hover:border-primary transition-all group min-w-[120px]">
+                        <span class="text-sm font-bold text-primary">Easy</span>
+                        <span class="text-[10px] text-on-surface-variant group-hover:text-primary">Mastered</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Confidence statistics -->
+            <div class="w-full max-w-2xl mt-12 bg-surface-container/35 border border-outline-variant/30 rounded-xl p-4 grid grid-cols-3 gap-4 text-center">
+                <div class="p-2 border-r border-outline-variant/30">
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-primary">Mastered (Easy)</span>
+                    <h5 id="stats-easy-count" class="text-2xl font-bold text-on-surface font-mono mt-1">0</h5>
+                </div>
+                <div class="p-2 border-r border-outline-variant/30">
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-tertiary">Learning (Medium)</span>
+                    <h5 id="stats-medium-count" class="text-2xl font-bold text-on-surface font-mono mt-1">0</h5>
+                </div>
+                <div class="p-2">
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-error">Review (Hard)</span>
+                    <h5 id="stats-hard-count" class="text-2xl font-bold text-on-surface font-mono mt-1">0</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== EXAM SIMULATOR VIEW ==================== -->
+        <div id="simulator-view" class="app-view hidden space-y-gutter">
+            
+            <!-- Welcome/Setup Screen -->
+            <div id="simulator-intro" class="max-w-4xl mx-auto space-y-gutter">
+                <div class="relative overflow-hidden rounded-2xl bg-surface-container border border-outline-variant p-6 md:p-8 space-y-6">
+                    <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,_#3b82f6_0%,_transparent_70%)]"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center border-b border-outline-variant/30 pb-4 gap-4">
+                        <div>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold font-mono">CUSTOMIZABLE EXAM</span>
+                            <h1 class="font-headline-lg text-2xl md:text-3xl font-bold text-on-surface mt-2">Security+ Custom Practice Exam</h1>
+                            <p class="text-sm text-on-surface-variant mt-1">Configure your mock test to target specific domains, question sizes, and timings.</p>
+                        </div>
+                    </div>
+
+                    <!-- Setup Controls Grid -->
+                    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Left side: Topics Checklist -->
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <label class="text-sm font-bold text-primary uppercase tracking-wider">1. Select Topics / Domains</label>
+                                <div class="flex gap-2 text-[11px]">
+                                    <button onclick="selectSimAllTopics(true)" class="text-primary hover:underline">Select All</button>
+                                    <span class="text-outline">|</span>
+                                    <button onclick="selectSimAllTopics(false)" class="text-on-surface-variant hover:underline">Clear</button>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="sim-topic-checkboxes">
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
+                                    <input type="checkbox" checked value="S2" class="sim-topic-cb w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container" />
+                                    <div class="text-xs">
+                                        <p class="font-semibold text-on-surface">Section 2</p>
+                                        <p class="text-[10px] text-on-surface-variant">Fundamentals of Security</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
+                                    <input type="checkbox" checked value="S3" class="sim-topic-cb w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container" />
+                                    <div class="text-xs">
+                                        <p class="font-semibold text-on-surface">Section 3</p>
+                                        <p class="text-[10px] text-on-surface-variant">Threat Actors</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
+                                    <input type="checkbox" checked value="S4" class="sim-topic-cb w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container" />
+                                    <div class="text-xs">
+                                        <p class="font-semibold text-on-surface">Section 4</p>
+                                        <p class="text-[10px] text-on-surface-variant">Physical Security</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
+                                    <input type="checkbox" checked value="S5" class="sim-topic-cb w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container" />
+                                    <div class="text-xs">
+                                        <p class="font-semibold text-on-surface">Section 5</p>
+                                        <p class="text-[10px] text-on-surface-variant">Social Engineering</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
+                                    <input type="checkbox" checked value="S6" class="sim-topic-cb w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container" />
+                                    <div class="text-xs">
+                                        <p class="font-semibold text-on-surface">Section 6</p>
+                                        <p class="text-[10px] text-on-surface-variant">Malware</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
+                                    <input type="checkbox" checked value="S7" class="sim-topic-cb w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container" />
+                                    <div class="text-xs">
+                                        <p class="font-semibold text-on-surface">Section 7</p>
+                                        <p class="text-[10px] text-on-surface-variant">Data Protection</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Right side: Questions Count & Time Limit -->
+                        <div class="space-y-6 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="flex flex-col gap-1.5">
+                                    <label for="sim-config-count" class="text-sm font-bold text-primary uppercase tracking-wider">2. Number of Questions</label>
+                                    <select id="sim-config-count" class="bg-surface-container-low border border-outline-variant text-on-surface text-sm rounded-lg p-3 focus:ring-primary focus:border-primary outline-none">
+                                        <option value="10">10 Questions (Quick Review)</option>
+                                        <option value="20">20 Questions</option>
+                                        <option value="25">25 Questions</option>
+                                        <option value="30" selected>30 Questions (Standard)</option>
+                                        <option value="45">45 Questions</option>
+                                        <option value="60">60 Questions</option>
+                                        <option value="90">90 Questions (Full Length)</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-1.5">
+                                    <label for="sim-config-time" class="text-sm font-bold text-primary uppercase tracking-wider">3. Time Limit</label>
+                                    <select id="sim-config-time" class="bg-surface-container-low border border-outline-variant text-on-surface text-sm rounded-lg p-3 focus:ring-primary focus:border-primary outline-none">
+                                        <option value="300">5 Minutes</option>
+                                        <option value="600">10 Minutes</option>
+                                        <option value="900">15 Minutes</option>
+                                        <option value="1800">30 Minutes</option>
+                                        <option value="2700">45 Minutes</option>
+                                        <option value="3600" selected>60 Minutes (Standard)</option>
+                                        <option value="5400">90 Minutes</option>
+                                        <option value="none">No Time Limit (Count Up)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button onclick="startExamSimulation()" class="w-full bg-primary hover:bg-primary/95 text-on-primary py-4 rounded-xl font-bold shadow-xl hover:opacity-90 transition-all active:scale-95 flex items-center justify-center gap-2 text-base">
+                                <span class="nav-icon-slot" data-icon="play"></span>
+                                BEGIN MOCK EXAM
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tries / History Section -->
+                <div class="bg-surface-container p-6 rounded-xl border border-outline-variant space-y-4">
+                    <div class="flex justify-between items-center border-b border-outline-variant/30 pb-3">
+                        <h3 class="font-headline-md text-lg font-bold text-primary flex items-center gap-2">
+                            📊 Past Attempt History
+                        </h3>
+                        <button onclick="clearExamHistory()" id="clear-history-btn" class="text-xs text-error hover:text-error/80 hover:underline flex items-center gap-1">
+                            Clear History
+                        </button>
+                    </div>
+                    
+                    <div class="overflow-x-auto custom-scrollbar">
+                        <table class="w-full text-left border-collapse text-sm">
+                            <thead>
+                                <tr class="border-b border-outline-variant/30 text-xs text-on-surface-variant uppercase tracking-wider font-semibold">
+                                    <th class="py-2.5 px-3">Date / Time</th>
+                                    <th class="py-2.5 px-3">Topics Evaluated</th>
+                                    <th class="py-2.5 px-3 text-center">Questions</th>
+                                    <th class="py-2.5 px-3 text-center">Time Taken</th>
+                                    <th class="py-2.5 px-3 text-right">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sim-history-tbody" class="divide-y divide-outline-variant/20">
+                                <!-- History rows injected dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="sim-history-empty" class="text-center py-6 text-on-surface-variant text-sm hidden">
+                        No exam logs found. Complete an exam above to see your history tracker.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Simulation Panel -->
+            <div id="simulator-active" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+                
+                <!-- Left: Question Panel -->
+                <div class="lg:col-span-2 space-y-gutter">
+                    
+                    <!-- Question Card -->
+                    <div class="bg-surface-container border border-outline-variant p-6 rounded-xl space-y-6">
+                        <div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+                            <span id="sim-question-meta" class="text-xs text-primary font-bold uppercase tracking-wider font-mono">Domain: Section 2</span>
+                            <button id="sim-flag-btn" onclick="toggleFlagQuestion()" class="flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-tertiary border border-outline-variant px-3 py-1.5 rounded-lg bg-surface-container-low transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                                <span>Flag for Review</span>
+                            </button>
+                        </div>
+                        
+                        <h2 id="sim-question-text" class="text-lg md:text-xl font-bold text-on-surface leading-snug">
+                            Question text here?
+                        </h2>
+                        
+                        <!-- Multiple Choice Options -->
+                        <div id="sim-options-container" class="grid grid-cols-1 gap-3">
+                            <!-- Choice buttons injected here -->
+                        </div>
+                        
+                        <!-- Navigation Buttons -->
+                        <div class="flex justify-between items-center pt-6 border-t border-outline-variant/30">
+                            <button onclick="prevQuestion()" class="bg-surface-container-high border border-outline-variant/50 hover:bg-surface-variant text-on-surface px-6 py-3 rounded-lg text-sm transition-all font-semibold flex items-center gap-1">
+                                Previous
+                            </button>
+                            <button onclick="nextQuestion()" class="bg-surface-container-high border border-outline-variant/50 hover:bg-surface-variant text-on-surface px-6 py-3 rounded-lg text-sm transition-all font-semibold flex items-center gap-1">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Navigator & Timer Panel -->
+                <div class="lg:col-span-1 space-y-gutter">
+                    
+                    <!-- Timer & Actions -->
+                    <div class="bg-surface-container border border-outline-variant p-6 rounded-xl space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Remaining Time</span>
+                            <span class="text-primary"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
+                        </div>
+                        <div id="sim-timer" class="text-3xl font-bold text-primary font-mono text-center tracking-widest py-2 bg-surface-container-high rounded-lg border border-outline-variant/30">
+                            60:00
+                        </div>
+                        <button onclick="submitExamSimulation()" class="w-full bg-primary hover:bg-primary/95 text-on-primary font-bold py-3 rounded-xl shadow-lg transition-all active:scale-95 text-sm uppercase">
+                            Submit Exam
+                        </button>
+                    </div>
+
+                    <!-- Question Navigator Grid -->
+                    <div class="bg-surface-container border border-outline-variant p-6 rounded-xl flex flex-col h-fit">
+                        <h3 class="font-headline-md text-base font-bold mb-4">Question Grid</h3>
+                        
+                        <!-- Legend -->
+                        <div class="grid grid-cols-2 gap-2 mb-4 text-[10px]">
+                            <div class="flex items-center gap-1.5 bg-surface-container-low p-1.5 rounded border border-outline-variant/20">
+                                <div class="w-2.5 h-2.5 bg-primary rounded-sm"></div>
+                                <span class="text-on-surface-variant">Answered</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 bg-surface-container-low p-1.5 rounded border border-outline-variant/20">
+                                <div class="w-2.5 h-2.5 bg-tertiary rounded-sm"></div>
+                                <span class="text-on-surface-variant">Flagged</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Grid items -->
+                        <div id="sim-grid-container" class="grid grid-cols-6 gap-2 overflow-y-auto max-h-[300px] pr-1 custom-scrollbar">
+                            <!-- JS will inject question circles here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report Card / Results Screen -->
+            <div id="simulator-results" class="hidden max-w-4xl mx-auto space-y-gutter">
+                <div class="bg-surface-container border border-outline-variant p-8 rounded-2xl text-center space-y-6">
+                    <h2 class="text-3xl font-headline-lg font-bold text-on-surface">Simulation Completed!</h2>
+                    
+                    <div class="flex flex-col items-center justify-center space-y-2">
+                        <!-- Score Display Circle -->
+                        <div class="h-36 w-36 rounded-full border-4 flex flex-col items-center justify-center border-primary shadow-lg shadow-primary/10 bg-surface-container-high">
+                            <span id="results-score-text" class="text-4xl font-bold font-mono text-on-surface">0%</span>
+                            <span class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold mt-1">Final Score</span>
+                        </div>
+                        
+                        <!-- Pass/Fail Badge -->
+                        <div id="results-badge" class="px-5 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest mt-4">
+                            STATUS
+                        </div>
+                    </div>
+
+                    <p id="results-summary-text" class="font-body-md text-on-surface-variant max-w-xl mx-auto">
+                        Summary notes.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto pt-4">
+                        <button onclick="showSimulatorReview()" class="bg-secondary-container text-on-secondary-container hover:bg-surface-variant px-6 py-3.5 rounded-xl font-bold transition-all text-sm uppercase">
+                            Review Answers
+                        </button>
+                        <button onclick="resetSimulator()" class="bg-primary text-on-primary hover:bg-primary/95 px-6 py-3.5 rounded-xl font-bold transition-all text-sm uppercase shadow-lg shadow-primary/10">
+                            Try Again
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Weakness Analysis Card -->
+                <div class="bg-surface-container border border-outline-variant p-6 rounded-xl">
+                    <h3 class="font-headline-md text-lg font-bold mb-4 text-primary">Domain-Level Strength Analysis</h3>
+                    <div id="results-domain-breakdown" class="space-y-4">
+                        <!-- Dynamic bars representing accuracy per section -->
+                    </div>
+                </div>
+
+                <!-- Question Review List -->
+                <div id="simulator-review-section" class="hidden space-y-4">
+                    <h3 class="font-headline-md text-xl font-bold text-on-surface">Detailed Question Review</h3>
+                    <div id="simulator-review-list" class="space-y-4">
+                        <!-- Questions and answer validations go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Navigation Shell -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full h-16 bg-surface-container border-t border-outline-variant flex items-center justify-around px-2 z-50">
+        <button onclick="showView('dashboard')" data-view="dashboard" class="mobile-nav-link flex flex-col items-center text-on-surface-variant">
+            <span class="nav-icon-slot" data-icon="home"></span>
+            <span class="text-[10px] font-semibold mt-1">Home</span>
+        </button>
+        <button onclick="showView('library')" data-view="library" class="mobile-nav-link flex flex-col items-center text-on-surface-variant">
+            <span class="nav-icon-slot" data-icon="library"></span>
+            <span class="text-[10px] font-semibold mt-1">Library</span>
+        </button>
+        <button onclick="showView('practice')" data-view="practice" class="mobile-nav-link flex flex-col items-center text-on-surface-variant">
+            <span class="nav-icon-slot" data-icon="practice"></span>
+            <span class="text-[10px] font-semibold mt-1">Practice</span>
+        </button>
+        <button onclick="showView('simulator')" data-view="simulator" class="mobile-nav-link flex flex-col items-center text-on-surface-variant">
+            <span class="nav-icon-slot" data-icon="simulator"></span>
+            <span class="text-[10px] font-semibold mt-1">Simulator</span>
+        </button>
+    </nav>
+</div>
+
+<!-- Core Client-Side Logic Javascript -->
+<script>
+    // System variables
+    let currentView = 'dashboard';
+    let currentSectionId = 'S2';
+    
+    // Practice Flashcard State
+    let flashcards = [];
+    let currentCardIndex = 0;
+    let cardFlipped = false;
+
+    // Exam Simulator State
+    let simulatorActive = false;
+    let simulatorQuestions = [];
+    let currentSimQuestionIndex = 0;
+    let userAnswers = {}; // questionId: optionIndex
+    let flaggedQuestions = {}; // questionId: boolean
+    let examTimer = null;
+    let examTimeRemaining = 3600; // 60 minutes in seconds
+
+    // Load initial views & bind offline helpers
+    window.addEventListener('load', () => {
+        if (STUDY_DATA && STUDY_DATA.length > 0) {
+            currentSectionId = STUDY_DATA[0].sectionId;
+        }
+        injectSVGAssets();
+        initializeDashboardChecklist();
+        initializeLibraryNav();
+        initializeConfidenceStats();
+        initializeSimulatorSetup();
+        
+        // Show Dashboard first
+        showView('dashboard');
+        
+        // Render initial library details
+        loadSectionInLibrary(currentSectionId);
+    });
+
+    // Inject SVG code from hidden nodes into target markers
+    function injectSVGAssets() {
+        document.querySelectorAll('[data-icon]').forEach(slot => {
+            const iconId = 'svg-' + slot.getAttribute('data-icon');
+            const svgNode = document.getElementById(iconId);
+            if (svgNode) {
+                slot.innerHTML = svgNode.innerHTML;
+            }
+        });
+    }
+
+    // Router - Tab switching
+    function showView(viewId) {
+        closeMobileSidebar();
+        currentView = viewId;
+        document.querySelectorAll('.app-view').forEach(view => view.classList.add('hidden'));
+        document.getElementById(viewId + '-view').classList.remove('hidden');
+        
+        // Update Desktop Navigation CSS
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const linkView = link.getAttribute('data-view');
+            if (linkView === viewId) {
+                link.classList.add('text-primary', 'font-bold', 'border-r-2', 'border-primary', 'bg-secondary-container/20');
+                link.classList.remove('text-on-surface-variant');
+            } else {
+                link.classList.remove('text-primary', 'font-bold', 'border-r-2', 'border-primary', 'bg-secondary-container/20');
+                link.classList.add('text-on-surface-variant');
+            }
+        });
+
+        // Update Mobile Navigation CSS
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            const linkView = link.getAttribute('data-view');
+            if (linkView === viewId) {
+                link.classList.add('text-primary', 'font-bold');
+                link.classList.remove('text-on-surface-variant');
+            } else {
+                link.classList.remove('text-primary', 'font-bold');
+                link.classList.add('text-on-surface-variant');
+            }
+        });
+
+        // Custom action for Practice Tab entry
+        if (viewId === 'practice') {
+            loadPracticeDeck();
+        }
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Toggle Focus Mode (hides top bar and sidebar)
+    function toggleFocusMode() {
+        document.body.classList.toggle('focus-mode');
+        const sidebar = document.getElementById('sidebar-panel');
+        const content = document.getElementById('content-container');
+        const topBar = document.getElementById('top-app-bar');
+
+        if (document.body.classList.contains('focus-mode')) {
+            sidebar.classList.add('md:hidden');
+            content.classList.remove('md:ml-64');
+            topBar.classList.add('hidden');
+        } else {
+            sidebar.classList.remove('md:hidden');
+            content.classList.add('md:ml-64');
+            topBar.classList.remove('hidden');
+        }
+    }
+
+    // Toggle Font Size in Reading view
+    function toggleFontSize() {
+        const list = document.getElementById('library-concepts-list');
+        if (list.classList.contains('text-base')) {
+            list.classList.remove('text-base');
+            list.classList.add('text-lg');
+        } else if (list.classList.contains('text-lg')) {
+            list.classList.remove('text-lg');
+            list.classList.add('text-xl');
+        } else {
+            list.classList.remove('text-xl');
+            list.classList.add('text-base');
+        }
+    }
+
+    // Toggle light / dark theme
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.classList.toggle('dark');
+        if (html.classList.contains('dark')) {
+            document.body.style.backgroundColor = '#0b1326';
+            document.body.style.color = '#dae2fd';
+        } else {
+            document.body.style.backgroundColor = '#f8fafc';
+            document.body.style.color = '#0f172a';
+        }
+    }
+
+    // Sidebar toggle (collapses on desktop, opens drawer on mobile)
+    function toggleSidebar() {
+        console.log("toggleSidebar called. Width:", window.innerWidth, "Sidebar hidden:", document.getElementById('sidebar-panel').classList.contains('hidden'));
+        const sidebar = document.getElementById('sidebar-panel');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        if (window.innerWidth < 768) {
+            document.body.classList.remove('sidebar-collapsed');
+            const isHidden = sidebar.classList.contains('hidden');
+            if (isHidden) {
+                sidebar.classList.remove('hidden');
+                sidebar.classList.add('flex');
+                backdrop.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('hidden');
+                sidebar.classList.remove('flex');
+                backdrop.classList.add('hidden');
+            }
+        } else {
+            document.body.classList.toggle('sidebar-collapsed');
+        }
+    }
+
+    function closeMobileSidebar() {
+        if (window.innerWidth < 768) {
+            document.body.classList.remove('sidebar-collapsed');
+            const sidebar = document.getElementById('sidebar-panel');
+            const backdrop = document.getElementById('sidebar-backdrop');
+            sidebar.classList.add('hidden');
+            sidebar.classList.remove('flex');
+            backdrop.classList.add('hidden');
+        }
+    }
+
+    // Resume reading from specific section
+    function resumeReading(sectionId) {
+        showView('library');
+        loadSectionInLibrary(sectionId);
+    }
+
+    // ==================== DASHBOARD LOGIC ====================
+    function initializeDashboardChecklist() {
+        const container = document.getElementById('dashboard-checklist');
+        if (!container || !STUDY_DATA) return;
+
+        let html = '';
+        STUDY_DATA.forEach(section => {
+            const savedState = localStorage.getItem('securityPlus_checklist_' + section.sectionId) === 'done';
+            
+            html += `
+                <div class="p-4 flex items-center justify-between hover:bg-surface-variant/30 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <input type="checkbox" onchange="handleChecklistChange('${section.sectionId}', this)" ${savedState ? 'checked' : ''} class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-background bg-surface-container-low" />
+                        <div>
+                            <p class="font-label-md text-sm font-semibold text-on-surface leading-tight ${savedState ? 'line-through opacity-50' : ''}">${section.sectionTitle}</p>
+                            <p class="text-[11px] text-on-surface-variant font-mono mt-0.5">${section.concepts.length} concepts inside</p>
+                        </div>
+                    </div>
+                    <button onclick="resumeReading('${section.sectionId}')" class="p-2 hover:bg-surface-variant/70 rounded-full transition-colors text-on-surface-variant hover:text-primary">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+        updateOverallReadiness();
+    }
+
+    function handleChecklistChange(sectionId, checkbox) {
+        if (checkbox.checked) {
+            localStorage.setItem('securityPlus_checklist_' + sectionId, 'done');
+            checkbox.nextElementSibling.firstElementChild.classList.add('line-through', 'opacity-50');
+        } else {
+            localStorage.removeItem('securityPlus_checklist_' + sectionId);
+            checkbox.nextElementSibling.firstElementChild.classList.remove('line-through', 'opacity-50');
+        }
+        updateOverallReadiness();
+    }
+
+    function updateOverallReadiness() {
+        if (!STUDY_DATA) return;
+        
+        let completed = 0;
+        STUDY_DATA.forEach(section => {
+            if (localStorage.getItem('securityPlus_checklist_' + section.sectionId) === 'done') {
+                completed++;
+            }
+        });
+
+        // Compute percentage of syllabus complete (e.g. 50% from checklists, combined with flashcards mastered)
+        const totalSections = STUDY_DATA.length;
+        const sectionPct = totalSections > 0 ? (completed / totalSections) * 100 : 0;
+        
+        // Also query flashcard scores to make progress feel authentic
+        let totalCards = 0;
+        let masteredCards = 0;
+        STUDY_DATA.forEach(s => {
+            s.concepts.forEach(c => {
+                totalCards++;
+                if (localStorage.getItem('securityPlus_confidence_' + c.name) === 'easy') {
+                    masteredCards++;
+                }
+            });
+        });
+
+        const flashcardPct = totalCards > 0 ? (masteredCards / totalCards) * 100 : 0;
+        
+        // Weighted average: 60% checklist items complete + 40% flashcard mastering
+        const overallReady = Math.round((sectionPct * 0.6) + (flashcardPct * 0.4));
+        
+        // Update dashboard circle
+        const circle = document.getElementById('readiness-circle');
+        const text = document.getElementById('readiness-pct-text');
+        if (circle && text) {
+            text.innerText = overallReady + '%';
+            const radius = circle.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            const offset = circumference - (overallReady / 100 * circumference);
+            circle.style.strokeDashoffset = offset;
+        }
+
+        // Update horizontal progress bar and text dynamically
+        const progText = document.getElementById('syllabus-progress-text');
+        const progBar = document.getElementById('syllabus-progress-bar');
+        if (progText && progBar) {
+            progText.innerText = `${completed} / ${totalSections} Sections Completed`;
+            progBar.style.width = `${sectionPct}%`;
+        }
+
+        // Update "Resume Study Section" card dynamically based on checklist completion
+        const resumeTitle = document.getElementById('resume-section-title');
+        const resumeDesc = document.getElementById('resume-section-desc');
+        const resumeBtn = document.getElementById('resume-section-btn');
+        const resumeBtnText = document.getElementById('resume-section-btn-text');
+        
+        if (resumeTitle && resumeDesc && resumeBtn && resumeBtnText) {
+            // Find the first uncompleted section
+            const nextSection = STUDY_DATA.find(section => 
+                localStorage.getItem('securityPlus_checklist_' + section.sectionId) !== 'done'
+            );
+            
+            if (nextSection) {
+                resumeTitle.innerText = nextSection.sectionTitle;
+                // Generate a brief dynamic description using the first 3 concepts
+                const conceptsList = nextSection.concepts.slice(0, 3).map(c => c.name).join(', ');
+                resumeDesc.innerText = `Study ${conceptsList}...`;
+                resumeBtn.setAttribute('onclick', `resumeReading('${nextSection.sectionId}')`);
+                resumeBtnText.innerText = "Start Reading";
+            } else {
+                // All sections completed
+                resumeTitle.innerText = "All Sections Completed!";
+                resumeDesc.innerText = "You have finished reading all study guides. Go to the Practice Lab or Exam Simulator to test your knowledge!";
+                resumeBtn.setAttribute('onclick', "showView('simulator')");
+                resumeBtnText.innerText = "Go to Simulator";
+            }
+        }
+    }
+
+
+    // ==================== LIBRARY VIEW LOGIC ====================
+    function initializeLibraryNav() {
+        const container = document.getElementById('library-sections-nav');
+        if (!container || !STUDY_DATA) return;
+
+        let html = '';
+        STUDY_DATA.forEach(section => {
+            html += `
+                <button onclick="loadSectionInLibrary('${section.sectionId}')" id="lib-nav-${section.sectionId}" class="lib-section-tab flex-shrink-0 md:w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-left text-xs md:text-sm font-semibold transition-all">
+                    <span>${section.sectionId}: ${section.sectionTitle.split(': ')[1]}</span>
+                </button>
+            `;
+        });
+        container.innerHTML = html;
+        updateActiveLibraryNavTab();
+    }
+
+    function updateActiveLibraryNavTab() {
+        document.querySelectorAll('.lib-section-tab').forEach(tab => {
+            const tabId = tab.id.replace('lib-nav-', '');
+            if (tabId === currentSectionId) {
+                tab.classList.add('bg-primary/10', 'text-primary', 'border-b-2', 'border-primary', 'border-l-0', 'md:border-b-0', 'md:border-l-2');
+                tab.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant/40');
+            } else {
+                tab.classList.remove('bg-primary/10', 'text-primary', 'border-b-2', 'border-primary', 'border-l-0', 'md:border-b-0', 'md:border-l-2');
+                tab.classList.add('text-on-surface-variant', 'hover:bg-surface-variant/40');
+            }
+        });
+    }
+
+    function loadSectionInLibrary(sectionId) {
+        currentSectionId = sectionId;
+        updateActiveLibraryNavTab();
+        
+        const section = STUDY_DATA.find(s => s.sectionId === sectionId);
+        if (!section) return;
+
+        // Update Title & Meta
+        document.getElementById('library-section-title').innerText = section.sectionTitle;
+        document.getElementById('library-section-meta').innerText = `CONTAINS ${section.concepts.length} CRITICAL TOPICS · SY0-701 SYLLABUS INTEGRATION`;
+
+        // Load Concept Cards
+        renderLibraryConcepts(section.concepts);
+        
+        // Reset Search filter
+        document.getElementById('library-search-input').value = '';
+    }
+
+    function renderLibraryConcepts(conceptsList) {
+        const container = document.getElementById('library-concepts-list');
+        if (!container) return;
+
+        if (conceptsList.length === 0) {
+            container.innerHTML = `
+                <div class="text-center p-12 bg-surface-container border border-outline-variant/30 rounded-xl">
+                    <p class="text-on-surface-variant text-sm">No topics match your search query.</p>
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+        conceptsList.forEach(concept => {
+            html += mdToHtmlBlock(concept);
+        });
+        container.innerHTML = html;
+    }
+
+    // Local library search
+    function handleLibrarySearch() {
+        const query = document.getElementById('library-search-input').value.toLowerCase().trim();
+        const section = STUDY_DATA.find(s => s.sectionId === currentSectionId);
+        if (!section) return;
+
+        if (query === '') {
+            renderLibraryConcepts(section.concepts);
+            return;
+        }
+
+        const filtered = section.concepts.filter(c => {
+            return c.name.toLowerCase().includes(query) || 
+                   (c.definition && c.definition.toLowerCase().includes(query)) ||
+                   (c.analogy && c.analogy.toLowerCase().includes(query));
+        });
+
+        renderLibraryConcepts(filtered);
+    }
+
+
+    // ==================== PRACTICE VIEW (FLASHCARDS) ====================
+    function loadPracticeDeck() {
+        const filterVal = document.getElementById('practice-section-filter').value;
+        const dropdown = document.getElementById('practice-section-filter');
+
+        // Populate dropdown if first load
+        if (dropdown.options.length <= 1) {
+            STUDY_DATA.forEach(section => {
+                const opt = document.createElement('option');
+                opt.value = section.sectionId;
+                opt.innerText = section.sectionTitle.split(': ')[1];
+                dropdown.appendChild(opt);
+            });
+        }
+
+        // Collect flashcard items
+        flashcards = [];
+        STUDY_DATA.forEach(section => {
+            if (filterVal === 'all' || section.sectionId === filterVal) {
+                section.concepts.forEach(concept => {
+                    let definition = concept.definition ? concept.definition.trim() : '';
+                    
+                    // Fallback to raw_content if definition is empty
+                    if (definition === '' && concept.raw_content) {
+                        const cleanText = concept.raw_content
+                            .replace(/\*\*([^*]+)\*\*/g, '$1')
+                            .replace(/\*([^*]+)\*/g, '$1')
+                            .replace(/`([^`]+)`/g, '$1')
+                            .trim();
+                        const paragraphs = cleanText.split('\n');
+                        for (let p of paragraphs) {
+                            p = p.trim();
+                            if (p && !p.startsWith('>') && !p.startsWith('#') && !p.startsWith('-') && !p.startsWith('*') && !p.startsWith('|')) {
+                                definition = p;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (definition !== '') {
+                        flashcards.push({
+                            sectionId: section.sectionId,
+                            sectionTitle: section.sectionTitle.split(': ')[1],
+                            name: concept.name,
+                            definition: definition,
+                            analogy: concept.analogy
+                        });
+                    }
+                });
+            }
+        });
+
+        currentCardIndex = 0;
+        cardFlipped = false;
+        
+        const cardBox = document.getElementById('flashcard-box');
+        if (cardBox) {
+            cardBox.classList.remove('flashcard-flipped');
+        }
+        
+        updatePracticeCardUI();
+        updateConfidenceStats();
+    }
+
+    function shufflePracticeDeck() {
+        // Simple array shuffle
+        for (let i = flashcards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
+        }
+        currentCardIndex = 0;
+        cardFlipped = false;
+        
+        const cardBox = document.getElementById('flashcard-box');
+        if (cardBox) {
+            cardBox.classList.remove('flashcard-flipped');
+        }
+        
+        updatePracticeCardUI();
+    }
+
+    function updatePracticeCardUI() {
+        const counter = document.getElementById('practice-card-counter');
+        const difficultyActions = document.getElementById('difficulty-actions');
+        const flipBtn = document.getElementById('flip-btn');
+        
+        if (flashcards.length === 0) {
+            counter.innerText = '0 of 0 cards';
+            document.getElementById('card-front-title').innerText = 'No cards available';
+            document.getElementById('card-front-section').innerText = 'System';
+            return;
+        }
+
+        counter.innerText = `Card ${currentCardIndex + 1} of ${flashcards.length}`;
+        
+        const card = flashcards[currentCardIndex];
+        
+        // Front View
+        document.getElementById('card-front-section').innerText = `${card.sectionId} · ${card.sectionTitle}`;
+        document.getElementById('card-front-title').innerText = card.name;
+        
+        // Back View
+        document.getElementById('card-back-title').innerText = card.name;
+        document.getElementById('card-back-def').innerHTML = `<strong class="text-secondary font-semibold">Definition:</strong> ${card.definition}`;
+        
+        // Analogy
+        const analogyBox = document.getElementById('card-back-analogy-box');
+        const analogyText = document.getElementById('card-back-analogy');
+        if (card.analogy) {
+            analogyBox.classList.remove('hidden');
+            analogyText.innerText = card.analogy;
+        } else {
+            analogyBox.classList.add('hidden');
+        }
+
+        // Render confidence badge if graded previously
+        const badge = document.getElementById('card-confidence-badge');
+        const savedRating = localStorage.getItem('securityPlus_confidence_' + card.name);
+        if (savedRating) {
+            let colorClass = 'text-primary border-primary bg-primary/10';
+            if (savedRating === 'medium') colorClass = 'text-tertiary border-tertiary bg-tertiary/10';
+            if (savedRating === 'hard') colorClass = 'text-error border-error bg-error/10';
+            
+            badge.className = `px-2 py-0.5 text-[9px] font-bold border rounded uppercase font-mono tracking-wider ${colorClass}`;
+            badge.innerText = savedRating;
+        } else {
+            badge.className = '';
+            badge.innerText = '';
+        }
+
+        // Reset flip buttons states
+        if (cardFlipped) {
+            difficultyActions.classList.remove('hidden');
+            flipBtn.classList.add('hidden');
+        } else {
+            difficultyActions.classList.add('hidden');
+            flipBtn.classList.remove('hidden');
+        }
+    }
+
+    function flipCard() {
+        if (flashcards.length === 0) return;
+        cardFlipped = !cardFlipped;
+        document.getElementById('flashcard-box').classList.toggle('flashcard-flipped');
+        
+        const difficultyActions = document.getElementById('difficulty-actions');
+        const flipBtn = document.getElementById('flip-btn');
+        
+        if (cardFlipped) {
+            difficultyActions.classList.remove('hidden');
+            flipBtn.classList.add('hidden');
+        } else {
+            difficultyActions.classList.add('hidden');
+            flipBtn.classList.remove('hidden');
+        }
+    }
+
+    function showCardHint(e) {
+        e.stopPropagation(); // Avoid triggering card flipping
+        if (flashcards.length === 0) return;
+        const card = flashcards[currentCardIndex];
+        if (card.analogy) {
+            alert(`Analogy Hint:\n"${card.analogy}"`);
+        } else {
+            alert("No analogy hint available for this card.");
+        }
+    }
+
+    function rateCard(rating) {
+        if (flashcards.length === 0) return;
+        const card = flashcards[currentCardIndex];
+        
+        // Save to localStorage
+        localStorage.setItem('securityPlus_confidence_' + card.name, rating);
+        
+        // Advance to next card
+        currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+        cardFlipped = false;
+        
+        const cardBox = document.getElementById('flashcard-box');
+        if (cardBox) {
+            cardBox.classList.remove('flashcard-flipped');
+        }
+        
+        updatePracticeCardUI();
+        updateConfidenceStats();
+        updateOverallReadiness();
+    }
+
+    function updateConfidenceStats() {
+        let easy = 0, medium = 0, hard = 0;
+        
+        // Count locally stored ratings for concepts
+        if (STUDY_DATA) {
+            STUDY_DATA.forEach(section => {
+                section.concepts.forEach(c => {
+                    const rating = localStorage.getItem('securityPlus_confidence_' + c.name);
+                    if (rating === 'easy') easy++;
+                    if (rating === 'medium') medium++;
+                    if (rating === 'hard') hard++;
+                });
+            });
+        }
+        
+        document.getElementById('stats-easy-count').innerText = easy;
+        document.getElementById('stats-medium-count').innerText = medium;
+        document.getElementById('stats-hard-count').innerText = hard;
+    }
+
+    function initializeConfidenceStats() {
+        updateConfidenceStats();
+        
+        // Handle Spacebar to flip cards
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && currentView === 'practice') {
+                e.preventDefault();
+                flipCard();
+            }
+        });
+    }
+
+
+    function initializeSimulatorSetup() {
+        const container = document.getElementById('sim-topic-checkboxes');
+        if (!container || !STUDY_DATA) return;
+
+        let html = '';
+        STUDY_DATA.forEach(section => {
+            const titleOnly = section.sectionTitle.split(': ')[1] || section.sectionTitle;
+            html += `
+                <label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
+                    <input type="checkbox" checked value="${section.sectionId}" class="sim-topic-cb w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container" />
+                    <div class="text-xs">
+                        <p class="font-semibold text-on-surface">Section ${section.sectionId.replace('S', '')}</p>
+                        <p class="text-[10px] text-on-surface-variant">${titleOnly}</p>
+                    </div>
+                </label>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    function selectSimAllTopics(checked) {
+        document.querySelectorAll('.sim-topic-cb').forEach(cb => {
+            cb.checked = checked;
+        });
+    }
+
+    // ==================== EXAM SIMULATOR LOGIC ====================
+    let examTimeElapsed = 0;
+
+    function startExamSimulation() {
+        if (!EXAM_QUESTIONS || EXAM_QUESTIONS.length === 0) {
+            alert("Exam simulator questions are loading or missing!");
+            return;
+        }
+
+        // Get selected domains
+        const checkedBoxes = document.querySelectorAll('.sim-topic-cb:checked');
+        const selectedSections = Array.from(checkedBoxes).map(cb => cb.value);
+        if (selectedSections.length === 0) {
+            alert("Please select at least one topic / domain to start the exam!");
+            return;
+        }
+
+        // Filter questions by selected sections
+        let filteredQuestions = EXAM_QUESTIONS.filter(q => selectedSections.includes(q.section));
+        if (filteredQuestions.length === 0) {
+            alert("No questions found for the selected topics!");
+            return;
+        }
+
+        // Shuffle filtered questions
+        for (let i = filteredQuestions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [filteredQuestions[i], filteredQuestions[j]] = [filteredQuestions[j], filteredQuestions[i]];
+        }
+
+        // Slice to selected count
+        const countVal = parseInt(document.getElementById('sim-config-count').value) || 30;
+        simulatorQuestions = filteredQuestions.slice(0, countVal);
+
+        // Configure time limit
+        const timeVal = document.getElementById('sim-config-time').value;
+        if (timeVal === 'none') {
+            examTimeRemaining = -1;
+        } else {
+            examTimeRemaining = parseInt(timeVal) || 3600;
+        }
+        examTimeElapsed = 0;
+
+        simulatorActive = true;
+        currentSimQuestionIndex = 0;
+        userAnswers = {};
+        flaggedQuestions = {};
+        
+        // Hide welcome menu and show simulation panel
+        document.getElementById('simulator-intro').classList.add('hidden');
+        document.getElementById('simulator-active').classList.remove('hidden');
+        document.getElementById('simulator-results').classList.add('hidden');
+        
+        // Load initial elements
+        loadSimulatorQuestion();
+        buildQuestionNavigatorGrid();
+        
+        // Start live count-down timer
+        if (examTimer) clearInterval(examTimer);
+        examTimer = setInterval(updateExamTimer, 1000);
+    }
+
+    function loadSimulatorQuestion() {
+        const q = simulatorQuestions[currentSimQuestionIndex];
+        
+        // Set metadata and title
+        document.getElementById('sim-question-meta').innerText = `Question ${currentSimQuestionIndex + 1} of ${simulatorQuestions.length} · Domain: Section ${q.section.replace('S', '')}`;
+        document.getElementById('sim-question-text').innerText = q.question;
+        
+        // Build choice options as styled radio buttons
+        const container = document.getElementById('sim-options-container');
+        container.innerHTML = '';
+        
+        q.options.forEach((opt, idx) => {
+            const isChecked = userAnswers[q.id] === idx;
+            
+            const btn = document.createElement('div');
+            btn.className = `flex items-center gap-3 p-4 rounded-xl border text-sm transition-all cursor-pointer ${isChecked ? 'bg-primary/10 border-primary text-primary font-semibold' : 'bg-surface-container border-outline-variant hover:border-outline-variant/80 text-on-surface'}`;
+            btn.onclick = () => selectSimulatorAnswer(q.id, idx);
+            
+            // Format option label and mark strong highlights
+            const formattedOpt = opt.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            
+            btn.innerHTML = `
+                <div class="h-5 w-5 rounded-full border-2 border-outline-variant flex items-center justify-center flex-shrink-0 ${isChecked ? 'border-primary bg-primary' : ''}">
+                    <div class="h-2 w-2 rounded-full bg-surface ${isChecked ? '' : 'hidden'}"></div>
+                </div>
+                <span>${formattedOpt}</span>
+            `;
+            container.appendChild(btn);
+        });
+
+        // Update Flag button styling
+        const flagBtn = document.getElementById('sim-flag-btn');
+        if (flaggedQuestions[q.id]) {
+            flagBtn.className = "flex items-center gap-1.5 text-xs text-tertiary border border-tertiary px-3 py-1.5 rounded-lg bg-tertiary-container/20 transition-all";
+            flagBtn.querySelector('span').innerText = "Flagged for Review";
+        } else {
+            flagBtn.className = "flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-tertiary border border-outline-variant px-3 py-1.5 rounded-lg bg-surface-container-low transition-all";
+            flagBtn.querySelector('span').innerText = "Flag for Review";
+        }
+
+        // Highlight active grid node
+        document.querySelectorAll('.sim-nav-btn').forEach(btn => {
+            const qNum = parseInt(btn.innerText);
+            if (qNum === currentSimQuestionIndex + 1) {
+                btn.classList.add('ring-2', 'ring-primary', 'scale-105');
+            } else {
+                btn.classList.remove('ring-2', 'ring-primary', 'scale-105');
+            }
+        });
+    }
+
+    function selectSimulatorAnswer(questionId, optionIndex) {
+        userAnswers[questionId] = optionIndex;
+        loadSimulatorQuestion();
+        buildQuestionNavigatorGrid();
+    }
+
+    function toggleFlagQuestion() {
+        const q = simulatorQuestions[currentSimQuestionIndex];
+        flaggedQuestions[q.id] = !flaggedQuestions[q.id];
+        loadSimulatorQuestion();
+        buildQuestionNavigatorGrid();
+    }
+
+    function buildQuestionNavigatorGrid() {
+        const container = document.getElementById('sim-grid-container');
+        if (!container) return;
+        
+        container.innerHTML = '';
+        simulatorQuestions.forEach((q, idx) => {
+            const btn = document.createElement('button');
+            
+            let classes = "sim-nav-btn h-10 w-full flex items-center justify-center text-xs font-semibold rounded border transition-all cursor-pointer ";
+            
+            const isAnswered = userAnswers[q.id] !== undefined;
+            const isFlagged = flaggedQuestions[q.id];
+            
+            if (isFlagged) {
+                classes += "bg-tertiary/15 border-tertiary text-tertiary font-bold";
+            } else if (isAnswered) {
+                classes += "bg-primary/20 border-primary text-primary font-bold";
+            } else {
+                classes += "bg-surface-container border-outline-variant/35 text-on-surface-variant hover:border-primary/50";
+            }
+            
+            btn.className = classes;
+            btn.innerText = idx + 1;
+            btn.onclick = () => jumpToQuestion(idx);
+            container.appendChild(btn);
+        });
+    }
+
+    function jumpToQuestion(index) {
+        currentSimQuestionIndex = index;
+        loadSimulatorQuestion();
+    }
+
+    function prevQuestion() {
+        if (currentSimQuestionIndex > 0) {
+            currentSimQuestionIndex--;
+            loadSimulatorQuestion();
+        }
+    }
+
+    function nextQuestion() {
+        if (currentSimQuestionIndex < simulatorQuestions.length - 1) {
+            currentSimQuestionIndex++;
+            loadSimulatorQuestion();
+        }
+    }
+
+    function updateExamTimer() {
+        if (examTimeRemaining !== -1) {
+            if (examTimeRemaining <= 0) {
+                clearInterval(examTimer);
+                alert("Time has expired! Submitting your exam automatically.");
+                submitExamSimulation(true);
+                return;
+            }
+            examTimeRemaining--;
+            const m = Math.floor(examTimeRemaining / 60).toString().padStart(2, '0');
+            const s = (examTimeRemaining % 60).toString().padStart(2, '0');
+            document.getElementById('sim-timer').innerText = `${m}:${s}`;
+        } else {
+            examTimeElapsed++;
+            const m = Math.floor(examTimeElapsed / 60).toString().padStart(2, '0');
+            const s = (examTimeElapsed % 60).toString().padStart(2, '0');
+            document.getElementById('sim-timer').innerText = `${m}:${s}`;
+        }
+    }
+
+    function submitExamSimulation(force = false) {
+        const total = simulatorQuestions.length;
+        const answered = Object.keys(userAnswers).length;
+        
+        if (!force && answered < total) {
+            if (!confirm(`Warning: You have only answered ${answered} of ${total} questions. Are you sure you want to submit?`)) {
+                return;
+            }
+        }
+
+        clearInterval(examTimer);
+        simulatorActive = false;
+        
+        // Hide simulation and display results
+        document.getElementById('simulator-active').classList.add('hidden');
+        document.getElementById('simulator-results').classList.remove('hidden');
+
+        // Score Calculation
+        let correctCount = 0;
+        const sectionPerformance = {}; // {section: {correct: 0, total: 0}}
+        
+        simulatorQuestions.forEach(q => {
+            if (!sectionPerformance[q.section]) {
+                sectionPerformance[q.section] = { correct: 0, total: 0 };
+            }
+            sectionPerformance[q.section].total++;
+
+            const isCorrect = userAnswers[q.id] === q.answer;
+            if (isCorrect) {
+                correctCount++;
+                sectionPerformance[q.section].correct++;
+            }
+        });
+
+        const scorePercent = Math.round((correctCount / total) * 100);
+        document.getElementById('results-score-text').innerText = scorePercent + '%';
+
+        // Check Pass/Fail
+        const badge = document.getElementById('results-badge');
+        const summary = document.getElementById('results-summary-text');
+        
+        if (scorePercent >= 75) {
+            badge.className = "px-5 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest mt-4 bg-green-500/20 text-green-400 border border-green-500/30 shadow-lg shadow-green-500/5";
+            badge.innerText = "PASSED";
+            summary.innerText = `Excellent job! You correctly answered ${correctCount} of ${total} questions. You have shown strong competency in the certified domains. Keep reviewing to lock in your score!`;
+        } else {
+            badge.className = "px-5 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest mt-4 bg-red-500/20 text-red-400 border border-red-500/30 shadow-lg shadow-red-500/5";
+            badge.innerText = "FAILED";
+            summary.innerText = `You scored ${scorePercent}% (${correctCount} of ${total} correct). A score of 75% or higher is required to pass. Expand the breakdown below to review your weakest areas.`;
+        }
+
+        // Render section breakdown report bars
+        const breakdownContainer = document.getElementById('results-domain-breakdown');
+        breakdownContainer.innerHTML = '';
+        
+        let weakestSectionId = '';
+        let weakestSectionPct = 101;
+
+        STUDY_DATA.forEach(section => {
+            const perf = sectionPerformance[section.sectionId] || { correct: 0, total: 0 };
+            const pct = perf.total > 0 ? Math.round((perf.correct / perf.total) * 100) : 0;
+            
+            if (pct < weakestSectionPct) {
+                weakestSectionPct = pct;
+                weakestSectionId = section.sectionTitle;
+            }
+
+            breakdownContainer.innerHTML += `
+                <div>
+                    <div class="flex justify-between text-xs font-semibold mb-1">
+                        <span class="text-on-surface-variant">${section.sectionTitle}</span>
+                        <span class="${pct >= 75 ? 'text-primary' : 'text-error'} font-bold font-mono">${pct}% (${perf.correct}/${perf.total})</span>
+                    </div>
+                    <div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden border border-outline-variant/20">
+                        <div class="h-full rounded-full ${pct >= 75 ? 'bg-primary' : 'bg-error'}" style="width: ${pct}%"></div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Hide review list initially
+        document.getElementById('simulator-review-section').classList.add('hidden');
+    }
+
+    function showSimulatorReview() {
+        const reviewSection = document.getElementById('simulator-review-section');
+        reviewSection.classList.remove('hidden');
+        
+        const listContainer = document.getElementById('simulator-review-list');
+        listContainer.innerHTML = '';
+
+        simulatorQuestions.forEach((q, idx) => {
+            const userAnswerIdx = userAnswers[q.id];
+            const isCorrect = userAnswerIdx === q.answer;
+            const isFlagged = flaggedQuestions[q.id];
+            
+            let statusHTML = '';
+            let cardBorderClass = 'border-outline-variant/40';
+            if (userAnswerIdx === undefined) {
+                statusHTML = '<span class="text-error font-bold uppercase tracking-wider text-xs bg-error/10 border border-error/20 px-2.5 py-1 rounded">UNANSWERED</span>';
+                cardBorderClass = 'border-error/30';
+            } else if (isCorrect) {
+                statusHTML = '<span class="text-primary font-bold uppercase tracking-wider text-xs bg-primary/10 border border-primary/20 px-2.5 py-1 rounded">CORRECT</span>';
+                cardBorderClass = 'border-primary/30';
+            } else {
+                statusHTML = '<span class="text-error font-bold uppercase tracking-wider text-xs bg-error/10 border border-error/20 px-2.5 py-1 rounded">INCORRECT</span>';
+                cardBorderClass = 'border-error/30';
+            }
+
+            let choicesHTML = '<div class="grid grid-cols-1 gap-2.5 mt-3">';
+            q.options.forEach((opt, oIdx) => {
+                let badgeClass = 'border-outline-variant/30 text-on-surface-variant';
+                
+                if (oIdx === q.answer) {
+                    badgeClass = 'bg-primary/15 border-primary text-primary font-semibold';
+                } else if (oIdx === userAnswerIdx) {
+                    badgeClass = 'bg-error/15 border-error text-error font-semibold';
+                }
+                
+                const formattedOpt = opt.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+                choicesHTML += `
+                    <div class="p-3.5 rounded-lg border text-sm ${badgeClass}">
+                        ${formattedOpt}
+                    </div>
+                `;
+            });
+            choicesHTML += '</div>';
+
+            listContainer.innerHTML += `
+                <div class="glass-card p-6 rounded-xl border ${cardBorderClass} space-y-3">
+                    <div class="flex flex-wrap justify-between items-center gap-2">
+                        <span class="text-[11px] font-mono text-on-surface-variant uppercase tracking-widest font-bold">Question ${idx + 1} · Section ${q.section}</span>
+                        <div class="flex items-center gap-2">
+                            ${isFlagged ? '<span class="text-tertiary border border-tertiary/30 bg-tertiary/10 text-[9px] font-bold px-2 py-0.5 rounded uppercase font-mono">FLAGGED</span>' : ''}
+                            ${statusHTML}
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-base font-bold text-on-surface leading-snug">${q.question}</h4>
+                    
+                    ${choicesHTML}
+                    
+                    <div class="bg-surface-container-high/40 p-4 rounded-lg border border-outline-variant/20 mt-4 text-xs md:text-sm">
+                        <strong class="text-primary block font-bold uppercase tracking-wider text-[10px] mb-1">Explanation</strong>
+                        <p class="text-on-surface-variant leading-relaxed font-body-md">${q.explanation}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Scroll smoothly to review section
+        reviewSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resetSimulator() {
+        document.getElementById('simulator-intro').classList.remove('hidden');
+        document.getElementById('simulator-active').classList.add('hidden');
+        document.getElementById('simulator-results').classList.add('hidden');
+        
+        if (examTimer) clearInterval(examTimer);
+        simulatorQuestions = [];
+    }
+
+
+    // ==================== GLOBAL SEARCH ====================
+    function handleGlobalSearch() {
+        const query = document.getElementById('global-search-input').value.toLowerCase().trim();
+        const overlay = document.getElementById('search-overlay');
+        const list = document.getElementById('search-results-list');
+        const text = document.getElementById('search-query-text');
+
+        if (query === '') {
+            overlay.classList.add('hidden');
+            return;
+        }
+
+        overlay.classList.remove('hidden');
+        text.innerText = query;
+
+        // Perform search
+        const matches = [];
+        STUDY_DATA.forEach(section => {
+            section.concepts.forEach(concept => {
+                if (concept.name.toLowerCase().includes(query) || 
+                    (concept.definition && concept.definition.toLowerCase().includes(query)) ||
+                    (concept.analogy && concept.analogy.toLowerCase().includes(query))) {
+                    
+                    matches.push({
+                        sectionId: section.sectionId,
+                        sectionTitle: section.sectionTitle,
+                        concept: concept
+                    });
+                }
+            });
+        });
+
+        if (matches.length === 0) {
+            list.innerHTML = `
+                <div class="text-center p-8">
+                    <p class="text-on-surface-variant text-sm">No matched concepts found in any section.</p>
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+        matches.forEach(match => {
+            html += `
+                <div onclick="jumpToSearchResult('${match.sectionId}', '${match.concept.name}')" class="p-4 bg-surface-container-low hover:bg-surface-variant/40 border border-outline-variant/20 rounded-xl cursor-pointer transition-all space-y-2">
+                    <div class="flex justify-between items-center text-[10px] font-bold font-mono tracking-widest text-primary uppercase">
+                        <span>${match.sectionTitle}</span>
+                        <span>Click to view</span>
+                    </div>
+                    <h4 class="font-headline-md text-base font-bold text-on-surface">${match.concept.name}</h4>
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">${match.concept.definition || ''}</p>
+                </div>
+            `;
+        });
+        list.innerHTML = html;
+    }
+
+    function closeSearch() {
+        document.getElementById('search-overlay').classList.add('hidden');
+        document.getElementById('global-search-input').value = '';
+    }
+
+    function jumpToSearchResult(sectionId, conceptName) {
+        closeSearch();
+        showView('library');
+        loadSectionInLibrary(sectionId);
+        
+        // Find and highlight the specific element in Library
+        setTimeout(() => {
+            const cards = document.querySelectorAll('#library-concepts-list > div h3');
+            let foundCard = null;
+            cards.forEach(c => {
+                if (c.innerText.trim() === conceptName.trim()) {
+                    foundCard = c.parentElement;
+                }
+            });
+
+            if (foundCard) {
+                foundCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Flash animation border
+                foundCard.classList.add('ring-2', 'ring-primary', 'scale-[1.01]');
+                setTimeout(() => {
+                    foundCard.classList.remove('ring-2', 'ring-primary', 'scale-[1.01]');
+                }, 2000);
+            }
+        }, 150);
+    }
+
+
+    // ==================== MINI MARKDOWN RENDERING UTILITIES ====================
+    function mdToHtmlBlock(concept) {
+        if (!concept || !concept.raw_content) return '';
+
+        return `
+            <div class="glass-card p-6 rounded-xl space-y-4">
+                <h3 class="font-headline-md text-xl font-bold text-primary">${concept.name}</h3>
+                ${parseMarkdownToHtml(concept.raw_content)}
+            </div>
+        `;
+    }
+
+    function parseMarkdownToHtml(markdownText) {
+        if (!markdownText) return '';
+
+        const lines = markdownText.split('\n');
+        let html = '';
+        let inList    = false;
+        let tableLines = [];
+        let inTable   = false;
+        let inCode    = false;
+        let codeLines = [];
+        let inQuote   = false;
+        let quoteLines = [];
+
+        const closeList  = () => { if (inList)  { html += '</ul>'; inList = false; } };
+        const closeTable = () => { if (inTable) { html += renderLibraryTable(tableLines); tableLines = []; inTable = false; } };
+        const closeCode  = () => {
+            if (inCode) {
+                const escaped = codeLines.join('\n')
+                    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                html += `<pre class="bg-surface-container-highest border border-outline-variant/40 rounded-lg p-4 my-3 overflow-x-auto custom-scrollbar"><code class="text-xs font-mono text-primary leading-relaxed whitespace-pre">${escaped}</code></pre>`;
+                codeLines = [];
+                inCode = false;
+            }
+        };
+        const closeQuote = () => {
+            if (inQuote) {
+                const quoteContent = quoteLines.join('\n');
+                if (quoteContent.includes('Domain:') || quoteContent.includes('Objectives:')) {
+                    html += `<div class="text-[11px] text-on-surface-variant opacity-75 bg-surface-container-high/40 p-2 rounded border border-outline-variant/30 inline-block font-mono my-1">${replaceLibraryInline(quoteContent)}</div>`;
+                } else {
+                    html += `
+                        <div class="bg-primary/5 border border-primary/20 p-4 rounded-lg relative overflow-hidden flex items-start gap-3 my-3">
+                            <div class="text-primary mt-1 flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="font-label-sm text-primary uppercase tracking-wider block font-bold text-[10px] mb-1">Analogía / Contexto</span>
+                                <div class="space-y-2 text-on-surface-variant italic text-sm md:text-base">
+                                    ${parseMarkdownToHtml(quoteContent)}
+                                </div>
+                            </div>
+                        </div>`;
+                }
+                quoteLines = [];
+                inQuote = false;
+            }
+        };
+
+        for (let i = 0; i < lines.length; i++) {
+            const raw  = lines[i];
+            const line = raw.trim();
+
+            // ── horizontal rule ────────────────────────────────────────
+            if (/^-{3,}$/.test(line)) continue;
+
+            // ── code block toggle ──────────────────────────────────────
+            if (line.startsWith('```')) {
+                if (!inCode) {
+                    closeList(); closeTable(); closeQuote();
+                    inCode = true;
+                } else {
+                    closeCode();
+                }
+                continue;
+            }
+            if (inCode) { codeLines.push(raw); continue; }
+
+            // ── blockquote ─────────────────────────────────────────────
+            if (line.startsWith('>')) {
+                closeList(); closeTable(); closeCode();
+                inQuote = true;
+                let content = raw.substring(raw.indexOf('>') + 1);
+                if (content.startsWith(' ')) {
+                    content = content.substring(1);
+                }
+                quoteLines.push(content);
+                continue;
+            } else if (inQuote) {
+                closeQuote();
+            }
+
+            // ── skip # / ## (already used as concept name) ────────────
+            if (line.startsWith('## ') || line.startsWith('# ')) continue;
+
+            // ── ### sub-heading ────────────────────────────────────────
+            if (line.startsWith('### ')) {
+                closeList(); closeTable();
+                const sub = line.replace(/^###\s*/, '').replace(/⚠️|💡|📚/g, '').trim();
+                html += `<h4 class="font-semibold text-on-surface text-sm uppercase tracking-wider mt-5 mb-2 border-b border-outline-variant/30 pb-1">${sub}</h4>`;
+                continue;
+            }
+
+            // ── table ──────────────────────────────────────────────────
+            if (line.startsWith('|')) {
+                closeList();
+                inTable = true;
+                tableLines.push(line);
+                continue;
+            } else if (inTable) {
+                closeTable();
+            }
+
+            // ── image lines are silently skipped ──────────────────────
+            if (line.match(/^!\[([^\]]*)\]\(([^)]+)\)/)) continue;
+
+            // ── unordered list: * or - ─────────────────────────────────
+            const ulMatch = line.match(/^[\*\-]\s+(.*)/);
+            if (ulMatch) {
+                if (!inList) {
+                    html += '<ul class="list-disc list-inside space-y-1.5 font-body-md text-on-surface-variant pl-2 my-2">';
+                    inList = true;
+                }
+                let itemContent = ulMatch[1].trim();
+                if (itemContent.startsWith('**Definition:**')) {
+                    itemContent = itemContent.replace('**Definition:**', '<strong class="text-secondary font-semibold">Definition:</strong>');
+                }
+                html += `<li>${replaceLibraryInline(itemContent)}</li>`;
+                continue;
+            } else if (inList && line !== '') {
+                if (!line.match(/^\d+\.\s/)) {
+                    closeList();
+                }
+            } else if (inList && line === '') {
+                closeList();
+            }
+
+            // ── ordered list ───────────────────────────────────────────
+            const olMatch = line.match(/^(\d+)\.\s+(.*)/);
+            if (olMatch) {
+                html += `<div class="flex items-start gap-2 font-body-md text-on-surface-variant my-1.5 pl-2">
+                    <span class="text-primary font-bold flex-shrink-0">${olMatch[1]}.</span>
+                    <div>${replaceLibraryInline(olMatch[2])}</div>
+                </div>`;
+                continue;
+            }
+
+            if (line === '') continue;
+
+            // ── standard paragraph ─────────────────────────────────────
+            html += `<p class="font-body-md text-on-surface-variant my-2">${replaceLibraryInline(line)}</p>`;
+        }
+
+        closeList();
+        closeTable();
+        closeCode();
+        closeQuote();
+
+        return html;
+    }
+
+    function replaceLibraryInline(text) {
+        if (!text) return '';
+        // bold
+        let result = text.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-semibold text-on-surface">$1</strong>');
+        // italic with * or _
+        result = result.replace(/\*([^*]+)\*/g, '<em class="italic text-on-surface-variant/90">$1</em>');
+        // inline code
+        result = result.replace(/`([^`]+)`/g, '<code class="bg-surface-container-high text-primary px-1.5 py-0.5 rounded text-xs font-mono border border-outline-variant/30">$1</code>');
+        // arrows →
+        result = result.replace(/→/g, '<span class="text-primary font-bold">→</span>');
+        return result;
+    }
+
+    function renderLibraryTable(lines) {
+        let headers = [];
+        let rows = [];
+        for (let line of lines) {
+            if (!line.trim() || !line.includes('|')) continue;
+            let cols = line.split('|').map(c => c.trim()).slice(1, -1);
+            if (!headers.length) {
+                headers = cols;
+            } else if (cols.every(c => /^[-:]+$/.test(c))) {
+                continue;
+            } else {
+                rows.push(cols);
+            }
+        }
+
+        if (headers.length === 0) return '';
+
+        let html = `
+            <div class="overflow-x-auto border border-outline-variant/30 rounded-lg my-4">
+                <table class="w-full text-left text-label-md border-collapse">
+                    <thead>
+                        <tr class="bg-surface-container-high border-b border-outline-variant/30">
+        `;
+        headers.forEach(h => {
+            html += `<th class="p-3 font-semibold text-primary text-xs tracking-wider uppercase">${replaceLibraryInline(h)}</th>`;
+        });
+        html += `
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/20 bg-surface-container-low/30 text-sm">
+        `;
+        rows.forEach((row, idx) => {
+            html += `<tr class="${idx % 2 === 0 ? 'bg-surface-container/25' : ''} hover:bg-surface-variant/20 transition-colors">`;
+            row.forEach(cell => {
+                html += `<td class="p-3 text-on-surface-variant">${replaceLibraryInline(cell)}</td>`;
+            });
+            html += `</tr>`;
+        });
+        html += `
+                    </tbody>
+                </table>
+            </div>
+        `;
+        return html;
+    }
+</script>
+</body>
+</html>
