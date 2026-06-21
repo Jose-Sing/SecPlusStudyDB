@@ -18,6 +18,22 @@ The project is structured as a lightweight, performant, static client-side web a
 
 ## 🪵 Changelog & Version History
 
+### [v1.6.0] — 2026-06-20 (Level-4 Heading Support & Search Enhancements)
+#### Added
+- **Level-4 Heading (####) Support**: Integrated parsing and rendering support for level-4 headings (`####`) as sub-subheadings (`<h5>`) in both `parse_summaries.py` (for automatic definition fallbacks) and `index.html`'s markdown renderer. This ensures sections like Section 15 (Security Architecture), which employ sub-concepts with `####` headers (e.g., *Responsibility Matrix*, *Network Segmentation*), display correctly without displaying raw markdown symbols on the dashboard or study views.
+- **Deep Content Search (Local & Global)**: Extended both the local Library search and the Global header search to check the `raw_content` of concepts. This ensures terms located in subheadings (such as `### Idempotence` or `#### Network Segmentation`), bullet lists, and tables are discoverable, resolving the issue where internal concept keywords were not matched.
+- **Visual Distinction & Theme Color System**: Removed bottom borders from subheadings and implemented a structured color-coded typography hierarchy:
+  - **H1 (Section Title)**: Pure White (`#FFFFFF`)
+  - **H2 (Concept Title / Macro)**: Pastel Yellow/Gold (`#FDE047`)
+  - **H3 (Sub-concept)**: Mint Green/Neon (`#4ADE80`)
+  - **H4 (Detail/Matrix)**: Cyan/Turquoise (`#2DD4BF`)
+  - **H5 (Support Labels/Analogies)**: Pastel Pink/Coral (`#FB7185`)
+  - **H6 (Additional/Future use)**: Light Violet/Lavender (`#C084FC`)
+  - **Inline Bold Text**: Pure White (`#FFFFFF`) to ensure key glossary terms pop out cleanly.
+
+
+
+
 ### [v1.5.0] — 2026-06-13 (CompTIA Exam Simulator Question Bank Expansion)
 #### Added
 - **Minimum 20 Questions per Syllabus Section**: Expanded the exam simulator question bank (`questions.js`) to ensure all 11 syllabus sections (Sections 2 through 12) have a minimum of 20 high-quality, psychometrically-sound CompTIA Security+ questions, totaling 220 questions (an increase of 160 questions).

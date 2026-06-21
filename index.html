@@ -366,7 +366,7 @@
                                     CURRENTLY STUDYING
                                 </div>
                                 <div>
-                                    <h4 id="resume-section-title" class="font-headline-md text-2xl font-bold text-on-surface">Section 2: Fundamentals of Security</h4>
+                                    <h4 id="resume-section-title" class="font-headline-md text-2xl font-bold text-[#FFFFFF]">Section 2: Fundamentals of Security</h4>
                                     <p id="resume-section-desc" class="font-body-md text-sm text-on-surface-variant mt-2">Study CIA triad, authorization models, and zero trust architectures.</p>
                                 </div>
                             </div>
@@ -434,7 +434,7 @@
 
                 <!-- Active Section Title -->
                 <div class="bg-surface-container/30 border border-outline-variant/20 p-6 rounded-xl">
-                    <h2 id="library-section-title" class="font-headline-lg text-2xl font-bold text-on-surface">Section Name</h2>
+                    <h2 id="library-section-title" class="font-headline-lg text-2xl font-bold text-[#FFFFFF]">Section Name</h2>
                     <p id="library-section-meta" class="text-xs text-on-surface-variant mt-1.5 font-mono"></p>
                 </div>
 
@@ -450,7 +450,7 @@
             
             <div class="w-full max-w-2xl mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div class="flex flex-col">
-                    <span class="font-headline-md text-2xl font-bold text-on-surface">Flashcards Practice Lab</span>
+                    <span class="font-headline-md text-2xl font-bold text-[#FFFFFF]">Flashcards Practice Lab</span>
                     <span id="practice-card-counter" class="text-sm text-on-surface-variant font-mono mt-0.5">Card 0 of 0</span>
                 </div>
                 
@@ -481,7 +481,7 @@
                         <div class="absolute top-4 right-4" id="card-confidence-badge"></div>
                         
                         <span id="card-front-section" class="text-xs text-primary font-bold uppercase tracking-widest font-mono mb-4">SECTION NAME</span>
-                        <h3 id="card-front-title" class="font-headline-lg text-2xl md:text-3xl font-bold text-on-surface leading-snug max-w-lg">
+                        <h3 id="card-front-title" class="font-headline-lg text-2xl md:text-3xl font-bold text-[#FDE047] leading-snug max-w-lg">
                             Concept Question
                         </h3>
                         <p class="mt-8 text-sm text-on-surface-variant font-mono animate-pulse">Click card or press Space to flip</p>
@@ -495,7 +495,7 @@
                     <!-- Card Back -->
                     <div class="flashcard-back absolute w-full h-full bg-surface-container-highest border border-primary/30 rounded-2xl flex flex-col p-8 md:p-12 overflow-y-auto custom-scrollbar">
                         <span class="text-xs text-primary font-bold uppercase tracking-widest font-mono mb-3">EXPLANATION</span>
-                        <h4 id="card-back-title" class="font-headline-md text-xl font-bold text-on-surface mb-4">Concept Name</h4>
+                        <h4 id="card-back-title" class="font-headline-md text-xl font-bold text-[#FDE047] mb-4">Concept Name</h4>
                         
                         <div class="space-y-4 text-left w-full">
                             <p id="card-back-def" class="font-body-lg text-sm md:text-base text-on-surface leading-relaxed">
@@ -568,7 +568,7 @@
                     <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center border-b border-outline-variant/30 pb-4 gap-4">
                         <div>
                             <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold font-mono">CUSTOMIZABLE EXAM</span>
-                            <h1 class="font-headline-lg text-2xl md:text-3xl font-bold text-on-surface mt-2">Security+ Custom Practice Exam</h1>
+                            <h1 class="font-headline-lg text-2xl md:text-3xl font-bold text-[#FFFFFF] mt-2">Security+ Custom Practice Exam</h1>
                             <p class="text-sm text-on-surface-variant mt-1">Configure your mock test to target specific domains, question sizes, and timings.</p>
                         </div>
                     </div>
@@ -1228,7 +1228,8 @@
         const filtered = section.concepts.filter(c => {
             return c.name.toLowerCase().includes(query) || 
                    (c.definition && c.definition.toLowerCase().includes(query)) ||
-                   (c.analogy && c.analogy.toLowerCase().includes(query));
+                   (c.analogy && c.analogy.toLowerCase().includes(query)) ||
+                   (c.raw_content && c.raw_content.toLowerCase().includes(query));
         });
 
         renderLibraryConcepts(filtered);
@@ -1861,7 +1862,8 @@
             section.concepts.forEach(concept => {
                 if (concept.name.toLowerCase().includes(query) || 
                     (concept.definition && concept.definition.toLowerCase().includes(query)) ||
-                    (concept.analogy && concept.analogy.toLowerCase().includes(query))) {
+                    (concept.analogy && concept.analogy.toLowerCase().includes(query)) ||
+                    (concept.raw_content && concept.raw_content.toLowerCase().includes(query))) {
                     
                     matches.push({
                         sectionId: section.sectionId,
@@ -1935,7 +1937,7 @@
 
         return `
             <div class="glass-card p-6 rounded-xl space-y-4">
-                <h3 class="font-headline-md text-xl font-bold text-primary">${concept.name}</h3>
+                <h3 class="font-headline-md text-xl font-bold text-[#FDE047]">${concept.name}</h3>
                 ${parseMarkdownToHtml(concept.raw_content)}
             </div>
         `;
@@ -1972,12 +1974,12 @@
                     html += `<div class="text-[11px] text-on-surface-variant opacity-75 bg-surface-container-high/40 p-2 rounded border border-outline-variant/30 inline-block font-mono my-1">${replaceLibraryInline(quoteContent)}</div>`;
                 } else {
                     html += `
-                        <div class="bg-primary/5 border border-primary/20 p-4 rounded-lg relative overflow-hidden flex items-start gap-3 my-3">
-                            <div class="text-primary mt-1 flex-shrink-0">
+                        <div class="bg-[#FB7185]/5 border border-[#FB7185]/20 p-4 rounded-lg relative overflow-hidden flex items-start gap-3 my-3">
+                            <div class="text-[#FB7185] mt-1 flex-shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                             </div>
                             <div class="flex-1 min-w-0">
-                                <span class="font-label-sm text-primary uppercase tracking-wider block font-bold text-[10px] mb-1">Analogía / Contexto</span>
+                                <span class="font-label-sm text-[#FB7185] uppercase tracking-wider block font-bold text-[10px] mb-1">Analogía / Contexto</span>
                                 <div class="space-y-2 text-on-surface-variant italic text-sm md:text-base">
                                     ${parseMarkdownToHtml(quoteContent)}
                                 </div>
@@ -2025,11 +2027,35 @@
             // ── skip # / ## (already used as concept name) ────────────
             if (line.startsWith('## ') || line.startsWith('# ')) continue;
 
-            // ── ### sub-heading ────────────────────────────────────────
+            // ── ###### sub-sub-sub-sub-heading (H6) ─────────────────────
+            if (line.startsWith('###### ')) {
+                closeList(); closeTable();
+                const sub = line.replace(/^######\s*/, '').replace(/⚠️|💡|📚/g, '').trim();
+                html += `<h6 class="font-semibold text-[#C084FC] text-xs uppercase tracking-wider mt-3 mb-1 block">${sub}</h6>`;
+                continue;
+            }
+
+            // ── ##### sub-sub-sub-heading (H5) ──────────────────────────
+            if (line.startsWith('##### ')) {
+                closeList(); closeTable();
+                const sub = line.replace(/^#####\s*/, '').replace(/⚠️|💡|📚/g, '').trim();
+                html += `<h6 class="font-semibold text-[#FB7185] text-xs uppercase tracking-wider mt-3 mb-1 block">${sub}</h6>`;
+                continue;
+            }
+
+            // ── #### sub-sub-heading (H4) ────────────────────────────────
+            if (line.startsWith('#### ')) {
+                closeList(); closeTable();
+                const sub = line.replace(/^####\s*/, '').replace(/⚠️|💡|📚/g, '').trim();
+                html += `<h5 class="font-semibold text-[#2DD4BF] text-xs uppercase tracking-wider mt-4 mb-1.5 block">${sub}</h5>`;
+                continue;
+            }
+
+            // ── ### sub-heading (H3) ────────────────────────────────────
             if (line.startsWith('### ')) {
                 closeList(); closeTable();
                 const sub = line.replace(/^###\s*/, '').replace(/⚠️|💡|📚/g, '').trim();
-                html += `<h4 class="font-semibold text-on-surface text-sm uppercase tracking-wider mt-5 mb-2 border-b border-outline-variant/30 pb-1">${sub}</h4>`;
+                html += `<h4 class="font-semibold text-[#4ADE80] text-sm uppercase tracking-wider mt-5 mb-2 block">${sub}</h4>`;
                 continue;
             }
 
@@ -2094,7 +2120,7 @@
     function replaceLibraryInline(text) {
         if (!text) return '';
         // bold
-        let result = text.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-semibold text-on-surface">$1</strong>');
+        let result = text.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-semibold text-[#FFFFFF]">$1</strong>');
         // italic with * or _
         result = result.replace(/\*([^*]+)\*/g, '<em class="italic text-on-surface-variant/90">$1</em>');
         // inline code

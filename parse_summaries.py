@@ -60,11 +60,13 @@ def extract_auto_definition(raw_lines, tables):
             if len(desc) > 10:
                 return f"{name}: {desc}"
 
-    # 3. First ### sub-heading
+    # 3. First ### or #### sub-heading
     for line in raw_lines:
         s = line.strip()
         if s.startswith('### '):
             return strip_md_inline(s[4:])
+        elif s.startswith('#### '):
+            return strip_md_inline(s[5:])
 
     return ""
 

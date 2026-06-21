@@ -5651,5 +5651,1042 @@ const STUDY_DATA = [
         "raw_content": "| Term | Definition |\n| ---- | ---------- |\n| **Audit** | Systematic evaluation of systems and controls by an independent entity |\n| **Assessment** | In-depth analysis to identify vulnerabilities and risks |\n| **Internal Audit** | Evaluation by the organization's own audit team |\n| **External Audit** | Evaluation by an independent third party |\n| **Self-Assessment** | Organization's internal evaluation against specific standards |\n| **Audit Committee** | Board-level group overseeing audit and compliance activities |\n| **Compliance** | Adherence to laws, regulations, standards, and internal policies |\n| **Examination** | Detailed external inspection including personnel testing and policy review |\n| **Red Team** | Offensive penetration testing team simulating real attackers |\n| **Blue Team** | Defensive penetration testing team detecting and responding to attacks |\n| **Purple Team** | Integrated approach combining Red and Blue Team in one engagement |\n| **Reconnaissance** | Information gathering phase before a penetration test |\n| **Active Reconnaissance** | Direct engagement with the target to gather information (higher detection risk) |\n| **Passive Reconnaissance** | Information gathering without engaging the target (lower detection risk) |\n| **Known Environment** | Pen test where testers receive full details about the target infrastructure |\n| **Partially Known Environment** | Pen test where testers receive limited information about the target |\n| **Unknown Environment** | Pen test where testers receive minimal or no information about the target |\n| **Metasploit** | Multipurpose penetration testing framework with exploits, payloads, and post modules |\n| **Payload** | Code delivered by an exploit that runs on the target to grant access or control |\n| **Bind Shell** | Shell where the target opens a listening port; attacker connects to it |\n| **Reverse Shell** | Shell where the target connects back to the attacker's listener |\n| **Session** | Active communication channel between Metasploit and a compromised host |\n| **Attestation** | Formal validation asserting the accuracy and authenticity of findings |\n| **Letter of Attestation** | Official document proving a penetration test was completed |\n| **Software Attestation** | Cryptographic validation of software integrity |\n| **Hardware Attestation** | Validation of hardware integrity (e.g., via TPM) |\n| **System Attestation** | Validation of a system's overall security posture |\n| **GLBA** | Gramm-Leach-Bliley Act — financial data privacy regulation |\n| **HITECH** | Health Information Technology for Economic and Clinical Health Act |\n| **TPM** | Trusted Platform Module — hardware chip for security measurements and attestation |\n| **EternalBlue** | MS17-010 vulnerability exploited by WannaCry ransomware, targets SMB |\n| **Metasploitable 2** | Intentionally vulnerable Linux VM created by Rapid7 for penetration testing practice |\n| **MCIT** | Minnesota Counties Intergovernmental Trust — source of sample internal assessment checklist |\n| **NOPs** | No-Operations — CPU instructions that do nothing; used to keep payload sizes consistent |"
       }
     ]
+  },
+  {
+    "sectionId": "S14",
+    "sectionTitle": "Section 14: Cyber Resilience and Redundancy",
+    "concepts": [
+      {
+        "name": "Cyber Resilience and Redundancy (Overview)",
+        "definition": "Cyber resilience is an entity's ability to continuously deliver its intended outcome despite adverse cyber events; redundancy is having additional systems, equipment, or processes to ensure continued functionality if the primary ones fail.",
+        "analogy": "*Si la resiliencia cibernética es la capacidad de un barco de seguir flotando aunque tenga una vía de agua, la redundancia son los compartimentos estancos extra que evitan que ese barco se hunda por completo.*",
+        "tables": [],
+        "list_items": [
+          "Redundancy reduces the chance of **total system failure** by giving the organization a backup to fall back on when the primary system fails.",
+          "High resilience ensures organizations can **swiftly recover** and continue business operations even during a cyberattack or technical failure."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** Cyber resilience is an entity's ability to continuously deliver its intended outcome despite adverse cyber events; redundancy is having additional systems, equipment, or processes to ensure continued functionality if the primary ones fail.\n\n> *Si la resiliencia cibernética es la capacidad de un barco de seguir flotando aunque tenga una vía de agua, la redundancia son los compartimentos estancos extra que evitan que ese barco se hunda por completo.*\n\nThis section maps to **Domain 3, Objective 3.4**: *Explain the importance of resilience and recovery in security architecture.* It covers, in order: High Availability, Data Redundancy (RAID), Configuring a RAID, Capacity Planning, Powering Data Centers, Data Backups, Continuity of Operations Plan, Redundant Site Considerations, and Resilience & Recovery Testing.\n\n* Redundancy reduces the chance of **total system failure** by giving the organization a backup to fall back on when the primary system fails.\n* High resilience ensures organizations can **swiftly recover** and continue business operations even during a cyberattack or technical failure."
+      },
+      {
+        "name": "High Availability",
+        "definition": "Distributing data, applications, and services across several different cloud-based environments as an additional layer of redundancy.",
+        "analogy": "*Es como un restaurante con varios cocineros: si uno se enferma, los demás siguen sirviendo platos sin que el cliente note la diferencia.*",
+        "tables": [
+          {
+            "headers": [
+              "Standard",
+              "Uptime %",
+              "Max Downtime/Year"
+            ],
+            "rows": [
+              [
+                "**Five Nines** (gold standard)",
+                "99.999%",
+                "~5 minutes"
+              ],
+              [
+                "**Six Nines** (some cloud networks)",
+                "99.9999%",
+                "~31 seconds"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Redundancy Type",
+              "How It's Achieved"
+            ],
+            "rows": [
+              [
+                "**Power supplies**",
+                "Dual power supplies in a server, UPS, backup generator, or connections to two+ power grids"
+              ],
+              [
+                "**Network connections**",
+                "Multiple cabled connections, or a cable + wireless connection"
+              ],
+              [
+                "**Servers/services**",
+                "Load-balanced or clustered server architecture; redundant software service instances"
+              ],
+              [
+                "**Service providers**",
+                "Two or more providers (e.g., ISP, payment processor) so a backup is always available"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Requests go to the **load balancer first**, which then redirects them to whichever server (of several) can respond efficiently.",
+          "Example: a small blog with a few dozen readers can run on one server, but once it grows to thousands of readers, a single server is insufficient — two or three servers behind a load balancer prevent overload.",
+          "Clustering focuses on keeping an application available during a **hardware failure**, eliminating single points of failure — unlike load balancing, which focuses on distributing traffic.",
+          "Load balancing and clustering can be **combined**: load balancing manages resources under normal conditions, while clustering takes over if a component or system fails.",
+          "Example: Dion Training uses **Stripe** as its primary payment processor and keeps a secondary processor pre-configured in case Stripe suffers a catastrophic outage.",
+          "Example: two **domain controllers** (primary + secondary) let one be patched/restarted while the other keeps serving users.",
+          "⚠️ Full hardware redundancy roughly **doubles cost** — each design decision should weigh whether redundancy is needed in hardware, or can instead be achieved via software/cloud services.",
+          "Mitigates single point of failure — if one cloud provider goes down, workload shifts to another with minimal disruption.",
+          "Adds flexibility for **scaling** and **cost optimization** (different providers have different pricing).",
+          "Avoids **vendor lock-in**, giving more leverage in negotiations or migrations."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** High availability (HA) is the ability of a service to remain continuously available by minimizing downtime to the lowest amount possible.\n\n> *Es como un restaurante con varios cocineros: si uno se enferma, los demás siguen sirviendo platos sin que el cliente note la diferencia.*\n\nTo achieve HA, systems should use **load balancing or clustering**, have **redundancy** built in, and (in cloud environments) use a **multi-cloud** approach so the service can withstand multiple points of failure before becoming unavailable.\n\n### Uptime & The \"Nines\" of Availability\n\nAvailability is measured as **uptime**, expressed as a percentage of time the system stays online over a given period.\n\n| Standard | Uptime % | Max Downtime/Year |\n| --- | --- | --- |\n| **Five Nines** (gold standard) | 99.999% | ~5 minutes |\n| **Six Nines** (some cloud networks) | 99.9999% | ~31 seconds |\n\n> Most organizations actually need more downtime than this to install patches, replace failed drives, or swap network hardware — so planned maintenance windows must be factored in.\n\n### Load Balancing\n\n* **Definition:** The process of distributing workloads across multiple computing resources to optimize resource use, maximize throughput, minimize response time, and prevent overloading any single resource.\n\n> *Es como un guardia de tránsito en una intersección concurrida: dirige los autos (peticiones) hacia distintos carriles (servidores) para que ninguno se congestione.*\n\n- Requests go to the **load balancer first**, which then redirects them to whichever server (of several) can respond efficiently.\n- Example: a small blog with a few dozen readers can run on one server, but once it grows to thousands of readers, a single server is insufficient — two or three servers behind a load balancer prevent overload.\n\n### Clustering\n\n* **Definition:** The use of multiple computers, storage devices, or redundant network connections working together as a single system to provide higher availability, reliability, and scalability.\n\n> *Es como un equipo de relevos: si un corredor se lesiona, otro miembro del equipo toma la posta sin que la carrera se detenga.*\n\n- Clustering focuses on keeping an application available during a **hardware failure**, eliminating single points of failure — unlike load balancing, which focuses on distributing traffic.\n- Load balancing and clustering can be **combined**: load balancing manages resources under normal conditions, while clustering takes over if a component or system fails.\n\n### Redundancy (Built into the Architecture)\n\n* **Definition:** The duplication of critical components or functions of a system to increase its overall reliability.\n\n> *Es como llevar una llanta de repuesto en el carro: no la usas todos los días, pero te salva cuando la principal falla.*\n\n| Redundancy Type | How It's Achieved |\n| --- | --- |\n| **Power supplies** | Dual power supplies in a server, UPS, backup generator, or connections to two+ power grids |\n| **Network connections** | Multiple cabled connections, or a cable + wireless connection |\n| **Servers/services** | Load-balanced or clustered server architecture; redundant software service instances |\n| **Service providers** | Two or more providers (e.g., ISP, payment processor) so a backup is always available |\n\n- Example: Dion Training uses **Stripe** as its primary payment processor and keeps a secondary processor pre-configured in case Stripe suffers a catastrophic outage.\n- Example: two **domain controllers** (primary + secondary) let one be patched/restarted while the other keeps serving users.\n- ⚠️ Full hardware redundancy roughly **doubles cost** — each design decision should weigh whether redundancy is needed in hardware, or can instead be achieved via software/cloud services.\n\n### Multi-Cloud Systems\n\n* **Definition:** Distributing data, applications, and services across several different cloud-based environments as an additional layer of redundancy.\n\n> *Es como tener cuentas en dos bancos diferentes: si uno tiene un problema técnico, sigues teniendo acceso a tu dinero en el otro.*\n\nBenefits:\n- Mitigates single point of failure — if one cloud provider goes down, workload shifts to another with minimal disruption.\n- Adds flexibility for **scaling** and **cost optimization** (different providers have different pricing).\n- Avoids **vendor lock-in**, giving more leverage in negotiations or migrations.\n\n⚠️ Requires consistent **data management, unified threat management, and policy enforcement** across all cloud environments to maintain security and compliance posture."
+      },
+      {
+        "name": "Data Redundancy (RAID)",
+        "definition": "Combines RAID 1 and RAID 0 — data is first mirrored into RAID 1 sets, then striped across those mirrored sets using RAID 0.",
+        "analogy": "*Es como repartir las páginas de un libro importante entre varios amigos: si uno pierde su parte, los demás (o una copia extra) permiten reconstruir el libro completo.*",
+        "tables": [
+          {
+            "headers": [
+              "Classification",
+              "Description",
+              "Example RAID Levels"
+            ],
+            "rows": [
+              [
+                "**Failure-Resistant**",
+                "Withstands hardware malfunction without losing data, via mirroring",
+                "RAID 1, RAID 10"
+              ],
+              [
+                "**Fault-Tolerant**",
+                "Continues operating with no downtime and can rebuild lost data from remaining healthy devices (mirroring or striping with parity)",
+                "RAID 1, RAID 5, RAID 6, RAID 10"
+              ],
+              [
+                "**Disaster-Tolerant**",
+                "Broadest protection; uses two independent zones with full access to all data (full mirrors)",
+                "RAID 1, RAID 10"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "RAID",
+              "Min. Disks",
+              "Keyword",
+              "Max Disk Loss (no downtime)",
+              "Fault Tolerance?"
+            ],
+            "rows": [
+              [
+                "**RAID 0**",
+                "2",
+                "Striping",
+                "0",
+                "❌ No"
+              ],
+              [
+                "**RAID 1**",
+                "2",
+                "Mirroring",
+                "1",
+                "✅ Yes"
+              ],
+              [
+                "**RAID 5**",
+                "3",
+                "Striping + parity",
+                "1",
+                "✅ Yes"
+              ],
+              [
+                "**RAID 6**",
+                "4",
+                "Striping + double parity",
+                "2",
+                "✅ Yes"
+              ],
+              [
+                "**RAID 10**",
+                "4 (even #)",
+                "Striped mirrors",
+                "2 (1 per mirror pair)",
+                "✅ Yes"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Keyword: **striping**",
+          "Minimum **2 disks** required.",
+          "Use case: high-end video editing workstations needing raw read/write speed.",
+          "Keyword: **mirroring**",
+          "Can survive the loss of **1 device** with zero downtime/data loss (least downtime of all RAID types — full copy is always ready).",
+          "Use case: storing finished video projects with an always-available backup.",
+          "Keyword: **striping with parity**",
+          "Survives the loss of **1 disk**; data is rebuilt from parity, but performance slows because missing data is calculated on the fly.",
+          "Supports **hot swap**: a failed drive can be pulled and a new one installed while the server keeps running; the array rebuilds the missing data using stripes + parity.",
+          "Keyword: **striping with double parity**",
+          "Can survive the loss of **2 disks** simultaneously without downtime — more resiliency than RAID 5.",
+          "Keyword: **striped array of mirrored arrays**",
+          "Requires an **even number** of disks, minimum **4** (to form 2 mirrored RAID 1 sets).",
+          "Provides fault tolerance (mirroring) **and** faster speed (striping).",
+          "Can survive the loss of **up to 2 disks**, but only if they are **not from the same mirrored pair** — losing both disks in one mirror pair causes data loss; losing fault tolerance (but not data) if you lose one disk per pair."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** A RAID (Redundant Array of Independent Disks) combines multiple physical storage devices into a single logical storage device recognized by the operating system, used to achieve data redundancy and/or performance.\n\n> *Es como repartir las páginas de un libro importante entre varios amigos: si uno pierde su parte, los demás (o una copia extra) permiten reconstruir el libro completo.*\n\n### RAID 0 — Striping\n\n* **Definition:** Splits (stripes) data evenly across two or more disks to increase performance; provides **no redundancy or fault tolerance**.\n\n> *Es como repartir el trabajo entre dos albañiles para terminar más rápido — pero si uno se ausenta, la obra completa se detiene.*\n\n- Keyword: **striping**\n- Minimum **2 disks** required.\n- Use case: high-end video editing workstations needing raw read/write speed.\n\n### RAID 1 — Mirroring\n\n* **Definition:** Maintains an identical, mirrored copy of data on two or more storage devices to provide fault tolerance and read performance.\n\n> *Es como tener un gemelo idéntico que guarda exactamente la misma información que tú: si a uno le pasa algo, el otro sigue funcionando con todo intacto.*\n\n- Keyword: **mirroring**\n- Can survive the loss of **1 device** with zero downtime/data loss (least downtime of all RAID types — full copy is always ready).\n- Use case: storing finished video projects with an always-available backup.\n\n### RAID 5 — Striping with Parity\n\n* **Definition:** Stripes data across multiple disks and writes parity data across the array to provide fault tolerance; requires a minimum of **3 disks**.\n\n> *Es como un grupo de estudio donde, si alguien pierde sus apuntes de una clase, los demás pueden reconstruir esa clase combinando lo que cada uno recuerda (la \"paridad\").*\n\n- Keyword: **striping with parity**\n- Survives the loss of **1 disk**; data is rebuilt from parity, but performance slows because missing data is calculated on the fly.\n- Supports **hot swap**: a failed drive can be pulled and a new one installed while the server keeps running; the array rebuilds the missing data using stripes + parity.\n\n### RAID 6 — Striping with Double Parity\n\n* **Definition:** Like RAID 5, but writes **two** sets of parity data instead of one; requires a minimum of **4 disks**.\n\n> *\"RAID 6 es uno mejor que RAID 5\" — es como llevar dos copias de seguridad de tus apuntes en vez de una, por si pierdes dos compañeros de estudio a la vez en lugar de solo uno.*\n\n- Keyword: **striping with double parity**\n- Can survive the loss of **2 disks** simultaneously without downtime — more resiliency than RAID 5.\n\n### RAID 10 (RAID 1+0) — Striped Array of Mirrored Arrays\n\n* **Definition:** Combines RAID 1 and RAID 0 — data is first mirrored into RAID 1 sets, then striped across those mirrored sets using RAID 0.\n\n> *Es como tener dos parejas de gemelos idénticos (mirroring) y luego repartir el trabajo entre las dos parejas para ir más rápido (striping).*\n\n- Keyword: **striped array of mirrored arrays**\n- Requires an **even number** of disks, minimum **4** (to form 2 mirrored RAID 1 sets).\n- Provides fault tolerance (mirroring) **and** faster speed (striping).\n- Can survive the loss of **up to 2 disks**, but only if they are **not from the same mirrored pair** — losing both disks in one mirror pair causes data loss; losing fault tolerance (but not data) if you lose one disk per pair.\n\n### RAID Resilience Classification\n\n| Classification | Description | Example RAID Levels |\n| --- | --- | --- |\n| **Failure-Resistant** | Withstands hardware malfunction without losing data, via mirroring | RAID 1, RAID 10 |\n| **Fault-Tolerant** | Continues operating with no downtime and can rebuild lost data from remaining healthy devices (mirroring or striping with parity) | RAID 1, RAID 5, RAID 6, RAID 10 |\n| **Disaster-Tolerant** | Broadest protection; uses two independent zones with full access to all data (full mirrors) | RAID 1, RAID 10 |\n\n> *Piensa en estas tres categorías como niveles de un seguro: resistente a fallos es el seguro básico, tolerante a fallos es el seguro completo, y tolerante a desastres es el seguro que te cubre incluso si toda la casa se incendia.*\n\n### RAID Quick Comparison\n\n| RAID | Min. Disks | Keyword | Max Disk Loss (no downtime) | Fault Tolerance? |\n| --- | --- | --- | --- | --- |\n| **RAID 0** | 2 | Striping | 0 | ❌ No |\n| **RAID 1** | 2 | Mirroring | 1 | ✅ Yes |\n| **RAID 5** | 3 | Striping + parity | 1 | ✅ Yes |\n| **RAID 6** | 4 | Striping + double parity | 2 | ✅ Yes |\n| **RAID 10** | 4 (even #) | Striped mirrors | 2 (1 per mirror pair) | ✅ Yes |\n\nUsing RAIDs increases overall **availability** when designing high-availability systems for enterprise networks."
+      },
+      {
+        "name": "Configuring a RAID (Hands-On Demo)",
+        "definition": "The practical process of creating software RAID arrays — in this case using the Windows Disk Management tool — to apply RAID 0 and RAID 1 concepts on physical disks.",
+        "analogy": "*Es como decidir si organizas tu clóset para encontrar la ropa más rápido (RAID 0, rendimiento) o para tener un respaldo idéntico de tu ropa favorita por si se moja una parte (RAID 1, redundancia).*",
+        "tables": [],
+        "list_items": [
+          "Windows 10 machine with a C: drive (OS) plus **four blank, initialized disks**.",
+          "Goal: build two RAIDs — one for **performance** (video editing), one for **redundancy**."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** The practical process of creating software RAID arrays — in this case using the Windows Disk Management tool — to apply RAID 0 and RAID 1 concepts on physical disks.\n\n> *Es como decidir si organizas tu clóset para encontrar la ropa más rápido (RAID 0, rendimiento) o para tener un respaldo idéntico de tu ropa favorita por si se moja una parte (RAID 1, redundancia).*\n\n### Demo Setup\n- Windows 10 machine with a C: drive (OS) plus **four blank, initialized disks**.\n- Goal: build two RAIDs — one for **performance** (video editing), one for **redundancy**.\n\n### Building RAID 0 (Striped Volume — Disks 1 & 2)\n1. Right-click Disk 1 → **New Striped Volume**.\n2. Add Disk 2, assign drive letter (e.g., `D:`), name it (e.g., \"editing\").\n3. Result: two 800 GB drives combine into **1.57 TB** logical drive D — 100% usable space, but **if either disk fails, all of drive D is lost**.\n\n### Building RAID 1 (Mirrored Volume — Disks 3 & 4)\n1. Select both remaining disks → **New Mirrored Volume**.\n2. Name it (e.g., \"redundant\" → drive `R:`), format it.\n3. Result: only **one disk's worth of capacity** is usable (50% overhead) because both disks hold identical data — one acts as primary, one as backup. If either fails, the other keeps serving data, providing **fault tolerance**.\n\n> ⚠️ **Trade-off:** Performance + double space (RAID 0) **or** redundancy + half space (RAID 1) — you can't have both with the same set of disks, but you can build both arrays side-by-side for different purposes (as shown here: one scratch drive, one redundant storage drive)."
+      },
+      {
+        "name": "Capacity Planning",
+        "definition": "Optimizing business processes so they can withstand fluctuations (increases or decreases) in demand, often via streamlining, automation, or outsourcing.",
+        "analogy": "*Es como planificar un viaje familiar largo: necesitas suficiente gasolina (tecnología), espacio en el carro (infraestructura), conductores de repuesto (personas), y una buena ruta (procesos) antes de salir.*",
+        "tables": [],
+        "list_items": [
+          "Example: a retail store hires ~20 seasonal employees starting October 1st for the holiday rush, then offboards them after January 1st once demand drops.",
+          "Example: an e-commerce site must know its concurrent-user capacity; cloud-based services allow elastic scaling up during high-demand periods and back down afterward to control costs.",
+          "Example: a theater network operations center for the US government had to calculate power consumption and heat output per server to decide which servers could be hosted locally versus moved to the cloud due to limited data center square footage.",
+          "Example: manually onboarding 500 seasonal call-center employees would take days; automating account creation removes that bottleneck."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** A critical strategic planning effort that ensures an organization is adequately equipped to meet future demands at the right time and in the most cost-effective manner, across four key aspects: people, technology, infrastructure, and processes.\n\n> *Es como planificar un viaje familiar largo: necesitas suficiente gasolina (tecnología), espacio en el carro (infraestructura), conductores de repuesto (personas), y una buena ruta (procesos) antes de salir.*\n\n### People\n\n* **Definition:** Analyzing current personnel skillsets/capacity and forecasting future workforce needs (hiring, training, downsizing).\n\n> *Es como un equipo de fútbol que ficha jugadores extra justo antes de un torneo importante y los deja ir cuando termina la temporada.*\n\n- Example: a retail store hires ~20 seasonal employees starting October 1st for the holiday rush, then offboards them after January 1st once demand drops.\n\n### Technology\n\n* **Definition:** Understanding current technological resources (hardware/software), their utilization rate, and future technological demand, to determine if existing tech can scale or new investment is needed.\n\n> *Es como asegurarte de que tu cocina tenga suficientes estufas antes de aceptar pedidos para una fiesta enorme, no después.*\n\n- Example: an e-commerce site must know its concurrent-user capacity; cloud-based services allow elastic scaling up during high-demand periods and back down afterward to control costs.\n\n### Infrastructure\n\n* **Definition:** Planning for the physical space and utilities (offices, warehouses, production facilities, data centers) needed to support ongoing operations.\n\n> *Es como planificar cuántos estacionamientos necesita un edificio antes de construirlo, no después de que ya no caben los carros.*\n\n- Example: a theater network operations center for the US government had to calculate power consumption and heat output per server to decide which servers could be hosted locally versus moved to the cloud due to limited data center square footage.\n\n### Process\n\n* **Definition:** Optimizing business processes so they can withstand fluctuations (increases or decreases) in demand, often via streamlining, automation, or outsourcing.\n\n> *Es como tener una línea de ensamblaje automática en lugar de armar cada producto a mano cuando llegan mil pedidos de golpe.*\n\n- Example: manually onboarding 500 seasonal call-center employees would take days; automating account creation removes that bottleneck.\n\n### Real-World Example: Telemedicine Rollout\n\nA healthcare provider introducing telemedicine must address all four aspects together:\n1. **People** — train existing staff, hire remote-healthcare specialists.\n2. **Technology** — invest in a secure, compliant telemedicine platform that scales to handle traffic and data storage.\n3. **Infrastructure** — set up dedicated, private spaces for remote consultations.\n4. **Process** — build new workflows for scheduling, conducting, and following up on virtual visits, aligned with privacy regulations.\n\n> Capacity planning is not just about meeting today's demand — it's about being prepared for tomorrow's challenges and opportunities."
+      },
+      {
+        "name": "Powering Data Centers",
+        "definition": "A centralized hub that receives electrical power from a primary source and distributes it to one or more secondary circuits, using integrated circuit protection, monitoring, and load balancing.",
+        "analogy": "*Es como el sistema eléctrico de un hospital: tiene la corriente normal, baterías de respaldo y generadores, porque no puede permitirse un apagón ni un segundo.*",
+        "tables": [
+          {
+            "headers": [
+              "Condition",
+              "Description",
+              "Example (US 120V baseline)"
+            ],
+            "rows": [
+              [
+                "**Surge**",
+                "Small, unexpected voltage *increase*",
+                "120V → 125–130V"
+              ],
+              [
+                "**Spike**",
+                "Short transient voltage spike, often from short circuits, tripped breakers, or lightning",
+                "120V → 150–175V+"
+              ],
+              [
+                "**Sag**",
+                "Small, unexpected voltage *decrease*, short duration",
+                "120V → 115–117V"
+              ],
+              [
+                "**Undervoltage event** (formerly \"brownout\")",
+                "Sustained, more significant voltage drop",
+                "120V → 70–80V"
+              ],
+              [
+                "**Power loss event** (a.k.a. power failure / \"blackout\")",
+                "Total loss of power for a period of time",
+                "0V — note: power restoration can itself cause a damaging spike"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Generator Type",
+              "Fuel/Power Source",
+              "Characteristics"
+            ],
+            "rows": [
+              [
+                "**Portable gas engine**",
+                "Gasoline",
+                "Least expensive, low power output, noisy, high maintenance, manually started, connected via extension cord"
+              ],
+              [
+                "**Permanently installed**",
+                "Diesel, propane, or natural gas",
+                "Backbone of data center emergency power; can power an entire building for hours/days/weeks; auto-starts during outages"
+              ],
+              [
+                "**Battery inverter**",
+                "Lead-acid, nickel-cadmium, or lithium-ion batteries",
+                "Quieter, low maintenance, but only short-duration/limited wattage — bridges the gap until a longer-term generator comes online"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Cannot keep systems running through a significant undervoltage event or total power failure.",
+          "Typically provides only **15–60 minutes** of battery power during a complete outage — designed to bridge short gaps or allow safe shutdown, not for long-term outages.",
+          "Rack-mounted UPS units in data centers typically sustain a server rack for **~10–15 minutes**.",
+          "Standby/permanent generators typically take **30–60 seconds** to start up and reach full speed.",
+          "Can integrate with large UPS units and permanently installed generators for a seamless transition during a power loss event."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** The practice of architecting infrastructure with multiple forms of redundant power to keep data centers operational under all circumstances.\n\n> *Es como el sistema eléctrico de un hospital: tiene la corriente normal, baterías de respaldo y generadores, porque no puede permitirse un apagón ni un segundo.*\n\n### The Five Power Conditions\n\n| Condition | Description | Example (US 120V baseline) |\n| --- | --- | --- |\n| **Surge** | Small, unexpected voltage *increase* | 120V → 125–130V |\n| **Spike** | Short transient voltage spike, often from short circuits, tripped breakers, or lightning | 120V → 150–175V+ |\n| **Sag** | Small, unexpected voltage *decrease*, short duration | 120V → 115–117V |\n| **Undervoltage event** (formerly \"brownout\") | Sustained, more significant voltage drop | 120V → 70–80V |\n| **Power loss event** (a.k.a. power failure / \"blackout\") | Total loss of power for a period of time | 0V — note: power restoration can itself cause a damaging spike |\n\n> *Imagina la corriente eléctrica como el caudal de un río: un surge/spike es una crecida repentina, un sag/undervoltage es una sequía parcial, y un power loss es que el río se seca por completo.*\n\n### Line Conditioner\n\n* **Definition:** A device that overcomes minor fluctuations (surges, sags, undervoltage) by adjusting the power signal back to standard levels, delivering clean power.\n\n> *Es como un filtro de agua que normaliza la presión, quitando tanto el exceso como la falta, pero no puede crear agua de la nada si se corta el suministro por completo.*\n\n- Cannot keep systems running through a significant undervoltage event or total power failure.\n\n### Uninterruptible Power Supply (UPS)\n\n* **Definition:** A device providing emergency (battery) power to a system when the normal input power source has failed; also performs line-conditioning functions.\n\n> *Es como una batería portátil para tu celular: te da tiempo extra, pero no dura para siempre.*\n\n- Typically provides only **15–60 minutes** of battery power during a complete outage — designed to bridge short gaps or allow safe shutdown, not for long-term outages.\n- Rack-mounted UPS units in data centers typically sustain a server rack for **~10–15 minutes**.\n\n### Generators\n\n* **Definition:** A machine that converts mechanical energy into electrical energy via electromagnetic induction, used for extended backup power.\n\n> *Es como pasar de la batería de tu celular (UPS) a un panel solar portátil (generador): te da energía por mucho más tiempo, pero tarda un poco en encenderse.*\n\n| Generator Type | Fuel/Power Source | Characteristics |\n| --- | --- | --- |\n| **Portable gas engine** | Gasoline | Least expensive, low power output, noisy, high maintenance, manually started, connected via extension cord |\n| **Permanently installed** | Diesel, propane, or natural gas | Backbone of data center emergency power; can power an entire building for hours/days/weeks; auto-starts during outages |\n| **Battery inverter** | Lead-acid, nickel-cadmium, or lithium-ion batteries | Quieter, low maintenance, but only short-duration/limited wattage — bridges the gap until a longer-term generator comes online |\n\n- Standby/permanent generators typically take **30–60 seconds** to start up and reach full speed.\n\n### Power Distribution Center (PDC)\n\n* **Definition:** A centralized hub that receives electrical power from a primary source and distributes it to one or more secondary circuits, using integrated circuit protection, monitoring, and load balancing.\n\n> *Es como el panel de breakers de tu casa, pero a escala industrial: reparte la corriente de forma controlada para que ningún circuito se sobrecargue.*\n\n- Can integrate with large UPS units and permanently installed generators for a seamless transition during a power loss event."
+      },
+      {
+        "name": "Data Backups",
+        "definition": "Also called change tracking or logging — maintaining a meticulous record of every change made to data over time, enabling precise recovery to a specific point in time.",
+        "analogy": "*Es como tener fotocopias de tus documentos importantes guardadas en distintos lugares, en vez de confiar solo en el original.*",
+        "tables": [
+          {
+            "headers": [
+              "Type",
+              "Pros",
+              "Cons"
+            ],
+            "rows": [
+              [
+                "**Onsite**",
+                "Fast to restore from",
+                "Vulnerable to the same disaster (fire, flood) that hits the primary site"
+              ],
+              [
+                "**Offsite**",
+                "Protected from local/regional disasters; often cloud-based or shipped tapes",
+                "Slower to restore (especially physical media)"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Type",
+              "Protects"
+            ],
+            "rows": [
+              [
+                "**Data-at-rest encryption**",
+                "Data as it's written to the storage device"
+              ],
+              [
+                "**Data-in-transit encryption**",
+                "Data while moving to/from the backup destination"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Historical example: nightly onsite tape backups + weekly shipment of tapes to a facility ~1,000 miles away (pre-cloud era); today this is replaced by high-speed internet links between sites.",
+          "If RPO = 1 hour → backups must run at least hourly.",
+          "If RPO = 2 days → daily/nightly backups suffice.",
+          "Frequency should also reflect **rate of data change**: high-change environments may need backups every 30–45 minutes; low-change environments can run daily.",
+          "Balance backup frequency against available **time, storage, bandwidth, and cost**.",
+          "Reduces storage needs and allows more frequent, faster backups.",
+          "Especially valuable for databases/file servers, enabling rollback to a known-good state after corruption or accidental deletion.",
+          "If one server crashes, the other continues without interruption — ideal for high-availability environments that cannot tolerate downtime.",
+          "Especially valuable for databases and critical systems, legal proceedings, and compliance audits.",
+          "Requires careful management of: data tracking granularity, journal size/retention policy, and security against tampering."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** The process of creating duplicate copies of digital information to protect it against data loss, corruption, or unavailability — the cybersecurity \"don't put all your eggs in one basket\" principle.\n\n> *Es como tener fotocopias de tus documentos importantes guardadas en distintos lugares, en vez de confiar solo en el original.*\n\n### Onsite vs. Offsite Backups\n\n* **Definition:** Onsite backups are stored physically within the organization's own facility; offsite backups are stored at a geographically separate location to protect against physical disasters.\n\n> *Onsite es como guardar una copia de tu llave en el cajón de tu propia casa; offsite es como dejarle esa copia a un familiar que vive en otra ciudad — si tu casa se incendia, la copia de la ciudad vecina sigue intacta.*\n\n| Type | Pros | Cons |\n| --- | --- | --- |\n| **Onsite** | Fast to restore from | Vulnerable to the same disaster (fire, flood) that hits the primary site |\n| **Offsite** | Protected from local/regional disasters; often cloud-based or shipped tapes | Slower to restore (especially physical media) |\n\n- Historical example: nightly onsite tape backups + weekly shipment of tapes to a facility ~1,000 miles away (pre-cloud era); today this is replaced by high-speed internet links between sites.\n\n### Backup Frequency & RPO\n\n* **Definition:** The Recovery Point Objective (RPO) defines the maximum acceptable amount of data loss (measured in time), which dictates how frequently backups must run.\n\n> *Es como decidir cada cuánto guardas el progreso de un videojuego: si solo aceptas perder 5 minutos de avance, guardas cada 5 minutos.*\n\n- If RPO = 1 hour → backups must run at least hourly.\n- If RPO = 2 days → daily/nightly backups suffice.\n- Frequency should also reflect **rate of data change**: high-change environments may need backups every 30–45 minutes; low-change environments can run daily.\n- Balance backup frequency against available **time, storage, bandwidth, and cost**.\n\n### Encryption of Backups\n\n* **Definition:** Safeguarding backup data from unauthorized access by encrypting it both at rest and in transit.\n\n> *Es como guardar tus fotocopias importantes dentro de una caja fuerte cerrada con llave, no solo en un cajón cualquiera.*\n\n| Type | Protects |\n| --- | --- |\n| **Data-at-rest encryption** | Data as it's written to the storage device |\n| **Data-in-transit encryption** | Data while moving to/from the backup destination |\n\n### Snapshots\n\n* **Definition:** Point-in-time copies that capture a consistent, \"frozen\" state of data, recording only changes since the previous snapshot (more efficient than full backups).\n\n> *Es como tomar una foto de tu escritorio cada hora en vez de fotografiar toda la casa: solo capturas lo que cambió.*\n\n- Reduces storage needs and allows more frequent, faster backups.\n- Especially valuable for databases/file servers, enabling rollback to a known-good state after corruption or accidental deletion.\n\n### Data Recovery Process\n\n* **Definition:** Recovery is the ultimate goal of any backup strategy — regaining access to data after loss or system failure.\n\n> *Es como el plan de evacuación de un edificio: de nada sirve tenerlo escrito si nunca se practica con un simulacro.*\n\n1. **Select the right backup** (snapshot, offsite, or another onsite copy).\n2. **Initiate the recovery process** (access storage, begin restoration).\n3. **Data validation** (verify integrity/consistency of restored data).\n4. **Testing and validation** of the entire recovery process (identify bottlenecks).\n5. **Documentation and reporting** (record steps, time taken, challenges — for post-incident analysis/compliance).\n6. **Notification** of relevant stakeholders (IT, management, end users).\n\n⚠️ Backups are useless if recovery hasn't been tested — **practicing recovery at least once per month** is a best practice.\n\n### Replication\n\n* **Definition:** Making real-time or near real-time copies of data, keeping it stored in two places simultaneously (unlike periodic backups).\n\n> *Es como dos relojes sincronizados al milisegundo: si uno se detiene, el otro sigue marcando la hora correcta sin perder ni un segundo.*\n\n- If one server crashes, the other continues without interruption — ideal for high-availability environments that cannot tolerate downtime.\n\n### Journaling\n\n* **Definition:** Also called change tracking or logging — maintaining a meticulous record of every change made to data over time, enabling precise recovery to a specific point in time.\n\n> *Es como el historial de \"control de cambios\" de un documento de Word: puedes ver y revertir cada edición individual, no solo la última versión guardada.*\n\n- Especially valuable for databases and critical systems, legal proceedings, and compliance audits.\n- Requires careful management of: data tracking granularity, journal size/retention policy, and security against tampering."
+      },
+      {
+        "name": "Continuity of Operations Plan (COOP)",
+        "definition": "A subset of the BCP that focuses specifically on resuming operations quickly after a **disaster** (e.g., hurricanes, fires, floods, earthquakes).",
+        "analogy": "*Es como tener dos manuales distintos en una caja de emergencias: uno para \"problemas cotidianos\" (BCP) y otro específico para \"catástrofes mayores\" (DRP).*",
+        "tables": [],
+        "list_items": [
+          "Example: switching to a backup credit-card processor (then a tertiary one) if the primary merchant account is cancelled.",
+          "Example: a company near a major city created a \"Riots and Protests\" BCP section after street barricades prevented employees from reaching the office in 2020.",
+          "Example: Dion Training (Orlando, FL — hurricane-prone) hosts infrastructure entirely in AWS, spread across multiple regions/availability zones, and splits staff between the US and the Philippines so either team can cover for the other during regional disasters (hurricanes, floods, power/internet outages).",
+          "**Rule of thumb:** Incident → BCP issue. Disaster → DRP issue.",
+          "BCP/DRP development is the **responsibility of senior management** — without their support, the plan stalls.",
+          "Senior management appoints a **business continuity coordinator** who leads a **business continuity committee** with representatives from technology, legal, security, communications, and other departments (not just IT).",
+          "The committee determines **recovery priorities**, identifies/prioritizes critical systems, defines the **scope** of the plan (to avoid scope creep), and reports back to senior management — based on the organization's **risk appetite and risk tolerance**.",
+          "Large organizations may break the plan down by **business function** or **geographical area**, but all pieces must remain coherent during a crisis."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** A plan ensuring an organization can recover from a disruptive event or disaster, composed of two major components: the Business Continuity Plan (BCP) and the Disaster Recovery Plan (DRP).\n\n> *Es como tener dos manuales distintos en una caja de emergencias: uno para \"problemas cotidianos\" (BCP) y otro específico para \"catástrofes mayores\" (DRP).*\n\n### Business Continuity Plan (BCP)\n\n* **Definition:** Plans and processes used to respond to a **disruptive event** (not necessarily catastrophic) — covers both technical and non-technical disruptions to the business.\n\n> *Es como el plan B de un restaurante si se le acaba un ingrediente clave: ajusta el menú para seguir sirviendo clientes sin cerrar el local.*\n\n- Example: switching to a backup credit-card processor (then a tertiary one) if the primary merchant account is cancelled.\n- Example: a company near a major city created a \"Riots and Protests\" BCP section after street barricades prevented employees from reaching the office in 2020.\n\n### Disaster Recovery Plan (DRP)\n\n* **Definition:** A subset of the BCP that focuses specifically on resuming operations quickly after a **disaster** (e.g., hurricanes, fires, floods, earthquakes).\n\n> *Es como el seguro contra incendios de tu casa: es una parte específica de tu plan financiero general, pero solo entra en acción ante una catástrofe puntual.*\n\n- Example: Dion Training (Orlando, FL — hurricane-prone) hosts infrastructure entirely in AWS, spread across multiple regions/availability zones, and splits staff between the US and the Philippines so either team can cover for the other during regional disasters (hurricanes, floods, power/internet outages).\n- **Rule of thumb:** Incident → BCP issue. Disaster → DRP issue.\n\n### BC Committee & Senior Management Role\n\n> *Es como la junta directiva de un edificio de apartamentos: necesitas representantes de distintas áreas (no solo del electricista) para decidir cómo actuar ante una emergencia que afecta a todos.*\n\n- BCP/DRP development is the **responsibility of senior management** — without their support, the plan stalls.\n- Senior management appoints a **business continuity coordinator** who leads a **business continuity committee** with representatives from technology, legal, security, communications, and other departments (not just IT).\n- The committee determines **recovery priorities**, identifies/prioritizes critical systems, defines the **scope** of the plan (to avoid scope creep), and reports back to senior management — based on the organization's **risk appetite and risk tolerance**.\n- Large organizations may break the plan down by **business function** or **geographical area**, but all pieces must remain coherent during a crisis."
+      },
+      {
+        "name": "Redundant Site Considerations",
+        "definition": "Spreading resources and redundant sites across different physical/geographic locations to increase redundancy.",
+        "analogy": "*Es como tener una casa de respaldo a la que mudarte si la principal sufre un desastre — la pregunta es qué tan amueblada está esa casa de repuesto.*",
+        "tables": [
+          {
+            "headers": [
+              "Virtual Site Type",
+              "Behavior"
+            ],
+            "rows": [
+              [
+                "**Virtual hot site**",
+                "Fully replicated, instantly accessible cloud environment"
+              ],
+              [
+                "**Virtual warm site**",
+                "Partially replicated resources/data, quickly scalable to full functionality"
+              ],
+              [
+                "**Virtual cold site**",
+                "Critical data/configs stored in the cloud; resources activated only during a disaster, minimizing ongoing cost"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Requires \"one of everything\" (duplicate hardware) plus continuous data mirroring — historically expensive, now much easier/cheaper via cloud platforms (AWS, Azure, GCP).",
+          "Usually reserved for **mission-critical functions/people only** (e.g., 50 of 500 employees), due to cost — covers servers/data readily, but office space for all staff is a separate challenge.",
+          "Cheaper than a hot site, with a longer recovery time trade-off.",
+          "Cheapest and slowest option — can take **1–2 months** to convert into a functioning headquarters.",
+          "Example: the US military's **DJC2** (Deployable Joint Command and Control) system can deploy anywhere in ~72 hours, provide partial functionality in ~24 hours after arrival, and reach full functionality within 7 days (used after the 2010 Haiti earthquake) — fully self-contained with power, connectivity, and technicians for up to 200 people.",
+          "Example: if the primary site uses Cisco equipment, the redundant site might use a different vendor — so a Cisco-specific vulnerability doesn't take down both sites simultaneously.",
+          "Trade-off: platform diversity adds complexity/support cost vs. using identical equipment everywhere (simpler support, lower maintenance, but shared vulnerability risk). Senior management weighs this risk/reward decision."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** A redundant site is a backup location or facility that can take over essential functions and operations if the primary site experiences a failure or disruption.\n\n> *Es como tener una casa de respaldo a la que mudarte si la principal sufre un desastre — la pregunta es qué tan amueblada está esa casa de repuesto.*\n\n### Hot Site\n\n* **Definition:** A site that is up and running continuously, ready for an almost-instant switchover from the main site with minimal downtime.\n\n> *Es como un departamento gemelo, completamente amueblado y con todo encendido, listo para que te mudes en cuestión de minutos.*\n\n- Requires \"one of everything\" (duplicate hardware) plus continuous data mirroring — historically expensive, now much easier/cheaper via cloud platforms (AWS, Azure, GCP).\n- Usually reserved for **mission-critical functions/people only** (e.g., 50 of 500 employees), due to cost — covers servers/data readily, but office space for all staff is a separate challenge.\n\n### Warm Site\n\n* **Definition:** A partially equipped site with power, phone lines, and network connectivity already in place, but lacking computers/phones — operational within a few days rather than hours.\n\n> *Es como un apartamento con la electricidad y el agua ya conectadas, pero sin muebles — necesitas comprar algunas cosas antes de mudarte.*\n\n- Cheaper than a hot site, with a longer recovery time trade-off.\n\n### Cold Site\n\n* **Definition:** A site with minimal facilities (e.g., just a leased empty building with basic utilities like bathrooms, tables/chairs) — no network, phones, or computers.\n\n> *Es como alquilar un terreno vacío: tienes el espacio, pero tienes que construir todo desde cero.*\n\n- Cheapest and slowest option — can take **1–2 months** to convert into a functioning headquarters.\n\n### Mobile Site\n\n* **Definition:** A portable recovery unit (trailers or tents) that can be configured as a hot, warm, or cold site and delivered to any location, rather than relying on a fixed building.\n\n> *Es como un hospital de campaña militar: no necesitas un edificio, lo llevas contigo a donde se necesite.*\n\n- Example: the US military's **DJC2** (Deployable Joint Command and Control) system can deploy anywhere in ~72 hours, provide partial functionality in ~24 hours after arrival, and reach full functionality within 7 days (used after the 2010 Haiti earthquake) — fully self-contained with power, connectivity, and technicians for up to 200 people.\n\n### Virtual Site\n\n* **Definition:** A modern, cloud-based approach offering hot, warm, or cold site equivalents within a cloud environment.\n\n> *Es como tener una casa de respaldo que existe \"en la nube\": puedes hacerla aparecer instantáneamente (virtual hot), a medias (virtual warm), o solo guardar los planos hasta que la necesites (virtual cold).*\n\n| Virtual Site Type | Behavior |\n| --- | --- |\n| **Virtual hot site** | Fully replicated, instantly accessible cloud environment |\n| **Virtual warm site** | Partially replicated resources/data, quickly scalable to full functionality |\n| **Virtual cold site** | Critical data/configs stored in the cloud; resources activated only during a disaster, minimizing ongoing cost |\n\nOffers rapid scalability, cost-effectiveness, and easy maintenance.\n\n### Platform Diversity\n\n* **Definition:** Diversifying operating systems, networking equipment, and cloud platform providers used for redundancy, to mitigate the risk of a single point of failure.\n\n> *Es como no guardar todas tus contraseñas en el mismo gestor: si ese proveedor específico sufre una vulnerabilidad, no pierdes acceso a todo a la vez.*\n\n- Example: if the primary site uses Cisco equipment, the redundant site might use a different vendor — so a Cisco-specific vulnerability doesn't take down both sites simultaneously.\n- Trade-off: platform diversity adds complexity/support cost vs. using identical equipment everywhere (simpler support, lower maintenance, but shared vulnerability risk). Senior management weighs this risk/reward decision.\n\n### Geographic Dispersion\n\n* **Definition:** Spreading resources and redundant sites across different physical/geographic locations to increase redundancy.\n\n> *Es como no poner todos los respaldos de tu negocio en el mismo vecindario que podría ser afectado por el mismo huracán.*"
+      },
+      {
+        "name": "Resilience and Recovery Testing",
+        "definition": "Replicating data and system processes onto a secondary system, then running both primary and secondary systems simultaneously to verify the secondary's reliability and stability without disrupting day-to-day operations.",
+        "analogy": "*Es como los simulacros de incendio en una oficina: no esperas a que ocurra un incendio real para descubrir si la gente sabe cómo salir.*",
+        "tables": [],
+        "list_items": [
+          "Low-cost, highly engaging; helps stakeholders identify gaps/seams in their plans, which then get folded into SOPs and incident-response playbooks.",
+          "Also functions as a **team-building** exercise.",
+          "More resource-, time-, and energy-intensive than a tabletop exercise, since real cutover actions are taken (e.g., East Coast → West Coast data center).",
+          "A **rollback plan** should exist in case the failover doesn't work as expected.",
+          "Best practice: test at least **once per year**.",
+          "Example: spinning up a virtualized corporate network in the cloud where a **red team** attacks and a **blue team** defends in real time, with post-exercise feedback for both sides.",
+          "Unlike a tabletop (paper scenario), participants actually perform response actions inside a virtualized environment — tests both the plan **and** the people.",
+          "Requires meticulous planning and execution to ensure **zero disruption** to ongoing operations.",
+          "Used in resilience testing (handling multiple simultaneous failures: outages, hardware failures, data corruption) and recovery testing (evaluating efficient recovery from multiple failure points)."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** Resilience testing assesses a system's ability to withstand and adapt to disruptive events; recovery testing evaluates a system's capacity to restore normal operations after a disruptive event — together they act as a \"fire drill\" for the organization.\n\n> *Es como los simulacros de incendio en una oficina: no esperas a que ocurra un incendio real para descubrir si la gente sabe cómo salir.*\n\n### Tabletop Exercise\n\n* **Definition:** A simulated, scenario-based discussion among key stakeholders to assess and improve preparedness/response to a specific emergency, without deploying actual resources.\n\n> *Es como un juego de mesa de \"qué harías si...\": un facilitador presenta una crisis ficticia (el \"inject\") y cada participante explica cómo respondería su equipo.*\n\n- Low-cost, highly engaging; helps stakeholders identify gaps/seams in their plans, which then get folded into SOPs and incident-response playbooks.\n- Also functions as a **team-building** exercise.\n\n### Failover Test\n\n* **Definition:** A controlled experiment verifying the seamless transition of a system/application from a primary component to a backup/secondary component during a failure.\n\n> *Es como ensayar mudarte de tu casa principal a la de respaldo, de verdad, para confirmar que la llave sí abre la puerta y que todo encaja.*\n\n- More resource-, time-, and energy-intensive than a tabletop exercise, since real cutover actions are taken (e.g., East Coast → West Coast data center).\n- A **rollback plan** should exist in case the failover doesn't work as expected.\n- Best practice: test at least **once per year**.\n\n### Simulation\n\n* **Definition:** A computer-generated or artificial representation of a real-world system/scenario used to mimic conditions, interactions, or failures and assess/refine system or team response.\n\n> *Es como un campo de entrenamiento de paintball para defensores y atacantes: todo es virtual, pero las reacciones y decisiones son reales.*\n\n- Example: spinning up a virtualized corporate network in the cloud where a **red team** attacks and a **blue team** defends in real time, with post-exercise feedback for both sides.\n- Unlike a tabletop (paper scenario), participants actually perform response actions inside a virtualized environment — tests both the plan **and** the people.\n\n### Parallel Processing\n\n* **Definition:** Replicating data and system processes onto a secondary system, then running both primary and secondary systems simultaneously to verify the secondary's reliability and stability without disrupting day-to-day operations.\n\n> *Es como tener un piloto y un copiloto manejando el mismo avión en simuladores idénticos al mismo tiempo, para comprobar que ambos pueden llevarlo a salvo si uno falla.*\n\n- Requires meticulous planning and execution to ensure **zero disruption** to ongoing operations.\n- Used in resilience testing (handling multiple simultaneous failures: outages, hardware failures, data corruption) and recovery testing (evaluating efficient recovery from multiple failure points).\n\n> ⚠️ Resilience/recovery testing must be **routine, not one-time** — plans should be regularly tested, adapted, and improved as the threat landscape and vulnerabilities evolve. Organizational resilience is an ongoing journey, not a checkbox."
+      },
+      {
+        "name": "Key Terms",
+        "definition": "HA: High Availability",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**HA**",
+                "High Availability"
+              ],
+              [
+                "**RAID**",
+                "Redundant Array of Independent Disks"
+              ],
+              [
+                "**RPO**",
+                "Recovery Point Objective — max acceptable data loss, measured in time"
+              ],
+              [
+                "**PDC**",
+                "Power Distribution Center"
+              ],
+              [
+                "**UPS**",
+                "Uninterruptible Power Supply"
+              ],
+              [
+                "**BCP**",
+                "Business Continuity Plan"
+              ],
+              [
+                "**DRP**",
+                "Disaster Recovery Plan"
+              ],
+              [
+                "**COOP**",
+                "Continuity of Operations Plan"
+              ],
+              [
+                "**DJC2**",
+                "Deployable Joint Command and Control (US military mobile site system)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "spanish_words": [],
+        "raw_content": "| Term | Meaning |\n| --- | --- |\n| **HA** | High Availability |\n| **RAID** | Redundant Array of Independent Disks |\n| **RPO** | Recovery Point Objective — max acceptable data loss, measured in time |\n| **PDC** | Power Distribution Center |\n| **UPS** | Uninterruptible Power Supply |\n| **BCP** | Business Continuity Plan |\n| **DRP** | Disaster Recovery Plan |\n| **COOP** | Continuity of Operations Plan |\n| **DJC2** | Deployable Joint Command and Control (US military mobile site system) |"
+      }
+    ]
+  },
+  {
+    "sectionId": "S15",
+    "sectionTitle": "Section 15: Security Architecture",
+    "concepts": [
+      {
+        "name": "On-Premise vs. Cloud Deployments",
+        "definition": "An architecture combining on-premise infrastructure with private and public cloud services, allowing workloads to move between environments based on need (data security, compliance, interoperability, cost).",
+        "analogy": "*Es como comparar tener tu propia casa (on-premise: tú la construyes, la reparas y la cuidas) contra vivir en un apartamento alquilado en un edificio con administración (cloud: el dueño del edificio se encarga del mantenimiento, la plomería y la seguridad general, pero tú sigues siendo responsable de cerrar tu puerta con llave).*",
+        "tables": [
+          {
+            "headers": [
+              "Consideration",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**Availability**",
+                "System can be accessed when needed (e.g., AWS S3/EC2 SLA of 99.99% uptime)"
+              ],
+              [
+                "**Resilience**",
+                "Ability to recover from failures via distributed/redundant infrastructure (e.g., GCP storage survives simultaneous data center failures)"
+              ],
+              [
+                "**Cost**",
+                "Lower upfront cost but ongoing usage-based costs can add up (pay-as-you-go vs. reserved instances)"
+              ],
+              [
+                "**Responsiveness**",
+                "Speed at which resources adapt to demand changes (e.g., Azure auto-scaling during a sale)"
+              ],
+              [
+                "**Scalability**",
+                "Ability to handle increased workload without infrastructure limits (e.g., Netflix scaling on AWS)"
+              ],
+              [
+                "**Ease of Deployment**",
+                "Cloud services set up in minutes/hours without physical installation (e.g., Shopify)"
+              ],
+              [
+                "**Risk Transference**",
+                "Some risk shifts to the provider, but customer still owns data/app security (e.g., Salesforce)"
+              ],
+              [
+                "**Ease of Recovery**",
+                "Built-in backup/recovery reduces data loss risk (e.g., Dropbox file recovery)"
+              ],
+              [
+                "**Patch Availability**",
+                "Provider regularly issues patches automatically (e.g., Office 365 updates)"
+              ],
+              [
+                "**Inability to Patch**",
+                "Compatibility issues or lack of environment control can block patching (e.g., legacy apps in the cloud)"
+              ],
+              [
+                "**Power**",
+                "Provider manages power supply/infrastructure, reducing customer burden"
+              ],
+              [
+                "**Compute**",
+                "The CPU, memory, and storage resources available to the customer (AWS offers multiple instance tiers)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Example: a small law firm keeps all client data on local servers to retain full control over sensitive legal documents.",
+          "Benefit: complete control over data, no third-party exposure, immediate access.",
+          "Example: a healthcare organization keeps patient data on-premise (HIPAA compliance) but uses the cloud for email hosting and data analysis."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** Two opposing models for hosting IT infrastructure — on-premise keeps hardware and services physically inside the organization's own facilities, while cloud computing delivers servers, storage, databases, networking, and software as services over the internet.\n\n> *Es como comparar tener tu propia casa (on-premise: tú la construyes, la reparas y la cuidas) contra vivir en un apartamento alquilado en un edificio con administración (cloud: el dueño del edificio se encarga del mantenimiento, la plomería y la seguridad general, pero tú sigues siendo responsable de cerrar tu puerta con llave).*\n\n### On-Premise Solutions\n\n* **Definition:** Computing infrastructure physically located on-site, fully owned and maintained by the business itself (hardware, software updates, security measures, upgrades).\n* Example: a small law firm keeps all client data on local servers to retain full control over sensitive legal documents.\n* Benefit: complete control over data, no third-party exposure, immediate access.\n\n### Cloud Computing — Sub-Concepts\n\n#### Responsibility Matrix\n\n* **Definition:** A document/agreement that outlines which security and management tasks belong to the cloud service provider versus the customer; the split varies by service model (IaaS, PaaS, SaaS).\n\n> *Es como un contrato de alquiler que dice claramente: \"el edificio se encarga del agua y la electricidad (proveedor), pero tú te encargas de cerrar con llave y de no dejar la estufa encendida (cliente).\"*\n\n#### Third-Party Vendors\n\n* **Definition:** External companies that provide specialized cloud-supporting services such as management tools, security solutions, or analytics (e.g., CloudHealth by VMware for cost management and governance).\n\n> *Son como los contratistas externos que el edificio llama para tareas específicas: el técnico de cámaras, el de fumigación, el de jardinería — no son parte del staff fijo, pero el edificio depende de ellos.*\n\n#### Hybrid Solutions\n\n* **Definition:** An architecture combining on-premise infrastructure with private and public cloud services, allowing workloads to move between environments based on need (data security, compliance, interoperability, cost).\n* Example: a healthcare organization keeps patient data on-premise (HIPAA compliance) but uses the cloud for email hosting and data analysis.\n\n> *Es como tener una caja fuerte en tu propia casa para las joyas más valiosas, pero rentar una bodega externa para guardar los muebles que usas poco — usas el lugar correcto según qué tan sensible o voluminoso sea lo que guardas.*\n\n### Key Considerations in Cloud Computing\n\n| Consideration | Meaning |\n| --- | --- |\n| **Availability** | System can be accessed when needed (e.g., AWS S3/EC2 SLA of 99.99% uptime) |\n| **Resilience** | Ability to recover from failures via distributed/redundant infrastructure (e.g., GCP storage survives simultaneous data center failures) |\n| **Cost** | Lower upfront cost but ongoing usage-based costs can add up (pay-as-you-go vs. reserved instances) |\n| **Responsiveness** | Speed at which resources adapt to demand changes (e.g., Azure auto-scaling during a sale) |\n| **Scalability** | Ability to handle increased workload without infrastructure limits (e.g., Netflix scaling on AWS) |\n| **Ease of Deployment** | Cloud services set up in minutes/hours without physical installation (e.g., Shopify) |\n| **Risk Transference** | Some risk shifts to the provider, but customer still owns data/app security (e.g., Salesforce) |\n| **Ease of Recovery** | Built-in backup/recovery reduces data loss risk (e.g., Dropbox file recovery) |\n| **Patch Availability** | Provider regularly issues patches automatically (e.g., Office 365 updates) |\n| **Inability to Patch** | Compatibility issues or lack of environment control can block patching (e.g., legacy apps in the cloud) |\n| **Power** | Provider manages power supply/infrastructure, reducing customer burden |\n| **Compute** | The CPU, memory, and storage resources available to the customer (AWS offers multiple instance tiers) |\n\n> *Estos puntos son como la lista de preguntas que harías antes de mudarte a un edificio nuevo: ¿hay luz todo el tiempo? ¿qué pasa si se cae un piso? ¿cuánto me cuesta el mantenimiento? ¿puedo crecer si tengo más muebles? — cada una pesa distinto según tus necesidades.*"
+      },
+      {
+        "name": "Cloud Security",
+        "definition": "The set of security considerations and threats specific to cloud environments, arising from shared infrastructure, multi-tenancy, and provider/customer shared responsibility.",
+        "analogy": "*Es como vivir en un edificio de apartamentos: aunque tengas tu propia puerta con llave, si el edificio entero tiene mala seguridad en la entrada principal, el riesgo te afecta a ti también — la seguridad de la nube es responsabilidad compartida.*",
+        "tables": [
+          {
+            "headers": [
+              "Threat",
+              "Description",
+              "Mitigation"
+            ],
+            "rows": [
+              [
+                "**Shared Physical Server Vulnerabilities**",
+                "Multiple tenants share the same physical server; a compromise can spill over",
+                "Hypervisor protection, secure multi-tenancy, regular vulnerability scanning/patching"
+              ],
+              [
+                "**Inadequate Virtual Environment Security**",
+                "Weak VM security can lead to unauthorized access/breaches",
+                "Secure VM templates, regular patching, monitoring, network segmentation"
+              ],
+              [
+                "**User Access Management**",
+                "Weak passwords, excessive permissions, lack of monitoring",
+                "Strong password policies, MFA, least privilege, activity monitoring"
+              ],
+              [
+                "**Lack of Up-to-Date Security Measures**",
+                "Dynamic cloud environments leave systems vulnerable if not maintained",
+                "Regular patching, policy review, staying current on threats"
+              ],
+              [
+                "**Single Points of Failure**",
+                "Reliance on one resource/process causes total outage",
+                "Redundancy, failover procedures, multiple servers/providers"
+              ],
+              [
+                "**Weak Authentication & Encryption Practices**",
+                "Allows unauthorized access or exposes data in transit/storage",
+                "MFA, strong encryption algorithms, secure key management"
+              ],
+              [
+                "**Unclear Policies**",
+                "Lack of clear guidelines for data handling, access control, incident response",
+                "Comprehensive, regularly reviewed policies + employee training"
+              ],
+              [
+                "**Data Remnants**",
+                "Residual data left behind after deletion due to inadequate processes",
+                "Secure deletion methods, secure backup management, deletion verification"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** The set of security considerations and threats specific to cloud environments, arising from shared infrastructure, multi-tenancy, and provider/customer shared responsibility.\n\n> *Es como vivir en un edificio de apartamentos: aunque tengas tu propia puerta con llave, si el edificio entero tiene mala seguridad en la entrada principal, el riesgo te afecta a ti también — la seguridad de la nube es responsabilidad compartida.*\n\n### Cloud Security Threats\n\n| Threat | Description | Mitigation |\n| --- | --- | --- |\n| **Shared Physical Server Vulnerabilities** | Multiple tenants share the same physical server; a compromise can spill over | Hypervisor protection, secure multi-tenancy, regular vulnerability scanning/patching |\n| **Inadequate Virtual Environment Security** | Weak VM security can lead to unauthorized access/breaches | Secure VM templates, regular patching, monitoring, network segmentation |\n| **User Access Management** | Weak passwords, excessive permissions, lack of monitoring | Strong password policies, MFA, least privilege, activity monitoring |\n| **Lack of Up-to-Date Security Measures** | Dynamic cloud environments leave systems vulnerable if not maintained | Regular patching, policy review, staying current on threats |\n| **Single Points of Failure** | Reliance on one resource/process causes total outage | Redundancy, failover procedures, multiple servers/providers |\n| **Weak Authentication & Encryption Practices** | Allows unauthorized access or exposes data in transit/storage | MFA, strong encryption algorithms, secure key management |\n| **Unclear Policies** | Lack of clear guidelines for data handling, access control, incident response | Comprehensive, regularly reviewed policies + employee training |\n| **Data Remnants** | Residual data left behind after deletion due to inadequate processes | Secure deletion methods, secure backup management, deletion verification |\n\n> *Cada amenaza es como una grieta distinta en la seguridad de un edificio: una puerta sin llave (acceso débil), un guardia dormido (falta de actualizaciones), o basura mal desechada con documentos sensibles todavía legibles (data remnants).*"
+      },
+      {
+        "name": "Virtualization and Containerization",
+        "definition": "A method of running applications in isolated user spaces (containers) that share the host's OS kernel but bundle the application with all its dependencies.",
+        "analogy": "*La virtualización es como construir varios apartamentos completamente independientes dentro de un edificio (cada uno con su propia cocina y baño). La contenedorización es más como rentar cuartos en una casa de huéspedes: cada inquilino tiene su espacio privado, pero todos comparten la misma cocina y plomería central (el kernel del sistema operativo).*",
+        "tables": [
+          {
+            "headers": [
+              "Type",
+              "Also Known As",
+              "Runs On",
+              "Examples",
+              "Performance"
+            ],
+            "rows": [
+              [
+                "**Type 1**",
+                "Bare metal / native hypervisor",
+                "Directly on host hardware",
+                "Microsoft Hyper-V, Citrix XenServer, VMware ESXi/vSphere",
+                "Faster, more efficient"
+              ],
+              [
+                "**Type 2**",
+                "Hosted hypervisor",
+                "Within a standard OS (Windows/Mac/Linux)",
+                "VirtualBox, VMware Workstation",
+                "Slower (OS overhead)"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Vulnerability",
+              "Description",
+              "Mitigation"
+            ],
+            "rows": [
+              [
+                "**VM Escape**",
+                "Attacker breaks out of an isolated VM to interact directly with the hypervisor, potentially pivoting to other VMs",
+                "Host VMs of the same classification/segment together; keep hypervisor patched"
+              ],
+              [
+                "**Privilege Elevation**",
+                "User grants themselves higher privileges; catastrophic if achieved at the hypervisor level",
+                "Stay current on hotfixes/service packs"
+              ],
+              [
+                "**Live VM Migration**",
+                "Moving a VM between physical hosts can be intercepted (adversary-in-the-middle) since transmitted data is unencrypted",
+                "Encrypt migration traffic, secure the migration path"
+              ],
+              [
+                "**Resource Reuse**",
+                "Memory/storage not properly cleared before reassignment can expose previous tenant's data",
+                "Secure resource clearing/reset procedures"
+              ],
+              [
+                "**VM Sprawl**",
+                "VMs created/deployed without proper oversight, becoming hard to track",
+                "Inventory tracking, governance, patch compliance auditing"
+              ],
+              [
+                "**Containerization OS Risk**",
+                "All containers share one OS; compromising that OS puts every hosted application at risk",
+                "OS hardening and patching"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Benefits: efficiency/speed, portability, scalability, isolation, consistency.",
+          "Popular technologies: Docker, Kubernetes, Red Hat OpenShift.",
+          "Keep operating systems, applications, and hypervisors patched/updated",
+          "Install antivirus + software firewall on each VM, enforce strong passwords/policies",
+          "Limit connections between VMs and physical machines (virtual network cords/shares) to preserve isolation",
+          "Distribute VMs across multiple physical servers to limit denial-of-service blast radius",
+          "Track VMs to avoid VM sprawl",
+          "Encrypt the files that host the VMs"
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** Virtualization emulates full servers (each with its own OS) on shared physical hardware via a hypervisor; containerization is a lighter alternative that encapsulates an application and its dependencies in an isolated container sharing the host OS kernel.\n\n> *La virtualización es como construir varios apartamentos completamente independientes dentro de un edificio (cada uno con su propia cocina y baño). La contenedorización es más como rentar cuartos en una casa de huéspedes: cada inquilino tiene su espacio privado, pero todos comparten la misma cocina y plomería central (el kernel del sistema operativo).*\n\n### Hypervisors\n\n* **Definition:** Software that manages distribution of a physical server's resources (CPU, memory, disk) among virtual machines.\n\n| Type | Also Known As | Runs On | Examples | Performance |\n| --- | --- | --- | --- | --- |\n| **Type 1** | Bare metal / native hypervisor | Directly on host hardware | Microsoft Hyper-V, Citrix XenServer, VMware ESXi/vSphere | Faster, more efficient |\n| **Type 2** | Hosted hypervisor | Within a standard OS (Windows/Mac/Linux) | VirtualBox, VMware Workstation | Slower (OS overhead) |\n\n> *Un hipervisor tipo 1 es como un edificio diseñado desde cero solo para apartamentos — ultra eficiente. Uno tipo 2 es como subdividir una casa familiar ya existente para meter inquilinos — funciona, pero hay más \"desperdicio\" de espacio y recursos.*\n\n### Containerization\n\n* **Definition:** A method of running applications in isolated user spaces (containers) that share the host's OS kernel but bundle the application with all its dependencies.\n* Benefits: efficiency/speed, portability, scalability, isolation, consistency.\n* Popular technologies: Docker, Kubernetes, Red Hat OpenShift.\n\n### Virtualization Vulnerabilities\n\n| Vulnerability | Description | Mitigation |\n| --- | --- | --- |\n| **VM Escape** | Attacker breaks out of an isolated VM to interact directly with the hypervisor, potentially pivoting to other VMs | Host VMs of the same classification/segment together; keep hypervisor patched |\n| **Privilege Elevation** | User grants themselves higher privileges; catastrophic if achieved at the hypervisor level | Stay current on hotfixes/service packs |\n| **Live VM Migration** | Moving a VM between physical hosts can be intercepted (adversary-in-the-middle) since transmitted data is unencrypted | Encrypt migration traffic, secure the migration path |\n| **Resource Reuse** | Memory/storage not properly cleared before reassignment can expose previous tenant's data | Secure resource clearing/reset procedures |\n| **VM Sprawl** | VMs created/deployed without proper oversight, becoming hard to track | Inventory tracking, governance, patch compliance auditing |\n| **Containerization OS Risk** | All containers share one OS; compromising that OS puts every hosted application at risk | OS hardening and patching |\n\n### Securing Virtual Machines\n\n- Keep operating systems, applications, and hypervisors patched/updated\n- Install antivirus + software firewall on each VM, enforce strong passwords/policies\n- Limit connections between VMs and physical machines (virtual network cords/shares) to preserve isolation\n- Distribute VMs across multiple physical servers to limit denial-of-service blast radius\n- Track VMs to avoid VM sprawl\n- Encrypt the files that host the VMs\n\n> *Asegurar una máquina virtual es básicamente aplicar las mismas reglas de seguridad de un servidor físico normal — actualizaciones, antivirus, contraseñas fuertes — pero además cuidando que los \"apartamentos virtuales\" no compartan tuberías que permitan que un problema en uno afecte a los demás.*"
+      },
+      {
+        "name": "Serverless Computing",
+        "definition": "A cloud execution model where the cloud provider dynamically manages server provisioning and allocation; developers write and deploy individual functions triggered by events, without managing servers directly (function-as-a-service).",
+        "analogy": "*Es como pedir comida a domicilio en lugar de tener tu propia cocina: no te preocupas por comprar la estufa, mantener el gas o limpiar — solo \"activas\" el pedido (la función) cuando lo necesitas, y pagas solo por lo que consumes.*",
+        "tables": [],
+        "list_items": [
+          "**AWS Lambda** — runs code without provisioning/managing servers, auto-scales to demand",
+          "**Google Cloud Functions** — single-purpose functions triggered by cloud service events",
+          "Reduced operational cost (pay only for compute time used)",
+          "Automatic scaling precisely matched to workload",
+          "Developers focus on code, not server/runtime management → faster time to market",
+          "**Vendor Lock-in:** reliance on a provider's proprietary interfaces makes switching providers difficult",
+          "**Immaturity of Best Practices:** serverless is a relatively new field, so standardized practices are still evolving"
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** A cloud execution model where the cloud provider dynamically manages server provisioning and allocation; developers write and deploy individual functions triggered by events, without managing servers directly (function-as-a-service).\n\n> *Es como pedir comida a domicilio en lugar de tener tu propia cocina: no te preocupas por comprar la estufa, mantener el gas o limpiar — solo \"activas\" el pedido (la función) cuando lo necesitas, y pagas solo por lo que consumes.*\n\n### Examples\n\n- **AWS Lambda** — runs code without provisioning/managing servers, auto-scales to demand\n- **Google Cloud Functions** — single-purpose functions triggered by cloud service events\n\n### Benefits\n\n- Reduced operational cost (pay only for compute time used)\n- Automatic scaling precisely matched to workload\n- Developers focus on code, not server/runtime management → faster time to market\n\n### Risks / Challenges\n\n- **Vendor Lock-in:** reliance on a provider's proprietary interfaces makes switching providers difficult\n- **Immaturity of Best Practices:** serverless is a relatively new field, so standardized practices are still evolving"
+      },
+      {
+        "name": "Microservices",
+        "definition": "An architectural style that structures an application as a collection of small, autonomous, independently-running services, each modeled around a specific business function, communicating through lightweight mechanisms.",
+        "analogy": "*Es como pasar de un solo restaurante gigante que hace de todo (cocina, caja, limpieza, todo mezclado y si algo falla cierra el local entero) a un food court donde cada puesto es independiente: si el puesto de pizza tiene un problema, los demás puestos siguen funcionando normalmente.*",
+        "tables": [
+          {
+            "headers": [
+              "Benefit",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Scalability**",
+                "Each service scales independently based on its own demand"
+              ],
+              [
+                "**Flexibility**",
+                "Services can use different languages/data stores and be managed by different teams"
+              ],
+              [
+                "**Resilience**",
+                "Failure of one service does not bring down the entire system"
+              ],
+              [
+                "**Faster Deployment/Updates**",
+                "Services deploy and update independently, reducing release risk"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Challenge",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Complexity**",
+                "Managing inter-service communication, data consistency, distributed testing"
+              ],
+              [
+                "**Data Management**",
+                "Each service may have its own database, complicating cross-service consistency"
+              ],
+              [
+                "**Network Latency**",
+                "Increased inter-service communication slows response times"
+              ],
+              [
+                "**Security**",
+                "More services communicating over a network = larger attack surface"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** An architectural style that structures an application as a collection of small, autonomous, independently-running services, each modeled around a specific business function, communicating through lightweight mechanisms.\n\n> *Es como pasar de un solo restaurante gigante que hace de todo (cocina, caja, limpieza, todo mezclado y si algo falla cierra el local entero) a un food court donde cada puesto es independiente: si el puesto de pizza tiene un problema, los demás puestos siguen funcionando normalmente.*\n\n### Real-World Example\n\nNetflix migrated from a monolithic architecture to microservices to handle scale — separate microservices now handle recommendations, signups, video encoding, etc.\n\n### Benefits\n\n| Benefit | Description |\n| --- | --- |\n| **Scalability** | Each service scales independently based on its own demand |\n| **Flexibility** | Services can use different languages/data stores and be managed by different teams |\n| **Resilience** | Failure of one service does not bring down the entire system |\n| **Faster Deployment/Updates** | Services deploy and update independently, reducing release risk |\n\n### Challenges\n\n| Challenge | Description |\n| --- | --- |\n| **Complexity** | Managing inter-service communication, data consistency, distributed testing |\n| **Data Management** | Each service may have its own database, complicating cross-service consistency |\n| **Network Latency** | Increased inter-service communication slows response times |\n| **Security** | More services communicating over a network = larger attack surface |"
+      },
+      {
+        "name": "Network Infrastructure — Physical vs. Logical Separation",
+        "definition": "Creating boundaries within a shared network using firewalls, VLANs, and other rule-based network devices to restrict access between segments.",
+        "analogy": "*Es como decidir entre construir un muro físico de concreto alrededor de un edificio (separación física) versus simplemente poner reglas y guardias en las puertas internas que dicen quién puede pasar a qué piso (separación lógica).*",
+        "tables": [],
+        "list_items": [
+          "Examples: military/government classified networks; ICS systems in power plants or water treatment facilities.",
+          "⚠️ **Not infallible** — sophisticated attacks like **Stuxnet** have demonstrated that air-gapped systems can still be compromised.",
+          "Examples: VLANs segregating HR traffic from Marketing traffic on the same physical network; firewalls creating a **screened subnet** to separate external-facing services from the internal network.",
+          "Easier to implement and more flexible than physical separation, but less secure — misconfigured firewalls/VLANs can be exploited."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** Network infrastructure is the hardware, software, services, and facilities that support an enterprise network; its components can be separated either physically or logically to control access and contain risk.\n\n> *Es como decidir entre construir un muro físico de concreto alrededor de un edificio (separación física) versus simplemente poner reglas y guardias en las puertas internas que dicen quién puede pasar a qué piso (separación lógica).*\n\n### Physical Separation (Air Gapping)\n\n* **Definition:** Completely isolating a system from other networks (local and internet) by removing all direct/indirect connections, including wireless.\n* Examples: military/government classified networks; ICS systems in power plants or water treatment facilities.\n* ⚠️ **Not infallible** — sophisticated attacks like **Stuxnet** have demonstrated that air-gapped systems can still be compromised.\n\n### Logical Separation\n\n* **Definition:** Creating boundaries within a shared network using firewalls, VLANs, and other rule-based network devices to restrict access between segments.\n* Examples: VLANs segregating HR traffic from Marketing traffic on the same physical network; firewalls creating a **screened subnet** to separate external-facing services from the internal network.\n* Easier to implement and more flexible than physical separation, but less secure — misconfigured firewalls/VLANs can be exploited."
+      },
+      {
+        "name": "Software-Defined Networking (SDN)",
+        "definition": "An approach to network management that enables dynamic, programmatic, and centralized network configuration by decoupling the network's control functions from its forwarding functions.",
+        "analogy": "*Es como pasar de un edificio donde cada piso tiene su propio panel eléctrico independiente y manual, a un sistema central inteligente donde un solo panel controla y reprograma la electricidad de todo el edificio desde un solo lugar.*",
+        "tables": [
+          {
+            "headers": [
+              "Plane",
+              "Role"
+            ],
+            "rows": [
+              [
+                "**Data Plane** (forwarding plane)",
+                "Physically moves packets between devices using protocols like IP/Ethernet"
+              ],
+              [
+                "**Control Plane**",
+                "The centralized \"brain\" that decides where traffic is sent (replaces per-router control logic)"
+              ],
+              [
+                "**Application Plane**",
+                "Hosts network applications that instruct the controller on desired behavior"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "**Google's B4 Project** — uses SDN to manage data center network bandwidth efficiently",
+          "**AT&T Domain 2.0 Initiative** — transforms AT&T's network into an SDN to cut costs and automate management"
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** An approach to network management that enables dynamic, programmatic, and centralized network configuration by decoupling the network's control functions from its forwarding functions.\n\n> *Es como pasar de un edificio donde cada piso tiene su propio panel eléctrico independiente y manual, a un sistema central inteligente donde un solo panel controla y reprograma la electricidad de todo el edificio desde un solo lugar.*\n\n### The Three Planes of SDN\n\n| Plane | Role |\n| --- | --- |\n| **Data Plane** (forwarding plane) | Physically moves packets between devices using protocols like IP/Ethernet |\n| **Control Plane** | The centralized \"brain\" that decides where traffic is sent (replaces per-router control logic) |\n| **Application Plane** | Hosts network applications that instruct the controller on desired behavior |\n\n### Real-World Examples\n\n- **Google's B4 Project** — uses SDN to manage data center network bandwidth efficiently\n- **AT&T Domain 2.0 Initiative** — transforms AT&T's network into an SDN to cut costs and automate management"
+      },
+      {
+        "name": "Infrastructure as Code (IaC)",
+        "definition": "A \"snowflake\" is a system configuration/build that is unique and inconsistent with others, introducing risk through unpredictability.",
+        "analogy": "*Es como tener una receta de cocina escrita con precisión exacta en lugar de improvisar cada vez: si sigues la misma receta, el platillo sale idéntico cada vez, sin importar quién la cocine o cuántas veces se repita.*",
+        "tables": [],
+        "list_items": [
+          "Speed and efficiency in provisioning/deprovisioning",
+          "Consistency and standardization across environments",
+          "Scalability through easy replication of setups",
+          "Cost savings from reduced manual configuration",
+          "Auditability and compliance (code is versioned and reviewable)",
+          "Learning curve — requires new skills and a shifted mindset",
+          "Complexity as IaC scope grows (mitigated by modularization/documentation)",
+          "Security risks — sensitive data or insecure configs can be inadvertently exposed in code files"
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** Automating the provisioning and management of computing resources through machine-readable definition files or scripts (e.g., YAML, JSON, HCL) instead of manual configuration.\n\n> *Es como tener una receta de cocina escrita con precisión exacta en lugar de improvisar cada vez: si sigues la misma receta, el platillo sale idéntico cada vez, sin importar quién la cocine o cuántas veces se repita.*\n\n### Idempotence\n\n* **Definition:** The property of an operation producing the same result no matter how many times it is executed, regardless of the system's initial state.\n\n> *Es como tener un control remoto que siempre deja la TV en el canal 5 sin importar en qué canal estaba antes — el resultado final es siempre el mismo, sin importar el punto de partida.*\n\n### Goal: Eliminating Snowflake Systems\n\n* **Definition:** A \"snowflake\" is a system configuration/build that is unique and inconsistent with others, introducing risk through unpredictability.\n\n### Benefits\n\n- Speed and efficiency in provisioning/deprovisioning\n- Consistency and standardization across environments\n- Scalability through easy replication of setups\n- Cost savings from reduced manual configuration\n- Auditability and compliance (code is versioned and reviewable)\n\n### Challenges\n\n- Learning curve — requires new skills and a shifted mindset\n- Complexity as IaC scope grows (mitigated by modularization/documentation)\n- Security risks — sensitive data or insecure configs can be inadvertently exposed in code files"
+      },
+      {
+        "name": "Centralized vs. Decentralized Architectures",
+        "definition": "Centralized architecture coordinates and manages all computing functions from a single location/authority; decentralized architecture distributes computing functions across multiple independent systems or locations with no single point of control.",
+        "analogy": "*Centralizado es como una sola oficina matriz que toma todas las decisiones para todas las sucursales. Descentralizado es como darle autonomía a cada sucursal para que opere y decida por su cuenta, sin depender de una sola oficina central.*",
+        "tables": [
+          {
+            "headers": [
+              "Benefits",
+              "Risks"
+            ],
+            "rows": [
+              [
+                "Efficiency and control over resources",
+                "Single point of failure (central server failure disrupts entire network)"
+              ],
+              [
+                "Consistency and accuracy of information",
+                "Scalability issues as the organization grows"
+              ],
+              [
+                "Cost-effective maintenance (one system)",
+                "Attractive, high-value target for cyber-criminals"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Benefits",
+              "Risks"
+            ],
+            "rows": [
+              [
+                "Resiliency — one node failing doesn't stop the system",
+                "Security risks from more entry points (e.g., remote connections)"
+              ],
+              [
+                "Scalability — new nodes added easily",
+                "Management challenges — complex coordination across nodes"
+              ],
+              [
+                "Flexibility — supports remote work/distributed teams",
+                "Data inconsistency across nodes / synchronization issues"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** Centralized architecture coordinates and manages all computing functions from a single location/authority; decentralized architecture distributes computing functions across multiple independent systems or locations with no single point of control.\n\n> *Centralizado es como una sola oficina matriz que toma todas las decisiones para todas las sucursales. Descentralizado es como darle autonomía a cada sucursal para que opere y decida por su cuenta, sin depender de una sola oficina central.*\n\n### Centralized Architecture\n\n| Benefits | Risks |\n| --- | --- |\n| Efficiency and control over resources | Single point of failure (central server failure disrupts entire network) |\n| Consistency and accuracy of information | Scalability issues as the organization grows |\n| Cost-effective maintenance (one system) | Attractive, high-value target for cyber-criminals |\n\n### Decentralized Architecture\n\n| Benefits | Risks |\n| --- | --- |\n| Resiliency — one node failing doesn't stop the system | Security risks from more entry points (e.g., remote connections) |\n| Scalability — new nodes added easily | Management challenges — complex coordination across nodes |\n| Flexibility — supports remote work/distributed teams | Data inconsistency across nodes / synchronization issues |"
+      },
+      {
+        "name": "Internet of Things (IoT)",
+        "definition": "Devices that detect environmental changes (temperature, humidity, light, motion, pressure, chemical composition) and convert them into data for processing — the \"eyes and ears\" of the IoT ecosystem.",
+        "analogy": "*Es como una casa donde cada electrodoméstico tiene \"boca y oídos\" propios y puede hablar con los demás: el refrigerador le avisa al control central que falta leche, y el control central enciende las luces cuando detecta movimiento.*",
+        "tables": [],
+        "list_items": [
+          "**Weak default settings** — default usernames/passwords that are easy to guess or widely known",
+          "**Poorly configured network services** — open ports, unencrypted communication, unnecessary exposed services",
+          "⚠️ **Mitigation:** keep IoT devices on a separate, segmented network"
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** A network of physical devices, vehicles, appliances, and other items embedded with sensors, software, and network connectivity that allows them to connect and exchange data in near real time.\n\n> *Es como una casa donde cada electrodoméstico tiene \"boca y oídos\" propios y puede hablar con los demás: el refrigerador le avisa al control central que falta leche, y el control central enciende las luces cuando detecta movimiento.*\n\n### Hub / Control System\n\n* **Definition:** The central point that connects all IoT devices, collecting, processing, and analyzing their data, then sending commands back. Can be a physical device (Amazon Echo, Google Home) or a software platform (an app).\n\n### Smart Devices\n\n* **Definition:** Everyday objects enhanced with computing capability and internet connectivity, able to sense their environment, process data, and act without human intervention (e.g., a smart refrigerator suggesting recipes and ordering groceries).\n\n### Wearables\n\n* **Definition:** A subset of smart devices designed to be worn on the body, monitoring health/fitness metrics and providing hands-free interaction (e.g., smartwatches, fitness trackers, VR/AR headsets).\n\n### Sensors\n\n* **Definition:** Devices that detect environmental changes (temperature, humidity, light, motion, pressure, chemical composition) and convert them into data for processing — the \"eyes and ears\" of the IoT ecosystem.\n\n> *El hub es el cerebro, los dispositivos inteligentes son las manos, los wearables son lo que llevas puesto, y los sensores son los ojos y oídos — juntos forman un cuerpo completo que percibe y actúa sobre su entorno.*\n\n### IoT Security Risks\n\n- **Weak default settings** — default usernames/passwords that are easy to guess or widely known\n- **Poorly configured network services** — open ports, unencrypted communication, unnecessary exposed services\n- ⚠️ **Mitigation:** keep IoT devices on a separate, segmented network"
+      },
+      {
+        "name": "ICS and SCADA",
+        "definition": "Industrial Control Systems (ICS) are control systems used to monitor and manage industrial processes (electrical, water, oil, gas, manufacturing); SCADA (Supervisory Control and Data Acquisition) is a subset of ICS used specifically for geographically dispersed industrial processes.",
+        "analogy": "*ICS es como el sistema de control de una sola fábrica. SCADA es como el sistema de control de toda una red de fábricas y plantas repartidas en distintas ciudades, todas supervisadas y coordinadas desde un mismo centro de mando remoto.*",
+        "tables": [
+          {
+            "headers": [
+              "Component",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Distributed Control Systems (DCS)**",
+                "Control production systems within a single location"
+              ],
+              [
+                "**Programmable Logic Controllers (PLC)**",
+                "Control specific processes such as assembly lines"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Risk",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Unauthorized Access**",
+                "Inadequate protection allows manipulation of system operations"
+              ],
+              [
+                "**Malware Attacks**",
+                "Malware can disrupt industrial operations"
+              ],
+              [
+                "**Lack of Updates**",
+                "Many ICS/SCADA systems run outdated, unpatched software"
+              ],
+              [
+                "**Physical Threats**",
+                "Susceptible to physical damage to hardware/infrastructure"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Electrical power generation, transmission, and distribution systems",
+          "Water treatment and distribution systems",
+          "Oil and gas pipeline monitoring and control systems",
+          "Implement strong access control (strong passwords, MFA, least privilege)",
+          "Regularly update and patch systems",
+          "Use firewalls and intrusion detection systems",
+          "Conduct regular security audits",
+          "Provide employee security training"
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** Industrial Control Systems (ICS) are control systems used to monitor and manage industrial processes (electrical, water, oil, gas, manufacturing); SCADA (Supervisory Control and Data Acquisition) is a subset of ICS used specifically for geographically dispersed industrial processes.\n\n> *ICS es como el sistema de control de una sola fábrica. SCADA es como el sistema de control de toda una red de fábricas y plantas repartidas en distintas ciudades, todas supervisadas y coordinadas desde un mismo centro de mando remoto.*\n\n### ICS Components\n\n| Component | Description |\n| --- | --- |\n| **Distributed Control Systems (DCS)** | Control production systems within a single location |\n| **Programmable Logic Controllers (PLC)** | Control specific processes such as assembly lines |\n\n### SCADA Examples\n\n- Electrical power generation, transmission, and distribution systems\n- Water treatment and distribution systems\n- Oil and gas pipeline monitoring and control systems\n\n### Risks and Vulnerabilities\n\n| Risk | Description |\n| --- | --- |\n| **Unauthorized Access** | Inadequate protection allows manipulation of system operations |\n| **Malware Attacks** | Malware can disrupt industrial operations |\n| **Lack of Updates** | Many ICS/SCADA systems run outdated, unpatched software |\n| **Physical Threats** | Susceptible to physical damage to hardware/infrastructure |\n\n> ⚠️ ICS and SCADA systems were originally designed for isolated environments where security was not a primary concern; modern digitalization and connectivity now expose them to cyber threats they were never built to resist.\n\n### Securing ICS and SCADA\n\n- Implement strong access control (strong passwords, MFA, least privilege)\n- Regularly update and patch systems\n- Use firewalls and intrusion detection systems\n- Conduct regular security audits\n- Provide employee security training"
+      },
+      {
+        "name": "Embedded Systems",
+        "definition": "A major embedded-system challenge where downtime is unacceptable, devices are physically hard to reach, or systems were never designed with update mechanisms in mind.",
+        "analogy": "*Es como un empleado ultra-especializado que solo sabe hacer una tarea a la perfección (por ejemplo, solo controlar el airbag de un carro), a diferencia de una computadora normal que es como un empleado generalista que puede hacer de todo un poco.*",
+        "tables": [
+          {
+            "headers": [
+              "Risk",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Hardware Failure**",
+                "Embedded systems often operate in harsh environments, prone to physical failure"
+              ],
+              [
+                "**Software Bugs**",
+                "Can cause malfunctions and safety risks"
+              ],
+              [
+                "**Security Vulnerabilities**",
+                "Can be targeted by attackers for unauthorized access or disruption"
+              ],
+              [
+                "**Outdated Systems**",
+                "Long operational lifespans lead to outdated, more vulnerable software/hardware"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Consumer electronics: smartphones, digital cameras, washing machines, microwaves",
+          "Automotive: engine control, anti-lock braking systems, airbag deployment",
+          "Healthcare: pacemakers, insulin pumps, imaging systems",
+          "Industrial: automation, process control, robotics",
+          "Mitigation: **over-the-air (OTA) updates** — patches delivered and installed remotely, requiring careful planning and robust security to avoid introducing new vulnerabilities during the update."
+        ],
+        "spanish_words": [],
+        "raw_content": "* **Definition:** A specialized computing component designed to perform one or two dedicated functions within a larger mechanical or electrical device, integrating both hardware and (often) mechanical elements.\n\n> *Es como un empleado ultra-especializado que solo sabe hacer una tarea a la perfección (por ejemplo, solo controlar el airbag de un carro), a diferencia de una computadora normal que es como un empleado generalista que puede hacer de todo un poco.*\n\n### Examples\n\n- Consumer electronics: smartphones, digital cameras, washing machines, microwaves\n- Automotive: engine control, anti-lock braking systems, airbag deployment\n- Healthcare: pacemakers, insulin pumps, imaging systems\n- Industrial: automation, process control, robotics\n\n### Real-Time Operating System (RTOS)\n\n* **Definition:** An operating system designed for real-time applications, processing data as it arrives — typically without buffering delays — ensuring timely, predictable execution for time-sensitive applications (e.g., flight navigation, medical equipment).\n\n> *Un RTOS es como un mesero de restaurante de comida rápida que debe atender cada orden en el momento exacto en que llega, sin acumular pedidos en una fila de espera — la rapidez y el tiempo de respuesta son críticos.*\n\n### Embedded System Risks\n\n| Risk | Description |\n| --- | --- |\n| **Hardware Failure** | Embedded systems often operate in harsh environments, prone to physical failure |\n| **Software Bugs** | Can cause malfunctions and safety risks |\n| **Security Vulnerabilities** | Can be targeted by attackers for unauthorized access or disruption |\n| **Outdated Systems** | Long operational lifespans lead to outdated, more vulnerable software/hardware |\n\n### Securing Embedded Systems\n\n#### Network Segmentation\n* **Definition:** Dividing a network into multiple segments/subnets so a breach in one segment doesn't automatically grant access to others.\n\n#### Wrappers\n* **Definition:** Protective measures (e.g., IPsec) applied to data in transit so that an interceptor can only see the wrapper's header (entry/exit points), not the actual data — useful when data crosses an unsecured network.\n\n#### Firmware Code Control\n* **Definition:** Managing and controlling the low-level software that operates device hardware, using secure coding practices, code reviews, automated testing, secure boot mechanisms, and cryptographic signatures to ensure only authorized firmware runs.\n\n#### Inability to Patch\n* **Definition:** A major embedded-system challenge where downtime is unacceptable, devices are physically hard to reach, or systems were never designed with update mechanisms in mind.\n* Mitigation: **over-the-air (OTA) updates** — patches delivered and installed remotely, requiring careful planning and robust security to avoid introducing new vulnerabilities during the update.\n\n> *Asegurar un sistema embebido es como blindar un reloj suizo que nunca se puede abrir fácilmente: divides sus engranajes en compartimentos (segmentación), envuelves sus piezas sensibles (wrappers), controlas quién fabrica sus repuestos internos (firmware), y buscas formas de darle mantenimiento sin tener que desarmarlo por completo (actualizaciones remotas).*"
+      },
+      {
+        "name": "Key Terms",
+        "definition": "Hypervisor: Software that manages distribution of physical server resources among virtual machines",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Hypervisor**",
+                "Software that manages distribution of physical server resources among virtual machines"
+              ],
+              [
+                "**VM Escape**",
+                "An attack where a process breaks out of VM isolation to access the hypervisor"
+              ],
+              [
+                "**Snowflake System**",
+                "A uniquely configured system inconsistent with standardized builds, introducing risk"
+              ],
+              [
+                "**Idempotence**",
+                "Property where repeated execution of an operation always yields the same result"
+              ],
+              [
+                "**Air Gap**",
+                "Physical isolation of a system from all other networks"
+              ],
+              [
+                "**Screened Subnet**",
+                "A logically separated subnetwork hosting external-facing services, isolated from the internal network"
+              ],
+              [
+                "**RTOS**",
+                "Real-Time Operating System — processes data as it arrives with predictable, minimal delay"
+              ],
+              [
+                "**OTA Update**",
+                "Over-the-Air update — remote delivery and installation of patches"
+              ],
+              [
+                "**FaaS**",
+                "Function as a Service — the operating model underlying serverless computing"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "spanish_words": [],
+        "raw_content": "| Term | Definition |\n| --- | --- |\n| **Hypervisor** | Software that manages distribution of physical server resources among virtual machines |\n| **VM Escape** | An attack where a process breaks out of VM isolation to access the hypervisor |\n| **Snowflake System** | A uniquely configured system inconsistent with standardized builds, introducing risk |\n| **Idempotence** | Property where repeated execution of an operation always yields the same result |\n| **Air Gap** | Physical isolation of a system from all other networks |\n| **Screened Subnet** | A logically separated subnetwork hosting external-facing services, isolated from the internal network |\n| **RTOS** | Real-Time Operating System — processes data as it arrives with predictable, minimal delay |\n| **OTA Update** | Over-the-Air update — remote delivery and installation of patches |\n| **FaaS** | Function as a Service — the operating model underlying serverless computing |"
+      }
+    ]
   }
 ];
