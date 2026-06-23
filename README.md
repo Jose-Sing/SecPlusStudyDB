@@ -49,7 +49,7 @@ To guarantee that the site functions completely offline, we made the following a
 ## Manual Verification & How to Test
 
 You can run and test this on your local machine instantly:
-1. Double-click the file [index.html](index.html) to open it in any web browser.
+1. Double-click the file [index.html](https://jose-sing.github.io/SecPlusStudyDB/) to open it in any web browser.
 2. Disconnect your internet connection (turn off Wi-Fi) and reload the page. You will notice that:
    - All styles, layouts, margins, and borders display correctly.
    - You can search, browse sections, practice flashcards, and run the exam simulation without internet access.
