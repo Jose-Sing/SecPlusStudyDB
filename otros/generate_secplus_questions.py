@@ -2522,9 +2522,10 @@ new_questions = [
 ]
 
 def main():
-    filepath = "questions.js"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.join(script_dir, "..", "assets", "questions.js")
     if not os.path.exists(filepath):
-        print("questions.js not found")
+        print(f"questions.js not found at {filepath}")
         return
         
     with open(filepath, 'r', encoding='utf-8') as f:

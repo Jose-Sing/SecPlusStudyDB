@@ -2,9 +2,10 @@ import json
 import os
 
 def main():
-    filepath = "data.js"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.join(script_dir, "..", "assets", "data.js")
     if not os.path.exists(filepath):
-        print("data.js not found")
+        print(f"data.js not found at {filepath}")
         return
         
     with open(filepath, 'r', encoding='utf-8') as f:

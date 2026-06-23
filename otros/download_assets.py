@@ -4,7 +4,7 @@ import os
 def main():
     url = "https://cdn.tailwindcss.com?plugins=forms,container-queries"
     output_dir = os.path.dirname(os.path.abspath(__file__))
-    output_path = os.path.join(output_dir, "tailwind.js")
+    output_path = os.path.join(output_dir, "..", "assets", "tailwind.js")
     
     print(f"Downloading Tailwind JS from {url}...")
     try:

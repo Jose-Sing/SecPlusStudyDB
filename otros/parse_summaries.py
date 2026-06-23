@@ -219,19 +219,26 @@ def parse_file(filepath):
     }
 
 def main():
-    directory = os.path.dirname(os.path.abspath(__file__))
-    files = [f for f in os.listdir(directory) if re.match(r'^S\d+_[a-zA-Z0-9_ -]+\.md$', f)]
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    summaries_dir = os.path.join(script_dir, "..", "summaries")
+    
+    if not os.path.exists(summaries_dir):
+        print(f"Summaries directory not found at {summaries_dir}")
+        return
+        
+    files = [f for f in os.listdir(summaries_dir) if re.match(r'^S\d+_[a-zA-Z0-9_ -]+\.md$', f)]
     # Sort files numerically by section number to avoid 'S10' coming before 'S2'
     files.sort(key=lambda x: int(re.match(r'^S(\d+)_', x).group(1)))
 
     parsed_sections = []
     for filename in files:
-        filepath = os.path.join(directory, filename)
+        filepath = os.path.join(summaries_dir, filename)
         print(f"Parsing {filename}...")
         parsed_sections.append(parse_file(filepath))
 
     js_content = f"const STUDY_DATA = {json.dumps(parsed_sections, indent=2, ensure_ascii=False)};"
-    output_path = os.path.join(directory, "data.js")
+    output_path = os.path.join(script_dir, "..", "assets", "data.js")
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(js_content)
     print(f"Successfully generated data.js at {output_path}")

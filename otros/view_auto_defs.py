@@ -2,9 +2,10 @@ import json
 import os
 
 def main():
-    filepath = "data.js"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.join(script_dir, "..", "assets", "data.js")
     if not os.path.exists(filepath):
-        print("data.js not found")
+        print(f"data.js not found at {filepath}")
         return
         
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -33,9 +34,10 @@ def main():
                 
     output.append(f"\nTotal shown auto/normal definitions: {auto_count}")
     
-    with open("audit_results.txt", "w", encoding="utf-8") as f:
+    output_report_path = os.path.join(script_dir, "audit_results.txt")
+    with open(output_report_path, "w", encoding="utf-8") as f:
         f.write("\n".join(output))
-    print("Done. Wrote audit_results.txt")
+    print(f"Done. Wrote {output_report_path}")
 
 if __name__ == '__main__':
     main()
