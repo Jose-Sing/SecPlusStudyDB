@@ -1041,7 +1041,7 @@
                         <input type="checkbox" onchange="handleChecklistChange('${section.sectionId}', this)" ${savedState ? 'checked' : ''} class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-background bg-surface-container-low" />
                         <div>
                             <p class="font-label-md text-sm font-semibold text-on-surface leading-tight ${savedState ? 'line-through opacity-50' : ''}">${section.sectionTitle}</p>
-                            <p class="text-[11px] text-on-surface-variant font-mono mt-0.5">${section.concepts.length} concepts inside</p>
+                            <p class="text-[11px] text-on-surface-variant font-mono mt-0.5">${section.flashcards.length} flashcards inside</p>
                         </div>
                     </div>
                     <button onclick="resumeReading('${section.sectionId}')" class="p-2 hover:bg-surface-variant/70 rounded-full transition-colors text-on-surface-variant hover:text-primary">
@@ -1083,7 +1083,7 @@
         let totalCards = 0;
         let masteredCards = 0;
         STUDY_DATA.forEach(s => {
-            s.concepts.forEach(c => {
+            s.flashcards.forEach(c => {
                 totalCards++;
                 if (localStorage.getItem('securityPlus_confidence_' + c.name) === 'easy') {
                     masteredCards++;
@@ -1255,7 +1255,7 @@
         flashcards = [];
         STUDY_DATA.forEach(section => {
             if (filterVal === 'all' || section.sectionId === filterVal) {
-                section.concepts.forEach(concept => {
+                section.flashcards.forEach(concept => {
                     let definition = concept.definition ? concept.definition.trim() : '';
                     
                     // Fallback to raw_content if definition is empty
@@ -1431,7 +1431,7 @@
         // Count locally stored ratings for concepts
         if (STUDY_DATA) {
             STUDY_DATA.forEach(section => {
-                section.concepts.forEach(c => {
+                section.flashcards.forEach(c => {
                     const rating = localStorage.getItem('securityPlus_confidence_' + c.name);
                     if (rating === 'easy') easy++;
                     if (rating === 'medium') medium++;

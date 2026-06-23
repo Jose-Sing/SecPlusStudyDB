@@ -18,6 +18,12 @@ The project is structured as a lightweight, performant, static client-side web a
 
 ## 🪵 Changelog & Version History
 
+### [v1.6.1] — 2026-06-23 (Hierarchy Parsing Bugfix & Heading Duplication Fix)
+#### Fixed
+- **Heading Hierarchy Parsing Bugfix**: Corrected `parse_summaries.py` block parsing logic to respect heading levels (`##`, `###`, `####`). Non-concept headings (such as subheadings lacking an explicit definition) are now correctly merged into their logical parent concept based on their heading level rather than just appending to the last created card.
+- **Concept Title Duplication Removal**: Modified `parse_summaries.py` to strip the original heading line from the `raw_lines` of extracted concepts. This resolves the duplicate rendering of titles (in yellow and green/teal) within the concept cards.
+- **TLS/DTLS S16 Definition Compliance**: Added a definition and analogy to the main `## 11. TLS and DTLS` heading in `S16_Security_Infrastructure.md` to ensure it conforms to study guide guidelines and doesn't generate an empty card.
+
 ### [v1.6.0] — 2026-06-20 (Level-4 Heading Support & Search Enhancements)
 #### Added
 - **Level-4 Heading (####) Support**: Integrated parsing and rendering support for level-4 headings (`####`) as sub-subheadings (`<h5>`) in both `parse_summaries.py` (for automatic definition fallbacks) and `index.html`'s markdown renderer. This ensures sections like Section 15 (Security Architecture), which employ sub-concepts with `####` headers (e.g., *Responsibility Matrix*, *Network Segmentation*), display correctly without displaying raw markdown symbols on the dashboard or study views.

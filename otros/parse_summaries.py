@@ -100,7 +100,7 @@ def parse_file(filepath):
             continue
         if in_code_block:
             continue
-        m = re.match(r'^(##|###|####)\s+(.*)', line)
+        m = re.match(r'^(#{2,6})\s+(.*)', line)
         if m:
             level = len(m.group(1))
             name = m.group(2).strip()
@@ -124,14 +124,15 @@ def parse_file(filepath):
 
     # Step 3: Classify blocks as concepts or merge them
     concepts = []
+    flashcards = []
     skip = ["Study Summary", "Section", "Table of Contents",
             "Quick Reference", "Cheatsheet", "My Notes", "Key Terms", "Glossary"]
 
     for block in blocks:
         name = block["name"]
         # Clean concept name: strip numbers and emojis
-        name = re.sub(r'^\d+\.\s*', '', name).strip()
-        name = re.sub(r'^[^\w(]+', '', name).strip()
+        clean_name = re.sub(r'^\d+\.\s*', '', name).strip()
+        clean_name = re.sub(r'^[^\w(]+', '', clean_name).strip()
 
         if any(t in name for t in skip):
             continue
@@ -146,22 +147,47 @@ def parse_file(filepath):
                 definition_text = def_match.group(1).strip()
                 break
 
-        # A block becomes a new concept if it is H2 (##) or has an explicit definition
-        is_concept = (block["level"] == 2) or (has_explicit_def)
+        analogy_text = ""
+        for line in block["lines"]:
+            analogy_match = re.match(r'^>\s*(.*)', line.strip())
+            if analogy_match:
+                analogy_text = analogy_match.group(1).strip()
+                break
+
+        is_concept = (block["level"] == 2)
+        is_flashcard = is_concept or has_explicit_def
+
+        if is_flashcard:
+            flashcards.append({
+                "name": clean_name,
+                "definition": definition_text,
+                "analogy": analogy_text,
+                "raw_content": "\n".join(list(block["lines"])[1:]).strip()
+            })
 
         if is_concept:
             concept = {
-                "name": name,
+                "name": clean_name,
+                "level": block["level"],
                 "definition": definition_text,
-                "analogy": "",
+                "analogy": analogy_text,
                 "tables": [],
                 "list_items": [],
-                "raw_lines": list(block["lines"])
+                "raw_lines": list(block["lines"])[1:]  # Skip the heading line to prevent duplicate title in index
             }
             concepts.append(concept)
         else:
-            if concepts:
-                concepts[-1]["raw_lines"].extend(block["lines"])
+            # Find the closest parent/ancestor concept in the hierarchy
+            target_concept = None
+            for c in reversed(concepts):
+                if c["level"] < block["level"]:
+                    target_concept = c
+                    break
+            if target_concept is None and concepts:
+                target_concept = concepts[-1]
+            
+            if target_concept:
+                target_concept["raw_lines"].extend(block["lines"])
 
     # Step 4: Parse elements within each concept
     for c in concepts:
@@ -211,11 +237,14 @@ def parse_file(filepath):
 
         c["raw_content"] = "\n".join(c["raw_lines"]).strip()
         del c["raw_lines"]
+        if "level" in c:
+            del c["level"]
 
     return {
         "sectionId": f"S{section_num}",
         "sectionTitle": f"Section {section_num}: {section_name}",
-        "concepts": concepts
+        "concepts": concepts,
+        "flashcards": flashcards
     }
 
 def main():
