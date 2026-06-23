@@ -237,7 +237,7 @@ Netflix migrated from a monolithic architecture to microservices to handle scale
 
 > *Es como tener un control remoto que siempre deja la TV en el canal 5 sin importar en qué canal estaba antes — el resultado final es siempre el mismo, sin importar el punto de partida.*
 
-### Goal: Eliminating Snowflake Systems
+### Snowflake Systems
 
 * **Definition:** A "snowflake" is a system configuration/build that is unique and inconsistent with others, introducing risk through unpredictability.
 

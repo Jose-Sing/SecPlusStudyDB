@@ -35,9 +35,15 @@ def extract_auto_definition(raw_lines, tables):
       3. First ### sub-heading text
     """
     # 1. First plain paragraph
+    in_code_block = False
     for line in raw_lines:
         s = line.strip()
         if not s:
+            continue
+        if s.startswith('```'):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block:
             continue
         if s.startswith(('#', '>', '-', '|', '`')) or (s.startswith('*') and not s.startswith('**')):
             continue
@@ -85,101 +91,126 @@ def parse_file(filepath):
 
     lines = content.split('\n')
 
-    concepts = []
-    current_concept = None
-    collecting_table = False
-    table_lines = []
+    # Step 1: Identify all heading indices and levels (not in code blocks)
+    headings = []
     in_code_block = False
-
-    for line in lines:
-        # Skip bare horizontal rules
-        if re.match(r'^-{3,}$', line.strip()):
-            continue
-
-        # Track code blocks so we don't misparse their contents
+    for idx, line in enumerate(lines):
         if line.strip().startswith('```'):
             in_code_block = not in_code_block
-            if current_concept is not None:
-                current_concept['raw_lines'].append(line)
             continue
-
-        # New ## concept heading
-        if line.startswith('## ') and not in_code_block:
-            if current_concept and table_lines:
-                current_concept['tables'].append(parse_table(table_lines))
-                table_lines = []
-            collecting_table = False
-
-            concept_name = line.replace('## ', '').strip()
-            # Strip leading "N. " numbering and leading emoji/symbols
-            concept_name = re.sub(r'^\d+\.\s*', '', concept_name).strip()
-            concept_name = re.sub(r'^[^\w(]+', '', concept_name).strip()
-
-            # Skip structural headings that are not real study concepts
-            skip = ["Study Summary", "Section", "Table of Contents",
-                    "Quick Reference", "Cheatsheet", "My Notes"]
-            if any(t in concept_name for t in skip):
-                continue
-
-            current_concept = {
-                "name": concept_name,
-                "definition": "",
-                "analogy": "",
-                "tables": [],
-                "raw_lines": [],
-                "list_items": [],
-                "spanish_words": []
-            }
-            concepts.append(current_concept)
-            continue
-
-        if current_concept is None:
-            continue
-
-        current_concept['raw_lines'].append(line)
-
         if in_code_block:
             continue
+        m = re.match(r'^(##|###|####)\s+(.*)', line)
+        if m:
+            level = len(m.group(1))
+            name = m.group(2).strip()
+            headings.append({
+                "line_idx": idx,
+                "level": level,
+                "name": name
+            })
 
-        # Explicit definition (format used by S2-S7)
-        def_match = re.match(r'^\*\s+\*\*Definition:\*\*\s*(.*)', line)
-        if def_match:
-            current_concept['definition'] = def_match.group(1).strip()
+    # Step 2: Slice the lines into heading blocks
+    blocks = []
+    for i in range(len(headings)):
+        start = headings[i]["line_idx"]
+        end = headings[i+1]["line_idx"] if i + 1 < len(headings) else len(lines)
+        block_lines = lines[start:end]
+        blocks.append({
+            "level": headings[i]["level"],
+            "name": headings[i]["name"],
+            "lines": block_lines
+        })
+
+    # Step 3: Classify blocks as concepts or merge them
+    concepts = []
+    skip = ["Study Summary", "Section", "Table of Contents",
+            "Quick Reference", "Cheatsheet", "My Notes", "Key Terms", "Glossary"]
+
+    for block in blocks:
+        name = block["name"]
+        # Clean concept name: strip numbers and emojis
+        name = re.sub(r'^\d+\.\s*', '', name).strip()
+        name = re.sub(r'^[^\w(]+', '', name).strip()
+
+        if any(t in name for t in skip):
             continue
 
-        # Analogy / blockquote — keep only first occurrence per concept
-        analogy_match = re.match(r'^>\s*(.*)', line)
-        if analogy_match and not current_concept['analogy']:
-            current_concept['analogy'] = analogy_match.group(1).strip()
+        # Check if this block has an explicit definition
+        has_explicit_def = False
+        definition_text = ""
+        for line in block["lines"]:
+            def_match = re.match(r'^\*\s+\*\*Definition:\*\*\s*(.*)', line.strip())
+            if def_match:
+                has_explicit_def = True
+                definition_text = def_match.group(1).strip()
+                break
 
-        # Table rows
-        if line.strip().startswith('|'):
-            collecting_table = True
-            table_lines.append(line)
+        # A block becomes a new concept if it is H2 (##) or has an explicit definition
+        is_concept = (block["level"] == 2) or (has_explicit_def)
+
+        if is_concept:
+            concept = {
+                "name": name,
+                "definition": definition_text,
+                "analogy": "",
+                "tables": [],
+                "list_items": [],
+                "raw_lines": list(block["lines"])
+            }
+            concepts.append(concept)
         else:
-            if collecting_table:
-                current_concept['tables'].append(parse_table(table_lines))
-                table_lines = []
-                collecting_table = False
+            if concepts:
+                concepts[-1]["raw_lines"].extend(block["lines"])
 
-            # List items: both * and - styles
-            list_match = re.match(r'^[\*\-]\s+(.*)', line)
-            if list_match and not line.startswith('* **Definition:**'):
-                current_concept['list_items'].append(list_match.group(1).strip())
-
-    # Save last running table
-    if current_concept and table_lines:
-        current_concept['tables'].append(parse_table(table_lines))
-
-    # Auto-definition fallback for concepts that don't have an explicit Definition line
+    # Step 4: Parse elements within each concept
     for c in concepts:
-        if not c['definition']:
-            c['definition'] = extract_auto_definition(c['raw_lines'], c['tables'])
+        table_lines = []
+        collecting_table = False
+        in_code_block = False
+        
+        for line in c["raw_lines"]:
+            if re.match(r'^-{3,}$', line.strip()):
+                continue
 
-    # Finalize: build raw_content string, remove raw_lines list
-    for c in concepts:
-        c['raw_content'] = '\n'.join(c['raw_lines']).strip()
-        del c['raw_lines']
+            if line.strip().startswith('```'):
+                in_code_block = not in_code_block
+                continue
+
+            if in_code_block:
+                continue
+
+            if not c["definition"]:
+                def_match = re.match(r'^\*\s+\*\*Definition:\*\*\s*(.*)', line.strip())
+                if def_match:
+                    c["definition"] = def_match.group(1).strip()
+                    continue
+
+            analogy_match = re.match(r'^>\s*(.*)', line.strip())
+            if analogy_match and not c["analogy"]:
+                c["analogy"] = analogy_match.group(1).strip()
+
+            if line.strip().startswith('|'):
+                collecting_table = True
+                table_lines.append(line)
+            else:
+                if collecting_table:
+                    c["tables"].append(parse_table(table_lines))
+                    table_lines = []
+                    collecting_table = False
+
+                list_match = re.match(r'^[\*\-]\s+(.*)', line.strip())
+                if list_match and not line.strip().startswith('* **Definition:**'):
+                    c["list_items"].append(list_match.group(1).strip())
+
+        if table_lines:
+            c["tables"].append(parse_table(table_lines))
+
+        if not c["definition"]:
+            c["definition"] = extract_auto_definition(c["raw_lines"], c["tables"])
+
+        c["raw_content"] = "\n".join(c["raw_lines"]).strip()
+        del c["raw_lines"]
 
     return {
         "sectionId": f"S{section_num}",

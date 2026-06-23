@@ -49,18 +49,26 @@ Elements Supported by the Renderer
 Each `##` creates a **separate card** in the Library. It is the primary unit of study.
     ## Concept Name
 
+* **Always parsed as an independent concept (flashcard).**
 * The leading number (`## 1.`, `## 2.`) is automatically removed from the visible title.
 * Emojis at the start of the title are also stripped.
 * Avoid placing important content in the level-1 `#` heading — the parser ignores it.
 
 * * *
 
-### ✅ `###` — Sub-Heading (Internal Section)
+### ✅ `###` and `####` — Sub-Headings and Sub-Concepts
 
-Creates a secondary heading **inside** the concept card.
-    ### Sub-Section Name
+Headings at the `###` and `####` levels are parsed dynamically based on the presence of an explicit definition:
 
-Rendered as an uppercase label with a separator line. Ideal for dividing tables or content groups within the same concept.
+1. **Sub-Concepts (Separate Flashcards):**
+   If a `###` or `####` section contains an explicit `* **Definition:**` line, it is extracted as its own **independent concept card**. This is ideal for specific technical terms or tools that need their own flashcard.
+       ### Type 1 Hypervisor
+       * **Definition:** A bare-metal hypervisor that runs directly on physical host hardware.
+
+2. **Internal Sub-Headings (Rendered Inside the Parent Card):**
+   If a `###` or `####` section does **not** contain an explicit `* **Definition:**` line, it is treated as a sub-section of the parent `##` concept and rendered within its card.
+       ### Characteristics of Symmetric Encryption
+       - Uses a single shared key for encryption and decryption.
 
 * * *
 
@@ -138,6 +146,33 @@ Rendered as `<pre><code>` with a dark background and monospaced font. Ideal for 
 
 Completely ignored by the parser. Use it freely to visually separate concepts in the `.md` without any effect in the app.
     ---
+
+* * *
+
+### ✅ `* **Definition:**` — Explicit Concept Definition (Crucial)
+
+To guarantee that the flashcards and the search library contain highly accurate, non-polluted definitions (and to register sub-headings as independent cards), you must use the explicit definition format:
+    * **Definition:** A clear, concise technical description in English.
+
+* **Format Rule:** Must start with an asterisk `*`, followed by one space, followed by `**Definition:**` in bold, and then the definition text. Do not use a hyphen `-` at the start of this line, as the parser specifically checks for `*`.
+* **Auto-fallback:** If a main `##` concept lacks this explicit line, the parser will attempt to extract the first plain text paragraph or table row. However, using explicit definition lines is highly recommended for S8–S15 summaries to ensure maximum precision.
+* **Sub-concept registration:** A `###` or `####` heading *must* contain this line to be extracted as a separate concept. Otherwise, it is merged into the parent concept's card.
+
+* * *
+
+### 🚫 Headings Skipped by the Parser
+
+The parser automatically ignores sections that contain any of the following keywords in their names to prevent reference checklists or guides from polluting the study database:
+* `Study Summary` (e.g., the section header)
+* `Section` (e.g., `## Section 12`)
+* `Table of Contents`
+* `Quick Reference`
+* `Cheatsheet`
+* `My Notes`
+* `Key Terms`
+* `Glossary`
+
+If a heading contains any of these terms, the heading and all of its content are skipped entirely.
 
 * * *
 
@@ -228,7 +263,8 @@ Minimal Working Example
 Final Notes
 -----------
 
-* **One concept = one `##`** — do not split a concept across multiple `##` headings.
-* Sections are added to the `data.js` file by running `parse_summaries.py` in the directory containing the `.md` files.
-* The order of concepts in the Library respects the order in the `.md` file.
-* The visible name in flashcards and the Library is the `##` text without the leading number or emoji.
+* **Independent Concepts:** A concept card is created for every `##` heading automatically, or for any `###` or `####` heading if it contains a `* **Definition:**` line.
+* **Mismatches and Pollutions:** Sub-concept definitions (under H3/H4 headings) should be marked with `* **Definition:**` if they need their own independent card, preventing them from being merged or overwriting the parent's definition.
+* **Running the Parser:** Run `python parse_summaries.py` in the root workspace directory to recompile all study guides into `data.js`.
+* **Ordering:** The order of concepts in the Study Guide Library matches their sequential order in the `.md` files.
+* **Title Filtering:** The visible name of the flashcard/concept is the heading text with any leading numbers (`1.`, `2.`) or emojis removed.

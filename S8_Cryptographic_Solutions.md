@@ -26,7 +26,7 @@
 
 ## 1. Cryptography Fundamentals
 
-**Cryptography** is the practice of writing and solving codes to hide the true meaning of information. **Encryption** converts plaintext into ciphertext so only someone with the correct key can reverse it.
+* **Definition:** The practice of hiding information's true meaning using mathematical codes (cryptography) and converting readable plaintext into unreadable ciphertext (encryption) so only authorized keyholders can read it.
 
 > *Es como escribir un mensaje con tinta invisible: solo quien tiene la luz ultravioleta correcta (la clave) puede leerlo.*
 
@@ -57,6 +57,8 @@
 ---
 
 ## 2. Symmetric vs Asymmetric Encryption
+
+* **Definition:** Two primary encryption paradigms — symmetric encryption uses a single shared secret key for both encryption and decryption, while asymmetric encryption uses a mathematically linked public-private key pair.
 
 ### Core Comparison
 
@@ -92,6 +94,8 @@ Asymmetric encryption is used to **securely exchange a symmetric key**, and then
 
 ## 3. Symmetric Algorithms
 
+* **Definition:** Cryptographic algorithms that use a single shared key for both encryption and decryption, divided into stream ciphers (bit-by-bit) and block ciphers (fixed-size blocks).
+
 > 💡 **Exam tip:** You don't need to memorize specific block/key sizes — focus on identifying each algorithm, whether it's still in use, and its relative strength.
 
 ### Identification & Effectiveness Guide
@@ -115,6 +119,8 @@ Asymmetric encryption is used to **securely exchange a symmetric key**, and then
 ---
 
 ## 4. Asymmetric Algorithms
+
+* **Definition:** Cryptographic algorithms that use a linked public-private key pair to encrypt and decrypt data, establish shared keys, and generate digital signatures.
 
 ### Identification & Use Case Guide
 
@@ -200,6 +206,8 @@ Flow:
 ---
 
 ## 6. Increasing Hash Security
+
+* **Definition:** Techniques used to strengthen hashes and prevent cryptographic attacks (like Pass-the-Hash or collision attacks) on stored passwords, including key stretching, salting, and nonces.
 
 ### Hash Attacks
 
@@ -318,6 +326,8 @@ Each **block** contains:
 
 ## 10. Encryption Tools
 
+* **Definition:** Specialized hardware and software solutions used to securely generate, store, manage, and rotate cryptographic keys (e.g., TPM, HSM, KMS, and Secure Enclave).
+
 | Tool               | Full Name                | Analogy                             | Primary Use                                                                             |
 | ------------------ | ------------------------ | ----------------------------------- | --------------------------------------------------------------------------------------- |
 | **TPM**            | Trusted Platform Module  | Personal vault embedded in hardware | Secures hardware cryptographic keys; used with BitLocker                                |
@@ -348,6 +358,8 @@ Obfuscation hides information — not always by encrypting it, but by concealing
 ---
 
 ## 12. Cryptographic Attacks
+
+* **Definition:** Exploitation techniques used by threat actors to bypass, weaken, or break cryptographic protections, such as forcing older protocols (downgrade) or finding matching digests (collision).
 
 ### Downgrade Attack (Version Rollback Attack)
 

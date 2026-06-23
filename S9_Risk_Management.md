@@ -172,7 +172,7 @@ ALE = $5,000 × 0.5        = $2,500/year
 
 ## 8. Risk Management Strategies
 
-Once risks are identified and analyzed, the organization must decide **how to treat each risk**. There are four primary strategies.
+* **Definition:** The structured approaches used by an organization to address and respond to identified risks, consisting of four primary strategies: risk transference (sharing), risk acceptance, risk avoidance, and risk mitigation.
 
 > *Imagina que descubres que el techo de tu casa tiene una gotera: puedes ignorarla si es mínima (aceptar), contratar un seguro (transferir), mudarte de casa para evitar el problema (evitar), o reparar el techo ahora (mitigar). Cada opción tiene un costo y una justificación.*
 

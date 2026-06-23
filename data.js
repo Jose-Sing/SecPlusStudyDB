@@ -9,8 +9,7 @@ const STUDY_DATA = [
         "analogy": "Como el candado de tu casa: te protege, pero también te obliga a sacar la llave cada vez que entras.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Permanent tension between the level of security applied to a system and the convenience experienced by the user. Increasing security reduces usability; increasing convenience loosens security posture. The goal is finding the operational sweet spot between both.\n> Como el candado de tu casa: te protege, pero también te obliga a sacar la llave cada vez que entras."
+        "raw_content": "## Security vs. Usability\n\n* **Definition:** Permanent tension between the level of security applied to a system and the convenience experienced by the user. Increasing security reduces usability; increasing convenience loosens security posture. The goal is finding the operational sweet spot between both.\n> Como el candado de tu casa: te protege, pero también te obliga a sacar la llave cada vez que entras.\n\n---"
       },
       {
         "name": "Information Security",
@@ -18,8 +17,7 @@ const STUDY_DATA = [
         "analogy": "Proteger lo que dice el documento, no la caja donde está guardado.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The practice of protecting **data and information** from unauthorized access, unlawful modification, disruption, disclosure, corruption, and destruction. Focuses on the content itself, not the systems storing it.\n> Proteger lo que dice el documento, no la caja donde está guardado."
+        "raw_content": "## Information Security\n\n* **Definition:** The practice of protecting **data and information** from unauthorized access, unlawful modification, disruption, disclosure, corruption, and destruction. Focuses on the content itself, not the systems storing it.\n> Proteger lo que dice el documento, no la caja donde está guardado.\n\n---"
       },
       {
         "name": "Information System Security",
@@ -27,8 +25,7 @@ const STUDY_DATA = [
         "analogy": "Proteger la caja fuerte, no el documento adentro.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The practice of protecting the **systems** that hold and process critical data — computers, servers, network devices, smartphones. Focuses on the containers, not the content inside them.\n> Proteger la caja fuerte, no el documento adentro."
+        "raw_content": "## Information System Security\n\n* **Definition:** The practice of protecting the **systems** that hold and process critical data — computers, servers, network devices, smartphones. Focuses on the containers, not the content inside them.\n> Proteger la caja fuerte, no el documento adentro.\n\n---"
       },
       {
         "name": "CIA Triad",
@@ -36,8 +33,7 @@ const STUDY_DATA = [
         "analogy": "El triángulo que sostiene toda decisión de seguridad: que solo tú puedas verlo, que nadie lo altere, y que siempre esté disponible cuando lo necesites.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The three foundational pillars of information security: **Confidentiality** (information accessible only to authorized individuals), **Integrity** (data remains accurate and unaltered unless modified by an authorized user), and **Availability** (systems and resources are accessible and functional when needed). Extended in modern practice to **C.I.A.N.A** by adding Non-repudiation and Authentication.\n> El triángulo que sostiene toda decisión de seguridad: que solo tú puedas verlo, que nadie lo altere, y que siempre esté disponible cuando lo necesites."
+        "raw_content": "## CIA Triad\n\n* **Definition:** The three foundational pillars of information security: **Confidentiality** (information accessible only to authorized individuals), **Integrity** (data remains accurate and unaltered unless modified by an authorized user), and **Availability** (systems and resources are accessible and functional when needed). Extended in modern practice to **C.I.A.N.A** by adding Non-repudiation and Authentication.\n> El triángulo que sostiene toda decisión de seguridad: que solo tú puedas verlo, que nadie lo altere, y que siempre esté disponible cuando lo necesites.\n\n---"
       },
       {
         "name": "Confidentiality",
@@ -45,8 +41,7 @@ const STUDY_DATA = [
         "analogy": "Lo que le dices a tu médico no debería escucharlo el de la fila de atrás.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Ensures that private or sensitive information is not disclosed to unauthorized individuals, entities, or processes. Implemented through five methods: **encryption** (primary tool), **access controls**, **data masking**, **physical security measures**, and **training & awareness**. Critical for protecting personal privacy, maintaining business advantage, and achieving regulatory compliance (PII, PHI, financial data).\n> Lo que le dices a tu médico no debería escucharlo el de la fila de atrás."
+        "raw_content": "## Confidentiality\n\n* **Definition:** Ensures that private or sensitive information is not disclosed to unauthorized individuals, entities, or processes. Implemented through five methods: **encryption** (primary tool), **access controls**, **data masking**, **physical security measures**, and **training & awareness**. Critical for protecting personal privacy, maintaining business advantage, and achieving regulatory compliance (PII, PHI, financial data).\n> Lo que le dices a tu médico no debería escucharlo el de la fila de atrás.\n\n---"
       },
       {
         "name": "Encryption",
@@ -54,8 +49,7 @@ const STUDY_DATA = [
         "analogy": "Como enviar una carta dentro de una caja con candado: solo quien tenga la llave puede abrirla y leer el contenido.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Process of converting plaintext data into unreadable ciphertext to prevent unauthorized access. Data can only be decrypted by a party holding the correct decryption key. Primary mechanism for enforcing confidentiality.\n> Como enviar una carta dentro de una caja con candado: solo quien tenga la llave puede abrirla y leer el contenido."
+        "raw_content": "## Encryption\n\n* **Definition:** Process of converting plaintext data into unreadable ciphertext to prevent unauthorized access. Data can only be decrypted by a party holding the correct decryption key. Primary mechanism for enforcing confidentiality.\n> Como enviar una carta dentro de una caja con candado: solo quien tenga la llave puede abrirla y leer el contenido.\n\n---"
       },
       {
         "name": "Data Masking",
@@ -63,8 +57,7 @@ const STUDY_DATA = [
         "analogy": "Como tapar con corrector los primeros dígitos de un número de tarjeta antes de mostrarle el recibo a alguien.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Method of obscuring specific data within a database to make it inaccessible to unauthorized users while preserving its usability for authorized ones. Common example: displaying only the last 4 digits of a credit card number to customer support agents.\n> Como tapar con corrector los primeros dígitos de un número de tarjeta antes de mostrarle el recibo a alguien."
+        "raw_content": "## Data Masking\n\n* **Definition:** Method of obscuring specific data within a database to make it inaccessible to unauthorized users while preserving its usability for authorized ones. Common example: displaying only the last 4 digits of a credit card number to customer support agents.\n> Como tapar con corrector los primeros dígitos de un número de tarjeta antes de mostrarle el recibo a alguien.\n\n---"
       },
       {
         "name": "Integrity",
@@ -72,8 +65,7 @@ const STUDY_DATA = [
         "analogy": "Si mandas un contrato firmado, el receptor debe recibirlo exactamente como lo mandaste, sin que nadie haya cambiado ni una coma.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Ensures that data remains accurate, consistent, and unaltered throughout its entire lifecycle, unless intentionally modified by an authorized individual. Implemented through five methods: **hashing** (primary tool), **digital signatures**, **checksums**, **access controls**, and **regular audits**.\n> Si mandas un contrato firmado, el receptor debe recibirlo exactamente como lo mandaste, sin que nadie haya cambiado ni una coma."
+        "raw_content": "## Integrity\n\n* **Definition:** Ensures that data remains accurate, consistent, and unaltered throughout its entire lifecycle, unless intentionally modified by an authorized individual. Implemented through five methods: **hashing** (primary tool), **digital signatures**, **checksums**, **access controls**, and **regular audits**.\n> Si mandas un contrato firmado, el receptor debe recibirlo exactamente como lo mandaste, sin que nadie haya cambiado ni una coma.\n\n---"
       },
       {
         "name": "Hashing",
@@ -81,8 +73,7 @@ const STUDY_DATA = [
         "analogy": "Como la huella dactilar de un archivo: cambia un solo píxel y la huella ya no coincide.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Process of converting data into a fixed-size value called a **hash digest**. Any modification to the original data — no matter how small — produces a completely different hash, immediately signaling tampering. Functions as a digital fingerprint for data integrity verification. **Key association: Integrity = Hashing.**\n> Como la huella dactilar de un archivo: cambia un solo píxel y la huella ya no coincide."
+        "raw_content": "## Hashing\n\n* **Definition:** Process of converting data into a fixed-size value called a **hash digest**. Any modification to the original data — no matter how small — produces a completely different hash, immediately signaling tampering. Functions as a digital fingerprint for data integrity verification. **Key association: Integrity = Hashing.**\n> Como la huella dactilar de un archivo: cambia un solo píxel y la huella ya no coincide.\n\n---"
       },
       {
         "name": "Checksum",
@@ -90,8 +81,7 @@ const STUDY_DATA = [
         "analogy": "Como el sello en un paquete sellado al vacío: si el sello está roto al abrirlo, sabes que alguien lo tocó antes.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Integrity verification method used during data transmission. The sender computes a checksum for the data and sends it alongside. The receiver recomputes the checksum on arrival and compares both values. Matching values confirm integrity; mismatched values indicate alteration or corruption.\n> Como el sello en un paquete sellado al vacío: si el sello está roto al abrirlo, sabes que alguien lo tocó antes."
+        "raw_content": "## Checksum\n\n* **Definition:** Integrity verification method used during data transmission. The sender computes a checksum for the data and sends it alongside. The receiver recomputes the checksum on arrival and compares both values. Matching values confirm integrity; mismatched values indicate alteration or corruption.\n> Como el sello en un paquete sellado al vacío: si el sello está roto al abrirlo, sabes que alguien lo tocó antes.\n\n---"
       },
       {
         "name": "Availability",
@@ -99,8 +89,7 @@ const STUDY_DATA = [
         "analogy": "De nada sirve tener el mejor banco del mundo si el cajero siempre está fuera de servicio.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Ensures that information, systems, and resources are accessible and operational when needed by authorized users. Measured in **\"nines\" of uptime** (e.g., five nines = 99.999% = max 5.26 minutes of downtime per year). Achieved primarily through **redundancy**. **Key association: Availability = Redundancy.**\n> De nada sirve tener el mejor banco del mundo si el cajero siempre está fuera de servicio."
+        "raw_content": "## Availability\n\n* **Definition:** Ensures that information, systems, and resources are accessible and operational when needed by authorized users. Measured in **\"nines\" of uptime** (e.g., five nines = 99.999% = max 5.26 minutes of downtime per year). Achieved primarily through **redundancy**. **Key association: Availability = Redundancy.**\n> De nada sirve tener el mejor banco del mundo si el cajero siempre está fuera de servicio.\n\n---"
       },
       {
         "name": "Redundancy",
@@ -108,8 +97,7 @@ const STUDY_DATA = [
         "analogy": "El neumático de repuesto del carro: no lo usas todos los días, pero el día que lo necesitas, marca la diferencia.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Duplication of critical components or functions to enhance system reliability and ensure uninterrupted service. Four types: **server redundancy** (load balancing/failover), **data redundancy** (multiple storage locations, RAID, cloud backups), **network redundancy** (alternate routing paths), and **power redundancy** (generators, UPS systems).\n> El neumático de repuesto del carro: no lo usas todos los días, pero el día que lo necesitas, marca la diferencia."
+        "raw_content": "## Redundancy\n\n* **Definition:** Duplication of critical components or functions to enhance system reliability and ensure uninterrupted service. Four types: **server redundancy** (load balancing/failover), **data redundancy** (multiple storage locations, RAID, cloud backups), **network redundancy** (alternate routing paths), and **power redundancy** (generators, UPS systems).\n> El neumático de repuesto del carro: no lo usas todos los días, pero el día que lo necesitas, marca la diferencia.\n\n---"
       },
       {
         "name": "Non-repudiation",
@@ -117,8 +105,7 @@ const STUDY_DATA = [
         "analogy": "Como el acuse de recibo firmado de un paquete certificado: una vez que firmas, no puedes decir que no llegó.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Security measure ensuring that parties involved in a communication or transaction cannot deny their participation or the authenticity of their actions. Primary implementation tool: **digital signatures**. Provides three guarantees: authenticity of transactions, integrity of communications, and user accountability.\n> Como el acuse de recibo firmado de un paquete certificado: una vez que firmas, no puedes decir que no llegó."
+        "raw_content": "## Non-repudiation\n\n* **Definition:** Security measure ensuring that parties involved in a communication or transaction cannot deny their participation or the authenticity of their actions. Primary implementation tool: **digital signatures**. Provides three guarantees: authenticity of transactions, integrity of communications, and user accountability.\n> Como el acuse de recibo firmado de un paquete certificado: una vez que firmas, no puedes decir que no llegó.\n\n---"
       },
       {
         "name": "Digital Signature",
@@ -126,8 +113,7 @@ const STUDY_DATA = [
         "analogy": "El equivalente digital del sello de cera de un rey medieval: solo él tiene ese anillo, nadie más puede replicar ese sello.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Cryptographic mechanism that combines hashing and asymmetric encryption to guarantee both authenticity and integrity. Process: (1) hash the message → (2) encrypt the hash digest with the sender's **private key** → result is the digital signature. Any alteration to the original message invalidates the signature. Only the sender holds their private key, making the signature impossible to forge.\n> El equivalente digital del sello de cera de un rey medieval: solo él tiene ese anillo, nadie más puede replicar ese sello."
+        "raw_content": "## Digital Signature\n\n* **Definition:** Cryptographic mechanism that combines hashing and asymmetric encryption to guarantee both authenticity and integrity. Process: (1) hash the message → (2) encrypt the hash digest with the sender's **private key** → result is the digital signature. Any alteration to the original message invalidates the signature. Only the sender holds their private key, making the signature impossible to forge.\n> El equivalente digital del sello de cera de un rey medieval: solo él tiene ese anillo, nadie más puede replicar ese sello.\n\n---"
       },
       {
         "name": "Authentication (AAA)",
@@ -170,8 +156,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Process of verifying that a user or entity is who they claim to be. First component of the AAA model. Implemented through five factors:\n\n| Factor | Also Known As | Example |\n|---|---|---|\n| Something you **know** | Knowledge factor | Password, PIN |\n| Something you **have** | Possession factor | Badge, OTP via smartphone |\n| Something you **are** | Inherence factor | Fingerprint, facial recognition |\n| Something you **do** | Action factor | Handwriting, gait analysis |\n| Somewhere you **are** | Location factor | Geofencing, country-based access |\n\n> El guardia de seguridad que verifica tu identificación antes de dejarte entrar al edificio."
+        "raw_content": "## Authentication (AAA)\n\n* **Definition:** Process of verifying that a user or entity is who they claim to be. First component of the AAA model. Implemented through five factors:\n\n| Factor | Also Known As | Example |\n|---|---|---|\n| Something you **know** | Knowledge factor | Password, PIN |\n| Something you **have** | Possession factor | Badge, OTP via smartphone |\n| Something you **are** | Inherence factor | Fingerprint, facial recognition |\n| Something you **do** | Action factor | Handwriting, gait analysis |\n| Somewhere you **are** | Location factor | Geofencing, country-based access |\n\n> El guardia de seguridad que verifica tu identificación antes de dejarte entrar al edificio.\n\n---"
       },
       {
         "name": "Multi-Factor Authentication (MFA / 2FA)",
@@ -179,8 +164,7 @@ const STUDY_DATA = [
         "analogy": "Para retirar dinero del banco necesitas tu tarjeta física **y** tu PIN: si alguien roba solo uno de los dos, no puede hacer nada.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Authentication system requiring two or more independent verification factors. Using exactly two factors = **2FA**. Using two or more = **MFA**. Ensures that compromise of a single factor (e.g., stolen password) is not sufficient to gain access, since the attacker still lacks the additional required factor.\n> Para retirar dinero del banco necesitas tu tarjeta física **y** tu PIN: si alguien roba solo uno de los dos, no puede hacer nada."
+        "raw_content": "## Multi-Factor Authentication (MFA / 2FA)\n\n* **Definition:** Authentication system requiring two or more independent verification factors. Using exactly two factors = **2FA**. Using two or more = **MFA**. Ensures that compromise of a single factor (e.g., stolen password) is not sufficient to gain access, since the attacker still lacks the additional required factor.\n> Para retirar dinero del banco necesitas tu tarjeta física **y** tu PIN: si alguien roba solo uno de los dos, no puede hacer nada.\n\n---"
       },
       {
         "name": "Authorization (AAA)",
@@ -188,8 +172,7 @@ const STUDY_DATA = [
         "analogy": "Entrar al edificio (autenticación) no significa que puedas entrar a todas las oficinas (autorización).",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Determines what actions or resources an already-authenticated user is permitted to access or perform. Second component of the AAA model. Mechanisms include role-based, rule-based, and attribute-based controls. Answers the question: *\"Now that I know who you are — here is what you are allowed to do.\"*\n> Entrar al edificio (autenticación) no significa que puedas entrar a todas las oficinas (autorización)."
+        "raw_content": "## Authorization (AAA)\n\n* **Definition:** Determines what actions or resources an already-authenticated user is permitted to access or perform. Second component of the AAA model. Mechanisms include role-based, rule-based, and attribute-based controls. Answers the question: *\"Now that I know who you are — here is what you are allowed to do.\"*\n> Entrar al edificio (autenticación) no significa que puedas entrar a todas las oficinas (autorización).\n\n---"
       },
       {
         "name": "Accounting (AAA)",
@@ -197,8 +180,7 @@ const STUDY_DATA = [
         "analogy": "El extracto bancario detallado: cada transacción, fecha, monto y lugar — sin espacio para dudas sobre qué pasó y cuándo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Monitoring and logging of all user actions within a system during their digital interactions. Third component of the AAA model. Provides five key benefits: **audit trail** (chronological activity record), **regulatory compliance**, **forensic analysis**, **resource optimization**, and **user accountability**. Implemented via Syslog servers, network analyzers (Wireshark), and **SIEM** systems.\n> El extracto bancario detallado: cada transacción, fecha, monto y lugar — sin espacio para dudas sobre qué pasó y cuándo."
+        "raw_content": "## Accounting (AAA)\n\n* **Definition:** Monitoring and logging of all user actions within a system during their digital interactions. Third component of the AAA model. Provides five key benefits: **audit trail** (chronological activity record), **regulatory compliance**, **forensic analysis**, **resource optimization**, and **user accountability**. Implemented via Syslog servers, network analyzers (Wireshark), and **SIEM** systems.\n> El extracto bancario detallado: cada transacción, fecha, monto y lugar — sin espacio para dudas sobre qué pasó y cuándo.\n\n---"
       },
       {
         "name": "SIEM (Security Information and Event Management)",
@@ -206,8 +188,7 @@ const STUDY_DATA = [
         "analogy": "La torre de control del aeropuerto: recibe señales de todos los aviones (sistemas) al mismo tiempo y alerta cuando algo no cuadra.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Platform that provides real-time analysis of security alerts generated by hardware and software across an organization's infrastructure. Core tool for the Accounting function — aggregates, correlates, and surfaces security events for investigation.\n> La torre de control del aeropuerto: recibe señales de todos los aviones (sistemas) al mismo tiempo y alerta cuando algo no cuadra."
+        "raw_content": "## SIEM (Security Information and Event Management)\n\n* **Definition:** Platform that provides real-time analysis of security alerts generated by hardware and software across an organization's infrastructure. Core tool for the Accounting function — aggregates, correlates, and surfaces security events for investigation.\n> La torre de control del aeropuerto: recibe señales de todos los aviones (sistemas) al mismo tiempo y alerta cuando algo no cuadra.\n\n---"
       },
       {
         "name": "Threat",
@@ -215,8 +196,7 @@ const STUDY_DATA = [
         "analogy": "La tormenta que puede destruir tu casa: no puedes evitar que ocurra, solo puedes prepararte para resistirla.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Any event, actor, or condition that could cause harm, loss, damage, or compromise to IT systems. Threats originate from **external, generally uncontrollable factors**: natural disasters, cyberattacks, data breaches, insider misuse. Risk management options: mitigate, transfer, avoid, or accept.\n> La tormenta que puede destruir tu casa: no puedes evitar que ocurra, solo puedes prepararte para resistirla."
+        "raw_content": "## Threat\n\n* **Definition:** Any event, actor, or condition that could cause harm, loss, damage, or compromise to IT systems. Threats originate from **external, generally uncontrollable factors**: natural disasters, cyberattacks, data breaches, insider misuse. Risk management options: mitigate, transfer, avoid, or accept.\n> La tormenta que puede destruir tu casa: no puedes evitar que ocurra, solo puedes prepararte para resistirla.\n\n---"
       },
       {
         "name": "Vulnerability",
@@ -224,8 +204,7 @@ const STUDY_DATA = [
         "analogy": "La grieta en la pared de tu casa: tú la creaste, tú puedes repararla antes de que llegue la tormenta.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Any weakness in the design or implementation of a system that could be exploited by a threat. Vulnerabilities come from **internal, controllable factors**: software bugs, misconfigurations, missing patches, lack of physical security. Unlike threats, vulnerabilities can be directly managed by the organization.\n> La grieta en la pared de tu casa: tú la creaste, tú puedes repararla antes de que llegue la tormenta."
+        "raw_content": "## Vulnerability\n\n* **Definition:** Any weakness in the design or implementation of a system that could be exploited by a threat. Vulnerabilities come from **internal, controllable factors**: software bugs, misconfigurations, missing patches, lack of physical security. Unlike threats, vulnerabilities can be directly managed by the organization.\n> La grieta en la pared de tu casa: tú la creaste, tú puedes repararla antes de que llegue la tormenta.\n\n---"
       },
       {
         "name": "Risk",
@@ -233,8 +212,7 @@ const STUDY_DATA = [
         "analogy": "El riesgo de un robo existe solo si alguien quiere entrar a tu casa (amenaza) **y** dejaste la puerta sin llave (vulnerabilidad).",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The intersection of a threat and a vulnerability. **No vulnerability → no risk. No threat → no risk.** Risk exists only when both are present simultaneously. Managed through four responses: **mitigate** (reduce impact), **transfer** (e.g., insurance), **avoid** (eliminate the activity), or **accept** (acknowledge and tolerate it).\n> El riesgo de un robo existe solo si alguien quiere entrar a tu casa (amenaza) **y** dejaste la puerta sin llave (vulnerabilidad)."
+        "raw_content": "## Risk\n\n* **Definition:** The intersection of a threat and a vulnerability. **No vulnerability → no risk. No threat → no risk.** Risk exists only when both are present simultaneously. Managed through four responses: **mitigate** (reduce impact), **transfer** (e.g., insurance), **avoid** (eliminate the activity), or **accept** (acknowledge and tolerate it).\n> El riesgo de un robo existe solo si alguien quiere entrar a tu casa (amenaza) **y** dejaste la puerta sin llave (vulnerabilidad).\n\n---"
       },
       {
         "name": "Security Control Categories",
@@ -272,8 +250,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Classification of security controls by their nature into four broad categories:\n\n| Category | Nature | Examples |\n|---|---|---|\n| **Technical** | Hardware/software mechanisms | Firewall, antivirus, IDS, encryption |\n| **Managerial** | Strategic planning and governance (also called Administrative) | Risk assessments, security policies, incident response plans |\n| **Operational** | Day-to-day procedures governed by people | Password rotation, backups, awareness training |\n| **Physical** | Tangible real-world barriers | Cameras, biometric locks, guards, fences |\n\n> Como un castillo medieval: las murallas son técnicas, el general que planea la defensa es gerencial, los guardias en patrulla son operativos, y el foso es físico."
+        "raw_content": "## Security Control Categories\n\n* **Definition:** Classification of security controls by their nature into four broad categories:\n\n| Category | Nature | Examples |\n|---|---|---|\n| **Technical** | Hardware/software mechanisms | Firewall, antivirus, IDS, encryption |\n| **Managerial** | Strategic planning and governance (also called Administrative) | Risk assessments, security policies, incident response plans |\n| **Operational** | Day-to-day procedures governed by people | Password rotation, backups, awareness training |\n| **Physical** | Tangible real-world barriers | Cameras, biometric locks, guards, fences |\n\n> Como un castillo medieval: las murallas son técnicas, el general que planea la defensa es gerencial, los guardias en patrulla son operativos, y el foso es físico.\n\n---"
       },
       {
         "name": "Security Control Types",
@@ -321,8 +298,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Classification of security controls by their **functional role** against a threat. Six types:\n\n| Type | Function | Example |\n|---|---|---|\n| **Preventative** | Blocks the threat before it occurs | Firewall |\n| **Deterrent** | Discourages attackers without physically stopping them | Warning signs, login banners |\n| **Detective** | Detects and alerts on malicious activity as it occurs | IDS, security cameras |\n| **Corrective** | Mitigates damage and restores systems after an incident | Antivirus quarantine/removal |\n| **Compensating** | Alternative control when the ideal control is not feasible | VPN added on top of WPA2 when WPA3 is unsupported |\n| **Directive** | Guides or mandates behavior through policy or documentation | Acceptable Use Policy (AUP) |\n\n> ⚠️ A single tool can fulfill multiple types simultaneously — an antivirus detects (detective) and removes (corrective) malware."
+        "raw_content": "## Security Control Types\n\n* **Definition:** Classification of security controls by their **functional role** against a threat. Six types:\n\n| Type | Function | Example |\n|---|---|---|\n| **Preventative** | Blocks the threat before it occurs | Firewall |\n| **Deterrent** | Discourages attackers without physically stopping them | Warning signs, login banners |\n| **Detective** | Detects and alerts on malicious activity as it occurs | IDS, security cameras |\n| **Corrective** | Mitigates damage and restores systems after an incident | Antivirus quarantine/removal |\n| **Compensating** | Alternative control when the ideal control is not feasible | VPN added on top of WPA2 when WPA3 is unsupported |\n| **Directive** | Guides or mandates behavior through policy or documentation | Acceptable Use Policy (AUP) |\n\n> ⚠️ A single tool can fulfill multiple types simultaneously — an antivirus detects (detective) and removes (corrective) malware.\n\n---"
       },
       {
         "name": "Zero Trust",
@@ -330,8 +306,7 @@ const STUDY_DATA = [
         "analogy": "En lugar de asumir que todos los que están dentro del edificio son de confianza, verificas la identidad de cada persona cada vez que quiere abrir cualquier puerta.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Security model operating on the principle **\"Trust nothing, verify everything.\"** No user, device, or system is trusted by default regardless of network location. Every access request — internal or external — requires continuous verification. Driven by the rise of cloud, remote work, mobile, and deperimeterization.\n> En lugar de asumir que todos los que están dentro del edificio son de confianza, verificas la identidad de cada persona cada vez que quiere abrir cualquier puerta."
+        "raw_content": "## Zero Trust\n\n* **Definition:** Security model operating on the principle **\"Trust nothing, verify everything.\"** No user, device, or system is trusted by default regardless of network location. Every access request — internal or external — requires continuous verification. Driven by the rise of cloud, remote work, mobile, and deperimeterization.\n> En lugar de asumir que todos los que están dentro del edificio son de confianza, verificas la identidad de cada persona cada vez que quiere abrir cualquier puerta.\n\n---"
       },
       {
         "name": "Zero Trust — Control Plane",
@@ -339,8 +314,7 @@ const STUDY_DATA = [
         "analogy": "El departamento de seguridad del edificio que establece quién puede entrar a cada zona y bajo qué condiciones.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The overarching framework responsible for defining, managing, and enforcing access policies. Contains four key elements: **Adaptive Identity** (real-time validation based on behavior, device, and location), **Threat Scope Reduction** (minimum necessary access to reduce attack surface), **Policy-Driven Access Control** (role-based access policies), and **Secured Zones** (isolated environments for sensitive data). Operated by the **Policy Engine** (access decision-making) and the **Policy Administrator** (policy management and enforcement).\n> El departamento de seguridad del edificio que establece quién puede entrar a cada zona y bajo qué condiciones."
+        "raw_content": "## Zero Trust — Control Plane\n\n* **Definition:** The overarching framework responsible for defining, managing, and enforcing access policies. Contains four key elements: **Adaptive Identity** (real-time validation based on behavior, device, and location), **Threat Scope Reduction** (minimum necessary access to reduce attack surface), **Policy-Driven Access Control** (role-based access policies), and **Secured Zones** (isolated environments for sensitive data). Operated by the **Policy Engine** (access decision-making) and the **Policy Administrator** (policy management and enforcement).\n> El departamento de seguridad del edificio que establece quién puede entrar a cada zona y bajo qué condiciones.\n\n---"
       },
       {
         "name": "Zero Trust — Data Plane",
@@ -348,8 +322,7 @@ const STUDY_DATA = [
         "analogy": "El guardia en la puerta que ejecuta las órdenes del departamento de seguridad: deja pasar o bloquea según lo que le indican.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The execution layer of Zero Trust that carries out the decisions made by the Control Plane. Contains two components: **Subject/System** (the entity requesting access — user, workstation, or application) and the **Policy Enforcement Point** (where the grant or deny decision is actually executed, acting as the final gatekeeper).\n> El guardia en la puerta que ejecuta las órdenes del departamento de seguridad: deja pasar o bloquea según lo que le indican."
+        "raw_content": "## Zero Trust — Data Plane\n\n* **Definition:** The execution layer of Zero Trust that carries out the decisions made by the Control Plane. Contains two components: **Subject/System** (the entity requesting access — user, workstation, or application) and the **Policy Enforcement Point** (where the grant or deny decision is actually executed, acting as the final gatekeeper).\n> El guardia en la puerta que ejecuta las órdenes del departamento de seguridad: deja pasar o bloquea según lo que le indican.\n\n---"
       },
       {
         "name": "Gap Analysis",
@@ -357,8 +330,7 @@ const STUDY_DATA = [
         "analogy": "Como revisar la diferencia entre donde estás parado en el mapa y donde quieres llegar: primero debes saber los dos puntos para poder trazar la ruta.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Evaluation process that compares an organization's current security posture to its desired state in order to identify gaps and build a remediation plan. Two types: **Technical Gap Analysis** (infrastructure and technology capabilities) and **Business Gap Analysis** (processes and operations). Output is typically documented in a **Plan of Action and Milestones (POA&M)**.\n> Como revisar la diferencia entre donde estás parado en el mapa y donde quieres llegar: primero debes saber los dos puntos para poder trazar la ruta."
+        "raw_content": "## Gap Analysis\n\n* **Definition:** Evaluation process that compares an organization's current security posture to its desired state in order to identify gaps and build a remediation plan. Two types: **Technical Gap Analysis** (infrastructure and technology capabilities) and **Business Gap Analysis** (processes and operations). Output is typically documented in a **Plan of Action and Milestones (POA&M)**.\n> Como revisar la diferencia entre donde estás parado en el mapa y donde quieres llegar: primero debes saber los dos puntos para poder trazar la ruta.\n\n---"
       },
       {
         "name": "Plan of Action and Milestones (POA&M)",
@@ -366,8 +338,7 @@ const STUDY_DATA = [
         "analogy": "La lista de tareas priorizada del técnico que sabe exactamente qué arreglar, en qué orden y para cuándo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Structured document produced from a gap analysis or vulnerability assessment that outlines: identified vulnerabilities, specific remediation actions, assigned resources, and completion timelines. Used to prioritize fixes and track progress from current state to desired security state.\n> La lista de tareas priorizada del técnico que sabe exactamente qué arreglar, en qué orden y para cuándo.\n\n\n*CompTIA Security+ SY0-701 · Section 2: Fundamentals of Security · Dion Training*"
+        "raw_content": "## Plan of Action and Milestones (POA&M)\n\n* **Definition:** Structured document produced from a gap analysis or vulnerability assessment that outlines: identified vulnerabilities, specific remediation actions, assigned resources, and completion timelines. Used to prioritize fixes and track progress from current state to desired security state.\n> La lista de tareas priorizada del técnico que sabe exactamente qué arreglar, en qué orden y para cuándo.\n\n---\n\n*CompTIA Security+ SY0-701 · Section 2: Fundamentals of Security · Dion Training*"
       }
     ]
   },
@@ -381,8 +352,7 @@ const STUDY_DATA = [
         "analogy": "Como en el mundo del crimen físico: desde el ladrón de poca monta hasta el cartel internacional — todos son amenazas, pero con recursos y objetivos muy distintos.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An individual or entity responsible for incidents that impact security and data protection. Threat actors initiate attacks to steal, alter, or destroy data. They range from lone unskilled individuals to government-sponsored organizations.\n> Como en el mundo del crimen físico: desde el ladrón de poca monta hasta el cartel internacional — todos son amenazas, pero con recursos y objetivos muy distintos."
+        "raw_content": "## Threat Actor\n\n* **Definition:** An individual or entity responsible for incidents that impact security and data protection. Threat actors initiate attacks to steal, alter, or destroy data. They range from lone unskilled individuals to government-sponsored organizations.\n> Como en el mundo del crimen físico: desde el ladrón de poca monta hasta el cartel internacional — todos son amenazas, pero con recursos y objetivos muy distintos.\n\n---"
       },
       {
         "name": "Threat Actor Motivations",
@@ -439,8 +409,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The underlying driving forces that push a threat actor to carry out an attack. Distinct from **intent** (the specific goal of the attack). Key motivations include:\n\n| Motivation | Description |\n|---|---|\n| **Data Exfiltration** | Unauthorized transfer of sensitive data (IP, PII, trade secrets) for resale, identity theft, or competitive advantage |\n| **Financial Gain** | Direct profit via ransomware, banking Trojans, fraud, or cryptocurrency theft |\n| **Blackmail** | Obtaining compromising information and demanding payment (ransomware, doxxing, sextortion) |\n| **Service Disruption** | Overwhelming systems via DDoS to cause chaos, make political statements, or demand ransom |\n| **Philosophical / Political Beliefs** | Hacktivism — using attacks to promote ideological agendas or protest perceived injustice |\n| **Ethical Reasons** | Authorized penetration testers and bug bounty hunters improving security |\n| **Revenge** | Disgruntled or former employees targeting the organization that wronged them |\n| **Disruption / Chaos** | Attacking for the thrill of it or to challenge skills, with no specific political or financial goal |\n| **Espionage** | Gathering classified or sensitive intelligence — common among nation-state actors and rivals |\n| **War** | Cyber operations used to disrupt infrastructure, compromise national security, or cause economic damage |\n\n> Como en cualquier crimen: entender el \"por qué\" del atacante es lo que permite predecir el \"cómo\" del ataque."
+        "raw_content": "## Threat Actor Motivations\n\n* **Definition:** The underlying driving forces that push a threat actor to carry out an attack. Distinct from **intent** (the specific goal of the attack). Key motivations include:\n\n| Motivation | Description |\n|---|---|\n| **Data Exfiltration** | Unauthorized transfer of sensitive data (IP, PII, trade secrets) for resale, identity theft, or competitive advantage |\n| **Financial Gain** | Direct profit via ransomware, banking Trojans, fraud, or cryptocurrency theft |\n| **Blackmail** | Obtaining compromising information and demanding payment (ransomware, doxxing, sextortion) |\n| **Service Disruption** | Overwhelming systems via DDoS to cause chaos, make political statements, or demand ransom |\n| **Philosophical / Political Beliefs** | Hacktivism — using attacks to promote ideological agendas or protest perceived injustice |\n| **Ethical Reasons** | Authorized penetration testers and bug bounty hunters improving security |\n| **Revenge** | Disgruntled or former employees targeting the organization that wronged them |\n| **Disruption / Chaos** | Attacking for the thrill of it or to challenge skills, with no specific political or financial goal |\n| **Espionage** | Gathering classified or sensitive intelligence — common among nation-state actors and rivals |\n| **War** | Cyber operations used to disrupt infrastructure, compromise national security, or cause economic damage |\n\n> Como en cualquier crimen: entender el \"por qué\" del atacante es lo que permite predecir el \"cómo\" del ataque.\n\n---"
       },
       {
         "name": "Threat Actor Attributes",
@@ -469,8 +438,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The specific characteristics that define and differentiate threat actors from one another. Three key attributes:\n\n| Attribute | Description |\n|---|---|\n| **Internal vs. External** | Internal = inside the organization with legitimate access; External = outside with no authorized access |\n| **Resources & Funding** | Ranges from a lone individual with a personal laptop to nation-states with massive budgets and teams |\n| **Sophistication & Capability** | Ranges from low (script kiddies using pre-made tools) to high (APTs using custom malware and zero-days) |\n\n> Como clasificar a los rivales antes de un partido: saber de dónde vienen, cuánto presupuesto tienen, y qué tan buenos son cambia completamente la estrategia de defensa."
+        "raw_content": "## Threat Actor Attributes\n\n* **Definition:** The specific characteristics that define and differentiate threat actors from one another. Three key attributes:\n\n| Attribute | Description |\n|---|---|\n| **Internal vs. External** | Internal = inside the organization with legitimate access; External = outside with no authorized access |\n| **Resources & Funding** | Ranges from a lone individual with a personal laptop to nation-states with massive budgets and teams |\n| **Sophistication & Capability** | Ranges from low (script kiddies using pre-made tools) to high (APTs using custom malware and zero-days) |\n\n> Como clasificar a los rivales antes de un partido: saber de dónde vienen, cuánto presupuesto tienen, y qué tan buenos son cambia completamente la estrategia de defensa.\n\n---"
       },
       {
         "name": "Unskilled Attacker (Script Kiddie)",
@@ -478,8 +446,7 @@ const STUDY_DATA = [
         "analogy": "Como alguien que no sabe cocinar pero puede calentar comida en el microondas: no creó la herramienta, pero sí puede hacer daño con ella.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An individual with limited technical knowledge who relies on pre-made scripts, tools, and exploits developed by others — without understanding the underlying principles. Motivated primarily by recognition, thrill, or curiosity rather than financial or ideological goals. Opportunistic rather than targeted. Low sophistication, low resources, but dangerous in large numbers.\n> Como alguien que no sabe cocinar pero puede calentar comida en el microondas: no creó la herramienta, pero sí puede hacer daño con ella."
+        "raw_content": "## Unskilled Attacker (Script Kiddie)\n\n* **Definition:** An individual with limited technical knowledge who relies on pre-made scripts, tools, and exploits developed by others — without understanding the underlying principles. Motivated primarily by recognition, thrill, or curiosity rather than financial or ideological goals. Opportunistic rather than targeted. Low sophistication, low resources, but dangerous in large numbers.\n> Como alguien que no sabe cocinar pero puede calentar comida en el microondas: no creó la herramienta, pero sí puede hacer daño con ella.\n\n---"
       },
       {
         "name": "Hacktivist",
@@ -487,8 +454,7 @@ const STUDY_DATA = [
         "analogy": "Como un manifestante que, en lugar de pancartas, usa código: el objetivo no es robar sino hacer ruido y obligar a que su causa sea escuchada.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An individual or group that uses hacking techniques to promote a political, social, or environmental cause (**hacktivism**). Motivated by ideological beliefs, not financial gain. Common techniques include **website defacement**, **DDoS attacks**, **doxxing**, and **data leaks**. Can range from low to high technical sophistication. Notable groups: **Anonymous**, **LulzSec**.\n> Como un manifestante que, en lugar de pancartas, usa código: el objetivo no es robar sino hacer ruido y obligar a que su causa sea escuchada."
+        "raw_content": "## Hacktivist\n\n* **Definition:** An individual or group that uses hacking techniques to promote a political, social, or environmental cause (**hacktivism**). Motivated by ideological beliefs, not financial gain. Common techniques include **website defacement**, **DDoS attacks**, **doxxing**, and **data leaks**. Can range from low to high technical sophistication. Notable groups: **Anonymous**, **LulzSec**.\n> Como un manifestante que, en lugar de pancartas, usa código: el objetivo no es robar sino hacer ruido y obligar a que su causa sea escuchada.\n\n---"
       },
       {
         "name": "Doxxing",
@@ -496,8 +462,7 @@ const STUDY_DATA = [
         "analogy": "Como colgar el número de teléfono personal de alguien en una pared pública esperando que otros lo llamen para acosarlo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The public release of private personal information about an individual or organization (name, address, phone number, email) with the intent to expose them or incite real-world action against them. Frequently used as a hacktivist technique.\n> Como colgar el número de teléfono personal de alguien en una pared pública esperando que otros lo llamen para acosarlo."
+        "raw_content": "## Doxxing\n\n* **Definition:** The public release of private personal information about an individual or organization (name, address, phone number, email) with the intent to expose them or incite real-world action against them. Frequently used as a hacktivist technique.\n> Como colgar el número de teléfono personal de alguien en una pared pública esperando que otros lo llamen para acosarlo.\n\n---"
       },
       {
         "name": "Organized Crime (Cybercrime)",
@@ -505,8 +470,7 @@ const STUDY_DATA = [
         "analogy": "Como la mafia tradicional que migró al mundo digital: misma estructura jerárquica, mismos objetivos financieros, pero ahora sus operaciones no tienen fronteras físicas.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Well-structured criminal groups or syndicates that conduct cyber attacks primarily for **financial gain**. Operate similarly to traditional organized crime but in the digital space — with defined roles, advanced tools (custom malware, ransomware, sophisticated phishing), and global reach. High technical capability and high adaptability. Notable groups: **FIN7**, **Carbanak**. May act as hired mercenaries for governments.\n> Como la mafia tradicional que migró al mundo digital: misma estructura jerárquica, mismos objetivos financieros, pero ahora sus operaciones no tienen fronteras físicas."
+        "raw_content": "## Organized Crime (Cybercrime)\n\n* **Definition:** Well-structured criminal groups or syndicates that conduct cyber attacks primarily for **financial gain**. Operate similarly to traditional organized crime but in the digital space — with defined roles, advanced tools (custom malware, ransomware, sophisticated phishing), and global reach. High technical capability and high adaptability. Notable groups: **FIN7**, **Carbanak**. May act as hired mercenaries for governments.\n> Como la mafia tradicional que migró al mundo digital: misma estructura jerárquica, mismos objetivos financieros, pero ahora sus operaciones no tienen fronteras físicas.\n\n---"
       },
       {
         "name": "Nation-State Actor",
@@ -514,8 +478,7 @@ const STUDY_DATA = [
         "analogy": "Como la inteligencia militar de un país trasladada al mundo digital: tienen el presupuesto de un gobierno, el talento de un ejército, y la paciencia para esperar años antes de atacar.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Groups or individuals sponsored by a government to conduct cyber operations against other nations, organizations, or individuals. Highest level of sophistication, resources, and funding. Motivated by **long-term geopolitical objectives**: intelligence gathering, critical infrastructure disruption, political influence, and cyber warfare — not typically financial (exception: North Korea). Often associated with **Advanced Persistent Threats (APTs)**. Notable attacks: **Stuxnet** (US/Israel vs. Iran), **2016 US election interference** (Russia).\n> Como la inteligencia militar de un país trasladada al mundo digital: tienen el presupuesto de un gobierno, el talento de un ejército, y la paciencia para esperar años antes de atacar."
+        "raw_content": "## Nation-State Actor\n\n* **Definition:** Groups or individuals sponsored by a government to conduct cyber operations against other nations, organizations, or individuals. Highest level of sophistication, resources, and funding. Motivated by **long-term geopolitical objectives**: intelligence gathering, critical infrastructure disruption, political influence, and cyber warfare — not typically financial (exception: North Korea). Often associated with **Advanced Persistent Threats (APTs)**. Notable attacks: **Stuxnet** (US/Israel vs. Iran), **2016 US election interference** (Russia).\n> Como la inteligencia militar de un país trasladada al mundo digital: tienen el presupuesto de un gobierno, el talento de un ejército, y la paciencia para esperar años antes de atacar.\n\n---"
       },
       {
         "name": "False Flag Attack",
@@ -523,8 +486,7 @@ const STUDY_DATA = [
         "analogy": "Como cometer un crimen disfrazado con la ropa de otra persona, dejando evidencia que apunte hacia ella en lugar de hacia ti.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A cyber attack deliberately orchestrated to appear as if it originated from a different source or threat actor, with the intent to mislead investigators and misattribute the attack. Commonly used by nation-state actors to maintain plausible deniability. Example: Russian actors mimicking North Korean TTPs during the 2018 Winter Olympics malware attack.\n> Como cometer un crimen disfrazado con la ropa de otra persona, dejando evidencia que apunte hacia ella en lugar de hacia ti."
+        "raw_content": "## False Flag Attack\n\n* **Definition:** A cyber attack deliberately orchestrated to appear as if it originated from a different source or threat actor, with the intent to mislead investigators and misattribute the attack. Commonly used by nation-state actors to maintain plausible deniability. Example: Russian actors mimicking North Korean TTPs during the 2018 Winter Olympics malware attack.\n> Como cometer un crimen disfrazado con la ropa de otra persona, dejando evidencia que apunte hacia ella en lugar de hacia ti.\n\n---"
       },
       {
         "name": "Advanced Persistent Threat (APT)",
@@ -532,8 +494,7 @@ const STUDY_DATA = [
         "analogy": "Como un intruso que entra a tu casa, vive en el ático durante meses sin que lo notes, y va copiando documentos importantes poco a poco.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A prolonged and targeted cyberattack in which an intruder gains unauthorized access to a network and remains **undetected for an extended period** — monitoring, stealing data, or maintaining access rather than causing immediate damage. Historically synonymous with nation-state actors, but now also applied to sophisticated organized cybercrime groups. Characterized by stealth, patience, and high capability.\n> Como un intruso que entra a tu casa, vive en el ático durante meses sin que lo notes, y va copiando documentos importantes poco a poco."
+        "raw_content": "## Advanced Persistent Threat (APT)\n\n* **Definition:** A prolonged and targeted cyberattack in which an intruder gains unauthorized access to a network and remains **undetected for an extended period** — monitoring, stealing data, or maintaining access rather than causing immediate damage. Historically synonymous with nation-state actors, but now also applied to sophisticated organized cybercrime groups. Characterized by stealth, patience, and high capability.\n> Como un intruso que entra a tu casa, vive en el ático durante meses sin que lo notes, y va copiando documentos importantes poco a poco.\n\n---"
       },
       {
         "name": "Insider Threat",
@@ -543,8 +504,7 @@ const STUDY_DATA = [
         "list_items": [
           "Mitigation: Zero Trust architecture, robust access controls, regular audits, security awareness training."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A security threat originating from within the organization — current or former employees, contractors, or business associates with legitimate access who misuse it. Dangerous due to their **intimate knowledge of infrastructure, systems, and security procedures**. Can be intentional (revenge, financial gain, espionage) or unintentional (negligence, lack of awareness). Example: **Edward Snowden** (NSA, 2013), **Twitter hack** (2020).\n* Mitigation: Zero Trust architecture, robust access controls, regular audits, security awareness training.\n> Como el empleado del banco que ya conoce las cámaras, las cajas fuertes y los horarios de los guardias: no necesita planear un asalto desde cero porque ya está adentro."
+        "raw_content": "## Insider Threat\n\n* **Definition:** A security threat originating from within the organization — current or former employees, contractors, or business associates with legitimate access who misuse it. Dangerous due to their **intimate knowledge of infrastructure, systems, and security procedures**. Can be intentional (revenge, financial gain, espionage) or unintentional (negligence, lack of awareness). Example: **Edward Snowden** (NSA, 2013), **Twitter hack** (2020).\n* Mitigation: Zero Trust architecture, robust access controls, regular audits, security awareness training.\n> Como el empleado del banco que ya conoce las cámaras, las cajas fuertes y los horarios de los guardias: no necesita planear un asalto desde cero porque ya está adentro.\n\n---"
       },
       {
         "name": "Shadow IT",
@@ -552,8 +512,7 @@ const STUDY_DATA = [
         "analogy": "Como conectar tu propio router en la oficina porque el Wi-Fi corporativo es lento: soluciona tu problema inmediato pero abre una puerta trasera que nadie en IT sabe que existe.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The use of IT systems, devices, software, applications, and services **without explicit organizational approval** — managed outside the IT department's knowledge. Driven by the desire for convenience and productivity when official processes are too slow or restrictive. Includes personal devices (BYOD), unapproved cloud storage (Dropbox, Google Drive), and unauthorized software. Poses risks of data breaches, regulatory non-compliance, and unmanageable attack surfaces.\n> Como conectar tu propio router en la oficina porque el Wi-Fi corporativo es lento: soluciona tu problema inmediato pero abre una puerta trasera que nadie en IT sabe que existe."
+        "raw_content": "## Shadow IT\n\n* **Definition:** The use of IT systems, devices, software, applications, and services **without explicit organizational approval** — managed outside the IT department's knowledge. Driven by the desire for convenience and productivity when official processes are too slow or restrictive. Includes personal devices (BYOD), unapproved cloud storage (Dropbox, Google Drive), and unauthorized software. Poses risks of data breaches, regulatory non-compliance, and unmanageable attack surfaces.\n> Como conectar tu propio router en la oficina porque el Wi-Fi corporativo es lento: soluciona tu problema inmediato pero abre una puerta trasera que nadie en IT sabe que existe.\n\n---"
       },
       {
         "name": "BYOD (Bring Your Own Device)",
@@ -561,8 +520,7 @@ const STUDY_DATA = [
         "analogy": "Como dejar que cada empleado entre al almacén con su propia llave hecha en una copia no autorizada: conveniente, pero sin control de quién tiene acceso a qué.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Practice of employees using personal devices (smartphones, tablets, laptops) to access corporate systems and data. A major contributor to Shadow IT. Personal devices typically lack the same security controls as corporate-managed devices, expanding the attack surface.\n> Como dejar que cada empleado entre al almacén con su propia llave hecha en una copia no autorizada: conveniente, pero sin control de quién tiene acceso a qué."
+        "raw_content": "## BYOD (Bring Your Own Device)\n\n* **Definition:** Practice of employees using personal devices (smartphones, tablets, laptops) to access corporate systems and data. A major contributor to Shadow IT. Personal devices typically lack the same security controls as corporate-managed devices, expanding the attack surface.\n> Como dejar que cada empleado entre al almacén con su propia llave hecha en una copia no autorizada: conveniente, pero sin control de quién tiene acceso a qué.\n\n---"
       },
       {
         "name": "Threat Vector",
@@ -603,8 +561,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The means or **pathway** through which an attacker gains unauthorized access to deliver a malicious payload or carry out an attack. Represents the **\"how\"** of the attack. Key threat vectors:\n\n| Vector | Description |\n|---|---|\n| **Messages** | Phishing via email, SMS, or instant messaging — malicious links or attachments |\n| **Images** | Malicious code embedded in image files (steganography); executed when the image is loaded (example: Stegano attack, 2017) |\n| **Files** | Malware disguised as legitimate documents, software, or pirated content |\n| **Voice Calls (Vishing)** | Impersonating trusted entities (banks, IRS) via phone to extract sensitive information |\n| **Removable Devices** | USB drives used for baiting — infected devices left in public spaces for targets to find and connect |\n| **Unsecured Networks** | Unprotected Wi-Fi, wired, or Bluetooth networks exploited to intercept data or gain unauthorized access |\n\n> El vector es el camino que elige el ladrón para entrar: por la ventana, por la puerta, por el techo — cada uno requiere una defensa diferente."
+        "raw_content": "## Threat Vector\n\n* **Definition:** The means or **pathway** through which an attacker gains unauthorized access to deliver a malicious payload or carry out an attack. Represents the **\"how\"** of the attack. Key threat vectors:\n\n| Vector | Description |\n|---|---|\n| **Messages** | Phishing via email, SMS, or instant messaging — malicious links or attachments |\n| **Images** | Malicious code embedded in image files (steganography); executed when the image is loaded (example: Stegano attack, 2017) |\n| **Files** | Malware disguised as legitimate documents, software, or pirated content |\n| **Voice Calls (Vishing)** | Impersonating trusted entities (banks, IRS) via phone to extract sensitive information |\n| **Removable Devices** | USB drives used for baiting — infected devices left in public spaces for targets to find and connect |\n| **Unsecured Networks** | Unprotected Wi-Fi, wired, or Bluetooth networks exploited to intercept data or gain unauthorized access |\n\n> El vector es el camino que elige el ladrón para entrar: por la ventana, por la puerta, por el techo — cada uno requiere una defensa diferente.\n\n---"
       },
       {
         "name": "Attack Surface",
@@ -612,8 +569,7 @@ const STUDY_DATA = [
         "analogy": "Como el perímetro total de un edificio: cada puerta, ventana y conducto de ventilación es parte de la superficie de ataque — cuantas menos aberturas, más fácil de defender.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The **sum of all potential entry points and vulnerabilities** across a system or network where an unauthorized user could attempt to enter or extract data. Represents the **\"where\"** of the attack. Reduced by restricting access, removing unnecessary software, and disabling unused protocols.\n> Como el perímetro total de un edificio: cada puerta, ventana y conducto de ventilación es parte de la superficie de ataque — cuantas menos aberturas, más fácil de defender."
+        "raw_content": "## Attack Surface\n\n* **Definition:** The **sum of all potential entry points and vulnerabilities** across a system or network where an unauthorized user could attempt to enter or extract data. Represents the **\"where\"** of the attack. Reduced by restricting access, removing unnecessary software, and disabling unused protocols.\n> Como el perímetro total de un edificio: cada puerta, ventana y conducto de ventilación es parte de la superficie de ataque — cuantas menos aberturas, más fácil de defender.\n\n---"
       },
       {
         "name": "Evil Twin",
@@ -621,8 +577,7 @@ const STUDY_DATA = [
         "analogy": "Como una copia falsa de la entrada de tu banco justo al lado de la real: si entras a la falsa, el atacante ve y registra todo lo que haces.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A rogue wireless access point set up by an attacker that mimics a legitimate Wi-Fi network. When users connect, the attacker can intercept, capture, and modify their traffic.\n> Como una copia falsa de la entrada de tu banco justo al lado de la real: si entras a la falsa, el atacante ve y registra todo lo que haces."
+        "raw_content": "## Evil Twin\n\n* **Definition:** A rogue wireless access point set up by an attacker that mimics a legitimate Wi-Fi network. When users connect, the attacker can intercept, capture, and modify their traffic.\n> Como una copia falsa de la entrada de tu banco justo al lado de la real: si entras a la falsa, el atacante ve y registra todo lo que haces.\n\n---"
       },
       {
         "name": "BlueBorne",
@@ -630,8 +585,7 @@ const STUDY_DATA = [
         "analogy": "Como un ladrón que puede abrir tu cerradura sin tocarla ni que tú lo invites: solo necesita estar cerca.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A set of vulnerabilities in Bluetooth technology that allows an attacker to take over devices, spread malware, or execute on-path attacks — **without any user interaction or pairing required**.\n> Como un ladrón que puede abrir tu cerradura sin tocarla ni que tú lo invites: solo necesita estar cerca."
+        "raw_content": "## BlueBorne\n\n* **Definition:** A set of vulnerabilities in Bluetooth technology that allows an attacker to take over devices, spread malware, or execute on-path attacks — **without any user interaction or pairing required**.\n> Como un ladrón que puede abrir tu cerradura sin tocarla ni que tú lo invites: solo necesita estar cerca.\n\n---"
       },
       {
         "name": "BlueSmack",
@@ -639,8 +593,7 @@ const STUDY_DATA = [
         "analogy": "Como inundar de llamadas el teléfono de alguien hasta que ya no pueda recibir ninguna legítima.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A Denial of Service (DoS) attack targeting Bluetooth-enabled devices by sending specially crafted L2CAP (Logical Link Control and Adaptation Protocol) packets that exhaust the device's resources, causing it to crash or become inoperable.\n> Como inundar de llamadas el teléfono de alguien hasta que ya no pueda recibir ninguna legítima."
+        "raw_content": "## BlueSmack\n\n* **Definition:** A Denial of Service (DoS) attack targeting Bluetooth-enabled devices by sending specially crafted L2CAP (Logical Link Control and Adaptation Protocol) packets that exhaust the device's resources, causing it to crash or become inoperable.\n> Como inundar de llamadas el teléfono de alguien hasta que ya no pueda recibir ninguna legítima.\n\n---"
       },
       {
         "name": "TTPs (Tactics, Techniques, and Procedures)",
@@ -648,8 +601,7 @@ const STUDY_DATA = [
         "analogy": "Como el estilo de juego de un equipo rival: si conoces sus jugadas favoritas, puedes preparar tu defensa antes de que el partido comience.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The specific methods, behaviors, and patterns of activity associated with a particular threat actor or group. **Tactics** = high-level goals; **Techniques** = general methods used; **Procedures** = specific step-by-step implementations. Understanding an adversary's TTPs allows defenders to detect, anticipate, and counter their attacks.\n> Como el estilo de juego de un equipo rival: si conoces sus jugadas favoritas, puedes preparar tu defensa antes de que el partido comience."
+        "raw_content": "## TTPs (Tactics, Techniques, and Procedures)\n\n* **Definition:** The specific methods, behaviors, and patterns of activity associated with a particular threat actor or group. **Tactics** = high-level goals; **Techniques** = general methods used; **Procedures** = specific step-by-step implementations. Understanding an adversary's TTPs allows defenders to detect, anticipate, and counter their attacks.\n> Como el estilo de juego de un equipo rival: si conoces sus jugadas favoritas, puedes preparar tu defensa antes de que el partido comience.\n\n---"
       },
       {
         "name": "Honeypot",
@@ -657,8 +609,7 @@ const STUDY_DATA = [
         "analogy": "Como una caja fuerte falsa llena de billetes falsos: el ladrón pierde tiempo y energía abriéndola mientras tú lo observas y aprendes cómo opera.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A decoy system or server configured to appear as a real, vulnerable target to attract attackers. Its purpose is **not to block attacks** but to **log, monitor, and study** attacker behavior, methods, and TTPs. Should be placed in an isolated network segment (screened subnet) accessible from the internet. Can also detect insider threats.\n> Como una caja fuerte falsa llena de billetes falsos: el ladrón pierde tiempo y energía abriéndola mientras tú lo observas y aprendes cómo opera."
+        "raw_content": "## Honeypot\n\n* **Definition:** A decoy system or server configured to appear as a real, vulnerable target to attract attackers. Its purpose is **not to block attacks** but to **log, monitor, and study** attacker behavior, methods, and TTPs. Should be placed in an isolated network segment (screened subnet) accessible from the internet. Can also detect insider threats.\n> Como una caja fuerte falsa llena de billetes falsos: el ladrón pierde tiempo y energía abriéndola mientras tú lo observas y aprendes cómo opera.\n\n---"
       },
       {
         "name": "Honeynet",
@@ -666,8 +617,7 @@ const STUDY_DATA = [
         "analogy": "Como construir un vecindario falso completo para estudiar cómo se mueven los criminales entre edificios, no solo en uno.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A network of multiple honeypots designed to simulate an entire environment — including servers, routers, and switches. Used by large organizations and research institutions to study complex, multi-stage attacks and reveal patterns in attack vectors across a broader simulated infrastructure.\n> Como construir un vecindario falso completo para estudiar cómo se mueven los criminales entre edificios, no solo en uno."
+        "raw_content": "## Honeynet\n\n* **Definition:** A network of multiple honeypots designed to simulate an entire environment — including servers, routers, and switches. Used by large organizations and research institutions to study complex, multi-stage attacks and reveal patterns in attack vectors across a broader simulated infrastructure.\n> Como construir un vecindario falso completo para estudiar cómo se mueven los criminales entre edificios, no solo en uno.\n\n---"
       },
       {
         "name": "Honeyfile",
@@ -675,8 +625,7 @@ const STUDY_DATA = [
         "analogy": "Como dejar un sobre marcado con tinta invisible que dice \"Fórmula Secreta\": si alguien lo abre, sabes que hubo una intrusión y puedes rastrear al culpable.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A decoy file placed within a system that appears to contain sensitive or valuable data. Contains fake data embedded with **unique identifiers, hidden metadata, or digital watermarks**. When accessed, it triggers an alert and may enumerate the attacker's own network. Can be any file type: documents, spreadsheets, images, executables.\n> Como dejar un sobre marcado con tinta invisible que dice \"Fórmula Secreta\": si alguien lo abre, sabes que hubo una intrusión y puedes rastrear al culpable."
+        "raw_content": "## Honeyfile\n\n* **Definition:** A decoy file placed within a system that appears to contain sensitive or valuable data. Contains fake data embedded with **unique identifiers, hidden metadata, or digital watermarks**. When accessed, it triggers an alert and may enumerate the attacker's own network. Can be any file type: documents, spreadsheets, images, executables.\n> Como dejar un sobre marcado con tinta invisible que dice \"Fórmula Secreta\": si alguien lo abre, sabes que hubo una intrusión y puedes rastrear al culpable.\n\n---"
       },
       {
         "name": "Honeytoken",
@@ -684,8 +633,7 @@ const STUDY_DATA = [
         "analogy": "Como esconder un billete marcado en tu billetera: si desaparece, sabes exactamente quién lo tomó y cuándo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A fake piece of data or resource — such as a fabricated user account, bogus URL, or dummy database record — with **no legitimate use or value**. Any interaction with it signals a likely security breach. Particularly effective for detecting insider threats. Examples: a fake \"Admin\" account, a fake API key, a bogus database entry.\n> Como esconder un billete marcado en tu billetera: si desaparece, sabes exactamente quién lo tomó y cuándo."
+        "raw_content": "## Honeytoken\n\n* **Definition:** A fake piece of data or resource — such as a fabricated user account, bogus URL, or dummy database record — with **no legitimate use or value**. Any interaction with it signals a likely security breach. Particularly effective for detecting insider threats. Examples: a fake \"Admin\" account, a fake API key, a bogus database entry.\n> Como esconder un billete marcado en tu billetera: si desaparece, sabes exactamente quién lo tomó y cuándo.\n\n---"
       },
       {
         "name": "Disruption Technologies (Additional)",
@@ -722,8 +670,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Strategies used alongside deception technologies to hinder attacker reconnaissance and operations:\n\n| Technique | Purpose |\n|---|---|\n| **Bogus DNS entries** | Mislead attackers into accessing non-existent or trap domains |\n| **Decoy directories** | Fake folders/files that trigger alerts when accessed |\n| **Dynamic page generation** | Ever-changing web content to confuse automated scrapers and bots |\n| **Port triggering** | Keeps ports closed until a specific traffic pattern is detected, hiding services from scanners |\n| **Fake telemetry data** | Returns false OS/system information during a detected network scan |\n\n> Como un escenario de cine construido para confundir al enemigo: todo parece real, pero ninguno de los recursos es genuino.\n\n\n*CompTIA Security+ SY0-701 · Section 3: Threat Actors · Dion Training*"
+        "raw_content": "## Disruption Technologies (Additional)\n\n* **Definition:** Strategies used alongside deception technologies to hinder attacker reconnaissance and operations:\n\n| Technique | Purpose |\n|---|---|\n| **Bogus DNS entries** | Mislead attackers into accessing non-existent or trap domains |\n| **Decoy directories** | Fake folders/files that trigger alerts when accessed |\n| **Dynamic page generation** | Ever-changing web content to confuse automated scrapers and bots |\n| **Port triggering** | Keeps ports closed until a specific traffic pattern is detected, hiding services from scanners |\n| **Fake telemetry data** | Returns false OS/system information during a detected network scan |\n\n> Como un escenario de cine construido para confundir al enemigo: todo parece real, pero ninguno de los recursos es genuino.\n\n---\n\n*CompTIA Security+ SY0-701 · Section 3: Threat Actors · Dion Training*"
       }
     ]
   },
@@ -734,29 +681,26 @@ const STUDY_DATA = [
       {
         "name": "Physical Security",
         "definition": "Measures taken to protect tangible assets — buildings, equipment, and people — from harm or unauthorized access. Forms the outermost layer of a defense-in-depth strategy, starting at the perimeter and working inward toward the most sensitive data and systems.",
-        "analogy": "",
+        "analogy": "Como las capas de una cebolla: la seguridad física empieza en la cerca del perímetro y va protegiendo cada capa hasta llegar al núcleo donde está la información más crítica.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Measures taken to protect tangible assets — buildings, equipment, and people — from harm or unauthorized access. Forms the outermost layer of a defense-in-depth strategy, starting at the perimeter and working inward toward the most sensitive data and systems.\n  \n  > Como las capas de una cebolla: la seguridad física empieza en la cerca del perímetro y va protegiendo cada capa hasta llegar al núcleo donde está la información más crítica."
+        "raw_content": "## Physical Security\n\n* **Definition:** Measures taken to protect tangible assets — buildings, equipment, and people — from harm or unauthorized access. Forms the outermost layer of a defense-in-depth strategy, starting at the perimeter and working inward toward the most sensitive data and systems.\n  \n  > Como las capas de una cebolla: la seguridad física empieza en la cerca del perímetro y va protegiendo cada capa hasta llegar al núcleo donde está la información más crítica.\n\n---"
       },
       {
         "name": "Fencing",
         "definition": "A physical barrier structure made of interconnected panels or posts (wood, metal, wire mesh, concrete) that encloses a perimeter to deter and delay unauthorized entry. Serves three purposes: **visual deterrent** (defines boundaries), **physical barrier** (prevents entry), and **delay mechanism** (buys time for security personnel to respond). Vulnerabilities include climbing, cutting, and digging underneath — countered with height, electrification, barbed wire, underground extensions, or buried mesh. **Key Concept: Prevent People**",
-        "analogy": "",
+        "analogy": "Como la barda de una casa: no garantiza que nadie entre, pero obliga al intruso a esforzarse más, y ese tiempo extra es exactamente lo que necesita la seguridad para responder.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A physical barrier structure made of interconnected panels or posts (wood, metal, wire mesh, concrete) that encloses a perimeter to deter and delay unauthorized entry. Serves three purposes: **visual deterrent** (defines boundaries), **physical barrier** (prevents entry), and **delay mechanism** (buys time for security personnel to respond). Vulnerabilities include climbing, cutting, and digging underneath — countered with height, electrification, barbed wire, underground extensions, or buried mesh. **Key Concept: Prevent People**\n  \n  > Como la barda de una casa: no garantiza que nadie entre, pero obliga al intruso a esforzarse más, y ese tiempo extra es exactamente lo que necesita la seguridad para responder."
+        "raw_content": "## Fencing\n\n* **Definition:** A physical barrier structure made of interconnected panels or posts (wood, metal, wire mesh, concrete) that encloses a perimeter to deter and delay unauthorized entry. Serves three purposes: **visual deterrent** (defines boundaries), **physical barrier** (prevents entry), and **delay mechanism** (buys time for security personnel to respond). Vulnerabilities include climbing, cutting, and digging underneath — countered with height, electrification, barbed wire, underground extensions, or buried mesh. **Key Concept: Prevent People**\n  \n  > Como la barda de una casa: no garantiza que nadie entre, pero obliga al intruso a esforzarse más, y ese tiempo extra es exactamente lo que necesita la seguridad para responder.\n\n---"
       },
       {
         "name": "Bollards",
         "definition": "Short, sturdy vertical posts made of steel or concrete designed to control or prevent **vehicular access** to an area. Can be permanent or temporary. Protect against vehicle-ramming attacks, ram raiding, and vehicle-based IEDs. Distinguished from fencing in that fencing controls **people** while bollards control **vehicles**. Often disguised as decorative elements (planters, large spheres). Rated by impact standards (e.g., ASTM F2656-07 M30 P1 = stops a 15,000 lb vehicle at 30 mph within 1 meter). **Key Concept: Prevent Vehicles**",
-        "analogy": "",
+        "analogy": "Como los topes en la entrada de un estacionamiento, pero diseñados para detener un camión en movimiento, no solo ralentizarlo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Short, sturdy vertical posts made of steel or concrete designed to control or prevent **vehicular access** to an area. Can be permanent or temporary. Protect against vehicle-ramming attacks, ram raiding, and vehicle-based IEDs. Distinguished from fencing in that fencing controls **people** while bollards control **vehicles**. Often disguised as decorative elements (planters, large spheres). Rated by impact standards (e.g., ASTM F2656-07 M30 P1 = stops a 15,000 lb vehicle at 30 mph within 1 meter). **Key Concept: Prevent Vehicles**\n  \n  > Como los topes en la entrada de un estacionamiento, pero diseñados para detener un camión en movimiento, no solo ralentizarlo."
+        "raw_content": "## Bollards\n\n* **Definition:** Short, sturdy vertical posts made of steel or concrete designed to control or prevent **vehicular access** to an area. Can be permanent or temporary. Protect against vehicle-ramming attacks, ram raiding, and vehicle-based IEDs. Distinguished from fencing in that fencing controls **people** while bollards control **vehicles**. Often disguised as decorative elements (planters, large spheres). Rated by impact standards (e.g., ASTM F2656-07 M30 P1 = stops a 15,000 lb vehicle at 30 mph within 1 meter). **Key Concept: Prevent Vehicles**\n  \n  > Como los topes en la entrada de un estacionamiento, pero diseñados para detener un camión en movimiento, no solo ralentizarlo.\n\n---"
       },
       {
         "name": "Brute Force (Physical)",
@@ -794,8 +738,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A direct, often violent approach to bypassing physical security by exploiting the structural vulnerabilities of barriers and devices. Four main forms:\n\n| Form                                | Description                                                               | Countermeasure                                                               |\n| ----------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |\n| **Forcible Entry**                  | Breaking windows, kicking doors, cutting fences, breaking locks           | Reinforced/laminated windows, deadbolts, metal door frames, solid core doors |\n| **Tampering with Security Devices** | Forcing gates open, blinding cameras with paint, disabling sensors/alarms | Redundant layers of security controls                                        |\n| **Confronting Security Personnel**  | Distracting, assaulting, or weaponizing against guards                    | Conflict resolution training, self-defense training, backup communication    |\n| **Ramming Barriers with Vehicles**  | Driving vehicles into fences, gates, or building facades                  | Bollards, reinforced barriers                                                |\n\n> Como intentar entrar a una bóveda bancaria a la fuerza: no es sutil, pero a veces la simplicidad de un ataque directo lo hace efectivo contra instalaciones mal preparadas."
+        "raw_content": "## Brute Force (Physical)\n\n* **Definition:** A direct, often violent approach to bypassing physical security by exploiting the structural vulnerabilities of barriers and devices. Four main forms:\n\n| Form                                | Description                                                               | Countermeasure                                                               |\n| ----------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |\n| **Forcible Entry**                  | Breaking windows, kicking doors, cutting fences, breaking locks           | Reinforced/laminated windows, deadbolts, metal door frames, solid core doors |\n| **Tampering with Security Devices** | Forcing gates open, blinding cameras with paint, disabling sensors/alarms | Redundant layers of security controls                                        |\n| **Confronting Security Personnel**  | Distracting, assaulting, or weaponizing against guards                    | Conflict resolution training, self-defense training, backup communication    |\n| **Ramming Barriers with Vehicles**  | Driving vehicles into fences, gates, or building facades                  | Bollards, reinforced barriers                                                |\n\n> Como intentar entrar a una bóveda bancaria a la fuerza: no es sutil, pero a veces la simplicidad de un ataque directo lo hace efectivo contra instalaciones mal preparadas.\n\n---"
       },
       {
         "name": "Surveillance System",
@@ -833,26 +776,23 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An organized strategy or setup designed to observe, monitor, and report activities within a given area. Combines four components:\n\n| Component                     | Function                                                        | Notes                                                                                                                |\n| ----------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |\n| **Video Surveillance (CCTV)** | Visual monitoring and recording                                 | Detective control; wired or wireless; indoor/outdoor variants; PTZ [Pan-Tilt-Zoom: Cameras tha can move ] capability |\n| **Security Guards**           | Human monitoring, immediate response, and identity verification | Most flexible and adaptable surveillance form                                                                        |\n| **Lighting**                  | Illuminates areas to deter attackers and improve video quality  | Motion-activated lights serve as both deterrent and alert                                                            |\n| **Sensors**                   | Detect environmental changes triggered by movement or presence  | Infrared, pressure, microwave, ultrasonic                                                                            |\n\n> Como el sistema nervioso de un edificio: los sensores y cámaras son los ojos, los guardias son el cerebro que reacciona, y la iluminación asegura que nada pase desapercibido en la oscuridad."
+        "raw_content": "## Surveillance System\n\n* **Definition:** An organized strategy or setup designed to observe, monitor, and report activities within a given area. Combines four components:\n\n| Component                     | Function                                                        | Notes                                                                                                                |\n| ----------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |\n| **Video Surveillance (CCTV)** | Visual monitoring and recording                                 | Detective control; wired or wireless; indoor/outdoor variants; PTZ [Pan-Tilt-Zoom: Cameras tha can move ] capability |\n| **Security Guards**           | Human monitoring, immediate response, and identity verification | Most flexible and adaptable surveillance form                                                                        |\n| **Lighting**                  | Illuminates areas to deter attackers and improve video quality  | Motion-activated lights serve as both deterrent and alert                                                            |\n| **Sensors**                   | Detect environmental changes triggered by movement or presence  | Infrared, pressure, microwave, ultrasonic                                                                            |\n\n> Como el sistema nervioso de un edificio: los sensores y cámaras son los ojos, los guardias son el cerebro que reacciona, y la iluminación asegura que nada pase desapercibido en la oscuridad.\n\n---"
       },
       {
         "name": "CCTV (Closed Circuit Television)",
         "definition": "Video surveillance systems that transmit signals to a specific, limited set of monitors. Available in wired (physically cabled to monitoring station) and wireless (Wi-Fi/cellular) configurations. Wired is more reliable; wireless is easier to install but vulnerable to signal jamming. Classified as a **detective control**.",
-        "analogy": "",
+        "analogy": "Como tener ojos en todos los rincones del edificio que graban todo lo que pasa, aunque no puedan intervenir por sí solos.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Video surveillance systems that transmit signals to a specific, limited set of monitors. Available in wired (physically cabled to monitoring station) and wireless (Wi-Fi/cellular) configurations. Wired is more reliable; wireless is easier to install but vulnerable to signal jamming. Classified as a **detective control**.\n  \n  > Como tener ojos en todos los rincones del edificio que graban todo lo que pasa, aunque no puedan intervenir por sí solos."
+        "raw_content": "## CCTV (Closed Circuit Television)\n\n* **Definition:** Video surveillance systems that transmit signals to a specific, limited set of monitors. Available in wired (physically cabled to monitoring station) and wireless (Wi-Fi/cellular) configurations. Wired is more reliable; wireless is easier to install but vulnerable to signal jamming. Classified as a **detective control**.\n  \n  > Como tener ojos en todos los rincones del edificio que graban todo lo que pasa, aunque no puedan intervenir por sí solos.\n\n---"
       },
       {
         "name": "PTZ (Pan-Tilt-Zoom)",
         "definition": "A camera control feature that allows a security operator to remotely adjust the camera's direction (pan left/right, tilt up/down) and magnification (zoom in/out) in real time. Most effective when paired with a staffed monitoring station.",
-        "analogy": "",
+        "analogy": "Como un guardia con binoculares que puede girar la cabeza y enfocar cualquier punto del perímetro sin moverse de su puesto.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A camera control feature that allows a security operator to remotely adjust the camera's direction (pan left/right, tilt up/down) and magnification (zoom in/out) in real time. Most effective when paired with a staffed monitoring station.\n  \n  > Como un guardia con binoculares que puede girar la cabeza y enfocar cualquier punto del perímetro sin moverse de su puesto."
+        "raw_content": "## PTZ (Pan-Tilt-Zoom)\n\n* **Definition:** A camera control feature that allows a security operator to remotely adjust the camera's direction (pan left/right, tilt up/down) and magnification (zoom in/out) in real time. Most effective when paired with a staffed monitoring station.\n  \n  > Como un guardia con binoculares que puede girar la cabeza y enfocar cualquier punto del perímetro sin moverse de su puesto.\n\n---"
       },
       {
         "name": "Sensors — Types",
@@ -890,8 +830,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Devices that detect and respond to physical stimuli and convert them into readable signals or alerts. Four types:\n\n| Type           | Detection Method                                                           | Best Use Case                               |\n| -------------- | -------------------------------------------------------------------------- | ------------------------------------------- |\n| **Infrared**   | Detects changes in infrared radiation emitted by warm bodies               | Low-light or dark environments              |\n| **Pressure**   | Activates when a specified weight is detected on embedded floor/mat sensor | Restricted area entry detection             |\n| **Microwave**  | Emits microwave pulses and measures reflection off moving objects          | Large area coverage (prone to false alarms) |\n| **Ultrasonic** | Measures reflection of ultrasonic waves off moving objects (echolocation)  | Automated doors, indoor movement detection  |\n\n> Como diferentes tipos de alarmas para diferentes situaciones: algunas detectan calor, otras peso, otras movimiento en el aire — cada una cubre lo que las otras no pueden."
+        "raw_content": "## Sensors — Types\n\n* **Definition:** Devices that detect and respond to physical stimuli and convert them into readable signals or alerts. Four types:\n\n| Type           | Detection Method                                                           | Best Use Case                               |\n| -------------- | -------------------------------------------------------------------------- | ------------------------------------------- |\n| **Infrared**   | Detects changes in infrared radiation emitted by warm bodies               | Low-light or dark environments              |\n| **Pressure**   | Activates when a specified weight is detected on embedded floor/mat sensor | Restricted area entry detection             |\n| **Microwave**  | Emits microwave pulses and measures reflection off moving objects          | Large area coverage (prone to false alarms) |\n| **Ultrasonic** | Measures reflection of ultrasonic waves off moving objects (echolocation)  | Automated doors, indoor movement detection  |\n\n> Como diferentes tipos de alarmas para diferentes situaciones: algunas detectan calor, otras peso, otras movimiento en el aire — cada una cubre lo que las otras no pueden.\n\n---"
       },
       {
         "name": "Bypassing Surveillance Systems",
@@ -934,35 +873,31 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Techniques used by attackers to disable, deceive, or render surveillance systems ineffective. Five main methods:\n\n| Method                                 | Technique                                                                                 | Countermeasure                                    |\n| -------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------- |\n| **Visual Obstruction**                 | Spray paint, tape, stickers, or objects blocking camera lens                              | Tamper alarms on cameras                          |\n| **Blinding Sensors/Cameras**           | High-powered flashlights or lasers aimed at camera lens; heating room to blind IR sensors | Tamper detection, redundant camera placement      |\n| **Acoustic Interference**              | Loud sounds or jamming devices disrupting microphone-based sensors                        | Redundant acoustic sensors, white noise filtering |\n| **Electromagnetic Interference (EMI)** | Jamming wireless signals used by surveillance systems                                     | Encrypted frequency hopping signals               |\n| **Physical Environment Attacks**       | Cutting power, tampering with power boxes, temperature manipulation, arson                | Backup power (UPS), redundant systems             |\n\n> Como buscar los puntos ciegos de una cámara antes de actuar: el atacante estudia el sistema para encontrar la manera de volverlo ciego en el momento crítico."
+        "raw_content": "## Bypassing Surveillance Systems\n\n* **Definition:** Techniques used by attackers to disable, deceive, or render surveillance systems ineffective. Five main methods:\n\n| Method                                 | Technique                                                                                 | Countermeasure                                    |\n| -------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------- |\n| **Visual Obstruction**                 | Spray paint, tape, stickers, or objects blocking camera lens                              | Tamper alarms on cameras                          |\n| **Blinding Sensors/Cameras**           | High-powered flashlights or lasers aimed at camera lens; heating room to blind IR sensors | Tamper detection, redundant camera placement      |\n| **Acoustic Interference**              | Loud sounds or jamming devices disrupting microphone-based sensors                        | Redundant acoustic sensors, white noise filtering |\n| **Electromagnetic Interference (EMI)** | Jamming wireless signals used by surveillance systems                                     | Encrypted frequency hopping signals               |\n| **Physical Environment Attacks**       | Cutting power, tampering with power boxes, temperature manipulation, arson                | Backup power (UPS), redundant systems             |\n\n> Como buscar los puntos ciegos de una cámara antes de actuar: el atacante estudia el sistema para encontrar la manera de volverlo ciego en el momento crítico.\n\n---"
       },
       {
         "name": "Access Control Vestibule",
         "definition": "A double-door security system electronically controlled so that **only one door can be open at a time**. Creates an intermediate holding space where identity and credentials are verified before granting access to the secured inner area. Typically integrated with access badges, PINs, and security guards. Prevents both **piggybacking** and **tailgating** by physically limiting space to one person per entry cycle.",
-        "analogy": "",
+        "analogy": "Como la esclusa de una cámara espacial: tienes que estar completamente dentro y que la primera puerta se cierre antes de que la segunda se abra — no hay atajos.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A double-door security system electronically controlled so that **only one door can be open at a time**. Creates an intermediate holding space where identity and credentials are verified before granting access to the secured inner area. Typically integrated with access badges, PINs, and security guards. Prevents both **piggybacking** and **tailgating** by physically limiting space to one person per entry cycle.\n  \n  > Como la esclusa de una cámara espacial: tienes que estar completamente dentro y que la primera puerta se cierre antes de que la segunda se abra — no hay atajos."
+        "raw_content": "## Access Control Vestibule\n\n* **Definition:** A double-door security system electronically controlled so that **only one door can be open at a time**. Creates an intermediate holding space where identity and credentials are verified before granting access to the secured inner area. Typically integrated with access badges, PINs, and security guards. Prevents both **piggybacking** and **tailgating** by physically limiting space to one person per entry cycle.\n  \n  > Como la esclusa de una cámara espacial: tienes que estar completamente dentro y que la primera puerta se cierre antes de que la segunda se abra — no hay atajos.\n\n---"
       },
       {
         "name": "Piggybacking",
         "definition": "An unauthorized entry technique where **two people work together** — an authorized individual **intentionally** allows an unauthorized person to pass through a secured checkpoint alongside them. Usually accomplished through social engineering or manipulation (e.g., impersonating a delivery driver to convince an employee to badge them in).",
-        "analogy": "",
+        "analogy": "Como convencer al empleado que tiene el acceso de que te abra la puerta \"solo por esta vez\" porque traes las manos ocupadas con cajas.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An unauthorized entry technique where **two people work together** — an authorized individual **intentionally** allows an unauthorized person to pass through a secured checkpoint alongside them. Usually accomplished through social engineering or manipulation (e.g., impersonating a delivery driver to convince an employee to badge them in).\n  \n  > Como convencer al empleado que tiene el acceso de que te abra la puerta \"solo por esta vez\" porque traes las manos ocupadas con cajas."
+        "raw_content": "## Piggybacking\n\n* **Definition:** An unauthorized entry technique where **two people work together** — an authorized individual **intentionally** allows an unauthorized person to pass through a secured checkpoint alongside them. Usually accomplished through social engineering or manipulation (e.g., impersonating a delivery driver to convince an employee to badge them in).\n  \n  > Como convencer al empleado que tiene el acceso de que te abra la puerta \"solo por esta vez\" porque traes las manos ocupadas con cajas.\n\n---"
       },
       {
         "name": "Tailgating",
         "definition": "An unauthorized entry technique where an unauthorized person **closely follows** an authorized individual through a secured access point **without their knowledge or consent**. More covert and opportunistic than piggybacking. Countered by access control vestibules sized for single-person entry.",
-        "analogy": "",
+        "analogy": "Como colarte al metro justo detrás de alguien que acaba de pasar con su tarjeta, tan rápido que el torniquete no tiene tiempo de cerrarse.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An unauthorized entry technique where an unauthorized person **closely follows** an authorized individual through a secured access point **without their knowledge or consent**. More covert and opportunistic than piggybacking. Countered by access control vestibules sized for single-person entry.\n  \n  > Como colarte al metro justo detrás de alguien que acaba de pasar con su tarjeta, tan rápido que el torniquete no tiene tiempo de cerrarse."
+        "raw_content": "## Tailgating\n\n* **Definition:** An unauthorized entry technique where an unauthorized person **closely follows** an authorized individual through a secured access point **without their knowledge or consent**. More covert and opportunistic than piggybacking. Countered by access control vestibules sized for single-person entry.\n  \n  > Como colarte al metro justo detrás de alguien que acaba de pasar con su tarjeta, tan rápido que el torniquete no tiene tiempo de cerrarse.\n\n---"
       },
       {
         "name": "Door Locks",
@@ -1015,44 +950,39 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Physical security controls that restrict and regulate access to a space by requiring a specific key, code, credential, or biometric to unlock. Range from basic mechanical locks to advanced electronic systems. Key types:\n\n| Lock Type                     | Mechanism                                          | Security Level                                 |\n| ----------------------------- | -------------------------------------------------- | ---------------------------------------------- |\n| **Padlock / Pin-and-Tumbler** | Physical key or picking with tension wrench + pick | Low — pickable in ~15 seconds                  |\n| **Standard Door Lock**        | Physical key (deadbolt)                            | Low-Medium — pickable in 30–60 seconds         |\n| **Numeric/PIN Lock**          | Entered digit code                                 | Medium — depends on code length                |\n| **Wireless Lock**             | NFC, RFID, Wi-Fi, Bluetooth via smartphone         | Medium — depends on encryption                 |\n| **Biometric Lock**            | Fingerprint, retinal scan, facial recognition      | High — measured by FAR/FRR/CER                 |\n| **Cipher Lock**               | Mechanical push-button combination                 | Medium-High — no electronic dependency         |\n| **Electronic Access System**  | Badge + PIN (MFA)                                  | High — combines possession + knowledge factors |\n\n> Como la diferencia entre poner un candado de juguete y una caja fuerte en la puerta del cuarto del servidor: ambos son \"candados\", pero la protección que ofrecen no tiene comparación."
+        "raw_content": "## Door Locks\n\n* **Definition:** Physical security controls that restrict and regulate access to a space by requiring a specific key, code, credential, or biometric to unlock. Range from basic mechanical locks to advanced electronic systems. Key types:\n\n| Lock Type                     | Mechanism                                          | Security Level                                 |\n| ----------------------------- | -------------------------------------------------- | ---------------------------------------------- |\n| **Padlock / Pin-and-Tumbler** | Physical key or picking with tension wrench + pick | Low — pickable in ~15 seconds                  |\n| **Standard Door Lock**        | Physical key (deadbolt)                            | Low-Medium — pickable in 30–60 seconds         |\n| **Numeric/PIN Lock**          | Entered digit code                                 | Medium — depends on code length                |\n| **Wireless Lock**             | NFC, RFID, Wi-Fi, Bluetooth via smartphone         | Medium — depends on encryption                 |\n| **Biometric Lock**            | Fingerprint, retinal scan, facial recognition      | High — measured by FAR/FRR/CER                 |\n| **Cipher Lock**               | Mechanical push-button combination                 | Medium-High — no electronic dependency         |\n| **Electronic Access System**  | Badge + PIN (MFA)                                  | High — combines possession + knowledge factors |\n\n> Como la diferencia entre poner un candado de juguete y una caja fuerte en la puerta del cuarto del servidor: ambos son \"candados\", pero la protección que ofrecen no tiene comparación.\n\n---"
       },
       {
         "name": "Biometric Authentication",
         "definition": "Authentication method based on unique physical or behavioral characteristics of a person (**inherence factor / something you are**). Common implementations: fingerprint readers, retinal scanners, facial recognition. Used in door locks, smartphones, and access control vestibules.",
-        "analogy": "",
+        "analogy": "Como usar tu propia huella dactilar como contraseña: es imposible olvidarla porque siempre la llevas contigo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Authentication method based on unique physical or behavioral characteristics of a person (**inherence factor / something you are**). Common implementations: fingerprint readers, retinal scanners, facial recognition. Used in door locks, smartphones, and access control vestibules.\n  \n  > Como usar tu propia huella dactilar como contraseña: es imposible olvidarla porque siempre la llevas contigo."
+        "raw_content": "## Biometric Authentication\n\n* **Definition:** Authentication method based on unique physical or behavioral characteristics of a person (**inherence factor / something you are**). Common implementations: fingerprint readers, retinal scanners, facial recognition. Used in door locks, smartphones, and access control vestibules.\n  \n  > Como usar tu propia huella dactilar como contraseña: es imposible olvidarla porque siempre la llevas contigo.\n\n---"
       },
       {
         "name": "False Acceptance Rate (FAR)",
         "definition": "The rate at which a biometric system **incorrectly grants access** to an unauthorized user — authenticating someone who should have been rejected. A high FAR means the system is too lenient. To reduce FAR, sensitivity is increased.",
-        "analogy": "",
+        "analogy": "Como un guardia de seguridad tan confiado que deja entrar a cualquiera que tenga cara amable, sin verificar su identificación.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The rate at which a biometric system **incorrectly grants access** to an unauthorized user — authenticating someone who should have been rejected. A high FAR means the system is too lenient. To reduce FAR, sensitivity is increased.\n  \n  > Como un guardia de seguridad tan confiado que deja entrar a cualquiera que tenga cara amable, sin verificar su identificación."
+        "raw_content": "## False Acceptance Rate (FAR)\n\n* **Definition:** The rate at which a biometric system **incorrectly grants access** to an unauthorized user — authenticating someone who should have been rejected. A high FAR means the system is too lenient. To reduce FAR, sensitivity is increased.\n  \n  > Como un guardia de seguridad tan confiado que deja entrar a cualquiera que tenga cara amable, sin verificar su identificación.\n\n---"
       },
       {
         "name": "False Rejection Rate (FRR)",
         "definition": "The rate at which a biometric system **incorrectly denies access** to an authorized user — rejecting someone who should have been granted access. A high FRR means the system is too strict. Increasing sensitivity to reduce FAR typically increases FRR.",
-        "analogy": "",
+        "analogy": "Como un guardia tan estricto que ni siquiera deja entrar a los empleados que sí trabajan ahí porque siempre encuentra algo \"sospechoso\" en su identificación.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The rate at which a biometric system **incorrectly denies access** to an authorized user — rejecting someone who should have been granted access. A high FRR means the system is too strict. Increasing sensitivity to reduce FAR typically increases FRR.\n  \n  > Como un guardia tan estricto que ni siquiera deja entrar a los empleados que sí trabajan ahí porque siempre encuentra algo \"sospechoso\" en su identificación."
+        "raw_content": "## False Rejection Rate (FRR)\n\n* **Definition:** The rate at which a biometric system **incorrectly denies access** to an authorized user — rejecting someone who should have been granted access. A high FRR means the system is too strict. Increasing sensitivity to reduce FAR typically increases FRR.\n  \n  > Como un guardia tan estricto que ni siquiera deja entrar a los empleados que sí trabajan ahí porque siempre encuentra algo \"sospechoso\" en su identificación.\n\n---"
       },
       {
         "name": "Crossover Error Rate (CER) / Equal Error Rate (EER)",
         "definition": "The point at which the **False Acceptance Rate (FAR) and the False Rejection Rate (FRR) are equal**. Used as the primary benchmark for measuring the overall effectiveness of a biometric system. **Lower CER = better biometric system.** Represents the optimal balance between security and usability.",
-        "analogy": "",
+        "analogy": "Como afinar el volumen de una alarma: muy bajo y no detecta intrusos (FAR alto), muy alto y suena con cualquier cosa (FRR alto) — el punto exacto donde ambos errores se equilibran es el CER.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The point at which the **False Acceptance Rate (FAR) and the False Rejection Rate (FRR) are equal**. Used as the primary benchmark for measuring the overall effectiveness of a biometric system. **Lower CER = better biometric system.** Represents the optimal balance between security and usability.\n  \n  > Como afinar el volumen de una alarma: muy bajo y no detecta intrusos (FAR alto), muy alto y suena con cualquier cosa (FRR alto) — el punto exacto donde ambos errores se equilibran es el CER."
+        "raw_content": "## Crossover Error Rate (CER) / Equal Error Rate (EER)\n\n* **Definition:** The point at which the **False Acceptance Rate (FAR) and the False Rejection Rate (FRR) are equal**. Used as the primary benchmark for measuring the overall effectiveness of a biometric system. **Lower CER = better biometric system.** Represents the optimal balance between security and usability.\n  \n  > Como afinar el volumen de una alarma: muy bajo y no detecta intrusos (FAR alto), muy alto y suena con cualquier cosa (FRR alto) — el punto exacto donde ambos errores se equilibran es el CER.\n\n---"
       },
       {
         "name": "Access Badge Cloning",
@@ -1085,26 +1015,23 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The unauthorized copying of data from an RFID or NFC access badge onto another card or device, allowing the attacker to impersonate an authorized user and bypass physical security. Requires the attacker to be within close range (NFC: 1–2 inches; RFID: 2–10 inches). Common tool used by penetration testers: **Flipper Zero**. Four-step attack process:\n\n| Step                   | Action                                                                       |\n| ---------------------- | ---------------------------------------------------------------------------- |\n| **1. Scanning**        | Attacker uses a hidden RFID/NFC reader to capture badge data without contact |\n| **2. Data Extraction** | Extracts unique identifiers or encrypted credentials from captured data      |\n| **3. Writing**         | Transfers extracted data onto a blank card or compatible device              |\n| **4. Using the Clone** | Presents the cloned badge to gain unauthorized access                        |\n\n> Como sacarle una copia a la llave de tu vecino mientras la tiene en el bolsillo sin que se dé cuenta, y luego usarla para abrir su puerta cuando él no está."
+        "raw_content": "## Access Badge Cloning\n\n* **Definition:** The unauthorized copying of data from an RFID or NFC access badge onto another card or device, allowing the attacker to impersonate an authorized user and bypass physical security. Requires the attacker to be within close range (NFC: 1–2 inches; RFID: 2–10 inches). Common tool used by penetration testers: **Flipper Zero**. Four-step attack process:\n\n| Step                   | Action                                                                       |\n| ---------------------- | ---------------------------------------------------------------------------- |\n| **1. Scanning**        | Attacker uses a hidden RFID/NFC reader to capture badge data without contact |\n| **2. Data Extraction** | Extracts unique identifiers or encrypted credentials from captured data      |\n| **3. Writing**         | Transfers extracted data onto a blank card or compatible device              |\n| **4. Using the Clone** | Presents the cloned badge to gain unauthorized access                        |\n\n> Como sacarle una copia a la llave de tu vecino mientras la tiene en el bolsillo sin que se dé cuenta, y luego usarla para abrir su puerta cuando él no está.\n\n---"
       },
       {
         "name": "RFID (Radio Frequency Identification)",
         "definition": "Contactless technology using radio waves to transmit data between a tag/card and a reader. Used in access control badges, asset tracking, and payment systems. Readable range: approximately 2–10 inches (standard antenna). Vulnerable to cloning if not properly encrypted.",
-        "analogy": "",
+        "analogy": "Como una etiqueta de inventario en un supermercado, pero usada para identificar personas en lugar de productos.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Contactless technology using radio waves to transmit data between a tag/card and a reader. Used in access control badges, asset tracking, and payment systems. Readable range: approximately 2–10 inches (standard antenna). Vulnerable to cloning if not properly encrypted.\n  \n  > Como una etiqueta de inventario en un supermercado, pero usada para identificar personas en lugar de productos."
+        "raw_content": "## RFID (Radio Frequency Identification)\n\n* **Definition:** Contactless technology using radio waves to transmit data between a tag/card and a reader. Used in access control badges, asset tracking, and payment systems. Readable range: approximately 2–10 inches (standard antenna). Vulnerable to cloning if not properly encrypted.\n  \n  > Como una etiqueta de inventario en un supermercado, pero usada para identificar personas en lugar de productos.\n\n---"
       },
       {
         "name": "NFC (Near-Field Communication)",
         "definition": "A short-range (1–2 inches) wireless communication technology used in contactless access badges, payment cards, and smartphone-based authentication. Subset of RFID operating at 13.56 MHz. More difficult to clone at range due to shorter read distance, but still vulnerable without proper encryption.",
-        "analogy": "",
+        "analogy": "Como el \"tap to pay\" de tu tarjeta de crédito: conveniente y rápido, pero si alguien tiene un lector cerca, puede intentar capturar tu señal.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A short-range (1–2 inches) wireless communication technology used in contactless access badges, payment cards, and smartphone-based authentication. Subset of RFID operating at 13.56 MHz. More difficult to clone at range due to shorter read distance, but still vulnerable without proper encryption.\n  \n  > Como el \"tap to pay\" de tu tarjeta de crédito: conveniente y rápido, pero si alguien tiene un lector cerca, puede intentar capturar tu señal."
+        "raw_content": "## NFC (Near-Field Communication)\n\n* **Definition:** A short-range (1–2 inches) wireless communication technology used in contactless access badges, payment cards, and smartphone-based authentication. Subset of RFID operating at 13.56 MHz. More difficult to clone at range due to shorter read distance, but still vulnerable without proper encryption.\n  \n  > Como el \"tap to pay\" de tu tarjeta de crédito: conveniente y rápido, pero si alguien tiene un lector cerca, puede intentar capturar tu señal.\n\n---"
       },
       {
         "name": "Mitigating Access Badge Cloning",
@@ -1145,8 +1072,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Defense measures to prevent or detect unauthorized badge cloning:\n\n| Measure                            | Description                                                                                            |\n| ---------------------------------- | ------------------------------------------------------------------------------------------------------ |\n| **Advanced encryption**            | Encrypt badge data to make raw capture useless without the decryption key                              |\n| **MFA**                            | Combine badge with a PIN or biometric — cloned badge alone is insufficient |\n| **Regular protocol updates**       | Periodically rotate encryption keys to invalidate old clones                                           |\n| **User education**                 | Train users to report suspicious proximity attempts and protect badge storage                          |\n| **RFID-shielding wallets/sleeves** | Physically block readers from capturing badge data while stored                                        |\n| **Access log monitoring**          | Detect anomalies like geographically impossible access (badge used in two locations simultaneously)    |\n\n> Como poner una funda blindada a tu tarjeta de crédito contactless: el atacante puede estar justo a tu lado, pero si no puede leer la señal, no puede copiarte nada.\n\n\n*CompTIA Security+ SY0-701 · Section 4: Physical Security · Dion Training*"
+        "raw_content": "## Mitigating Access Badge Cloning\n\n* **Definition:** Defense measures to prevent or detect unauthorized badge cloning:\n\n| Measure                            | Description                                                                                            |\n| ---------------------------------- | ------------------------------------------------------------------------------------------------------ |\n| **Advanced encryption**            | Encrypt badge data to make raw capture useless without the decryption key                              |\n| **MFA**                            | Combine badge with a PIN or biometric — cloned badge alone is insufficient |\n| **Regular protocol updates**       | Periodically rotate encryption keys to invalidate old clones                                           |\n| **User education**                 | Train users to report suspicious proximity attempts and protect badge storage                          |\n| **RFID-shielding wallets/sleeves** | Physically block readers from capturing badge data while stored                                        |\n| **Access log monitoring**          | Detect anomalies like geographically impossible access (badge used in two locations simultaneously)    |\n\n> Como poner una funda blindada a tu tarjeta de crédito contactless: el atacante puede estar justo a tu lado, pero si no puede leer la señal, no puede copiarte nada.\n\n---\n\n*CompTIA Security+ SY0-701 · Section 4: Physical Security · Dion Training*"
       }
     ]
   },
@@ -1157,11 +1083,10 @@ const STUDY_DATA = [
       {
         "name": "Social Engineering",
         "definition": "A manipulative strategy that exploits **human psychology** rather than technical vulnerabilities to gain unauthorized access to systems, data, or physical spaces. Targets the human element through written communication, phone calls, or face-to-face interaction. Best defense: **security awareness training**.",
-        "analogy": "",
+        "analogy": "Como un estafador de la vida real: no rompe la caja fuerte, convence al empleado del banco de que la abra por él.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A manipulative strategy that exploits **human psychology** rather than technical vulnerabilities to gain unauthorized access to systems, data, or physical spaces. Targets the human element through written communication, phone calls, or face-to-face interaction. Best defense: **security awareness training**.\n  \n  > Como un estafador de la vida real: no rompe la caja fuerte, convence al empleado del banco de que la abra por él."
+        "raw_content": "## Social Engineering\n\n* **Definition:** A manipulative strategy that exploits **human psychology** rather than technical vulnerabilities to gain unauthorized access to systems, data, or physical spaces. Targets the human element through written communication, phone calls, or face-to-face interaction. Best defense: **security awareness training**.\n  \n  > Como un estafador de la vida real: no rompe la caja fuerte, convence al empleado del banco de que la abra por él.\n\n---"
       },
       {
         "name": "Motivational Triggers",
@@ -1209,55 +1134,49 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Psychological levers used by social engineers to convince victims to perform a malicious action. Six main triggers — often combined for greater effectiveness:\n\n| Trigger          | Description                                                         | Example                                                                  |\n| ---------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------ |\n| **Authority**    | Victim complies because attacker appears to hold power or seniority | Attacker impersonates IT manager, IRS agent, or executive                |\n| **Urgency**      | Creates time pressure to bypass normal security procedures          | \"You must reset your password in the next 10 minutes or lose access\"     |\n| **Social Proof** | Victims act because they believe others are doing the same          | Fake reviews, shares, or endorsements driving clicks to a malicious site |\n| **Scarcity**     | Limited availability forces quick, uncritical decisions             | \"Only 5 spots left — sign up now\" in a phishing email                    |\n| **Likability**   | Attacker builds rapport and trust to lower the victim's guard       | Friendly conversation about sports, hobbies, or common interests         |\n| **Fear**         | Threat of negative consequences compels immediate action            | \"Pay this fine now or federal agents will come to your home\"             |\n\n> Como los trucos de los vendedores más agresivos: no te venden el producto, te venden la emoción que te hace comprarlo sin pensar."
+        "raw_content": "## Motivational Triggers\n\n* **Definition:** Psychological levers used by social engineers to convince victims to perform a malicious action. Six main triggers — often combined for greater effectiveness:\n\n| Trigger          | Description                                                         | Example                                                                  |\n| ---------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------ |\n| **Authority**    | Victim complies because attacker appears to hold power or seniority | Attacker impersonates IT manager, IRS agent, or executive                |\n| **Urgency**      | Creates time pressure to bypass normal security procedures          | \"You must reset your password in the next 10 minutes or lose access\"     |\n| **Social Proof** | Victims act because they believe others are doing the same          | Fake reviews, shares, or endorsements driving clicks to a malicious site |\n| **Scarcity**     | Limited availability forces quick, uncritical decisions             | \"Only 5 spots left — sign up now\" in a phishing email                    |\n| **Likability**   | Attacker builds rapport and trust to lower the victim's guard       | Friendly conversation about sports, hobbies, or common interests         |\n| **Fear**         | Threat of negative consequences compels immediate action            | \"Pay this fine now or federal agents will come to your home\"             |\n\n> Como los trucos de los vendedores más agresivos: no te venden el producto, te venden la emoción que te hace comprarlo sin pensar.\n\n---"
       },
       {
         "name": "Impersonation",
         "definition": "An attack where an adversary **assumes the identity of another person** to gain unauthorized access or extract sensitive information. Effectiveness increases when the attacker has researched the organization in advance to make the false identity more convincing (e.g., knowing names, floors, departments, internal processes).",
-        "analogy": "",
+        "analogy": "Como un actor que estudia su papel a fondo antes de salir al escenario: cuanto más detalles conoce, más convincente es la actuación.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An attack where an adversary **assumes the identity of another person** to gain unauthorized access or extract sensitive information. Effectiveness increases when the attacker has researched the organization in advance to make the false identity more convincing (e.g., knowing names, floors, departments, internal processes).\n  \n  > Como un actor que estudia su papel a fondo antes de salir al escenario: cuanto más detalles conoce, más convincente es la actuación."
+        "raw_content": "## Impersonation\n\n* **Definition:** An attack where an adversary **assumes the identity of another person** to gain unauthorized access or extract sensitive information. Effectiveness increases when the attacker has researched the organization in advance to make the false identity more convincing (e.g., knowing names, floors, departments, internal processes).\n  \n  > Como un actor que estudia su papel a fondo antes de salir al escenario: cuanto más detalles conoce, más convincente es la actuación.\n\n---"
       },
       {
         "name": "Brand Impersonation",
         "definition": "A specific form of impersonation where an attacker pretends to represent a **legitimate company or brand**, using official logos, marketing language, and visual design to make fraudulent communications or websites appear authentic. Commonly used in phishing emails and fake social media accounts.",
-        "analogy": "",
+        "analogy": "Como imprimir un uniforme falso de una empresa famosa para que la gente confíe en ti sin cuestionarte.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A specific form of impersonation where an attacker pretends to represent a **legitimate company or brand**, using official logos, marketing language, and visual design to make fraudulent communications or websites appear authentic. Commonly used in phishing emails and fake social media accounts.\n  \n  > Como imprimir un uniforme falso de una empresa famosa para que la gente confíe en ti sin cuestionarte."
+        "raw_content": "## Brand Impersonation\n\n* **Definition:** A specific form of impersonation where an attacker pretends to represent a **legitimate company or brand**, using official logos, marketing language, and visual design to make fraudulent communications or websites appear authentic. Commonly used in phishing emails and fake social media accounts.\n  \n  > Como imprimir un uniforme falso de una empresa famosa para que la gente confíe en ti sin cuestionarte.\n\n---"
       },
       {
         "name": "Typosquatting (URL Hijacking / Cybersquatting)",
         "definition": "An attack where the attacker registers a domain name that closely resembles a legitimate website but contains **deliberate typographical errors** (e.g., `gnail.com` instead of `gmail.com`, `Di0ntraining.com` instead of `Diontraining.com`). Designed to capture users who mistype URLs or click on misleading links. Also called **cousin domains**, **lookalike domains**, or **doppelganger domains**.",
-        "analogy": "",
+        "analogy": "Como abrir una tienda con un nombre casi idéntico al de la competencia, justo al lado, esperando que los clientes descuidados entren por error.",
         "tables": [],
         "list_items": [
           "Mitigation: Organizations register common misspellings of their own domains; user awareness training; monitoring for similar domain registrations."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An attack where the attacker registers a domain name that closely resembles a legitimate website but contains **deliberate typographical errors** (e.g., `gnail.com` instead of `gmail.com`, `Di0ntraining.com` instead of `Diontraining.com`). Designed to capture users who mistype URLs or click on misleading links. Also called **cousin domains**, **lookalike domains**, or **doppelganger domains**.\n* Mitigation: Organizations register common misspellings of their own domains; user awareness training; monitoring for similar domain registrations.\n  \n  > Como abrir una tienda con un nombre casi idéntico al de la competencia, justo al lado, esperando que los clientes descuidados entren por error."
+        "raw_content": "## Typosquatting (URL Hijacking / Cybersquatting)\n\n* **Definition:** An attack where the attacker registers a domain name that closely resembles a legitimate website but contains **deliberate typographical errors** (e.g., `gnail.com` instead of `gmail.com`, `Di0ntraining.com` instead of `Diontraining.com`). Designed to capture users who mistype URLs or click on misleading links. Also called **cousin domains**, **lookalike domains**, or **doppelganger domains**.\n* Mitigation: Organizations register common misspellings of their own domains; user awareness training; monitoring for similar domain registrations.\n  \n  > Como abrir una tienda con un nombre casi idéntico al de la competencia, justo al lado, esperando que los clientes descuidados entren por error.\n\n---"
       },
       {
         "name": "Watering Hole Attack",
         "definition": "A **targeted, passive attack** where the attacker compromises a specific website or online service that the intended victim is known to visit regularly. Rather than attacking the target directly, the attacker poisons a trusted third-party resource and waits for victims to come to it. Named after the predator behavior of waiting near a water source for prey.",
-        "analogy": "",
+        "analogy": "Como el cocodrilo que no persigue a sus presas: espera escondido en el río que sabe que los animales visitan todos los días.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A **targeted, passive attack** where the attacker compromises a specific website or online service that the intended victim is known to visit regularly. Rather than attacking the target directly, the attacker poisons a trusted third-party resource and waits for victims to come to it. Named after the predator behavior of waiting near a water source for prey.\n  \n  > Como el cocodrilo que no persigue a sus presas: espera escondido en el río que sabe que los animales visitan todos los días."
+        "raw_content": "## Watering Hole Attack\n\n* **Definition:** A **targeted, passive attack** where the attacker compromises a specific website or online service that the intended victim is known to visit regularly. Rather than attacking the target directly, the attacker poisons a trusted third-party resource and waits for victims to come to it. Named after the predator behavior of waiting near a water source for prey.\n  \n  > Como el cocodrilo que no persigue a sus presas: espera escondido en el río que sabe que los animales visitan todos los días.\n\n---"
       },
       {
         "name": "Pretexting",
         "definition": "A social engineering technique where the attacker **creates a fabricated scenario (pretext)** to manipulate a target into divulging sensitive information or performing actions that compromise security. The attacker typically impersonates a trusted figure (IT support, bank official, delivery company, law enforcement). Key mechanic: providing just enough plausible detail so the victim fills in the gaps themselves.",
-        "analogy": "",
+        "analogy": "Como llamar a alguien diciendo que eres del banco y que \"solo necesitas confirmar\" un dato que en realidad no tienes — pero sonas tan convincente que la persona te lo da voluntariamente.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A social engineering technique where the attacker **creates a fabricated scenario (pretext)** to manipulate a target into divulging sensitive information or performing actions that compromise security. The attacker typically impersonates a trusted figure (IT support, bank official, delivery company, law enforcement). Key mechanic: providing just enough plausible detail so the victim fills in the gaps themselves.\n  \n  > Como llamar a alguien diciendo que eres del banco y que \"solo necesitas confirmar\" un dato que en realidad no tienes — pero sonas tan convincente que la persona te lo da voluntariamente."
+        "raw_content": "## Pretexting\n\n* **Definition:** A social engineering technique where the attacker **creates a fabricated scenario (pretext)** to manipulate a target into divulging sensitive information or performing actions that compromise security. The attacker typically impersonates a trusted figure (IT support, bank official, delivery company, law enforcement). Key mechanic: providing just enough plausible detail so the victim fills in the gaps themselves.\n  \n  > Como llamar a alguien diciendo que eres del banco y que \"solo necesitas confirmar\" un dato que en realidad no tienes — pero sonas tan convincente que la persona te lo da voluntariamente.\n\n---"
       },
       {
         "name": "Phishing",
@@ -1305,53 +1224,47 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A broad category of social engineering attacks that use **fraudulent communications** disguised as trusted sources to trick victims into revealing sensitive information or downloading malware. Uses mass distribution (spray and pray) with no specific targeting. Six subtypes:\n\n| Subtype                             | Target                              | Method                                                              |\n| ----------------------------------- | ----------------------------------- | ------------------------------------------------------------------- |\n| **Phishing**                        | Mass / untargeted                   | Fraudulent emails to large recipient lists                          |\n| **Spear Phishing**                  | Specific individual or organization | Personalized, researched email tailored to the target               |\n| **Whaling**                         | High-profile executives (CEO, CFO)  | Highly crafted spear phishing targeting decision-makers             |\n| **Business Email Compromise (BEC)** | Finance / HR departments            | Uses compromised or spoofed executive email to authorize fraud      |\n| **Vishing**                         | Phone call recipients               | Voice calls impersonating banks, government agencies, or IT support |\n| **Smishing**                        | SMS/text recipients                 | Malicious links or phone numbers delivered via text message         |\n\n> Como la diferencia entre pescar con una red enorme (phishing), con una caña apuntando a un pez específico (spear phishing), o esperando al pez más grande del lago (whaling)."
+        "raw_content": "## Phishing\n\n* **Definition:** A broad category of social engineering attacks that use **fraudulent communications** disguised as trusted sources to trick victims into revealing sensitive information or downloading malware. Uses mass distribution (spray and pray) with no specific targeting. Six subtypes:\n\n| Subtype                             | Target                              | Method                                                              |\n| ----------------------------------- | ----------------------------------- | ------------------------------------------------------------------- |\n| **Phishing**                        | Mass / untargeted                   | Fraudulent emails to large recipient lists                          |\n| **Spear Phishing**                  | Specific individual or organization | Personalized, researched email tailored to the target               |\n| **Whaling**                         | High-profile executives (CEO, CFO)  | Highly crafted spear phishing targeting decision-makers             |\n| **Business Email Compromise (BEC)** | Finance / HR departments            | Uses compromised or spoofed executive email to authorize fraud      |\n| **Vishing**                         | Phone call recipients               | Voice calls impersonating banks, government agencies, or IT support |\n| **Smishing**                        | SMS/text recipients                 | Malicious links or phone numbers delivered via text message         |\n\n> Como la diferencia entre pescar con una red enorme (phishing), con una caña apuntando a un pez específico (spear phishing), o esperando al pez más grande del lago (whaling).\n\n---"
       },
       {
         "name": "Spear Phishing",
         "definition": "A highly targeted form of phishing where the attacker **researches the specific victim** beforehand to craft a personalized, believable message. Higher success rate than general phishing due to customization. Targets known individuals with verified connections to a specific organization or service.",
-        "analogy": "",
+        "analogy": "Como una carta de extorsión personalizada: no dice \"Estimado cliente\", dice tu nombre, menciona tu banco específico, y referencias datos reales tuyos para que la carta parezca legítima.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A highly targeted form of phishing where the attacker **researches the specific victim** beforehand to craft a personalized, believable message. Higher success rate than general phishing due to customization. Targets known individuals with verified connections to a specific organization or service.\n  \n  > Como una carta de extorsión personalizada: no dice \"Estimado cliente\", dice tu nombre, menciona tu banco específico, y referencias datos reales tuyos para que la carta parezca legítima."
+        "raw_content": "## Spear Phishing\n\n* **Definition:** A highly targeted form of phishing where the attacker **researches the specific victim** beforehand to craft a personalized, believable message. Higher success rate than general phishing due to customization. Targets known individuals with verified connections to a specific organization or service.\n  \n  > Como una carta de extorsión personalizada: no dice \"Estimado cliente\", dice tu nombre, menciona tu banco específico, y referencias datos reales tuyos para que la carta parezca legítima.\n\n---"
       },
       {
         "name": "Whaling",
         "definition": "A form of spear phishing that specifically targets **high-value individuals** — CEOs, CFOs, board members, or senior executives. High effort, high reward. Attackers seek to abuse the executive's authority to approve large fund transfers or to use the compromised account as a launchpad for further attacks across the organization.",
-        "analogy": "",
+        "analogy": "Como no ir a pescar peces pequeños al río, sino preparar una expedición completa para cazar una ballena: más difícil, pero el premio es incomparablemente mayor.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A form of spear phishing that specifically targets **high-value individuals** — CEOs, CFOs, board members, or senior executives. High effort, high reward. Attackers seek to abuse the executive's authority to approve large fund transfers or to use the compromised account as a launchpad for further attacks across the organization.\n  \n  > Como no ir a pescar peces pequeños al río, sino preparar una expedición completa para cazar una ballena: más difícil, pero el premio es incomparablemente mayor."
+        "raw_content": "## Whaling\n\n* **Definition:** A form of spear phishing that specifically targets **high-value individuals** — CEOs, CFOs, board members, or senior executives. High effort, high reward. Attackers seek to abuse the executive's authority to approve large fund transfers or to use the compromised account as a launchpad for further attacks across the organization.\n  \n  > Como no ir a pescar peces pequeños al río, sino preparar una expedición completa para cazar una ballena: más difícil, pero el premio es incomparablemente mayor.\n\n---"
       },
       {
         "name": "Business Email Compromise (BEC)",
         "definition": "A sophisticated phishing attack that **takes over or spoofs a legitimate internal email account** (typically an executive) to deceive employees — usually in finance or HR — into authorizing fraudulent wire transfers, redirecting payments, or sharing sensitive data. The attack relies on the inherent trust of an internal email address. Costs businesses billions annually.",
-        "analogy": "",
+        "analogy": "Como si alguien pudiera usar el correo de tu jefe para pedirte que hagas una transferencia urgente — y tú obedeces porque parece una instrucción legítima de quien tiene autoridad.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A sophisticated phishing attack that **takes over or spoofs a legitimate internal email account** (typically an executive) to deceive employees — usually in finance or HR — into authorizing fraudulent wire transfers, redirecting payments, or sharing sensitive data. The attack relies on the inherent trust of an internal email address. Costs businesses billions annually.\n  \n  > Como si alguien pudiera usar el correo de tu jefe para pedirte que hagas una transferencia urgente — y tú obedeces porque parece una instrucción legítima de quien tiene autoridad."
+        "raw_content": "## Business Email Compromise (BEC)\n\n* **Definition:** A sophisticated phishing attack that **takes over or spoofs a legitimate internal email account** (typically an executive) to deceive employees — usually in finance or HR — into authorizing fraudulent wire transfers, redirecting payments, or sharing sensitive data. The attack relies on the inherent trust of an internal email address. Costs businesses billions annually.\n  \n  > Como si alguien pudiera usar el correo de tu jefe para pedirte que hagas una transferencia urgente — y tú obedeces porque parece una instrucción legítima de quien tiene autoridad.\n\n---"
       },
       {
         "name": "Vishing (Voice Phishing)",
         "definition": "A phishing attack conducted over **voice calls**, where the attacker impersonates a trusted entity (bank, IRS, IT support) to manipulate victims into revealing sensitive or financial information. Particularly effective because many people find it harder to be skeptical in a live phone conversation than with an email.",
-        "analogy": "",
+        "analogy": "Como la llamada del \"banco\" que dice que hay un problema con tu tarjeta y que necesita que confirmes los datos — en lugar de pedirte que entres a la app oficial.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A phishing attack conducted over **voice calls**, where the attacker impersonates a trusted entity (bank, IRS, IT support) to manipulate victims into revealing sensitive or financial information. Particularly effective because many people find it harder to be skeptical in a live phone conversation than with an email.\n  \n  > Como la llamada del \"banco\" que dice que hay un problema con tu tarjeta y que necesita que confirmes los datos — en lugar de pedirte que entres a la app oficial."
+        "raw_content": "## Vishing (Voice Phishing)\n\n* **Definition:** A phishing attack conducted over **voice calls**, where the attacker impersonates a trusted entity (bank, IRS, IT support) to manipulate victims into revealing sensitive or financial information. Particularly effective because many people find it harder to be skeptical in a live phone conversation than with an email.\n  \n  > Como la llamada del \"banco\" que dice que hay un problema con tu tarjeta y que necesita que confirmes los datos — en lugar de pedirte que entres a la app oficial.\n\n---"
       },
       {
         "name": "Smishing (SMS Phishing)",
         "definition": "A phishing attack delivered via **SMS text messages**, containing malicious links or phone numbers. Creates a sense of urgency to prompt the victim to act quickly without scrutinizing the message.",
-        "analogy": "",
+        "analogy": "Como recibir un mensaje de texto que dice \"Tu paquete está retenido, haz clic aquí para liberar el envío\" — diseñado para que actúes antes de pensar.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A phishing attack delivered via **SMS text messages**, containing malicious links or phone numbers. Creates a sense of urgency to prompt the victim to act quickly without scrutinizing the message.\n  \n  > Como recibir un mensaje de texto que dice \"Tu paquete está retenido, haz clic aquí para liberar el envío\" — diseñado para que actúes antes de pensar."
+        "raw_content": "## Smishing (SMS Phishing)\n\n* **Definition:** A phishing attack delivered via **SMS text messages**, containing malicious links or phone numbers. Creates a sense of urgency to prompt the victim to act quickly without scrutinizing the message.\n  \n  > Como recibir un mensaje de texto que dice \"Tu paquete está retenido, haz clic aquí para liberar el envío\" — diseñado para que actúes antes de pensar.\n\n---"
       },
       {
         "name": "Phishing Indicators (Red Flags)",
@@ -1388,130 +1301,116 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Common characteristics that identify a potential phishing attempt:\n\n| Indicator                    | What to Look For                                                                 |\n| ---------------------------- | -------------------------------------------------------------------------------- |\n| **Urgency**                  | \"Act now or lose access in 4 hours\"                                              |\n| **Unusual Requests**         | Asking for passwords, credit cards, or SSN via email                             |\n| **Mismatched URLs**          | Display text says `paypal.com` but hovering reveals `paypal.hacked.xyz`          |\n| **Suspicious Email Address** | Display name looks legitimate but underlying address is `mr.weirdo578@yahoo.com` |\n| **Poor Grammar / Spelling**  | Broken English, typos, inconsistent formatting                                   |\n\n> Como revisar el billete antes de aceptarlo: hay señales claras de que algo no cuadra si sabes exactamente qué buscar."
+        "raw_content": "## Phishing Indicators (Red Flags)\n\n* **Definition:** Common characteristics that identify a potential phishing attempt:\n\n| Indicator                    | What to Look For                                                                 |\n| ---------------------------- | -------------------------------------------------------------------------------- |\n| **Urgency**                  | \"Act now or lose access in 4 hours\"                                              |\n| **Unusual Requests**         | Asking for passwords, credit cards, or SSN via email                             |\n| **Mismatched URLs**          | Display text says `paypal.com` but hovering reveals `paypal.hacked.xyz`          |\n| **Suspicious Email Address** | Display name looks legitimate but underlying address is `mr.weirdo578@yahoo.com` |\n| **Poor Grammar / Spelling**  | Broken English, typos, inconsistent formatting                                   |\n\n> Como revisar el billete antes de aceptarlo: hay señales claras de que algo no cuadra si sabes exactamente qué buscar.\n\n---"
       },
       {
         "name": "Anti-Phishing Campaign",
         "definition": "A proactive security awareness tool that combines **user training** with **simulated phishing attacks** to test and educate employees. Users who click on simulated phishing links receive immediate remedial training. Should be ongoing since threats continuously evolve. Tools available: **Trend Micro Phish Insight** (free platform).",
-        "analogy": "",
+        "analogy": "Como hacer simulacros de incendio en el trabajo: no esperas a que haya fuego real para enseñarle a la gente cómo reaccionar.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A proactive security awareness tool that combines **user training** with **simulated phishing attacks** to test and educate employees. Users who click on simulated phishing links receive immediate remedial training. Should be ongoing since threats continuously evolve. Tools available: **Trend Micro Phish Insight** (free platform).\n  \n  > Como hacer simulacros de incendio en el trabajo: no esperas a que haya fuego real para enseñarle a la gente cómo reaccionar."
+        "raw_content": "## Anti-Phishing Campaign\n\n* **Definition:** A proactive security awareness tool that combines **user training** with **simulated phishing attacks** to test and educate employees. Users who click on simulated phishing links receive immediate remedial training. Should be ongoing since threats continuously evolve. Tools available: **Trend Micro Phish Insight** (free platform).\n  \n  > Como hacer simulacros de incendio en el trabajo: no esperas a que haya fuego real para enseñarle a la gente cómo reaccionar.\n\n---"
       },
       {
         "name": "Fraud",
         "definition": "A wrongful or criminal deception intended to result in **financial or personal gain** for the attacker. Differs from direct theft in that the victim is manipulated into voluntarily handing over money or information. Most common form: **identity fraud / identity theft**.",
-        "analogy": "",
+        "analogy": "Como el truco del timador clásico: no te roba la billetera, te convence de que se la des tú mismo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A wrongful or criminal deception intended to result in **financial or personal gain** for the attacker. Differs from direct theft in that the victim is manipulated into voluntarily handing over money or information. Most common form: **identity fraud / identity theft**.\n  \n  > Como el truco del timador clásico: no te roba la billetera, te convence de que se la des tú mismo."
+        "raw_content": "## Fraud\n\n* **Definition:** A wrongful or criminal deception intended to result in **financial or personal gain** for the attacker. Differs from direct theft in that the victim is manipulated into voluntarily handing over money or information. Most common form: **identity fraud / identity theft**.\n  \n  > Como el truco del timador clásico: no te roba la billetera, te convence de que se la des tú mismo.\n\n---"
       },
       {
         "name": "Identity Fraud / Identity Theft",
         "definition": "The unauthorized use of another person's personal information (name, SSN, date of birth) to commit crimes, open accounts, or deceive third parties. **Identity fraud** = using stolen credentials for specific transactions (e.g., charging a stolen credit card). **Identity theft** = fully assuming another person's identity to open new accounts, get jobs, or obtain benefits. CompTIA uses **identity fraud** as the preferred umbrella term for both.",
-        "analogy": "",
+        "analogy": "Como que alguien tome tu nombre, tu cédula y tu historial para vivir una vida paralela en tu nombre, acumulando deudas que aparecerán en tu nombre.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The unauthorized use of another person's personal information (name, SSN, date of birth) to commit crimes, open accounts, or deceive third parties. **Identity fraud** = using stolen credentials for specific transactions (e.g., charging a stolen credit card). **Identity theft** = fully assuming another person's identity to open new accounts, get jobs, or obtain benefits. CompTIA uses **identity fraud** as the preferred umbrella term for both.\n  \n  > Como que alguien tome tu nombre, tu cédula y tu historial para vivir una vida paralela en tu nombre, acumulando deudas que aparecerán en tu nombre."
+        "raw_content": "## Identity Fraud / Identity Theft\n\n* **Definition:** The unauthorized use of another person's personal information (name, SSN, date of birth) to commit crimes, open accounts, or deceive third parties. **Identity fraud** = using stolen credentials for specific transactions (e.g., charging a stolen credit card). **Identity theft** = fully assuming another person's identity to open new accounts, get jobs, or obtain benefits. CompTIA uses **identity fraud** as the preferred umbrella term for both.\n  \n  > Como que alguien tome tu nombre, tu cédula y tu historial para vivir una vida paralela en tu nombre, acumulando deudas que aparecerán en tu nombre.\n\n---"
       },
       {
         "name": "Invoice Scam",
         "definition": "A social engineering scam where a victim is tricked into **paying a fraudulent invoice** for products or services never ordered. Common tactic: attacker calls the company, uses pretexting to confirm or \"correct\" an order, obtains verbal agreement (recorded), ships unsolicited products, then sends an inflated invoice backed by the recording. Also conducted digitally via spear phishing emails with malware-embedded PDF invoices.",
-        "analogy": "",
+        "analogy": "Como el vendedor que llama a tu empresa, confirma un pedido que nadie hizo realmente, y luego te manda la factura respaldada por la grabación de cuando dijiste \"está bien\".",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A social engineering scam where a victim is tricked into **paying a fraudulent invoice** for products or services never ordered. Common tactic: attacker calls the company, uses pretexting to confirm or \"correct\" an order, obtains verbal agreement (recorded), ships unsolicited products, then sends an inflated invoice backed by the recording. Also conducted digitally via spear phishing emails with malware-embedded PDF invoices.\n  \n  > Como el vendedor que llama a tu empresa, confirma un pedido que nadie hizo realmente, y luego te manda la factura respaldada por la grabación de cuando dijiste \"está bien\"."
+        "raw_content": "## Invoice Scam\n\n* **Definition:** A social engineering scam where a victim is tricked into **paying a fraudulent invoice** for products or services never ordered. Common tactic: attacker calls the company, uses pretexting to confirm or \"correct\" an order, obtains verbal agreement (recorded), ships unsolicited products, then sends an inflated invoice backed by the recording. Also conducted digitally via spear phishing emails with malware-embedded PDF invoices.\n  \n  > Como el vendedor que llama a tu empresa, confirma un pedido que nadie hizo realmente, y luego te manda la factura respaldada por la grabación de cuando dijiste \"está bien\".\n\n---"
       },
       {
         "name": "Influence Campaign",
         "definition": "A coordinated effort to **affect public perception or behavior** toward a specific cause, individual, or group. In cybersecurity, these are typically conducted by nation-state actors or hacktivist groups using social media platforms to spread false narratives, manipulate elections, or drive financial scams. Amplified by social media's reach and lack of oversight.",
-        "analogy": "",
+        "analogy": "Como una campaña de propaganda digital a gran escala: no hackean sistemas, hackean opiniones.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A coordinated effort to **affect public perception or behavior** toward a specific cause, individual, or group. In cybersecurity, these are typically conducted by nation-state actors or hacktivist groups using social media platforms to spread false narratives, manipulate elections, or drive financial scams. Amplified by social media's reach and lack of oversight.\n  \n  > Como una campaña de propaganda digital a gran escala: no hackean sistemas, hackean opiniones."
+        "raw_content": "## Influence Campaign\n\n* **Definition:** A coordinated effort to **affect public perception or behavior** toward a specific cause, individual, or group. In cybersecurity, these are typically conducted by nation-state actors or hacktivist groups using social media platforms to spread false narratives, manipulate elections, or drive financial scams. Amplified by social media's reach and lack of oversight.\n  \n  > Como una campaña de propaganda digital a gran escala: no hackean sistemas, hackean opiniones.\n\n---"
       },
       {
         "name": "Misinformation",
         "definition": "False or inaccurate information **shared without harmful intent** — typically arising from honest mistakes, misunderstandings, or unverified claims that spread rapidly. Example: incorrect health remedies shared during the COVID-19 pandemic.",
-        "analogy": "",
+        "analogy": "Como el rumor del vecindario que se repite de boca en boca sin que nadie lo verifique, no porque quieran hacer daño, sino porque simplemente no lo cuestionaron.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** False or inaccurate information **shared without harmful intent** — typically arising from honest mistakes, misunderstandings, or unverified claims that spread rapidly. Example: incorrect health remedies shared during the COVID-19 pandemic.\n  \n  > Como el rumor del vecindario que se repite de boca en boca sin que nadie lo verifique, no porque quieran hacer daño, sino porque simplemente no lo cuestionaron."
+        "raw_content": "## Misinformation\n\n* **Definition:** False or inaccurate information **shared without harmful intent** — typically arising from honest mistakes, misunderstandings, or unverified claims that spread rapidly. Example: incorrect health remedies shared during the COVID-19 pandemic.\n  \n  > Como el rumor del vecindario que se repite de boca en boca sin que nadie lo verifique, no porque quieran hacer daño, sino porque simplemente no lo cuestionaron.\n\n---"
       },
       {
         "name": "Disinformation",
         "definition": "The **deliberate creation and distribution of false information** with the intent to deceive, mislead, manipulate public opinion, or undermine trust. Commonly used by nation-state actors in political influence campaigns. Example: Russian disinformation campaign during the 2016 U.S. presidential election.",
-        "analogy": "",
+        "analogy": "Como una campaña de propaganda orquestada: alguien sabe que la información es falsa, pero la distribuye estratégicamente para cambiar lo que la gente piensa o hace.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The **deliberate creation and distribution of false information** with the intent to deceive, mislead, manipulate public opinion, or undermine trust. Commonly used by nation-state actors in political influence campaigns. Example: Russian disinformation campaign during the 2016 U.S. presidential election.\n  \n  > Como una campaña de propaganda orquestada: alguien sabe que la información es falsa, pero la distribuye estratégicamente para cambiar lo que la gente piensa o hace."
+        "raw_content": "## Disinformation\n\n* **Definition:** The **deliberate creation and distribution of false information** with the intent to deceive, mislead, manipulate public opinion, or undermine trust. Commonly used by nation-state actors in political influence campaigns. Example: Russian disinformation campaign during the 2016 U.S. presidential election.\n  \n  > Como una campaña de propaganda orquestada: alguien sabe que la información es falsa, pero la distribuye estratégicamente para cambiar lo que la gente piensa o hace.\n\n---"
       },
       {
         "name": "Diversion Theft",
         "definition": "Manipulating a situation or **creating a distraction** to redirect attention while theft occurs. In the digital context, commonly implemented as **DNS spoofing** — altering DNS records so users are redirected from a legitimate website to a fraudulent one that harvests credentials.",
-        "analogy": "",
+        "analogy": "Como crear un accidente de tráfico falso mientras tu cómplice roba el camión que quedó parado en el embotellamiento.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Manipulating a situation or **creating a distraction** to redirect attention while theft occurs. In the digital context, commonly implemented as **DNS spoofing** — altering DNS records so users are redirected from a legitimate website to a fraudulent one that harvests credentials.\n  \n  > Como crear un accidente de tráfico falso mientras tu cómplice roba el camión que quedó parado en el embotellamiento."
+        "raw_content": "## Diversion Theft\n\n* **Definition:** Manipulating a situation or **creating a distraction** to redirect attention while theft occurs. In the digital context, commonly implemented as **DNS spoofing** — altering DNS records so users are redirected from a legitimate website to a fraudulent one that harvests credentials.\n  \n  > Como crear un accidente de tráfico falso mientras tu cómplice roba el camión que quedó parado en el embotellamiento.\n\n---"
       },
       {
         "name": "Hoax",
         "definition": "A **malicious deception** spread through social media, email, or messaging channels — often claiming false security threats or warnings. While seemingly harmless, hoaxes can cause panic, spread malware, or be used to prime victims for follow-on phishing attacks. Countered with critical thinking and fact-checking.",
-        "analogy": "",
+        "analogy": "Como el mensaje viral que dice \"reenvía esto a 10 personas o tu cuenta será eliminada\" — diseñado para generar pánico y acciones impulsivas.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A **malicious deception** spread through social media, email, or messaging channels — often claiming false security threats or warnings. While seemingly harmless, hoaxes can cause panic, spread malware, or be used to prime victims for follow-on phishing attacks. Countered with critical thinking and fact-checking.\n  \n  > Como el mensaje viral que dice \"reenvía esto a 10 personas o tu cuenta será eliminada\" — diseñado para generar pánico y acciones impulsivas."
+        "raw_content": "## Hoax\n\n* **Definition:** A **malicious deception** spread through social media, email, or messaging channels — often claiming false security threats or warnings. While seemingly harmless, hoaxes can cause panic, spread malware, or be used to prime victims for follow-on phishing attacks. Countered with critical thinking and fact-checking.\n  \n  > Como el mensaje viral que dice \"reenvía esto a 10 personas o tu cuenta será eliminada\" — diseñado para generar pánico y acciones impulsivas.\n\n---"
       },
       {
         "name": "Shoulder Surfing",
         "definition": "Observing someone's screen, keypad, or documents to capture sensitive information such as PINs, passwords, or confidential data. Does **not** require physical proximity — high-powered cameras or CCTV can enable shoulder surfing from a distance. Countered with **privacy screens**, **shielded keypads**, and situational awareness.",
-        "analogy": "",
+        "analogy": "Como el que mira por encima de tu hombro cuando marcas tu PIN en el cajero automático — solo que ahora puede hacerlo con una cámara desde el otro lado del edificio.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Observing someone's screen, keypad, or documents to capture sensitive information such as PINs, passwords, or confidential data. Does **not** require physical proximity — high-powered cameras or CCTV can enable shoulder surfing from a distance. Countered with **privacy screens**, **shielded keypads**, and situational awareness.\n  \n  > Como el que mira por encima de tu hombro cuando marcas tu PIN en el cajero automático — solo que ahora puede hacerlo con una cámara desde el otro lado del edificio."
+        "raw_content": "## Shoulder Surfing\n\n* **Definition:** Observing someone's screen, keypad, or documents to capture sensitive information such as PINs, passwords, or confidential data. Does **not** require physical proximity — high-powered cameras or CCTV can enable shoulder surfing from a distance. Countered with **privacy screens**, **shielded keypads**, and situational awareness.\n  \n  > Como el que mira por encima de tu hombro cuando marcas tu PIN en el cajero automático — solo que ahora puede hacerlo con una cámara desde el otro lado del edificio.\n\n---"
       },
       {
         "name": "Dumpster Diving",
         "definition": "Searching through **physical or digital trash** to find valuable information. Physical: discarded documents, hardware, or notes with credentials. Digital: undeleted files in recycling bins or improperly wiped storage media. Countered with **document shredding**, **clean desk policy**, and **secure data destruction** procedures.",
-        "analogy": "",
+        "analogy": "Como buscar en la basura de una empresa para encontrar facturas, contraseñas escritas en papeles, o documentos confidenciales que alguien tiró sin destruir.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Searching through **physical or digital trash** to find valuable information. Physical: discarded documents, hardware, or notes with credentials. Digital: undeleted files in recycling bins or improperly wiped storage media. Countered with **document shredding**, **clean desk policy**, and **secure data destruction** procedures.\n  \n  > Como buscar en la basura de una empresa para encontrar facturas, contraseñas escritas en papeles, o documentos confidenciales que alguien tiró sin destruir."
+        "raw_content": "## Dumpster Diving\n\n* **Definition:** Searching through **physical or digital trash** to find valuable information. Physical: discarded documents, hardware, or notes with credentials. Digital: undeleted files in recycling bins or improperly wiped storage media. Countered with **document shredding**, **clean desk policy**, and **secure data destruction** procedures.\n  \n  > Como buscar en la basura de una empresa para encontrar facturas, contraseñas escritas en papeles, o documentos confidenciales que alguien tiró sin destruir.\n\n---"
       },
       {
         "name": "Eavesdropping",
         "definition": "Secretly **listening to or intercepting private communications** — either physically (listening to phone calls) or digitally (intercepting network traffic via on-path/adversary-in-the-middle attacks). Countered with **encrypted communication channels** and up-to-date patching.",
-        "analogy": "",
+        "analogy": "Como escuchar una conversación privada a través de una pared delgada — o en la red, interceptar el tráfico entre dos partes sin que ninguna lo sepa.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Secretly **listening to or intercepting private communications** — either physically (listening to phone calls) or digitally (intercepting network traffic via on-path/adversary-in-the-middle attacks). Countered with **encrypted communication channels** and up-to-date patching.\n  \n  > Como escuchar una conversación privada a través de una pared delgada — o en la red, interceptar el tráfico entre dos partes sin que ninguna lo sepa."
+        "raw_content": "## Eavesdropping\n\n* **Definition:** Secretly **listening to or intercepting private communications** — either physically (listening to phone calls) or digitally (intercepting network traffic via on-path/adversary-in-the-middle attacks). Countered with **encrypted communication channels** and up-to-date patching.\n  \n  > Como escuchar una conversación privada a través de una pared delgada — o en la red, interceptar el tráfico entre dos partes sin que ninguna lo sepa.\n\n---"
       },
       {
         "name": "Baiting",
         "definition": "Leaving a **malware-infected physical device** (typically a USB drive) in a location where a target is likely to find it and connect it to an organizational system out of curiosity. Once connected, malware is installed automatically. Countered with **user training** — never connect unknown devices.",
-        "analogy": "",
+        "analogy": "Como dejar un sobre de dinero en el estacionamiento de una empresa: la curiosidad del empleado hace el resto del trabajo por el atacante.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Leaving a **malware-infected physical device** (typically a USB drive) in a location where a target is likely to find it and connect it to an organizational system out of curiosity. Once connected, malware is installed automatically. Countered with **user training** — never connect unknown devices.\n  \n  > Como dejar un sobre de dinero en el estacionamiento de una empresa: la curiosidad del empleado hace el resto del trabajo por el atacante."
+        "raw_content": "## Baiting\n\n* **Definition:** Leaving a **malware-infected physical device** (typically a USB drive) in a location where a target is likely to find it and connect it to an organizational system out of curiosity. Once connected, malware is installed automatically. Countered with **user training** — never connect unknown devices.\n  \n  > Como dejar un sobre de dinero en el estacionamiento de una empresa: la curiosidad del empleado hace el resto del trabajo por el atacante.\n\n---"
       },
       {
         "name": "DNS Spoofing",
         "definition": "A diversion technique where the attacker **manipulates DNS server records** so that a legitimate domain name resolves to a malicious IP address, redirecting users to a fake website designed to harvest credentials or install malware. A technical implementation of diversion theft.",
-        "analogy": "",
+        "analogy": "Como cambiar las señales de tráfico para que la gente que va al banco termine llegando a una fachada falsa donde te roban la información.",
         "tables": [
           {
             "headers": [
@@ -1559,8 +1458,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A diversion technique where the attacker **manipulates DNS server records** so that a legitimate domain name resolves to a malicious IP address, redirecting users to a fake website designed to harvest credentials or install malware. A technical implementation of diversion theft.\n  \n  > Como cambiar las señales de tráfico para que la gente que va al banco termine llegando a una fachada falsa donde te roban la información.\n\n\n\n\n| English key words | Spanish  meaning                    |\n| ----------------- | ----------------------------------- |\n| scarcity          | escasez                             |\n| likability        | simpatía                            |\n| pretexting        | scenario creado                     |\n| deceptive         | engañoso                            |\n| disclose          | revelar |\n| spear             | ataque dirigido                     |\n| tailored          | personalizado                       |\n| deceive           | engañar                             |\n| hoaxes            | bromas pesadas                      |\n\n\n*CompTIA Security+ SY0-701 · Section 5: Social Engineering · Dion Training*"
+        "raw_content": "## DNS Spoofing\n\n* **Definition:** A diversion technique where the attacker **manipulates DNS server records** so that a legitimate domain name resolves to a malicious IP address, redirecting users to a fake website designed to harvest credentials or install malware. A technical implementation of diversion theft.\n  \n  > Como cambiar las señales de tráfico para que la gente que va al banco termine llegando a una fachada falsa donde te roban la información.\n\n---\n\n\n\n| English key words | Spanish  meaning                    |\n| ----------------- | ----------------------------------- |\n| scarcity          | escasez                             |\n| likability        | simpatía                            |\n| pretexting        | scenario creado                     |\n| deceptive         | engañoso                            |\n| disclose          | revelar |\n| spear             | ataque dirigido                     |\n| tailored          | personalizado                       |\n| deceive           | engañar                             |\n| hoaxes            | bromas pesadas                      |\n\n---\n\n*CompTIA Security+ SY0-701 · Section 5: Social Engineering · Dion Training*"
       }
     ]
   },
@@ -1574,17 +1472,18 @@ const STUDY_DATA = [
         "analogy": "Como un intruso que entra a tu casa sin invitación y sin que te des cuenta — puede venir en muchas formas, pero el objetivo siempre es el mismo: aprovecharse de lo que encuentre adentro.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Short for **malicious software** — any code designed to infiltrate, damage, or gain unauthorized access to a computer system without the user's knowledge or consent. An umbrella term covering viruses, worms, Trojans, ransomware, rootkits, spyware, keyloggers, and more.\n> Como un intruso que entra a tu casa sin invitación y sin que te des cuenta — puede venir en muchas formas, pero el objetivo siempre es el mismo: aprovecharse de lo que encuentre adentro."
+        "raw_content": "## Malware\n\n* **Definition:** Short for **malicious software** — any code designed to infiltrate, damage, or gain unauthorized access to a computer system without the user's knowledge or consent. An umbrella term covering viruses, worms, Trojans, ransomware, rootkits, spyware, keyloggers, and more.\n> Como un intruso que entra a tu casa sin invitación y sin que te des cuenta — puede venir en muchas formas, pero el objetivo siempre es el mismo: aprovecharse de lo que encuentre adentro.\n\n---"
       },
       {
         "name": "Threat Vector vs. Attack Vector",
         "definition": "Two related but distinct concepts:",
         "analogy": "Como la diferencia entre la grieta en la pared (threat vector) y la secuencia completa de escalar la barda, pasar por esa grieta y llegar al cofre (attack vector).",
         "tables": [],
-        "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Two related but distinct concepts:\n  - **Threat Vector:** The specific **vulnerability or weakness** an attacker plans to exploit to break into a system (the \"why it's possible\" — e.g., unpatched software, a phishing email link, an unsecured USB port).\n  - **Attack Vector:** The **complete pathway and method** the attacker uses to actually gain access and deliver the malicious payload — encompasses both the entry point and the execution of the attack (the \"how it's done\").\n\n> Como la diferencia entre la grieta en la pared (threat vector) y la secuencia completa de escalar la barda, pasar por esa grieta y llegar al cofre (attack vector)."
+        "list_items": [
+          "**Threat Vector:** The specific **vulnerability or weakness** an attacker plans to exploit to break into a system (the \"why it's possible\" — e.g., unpatched software, a phishing email link, an unsecured USB port).",
+          "**Attack Vector:** The **complete pathway and method** the attacker uses to actually gain access and deliver the malicious payload — encompasses both the entry point and the execution of the attack (the \"how it's done\")."
+        ],
+        "raw_content": "## Threat Vector vs. Attack Vector\n\n* **Definition:** Two related but distinct concepts:\n  - **Threat Vector:** The specific **vulnerability or weakness** an attacker plans to exploit to break into a system (the \"why it's possible\" — e.g., unpatched software, a phishing email link, an unsecured USB port).\n  - **Attack Vector:** The **complete pathway and method** the attacker uses to actually gain access and deliver the malicious payload — encompasses both the entry point and the execution of the attack (the \"how it's done\").\n\n> Como la diferencia entre la grieta en la pared (threat vector) y la secuencia completa de escalar la barda, pasar por esa grieta y llegar al cofre (attack vector).\n\n---"
       },
       {
         "name": "Virus",
@@ -1641,8 +1540,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Malicious code that **requires user action** (opening a file, running a program, connecting a device) to execute and spread. Once activated, it replicates by attaching itself to other files or programs. Ten types:\n\n| Type | How It Works |\n|---|---|\n| **Boot Sector** | Stored in the first sector of a disk; loads into memory before the OS — hard to detect with standard AV |\n| **Macro** | Embedded in documents (Word, Excel, PowerPoint); executes when the file is opened |\n| **Program** | Infects executable/application files; re-infects the system every time the infected app is opened |\n| **Multipartite** | Combination of boot sector + program virus; achieves persistence — removing one component still leaves the other |\n| **Encrypted** | Encrypts its own malicious code into ciphertext to evade signature-based AV detection |\n| **Polymorphic** | Advanced encrypted virus that **changes its decryption module** each time it executes to evade detection |\n| **Metamorphic** | Rewrites its **entire code** before each infection — the most advanced evasion technique |\n| **Stealth** | Not a unique type but a **technique** — uses encryption, payload modification, and other methods to hide from AV |\n| **Armored** | Adds a layer of obfuscation/protection to **confuse analysts** attempting to reverse-engineer it |\n| **Hoax** | Not an actual virus — a **social engineering trick** that scares users into installing real malware themselves |\n\n> Como un camaleón digital: cada generación de virus aprende a cambiar de apariencia para que las defensas no lo reconozcan."
+        "raw_content": "## Virus\n\n* **Definition:** Malicious code that **requires user action** (opening a file, running a program, connecting a device) to execute and spread. Once activated, it replicates by attaching itself to other files or programs. Ten types:\n\n| Type | How It Works |\n|---|---|\n| **Boot Sector** | Stored in the first sector of a disk; loads into memory before the OS — hard to detect with standard AV |\n| **Macro** | Embedded in documents (Word, Excel, PowerPoint); executes when the file is opened |\n| **Program** | Infects executable/application files; re-infects the system every time the infected app is opened |\n| **Multipartite** | Combination of boot sector + program virus; achieves persistence — removing one component still leaves the other |\n| **Encrypted** | Encrypts its own malicious code into ciphertext to evade signature-based AV detection |\n| **Polymorphic** | Advanced encrypted virus that **changes its decryption module** each time it executes to evade detection |\n| **Metamorphic** | Rewrites its **entire code** before each infection — the most advanced evasion technique |\n| **Stealth** | Not a unique type but a **technique** — uses encryption, payload modification, and other methods to hide from AV |\n| **Armored** | Adds a layer of obfuscation/protection to **confuse analysts** attempting to reverse-engineer it |\n| **Hoax** | Not an actual virus — a **social engineering trick** that scares users into installing real malware themselves |\n\n> Como un camaleón digital: cada generación de virus aprende a cambiar de apariencia para que las defensas no lo reconozcan.\n\n---"
       },
       {
         "name": "Worm",
@@ -1650,8 +1548,7 @@ const STUDY_DATA = [
         "analogy": "Como un virus biológico que se transmite solo por estar en el mismo espacio: no necesita que hagas nada, busca activamente sus próximas víctimas en la red.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Malware that **self-replicates and spreads without any user interaction** by exploiting vulnerabilities in operating systems or applications. Key distinction from viruses: no user action required. Dangerous both for the infections it causes and for the network congestion its replication creates — in severe cases, can trigger a denial-of-service on the network itself. Notable examples: **Nimda** (2001 — spread globally in 22 minutes), **Conficker** (2009 — infected 9–15 million machines via missing patch MS08-067).\n> Como un virus biológico que se transmite solo por estar en el mismo espacio: no necesita que hagas nada, busca activamente sus próximas víctimas en la red."
+        "raw_content": "## Worm\n\n* **Definition:** Malware that **self-replicates and spreads without any user interaction** by exploiting vulnerabilities in operating systems or applications. Key distinction from viruses: no user action required. Dangerous both for the infections it causes and for the network congestion its replication creates — in severe cases, can trigger a denial-of-service on the network itself. Notable examples: **Nimda** (2001 — spread globally in 22 minutes), **Conficker** (2009 — infected 9–15 million machines via missing patch MS08-067).\n> Como un virus biológico que se transmite solo por estar en el mismo espacio: no necesita que hagas nada, busca activamente sus próximas víctimas en la red.\n\n---"
       },
       {
         "name": "Trojan",
@@ -1659,8 +1556,7 @@ const STUDY_DATA = [
         "analogy": "Como el caballo de madera de los griegos: por fuera parece un regalo inofensivo, por dentro está lleno de soldados listos para atacar desde adentro.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Malware **disguised as legitimate or desirable software**. Appears to perform a useful function while secretly executing a malicious one in the background (installing backdoors, enabling remote access, exfiltrating data). Named after the Trojan Horse of Greek mythology. Does **not** self-replicate — relies on users choosing to install it.\n> Como el caballo de madera de los griegos: por fuera parece un regalo inofensivo, por dentro está lleno de soldados listos para atacar desde adentro."
+        "raw_content": "## Trojan\n\n* **Definition:** Malware **disguised as legitimate or desirable software**. Appears to perform a useful function while secretly executing a malicious one in the background (installing backdoors, enabling remote access, exfiltrating data). Named after the Trojan Horse of Greek mythology. Does **not** self-replicate — relies on users choosing to install it.\n> Como el caballo de madera de los griegos: por fuera parece un regalo inofensivo, por dentro está lleno de soldados listos para atacar desde adentro.\n\n---"
       },
       {
         "name": "RAT (Remote Access Trojan)",
@@ -1668,8 +1564,7 @@ const STUDY_DATA = [
         "analogy": "Como instalarle una cámara oculta y un micrófono a la computadora de alguien: el atacante puede ver y controlar todo lo que pasa, sin que la víctima tenga idea.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A specific type of Trojan that establishes a **covert remote connection** from the victim's machine back to the attacker's system, giving the attacker full remote control — file access, screenshots, webcam, keystrokes, registry modifications, and more. Functionally acts as a persistent backdoor. Commonly delivered via spear phishing or bundled with pirated software.\n> Como instalarle una cámara oculta y un micrófono a la computadora de alguien: el atacante puede ver y controlar todo lo que pasa, sin que la víctima tenga idea."
+        "raw_content": "## RAT (Remote Access Trojan)\n\n* **Definition:** A specific type of Trojan that establishes a **covert remote connection** from the victim's machine back to the attacker's system, giving the attacker full remote control — file access, screenshots, webcam, keystrokes, registry modifications, and more. Functionally acts as a persistent backdoor. Commonly delivered via spear phishing or bundled with pirated software.\n> Como instalarle una cámara oculta y un micrófono a la computadora de alguien: el atacante puede ver y controlar todo lo que pasa, sin que la víctima tenga idea.\n\n---"
       },
       {
         "name": "Ransomware",
@@ -1702,8 +1597,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Malware that **encrypts the victim's files or systems** and demands payment (typically cryptocurrency) in exchange for the decryption key. Can target individuals (hundreds of dollars) or large organizations and critical infrastructure (millions). Notable attacks: **WannaCry** (2017 — exploited MS17-010/EternalBlue), **Colonial Pipeline** (2021 — $4.4M ransom, halted 45% of US East Coast fuel supply), **Düsseldorf Hospital** (2020 — first confirmed ransomware-related death).\n\n**Prevention best practices:**\n\n| Practice | Why It Matters |\n|---|---|\n| Regular backups (offline/cloud) | Allows restoration without paying ransom |\n| Software patching | Closes exploited vulnerabilities |\n| User security awareness training | Prevents initial infection via phishing |\n| MFA implementation | Limits attacker account access even with stolen credentials |\n\n**If attacked — response steps:**\n1. **Never pay the ransom** — no guarantee of recovery, funds future attacks\n2. Immediately **disconnect** infected systems from the network\n3. **Notify authorities** (per organizational incident response policy)\n4. **Restore from known good backups** after confirming malware is fully removed\n\n> Como un secuestro digital: el atacante no roba tus datos, los encierra bajo llave y te cobra rescate para darte la llave de vuelta — si es que decide dártela."
+        "raw_content": "## Ransomware\n\n* **Definition:** Malware that **encrypts the victim's files or systems** and demands payment (typically cryptocurrency) in exchange for the decryption key. Can target individuals (hundreds of dollars) or large organizations and critical infrastructure (millions). Notable attacks: **WannaCry** (2017 — exploited MS17-010/EternalBlue), **Colonial Pipeline** (2021 — $4.4M ransom, halted 45% of US East Coast fuel supply), **Düsseldorf Hospital** (2020 — first confirmed ransomware-related death).\n\n**Prevention best practices:**\n\n| Practice | Why It Matters |\n|---|---|\n| Regular backups (offline/cloud) | Allows restoration without paying ransom |\n| Software patching | Closes exploited vulnerabilities |\n| User security awareness training | Prevents initial infection via phishing |\n| MFA implementation | Limits attacker account access even with stolen credentials |\n\n**If attacked — response steps:**\n1. **Never pay the ransom** — no guarantee of recovery, funds future attacks\n2. Immediately **disconnect** infected systems from the network\n3. **Notify authorities** (per organizational incident response policy)\n4. **Restore from known good backups** after confirming malware is fully removed\n\n> Como un secuestro digital: el atacante no roba tus datos, los encierra bajo llave y te cobra rescate para darte la llave de vuelta — si es que decide dártela.\n\n---"
       },
       {
         "name": "Botnet",
@@ -1711,8 +1605,7 @@ const STUDY_DATA = [
         "analogy": "Como un ejército de marionetas: cada computadora infectada sigue siendo \"funcional\" para su dueño, pero en el fondo obedece órdenes del atacante sin que nadie lo sepa.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A network of **compromised computers** (zombies) remotely controlled by an attacker through a **Command and Control (C2) node**. Used for DDoS attacks, spam campaigns, crypto mining, credential brute-forcing, and storing illegal content. Scale ranges from hundreds to millions of devices. The attacker typically uses only 20–25% of each zombie's resources to avoid detection.\n> Como un ejército de marionetas: cada computadora infectada sigue siendo \"funcional\" para su dueño, pero en el fondo obedece órdenes del atacante sin que nadie lo sepa."
+        "raw_content": "## Botnet\n\n* **Definition:** A network of **compromised computers** (zombies) remotely controlled by an attacker through a **Command and Control (C2) node**. Used for DDoS attacks, spam campaigns, crypto mining, credential brute-forcing, and storing illegal content. Scale ranges from hundreds to millions of devices. The attacker typically uses only 20–25% of each zombie's resources to avoid detection.\n> Como un ejército de marionetas: cada computadora infectada sigue siendo \"funcional\" para su dueño, pero en el fondo obedece órdenes del atacante sin que nadie lo sepa.\n\n---"
       },
       {
         "name": "Zombie",
@@ -1720,8 +1613,7 @@ const STUDY_DATA = [
         "analogy": "Como estar sonámbulo: la computadora parece dormida normalmente, pero en realidad está caminando y haciendo cosas en nombre de alguien más.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A single compromised computer or device that has been **added to a botnet** and executes remote commands from the attacker's C2 node without the legitimate user's knowledge. The term reflects the device's dual existence — appearing normal to its owner while serving the attacker.\n> Como estar sonámbulo: la computadora parece dormida normalmente, pero en realidad está caminando y haciendo cosas en nombre de alguien más."
+        "raw_content": "## Zombie\n\n* **Definition:** A single compromised computer or device that has been **added to a botnet** and executes remote commands from the attacker's C2 node without the legitimate user's knowledge. The term reflects the device's dual existence — appearing normal to its owner while serving the attacker.\n> Como estar sonámbulo: la computadora parece dormida normalmente, pero en realidad está caminando y haciendo cosas en nombre de alguien más.\n\n---"
       },
       {
         "name": "C2 Node (Command and Control)",
@@ -1729,8 +1621,7 @@ const STUDY_DATA = [
         "analogy": "Como la torre de mando de un ejército: sin señal desde la torre, los soldados (zombies) no saben qué hacer.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The **centralized server or infrastructure** used by an attacker to send instructions to and receive data from all zombies in a botnet. Acts as the brain of the botnet. Disrupting the C2 node is a primary strategy for neutralizing a botnet.\n> Como la torre de mando de un ejército: sin señal desde la torre, los soldados (zombies) no saben qué hacer."
+        "raw_content": "## C2 Node (Command and Control)\n\n* **Definition:** The **centralized server or infrastructure** used by an attacker to send instructions to and receive data from all zombies in a botnet. Acts as the brain of the botnet. Disrupting the C2 node is a primary strategy for neutralizing a botnet.\n> Como la torre de mando de un ejército: sin señal desde la torre, los soldados (zombies) no saben qué hacer.\n\n---"
       },
       {
         "name": "DDoS (Distributed Denial of Service)",
@@ -1738,8 +1629,7 @@ const STUDY_DATA = [
         "analogy": "Como si mil personas llamaran al mismo tiempo al número de atención al cliente de una empresa: el sistema colapsa y nadie legítimo puede comunicarse.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An attack where **multiple compromised systems** (often a botnet) simultaneously flood a target server or network with requests, overwhelming it and rendering it unavailable to legitimate users. The \"distributed\" aspect makes it harder to block than a single-source DoS attack.\n> Como si mil personas llamaran al mismo tiempo al número de atención al cliente de una empresa: el sistema colapsa y nadie legítimo puede comunicarse."
+        "raw_content": "## DDoS (Distributed Denial of Service)\n\n* **Definition:** An attack where **multiple compromised systems** (often a botnet) simultaneously flood a target server or network with requests, overwhelming it and rendering it unavailable to legitimate users. The \"distributed\" aspect makes it harder to block than a single-source DoS attack.\n> Como si mil personas llamaran al mismo tiempo al número de atención al cliente de una empresa: el sistema colapsa y nadie legítimo puede comunicarse.\n\n---"
       },
       {
         "name": "Rootkit",
@@ -1772,8 +1662,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Malware designed to gain **administrative/root-level control** over a system while remaining **completely undetected** — even from the operating system itself. Operates at the deepest privilege rings (ring 1 toward ring 0/kernel). Uses **DLL injection** and **shimming** to embed into the OS trust chain. Traditional AV often cannot detect rootkits because the OS is blind to them. Best detection method: **boot from an external device** and scan the internal drive with a live Linux AV tool.\n\n**OS Permission Rings:**\n\n| Ring | Level | Access |\n|---|---|---|\n| Ring 3 | User mode | Standard user operations |\n| Ring 1 | Admin/Root mode | System-level changes, software installation |\n| Ring 0 | Kernel mode | Direct hardware control — highest privilege |\n\n> Como un parásito que vive dentro del sistema nervioso del cuerpo: no es detectado porque el propio sistema nervioso lo considera parte de sí mismo."
+        "raw_content": "## Rootkit\n\n* **Definition:** Malware designed to gain **administrative/root-level control** over a system while remaining **completely undetected** — even from the operating system itself. Operates at the deepest privilege rings (ring 1 toward ring 0/kernel). Uses **DLL injection** and **shimming** to embed into the OS trust chain. Traditional AV often cannot detect rootkits because the OS is blind to them. Best detection method: **boot from an external device** and scan the internal drive with a live Linux AV tool.\n\n**OS Permission Rings:**\n\n| Ring | Level | Access |\n|---|---|---|\n| Ring 3 | User mode | Standard user operations |\n| Ring 1 | Admin/Root mode | System-level changes, software installation |\n| Ring 0 | Kernel mode | Direct hardware control — highest privilege |\n\n> Como un parásito que vive dentro del sistema nervioso del cuerpo: no es detectado porque el propio sistema nervioso lo considera parte de sí mismo.\n\n---"
       },
       {
         "name": "DLL Injection",
@@ -1781,8 +1670,7 @@ const STUDY_DATA = [
         "analogy": "Como meter código malicioso dentro de una pieza de software que el sistema operativo ya confía — el OS corre el código malicioso pensando que es una parte legítima de sí mismo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A technique used by rootkits (and other malware) to **insert malicious code into a running process** by forcing it to load a Dynamic-Link Library (DLL) that contains the attacker's code. Since DLLs are trusted components used by the OS at runtime, the injected malicious code inherits that trust and operates without triggering standard detection.\n> Como meter código malicioso dentro de una pieza de software que el sistema operativo ya confía — el OS corre el código malicioso pensando que es una parte legítima de sí mismo."
+        "raw_content": "## DLL Injection\n\n* **Definition:** A technique used by rootkits (and other malware) to **insert malicious code into a running process** by forcing it to load a Dynamic-Link Library (DLL) that contains the attacker's code. Since DLLs are trusted components used by the OS at runtime, the injected malicious code inherits that trust and operates without triggering standard detection.\n> Como meter código malicioso dentro de una pieza de software que el sistema operativo ya confía — el OS corre el código malicioso pensando que es una parte legítima de sí mismo.\n\n---"
       },
       {
         "name": "Shim",
@@ -1790,8 +1678,7 @@ const STUDY_DATA = [
         "analogy": "Como un intermediario corrupto que intercepta mensajes entre dos partes legítimas y los altera antes de entregarlos — ninguna de las dos partes sabe que hay alguien en el medio.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A small piece of software **placed between two components** that intercepts calls between them and redirects or modifies those calls. Used by rootkits to intercept communications between the OS and its DLLs, inserting malicious logic into that trusted pathway without the OS detecting the interception.\n> Como un intermediario corrupto que intercepta mensajes entre dos partes legítimas y los altera antes de entregarlos — ninguna de las dos partes sabe que hay alguien en el medio."
+        "raw_content": "## Shim\n\n* **Definition:** A small piece of software **placed between two components** that intercepts calls between them and redirects or modifies those calls. Used by rootkits to intercept communications between the OS and its DLLs, inserting malicious logic into that trusted pathway without the OS detecting the interception.\n> Como un intermediario corrupto que intercepta mensajes entre dos partes legítimas y los altera antes de entregarlos — ninguna de las dos partes sabe que hay alguien en el medio.\n\n---"
       },
       {
         "name": "Backdoor",
@@ -1799,8 +1686,7 @@ const STUDY_DATA = [
         "analogy": "Como la llave de emergencia que un fontanero dejó escondida debajo del tapete de tu casa: conveniente para él, pero catastrófica si un extraño la encuentra.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A **covert method of bypassing normal authentication and security controls** in a system. Originally added by developers for maintenance access; now considered a severe secure coding violation. In modern attacks, RATs effectively function as dynamically created backdoors. Provides persistent, unauthorized access that circumvents the system's normal security posture.\n> Como la llave de emergencia que un fontanero dejó escondida debajo del tapete de tu casa: conveniente para él, pero catastrófica si un extraño la encuentra."
+        "raw_content": "## Backdoor\n\n* **Definition:** A **covert method of bypassing normal authentication and security controls** in a system. Originally added by developers for maintenance access; now considered a severe secure coding violation. In modern attacks, RATs effectively function as dynamically created backdoors. Provides persistent, unauthorized access that circumvents the system's normal security posture.\n> Como la llave de emergencia que un fontanero dejó escondida debajo del tapete de tu casa: conveniente para él, pero catastrófica si un extraño la encuentra.\n\n---"
       },
       {
         "name": "Easter Egg (Software)",
@@ -1808,8 +1694,7 @@ const STUDY_DATA = [
         "analogy": "Como un pasadizo secreto construido a última hora en un edificio: el arquitecto lo hizo por diversión, pero nadie verificó si era estructuralmente seguro.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A **hidden feature or novelty** embedded in software by developers as a joke or inside reference (e.g., Google's \"do a barrel roll\"). Not inherently malicious, but the code is often added hastily before release and bypasses normal security testing — creating unintentional vulnerabilities that attackers can exploit.\n> Como un pasadizo secreto construido a última hora en un edificio: el arquitecto lo hizo por diversión, pero nadie verificó si era estructuralmente seguro."
+        "raw_content": "## Easter Egg (Software)\n\n* **Definition:** A **hidden feature or novelty** embedded in software by developers as a joke or inside reference (e.g., Google's \"do a barrel roll\"). Not inherently malicious, but the code is often added hastily before release and bypasses normal security testing — creating unintentional vulnerabilities that attackers can exploit.\n> Como un pasadizo secreto construido a última hora en un edificio: el arquitecto lo hizo por diversión, pero nadie verificó si era estructuralmente seguro.\n\n---"
       },
       {
         "name": "Logic Bomb",
@@ -1817,17 +1702,18 @@ const STUDY_DATA = [
         "analogy": "Como una trampa explosiva con temporizador: no hace nada hasta que llega el momento exacto que el atacante programó, y para entonces ya puede ser demasiado tarde.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Malicious code **inserted into a legitimate program** that remains dormant until **specific trigger conditions are met** (a date, a deleted user account, a system state). When triggered, executes harmful actions such as file deletion, unauthorized transfers, or system shutdown. Often planted by insider threats. Closely related to Easter Eggs but with deliberate malicious intent.\n> Como una trampa explosiva con temporizador: no hace nada hasta que llega el momento exacto que el atacante programó, y para entonces ya puede ser demasiado tarde."
+        "raw_content": "## Logic Bomb\n\n* **Definition:** Malicious code **inserted into a legitimate program** that remains dormant until **specific trigger conditions are met** (a date, a deleted user account, a system state). When triggered, executes harmful actions such as file deletion, unauthorized transfers, or system shutdown. Often planted by insider threats. Closely related to Easter Eggs but with deliberate malicious intent.\n> Como una trampa explosiva con temporizador: no hace nada hasta que llega el momento exacto que el atacante programó, y para entonces ya puede ser demasiado tarde.\n\n---"
       },
       {
         "name": "Keylogger",
         "definition": "A **software or hardware tool** that covertly records every keystroke made on a device — capturing passwords, usernames, credit card numbers, emails, and search queries — and transmits them to the attacker. Two forms:",
         "analogy": "Como un espía que copia a mano todo lo que escribes en tu teclado, sin que te des cuenta, y luego le envía el reporte completo a su jefe.",
         "tables": [],
-        "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A **software or hardware tool** that covertly records every keystroke made on a device — capturing passwords, usernames, credit card numbers, emails, and search queries — and transmits them to the attacker. Two forms:\n  - **Software keylogger:** Installed via phishing or bundled malware; runs silently in background; can evade AV with evasion techniques\n  - **Hardware keylogger:** Physical device (resembles USB drive or keyboard cable insert); immune to software-based detection; computer treats it as a legitimate keyboard\n\n**Mitigations:** Regular patching · AV/anti-malware · Phishing awareness training · MFA (renders captured passwords useless alone) · Keystroke encryption · Physical hardware inspection\n\n> Como un espía que copia a mano todo lo que escribes en tu teclado, sin que te des cuenta, y luego le envía el reporte completo a su jefe."
+        "list_items": [
+          "**Software keylogger:** Installed via phishing or bundled malware; runs silently in background; can evade AV with evasion techniques",
+          "**Hardware keylogger:** Physical device (resembles USB drive or keyboard cable insert); immune to software-based detection; computer treats it as a legitimate keyboard"
+        ],
+        "raw_content": "## Keylogger\n\n* **Definition:** A **software or hardware tool** that covertly records every keystroke made on a device — capturing passwords, usernames, credit card numbers, emails, and search queries — and transmits them to the attacker. Two forms:\n  - **Software keylogger:** Installed via phishing or bundled malware; runs silently in background; can evade AV with evasion techniques\n  - **Hardware keylogger:** Physical device (resembles USB drive or keyboard cable insert); immune to software-based detection; computer treats it as a legitimate keyboard\n\n**Mitigations:** Regular patching · AV/anti-malware · Phishing awareness training · MFA (renders captured passwords useless alone) · Keystroke encryption · Physical hardware inspection\n\n> Como un espía que copia a mano todo lo que escribes en tu teclado, sin que te des cuenta, y luego le envía el reporte completo a su jefe.\n\n---"
       },
       {
         "name": "Spyware",
@@ -1835,8 +1721,7 @@ const STUDY_DATA = [
         "analogy": "Como tener a alguien mirando por encima de tu hombro todo el tiempo mientras navegas, tomas notas y haces compras — y luego enviándole un reporte detallado a un desconocido.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Malware that **secretly monitors user activity** and transmits collected data (browsing habits, passwords, credit card numbers, personal details) to third parties without consent. Installed via software bundles, malicious websites, or deceptive pop-ups. Operates silently in the background, consuming system resources and degrading performance while harvesting data.\n> Como tener a alguien mirando por encima de tu hombro todo el tiempo mientras navegas, tomas notas y haces compras — y luego enviándole un reporte detallado a un desconocido."
+        "raw_content": "## Spyware\n\n* **Definition:** Malware that **secretly monitors user activity** and transmits collected data (browsing habits, passwords, credit card numbers, personal details) to third parties without consent. Installed via software bundles, malicious websites, or deceptive pop-ups. Operates silently in the background, consuming system resources and degrading performance while harvesting data.\n> Como tener a alguien mirando por encima de tu hombro todo el tiempo mientras navegas, tomas notas y haces compras — y luego enviándole un reporte detallado a un desconocido.\n\n---"
       },
       {
         "name": "Bloatware",
@@ -1844,8 +1729,7 @@ const STUDY_DATA = [
         "analogy": "Como comprar un carro nuevo y que ya venga con publicidad pegada en los asientos que ni pediste ni quieres — ocupa espacio y distrae, pero no fue pensado para hacerte daño directamente.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** **Unwanted pre-installed software** on new devices — typically placed by manufacturers through promotional partnerships. Not malicious in intent, but consumes storage, RAM, and processing resources; introduces additional attack surface through unpatched code. Removal methods: manual uninstall, third-party removal tools, or **clean OS installation** (preferred).\n> Como comprar un carro nuevo y que ya venga con publicidad pegada en los asientos que ni pediste ni quieres — ocupa espacio y distrae, pero no fue pensado para hacerte daño directamente."
+        "raw_content": "## Bloatware\n\n* **Definition:** **Unwanted pre-installed software** on new devices — typically placed by manufacturers through promotional partnerships. Not malicious in intent, but consumes storage, RAM, and processing resources; introduces additional attack surface through unpatched code. Removal methods: manual uninstall, third-party removal tools, or **clean OS installation** (preferred).\n> Como comprar un carro nuevo y que ya venga con publicidad pegada en los asientos que ni pediste ni quieres — ocupa espacio y distrae, pero no fue pensado para hacerte daño directamente.\n\n---"
       },
       {
         "name": "Fileless Malware",
@@ -1853,8 +1737,7 @@ const STUDY_DATA = [
         "analogy": "Como un ladrón que entra a tu casa, hace todo lo que necesita sin dejar huellas digitales, y se va sin que las cámaras o la policía forense encuentren nada que lo identifique.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An advanced malware technique that **executes malicious code entirely in system memory** without writing files to the local file system, leaving minimal traces or indicators of compromise. Bypasses signature-based AV detection by using the system's own legitimate tools (e.g., PowerShell, WMI) to execute the attack. Even when temporary files are written, they are erased post-execution. Closely associated with the **Living off the Land (LotL)** strategy.\n> Como un ladrón que entra a tu casa, hace todo lo que necesita sin dejar huellas digitales, y se va sin que las cámaras o la policía forense encuentren nada que lo identifique."
+        "raw_content": "## Fileless Malware\n\n* **Definition:** An advanced malware technique that **executes malicious code entirely in system memory** without writing files to the local file system, leaving minimal traces or indicators of compromise. Bypasses signature-based AV detection by using the system's own legitimate tools (e.g., PowerShell, WMI) to execute the attack. Even when temporary files are written, they are erased post-execution. Closely associated with the **Living off the Land (LotL)** strategy.\n> Como un ladrón que entra a tu casa, hace todo lo que necesita sin dejar huellas digitales, y se va sin que las cámaras o la policía forense encuentren nada que lo identifique.\n\n---"
       },
       {
         "name": "Two-Stage Malware Deployment",
@@ -1887,8 +1770,7 @@ const STUDY_DATA = [
           "**Downloader:** Retrieves additional malicious tools after initial infection by a dropper",
           "**Shellcode:** Lightweight code intended to execute an exploit on a target — often the initial payload"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A modern malware delivery model that breaks the infection into two sequential phases to evade detection and establish persistent access:\n\n| Stage | Component | Function |\n|---|---|---|\n| **Stage 1** | **Dropper / Downloader / Shellcode** | Lightweight initial payload — executes when user clicks malicious link or opens infected file. Downloads and installs Stage 2. |\n| **Stage 2** | **RAT / Full Payload** | Full remote access Trojan or malware payload downloaded by Stage 1. Establishes C2 connection, spreads across network, escalates privileges. |\n\n* **Final phases after both stages:** → **Action on Objectives** (data exfiltration, encryption, sabotage) → **Concealment** (log deletion, evidence erasure)\n\n**Key terms within this model:**\n- **Dropper:** Malware designed to initiate or install other malware on the infected host\n- **Downloader:** Retrieves additional malicious tools after initial infection by a dropper\n- **Shellcode:** Lightweight code intended to execute an exploit on a target — often the initial payload\n\n> Como un equipo de asalto en dos oleadas: la primera entra sigilosamente y abre la puerta desde adentro, la segunda entra con toda la artillería y toma el control."
+        "raw_content": "## Two-Stage Malware Deployment\n\n* **Definition:** A modern malware delivery model that breaks the infection into two sequential phases to evade detection and establish persistent access:\n\n| Stage | Component | Function |\n|---|---|---|\n| **Stage 1** | **Dropper / Downloader / Shellcode** | Lightweight initial payload — executes when user clicks malicious link or opens infected file. Downloads and installs Stage 2. |\n| **Stage 2** | **RAT / Full Payload** | Full remote access Trojan or malware payload downloaded by Stage 1. Establishes C2 connection, spreads across network, escalates privileges. |\n\n* **Final phases after both stages:** → **Action on Objectives** (data exfiltration, encryption, sabotage) → **Concealment** (log deletion, evidence erasure)\n\n**Key terms within this model:**\n- **Dropper:** Malware designed to initiate or install other malware on the infected host\n- **Downloader:** Retrieves additional malicious tools after initial infection by a dropper\n- **Shellcode:** Lightweight code intended to execute an exploit on a target — often the initial payload\n\n> Como un equipo de asalto en dos oleadas: la primera entra sigilosamente y abre la puerta desde adentro, la segunda entra con toda la artillería y toma el control.\n\n---"
       },
       {
         "name": "Living off the Land (LotL)",
@@ -1896,8 +1778,7 @@ const STUDY_DATA = [
         "analogy": "Como usar las herramientas del propio dueño de la casa para robarle: el atacante no trae sus propias palancas — usa las que ya estaban colgadas en la pared del garage.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An attack strategy where threat actors **use legitimate, built-in system tools** (PowerShell, WMI, cmd.exe, certutil) to conduct malicious activities instead of downloading external tools. Since these tools are trusted and expected to run, their malicious use is harder to detect. Commonly used by APTs and ransomware operators to blend into normal system behavior.\n> Como usar las herramientas del propio dueño de la casa para robarle: el atacante no trae sus propias palancas — usa las que ya estaban colgadas en la pared del garage."
+        "raw_content": "## Living off the Land (LotL)\n\n* **Definition:** An attack strategy where threat actors **use legitimate, built-in system tools** (PowerShell, WMI, cmd.exe, certutil) to conduct malicious activities instead of downloading external tools. Since these tools are trusted and expected to run, their malicious use is harder to detect. Commonly used by APTs and ransomware operators to blend into normal system behavior.\n> Como usar las herramientas del propio dueño de la casa para robarle: el atacante no trae sus propias palancas — usa las que ya estaban colgadas en la pared del garage.\n\n---"
       },
       {
         "name": "Code Injection",
@@ -1905,8 +1786,7 @@ const STUDY_DATA = [
         "analogy": "Como meter páginas falsas en medio de un libro legítimo: el lector (el sistema) sigue leyendo sin darse cuenta de que algunas páginas no son del autor original.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A malware technique where malicious code is **inserted into the address space of a legitimate running process**, causing the system to execute the attacker's code under the cover of a trusted application's identity.\n> Como meter páginas falsas en medio de un libro legítimo: el lector (el sistema) sigue leyendo sin darse cuenta de que algunas páginas no son del autor original."
+        "raw_content": "## Code Injection\n\n* **Definition:** A malware technique where malicious code is **inserted into the address space of a legitimate running process**, causing the system to execute the attacker's code under the cover of a trusted application's identity.\n> Como meter páginas falsas en medio de un libro legítimo: el lector (el sistema) sigue leyendo sin darse cuenta de que algunas páginas no son del autor original.\n\n---"
       },
       {
         "name": "Process Hollowing",
@@ -1914,8 +1794,7 @@ const STUDY_DATA = [
         "analogy": "Como vaciar el interior de una lata de refresco y rellenarla con otra sustancia: por fuera sigue siendo la misma lata, pero lo que hay adentro es completamente diferente.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A malware technique where a **legitimate process is launched in a suspended state**, its memory is cleared (hollowed out), and the attacker's malicious code is injected in its place. The process then resumes execution — appearing legitimate to the OS and security tools while running malicious code.\n> Como vaciar el interior de una lata de refresco y rellenarla con otra sustancia: por fuera sigue siendo la misma lata, pero lo que hay adentro es completamente diferente."
+        "raw_content": "## Process Hollowing\n\n* **Definition:** A malware technique where a **legitimate process is launched in a suspended state**, its memory is cleared (hollowed out), and the attacker's malicious code is injected in its place. The process then resumes execution — appearing legitimate to the OS and security tools while running malicious code.\n> Como vaciar el interior de una lata de refresco y rellenarla con otra sustancia: por fuera sigue siendo la misma lata, pero lo que hay adentro es completamente diferente.\n\n---"
       },
       {
         "name": "Malware Attack Indicators",
@@ -1968,8 +1847,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Observable signs that a malware infection may be occurring or has occurred. Nine key indicators:\n\n| Indicator | What It Signals |\n|---|---|\n| **Account Lockouts** | Multiple failed login attempts → credential theft or brute force malware in progress |\n| **Concurrent Session Utilization** | Same account active from multiple locations simultaneously → hijacked credentials |\n| **Blocked Content** | Surge in security tool alerts for blocked malicious files/links → active infection attempting outbound contact |\n| **Impossible Travel** | Account accessed from two geographically distant locations within an impossibly short time → compromised credentials |\n| **Resource Consumption** | Unusual CPU/RAM/bandwidth spikes with no legitimate cause → cryptominer, botnet, or worm activity |\n| **Resource Inaccessibility** | Files or systems suddenly encrypted or unavailable → ransomware attack |\n| **Out-of-Cycle Logging** | Log activity during off-hours with no legitimate explanation → unauthorized access or data exfiltration |\n| **Missing Logs** | Logs cleared or gaps present without authorization → attacker covering tracks post-breach |\n| **Published / Documented Attacks** | External cybersecurity reports or news articles confirming the organization was compromised |\n\n> Como los síntomas de una enfermedad: cada uno por separado podría tener una explicación inocente, pero varios al mismo tiempo son una señal clara de que algo malo está pasando por dentro.\n\n\n*CompTIA Security+ SY0-701 · Section 6: Malware · Dion Training*"
+        "raw_content": "## Malware Attack Indicators\n\n* **Definition:** Observable signs that a malware infection may be occurring or has occurred. Nine key indicators:\n\n| Indicator | What It Signals |\n|---|---|\n| **Account Lockouts** | Multiple failed login attempts → credential theft or brute force malware in progress |\n| **Concurrent Session Utilization** | Same account active from multiple locations simultaneously → hijacked credentials |\n| **Blocked Content** | Surge in security tool alerts for blocked malicious files/links → active infection attempting outbound contact |\n| **Impossible Travel** | Account accessed from two geographically distant locations within an impossibly short time → compromised credentials |\n| **Resource Consumption** | Unusual CPU/RAM/bandwidth spikes with no legitimate cause → cryptominer, botnet, or worm activity |\n| **Resource Inaccessibility** | Files or systems suddenly encrypted or unavailable → ransomware attack |\n| **Out-of-Cycle Logging** | Log activity during off-hours with no legitimate explanation → unauthorized access or data exfiltration |\n| **Missing Logs** | Logs cleared or gaps present without authorization → attacker covering tracks post-breach |\n| **Published / Documented Attacks** | External cybersecurity reports or news articles confirming the organization was compromised |\n\n> Como los síntomas de una enfermedad: cada uno por separado podría tener una explicación inocente, pero varios al mismo tiempo son una señal clara de que algo malo está pasando por dentro.\n\n---\n\n*CompTIA Security+ SY0-701 · Section 6: Malware · Dion Training*"
       }
     ]
   },
@@ -1980,11 +1858,10 @@ const STUDY_DATA = [
       {
         "name": "Data Protection",
         "definition": "The process of safeguarding important information from corruption, compromise, or loss. Encompasses practices, technologies, and strategies designed to ensure the **confidentiality, integrity, and availability** of data across its entire lifecycle — from collection to disposal.",
-        "analogy": "",
+        "analogy": "Como el sistema de seguridad completo de un banco: no solo protege la bóveda, sino también el transporte del dinero, el acceso al edificio y la destrucción de documentos al final del día.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The process of safeguarding important information from corruption, compromise, or loss. Encompasses practices, technologies, and strategies designed to ensure the **confidentiality, integrity, and availability** of data across its entire lifecycle — from collection to disposal.\n  \n  > Como el sistema de seguridad completo de un banco: no solo protege la bóveda, sino también el transporte del dinero, el acceso al edificio y la destrucción de documentos al final del día."
+        "raw_content": "## Data Protection\n\n* **Definition:** The process of safeguarding important information from corruption, compromise, or loss. Encompasses practices, technologies, and strategies designed to ensure the **confidentiality, integrity, and availability** of data across its entire lifecycle — from collection to disposal.\n  \n  > Como el sistema de seguridad completo de un banco: no solo protege la bóveda, sino también el transporte del dinero, el acceso al edificio y la destrucción de documentos al final del día.\n\n---"
       },
       {
         "name": "Data Classification",
@@ -2055,8 +1932,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The process of categorizing data based on its **value to the organization** and the **sensitivity of its disclosure**. Determines how much protection, resources, and controls to apply. The **data owner** is responsible for assigning classifications. Overclassification wastes resources; underclassification creates risk.\n\n**Commercial classification levels (low → high):**\n\n| Level            | Description                          | Example                                                         |\n| ---------------- | ------------------------------------ | --------------------------------------------------------------- |\n| **Public**       | No impact if released                | Website content, published courses                              |\n| **Sensitive**    | Minimal impact if disclosed          | Upcoming product plans, financial data                          |\n| **Private**      | Internal use only — individual data  | Salaries, employee records, SSNs                                |\n| **Confidential** | Serious business impact if disclosed | Trade secrets, source code, IP — NDA required for third parties |\n| **Critical**     | No tolerable risk of exposure        | Credit card numbers, cryptographic keys                         |\n\n**Government/Military classification levels (low → high):**\n\n| Level                                | Description                                                             |\n| ------------------------------------ | ----------------------------------------------------------------------- |\n| **Unclassified**                     | Releasable to the public or via FOIA                                    |\n| **Sensitive But Unclassified (SBU)** | No national security risk, but personal impact (e.g., medical records)  |\n| **Confidential**                     | Unauthorized disclosure would seriously affect government operations    |\n| **Secret**                           | Unauthorized disclosure would cause serious damage to national security |\n| **Top Secret**                       | Unauthorized disclosure would cause grave damage to national security   |\n\n> Como las etiquetas en los archivos de un hospital: no todos los documentos necesitan la misma caja fuerte — algunos van en un cajón con llave, otros en una bóveda de máxima seguridad."
+        "raw_content": "## Data Classification\n\n* **Definition:** The process of categorizing data based on its **value to the organization** and the **sensitivity of its disclosure**. Determines how much protection, resources, and controls to apply. The **data owner** is responsible for assigning classifications. Overclassification wastes resources; underclassification creates risk.\n\n**Commercial classification levels (low → high):**\n\n| Level            | Description                          | Example                                                         |\n| ---------------- | ------------------------------------ | --------------------------------------------------------------- |\n| **Public**       | No impact if released                | Website content, published courses                              |\n| **Sensitive**    | Minimal impact if disclosed          | Upcoming product plans, financial data                          |\n| **Private**      | Internal use only — individual data  | Salaries, employee records, SSNs                                |\n| **Confidential** | Serious business impact if disclosed | Trade secrets, source code, IP — NDA required for third parties |\n| **Critical**     | No tolerable risk of exposure        | Credit card numbers, cryptographic keys                         |\n\n**Government/Military classification levels (low → high):**\n\n| Level                                | Description                                                             |\n| ------------------------------------ | ----------------------------------------------------------------------- |\n| **Unclassified**                     | Releasable to the public or via FOIA                                    |\n| **Sensitive But Unclassified (SBU)** | No national security risk, but personal impact (e.g., medical records)  |\n| **Confidential**                     | Unauthorized disclosure would seriously affect government operations    |\n| **Secret**                           | Unauthorized disclosure would cause serious damage to national security |\n| **Top Secret**                       | Unauthorized disclosure would cause grave damage to national security   |\n\n> Como las etiquetas en los archivos de un hospital: no todos los documentos necesitan la misma caja fuerte — algunos van en un cajón con llave, otros en una bóveda de máxima seguridad.\n\n---"
       },
       {
         "name": "Data Ownership Roles",
@@ -2097,8 +1973,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The set of defined roles responsible for managing the confidentiality, integrity, availability, and privacy of data assets throughout their lifecycle. Key distinction: **IT personnel should be data custodians, not data owners** — data owners should come from the business side (those who understand the context and value of the data).\n\n| Role                           | Responsibility                                                                                                                                                                             |\n| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| **Data Owner**                 | Senior executive with ultimate responsibility for CIA of a data asset. Decides classification, labeling, and required controls.                                                            |\n| **Data Controller**            | Entity that decides the **purpose and method** of data storage, collection, and use. Holds ultimate accountability for privacy breaches — cannot delegate this responsibility.             |\n| **Data Processor**             | Group or individual hired by the data controller to collect, store, or analyze data under the controller's direction.                                                                      |\n| **Data Steward**               | Ensures data is properly **labeled, classified, and meets quality standards**. Works under the data owner.                                                                                 |\n| **Data Custodian**             | Handles the **day-to-day technical management** of systems storing data — enforces access controls, encryption, and backups per data owner requirements. Typically a system administrator. |\n| **Data Privacy Officer (DPO)** | Oversees compliance with privacy-related data (PII, PHI, SPI). Accountable during data breaches. Ensures data minimization, sovereignty, retention, and regulatory compliance.             |\n\n> Como los roles en un hospital: el médico jefe (data owner) decide qué se puede ver y quién; el administrador del sistema (custodian) gestiona los servidores donde viven los registros; el oficial de privacidad (DPO) responde ante la ley si hay una fuga."
+        "raw_content": "## Data Ownership Roles\n\n* **Definition:** The set of defined roles responsible for managing the confidentiality, integrity, availability, and privacy of data assets throughout their lifecycle. Key distinction: **IT personnel should be data custodians, not data owners** — data owners should come from the business side (those who understand the context and value of the data).\n\n| Role                           | Responsibility                                                                                                                                                                             |\n| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| **Data Owner**                 | Senior executive with ultimate responsibility for CIA of a data asset. Decides classification, labeling, and required controls.                                                            |\n| **Data Controller**            | Entity that decides the **purpose and method** of data storage, collection, and use. Holds ultimate accountability for privacy breaches — cannot delegate this responsibility.             |\n| **Data Processor**             | Group or individual hired by the data controller to collect, store, or analyze data under the controller's direction.                                                                      |\n| **Data Steward**               | Ensures data is properly **labeled, classified, and meets quality standards**. Works under the data owner.                                                                                 |\n| **Data Custodian**             | Handles the **day-to-day technical management** of systems storing data — enforces access controls, encryption, and backups per data owner requirements. Typically a system administrator. |\n| **Data Privacy Officer (DPO)** | Oversees compliance with privacy-related data (PII, PHI, SPI). Accountable during data breaches. Ensures data minimization, sovereignty, retention, and regulatory compliance.             |\n\n> Como los roles en un hospital: el médico jefe (data owner) decide qué se puede ver y quién; el administrador del sistema (custodian) gestiona los servidores donde viven los registros; el oficial de privacidad (DPO) responde ante la ley si hay una fuga.\n\n---"
       },
       {
         "name": "Data States",
@@ -2131,8 +2006,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The three phases of the data lifecycle — each with different vulnerabilities and required security controls:\n\n| State               | Description                                                                                | Primary Protection Method                                                        |\n| ------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |\n| **Data at Rest**    | Stored in databases, file systems, or storage devices — not actively moving                | Encryption (full disk, partition, file, volume, database, record) + ACLs         |\n| **Data in Transit** | Actively moving across a network or the internet — vulnerable to interception              | SSL/TLS, VPNs, IPSec                                                             |\n| **Data in Use**     | Being actively created, retrieved, updated, or deleted — must be decrypted to be processed | Application-level encryption, access controls, secure enclaves (e.g., Intel SGX) |\n\n> Como el dinero en tres situaciones: guardado en la bóveda (at rest), siendo transportado en un camión blindado (in transit), o siendo contado por un cajero (in use) — cada situación tiene su propio riesgo y su propia protección."
+        "raw_content": "## Data States\n\n* **Definition:** The three phases of the data lifecycle — each with different vulnerabilities and required security controls:\n\n| State               | Description                                                                                | Primary Protection Method                                                        |\n| ------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |\n| **Data at Rest**    | Stored in databases, file systems, or storage devices — not actively moving                | Encryption (full disk, partition, file, volume, database, record) + ACLs         |\n| **Data in Transit** | Actively moving across a network or the internet — vulnerable to interception              | SSL/TLS, VPNs, IPSec                                                             |\n| **Data in Use**     | Being actively created, retrieved, updated, or deleted — must be decrypted to be processed | Application-level encryption, access controls, secure enclaves (e.g., Intel SGX) |\n\n> Como el dinero en tres situaciones: guardado en la bóveda (at rest), siendo transportado en un camión blindado (in transit), o siendo contado por un cajero (in use) — cada situación tiene su propio riesgo y su propia protección.\n\n---"
       },
       {
         "name": "Encryption for Data at Rest — Types",
@@ -2180,44 +2054,39 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Methods to encrypt stored data at different granularity levels:\n\n| Type                           | Scope                                                | Example                                                                     |\n| ------------------------------ | ---------------------------------------------------- | --------------------------------------------------------------------------- |\n| **Full Disk Encryption (FDE)** | Entire hard drive                                    | BitLocker, FileVault — encrypted when off, decrypted when user is logged in |\n| **Partition Encryption**       | Specific disk partition only                         | Encrypting D: drive with sensitive work data while leaving C: unencrypted   |\n| **File Encryption**            | Individual files                                     | Encrypting a single document with sensitive content                         |\n| **Volume Encryption**          | Selected files or directories                        | Encrypting a folder containing financial records                            |\n| **Database Encryption**        | Data within a database (column, row, or table level) | Encrypting the SSN column in a customer database                            |\n| **Record Encryption**          | Specific fields within a database record             | Hiding credit card fields from users without proper clearance               |\n\n> Como diferentes tipos de cajas fuertes: puedes blindar el edificio entero, solo una habitación, solo un cajón, o solo un sobre dentro del cajón — depende de cuánto necesites proteger."
+        "raw_content": "## Encryption for Data at Rest — Types\n\n* **Definition:** Methods to encrypt stored data at different granularity levels:\n\n| Type                           | Scope                                                | Example                                                                     |\n| ------------------------------ | ---------------------------------------------------- | --------------------------------------------------------------------------- |\n| **Full Disk Encryption (FDE)** | Entire hard drive                                    | BitLocker, FileVault — encrypted when off, decrypted when user is logged in |\n| **Partition Encryption**       | Specific disk partition only                         | Encrypting D: drive with sensitive work data while leaving C: unencrypted   |\n| **File Encryption**            | Individual files                                     | Encrypting a single document with sensitive content                         |\n| **Volume Encryption**          | Selected files or directories                        | Encrypting a folder containing financial records                            |\n| **Database Encryption**        | Data within a database (column, row, or table level) | Encrypting the SSN column in a customer database                            |\n| **Record Encryption**          | Specific fields within a database record             | Hiding credit card fields from users without proper clearance               |\n\n> Como diferentes tipos de cajas fuertes: puedes blindar el edificio entero, solo una habitación, solo un cajón, o solo un sobre dentro del cajón — depende de cuánto necesites proteger.\n\n---"
       },
       {
         "name": "SSL/TLS",
         "definition": "**Secure Sockets Layer (SSL)** and its successor **Transport Layer Security (TLS)** are cryptographic protocols that provide **secure, encrypted communication** over a network. Widely used for web browsing (HTTPS), email, and file transfers. Protect **data in transit** by creating an encrypted tunnel between client and server. TLS is the current standard; SSL is deprecated but the term is still commonly used.",
-        "analogy": "",
+        "analogy": "Como un tubo sellado y opaco que conecta dos puntos: nadie puede ver lo que viaja dentro aunque intercepte el tubo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** **Secure Sockets Layer (SSL)** and its successor **Transport Layer Security (TLS)** are cryptographic protocols that provide **secure, encrypted communication** over a network. Widely used for web browsing (HTTPS), email, and file transfers. Protect **data in transit** by creating an encrypted tunnel between client and server. TLS is the current standard; SSL is deprecated but the term is still commonly used.\n  \n  > Como un tubo sellado y opaco que conecta dos puntos: nadie puede ver lo que viaja dentro aunque intercepte el tubo."
+        "raw_content": "## SSL/TLS\n\n* **Definition:** **Secure Sockets Layer (SSL)** and its successor **Transport Layer Security (TLS)** are cryptographic protocols that provide **secure, encrypted communication** over a network. Widely used for web browsing (HTTPS), email, and file transfers. Protect **data in transit** by creating an encrypted tunnel between client and server. TLS is the current standard; SSL is deprecated but the term is still commonly used.\n  \n  > Como un tubo sellado y opaco que conecta dos puntos: nadie puede ver lo que viaja dentro aunque intercepte el tubo.\n\n---"
       },
       {
         "name": "VPN (Virtual Private Network)",
         "definition": "A technology that creates a **secure, encrypted tunnel** over an untrusted network (typically the internet), ensuring that data sent and received is protected from interception. Commonly used to secure remote access to organizational resources and to protect **data in transit**.",
-        "analogy": "",
+        "analogy": "Como un pasadizo secreto y blindado entre tu casa y la oficina: aunque atraviesas la ciudad pública, nadie puede ver ni tocar lo que llevas dentro del túnel.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A technology that creates a **secure, encrypted tunnel** over an untrusted network (typically the internet), ensuring that data sent and received is protected from interception. Commonly used to secure remote access to organizational resources and to protect **data in transit**.\n  \n  > Como un pasadizo secreto y blindado entre tu casa y la oficina: aunque atraviesas la ciudad pública, nadie puede ver ni tocar lo que llevas dentro del túnel."
+        "raw_content": "## VPN (Virtual Private Network)\n\n* **Definition:** A technology that creates a **secure, encrypted tunnel** over an untrusted network (typically the internet), ensuring that data sent and received is protected from interception. Commonly used to secure remote access to organizational resources and to protect **data in transit**.\n  \n  > Como un pasadizo secreto y blindado entre tu casa y la oficina: aunque atraviesas la ciudad pública, nadie puede ver ni tocar lo que llevas dentro del túnel.\n\n---"
       },
       {
         "name": "IPSec (Internet Protocol Security)",
         "definition": "A protocol suite that secures IP communications by **authenticating and encrypting each IP packet** in a data stream. Operates at the network layer. Commonly used in VPN implementations. Protects **data in transit** at the packet level.",
-        "analogy": "",
+        "analogy": "Como sellar y firmar individualmente cada carta dentro de un paquete enviado por correo: aunque alguien intercepte el paquete, no puede leer ni alterar ninguna carta individual.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A protocol suite that secures IP communications by **authenticating and encrypting each IP packet** in a data stream. Operates at the network layer. Commonly used in VPN implementations. Protects **data in transit** at the packet level.\n  \n  > Como sellar y firmar individualmente cada carta dentro de un paquete enviado por correo: aunque alguien intercepte el paquete, no puede leer ni alterar ninguna carta individual."
+        "raw_content": "## IPSec (Internet Protocol Security)\n\n* **Definition:** A protocol suite that secures IP communications by **authenticating and encrypting each IP packet** in a data stream. Operates at the network layer. Commonly used in VPN implementations. Protects **data in transit** at the packet level.\n  \n  > Como sellar y firmar individualmente cada carta dentro de un paquete enviado por correo: aunque alguien intercepte el paquete, no puede leer ni alterar ninguna carta individual.\n\n---"
       },
       {
         "name": "Secure Enclave",
         "definition": "A **protected, isolated processing environment** within a system where sensitive data can be decrypted and processed without being exposed to the rest of the operating system or other processes. Used to secure **data in use**. Example: **Intel Software Guard Extensions (SGX)** — encrypts data while it exists in memory so that untrusted processes cannot access it even if they compromise the OS.",
-        "analogy": "",
+        "analogy": "Como una sala sellada y blindada dentro de un edificio: los trabajadores entran, hacen su tarea con documentos secretos, y nadie desde afuera puede ver ni acceder a lo que pasa adentro.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A **protected, isolated processing environment** within a system where sensitive data can be decrypted and processed without being exposed to the rest of the operating system or other processes. Used to secure **data in use**. Example: **Intel Software Guard Extensions (SGX)** — encrypts data while it exists in memory so that untrusted processes cannot access it even if they compromise the OS.\n  \n  > Como una sala sellada y blindada dentro de un edificio: los trabajadores entran, hacen su tarea con documentos secretos, y nadie desde afuera puede ver ni acceder a lo que pasa adentro."
+        "raw_content": "## Secure Enclave\n\n* **Definition:** A **protected, isolated processing environment** within a system where sensitive data can be decrypted and processed without being exposed to the rest of the operating system or other processes. Used to secure **data in use**. Example: **Intel Software Guard Extensions (SGX)** — encrypts data while it exists in memory so that untrusted processes cannot access it even if they compromise the OS.\n  \n  > Como una sala sellada y blindada dentro de un edificio: los trabajadores entran, hacen su tarea con documentos secretos, y nadie desde afuera puede ver ni acceder a lo que pasa adentro.\n\n---"
       },
       {
         "name": "Regulated Data",
@@ -2250,86 +2119,80 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Data that is governed by **laws, regulations, or industry standards** — requiring specific security and privacy controls. Organizations handling regulated data must comply with applicable frameworks or face legal penalties.\n\n| Type                                          | Regulation                 | Description                                                                        |\n| --------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------- |\n| **PII** (Personally Identifiable Information) | GDPR, various privacy laws | Names, SSNs, addresses, email — anything that identifies an individual             |\n| **PHI** (Protected Health Information)        | HIPAA (US)                 | Medical records, treatment history, payment for healthcare linked to an individual |\n| **Financial Data**                            | PCI DSS                    | Credit card numbers, bank account details, payment transactions                    |\n\n> Como los medicamentos controlados en una farmacia: no puedes manejarlos sin cumplir regulaciones específicas, y si los manejas mal, hay consecuencias legales."
+        "raw_content": "## Regulated Data\n\n* **Definition:** Data that is governed by **laws, regulations, or industry standards** — requiring specific security and privacy controls. Organizations handling regulated data must comply with applicable frameworks or face legal penalties.\n\n| Type                                          | Regulation                 | Description                                                                        |\n| --------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------- |\n| **PII** (Personally Identifiable Information) | GDPR, various privacy laws | Names, SSNs, addresses, email — anything that identifies an individual             |\n| **PHI** (Protected Health Information)        | HIPAA (US)                 | Medical records, treatment history, payment for healthcare linked to an individual |\n| **Financial Data**                            | PCI DSS                    | Credit card numbers, bank account details, payment transactions                    |\n\n> Como los medicamentos controlados en una farmacia: no puedes manejarlos sin cumplir regulaciones específicas, y si los manejas mal, hay consecuencias legales.\n\n---"
       },
       {
         "name": "Trade Secrets",
         "definition": "Confidential business information that provides a **competitive advantage** — manufacturing processes, proprietary formulas, marketing strategies, customer lists, or source code. Protected by law; unauthorized disclosure can result in severe legal penalties.",
-        "analogy": "",
+        "analogy": "Como la receta secreta de una empresa de refrescos: el valor no está en el producto terminado sino en el proceso único que nadie más conoce.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Confidential business information that provides a **competitive advantage** — manufacturing processes, proprietary formulas, marketing strategies, customer lists, or source code. Protected by law; unauthorized disclosure can result in severe legal penalties.\n  \n  > Como la receta secreta de una empresa de refrescos: el valor no está en el producto terminado sino en el proceso único que nadie más conoce."
+        "raw_content": "## Trade Secrets\n\n* **Definition:** Confidential business information that provides a **competitive advantage** — manufacturing processes, proprietary formulas, marketing strategies, customer lists, or source code. Protected by law; unauthorized disclosure can result in severe legal penalties.\n  \n  > Como la receta secreta de una empresa de refrescos: el valor no está en el producto terminado sino en el proceso único que nadie más conoce.\n\n---"
       },
       {
         "name": "Intellectual Property (IP)",
         "definition": "**Creations of the mind** protected by law through patents, copyrights, and trademarks — inventions, literary works, artistic works, designs, symbols, and software. Unauthorized use constitutes infringement and can lead to legal action.",
-        "analogy": "",
+        "analogy": "Como el guión original de una película: el papel es tuyo, la idea es tuya, y la ley protege que nadie más la use sin tu permiso.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** **Creations of the mind** protected by law through patents, copyrights, and trademarks — inventions, literary works, artistic works, designs, symbols, and software. Unauthorized use constitutes infringement and can lead to legal action.\n  \n  > Como el guión original de una película: el papel es tuyo, la idea es tuya, y la ley protege que nadie más la use sin tu permiso."
+        "raw_content": "## Intellectual Property (IP)\n\n* **Definition:** **Creations of the mind** protected by law through patents, copyrights, and trademarks — inventions, literary works, artistic works, designs, symbols, and software. Unauthorized use constitutes infringement and can lead to legal action.\n  \n  > Como el guión original de una película: el papel es tuyo, la idea es tuya, y la ley protege que nadie más la use sin tu permiso.\n\n---"
       },
       {
         "name": "Legal Information",
         "definition": "Data related to **legal proceedings, contracts, or regulatory compliance**. Requires high levels of protection to maintain client confidentiality and comply with legal professional privilege. Examples include contracts, litigation documents, and compliance records.",
-        "analogy": "",
+        "analogy": "Como los expedientes de un abogado: no son tuyos para compartir — están protegidos por el deber de confidencialidad profesional y por la ley.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Data related to **legal proceedings, contracts, or regulatory compliance**. Requires high levels of protection to maintain client confidentiality and comply with legal professional privilege. Examples include contracts, litigation documents, and compliance records.\n  \n  > Como los expedientes de un abogado: no son tuyos para compartir — están protegidos por el deber de confidencialidad profesional y por la ley."
+        "raw_content": "## Legal Information\n\n* **Definition:** Data related to **legal proceedings, contracts, or regulatory compliance**. Requires high levels of protection to maintain client confidentiality and comply with legal professional privilege. Examples include contracts, litigation documents, and compliance records.\n  \n  > Como los expedientes de un abogado: no son tuyos para compartir — están protegidos por el deber de confidencialidad profesional y por la ley.\n\n---"
       },
       {
         "name": "Human-Readable vs Non-Human Readable Data",
         "definition": "Two categories based on whether data requires a machine to interpret:",
-        "analogy": "",
+        "analogy": "Como la diferencia entre una carta escrita en papel (la lees directamente) y un disco de computadora (necesitas una máquina para saber qué hay adentro) — ambos pueden contener secretos que deben protegerse.",
         "tables": [],
-        "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Two categories based on whether data requires a machine to interpret:\n  \n  - **Human-readable data:** Information that can be understood directly by humans without software — text documents, spreadsheets, printed reports.\n  \n  - **Non-human readable data:** Information that requires a machine or software to interpret — binary code, machine language, compiled executables. Still requires protection even though it is not immediately legible to people, as it can contain sensitive logic or embedded data.\n    \n    > Como la diferencia entre una carta escrita en papel (la lees directamente) y un disco de computadora (necesitas una máquina para saber qué hay adentro) — ambos pueden contener secretos que deben protegerse."
+        "list_items": [
+          "**Human-readable data:** Information that can be understood directly by humans without software — text documents, spreadsheets, printed reports.",
+          "**Non-human readable data:** Information that requires a machine or software to interpret — binary code, machine language, compiled executables. Still requires protection even though it is not immediately legible to people, as it can contain sensitive logic or embedded data."
+        ],
+        "raw_content": "## Human-Readable vs Non-Human Readable Data\n\n* **Definition:** Two categories based on whether data requires a machine to interpret:\n  \n  - **Human-readable data:** Information that can be understood directly by humans without software — text documents, spreadsheets, printed reports.\n  \n  - **Non-human readable data:** Information that requires a machine or software to interpret — binary code, machine language, compiled executables. Still requires protection even though it is not immediately legible to people, as it can contain sensitive logic or embedded data.\n    \n    > Como la diferencia entre una carta escrita en papel (la lees directamente) y un disco de computadora (necesitas una máquina para saber qué hay adentro) — ambos pueden contener secretos que deben protegerse.\n\n---"
       },
       {
         "name": "Data Sovereignty",
         "definition": "The principle that **digital data is subject to the laws of the country where it is collected or processed**. Organizations must manage, store, and process data according to the laws of that specific jurisdiction. Critical consideration in cloud computing where data centers span multiple countries.",
-        "analogy": "",
+        "analogy": "Como las leyes de un aeropuerto: aunque estés de paso, mientras estés en ese territorio, las leyes locales aplican a lo que llevas contigo.",
         "tables": [],
         "list_items": [
           "Key example: **GDPR** protects EU citizens' data while they are within EU/EEA borders. Countries like China and Russia require data to be stored within their national borders."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The principle that **digital data is subject to the laws of the country where it is collected or processed**. Organizations must manage, store, and process data according to the laws of that specific jurisdiction. Critical consideration in cloud computing where data centers span multiple countries.\n\n* Key example: **GDPR** protects EU citizens' data while they are within EU/EEA borders. Countries like China and Russia require data to be stored within their national borders.\n  \n  > Como las leyes de un aeropuerto: aunque estés de paso, mientras estés en ese territorio, las leyes locales aplican a lo que llevas contigo."
+        "raw_content": "## Data Sovereignty\n\n* **Definition:** The principle that **digital data is subject to the laws of the country where it is collected or processed**. Organizations must manage, store, and process data according to the laws of that specific jurisdiction. Critical consideration in cloud computing where data centers span multiple countries.\n\n* Key example: **GDPR** protects EU citizens' data while they are within EU/EEA borders. Countries like China and Russia require data to be stored within their national borders.\n  \n  > Como las leyes de un aeropuerto: aunque estés de paso, mientras estés en ese territorio, las leyes locales aplican a lo que llevas contigo.\n\n---"
       },
       {
         "name": "GDPR (General Data Protection Regulation)",
         "definition": "A comprehensive EU privacy regulation that mandates strict data protection requirements for any organization handling the **personal data of EU/EEA citizens**, regardless of where the organization is located. Grants individuals strong rights over their data (access, deletion, portability). Non-compliance can result in heavy fines. GDPR protections apply only while the data subject is within EU/EEA borders.",
-        "analogy": "",
+        "analogy": "Como las leyes laborales de un país: si contratas a alguien de ese país, tienes que cumplir sus leyes laborales aunque tu empresa esté en otro lado.",
         "tables": [],
         "list_items": [
           "* *"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A comprehensive EU privacy regulation that mandates strict data protection requirements for any organization handling the **personal data of EU/EEA citizens**, regardless of where the organization is located. Grants individuals strong rights over their data (access, deletion, portability). Non-compliance can result in heavy fines. GDPR protections apply only while the data subject is within EU/EEA borders.\n  \n  > Como las leyes laborales de un país: si contratas a alguien de ese país, tienes que cumplir sus leyes laborales aunque tu empresa esté en otro lado.\n\n* * *"
+        "raw_content": "## GDPR (General Data Protection Regulation)\n\n* **Definition:** A comprehensive EU privacy regulation that mandates strict data protection requirements for any organization handling the **personal data of EU/EEA citizens**, regardless of where the organization is located. Grants individuals strong rights over their data (access, deletion, portability). Non-compliance can result in heavy fines. GDPR protections apply only while the data subject is within EU/EEA borders.\n  \n  > Como las leyes laborales de un país: si contratas a alguien de ese país, tienes que cumplir sus leyes laborales aunque tu empresa esté en otro lado.\n\n* * *"
       },
       {
         "name": "HIPAA (Health Insurance Portability and Accountability Act)",
         "definition": "A US federal law that mandates the protection of **Protected Health Information (PHI)** — any health status, treatment, or payment information linked to an identifiable individual. Requires covered entities (healthcare providers, insurers) and their business associates to implement administrative, physical, and technical safeguards.",
-        "analogy": "",
+        "analogy": "Como el secreto médico en formato legal: no solo es un principio ético, es una obligación legal con consecuencias reales si lo incumples.",
         "tables": [],
         "list_items": [
           "* *"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A US federal law that mandates the protection of **Protected Health Information (PHI)** — any health status, treatment, or payment information linked to an identifiable individual. Requires covered entities (healthcare providers, insurers) and their business associates to implement administrative, physical, and technical safeguards.\n  \n  > Como el secreto médico en formato legal: no solo es un principio ético, es una obligación legal con consecuencias reales si lo incumples.\n\n* * *"
+        "raw_content": "## HIPAA (Health Insurance Portability and Accountability Act)\n\n* **Definition:** A US federal law that mandates the protection of **Protected Health Information (PHI)** — any health status, treatment, or payment information linked to an identifiable individual. Requires covered entities (healthcare providers, insurers) and their business associates to implement administrative, physical, and technical safeguards.\n  \n  > Como el secreto médico en formato legal: no solo es un principio ético, es una obligación legal con consecuencias reales si lo incumples.\n\n* * *"
       },
       {
         "name": "PCI DSS (Payment Card Industry Data Security Standard)",
-        "definition": "Virtual boundaries set up to **restrict data access based on geographic location**. Helps organizations comply with data sovereignty laws and block access attempts from high-risk regions. If all employees are in the Americas, login attempts from Asia or Africa can be automatically blocked.",
-        "analogy": "",
+        "definition": "An industry security standard that applies to any organization that **stores, processes, or transmits credit card data**. Mandates specific controls including encryption, access restrictions, network segmentation, and regular security testing to protect cardholder data. Compliance is required by card brands (Visa, Mastercard, etc.).",
+        "analogy": "Como las normas de seguridad de un servicio de transporte de valores: si manejas dinero de otras personas, debes cumplir estándares muy específicos para protegerlo.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An industry security standard that applies to any organization that **stores, processes, or transmits credit card data**. Mandates specific controls including encryption, access restrictions, network segmentation, and regular security testing to protect cardholder data. Compliance is required by card brands (Visa, Mastercard, etc.).\n  \n  > Como las normas de seguridad de un servicio de transporte de valores: si manejas dinero de otras personas, debes cumplir estándares muy específicos para protegerlo.\n  \n  \n  ## Geofencing (Geographic Restrictions)\n\n* **Definition:** Virtual boundaries set up to **restrict data access based on geographic location**. Helps organizations comply with data sovereignty laws and block access attempts from high-risk regions. If all employees are in the Americas, login attempts from Asia or Africa can be automatically blocked.\n  \n  > Como poner una cerca invisible alrededor del mapa: si tu solicitud de acceso viene de fuera de esa cerca, el sistema la rechaza automáticamente."
+        "raw_content": "## PCI DSS (Payment Card Industry Data Security Standard)\n\n* **Definition:** An industry security standard that applies to any organization that **stores, processes, or transmits credit card data**. Mandates specific controls including encryption, access restrictions, network segmentation, and regular security testing to protect cardholder data. Compliance is required by card brands (Visa, Mastercard, etc.).\n  \n  > Como las normas de seguridad de un servicio de transporte de valores: si manejas dinero de otras personas, debes cumplir estándares muy específicos para protegerlo.\n  \n  ---\n  \n  ## Geofencing (Geographic Restrictions)\n\n* **Definition:** Virtual boundaries set up to **restrict data access based on geographic location**. Helps organizations comply with data sovereignty laws and block access attempts from high-risk regions. If all employees are in the Americas, login attempts from Asia or Africa can be automatically blocked.\n  \n  > Como poner una cerca invisible alrededor del mapa: si tu solicitud de acceso viene de fuera de esa cerca, el sistema la rechaza automáticamente.\n\n---"
       },
       {
         "name": "Data Securing Methods",
@@ -2382,55 +2245,51 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A set of complementary techniques to protect data from unauthorized access or disclosure:\n\n| Method                      | How It Works                                                                       | Key Characteristic                                                               |\n| --------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |\n| **Encryption**              | Converts plaintext to ciphertext using an algorithm + key                          | Reversible with the correct decryption key                                       |\n| **Hashing**                 | Converts data to a fixed-size hash value                                           | **One-way — cannot be reversed**; used for integrity checks and password storage |\n| **Masking**                 | Replaces data with placeholders (e.g., XXXX-XXXX-XXXX-1234)                        | **One-way**; de-identifies data while preserving format                          |\n| **Tokenization**            | Replaces sensitive data with non-sensitive tokens; original data stored separately | Token is useless without the vault mapping — common in payment processing        |\n| **Obfuscation**             | Makes data unclear or unintelligible through various techniques                    | Reduces readability for unauthorized users                                       |\n| **Segmentation**            | Divides network into isolated segments with separate controls                      | Limits lateral movement if one segment is compromised                            |\n| **Permission Restrictions** | Defines who can access what data and what actions they can take (ACLs, RBAC)       | Principle of least privilege applied to data                                     |\n\n> Como diferentes formas de proteger un documento secreto: puedes cifrarlo, destruirlo, tacharlo, reemplazarlo con una copia falsa, dividirlo en partes, o simplemente controlar quién tiene llave para verlo."
+        "raw_content": "## Data Securing Methods\n\n* **Definition:** A set of complementary techniques to protect data from unauthorized access or disclosure:\n\n| Method                      | How It Works                                                                       | Key Characteristic                                                               |\n| --------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |\n| **Encryption**              | Converts plaintext to ciphertext using an algorithm + key                          | Reversible with the correct decryption key                                       |\n| **Hashing**                 | Converts data to a fixed-size hash value                                           | **One-way — cannot be reversed**; used for integrity checks and password storage |\n| **Masking**                 | Replaces data with placeholders (e.g., XXXX-XXXX-XXXX-1234)                        | **One-way**; de-identifies data while preserving format                          |\n| **Tokenization**            | Replaces sensitive data with non-sensitive tokens; original data stored separately | Token is useless without the vault mapping — common in payment processing        |\n| **Obfuscation**             | Makes data unclear or unintelligible through various techniques                    | Reduces readability for unauthorized users                                       |\n| **Segmentation**            | Divides network into isolated segments with separate controls                      | Limits lateral movement if one segment is compromised                            |\n| **Permission Restrictions** | Defines who can access what data and what actions they can take (ACLs, RBAC)       | Principle of least privilege applied to data                                     |\n\n> Como diferentes formas de proteger un documento secreto: puedes cifrarlo, destruirlo, tacharlo, reemplazarlo con una copia falsa, dividirlo en partes, o simplemente controlar quién tiene llave para verlo.\n\n---"
       },
       {
         "name": "Tokenization",
         "definition": "A data protection technique that **replaces sensitive data with a non-sensitive placeholder (token)**. The original sensitive data is stored in a secure, separate token vault. The token is meaningless without access to the vault. Widely used in **payment processing** to protect credit card numbers during transactions.",
-        "analogy": "",
+        "analogy": "Como cambiar los billetes reales por fichas de casino: dentro del casino (sistema), las fichas funcionan igual; pero si alguien te las roba fuera, son inútiles porque no son dinero real.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A data protection technique that **replaces sensitive data with a non-sensitive placeholder (token)**. The original sensitive data is stored in a secure, separate token vault. The token is meaningless without access to the vault. Widely used in **payment processing** to protect credit card numbers during transactions.\n  \n  > Como cambiar los billetes reales por fichas de casino: dentro del casino (sistema), las fichas funcionan igual; pero si alguien te las roba fuera, son inútiles porque no son dinero real."
+        "raw_content": "## Tokenization\n\n* **Definition:** A data protection technique that **replaces sensitive data with a non-sensitive placeholder (token)**. The original sensitive data is stored in a secure, separate token vault. The token is meaningless without access to the vault. Widely used in **payment processing** to protect credit card numbers during transactions.\n  \n  > Como cambiar los billetes reales por fichas de casino: dentro del casino (sistema), las fichas funcionan igual; pero si alguien te las roba fuera, son inútiles porque no son dinero real.\n\n---"
       },
       {
         "name": "Obfuscation",
         "definition": "A data protection technique that makes data **unclear, unintelligible, or difficult to understand** for unauthorized users. Can combine multiple methods — encryption, masking, pseudonymization, code scrambling. Unlike encryption, obfuscation does not always rely on a key; the goal is simply to reduce readability and complicate unauthorized analysis or reverse engineering.",
-        "analogy": "",
+        "analogy": "Como escribir instrucciones en un idioma mezclado con símbolos aleatorios: el resultado sigue siendo funcional para quien sabe leerlo, pero incomprensible para cualquier intruso.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A data protection technique that makes data **unclear, unintelligible, or difficult to understand** for unauthorized users. Can combine multiple methods — encryption, masking, pseudonymization, code scrambling. Unlike encryption, obfuscation does not always rely on a key; the goal is simply to reduce readability and complicate unauthorized analysis or reverse engineering.\n  \n  > Como escribir instrucciones en un idioma mezclado con símbolos aleatorios: el resultado sigue siendo funcional para quien sabe leerlo, pero incomprensible para cualquier intruso."
+        "raw_content": "## Obfuscation\n\n* **Definition:** A data protection technique that makes data **unclear, unintelligible, or difficult to understand** for unauthorized users. Can combine multiple methods — encryption, masking, pseudonymization, code scrambling. Unlike encryption, obfuscation does not always rely on a key; the goal is simply to reduce readability and complicate unauthorized analysis or reverse engineering.\n  \n  > Como escribir instrucciones en un idioma mezclado con símbolos aleatorios: el resultado sigue siendo funcional para quien sabe leerlo, pero incomprensible para cualquier intruso.\n\n---"
       },
       {
         "name": "Segmentation",
         "definition": "The practice of **dividing a network into separate, isolated segments**, each with its own security controls and access policies. If an attacker compromises one segment, they cannot freely move laterally to other parts of the network. Reduces the blast radius of a breach. Implemented through VLANs, firewalls, and access control policies.",
-        "analogy": "",
+        "analogy": "Como dividir un barco en compartimentos estancos: si uno se inunda, los otros permanecen secos — el daño queda contenido.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The practice of **dividing a network into separate, isolated segments**, each with its own security controls and access policies. If an attacker compromises one segment, they cannot freely move laterally to other parts of the network. Reduces the blast radius of a breach. Implemented through VLANs, firewalls, and access control policies.\n  \n  > Como dividir un barco en compartimentos estancos: si uno se inunda, los otros permanecen secos — el daño queda contenido."
+        "raw_content": "## Segmentation\n\n* **Definition:** The practice of **dividing a network into separate, isolated segments**, each with its own security controls and access policies. If an attacker compromises one segment, they cannot freely move laterally to other parts of the network. Reduces the blast radius of a breach. Implemented through VLANs, firewalls, and access control policies.\n  \n  > Como dividir un barco en compartimentos estancos: si uno se inunda, los otros permanecen secos — el daño queda contenido.\n\n---"
       },
       {
         "name": "Access Control List (ACL) and RBAC",
         "definition": "Two mechanisms for implementing permission restrictions on data:",
-        "analogy": "",
+        "analogy": "Como las llaves de un edificio de oficinas: no todo el mundo tiene llave de todas las puertas — solo de las que corresponden a su rol en la empresa.",
         "tables": [],
         "list_items": [
+          "**ACL (Access Control List):** A list of rules attached to a resource that specifies which users or systems are granted or denied access and what operations they can perform.",
+          "**RBAC (Role-Based Access Control):** Access permissions are assigned based on a user's **role** within the organization rather than individually. Users inherit permissions based on their job function (e.g., accountant, system admin, HR).",
           "Both enforce the **principle of least privilege** — users only access what they need for their specific role."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Two mechanisms for implementing permission restrictions on data:\n  \n  - **ACL (Access Control List):** A list of rules attached to a resource that specifies which users or systems are granted or denied access and what operations they can perform.\n  - **RBAC (Role-Based Access Control):** Access permissions are assigned based on a user's **role** within the organization rather than individually. Users inherit permissions based on their job function (e.g., accountant, system admin, HR).\n\n* Both enforce the **principle of least privilege** — users only access what they need for their specific role.\n  \n  > Como las llaves de un edificio de oficinas: no todo el mundo tiene llave de todas las puertas — solo de las que corresponden a su rol en la empresa."
+        "raw_content": "## Access Control List (ACL) and RBAC\n\n* **Definition:** Two mechanisms for implementing permission restrictions on data:\n  \n  - **ACL (Access Control List):** A list of rules attached to a resource that specifies which users or systems are granted or denied access and what operations they can perform.\n  - **RBAC (Role-Based Access Control):** Access permissions are assigned based on a user's **role** within the organization rather than individually. Users inherit permissions based on their job function (e.g., accountant, system admin, HR).\n\n* Both enforce the **principle of least privilege** — users only access what they need for their specific role.\n  \n  > Como las llaves de un edificio de oficinas: no todo el mundo tiene llave de todas las puertas — solo de las que corresponden a su rol en la empresa.\n\n---"
       },
       {
         "name": "Data Retention",
         "definition": "The organizational and legal policies that define **how long data must be kept** before it can be destroyed. Retention periods vary by data type and jurisdiction — some regulations mandate minimum retention (e.g., financial records under SOX, health records under HIPAA). Data retained beyond its useful period unnecessarily increases risk and storage costs. Part of the broader **data lifecycle management** strategy.",
-        "analogy": "",
+        "analogy": "Como la fecha de vencimiento en los alimentos: guardar datos más tiempo del necesario no solo es inútil, puede ser peligroso si caen en manos equivocadas.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The organizational and legal policies that define **how long data must be kept** before it can be destroyed. Retention periods vary by data type and jurisdiction — some regulations mandate minimum retention (e.g., financial records under SOX, health records under HIPAA). Data retained beyond its useful period unnecessarily increases risk and storage costs. Part of the broader **data lifecycle management** strategy.\n  \n  > Como la fecha de vencimiento en los alimentos: guardar datos más tiempo del necesario no solo es inútil, puede ser peligroso si caen en manos equivocadas."
+        "raw_content": "## Data Retention\n\n* **Definition:** The organizational and legal policies that define **how long data must be kept** before it can be destroyed. Retention periods vary by data type and jurisdiction — some regulations mandate minimum retention (e.g., financial records under SOX, health records under HIPAA). Data retained beyond its useful period unnecessarily increases risk and storage costs. Part of the broader **data lifecycle management** strategy.\n  \n  > Como la fecha de vencimiento en los alimentos: guardar datos más tiempo del necesario no solo es inútil, puede ser peligroso si caen en manos equivocadas.\n\n---"
       },
       {
         "name": "Data Loss Prevention (DLP)",
@@ -2468,8 +2327,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A strategy and set of tools designed to **detect and prevent sensitive or critical data from leaving the organization** — whether intentionally (insider threat, data theft) or unintentionally (accidental disclosure). Monitors data at rest, in transit, and in use. Can operate in **detection mode** (log and alert) or **prevention mode** (block the action).\n\n**Four DLP deployment types:**\n\n| Type                | Deployment                                   | Function                                                                           |\n| ------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------- |\n| **Endpoint DLP**    | Software installed on workstations/laptops   | Monitors data in use; blocks or alerts on unauthorized file transfers              |\n| **Network DLP**     | Hardware/software at network perimeter       | Monitors all data leaving the network; prevents unauthorized exfiltration          |\n| **Storage DLP**     | Software on servers in data centers          | Inspects data at rest; detects unauthorized access (e.g., large downloads at 2 AM) |\n| **Cloud-based DLP** | SaaS solution integrated with cloud services | Protects data stored in cloud platforms (e.g., Google Drive DLP, Office 365 DLP)   |\n\n> Como los controles de seguridad en el aeropuerto: no solo revisan lo que entra (firewall) — también revisan lo que sale, asegurándose de que nadie se lleve algo que no debería."
+        "raw_content": "## Data Loss Prevention (DLP)\n\n* **Definition:** A strategy and set of tools designed to **detect and prevent sensitive or critical data from leaving the organization** — whether intentionally (insider threat, data theft) or unintentionally (accidental disclosure). Monitors data at rest, in transit, and in use. Can operate in **detection mode** (log and alert) or **prevention mode** (block the action).\n\n**Four DLP deployment types:**\n\n| Type                | Deployment                                   | Function                                                                           |\n| ------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------- |\n| **Endpoint DLP**    | Software installed on workstations/laptops   | Monitors data in use; blocks or alerts on unauthorized file transfers              |\n| **Network DLP**     | Hardware/software at network perimeter       | Monitors all data leaving the network; prevents unauthorized exfiltration          |\n| **Storage DLP**     | Software on servers in data centers          | Inspects data at rest; detects unauthorized access (e.g., large downloads at 2 AM) |\n| **Cloud-based DLP** | SaaS solution integrated with cloud services | Protects data stored in cloud platforms (e.g., Google Drive DLP, Office 365 DLP)   |\n\n> Como los controles de seguridad en el aeropuerto: no solo revisan lo que entra (firewall) — también revisan lo que sale, asegurándose de que nadie se lleve algo que no debería.\n\n---"
       },
       {
         "name": "DLP Configuration — Key Concepts",
@@ -2514,28 +2372,25 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** When configuring a DLP solution, organizations define **rules, scopes, conditions, and actions**:\n\n| Configuration Element         | Description                                                                                           |\n| ----------------------------- | ----------------------------------------------------------------------------------------------------- |\n| **Scope**                     | Who the rule applies to — all users, specific departments, or groups                                  |\n| **Application**               | Which platform is monitored — email, chat, cloud storage, endpoints                                   |\n| **Condition / Content Match** | What triggers the rule — predefined data types (SSN, credit card, PHI), regex patterns, keyword lists |\n| **Confidence Threshold**      | How certain the system must be before triggering — High/Very High reduces false positives             |\n| **Action**                    | What happens when triggered — Block, Warn, Quarantine, Audit/Log, Encrypt                             |\n| **Detection Mode**            | Logs and alerts — does not block the action                                                           |\n| **Prevention Mode**           | Actively blocks the action from occurring                                                             |\n\n> Como programar una alarma inteligente: defines qué buscar, qué tan seguro necesitas estar antes de sonar, y qué hacer cuando suena — ¿avisar?, ¿bloquear?, ¿registrar?"
+        "raw_content": "## DLP Configuration — Key Concepts\n\n* **Definition:** When configuring a DLP solution, organizations define **rules, scopes, conditions, and actions**:\n\n| Configuration Element         | Description                                                                                           |\n| ----------------------------- | ----------------------------------------------------------------------------------------------------- |\n| **Scope**                     | Who the rule applies to — all users, specific departments, or groups                                  |\n| **Application**               | Which platform is monitored — email, chat, cloud storage, endpoints                                   |\n| **Condition / Content Match** | What triggers the rule — predefined data types (SSN, credit card, PHI), regex patterns, keyword lists |\n| **Confidence Threshold**      | How certain the system must be before triggering — High/Very High reduces false positives             |\n| **Action**                    | What happens when triggered — Block, Warn, Quarantine, Audit/Log, Encrypt                             |\n| **Detection Mode**            | Logs and alerts — does not block the action                                                           |\n| **Prevention Mode**           | Actively blocks the action from occurring                                                             |\n\n> Como programar una alarma inteligente: defines qué buscar, qué tan seguro necesitas estar antes de sonar, y qué hacer cuando suena — ¿avisar?, ¿bloquear?, ¿registrar?\n\n---"
       },
       {
         "name": "Data Lifecycle Management",
         "definition": "The organizational policies that govern **how data is collected, stored, retained, and destroyed**. Organizations must define retention periods based on business needs and legal requirements. Data should not be stored indefinitely — proper disposal reduces attack surface and compliance risk.",
-        "analogy": "",
+        "analogy": "Como la política de archivos de una oficina: no guardas todos los documentos para siempre — defines cuánto tiempo se necesitan, y luego los destruyes de forma segura.",
         "tables": [],
         "list_items": [
           "Key consideration: Legal regulations (HIPAA, GDPR, PCI DSS) may mandate **minimum retention periods** for specific data types."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The organizational policies that govern **how data is collected, stored, retained, and destroyed**. Organizations must define retention periods based on business needs and legal requirements. Data should not be stored indefinitely — proper disposal reduces attack surface and compliance risk.\n\n* Key consideration: Legal regulations (HIPAA, GDPR, PCI DSS) may mandate **minimum retention periods** for specific data types.\n  \n  > Como la política de archivos de una oficina: no guardas todos los documentos para siempre — defines cuánto tiempo se necesitan, y luego los destruyes de forma segura."
+        "raw_content": "## Data Lifecycle Management\n\n* **Definition:** The organizational policies that govern **how data is collected, stored, retained, and destroyed**. Organizations must define retention periods based on business needs and legal requirements. Data should not be stored indefinitely — proper disposal reduces attack surface and compliance risk.\n\n* Key consideration: Legal regulations (HIPAA, GDPR, PCI DSS) may mandate **minimum retention periods** for specific data types.\n  \n  > Como la política de archivos de una oficina: no guardas todos los documentos para siempre — defines cuánto tiempo se necesitan, y luego los destruyes de forma segura.\n\n---"
       },
       {
         "name": "OCR in DLP (Optical Character Recognition)",
         "definition": "A technology integrated into some DLP solutions that **scans images and photographs** for text content — enabling the DLP system to detect sensitive data embedded in images (e.g., a photo of a Social Security card or a screenshot of a password). Extends DLP coverage beyond text-only documents.",
-        "analogy": "",
+        "analogy": "Como un guardia de seguridad que no solo revisa documentos de texto, sino que también lee las fotografías para asegurarse de que no haya información sensible oculta en ellas.",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A technology integrated into some DLP solutions that **scans images and photographs** for text content — enabling the DLP system to detect sensitive data embedded in images (e.g., a photo of a Social Security card or a screenshot of a password). Extends DLP coverage beyond text-only documents.\n  \n  > Como un guardia de seguridad que no solo revisa documentos de texto, sino que también lee las fotografías para asegurarse de que no haya información sensible oculta en ellas.\n\n\n*CompTIA Security+ SY0-701 · Section 7: Data Protection · Dion Training*"
+        "raw_content": "## OCR in DLP (Optical Character Recognition)\n\n* **Definition:** A technology integrated into some DLP solutions that **scans images and photographs** for text content — enabling the DLP system to detect sensitive data embedded in images (e.g., a photo of a Social Security card or a screenshot of a password). Extends DLP coverage beyond text-only documents.\n  \n  > Como un guardia de seguridad que no solo revisa documentos de texto, sino que también lee las fotografías para asegurarse de que no haya información sensible oculta en ellas.\n\n---\n\n*CompTIA Security+ SY0-701 · Section 7: Data Protection · Dion Training*"
       }
     ]
   },
@@ -2545,7 +2400,7 @@ const STUDY_DATA = [
     "concepts": [
       {
         "name": "Cryptography Fundamentals",
-        "definition": "Cryptography is the practice of writing and solving codes to hide the true meaning of information. Encryption converts plaintext into ciphertext so only someone with the correct key can reverse it.",
+        "definition": "The practice of hiding information's true meaning using mathematical codes (cryptography) and converting readable plaintext into unreadable ciphertext (encryption) so only authorized keyholders can read it.",
         "analogy": "*Es como escribir un mensaje con tinta invisible: solo quien tiene la luz ultravioleta correcta (la clave) puede leerlo.*",
         "tables": [
           {
@@ -2596,12 +2451,11 @@ const STUDY_DATA = [
           "Longer keys = exponentially stronger (128-bit → 256-bit is not 2× stronger, it's squared).",
           "**Key rotation** — changing keys regularly — is a best practice. Many organizations rotate TLS keys annually; some cloud providers auto-rotate every 90 days."
         ],
-        "spanish_words": [],
-        "raw_content": "**Cryptography** is the practice of writing and solving codes to hide the true meaning of information. **Encryption** converts plaintext into ciphertext so only someone with the correct key can reverse it.\n\n> *Es como escribir un mensaje con tinta invisible: solo quien tiene la luz ultravioleta correcta (la clave) puede leerlo.*\n\n### Data States\n\n| State               | Description                              | Example                                 |\n| ------------------- | ---------------------------------------- | --------------------------------------- |\n| **Data at Rest**    | Inactive data stored on a device         | Files on a hard drive                   |\n| **Data in Transit** | Data moving across a network or in RAM   | Email crossing the internet             |\n| **Data in Use**     | Data actively being processed by the CPU | Calculations happening in the processor |\n\n### Algorithm vs. Key\n\n| Concept       | Role                                                | Analogy                            |\n| ------------- | --------------------------------------------------- | ---------------------------------- |\n| **Algorithm** | Mathematical formula for encryption/decryption      | The type of lock mechanism         |\n| **Key**       | The piece of information that determines the output | The actual key that opens the lock |\n\n⚠️ **The strength of encryption comes from the KEY, not the algorithm.** Most algorithms are publicly reviewed and open-source. Security relies entirely on keeping the key secret.\n\n### Key Length & Rotation\n\n- Longer keys = exponentially stronger (128-bit → 256-bit is not 2× stronger, it's squared).\n- **Key rotation** — changing keys regularly — is a best practice. Many organizations rotate TLS keys annually; some cloud providers auto-rotate every 90 days.\n\n> *Si la clave es como la combinación de tu caja fuerte, rotarla es como cambiar la combinación cada cierto tiempo para que nadie que la haya visto pueda usarla en el futuro.*"
+        "raw_content": "## 1. Cryptography Fundamentals\n\n* **Definition:** The practice of hiding information's true meaning using mathematical codes (cryptography) and converting readable plaintext into unreadable ciphertext (encryption) so only authorized keyholders can read it.\n\n> *Es como escribir un mensaje con tinta invisible: solo quien tiene la luz ultravioleta correcta (la clave) puede leerlo.*\n\n### Data States\n\n| State               | Description                              | Example                                 |\n| ------------------- | ---------------------------------------- | --------------------------------------- |\n| **Data at Rest**    | Inactive data stored on a device         | Files on a hard drive                   |\n| **Data in Transit** | Data moving across a network or in RAM   | Email crossing the internet             |\n| **Data in Use**     | Data actively being processed by the CPU | Calculations happening in the processor |\n\n### Algorithm vs. Key\n\n| Concept       | Role                                                | Analogy                            |\n| ------------- | --------------------------------------------------- | ---------------------------------- |\n| **Algorithm** | Mathematical formula for encryption/decryption      | The type of lock mechanism         |\n| **Key**       | The piece of information that determines the output | The actual key that opens the lock |\n\n⚠️ **The strength of encryption comes from the KEY, not the algorithm.** Most algorithms are publicly reviewed and open-source. Security relies entirely on keeping the key secret.\n\n### Key Length & Rotation\n\n- Longer keys = exponentially stronger (128-bit → 256-bit is not 2× stronger, it's squared).\n- **Key rotation** — changing keys regularly — is a best practice. Many organizations rotate TLS keys annually; some cloud providers auto-rotate every 90 days.\n\n> *Si la clave es como la combinación de tu caja fuerte, rotarla es como cambiar la combinación cada cierto tiempo para que nadie que la haya visto pueda usarla en el futuro.*\n\n---"
       },
       {
         "name": "Symmetric vs Asymmetric Encryption",
-        "definition": "Asymmetric encryption is used to securely exchange a symmetric key, and then symmetric encryption handles the bulk of data transfer. This is how HTTPS/TLS works.",
+        "definition": "Two primary encryption paradigms — symmetric encryption uses a single shared secret key for both encryption and decryption, while asymmetric encryption uses a mathematically linked public-private key pair.",
         "analogy": "*Simétrico es como tener una copia de la llave de la casa: cualquiera que tenga la copia puede entrar, y no sabes quién tomó el laptop. Asimétrico es como un buzón: cualquiera puede depositar cartas (llave pública), pero solo tú puedes sacarlas (llave privada).*",
         "tables": [
           {
@@ -2664,12 +2518,11 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "### Core Comparison\n\n| Property             | Symmetric                                     | Asymmetric                                  |\n| -------------------- | --------------------------------------------- | ------------------------------------------- |\n| **Keys used**        | 1 shared secret key                           | 2 keys: public + private                    |\n| **Also called**      | Private key encryption                        | Public key cryptography                     |\n| **Speed**            | 100–1,000× faster                             | Slower                                      |\n| **Key distribution** | ⚠️ Challenge — must share secret securely     | ✅ No key distribution problem               |\n| **Non-repudiation**  | ❌ No — anyone with the key could have sent it | ✅ Yes — only the private key owner can sign |\n| **Common use**       | Bulk data encryption                          | Key exchange, digital signatures            |\n\n> *Simétrico es como tener una copia de la llave de la casa: cualquiera que tenga la copia puede entrar, y no sabes quién tomó el laptop. Asimétrico es como un buzón: cualquiera puede depositar cartas (llave pública), pero solo tú puedes sacarlas (llave privada).*\n\n### Hybrid Approach (Best of Both Worlds)\n\nAsymmetric encryption is used to **securely exchange a symmetric key**, and then symmetric encryption handles the **bulk of data transfer**. This is how HTTPS/TLS works.\n\n### Stream vs Block Ciphers\n\n| Type              | How it works                                              | Typical use                                |\n| ----------------- | --------------------------------------------------------- | ------------------------------------------ |\n| **Stream cipher** | Encrypts bit by bit using XOR with a keystream            | Real-time audio/video streaming            |\n| **Block cipher**  | Breaks input into fixed-length blocks (64, 128, 256 bits) | File encryption, most symmetric algorithms |\n\n> *Stream cipher es como traducir un libro palabra por palabra al mismo tiempo que lo lees. Block cipher es como traducir capítulo por capítulo.*\n\n\n\n![9829e987-6d29-43a5-aa48-9bb0ee130394](file:///C:/Users/LENOVO/Pictures/Typedown/9829e987-6d29-43a5-aa48-9bb0ee130394.png)"
+        "raw_content": "## 2. Symmetric vs Asymmetric Encryption\n\n* **Definition:** Two primary encryption paradigms — symmetric encryption uses a single shared secret key for both encryption and decryption, while asymmetric encryption uses a mathematically linked public-private key pair.\n\n### Core Comparison\n\n| Property             | Symmetric                                     | Asymmetric                                  |\n| -------------------- | --------------------------------------------- | ------------------------------------------- |\n| **Keys used**        | 1 shared secret key                           | 2 keys: public + private                    |\n| **Also called**      | Private key encryption                        | Public key cryptography                     |\n| **Speed**            | 100–1,000× faster                             | Slower                                      |\n| **Key distribution** | ⚠️ Challenge — must share secret securely     | ✅ No key distribution problem               |\n| **Non-repudiation**  | ❌ No — anyone with the key could have sent it | ✅ Yes — only the private key owner can sign |\n| **Common use**       | Bulk data encryption                          | Key exchange, digital signatures            |\n\n> *Simétrico es como tener una copia de la llave de la casa: cualquiera que tenga la copia puede entrar, y no sabes quién tomó el laptop. Asimétrico es como un buzón: cualquiera puede depositar cartas (llave pública), pero solo tú puedes sacarlas (llave privada).*\n\n### Hybrid Approach (Best of Both Worlds)\n\nAsymmetric encryption is used to **securely exchange a symmetric key**, and then symmetric encryption handles the **bulk of data transfer**. This is how HTTPS/TLS works.\n\n### Stream vs Block Ciphers\n\n| Type              | How it works                                              | Typical use                                |\n| ----------------- | --------------------------------------------------------- | ------------------------------------------ |\n| **Stream cipher** | Encrypts bit by bit using XOR with a keystream            | Real-time audio/video streaming            |\n| **Block cipher**  | Breaks input into fixed-length blocks (64, 128, 256 bits) | File encryption, most symmetric algorithms |\n\n> *Stream cipher es como traducir un libro palabra por palabra al mismo tiempo que lo lees. Block cipher es como traducir capítulo por capítulo.*\n\n\n\n![9829e987-6d29-43a5-aa48-9bb0ee130394](file:///C:/Users/LENOVO/Pictures/Typedown/9829e987-6d29-43a5-aa48-9bb0ee130394.png)\n\n---"
       },
       {
         "name": "Symmetric Algorithms",
-        "definition": "RC4 is the only stream cipher in this list — all others are block ciphers.",
+        "definition": "Cryptographic algorithms that use a single shared key for both encryption and decryption, divided into stream ciphers (bit-by-bit) and block ciphers (fixed-size blocks).",
         "analogy": "💡 **Exam tip:** You don't need to memorize specific block/key sizes — focus on identifying each algorithm, whether it's still in use, and its relative strength.",
         "tables": [
           {
@@ -2758,12 +2611,11 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "> 💡 **Exam tip:** You don't need to memorize specific block/key sizes — focus on identifying each algorithm, whether it's still in use, and its relative strength.\n\n### Identification & Effectiveness Guide\n\n| Algorithm    | Type       | Key Size         | Block Size | Status        | Notes                                                                                |\n| ------------ | ---------- | ---------------- | ---------- | ------------- | ------------------------------------------------------------------------------------ |\n| **DES**      | Block      | 56-bit effective | 64-bit     | ❌ Obsolete    | Broken by modern computing. Used 1970s–early 2000s.                                  |\n| **3DES**     | Block      | ~112-bit         | 64-bit     | ⚠️ Deprecated | Encrypt → Decrypt → Encrypt using 3 keys. Slow but stronger than DES.                |\n| **IDEA**     | Block      | 128-bit          | 64-bit     | ⚠️ Niche      | Used in PGP. Entered the AES contest but didn't win.                                 |\n| **AES**      | Block      | 128/192/256-bit  | 128-bit    | ✅ Standard    | The de facto standard. US government approved. Also called Rijndael.                 |\n| **Blowfish** | Block      | 32–448-bit       | 64-bit     | ⚠️ Legacy     | Designed as DES replacement. Not widely adopted. Open source.                        |\n| **Twofish**  | Block      | 128/192/256-bit  | 128-bit    | ⚠️ Available  | AES finalist. Open source. Not widely used today.                                    |\n| **RC4**      | **Stream** | 40–2,048-bit     | N/A        | ❌ Weak        | Used in SSL and WEP — both now considered insecure. Only stream cipher in this list. |\n| **RC5**      | Block      | Up to 2,048-bit  | Variable   | ⚠️ Legacy     | Stronger than RC4 but not widely used.                                               |\n| **RC6**      | Block      | Up to 2,048-bit  | 128-bit    | ⚠️ Legacy     | AES finalist. Based on RC5 but didn't win.                                           |\n\n> *AES es el ganador indiscutible — es el algoritmo que protege desde tu disco duro cifrado hasta las conexiones de tu banco. Los demás son historia o contexto.*\n\n⚠️ **RC4 is the only stream cipher in this list** — all others are block ciphers."
+        "raw_content": "## 3. Symmetric Algorithms\n\n* **Definition:** Cryptographic algorithms that use a single shared key for both encryption and decryption, divided into stream ciphers (bit-by-bit) and block ciphers (fixed-size blocks).\n\n> 💡 **Exam tip:** You don't need to memorize specific block/key sizes — focus on identifying each algorithm, whether it's still in use, and its relative strength.\n\n### Identification & Effectiveness Guide\n\n| Algorithm    | Type       | Key Size         | Block Size | Status        | Notes                                                                                |\n| ------------ | ---------- | ---------------- | ---------- | ------------- | ------------------------------------------------------------------------------------ |\n| **DES**      | Block      | 56-bit effective | 64-bit     | ❌ Obsolete    | Broken by modern computing. Used 1970s–early 2000s.                                  |\n| **3DES**     | Block      | ~112-bit         | 64-bit     | ⚠️ Deprecated | Encrypt → Decrypt → Encrypt using 3 keys. Slow but stronger than DES.                |\n| **IDEA**     | Block      | 128-bit          | 64-bit     | ⚠️ Niche      | Used in PGP. Entered the AES contest but didn't win.                                 |\n| **AES**      | Block      | 128/192/256-bit  | 128-bit    | ✅ Standard    | The de facto standard. US government approved. Also called Rijndael.                 |\n| **Blowfish** | Block      | 32–448-bit       | 64-bit     | ⚠️ Legacy     | Designed as DES replacement. Not widely adopted. Open source.                        |\n| **Twofish**  | Block      | 128/192/256-bit  | 128-bit    | ⚠️ Available  | AES finalist. Open source. Not widely used today.                                    |\n| **RC4**      | **Stream** | 40–2,048-bit     | N/A        | ❌ Weak        | Used in SSL and WEP — both now considered insecure. Only stream cipher in this list. |\n| **RC5**      | Block      | Up to 2,048-bit  | Variable   | ⚠️ Legacy     | Stronger than RC4 but not widely used.                                               |\n| **RC6**      | Block      | Up to 2,048-bit  | 128-bit    | ⚠️ Legacy     | AES finalist. Based on RC5 but didn't win.                                           |\n\n> *AES es el ganador indiscutible — es el algoritmo que protege desde tu disco duro cifrado hasta las conexiones de tu banco. Los demás son historia o contexto.*\n\n⚠️ **RC4 is the only stream cipher in this list** — all others are block ciphers.\n\n---"
       },
       {
         "name": "Asymmetric Algorithms",
-        "definition": "Need to exchange keys securely?           → Diffie-Hellman (or ECDH for mobile)",
+        "definition": "Cryptographic algorithms that use a linked public-private key pair to encrypt and decrypt data, establish shared keys, and generate digital signatures.",
         "analogy": "*Diffie-Hellman es como acordar un código secreto gritando en una plaza pública — todos te oyen, pero nadie puede descifrar qué acordaron. RSA es el candado del internet. ECC es RSA pero en versión ligera para dispositivos móviles.*",
         "tables": [
           {
@@ -2816,8 +2668,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "### Identification & Use Case Guide\n\n| Algorithm                | Primary Use                                  | Key Point                                                                                                                         |\n| ------------------------ | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |\n| **Diffie-Hellman (DH)**  | Key exchange (VPN tunnels, IPSec)            | Allows two parties to create a shared secret over an insecure channel. Vulnerable to on-path/MITM attacks without authentication. |\n| **RSA**                  | Key exchange, encryption, digital signatures | Based on the difficulty of factoring large prime numbers. 1,024–4,096-bit keys. Powers RSA tokens (MFA).                          |\n| **ECC (Elliptic Curve)** | Encryption for mobile/low-power devices      | ~6× more efficient than RSA at the same security level. 256-bit ECC ≈ 2,048-bit RSA.                                              |\n\n> *Diffie-Hellman es como acordar un código secreto gritando en una plaza pública — todos te oyen, pero nadie puede descifrar qué acordaron. RSA es el candado del internet. ECC es RSA pero en versión ligera para dispositivos móviles.*\n\n### ECC Variants\n\n| Variant   | Full Name                                  | Purpose                                              |\n| --------- | ------------------------------------------ | ---------------------------------------------------- |\n| **ECDH**  | Elliptic Curve Diffie-Hellman              | Key exchange using ECC                               |\n| **ECDHE** | Elliptic Curve Diffie-Hellman Ephemeral    | Uses a different key per session for forward secrecy |\n| **ECDSA** | Elliptic Curve Digital Signature Algorithm | Used by the US government for digital signatures     |\n\n### How to Identify Which Algorithm to Use\n\n```\nNeed to exchange keys securely?           → Diffie-Hellman (or ECDH for mobile)\nNeed encryption + digital signatures?     → RSA\nUsing a mobile/tablet/IoT device?         → ECC\nGovernment digital signatures?            → ECDSA\n```\n\n![77970e34-9cba-4463-b553-2777849d0885](file:///C:/Users/LENOVO/Pictures/Typedown/77970e34-9cba-4463-b553-2777849d0885.png)"
+        "raw_content": "## 4. Asymmetric Algorithms\n\n* **Definition:** Cryptographic algorithms that use a linked public-private key pair to encrypt and decrypt data, establish shared keys, and generate digital signatures.\n\n### Identification & Use Case Guide\n\n| Algorithm                | Primary Use                                  | Key Point                                                                                                                         |\n| ------------------------ | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |\n| **Diffie-Hellman (DH)**  | Key exchange (VPN tunnels, IPSec)            | Allows two parties to create a shared secret over an insecure channel. Vulnerable to on-path/MITM attacks without authentication. |\n| **RSA**                  | Key exchange, encryption, digital signatures | Based on the difficulty of factoring large prime numbers. 1,024–4,096-bit keys. Powers RSA tokens (MFA).                          |\n| **ECC (Elliptic Curve)** | Encryption for mobile/low-power devices      | ~6× more efficient than RSA at the same security level. 256-bit ECC ≈ 2,048-bit RSA.                                              |\n\n> *Diffie-Hellman es como acordar un código secreto gritando en una plaza pública — todos te oyen, pero nadie puede descifrar qué acordaron. RSA es el candado del internet. ECC es RSA pero en versión ligera para dispositivos móviles.*\n\n### ECC Variants\n\n| Variant   | Full Name                                  | Purpose                                              |\n| --------- | ------------------------------------------ | ---------------------------------------------------- |\n| **ECDH**  | Elliptic Curve Diffie-Hellman              | Key exchange using ECC                               |\n| **ECDHE** | Elliptic Curve Diffie-Hellman Ephemeral    | Uses a different key per session for forward secrecy |\n| **ECDSA** | Elliptic Curve Digital Signature Algorithm | Used by the US government for digital signatures     |\n\n### How to Identify Which Algorithm to Use\n\n```\nNeed to exchange keys securely?           → Diffie-Hellman (or ECDH for mobile)\nNeed encryption + digital signatures?     → RSA\nUsing a mobile/tablet/IoT device?         → ECC\nGovernment digital signatures?            → ECDSA\n```\n\n![77970e34-9cba-4463-b553-2777849d0885](file:///C:/Users/LENOVO/Pictures/Typedown/77970e34-9cba-4463-b553-2777849d0885.png)\n\n\n\n---"
       },
       {
         "name": "Hashing",
@@ -2894,12 +2745,11 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "Hashing is a **one-way** cryptographic function: input → fixed-length digest. There is **no way to reverse** it to get the original input.\n\n> *Es como hacer jugo de naranja: puedes convertir naranjas en jugo, pero no puedes reconstruir las naranjas desde el jugo.*\n\nThe digest acts as a **digital fingerprint** — even a single character change produces a completely different hash (Avalanche Effect).\n\n### Hashing Algorithms\n\n| Algorithm        | Digest Size     | Status             | Notes                                                                                       |\n| ---------------- | --------------- | ------------------ | ------------------------------------------------------------------------------------------- |\n| **MD5**          | 128-bit         | ❌ Broken           | Prone to collisions. Still used for quick integrity checks only.                            |\n| **SHA-1**        | 160-bit         | ❌ Deprecated       | Fewer collisions than MD5 but still considered weak.                                        |\n| **SHA-2 family** | 224–512-bit     | ✅ Current standard | Includes SHA-224, SHA-256, SHA-384, SHA-512.                                                |\n| **SHA-3**        | 224–512-bit     | ✅ Modern           | Uses 120 rounds (vs. 64–80 for SHA-2). More secure computation.                             |\n| **RIPEMD-160**   | 160-bit         | ⚠️ Open source alt | Competitor to SHA. Not widely adopted.                                                      |\n| **HMAC**         | Varies (paired) | ✅ Integrity + Auth | Paired with other algorithms: HMAC-SHA256, HMAC-MD5. Provides integrity AND authentication. |\n\n> *MD5 y SHA-1 son como contraseñas débiles de los 90s — todo el mundo sabe que están rotos pero algunos todavía los usan por costumbre.*\n\n### Digital Signatures — Clarification ⚠️\n\n> **El flujo del cifrado asimétrico se INVIERTE según el objetivo:**\n\n| Goal                                                     | Who acts        | Key used                  | Result                                           |\n| -------------------------------------------------------- | --------------- | ------------------------- | ------------------------------------------------ |\n| **Confidentiality** (only receiver can read)             | Sender encrypts | **Receiver's PUBLIC key** | Only receiver can decrypt with their private key |\n| **Non-repudiation / Authentication** (prove who sent it) | Sender signs    | **Sender's PRIVATE key**  | Anyone can verify with sender's public key       |\n\n**Digital Signature = Hash encrypted with sender's private key**\n\n```\nFlow:\n1. Hash the message (e.g., SHA-256)          → produces digest\n2. Encrypt digest with SENDER's private key  → digital signature\n3. Encrypt message with RECEIVER's public key → confidentiality\n4. Receiver: decrypt message → decrypt signature with SENDER's public key → compare hashes\n```\n\n> *Firmar un documento digitalmente es como estampar tu anillo de sello personal en cera. Tu anillo (llave privada) es único — nadie más puede producir ese sello. Cualquiera puede verificar el sello mirando el escudo (llave pública), pero solo tú pudiste haberlo creado.*\n\n**Algorithms used for digital signatures:** DSA, RSA, ECDSA.\n\n\n\n![21e7d098-cfc0-4ad6-9a7c-00382bfa88e2](file:///C:/Users/LENOVO/Pictures/Typedown/21e7d098-cfc0-4ad6-9a7c-00382bfa88e2.png)"
+        "raw_content": "## 5. Hashing\n\nHashing is a **one-way** cryptographic function: input → fixed-length digest. There is **no way to reverse** it to get the original input.\n\n> *Es como hacer jugo de naranja: puedes convertir naranjas en jugo, pero no puedes reconstruir las naranjas desde el jugo.*\n\nThe digest acts as a **digital fingerprint** — even a single character change produces a completely different hash (Avalanche Effect).\n\n### Hashing Algorithms\n\n| Algorithm        | Digest Size     | Status             | Notes                                                                                       |\n| ---------------- | --------------- | ------------------ | ------------------------------------------------------------------------------------------- |\n| **MD5**          | 128-bit         | ❌ Broken           | Prone to collisions. Still used for quick integrity checks only.                            |\n| **SHA-1**        | 160-bit         | ❌ Deprecated       | Fewer collisions than MD5 but still considered weak.                                        |\n| **SHA-2 family** | 224–512-bit     | ✅ Current standard | Includes SHA-224, SHA-256, SHA-384, SHA-512.                                                |\n| **SHA-3**        | 224–512-bit     | ✅ Modern           | Uses 120 rounds (vs. 64–80 for SHA-2). More secure computation.                             |\n| **RIPEMD-160**   | 160-bit         | ⚠️ Open source alt | Competitor to SHA. Not widely adopted.                                                      |\n| **HMAC**         | Varies (paired) | ✅ Integrity + Auth | Paired with other algorithms: HMAC-SHA256, HMAC-MD5. Provides integrity AND authentication. |\n\n> *MD5 y SHA-1 son como contraseñas débiles de los 90s — todo el mundo sabe que están rotos pero algunos todavía los usan por costumbre.*\n\n### Digital Signatures — Clarification ⚠️\n\n> **El flujo del cifrado asimétrico se INVIERTE según el objetivo:**\n\n| Goal                                                     | Who acts        | Key used                  | Result                                           |\n| -------------------------------------------------------- | --------------- | ------------------------- | ------------------------------------------------ |\n| **Confidentiality** (only receiver can read)             | Sender encrypts | **Receiver's PUBLIC key** | Only receiver can decrypt with their private key |\n| **Non-repudiation / Authentication** (prove who sent it) | Sender signs    | **Sender's PRIVATE key**  | Anyone can verify with sender's public key       |\n\n**Digital Signature = Hash encrypted with sender's private key**\n\n```\nFlow:\n1. Hash the message (e.g., SHA-256)          → produces digest\n2. Encrypt digest with SENDER's private key  → digital signature\n3. Encrypt message with RECEIVER's public key → confidentiality\n4. Receiver: decrypt message → decrypt signature with SENDER's public key → compare hashes\n```\n\n> *Firmar un documento digitalmente es como estampar tu anillo de sello personal en cera. Tu anillo (llave privada) es único — nadie más puede producir ese sello. Cualquiera puede verificar el sello mirando el escudo (llave pública), pero solo tú pudiste haberlo creado.*\n\n**Algorithms used for digital signatures:** DSA, RSA, ECDSA.\n\n\n\n![21e7d098-cfc0-4ad6-9a7c-00382bfa88e2](file:///C:/Users/LENOVO/Pictures/Typedown/21e7d098-cfc0-4ad6-9a7c-00382bfa88e2.png)\n\n---"
       },
       {
         "name": "Increasing Hash Security",
-        "definition": "Pass-the-Hash: Attacker reuses stolen hash to authenticate without knowing the plain-text password",
+        "definition": "Techniques used to strengthen hashes and prevent cryptographic attacks (like Pass-the-Hash or collision attacks) on stored passwords, including key stretching, salting, and nonces.",
         "analogy": "*Pass-the-Hash: Es como robar una fotocopia de tu llave en vez de la llave original — la fotocopía funciona igual para abrir la puerta. Birthday Attack: Con solo 23 personas en un cuarto, hay 50% de probabilidad de que dos compartan cumpleaños — la probabilidad de colisión crece más rápido de lo que intuitivamente esperamos.*",
         "tables": [
           {
@@ -2952,8 +2802,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "### Hash Attacks\n\n| Attack              | Description                                                                         | Defense                                             |\n| ------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------- |\n| **Pass-the-Hash**   | Attacker reuses stolen hash to authenticate without knowing the plain-text password | Trusted OS policies, MFA, least privilege, patching |\n| **Birthday Attack** | Attacker finds two inputs with the same hash (collision) using probability theory   | Use longer hash algorithms (SHA-256+)               |\n\n> *Pass-the-Hash: Es como robar una fotocopia de tu llave en vez de la llave original — la fotocopía funciona igual para abrir la puerta. Birthday Attack: Con solo 23 personas en un cuarto, hay 50% de probabilidad de que dos compartan cumpleaños — la probabilidad de colisión crece más rápido de lo que intuitivamente esperamos.*\n\n### Defensive Techniques\n\n| Technique                | What it does                                                                            | Protects against                                |\n| ------------------------ | --------------------------------------------------------------------------------------- | ----------------------------------------------- |\n| **Key Stretching**       | Runs the weak key through the algorithm multiple times, creating a longer, stronger key | Brute force                                     |\n| **Salting**              | Adds a random value to the password before hashing                                      | Rainbow tables, dictionary attacks, brute force |\n| **Nonce**                | Adds a unique number-used-once to the auth process                                      | Replay attacks                                  |\n| **Login attempt limits** | Locks account after N failed attempts (e.g., 3)                                         | Password guessing                               |\n\n> *El salt es como agregar una pimienta aleatoria a cada contraseña antes de hashearla: aunque dos usuarios tengan el mismo password, sus hashes serán completamente distintos.*"
+        "raw_content": "## 6. Increasing Hash Security\n\n* **Definition:** Techniques used to strengthen hashes and prevent cryptographic attacks (like Pass-the-Hash or collision attacks) on stored passwords, including key stretching, salting, and nonces.\n\n### Hash Attacks\n\n| Attack              | Description                                                                         | Defense                                             |\n| ------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------- |\n| **Pass-the-Hash**   | Attacker reuses stolen hash to authenticate without knowing the plain-text password | Trusted OS policies, MFA, least privilege, patching |\n| **Birthday Attack** | Attacker finds two inputs with the same hash (collision) using probability theory   | Use longer hash algorithms (SHA-256+)               |\n\n> *Pass-the-Hash: Es como robar una fotocopia de tu llave en vez de la llave original — la fotocopía funciona igual para abrir la puerta. Birthday Attack: Con solo 23 personas en un cuarto, hay 50% de probabilidad de que dos compartan cumpleaños — la probabilidad de colisión crece más rápido de lo que intuitivamente esperamos.*\n\n### Defensive Techniques\n\n| Technique                | What it does                                                                            | Protects against                                |\n| ------------------------ | --------------------------------------------------------------------------------------- | ----------------------------------------------- |\n| **Key Stretching**       | Runs the weak key through the algorithm multiple times, creating a longer, stronger key | Brute force                                     |\n| **Salting**              | Adds a random value to the password before hashing                                      | Rainbow tables, dictionary attacks, brute force |\n| **Nonce**                | Adds a unique number-used-once to the auth process                                      | Replay attacks                                  |\n| **Login attempt limits** | Locks account after N failed attempts (e.g., 3)                                         | Password guessing                               |\n\n> *El salt es como agregar una pimienta aleatoria a cada contraseña antes de hashearla: aunque dos usuarios tengan el mismo password, sus hashes serán completamente distintos.*\n\n---"
       },
       {
         "name": "Public Key Infrastructure (PKI)",
@@ -2961,8 +2810,7 @@ const STUDY_DATA = [
         "analogy": "*Si la criptografía de clave pública es el motor, PKI es el automóvil completo con GPS, seguro y placas incluidas.*",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "PKI is the entire **system** (hardware, software, policies, people) built around asymmetric encryption that enables secure communications at scale.\n\n> *Si la criptografía de clave pública es el motor, PKI es el automóvil completo con GPS, seguro y placas incluidas.*\n\n### How HTTPS Uses PKI (Hybrid Flow)\n\n```\n1. Browser requests diontraining.com\n2. Browser gets server's public key from Certificate Authority (CA)\n3. Browser generates a random shared secret key (e.g., 51363)\n4. Browser encrypts shared secret using server's PUBLIC key → sends it\n5. Server decrypts with its PRIVATE key → now both know 51363\n6. Symmetric tunnel (AES) established using 51363 as shared secret\n7. 🔒 Padlock appears — secure communication begins\n```\n\n### Key Escrow\n\nSecure third-party storage of private keys for recovery purposes. Required for scenarios like: employee leaves with encrypted data, key is lost, or legal investigation.\n\n⚠️ **Risk:** If the escrow is compromised, all stored data is exposed. Access should require at least two administrators (separation of duties)."
+        "raw_content": "## 7. Public Key Infrastructure (PKI)\n\nPKI is the entire **system** (hardware, software, policies, people) built around asymmetric encryption that enables secure communications at scale.\n\n> *Si la criptografía de clave pública es el motor, PKI es el automóvil completo con GPS, seguro y placas incluidas.*\n\n### How HTTPS Uses PKI (Hybrid Flow)\n\n```\n1. Browser requests diontraining.com\n2. Browser gets server's public key from Certificate Authority (CA)\n3. Browser generates a random shared secret key (e.g., 51363)\n4. Browser encrypts shared secret using server's PUBLIC key → sends it\n5. Server decrypts with its PRIVATE key → now both know 51363\n6. Symmetric tunnel (AES) established using 51363 as shared secret\n7. 🔒 Padlock appears — secure communication begins\n```\n\n### Key Escrow\n\nSecure third-party storage of private keys for recovery purposes. Required for scenarios like: employee leaves with encrypted data, key is lost, or legal investigation.\n\n⚠️ **Risk:** If the escrow is compromised, all stored data is exposed. Access should require at least two administrators (separation of duties).\n\n---"
       },
       {
         "name": "Digital Certificates",
@@ -3063,8 +2911,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "A digital certificate is a **digitally signed electronic document** that binds a public key to an identity. Standard protocol: **X.509**.\n\n### Certificate Types\n\n| Type                             | Description                                  | When to use                                      |\n| -------------------------------- | -------------------------------------------- | ------------------------------------------------ |\n| **Standard**                     | Covers one specific domain                   | Single server/domain                             |\n| **Wildcard**                     | Covers all subdomains (`*.diontraining.com`) | Multiple subdomains under same root domain       |\n| **SAN (Subject Alternate Name)** | Covers multiple different domains            | `diontraining.com` AND `jasondion.com`           |\n| **Single-sided**                 | Only the server authenticates                | Most websites (standard HTTPS)                   |\n| **Dual-sided**                   | Both server AND client authenticate          | High-security environments                       |\n| **Self-signed**                  | Signed by the entity itself, not a CA        | Internal/test environments only ⚠️ Browser warns |\n| **Third-party**                  | Signed by a trusted CA                       | All public-facing websites                       |\n\n### PKI Components\n\n| Component                             | Role                                                                                                                                   |\n| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |\n| **Certificate Authority (CA)**        | Trusted third party that issues and signs certificates. Maintains publicly accessible public keys.                                     |\n| **Registration Authority (RA)**       | Accepts certificate requests, validates identity, forwards to CA                                                                       |\n| **Certificate Signing Request (CSR)** | Block of encoded text sent to CA to request a certificate. Private key is NEVER included.                                              |\n| **Root of Trust / Chain of Trust**    | Hierarchy from root CA → intermediate CA → end-entity certificate. Each level vouches for the one below.                               |\n| **Certificate Revocation List (CRL)** | Full list of all revoked certificates maintained by the CA                                                                             |\n| **OCSP**                              | Online Certificate Status Protocol — checks revocation status of a single cert by serial number. Faster than CRL but lacks encryption. |\n| **OCSP Stapling**                     | Server periodically fetches its own OCSP record and includes it in the TLS handshake — eliminates extra connection at auth time        |\n| **Public Key Pinning**                | Server delivers a set of trusted public keys in HTTP headers — browser rejects any certificate not matching                            |\n| **Key Escrow Agent**                  | Stores backup copies of private keys                                                                                                   |\n| **Key Recovery Agent**                | Software that restores lost/corrupted keys from backup                                                                                 |\n\n> *La CA es como un notario público del internet: su firma en un certificado le dice al mundo \"yo verifico que esta persona/servidor es quien dice ser\".*"
+        "raw_content": "## 8. Digital Certificates\n\nA digital certificate is a **digitally signed electronic document** that binds a public key to an identity. Standard protocol: **X.509**.\n\n### Certificate Types\n\n| Type                             | Description                                  | When to use                                      |\n| -------------------------------- | -------------------------------------------- | ------------------------------------------------ |\n| **Standard**                     | Covers one specific domain                   | Single server/domain                             |\n| **Wildcard**                     | Covers all subdomains (`*.diontraining.com`) | Multiple subdomains under same root domain       |\n| **SAN (Subject Alternate Name)** | Covers multiple different domains            | `diontraining.com` AND `jasondion.com`           |\n| **Single-sided**                 | Only the server authenticates                | Most websites (standard HTTPS)                   |\n| **Dual-sided**                   | Both server AND client authenticate          | High-security environments                       |\n| **Self-signed**                  | Signed by the entity itself, not a CA        | Internal/test environments only ⚠️ Browser warns |\n| **Third-party**                  | Signed by a trusted CA                       | All public-facing websites                       |\n\n### PKI Components\n\n| Component                             | Role                                                                                                                                   |\n| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |\n| **Certificate Authority (CA)**        | Trusted third party that issues and signs certificates. Maintains publicly accessible public keys.                                     |\n| **Registration Authority (RA)**       | Accepts certificate requests, validates identity, forwards to CA                                                                       |\n| **Certificate Signing Request (CSR)** | Block of encoded text sent to CA to request a certificate. Private key is NEVER included.                                              |\n| **Root of Trust / Chain of Trust**    | Hierarchy from root CA → intermediate CA → end-entity certificate. Each level vouches for the one below.                               |\n| **Certificate Revocation List (CRL)** | Full list of all revoked certificates maintained by the CA                                                                             |\n| **OCSP**                              | Online Certificate Status Protocol — checks revocation status of a single cert by serial number. Faster than CRL but lacks encryption. |\n| **OCSP Stapling**                     | Server periodically fetches its own OCSP record and includes it in the TLS handshake — eliminates extra connection at auth time        |\n| **Public Key Pinning**                | Server delivers a set of trusted public keys in HTTP headers — browser rejects any certificate not matching                            |\n| **Key Escrow Agent**                  | Stores backup copies of private keys                                                                                                   |\n| **Key Recovery Agent**                | Software that restores lost/corrupted keys from backup                                                                                 |\n\n> *La CA es como un notario público del internet: su firma en un certificado le dice al mundo \"yo verifico que esta persona/servidor es quien dice ser\".*\n\n---"
       },
       {
         "name": "Blockchain",
@@ -3105,12 +2952,11 @@ const STUDY_DATA = [
           "Digital contracts (smart contracts on Ethereum)",
           "Voting systems, property transfer, intellectual property"
         ],
-        "spanish_words": [],
-        "raw_content": "A **shared, immutable ledger** for recording transactions across a decentralized peer-to-peer network.\n\n> *Imagina un libro de contabilidad del que todo el mundo tiene una copia idéntica. Para alterar una entrada, tendrías que alterar la copia de TODAS las personas al mismo tiempo — prácticamente imposible.*\n\n### Structure\n\nEach **block** contains:\n\n- Previous block's hash (creates the chain)\n- Timestamp\n- Transaction hashes (organized in a Merkle tree)\n- Root hash\n\n### Key Concepts\n\n| Concept                                 | Description                                                                                                  |\n| --------------------------------------- | ------------------------------------------------------------------------------------------------------------ |\n| **Public Ledger**                       | Record-keeping system with anonymous participant identities and transparent transaction history              |\n| **Smart Contracts / Digital Contracts** | Self-executing code that automatically triggers actions when conditions are met. Tamper-proof once deployed. |\n| **Permissioned Blockchain**             | Private blockchain for business use (e.g., IBM supply chain)                                                 |\n| **Cryptocurrency**                      | Financial application of blockchain (Bitcoin, Ethereum)                                                      |\n\n### Applications\n\n- Supply chain transparency (trace food from farm to store)\n- Digital contracts (smart contracts on Ethereum)\n- Voting systems, property transfer, intellectual property"
+        "raw_content": "## 9. Blockchain\n\nA **shared, immutable ledger** for recording transactions across a decentralized peer-to-peer network.\n\n> *Imagina un libro de contabilidad del que todo el mundo tiene una copia idéntica. Para alterar una entrada, tendrías que alterar la copia de TODAS las personas al mismo tiempo — prácticamente imposible.*\n\n### Structure\n\nEach **block** contains:\n\n- Previous block's hash (creates the chain)\n- Timestamp\n- Transaction hashes (organized in a Merkle tree)\n- Root hash\n\n### Key Concepts\n\n| Concept                                 | Description                                                                                                  |\n| --------------------------------------- | ------------------------------------------------------------------------------------------------------------ |\n| **Public Ledger**                       | Record-keeping system with anonymous participant identities and transparent transaction history              |\n| **Smart Contracts / Digital Contracts** | Self-executing code that automatically triggers actions when conditions are met. Tamper-proof once deployed. |\n| **Permissioned Blockchain**             | Private blockchain for business use (e.g., IBM supply chain)                                                 |\n| **Cryptocurrency**                      | Financial application of blockchain (Bitcoin, Ethereum)                                                      |\n\n### Applications\n\n- Supply chain transparency (trace food from farm to store)\n- Digital contracts (smart contracts on Ethereum)\n- Voting systems, property transfer, intellectual property\n\n---"
       },
       {
         "name": "Encryption Tools",
-        "definition": "TPM: Secures hardware cryptographic keys; used with BitLocker",
+        "definition": "Specialized hardware and software solutions used to securely generate, store, manage, and rotate cryptographic keys (e.g., TPM, HSM, KMS, and Secure Enclave).",
         "analogy": "*TPM es el candado de tu laptop. HSM es la bóveda del banco. KMS es el administrador que lleva el inventario de todos los candados y sabe cuándo cambiarlos. El Secure Enclave es la caja fuerte dentro de tu teléfono donde vive tu huella digital.*",
         "tables": [
           {
@@ -3149,8 +2995,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "| Tool               | Full Name                | Analogy                             | Primary Use                                                                             |\n| ------------------ | ------------------------ | ----------------------------------- | --------------------------------------------------------------------------------------- |\n| **TPM**            | Trusted Platform Module  | Personal vault embedded in hardware | Secures hardware cryptographic keys; used with BitLocker                                |\n| **HSM**            | Hardware Security Module | Bank vault                          | Manages and protects keys for mission-critical/financial operations. Tamper-proof.      |\n| **KMS**            | Key Management System    | Key lifecycle manager               | Centralized generation, distribution, rotation, and destruction of cryptographic keys   |\n| **Secure Enclave** | —                        | Fortress inside the processor       | Isolated co-processor for biometric data (Face ID, Touch ID). Data never leaves device. |\n\n> *TPM es el candado de tu laptop. HSM es la bóveda del banco. KMS es el administrador que lleva el inventario de todos los candados y sabe cuándo cambiarlos. El Secure Enclave es la caja fuerte dentro de tu teléfono donde vive tu huella digital.*"
+        "raw_content": "## 10. Encryption Tools\n\n* **Definition:** Specialized hardware and software solutions used to securely generate, store, manage, and rotate cryptographic keys (e.g., TPM, HSM, KMS, and Secure Enclave).\n\n| Tool               | Full Name                | Analogy                             | Primary Use                                                                             |\n| ------------------ | ------------------------ | ----------------------------------- | --------------------------------------------------------------------------------------- |\n| **TPM**            | Trusted Platform Module  | Personal vault embedded in hardware | Secures hardware cryptographic keys; used with BitLocker                                |\n| **HSM**            | Hardware Security Module | Bank vault                          | Manages and protects keys for mission-critical/financial operations. Tamper-proof.      |\n| **KMS**            | Key Management System    | Key lifecycle manager               | Centralized generation, distribution, rotation, and destruction of cryptographic keys   |\n| **Secure Enclave** | —                        | Fortress inside the processor       | Isolated co-processor for biometric data (Face ID, Touch ID). Data never leaves device. |\n\n> *TPM es el candado de tu laptop. HSM es la bóveda del banco. KMS es el administrador que lleva el inventario de todos los candados y sabe cuándo cambiarlos. El Secure Enclave es la caja fuerte dentro de tu teléfono donde vive tu huella digital.*\n\n---"
       },
       {
         "name": "Obfuscation",
@@ -3183,12 +3028,11 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "Obfuscation hides information — not always by encrypting it, but by concealing its existence or true form.\n\n### Three Techniques\n\n| Technique                      | Definition                                                                                     | Real-world Example                                                                                         |\n| ------------------------------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |\n| **Steganography**              | Hiding secret data inside an ordinary file (image, audio, text) so its existence is undetected | Embedding a message in specific pixel color values of a photo                                              |\n| **Tokenization**               | Replacing sensitive data with a non-sensitive token. Real data stored in a secure vault.       | Credit card number replaced by a random token at point of sale                                             |\n| **Data Masking / Obfuscation** | Disguising real data with fake but realistic-looking data                                      | Showing only last 4 digits of a credit card; replacing real customer names with fictional ones for testing |\n\n> *Steganography: el espía que pone \"Encuéntrame a las seis\" codificado en la primera letra de cada palabra de un clasificado. Tokenization: el cajero que solo ve un token inútil — el número real de tu tarjeta vive en otra caja fuerte. Data Masking: el desarrollador que practica con datos que parecen reales pero son inventados.*\n\n⚠️ **Steganography ≠ encryption.** The data is hidden, not encrypted. If someone knows where to look, they can extract it without a key."
+        "raw_content": "## 11. Obfuscation\n\nObfuscation hides information — not always by encrypting it, but by concealing its existence or true form.\n\n### Three Techniques\n\n| Technique                      | Definition                                                                                     | Real-world Example                                                                                         |\n| ------------------------------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |\n| **Steganography**              | Hiding secret data inside an ordinary file (image, audio, text) so its existence is undetected | Embedding a message in specific pixel color values of a photo                                              |\n| **Tokenization**               | Replacing sensitive data with a non-sensitive token. Real data stored in a secure vault.       | Credit card number replaced by a random token at point of sale                                             |\n| **Data Masking / Obfuscation** | Disguising real data with fake but realistic-looking data                                      | Showing only last 4 digits of a credit card; replacing real customer names with fictional ones for testing |\n\n> *Steganography: el espía que pone \"Encuéntrame a las seis\" codificado en la primera letra de cada palabra de un clasificado. Tokenization: el cajero que solo ve un token inútil — el número real de tu tarjeta vive en otra caja fuerte. Data Masking: el desarrollador que practica con datos que parecen reales pero son inventados.*\n\n⚠️ **Steganography ≠ encryption.** The data is hidden, not encrypted. If someone knows where to look, they can extract it without a key.\n\n---"
       },
       {
         "name": "Cryptographic Attacks",
-        "definition": "Forces a system to use an older, weaker cryptographic protocol than the one it normally supports, exploiting known vulnerabilities in that older version.",
+        "definition": "Exploitation techniques used by threat actors to bypass, weaken, or break cryptographic protections, such as forcing older protocols (downgrade) or finding matching digests (collision).",
         "analogy": "*Es como convencer a dos personas que hablan inglés y español a que solo hablen por telégrafo morse porque el atacante no puede entender inglés ni español.*",
         "tables": [
           {
@@ -3257,8 +3101,7 @@ const STUDY_DATA = [
           "MD5 was proven to produce collisions → rendered unsuitable for certificates",
           "**Defense:** Use longer hash algorithms (SHA-256, SHA-3)"
         ],
-        "spanish_words": [],
-        "raw_content": "### Downgrade Attack (Version Rollback Attack)\n\nForces a system to use an **older, weaker cryptographic protocol** than the one it normally supports, exploiting known vulnerabilities in that older version.\n\n> *Es como convencer a dos personas que hablan inglés y español a que solo hablen por telégrafo morse porque el atacante no puede entender inglés ni español.*\n\n**Famous example:** POODLE attack — forced systems to revert to SSL 3.0 (insecure) despite TLS being available.\n\n**Defenses:**\n\n- Remove support for legacy protocols\n- Version intolerance checks (start by claiming only the latest version is supported)\n\n### Collision Attack (Birthday Attack)\n\nFinds two different inputs that produce the **same hash digest**. Undermines integrity verification.\n\n> *El paradox del cumpleaños: solo necesitas 23 personas para tener 50% de probabilidad de que dos compartan cumpleaños. El punto: las colisiones ocurren más rápido de lo que intuitivamente pensamos.*\n\n- MD5 is especially vulnerable (128-bit output = limited unique values)\n- MD5 was proven to produce collisions → rendered unsuitable for certificates\n- **Defense:** Use longer hash algorithms (SHA-256, SHA-3)\n\n### Quantum Computing Threat\n\nQuantum computers use **qubits** (which can represent multiple states simultaneously via superposition) to solve complex math problems exponentially faster than classical computers.\n\n> *Una computadora clásica prueba combinaciones de uno en uno como abrir cerraduras en fila. Una computadora cuántica es como abrir todas las cerraduras al mismo tiempo.*\n\n| Aspect                 | Classical Computer                    | Quantum Computer                                                |\n| ---------------------- | ------------------------------------- | --------------------------------------------------------------- |\n| Bit type               | Binary (0 or 1)                       | Qubit (multiple states simultaneously)                          |\n| RSA/ECC threat         | Safe (factoring large primes is hard) | ⚠️ Proven breakable — factors primes rapidly                    |\n| Symmetric (AES) threat | Manageable                            | Partially mitigated by doubling key size                        |\n| Current status         | Ubiquitous                            | Prototype/R&D only; practical use ~2030 (gov); ~2040 (consumer) |\n\n**Post-Quantum Cryptography (NIST selections, 2022):**\n\n| Purpose                  | Recommended Algorithm            | Notes                                                     |\n| ------------------------ | -------------------------------- | --------------------------------------------------------- |\n| General encryption       | **CRYSTALS-Kyber**               | Based on lattice problems; equivalent strength to AES-256 |\n| Digital signatures       | **CRYSTALS-Dilithium** (primary) | Lattice-based                                             |\n| Digital signatures (alt) | **FALCON**                       | Lattice-based                                             |\n| Digital signatures (alt) | **SPHINCS+**                     | Hash-based                                                |\n\n\n\n### Encryption Classification\n\n```\nSymmetric  (1 key, both encrypt & decrypt) → DES, 3DES, AES, Blowfish, RC4, RC5, RC6\nAsymmetric (public + private key pair)     → Diffie-Hellman, RSA, ECC\n\nStream cipher (bit by bit)  → RC4\nBlock cipher  (fixed blocks) → All others listed above\n```\n\n### Algorithm Status at a Glance\n\n```\n✅ Use now:    AES (symmetric), RSA, ECC/ECDSA, SHA-256, SHA-3, HMAC\n⚠️ Avoid:     3DES, Blowfish, RC4, SHA-1, MD5 (legacy/broken)\n❌ Obsolete:  DES, RC4 in WEP/SSL contexts\n🔮 Future:    CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON, SPHINCS+\n```\n\n### Asymmetric Key Usage Rules\n\n```\nEncrypt for someone (confidentiality)     → use RECEIVER's PUBLIC key\nSign/prove identity (non-repudiation)     → use SENDER's PRIVATE key\nVerify a signature                        → use SENDER's PUBLIC key\nDecrypt a message addressed to you        → use YOUR PRIVATE key\n```\n\n### Hashing Defenses\n\n```\nKey Stretching → multiple hash rounds → defeats brute force\nSalting        → random value added   → defeats rainbow tables, dictionary attacks\nNonce          → number used once     → defeats replay attacks\nLogin limits   → lock after N tries   → defeats guessing attacks\n```\n\n### PKI Chain of Trust\n\n```\nRoot CA → Intermediate CA → End-Entity Certificate\n(grandfather)  (father)        (you)\n```\n\n### Obfuscation Quick Map\n\n```\nSteganography → hides existence of data (in an image/file)\nTokenization  → replaces sensitive data with meaningless token\nData Masking  → disguises data with fake-but-realistic values\n```\n\n### Cryptographic Attacks\n\n```\nDowngrade Attack  → force to older protocol (POODLE: SSL 3.0)\nCollision Attack  → two inputs → same hash (Birthday Attack)\nQuantum Threat    → breaks RSA/ECC via prime factoring; AES mitigated by doubling key size\n```\n\n\n*CompTIA Security+ | Section 8 — Cryptographic Solutions | OBJ 1.4 · 2.3 · 2.4*"
+        "raw_content": "## 12. Cryptographic Attacks\n\n* **Definition:** Exploitation techniques used by threat actors to bypass, weaken, or break cryptographic protections, such as forcing older protocols (downgrade) or finding matching digests (collision).\n\n### Downgrade Attack (Version Rollback Attack)\n\nForces a system to use an **older, weaker cryptographic protocol** than the one it normally supports, exploiting known vulnerabilities in that older version.\n\n> *Es como convencer a dos personas que hablan inglés y español a que solo hablen por telégrafo morse porque el atacante no puede entender inglés ni español.*\n\n**Famous example:** POODLE attack — forced systems to revert to SSL 3.0 (insecure) despite TLS being available.\n\n**Defenses:**\n\n- Remove support for legacy protocols\n- Version intolerance checks (start by claiming only the latest version is supported)\n\n### Collision Attack (Birthday Attack)\n\nFinds two different inputs that produce the **same hash digest**. Undermines integrity verification.\n\n> *El paradox del cumpleaños: solo necesitas 23 personas para tener 50% de probabilidad de que dos compartan cumpleaños. El punto: las colisiones ocurren más rápido de lo que intuitivamente pensamos.*\n\n- MD5 is especially vulnerable (128-bit output = limited unique values)\n- MD5 was proven to produce collisions → rendered unsuitable for certificates\n- **Defense:** Use longer hash algorithms (SHA-256, SHA-3)\n\n### Quantum Computing Threat\n\nQuantum computers use **qubits** (which can represent multiple states simultaneously via superposition) to solve complex math problems exponentially faster than classical computers.\n\n> *Una computadora clásica prueba combinaciones de uno en uno como abrir cerraduras en fila. Una computadora cuántica es como abrir todas las cerraduras al mismo tiempo.*\n\n| Aspect                 | Classical Computer                    | Quantum Computer                                                |\n| ---------------------- | ------------------------------------- | --------------------------------------------------------------- |\n| Bit type               | Binary (0 or 1)                       | Qubit (multiple states simultaneously)                          |\n| RSA/ECC threat         | Safe (factoring large primes is hard) | ⚠️ Proven breakable — factors primes rapidly                    |\n| Symmetric (AES) threat | Manageable                            | Partially mitigated by doubling key size                        |\n| Current status         | Ubiquitous                            | Prototype/R&D only; practical use ~2030 (gov); ~2040 (consumer) |\n\n**Post-Quantum Cryptography (NIST selections, 2022):**\n\n| Purpose                  | Recommended Algorithm            | Notes                                                     |\n| ------------------------ | -------------------------------- | --------------------------------------------------------- |\n| General encryption       | **CRYSTALS-Kyber**               | Based on lattice problems; equivalent strength to AES-256 |\n| Digital signatures       | **CRYSTALS-Dilithium** (primary) | Lattice-based                                             |\n| Digital signatures (alt) | **FALCON**                       | Lattice-based                                             |\n| Digital signatures (alt) | **SPHINCS+**                     | Hash-based                                                |\n\n---\n\n### Encryption Classification\n\n```\nSymmetric  (1 key, both encrypt & decrypt) → DES, 3DES, AES, Blowfish, RC4, RC5, RC6\nAsymmetric (public + private key pair)     → Diffie-Hellman, RSA, ECC\n\nStream cipher (bit by bit)  → RC4\nBlock cipher  (fixed blocks) → All others listed above\n```\n\n### Algorithm Status at a Glance\n\n```\n✅ Use now:    AES (symmetric), RSA, ECC/ECDSA, SHA-256, SHA-3, HMAC\n⚠️ Avoid:     3DES, Blowfish, RC4, SHA-1, MD5 (legacy/broken)\n❌ Obsolete:  DES, RC4 in WEP/SSL contexts\n🔮 Future:    CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON, SPHINCS+\n```\n\n### Asymmetric Key Usage Rules\n\n```\nEncrypt for someone (confidentiality)     → use RECEIVER's PUBLIC key\nSign/prove identity (non-repudiation)     → use SENDER's PRIVATE key\nVerify a signature                        → use SENDER's PUBLIC key\nDecrypt a message addressed to you        → use YOUR PRIVATE key\n```\n\n### Hashing Defenses\n\n```\nKey Stretching → multiple hash rounds → defeats brute force\nSalting        → random value added   → defeats rainbow tables, dictionary attacks\nNonce          → number used once     → defeats replay attacks\nLogin limits   → lock after N tries   → defeats guessing attacks\n```\n\n### PKI Chain of Trust\n\n```\nRoot CA → Intermediate CA → End-Entity Certificate\n(grandfather)  (father)        (you)\n```\n\n### Obfuscation Quick Map\n\n```\nSteganography → hides existence of data (in an image/file)\nTokenization  → replaces sensitive data with meaningless token\nData Masking  → disguises data with fake-but-realistic values\n```\n\n### Cryptographic Attacks\n\n```\nDowngrade Attack  → force to older protocol (POODLE: SSL 3.0)\nCollision Attack  → two inputs → same hash (Birthday Attack)\nQuantum Threat    → breaks RSA/ECC via prime factoring; AES mitigated by doubling key size\n```\n\n---\n\n*CompTIA Security+ | Section 8 — Cryptographic Solutions | OBJ 1.4 · 2.3 · 2.4*"
       }
     ]
   },
@@ -3307,8 +3150,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "**Risk management** is the systematic process of identifying, analyzing, treating, monitoring, and reporting risks to ensure an organization achieves its objectives in a manner consistent with its **risk appetite**.\n\n> *Es como el departamento de seguridad de un aeropuerto: no pueden eliminar todos los riesgos, pero tienen procesos para identificar amenazas, evaluarlas, decidir cómo manejarlas y reportarlas a las autoridades. Todo de forma continua y estructurada.*\n\n### The 5-Step Risk Management Lifecycle\n\n| Step | Name | What It Does |\n| --- | --- | --- |\n| 1 | **Risk Identification** | Recognizes potential risks that could impact operations or objectives |\n| 2 | **Risk Analysis** | Evaluates likelihood and potential impact of identified risks (qualitative or quantitative) |\n| 3 | **Risk Treatment** | Develops strategies: avoidance, reduction, sharing, or acceptance |\n| 4 | **Risk Monitoring** | Tracks identified risks and effectiveness of responses on an ongoing basis |\n| 5 | **Risk Reporting** | Communicates risk information to stakeholders via dashboards, heat maps, or reports |"
+        "raw_content": "## 1. Risk Management Overview\n\n**Risk management** is the systematic process of identifying, analyzing, treating, monitoring, and reporting risks to ensure an organization achieves its objectives in a manner consistent with its **risk appetite**.\n\n> *Es como el departamento de seguridad de un aeropuerto: no pueden eliminar todos los riesgos, pero tienen procesos para identificar amenazas, evaluarlas, decidir cómo manejarlas y reportarlas a las autoridades. Todo de forma continua y estructurada.*\n\n### The 5-Step Risk Management Lifecycle\n\n| Step | Name | What It Does |\n| --- | --- | --- |\n| 1 | **Risk Identification** | Recognizes potential risks that could impact operations or objectives |\n| 2 | **Risk Analysis** | Evaluates likelihood and potential impact of identified risks (qualitative or quantitative) |\n| 3 | **Risk Treatment** | Develops strategies: avoidance, reduction, sharing, or acceptance |\n| 4 | **Risk Monitoring** | Tracks identified risks and effectiveness of responses on an ongoing basis |\n| 5 | **Risk Reporting** | Communicates risk information to stakeholders via dashboards, heat maps, or reports |\n\n---"
       },
       {
         "name": "Risk Assessment Frequency",
@@ -3349,8 +3191,7 @@ const STUDY_DATA = [
           "**Ad-hoc** → triggered by an event; *may be repeated* if the same type of situation arises again.",
           "**One-time** → tied to a specific project; *not repeated* under any circumstances."
         ],
-        "spanish_words": [],
-        "raw_content": "**Risk assessment frequency** refers to how often an organization conducts its risk assessment process. The right frequency depends on the organization's nature, industry, and risk environment.\n\n> *Imagina que eres el guardia de un edificio: a veces revisas porque algo pasó (ad hoc), a veces haces rondas fijas cada hora (recurring), a veces haces una sola revisión antes de un evento especial (one-time), y a veces tienes cámaras que monitorean en tiempo real (continuous).*\n\n### The 4 Types of Assessment Frequency\n\n| Type | When It Happens | Example |\n| --- | --- | --- |\n| **Ad-hoc** | As needed, triggered by a specific event or situation | New product launch, regulatory change, natural disaster |\n| **Recurring** | At regular scheduled intervals (annually, quarterly, monthly) | Annual penetration testing, quarterly credit risk review |\n| **One-time** | For a specific project or initiative; not repeated | Implementing a new IT system, major organizational change |\n| **Continuous** | Ongoing real-time monitoring enabled by technology | Cybersecurity threat monitoring, real-time data analysis |\n\n⚠️ **Key distinction — Ad-hoc vs. One-time:**\n- **Ad-hoc** → triggered by an event; *may be repeated* if the same type of situation arises again.\n- **One-time** → tied to a specific project; *not repeated* under any circumstances."
+        "raw_content": "## 2. Risk Assessment Frequency\n\n**Risk assessment frequency** refers to how often an organization conducts its risk assessment process. The right frequency depends on the organization's nature, industry, and risk environment.\n\n> *Imagina que eres el guardia de un edificio: a veces revisas porque algo pasó (ad hoc), a veces haces rondas fijas cada hora (recurring), a veces haces una sola revisión antes de un evento especial (one-time), y a veces tienes cámaras que monitorean en tiempo real (continuous).*\n\n### The 4 Types of Assessment Frequency\n\n| Type | When It Happens | Example |\n| --- | --- | --- |\n| **Ad-hoc** | As needed, triggered by a specific event or situation | New product launch, regulatory change, natural disaster |\n| **Recurring** | At regular scheduled intervals (annually, quarterly, monthly) | Annual penetration testing, quarterly credit risk review |\n| **One-time** | For a specific project or initiative; not repeated | Implementing a new IT system, major organizational change |\n| **Continuous** | Ongoing real-time monitoring enabled by technology | Cybersecurity threat monitoring, real-time data analysis |\n\n⚠️ **Key distinction — Ad-hoc vs. One-time:**\n- **Ad-hoc** → triggered by an event; *may be repeated* if the same type of situation arises again.\n- **One-time** → tied to a specific project; *not repeated* under any circumstances.\n\n---"
       },
       {
         "name": "Risk Identification",
@@ -3362,8 +3203,7 @@ const STUDY_DATA = [
           "All risks — even unlikely ones — should be documented and analyzed for impact and likelihood.",
           "Risks span categories: **operational, financial, strategic, and reputational**."
         ],
-        "spanish_words": [],
-        "raw_content": "**Risk identification** is the proactive process of recognizing potential threats and vulnerabilities that could affect an organization's operations or objectives — regardless of how likely or unlikely they may seem.\n\n> *Es como hacer una lista de todo lo que podría salir mal antes de un viaje largo: llantas ponchadas, lluvia, accidentes, que se te olvide el pasaporte. Identificarlos no significa que van a pasar, pero te permite prepararte.*\n\n- Techniques include: brainstorming, checklists, interviews, and scenario analysis.\n- All risks — even unlikely ones — should be documented and analyzed for impact and likelihood.\n- Risks span categories: **operational, financial, strategic, and reputational**."
+        "raw_content": "## 3. Risk Identification\n\n**Risk identification** is the proactive process of recognizing potential threats and vulnerabilities that could affect an organization's operations or objectives — regardless of how likely or unlikely they may seem.\n\n> *Es como hacer una lista de todo lo que podría salir mal antes de un viaje largo: llantas ponchadas, lluvia, accidentes, que se te olvide el pasaporte. Identificarlos no significa que van a pasar, pero te permite prepararte.*\n\n- Techniques include: brainstorming, checklists, interviews, and scenario analysis.\n- All risks — even unlikely ones — should be documented and analyzed for impact and likelihood.\n- Risks span categories: **operational, financial, strategic, and reputational**.\n\n---"
       },
       {
         "name": "Business Impact Analysis (BIA)",
@@ -3410,8 +3250,7 @@ const STUDY_DATA = [
           "**Higher MTBF** = more reliable system = less frequent failures.",
           "**RTO** focuses on *time to restore*; **RPO** focuses on *how much data loss is tolerable*."
         ],
-        "spanish_words": [],
-        "raw_content": "A **Business Impact Analysis (BIA)** evaluates the potential effects of disruption to an organization's critical business functions and processes. It answers: *what happens if this breaks, and how fast do we need it back?*\n\n> *Es el análisis que hace un hospital antes de instalar un nuevo sistema: ¿qué pasa si el sistema de registros médicos falla? ¿Cuántas horas podemos operar sin él? ¿Cuántos datos podemos permitirnos perder? Esas respuestas definen los objetivos de recuperación.*\n\n### BIA Key Metrics\n\n| Metric | Full Name | What It Measures | Example |\n| --- | --- | --- | --- |\n| **RTO** | Recovery Time Objective | Max acceptable downtime before severe business impact | E-commerce site must be restored within 2 hours |\n| **RPO** | Recovery Point Objective | Max acceptable data loss measured in time | Financial system must recover data up to the last 15 minutes |\n| **MTTR** | Mean Time to Repair | Average time required to repair a failed component or system | Machine repaired in an average of 4 hours across 5 failures |\n| **MTBF** | Mean Time Between Failures | Average time between system failures (reliability indicator) | Machine fails once every ~72 days (5 times/year) |\n\n- **Lower MTTR** = faster recovery = less disruption.\n- **Higher MTBF** = more reliable system = less frequent failures.\n- **RTO** focuses on *time to restore*; **RPO** focuses on *how much data loss is tolerable*."
+        "raw_content": "## 4. Business Impact Analysis (BIA)\n\nA **Business Impact Analysis (BIA)** evaluates the potential effects of disruption to an organization's critical business functions and processes. It answers: *what happens if this breaks, and how fast do we need it back?*\n\n> *Es el análisis que hace un hospital antes de instalar un nuevo sistema: ¿qué pasa si el sistema de registros médicos falla? ¿Cuántas horas podemos operar sin él? ¿Cuántos datos podemos permitirnos perder? Esas respuestas definen los objetivos de recuperación.*\n\n### BIA Key Metrics\n\n| Metric | Full Name | What It Measures | Example |\n| --- | --- | --- | --- |\n| **RTO** | Recovery Time Objective | Max acceptable downtime before severe business impact | E-commerce site must be restored within 2 hours |\n| **RPO** | Recovery Point Objective | Max acceptable data loss measured in time | Financial system must recover data up to the last 15 minutes |\n| **MTTR** | Mean Time to Repair | Average time required to repair a failed component or system | Machine repaired in an average of 4 hours across 5 failures |\n| **MTBF** | Mean Time Between Failures | Average time between system failures (reliability indicator) | Machine fails once every ~72 days (5 times/year) |\n\n- **Lower MTTR** = faster recovery = less disruption.\n- **Higher MTBF** = more reliable system = less frequent failures.\n- **RTO** focuses on *time to restore*; **RPO** focuses on *how much data loss is tolerable*.\n\n---"
       },
       {
         "name": "Risk Register",
@@ -3486,8 +3325,7 @@ const STUDY_DATA = [
         "list_items": [
           "Example: In a bank, a spike in the number of loan defaults is a KRI for credit risk — it signals action is needed before losses become critical."
         ],
-        "spanish_words": [],
-        "raw_content": "A **risk register** (also called a *risk log*) is the central document that records all identified risks, their details, and how they are being managed. It is shared among stakeholders and drives accountability.\n\n> *Es como el historial clínico de una organización: cada riesgo tiene su expediente con diagnóstico (descripción), gravedad (impacto), probabilidad (likelihood), pronóstico (outcome) y el médico responsable (risk owner). Sin este registro, cada área trata sus riesgos de forma aislada.*\n\n### Core Fields of a Risk Register\n\n| Field | Description |\n| --- | --- |\n| **Risk Description** | Clear, concise explanation of the risk |\n| **Risk Impact** | Potential consequences if the risk occurs (Low / Medium / High) |\n| **Risk Likelihood** | Probability of occurrence (scale: rare → almost certain, or 1–5) |\n| **Risk Outcome** | The direct result if the risk materializes |\n| **Risk Level / Threshold** | Combined impact + likelihood score → determines priority (High / Medium / Low) |\n| **Cost** | Financial impact if the risk occurs or the cost to mitigate it |\n| **Key Risk Indicators (KRIs)** | Predictive metrics that signal increasing risk exposure before it escalates |\n| **Risk Owner** | The person or group accountable for monitoring and managing the risk |\n\n### Risk Appetite — 3 Types\n\n**Risk appetite** is the amount and type of risk an organization is *willing to pursue* to achieve its strategic objectives.\n\n| Type | Behavior | Common In |\n| --- | --- | --- |\n| **Expansionary** | Willing to take on more risk for higher returns | Aggressive, growth-oriented businesses |\n| **Conservative** | Prefers less risk even at the cost of lower returns | Organizations prioritizing stability |\n| **Neutral** | Balanced approach between risk and return | General-purpose organizations |\n\n**Risk tolerance** is the *maximum amount* of risk an organization is prepared to accept before action is required.\n\n> *Diferencia clave: el risk appetite es cuánto riesgo quieres buscar activamente. El risk tolerance es el límite máximo que puedes aguantar antes de tener que actuar.*\n\n### Key Risk Indicators (KRIs)\n\n**KRIs** are forward-looking metrics that provide early warning signals of rising risk exposure. They are tied to the organization's risk appetite and objectives.\n\n- Example: In a bank, a spike in the number of loan defaults is a KRI for credit risk — it signals action is needed before losses become critical."
+        "raw_content": "## 5. Risk Register\n\nA **risk register** (also called a *risk log*) is the central document that records all identified risks, their details, and how they are being managed. It is shared among stakeholders and drives accountability.\n\n> *Es como el historial clínico de una organización: cada riesgo tiene su expediente con diagnóstico (descripción), gravedad (impacto), probabilidad (likelihood), pronóstico (outcome) y el médico responsable (risk owner). Sin este registro, cada área trata sus riesgos de forma aislada.*\n\n### Core Fields of a Risk Register\n\n| Field | Description |\n| --- | --- |\n| **Risk Description** | Clear, concise explanation of the risk |\n| **Risk Impact** | Potential consequences if the risk occurs (Low / Medium / High) |\n| **Risk Likelihood** | Probability of occurrence (scale: rare → almost certain, or 1–5) |\n| **Risk Outcome** | The direct result if the risk materializes |\n| **Risk Level / Threshold** | Combined impact + likelihood score → determines priority (High / Medium / Low) |\n| **Cost** | Financial impact if the risk occurs or the cost to mitigate it |\n| **Key Risk Indicators (KRIs)** | Predictive metrics that signal increasing risk exposure before it escalates |\n| **Risk Owner** | The person or group accountable for monitoring and managing the risk |\n\n### Risk Appetite — 3 Types\n\n**Risk appetite** is the amount and type of risk an organization is *willing to pursue* to achieve its strategic objectives.\n\n| Type | Behavior | Common In |\n| --- | --- | --- |\n| **Expansionary** | Willing to take on more risk for higher returns | Aggressive, growth-oriented businesses |\n| **Conservative** | Prefers less risk even at the cost of lower returns | Organizations prioritizing stability |\n| **Neutral** | Balanced approach between risk and return | General-purpose organizations |\n\n**Risk tolerance** is the *maximum amount* of risk an organization is prepared to accept before action is required.\n\n> *Diferencia clave: el risk appetite es cuánto riesgo quieres buscar activamente. El risk tolerance es el límite máximo que puedes aguantar antes de tener que actuar.*\n\n### Key Risk Indicators (KRIs)\n\n**KRIs** are forward-looking metrics that provide early warning signals of rising risk exposure. They are tied to the organization's risk appetite and objectives.\n\n- Example: In a bank, a spike in the number of loan defaults is a KRI for credit risk — it signals action is needed before losses become critical.\n\n---"
       },
       {
         "name": "Qualitative Risk Analysis",
@@ -3523,8 +3361,7 @@ const STUDY_DATA = [
           "The **combined rating** of Likelihood × Impact determines the **risk priority**.",
           "Outputs are used to guide risk treatment decisions."
         ],
-        "spanish_words": [],
-        "raw_content": "**Qualitative risk analysis** assesses and prioritizes risks using descriptive, categorical scales rather than hard numbers. It relies on expert judgment and experience.\n\n> *Es como calificar el peligro de una tormenta sin medirla con instrumentos: \"riesgo alto de inundación\" basado en la experiencia del meteorólogo. No necesitas datos exactos para tomar decisiones, solo categorías claras.*\n\n### Likelihood × Impact Framework\n\n| Rating | Likelihood | Impact |\n| --- | --- | --- |\n| **Low** | Unlikely to occur | Minor damage; essential functions still operational |\n| **Medium** | Possible | Significant damage or loss to assets |\n| **High** | Likely or almost certain | Major damage; essential functions cannot be performed |\n\n- The **combined rating** of Likelihood × Impact determines the **risk priority**.\n- Outputs are used to guide risk treatment decisions."
+        "raw_content": "## 6. Qualitative Risk Analysis\n\n**Qualitative risk analysis** assesses and prioritizes risks using descriptive, categorical scales rather than hard numbers. It relies on expert judgment and experience.\n\n> *Es como calificar el peligro de una tormenta sin medirla con instrumentos: \"riesgo alto de inundación\" basado en la experiencia del meteorólogo. No necesitas datos exactos para tomar decisiones, solo categorías claras.*\n\n### Likelihood × Impact Framework\n\n| Rating | Likelihood | Impact |\n| --- | --- | --- |\n| **Low** | Unlikely to occur | Minor damage; essential functions still operational |\n| **Medium** | Possible | Significant damage or loss to assets |\n| **High** | Likely or almost certain | Major damage; essential functions cannot be performed |\n\n- The **combined rating** of Likelihood × Impact determines the **risk priority**.\n- Outputs are used to guide risk treatment decisions.\n\n---"
       },
       {
         "name": "Quantitative Risk Analysis",
@@ -3572,12 +3409,11 @@ const STUDY_DATA = [
           "Extra cost = $40,000 → would take 20 years to break even → **not worth it**",
           "This is how quantitative analysis drives real-world investment decisions."
         ],
-        "spanish_words": [],
-        "raw_content": "**Quantitative risk analysis** uses numerical measurements and statistical methods to evaluate risk. It produces concrete financial estimates for each risk.\n\n> *Es como el actuario de una aseguradora que calcula exactamente cuánto dinero espera perder por accidentes de tráfico al año basándose en estadísticas. No dice \"es un riesgo alto\", dice \"esperamos perder $2,500 al año por este riesgo específico\".*\n\n### The 4 Core Components\n\n| Term | Acronym | Formula | What It Represents |\n| --- | --- | --- | --- |\n| **Exposure Factor** | EF | — | Percentage of the asset lost in a single event (0–100%) |\n| **Single Loss Expectancy** | SLE | `Asset Value × EF` | Dollar value of a single loss event |\n| **Annualized Rate of Occurrence** | ARO | `1 / years between events` | How many times per year the threat is expected to occur |\n| **Annualized Loss Expectancy** | ALE | `SLE × ARO` | Expected total financial loss per year from this risk |\n\n### Worked Example\n\nA company has a server worth **$10,000**. The exposure factor for a server crash is **50%**, and the server crashes **once every 2 years**.\n\n```\nSLE = $10,000 × 50%       = $5,000\nARO = 1 / 2 years         = 0.5\nALE = $5,000 × 0.5        = $2,500/year\n```\n\n- A vendor offers a better server (crashes once every 10 years) for $50,000 with a 3-year life.\n- New ALE = $5,000 × 0.1 = $500/year → saves $2,000/year\n- Extra cost = $40,000 → would take 20 years to break even → **not worth it**\n- This is how quantitative analysis drives real-world investment decisions."
+        "raw_content": "## 7. Quantitative Risk Analysis\n\n**Quantitative risk analysis** uses numerical measurements and statistical methods to evaluate risk. It produces concrete financial estimates for each risk.\n\n> *Es como el actuario de una aseguradora que calcula exactamente cuánto dinero espera perder por accidentes de tráfico al año basándose en estadísticas. No dice \"es un riesgo alto\", dice \"esperamos perder $2,500 al año por este riesgo específico\".*\n\n### The 4 Core Components\n\n| Term | Acronym | Formula | What It Represents |\n| --- | --- | --- | --- |\n| **Exposure Factor** | EF | — | Percentage of the asset lost in a single event (0–100%) |\n| **Single Loss Expectancy** | SLE | `Asset Value × EF` | Dollar value of a single loss event |\n| **Annualized Rate of Occurrence** | ARO | `1 / years between events` | How many times per year the threat is expected to occur |\n| **Annualized Loss Expectancy** | ALE | `SLE × ARO` | Expected total financial loss per year from this risk |\n\n### Worked Example\n\nA company has a server worth **$10,000**. The exposure factor for a server crash is **50%**, and the server crashes **once every 2 years**.\n\n```\nSLE = $10,000 × 50%       = $5,000\nARO = 1 / 2 years         = 0.5\nALE = $5,000 × 0.5        = $2,500/year\n```\n\n- A vendor offers a better server (crashes once every 10 years) for $50,000 with a 3-year life.\n- New ALE = $5,000 × 0.1 = $500/year → saves $2,000/year\n- Extra cost = $40,000 → would take 20 years to break even → **not worth it**\n- This is how quantitative analysis drives real-world investment decisions.\n\n---"
       },
       {
         "name": "Risk Management Strategies",
-        "definition": "Once risks are identified and analyzed, the organization must decide how to treat each risk. There are four primary strategies.",
+        "definition": "The structured approaches used by an organization to address and respond to identified risks, consisting of four primary strategies: risk transference (sharing), risk acceptance, risk avoidance, and risk mitigation.",
         "analogy": "*Imagina que descubres que el techo de tu casa tiene una gotera: puedes ignorarla si es mínima (aceptar), contratar un seguro (transferir), mudarte de casa para evitar el problema (evitar), o reparar el techo ahora (mitigar). Cada opción tiene un costo y una justificación.*",
         "tables": [
           {
@@ -3617,8 +3453,7 @@ const STUDY_DATA = [
           "**Avoidance** is chosen when the risk is too severe to accept or transfer.",
           "**Mitigation** is the *most common* strategy in practice."
         ],
-        "spanish_words": [],
-        "raw_content": "Once risks are identified and analyzed, the organization must decide **how to treat each risk**. There are four primary strategies.\n\n> *Imagina que descubres que el techo de tu casa tiene una gotera: puedes ignorarla si es mínima (aceptar), contratar un seguro (transferir), mudarte de casa para evitar el problema (evitar), o reparar el techo ahora (mitigar). Cada opción tiene un costo y una justificación.*\n\n### The 4 Strategies\n\n| Strategy | What It Means | Common Methods |\n| --- | --- | --- |\n| **Transfer (Sharing)** | Shift financial responsibility to another party | Insurance policies, contract indemnity clauses |\n| **Accept** | Acknowledge the risk and take no action to prevent it | Exemption (excluded from a rule), Exception (avoids rule under specific conditions) |\n| **Avoid** | Change plans to eliminate the risk entirely | Not launching a risky product, not operating in an unstable region |\n| **Mitigate** | Reduce the likelihood or impact of the risk | Safety training, cybersecurity controls, redundancy systems |\n\n### Key Notes on Each Strategy\n\n- **Transfer** does not eliminate the risk — it shifts the *financial consequences*. Reputational risk stays with the original party.\n- **Accept → Exemption**: The party is excluded from a rule entirely and operates without its protections.\n- **Accept → Exception**: The party is normally subject to the rule but avoids it under specific defined conditions.\n- **Avoidance** is chosen when the risk is too severe to accept or transfer.\n- **Mitigation** is the *most common* strategy in practice."
+        "raw_content": "## 8. Risk Management Strategies\n\n* **Definition:** The structured approaches used by an organization to address and respond to identified risks, consisting of four primary strategies: risk transference (sharing), risk acceptance, risk avoidance, and risk mitigation.\n\n> *Imagina que descubres que el techo de tu casa tiene una gotera: puedes ignorarla si es mínima (aceptar), contratar un seguro (transferir), mudarte de casa para evitar el problema (evitar), o reparar el techo ahora (mitigar). Cada opción tiene un costo y una justificación.*\n\n### The 4 Strategies\n\n| Strategy | What It Means | Common Methods |\n| --- | --- | --- |\n| **Transfer (Sharing)** | Shift financial responsibility to another party | Insurance policies, contract indemnity clauses |\n| **Accept** | Acknowledge the risk and take no action to prevent it | Exemption (excluded from a rule), Exception (avoids rule under specific conditions) |\n| **Avoid** | Change plans to eliminate the risk entirely | Not launching a risky product, not operating in an unstable region |\n| **Mitigate** | Reduce the likelihood or impact of the risk | Safety training, cybersecurity controls, redundancy systems |\n\n### Key Notes on Each Strategy\n\n- **Transfer** does not eliminate the risk — it shifts the *financial consequences*. Reputational risk stays with the original party.\n- **Accept → Exemption**: The party is excluded from a rule entirely and operates without its protections.\n- **Accept → Exception**: The party is normally subject to the rule but avoids it under specific defined conditions.\n- **Avoidance** is chosen when the risk is too severe to accept or transfer.\n- **Mitigation** is the *most common* strategy in practice.\n\n---"
       },
       {
         "name": "Risk Monitoring and Reporting",
@@ -3674,8 +3509,7 @@ const STUDY_DATA = [
           "Delivered as dashboards, heat maps, or formal reports.",
           "Serves four key organizational purposes:"
         ],
-        "spanish_words": [],
-        "raw_content": "**Risk monitoring** and **risk reporting** are the final and ongoing steps of the risk management lifecycle. They ensure the process remains dynamic and responsive over time.\n\n> *Son como los instrumentos del panel de un avión y el reporte que el piloto envía a la torre de control: los instrumentos monitorean en tiempo real si algo cambia (velocidad, altitud, temperatura), y el reporte comunica el estado del vuelo a quienes necesitan saberlo para tomar decisiones.*\n\n### Risk Monitoring\n\n- **Tracks** identified risks continuously throughout the project or operation lifecycle.\n- **Identifies** residual risks and new emerging risks.\n- **Evaluates** whether current risk response plans are working.\n\n**Two important sub-concepts identified during monitoring:**\n\n| Term | Definition |\n| --- | --- |\n| **Residual Risk** | The risk that *remains after* mitigation, transference, or acceptance controls have been applied to the inherent risk |\n| **Control Risk** | A measure of how much *less effective* a security control has become over time (e.g., antivirus becoming less effective as malware evolves) |\n\n### Risk Reporting\n\n- Communicates results of risk identification, assessment, response, and monitoring to **stakeholders**.\n- Delivered as dashboards, heat maps, or formal reports.\n- Serves four key organizational purposes:\n\n| Purpose | Why It Matters |\n| --- | --- |\n| **Informed Decision Making** | Guides resource allocation, timelines, and strategy |\n| **Risk Mitigation** | Enables proactive action before risks escalate |\n| **Stakeholder Communication** | Manages expectations; demonstrates that risks are under control |\n| **Regulatory Compliance** | In many industries, risk reporting is legally required |"
+        "raw_content": "## 9. Risk Monitoring and Reporting\n\n**Risk monitoring** and **risk reporting** are the final and ongoing steps of the risk management lifecycle. They ensure the process remains dynamic and responsive over time.\n\n> *Son como los instrumentos del panel de un avión y el reporte que el piloto envía a la torre de control: los instrumentos monitorean en tiempo real si algo cambia (velocidad, altitud, temperatura), y el reporte comunica el estado del vuelo a quienes necesitan saberlo para tomar decisiones.*\n\n### Risk Monitoring\n\n- **Tracks** identified risks continuously throughout the project or operation lifecycle.\n- **Identifies** residual risks and new emerging risks.\n- **Evaluates** whether current risk response plans are working.\n\n**Two important sub-concepts identified during monitoring:**\n\n| Term | Definition |\n| --- | --- |\n| **Residual Risk** | The risk that *remains after* mitigation, transference, or acceptance controls have been applied to the inherent risk |\n| **Control Risk** | A measure of how much *less effective* a security control has become over time (e.g., antivirus becoming less effective as malware evolves) |\n\n### Risk Reporting\n\n- Communicates results of risk identification, assessment, response, and monitoring to **stakeholders**.\n- Delivered as dashboards, heat maps, or formal reports.\n- Serves four key organizational purposes:\n\n| Purpose | Why It Matters |\n| --- | --- |\n| **Informed Decision Making** | Guides resource allocation, timelines, and strategy |\n| **Risk Mitigation** | Enables proactive action before risks escalate |\n| **Stakeholder Communication** | Manages expectations; demonstrates that risks are under control |\n| **Regulatory Compliance** | In many industries, risk reporting is legally required |"
       }
     ]
   },
@@ -3714,8 +3548,7 @@ const STUDY_DATA = [
           "A software supplier whose application has a hidden backdoor",
           "A service provider (MSP) with access to sensitive data but weak security protocols"
         ],
-        "spanish_words": [],
-        "raw_content": "**Third-party vendor risk** refers to the potential security and operational challenges introduced by external entities that an organization collaborates with — vendors, suppliers, or service providers.\n\n> *Es como cuando contratas a un contratista para remodelar tu casa: él tiene acceso a tu hogar, tus llaves, quizás a tu caja fuerte. Si ese contratista no es de confianza, tú eres el que pierde.*\n\nIntegrating external partners expands the **attack surface** of the organization. Risks span a wide spectrum:\n\n- A hardware provider whose components contain vulnerabilities\n- A software supplier whose application has a hidden backdoor\n- A service provider (MSP) with access to sensitive data but weak security protocols\n\n**Relevant exam objectives:**\n\n| Objective   | Description                                                      |\n| ----------- | ---------------------------------------------------------------- |\n| **OBJ 2.2** | Explain common threat vectors and attack surfaces                |\n| **OBJ 2.3** | Explain various types of vulnerabilities                         |\n| **OBJ 5.3** | Explain processes for third-party risk assessment and management |"
+        "raw_content": "## 1. Third-party Vendor Risk — Overview\n\n**Third-party vendor risk** refers to the potential security and operational challenges introduced by external entities that an organization collaborates with — vendors, suppliers, or service providers.\n\n> *Es como cuando contratas a un contratista para remodelar tu casa: él tiene acceso a tu hogar, tus llaves, quizás a tu caja fuerte. Si ese contratista no es de confianza, tú eres el que pierde.*\n\nIntegrating external partners expands the **attack surface** of the organization. Risks span a wide spectrum:\n\n- A hardware provider whose components contain vulnerabilities\n- A software supplier whose application has a hidden backdoor\n- A service provider (MSP) with access to sensitive data but weak security protocols\n\n**Relevant exam objectives:**\n\n| Objective   | Description                                                      |\n| ----------- | ---------------------------------------------------------------- |\n| **OBJ 2.2** | Explain common threat vectors and attack surfaces                |\n| **OBJ 2.3** | Explain various types of vulnerabilities                         |\n| **OBJ 5.3** | Explain processes for third-party risk assessment and management |\n\n---"
       },
       {
         "name": "Supply Chain Risks",
@@ -3728,14 +3561,16 @@ const STUDY_DATA = [
           "Counterfeit or aftermarket hardware may contain modified code, embedded **Trojans**, or remote access backdoors",
           "The **Trusted Foundry Program** (used by the DoD) ensures chips are manufactured securely and perform only their designated functions",
           "Software used in enterprise networks must be:",
+          "Properly **licensed** and **authentic**",
+          "Free of known **vulnerabilities or bugs**",
+          "Scanned with **antivirus/anti-malware** before deployment",
           "**Open-source** software allows full source code review",
           "Even proprietary software (e.g., Microsoft Office) can be scanned with vulnerability assessment tools",
           "Are their cybersecurity protocols robust enough to protect your data?",
           "Can they support a full **incident response** or **forensic investigation** if breached?",
           "Do they maintain confidentiality and integrity of your data?"
         ],
-        "spanish_words": [],
-        "raw_content": "The **supply chain** encompasses hardware manufacturers, software developers, and service providers. Each represents a potential vulnerability point.\n\n> *Imagina que un fabricante de autos compra piezas de cien proveedores distintos. Si uno de esos proveedores entrega piezas defectuosas o manipuladas, el auto completo puede fallar — aunque el fabricante haya hecho todo bien.*\n\n### Hardware Manufacturers\n\n- Devices like routers and switches are composed of **hundreds of components** sourced from various suppliers\n- Any component can be tampered with or sourced from untrustworthy vendors\n- Counterfeit or aftermarket hardware may contain modified code, embedded **Trojans**, or remote access backdoors\n- The **Trusted Foundry Program** (used by the DoD) ensures chips are manufactured securely and perform only their designated functions\n\n> ⚠️ **Budget-friendly secondary market hardware** carries a high risk of counterfeit or tampered devices — always source from trusted, verified suppliers.\n\n### Software Developers and Providers\n\n- Software used in enterprise networks must be:\n  - Properly **licensed** and **authentic**\n  - Free of known **vulnerabilities or bugs**\n  - Scanned with **antivirus/anti-malware** before deployment\n- **Open-source** software allows full source code review\n- Even proprietary software (e.g., Microsoft Office) can be scanned with vulnerability assessment tools\n\n### Service Providers and MSPs\n\n**Managed Service Providers (MSPs)** often have access to sensitive organizational data and infrastructure. Key security questions to ask:\n\n- Are their cybersecurity protocols robust enough to protect your data?\n- Can they support a full **incident response** or **forensic investigation** if breached?\n- Do they maintain confidentiality and integrity of your data?\n\n> *Un MSP es como un administrador de condominios: tiene llave de todos los apartamentos. Si ese administrador es descuidado, todos los residentes están en riesgo.*\n\n⚠️ **Core principle:** An organization is only as strong as the **weakest link** in its supply chain."
+        "raw_content": "## 2. Supply Chain Risks\n\nThe **supply chain** encompasses hardware manufacturers, software developers, and service providers. Each represents a potential vulnerability point.\n\n> *Imagina que un fabricante de autos compra piezas de cien proveedores distintos. Si uno de esos proveedores entrega piezas defectuosas o manipuladas, el auto completo puede fallar — aunque el fabricante haya hecho todo bien.*\n\n### Hardware Manufacturers\n\n- Devices like routers and switches are composed of **hundreds of components** sourced from various suppliers\n- Any component can be tampered with or sourced from untrustworthy vendors\n- Counterfeit or aftermarket hardware may contain modified code, embedded **Trojans**, or remote access backdoors\n- The **Trusted Foundry Program** (used by the DoD) ensures chips are manufactured securely and perform only their designated functions\n\n> ⚠️ **Budget-friendly secondary market hardware** carries a high risk of counterfeit or tampered devices — always source from trusted, verified suppliers.\n\n### Software Developers and Providers\n\n- Software used in enterprise networks must be:\n  - Properly **licensed** and **authentic**\n  - Free of known **vulnerabilities or bugs**\n  - Scanned with **antivirus/anti-malware** before deployment\n- **Open-source** software allows full source code review\n- Even proprietary software (e.g., Microsoft Office) can be scanned with vulnerability assessment tools\n\n### Service Providers and MSPs\n\n**Managed Service Providers (MSPs)** often have access to sensitive organizational data and infrastructure. Key security questions to ask:\n\n- Are their cybersecurity protocols robust enough to protect your data?\n- Can they support a full **incident response** or **forensic investigation** if breached?\n- Do they maintain confidentiality and integrity of your data?\n\n> *Un MSP es como un administrador de condominios: tiene llave de todos los apartamentos. Si ese administrador es descuidado, todos los residentes están en riesgo.*\n\n⚠️ **Core principle:** An organization is only as strong as the **weakest link** in its supply chain.\n\n---"
       },
       {
         "name": "Supply Chain Attacks",
@@ -3794,8 +3629,7 @@ const STUDY_DATA = [
           "Distributed malware to thousands of clients — including US government agencies — via a legitimate software update",
           "Bypassed even the most robust perimeter defenses by exploiting trusted update infrastructure"
         ],
-        "spanish_words": [],
-        "raw_content": "A **supply chain attack** targets a weaker link in the supply chain to gain access to a more secure primary target — rather than attacking a well-fortified organization directly.\n\n> *En lugar de intentar romper la puerta blindada del banco, el atacante compra la empresa que fabrica las cajas fuertes y les pone una cerradura falsa desde la fábrica.*\n\n### Hardware-based Supply Chain Attacks\n\n**Chip Washing** — Involves repackaging a microchip with a less expensive or malware-embedded counterfeit chip.\n\n- **Best case:** Device malfunction and network failures\n- **Worst case:** An always-on backdoor installed in your own network hardware\n\n**Pre-installed Rootkits** — Deliberate embedding of rootkits in devices by overseas suppliers, providing backdoor access once the device is activated on the network.\n\n### Software-based Supply Chain Attacks — SolarWinds (2021)\n\nThe **SolarWinds attack** is one of the most significant software-based supply chain attacks on record:\n\n- Attackers infiltrated the **SolarWinds Orion** software update system\n- Distributed malware to thousands of clients — including US government agencies — via a legitimate software update\n- Bypassed even the most robust perimeter defenses by exploiting trusted update infrastructure\n\n> *SolarWinds demostró que no tienes que romper la puerta principal. Si infectas al cartero, el veneno llega a miles de hogares al mismo tiempo.*\n\n### The CHIPS Act (2022)\n\nThe **Chips and Science Act of 2022** is a US federal statute that allocated approximately **$280 billion** to reduce reliance on foreign-made semiconductors:\n\n| Component                                       | Amount      |\n| ----------------------------------------------- | ----------- |\n| Manufacturing subsidies on US soil              | $39 billion |\n| Investment tax credit (manufacturing equipment) | 25%         |\n| Research and workforce training                 | $13 billion |\n\nGoal: strengthen the domestic semiconductor supply chain and minimize geopolitical supply chain risk.\n\n### Mitigating Supply Chain Attacks — Four Pillars\n\n| Pillar                            | Description                                                                              |\n| --------------------------------- | ---------------------------------------------------------------------------------------- |\n| **Vendor Due Diligence**          | Rigorous evaluation of vendor cybersecurity posture and their own supply chain practices |\n| **Regular Monitoring and Audits** | Continuous monitoring and periodic audits for early detection of suspicious activity     |\n| **Education and Collaboration**   | Sharing threat intelligence with the broader ecosystem; joint defense strategies         |\n| **Contractual Safeguards**        | Embedding cybersecurity requirements and legal repercussions into vendor contracts       |"
+        "raw_content": "## 3. Supply Chain Attacks\n\nA **supply chain attack** targets a weaker link in the supply chain to gain access to a more secure primary target — rather than attacking a well-fortified organization directly.\n\n> *En lugar de intentar romper la puerta blindada del banco, el atacante compra la empresa que fabrica las cajas fuertes y les pone una cerradura falsa desde la fábrica.*\n\n### Hardware-based Supply Chain Attacks\n\n**Chip Washing** — Involves repackaging a microchip with a less expensive or malware-embedded counterfeit chip.\n\n- **Best case:** Device malfunction and network failures\n- **Worst case:** An always-on backdoor installed in your own network hardware\n\n**Pre-installed Rootkits** — Deliberate embedding of rootkits in devices by overseas suppliers, providing backdoor access once the device is activated on the network.\n\n### Software-based Supply Chain Attacks — SolarWinds (2021)\n\nThe **SolarWinds attack** is one of the most significant software-based supply chain attacks on record:\n\n- Attackers infiltrated the **SolarWinds Orion** software update system\n- Distributed malware to thousands of clients — including US government agencies — via a legitimate software update\n- Bypassed even the most robust perimeter defenses by exploiting trusted update infrastructure\n\n> *SolarWinds demostró que no tienes que romper la puerta principal. Si infectas al cartero, el veneno llega a miles de hogares al mismo tiempo.*\n\n### The CHIPS Act (2022)\n\nThe **Chips and Science Act of 2022** is a US federal statute that allocated approximately **$280 billion** to reduce reliance on foreign-made semiconductors:\n\n| Component                                       | Amount      |\n| ----------------------------------------------- | ----------- |\n| Manufacturing subsidies on US soil              | $39 billion |\n| Investment tax credit (manufacturing equipment) | 25%         |\n| Research and workforce training                 | $13 billion |\n\nGoal: strengthen the domestic semiconductor supply chain and minimize geopolitical supply chain risk.\n\n### Mitigating Supply Chain Attacks — Four Pillars\n\n| Pillar                            | Description                                                                              |\n| --------------------------------- | ---------------------------------------------------------------------------------------- |\n| **Vendor Due Diligence**          | Rigorous evaluation of vendor cybersecurity posture and their own supply chain practices |\n| **Regular Monitoring and Audits** | Continuous monitoring and periodic audits for early detection of suspicious activity     |\n| **Education and Collaboration**   | Sharing threat intelligence with the broader ecosystem; joint defense strategies         |\n| **Contractual Safeguards**        | Embedding cybersecurity requirements and legal repercussions into vendor contracts       |\n\n---"
       },
       {
         "name": "Vendor Assessment",
@@ -3828,8 +3662,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "A **vendor assessment** is a structured process to evaluate the security, reliability, and performance of external entities before and during a partnership.\n\n> *Es como hacer una auditoría antes de contratar a un contador externo para tu empresa: no basta con que diga que es confiable, necesitas ver sus certificaciones, su historial y sus prácticas.*\n\n### Primary Entities Subject to Vendor Assessment\n\n| Entity Type  | Description                                       | Example                            |\n| ------------ | ------------------------------------------------- | ---------------------------------- |\n| **Vendor**   | Provides goods or services                        | Microsoft, Oracle (software)       |\n| **Supplier** | Produces or delivers product components           | Chip manufacturer, memory supplier |\n| **MSP**      | Manages IT services on behalf of the organization | AWS, Google Cloud                  |\n\n### Penetration Testing of Vendors\n\nSimulated cyberattacks against vendor systems to identify exploitable vulnerabilities — validates that the vendor takes their own cybersecurity posture seriously, since **their risk becomes your risk**.\n\n### Right to Audit Clause\n\nA contractual provision granting the organization the right to **evaluate the vendor's internal processes** and verify compliance with agreed-upon standards.\n\n> *\"Confía pero verifica\" — el Right to Audit Clause es el mecanismo formal para hacer eso con tus proveedores.*\n\n### Internal Audits\n\nThe vendor's own **self-assessment** against industry standards. Evidence of consistent internal audits signals commitment to security — but may be insufficient without external validation.\n\n### Independent Assessments\n\nEvaluations conducted by **neutral third-party entities** (e.g., ISO) with no stake in the organization's operations. Provides objective validation against global benchmarks.\n\n> *Un auditor interno del banco puede pasar por alto problemas. Un auditor externo independiente no tiene razón para hacerlo.*\n\n### Supply Chain Analysis\n\nA deep-dive into the vendor's **entire supply chain** — assessing the security and reliability of every link, not just the vendor's direct practices. Scrutinizes all source locations for counterfeit parts or tampered products."
+        "raw_content": "## 4. Vendor Assessment\n\nA **vendor assessment** is a structured process to evaluate the security, reliability, and performance of external entities before and during a partnership.\n\n> *Es como hacer una auditoría antes de contratar a un contador externo para tu empresa: no basta con que diga que es confiable, necesitas ver sus certificaciones, su historial y sus prácticas.*\n\n### Primary Entities Subject to Vendor Assessment\n\n| Entity Type  | Description                                       | Example                            |\n| ------------ | ------------------------------------------------- | ---------------------------------- |\n| **Vendor**   | Provides goods or services                        | Microsoft, Oracle (software)       |\n| **Supplier** | Produces or delivers product components           | Chip manufacturer, memory supplier |\n| **MSP**      | Manages IT services on behalf of the organization | AWS, Google Cloud                  |\n\n### Penetration Testing of Vendors\n\nSimulated cyberattacks against vendor systems to identify exploitable vulnerabilities — validates that the vendor takes their own cybersecurity posture seriously, since **their risk becomes your risk**.\n\n### Right to Audit Clause\n\nA contractual provision granting the organization the right to **evaluate the vendor's internal processes** and verify compliance with agreed-upon standards.\n\n> *\"Confía pero verifica\" — el Right to Audit Clause es el mecanismo formal para hacer eso con tus proveedores.*\n\n### Internal Audits\n\nThe vendor's own **self-assessment** against industry standards. Evidence of consistent internal audits signals commitment to security — but may be insufficient without external validation.\n\n### Independent Assessments\n\nEvaluations conducted by **neutral third-party entities** (e.g., ISO) with no stake in the organization's operations. Provides objective validation against global benchmarks.\n\n> *Un auditor interno del banco puede pasar por alto problemas. Un auditor externo independiente no tiene razón para hacerlo.*\n\n### Supply Chain Analysis\n\nA deep-dive into the vendor's **entire supply chain** — assessing the security and reliability of every link, not just the vendor's direct practices. Scrutinizes all source locations for counterfeit parts or tampered products.\n\n---"
       },
       {
         "name": "Vendor Selection and Monitoring",
@@ -3842,8 +3675,7 @@ const STUDY_DATA = [
           "Client testimonials",
           "On-the-ground security practices"
         ],
-        "spanish_words": [],
-        "raw_content": "Choosing the right vendor is similar to hiring: you evaluate competency, cultural fit, and alignment with organizational goals.\n\n### Vendor Selection Process\n\n**Due Diligence** — A rigorous evaluation that goes beyond credentials, covering:\n\n- Financial stability\n- Operational history\n- Client testimonials\n- On-the-ground security practices\n\n**Conflict of Interest** — Arises when personal or financial relationships could bias the vendor selection process. Organizations must require disclosures and exclude conflicted parties from decision-making.\n\n**Vendor Questionnaires** — Comprehensive documents completed by potential vendors covering operations, capabilities, and compliance. Enables standardized comparison across vendors.\n\n> *Un cuestionario de vendor es como una aplicación de trabajo detallada: permite comparar a todos los candidatos con el mismo conjunto de criterios.*\n\n**Rules of Engagement** — Guidelines that govern the terms of interaction with potential vendors: communication protocols, data sharing policies, and negotiation boundaries.\n\n### Vendor Monitoring\n\nOnce selected, monitoring ensures the vendor consistently meets organizational expectations over time.\n\n**Performance Reviews** — Periodic evaluations of vendor deliverables against contracted standards and objectives.\n\n**Feedback Loops** — Two-way communication channels where both parties share feedback, driving collaborative improvement over time."
+        "raw_content": "## 5. Vendor Selection and Monitoring\n\nChoosing the right vendor is similar to hiring: you evaluate competency, cultural fit, and alignment with organizational goals.\n\n### Vendor Selection Process\n\n**Due Diligence** — A rigorous evaluation that goes beyond credentials, covering:\n\n- Financial stability\n- Operational history\n- Client testimonials\n- On-the-ground security practices\n\n**Conflict of Interest** — Arises when personal or financial relationships could bias the vendor selection process. Organizations must require disclosures and exclude conflicted parties from decision-making.\n\n**Vendor Questionnaires** — Comprehensive documents completed by potential vendors covering operations, capabilities, and compliance. Enables standardized comparison across vendors.\n\n> *Un cuestionario de vendor es como una aplicación de trabajo detallada: permite comparar a todos los candidatos con el mismo conjunto de criterios.*\n\n**Rules of Engagement** — Guidelines that govern the terms of interaction with potential vendors: communication protocols, data sharing policies, and negotiation boundaries.\n\n### Vendor Monitoring\n\nOnce selected, monitoring ensures the vendor consistently meets organizational expectations over time.\n\n**Performance Reviews** — Periodic evaluations of vendor deliverables against contracted standards and objectives.\n\n**Feedback Loops** — Two-way communication channels where both parties share feedback, driving collaborative improvement over time.\n\n---"
       },
       {
         "name": "Contracts and Agreements",
@@ -3928,94 +3760,7 @@ const STUDY_DATA = [
           "The **MSA** sets overarching terms (payment structure, confidentiality) for a recurring relationship",
           "The **SOW** provides project-specific details (deliverables, timeline, milestones) under the MSA umbrella"
         ],
-        "spanish_words": [],
-        "raw_content": "Contracts are the formal framework that defines the rights, obligations, and expectations of both parties in a business relationship.\n\n> *Un contrato es el mapa de la relación: sin él, cada parte puede tener una idea diferente del destino. Con él, ambos saben exactamente a dónde van y quién conduce.*\n\n### Types of Contracts and Agreements\n\n| Agreement                          | Acronym             | Purpose                                                                                                                                                                   |\n| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **Basic Contract**                 | —                   | Establishes roles, responsibilities, and repercussions; foundation of any business relationship                                                                           |\n| **Service Level Agreement**        | SLA                 | Defines the standard of service a client can expect; specifies penalties for non-compliance                                                                               |\n| **Memorandum of Agreement**        | MOA                 | Formal document outlining specific responsibilities and roles of collaborating parties                                                                                    |\n| **Memorandum of Understanding**    | MOU                 | Less binding; declares mutual intent to explore a partnership without fine details                                                                                        |\n| **Master Service Agreement**       | MSA                 | Blanket agreement covering general terms across multiple transactions/proyects; supplemented by individual work orders                                                    |\n| **Statement of Work**              | SOW / Scope of Work | Specifies deliverables, timelines, and milestones for a particular project. Provides detailed information about specific task, deliverables, and tomelines for a project. |\n| **Non-disclosure Agreement**       | NDA                 | Ensures sensitive information shared during negotiations remains confidential between parties                                                                             |\n| **Business Partnership Agreement** | BPA                 | Outlines profit sharing, decision-making, ownership of IP, and exit strategies for joint ventures                                                                         |\n\n> Combination example: \n> \n> NDA\n> └── MSA (marco general)\n>     ├── SLA (estándares de servicio)\n>     ├── SOW Proyecto 1 — Pen Test Q1\n>     ├── SOW Proyecto 2 — Auditoría Q2\n>     └── SOW Proyecto 3 — Incident Response Q3\n> \n> Y si en algún momento las dos empresas deciden hacer algo juntas (co-desarrollar una herramienta, por ejemplo), agregan un BPA encima de todo eso para regular la propiedad compartida del resultado.\n> \n> \n\n### Key Distinctions\n\n**MOA vs. MOU:**\n\n|                   | MOA                                    | MOU                            |\n| ----------------- | -------------------------------------- | ------------------------------ |\n| **Binding level** | More formal and binding                | Less binding                   |\n| **Scope**         | Specific responsibilities and roles    | Broad mutual intent            |\n| **Use case**      | Joint campaigns with defined ownership | Exploring a future partnership |\n\n**MSA vs. SOW:**\n\n- The **MSA** sets overarching terms (payment structure, confidentiality) for a recurring relationship\n- The **SOW** provides project-specific details (deliverables, timeline, milestones) under the MSA umbrella\n\n> *El MSA es el contrato marco de una empresa con su proveedor de servicios. El SOW es la orden de trabajo específica para cada proyecto individual.*\n\n**NDA Use Case:**\nA startup sharing proprietary technology with a potential investor would require an NDA to prevent that information from reaching competitors — even if the investor ultimately declines the opportunity.\n\n**BPA / Joint Venture:**\nUsed when two entities pool resources for mutual benefit. Clarifies intellectual property ownership, revenue distribution, and exit strategies."
-      },
-      {
-        "name": "Key Terms",
-        "definition": "Third-party vendor risk: Security and operational risks introduced by external entities in the supply chain",
-        "analogy": "",
-        "tables": [
-          {
-            "headers": [
-              "Term",
-              "Definition"
-            ],
-            "rows": [
-              [
-                "**Third-party vendor risk**",
-                "Security and operational risks introduced by external entities in the supply chain"
-              ],
-              [
-                "**Supply chain attack**",
-                "Attack targeting a weaker supplier to compromise a more secure primary target"
-              ],
-              [
-                "**Chip washing**",
-                "Repackaging a microchip with a counterfeit or malware-embedded chip"
-              ],
-              [
-                "**Trusted Foundry Program**",
-                "DoD program ensuring chips are manufactured securely and free of unauthorized functions"
-              ],
-              [
-                "**SolarWinds attack**",
-                "2021 software supply chain attack distributing malware via a legitimate software update"
-              ],
-              [
-                "**CHIPS Act (2022)**",
-                "US legislation investing ~$280B to onshore semiconductor manufacturing and reduce supply chain risk"
-              ],
-              [
-                "**Vendor assessment**",
-                "Process to evaluate vendor security, reliability, and compliance"
-              ],
-              [
-                "**Right to audit clause**",
-                "Contractual right to inspect a vendor's internal processes and verify compliance"
-              ],
-              [
-                "**Penetration testing (vendor)**",
-                "Simulated cyberattack against vendor systems to validate their security posture"
-              ],
-              [
-                "**MSP**",
-                "Managed Service Provider — manages IT services on behalf of another organization"
-              ],
-              [
-                "**SLA**",
-                "Service Level Agreement — defines expected service standards and penalties for non-compliance"
-              ],
-              [
-                "**MOA**",
-                "Memorandum of Agreement — formal, specific roles and responsibilities between parties"
-              ],
-              [
-                "**MOU**",
-                "Memorandum of Understanding — non-binding declaration of intent to collaborate"
-              ],
-              [
-                "**MSA**",
-                "Master Service Agreement — blanket terms across multiple transactions"
-              ],
-              [
-                "**SOW**",
-                "Statement of Work — project-specific deliverables, timelines, and milestones"
-              ],
-              [
-                "**NDA**",
-                "Non-disclosure Agreement — confidentiality commitment for sensitive shared information"
-              ],
-              [
-                "**BPA**",
-                "Business Partnership Agreement — governs joint ventures including IP ownership and profit sharing"
-              ]
-            ]
-          }
-        ],
-        "list_items": [],
-        "spanish_words": [],
-        "raw_content": "| Term                             | Definition                                                                                          |\n| -------------------------------- | --------------------------------------------------------------------------------------------------- |\n| **Third-party vendor risk**      | Security and operational risks introduced by external entities in the supply chain                  |\n| **Supply chain attack**          | Attack targeting a weaker supplier to compromise a more secure primary target                       |\n| **Chip washing**                 | Repackaging a microchip with a counterfeit or malware-embedded chip                                 |\n| **Trusted Foundry Program**      | DoD program ensuring chips are manufactured securely and free of unauthorized functions             |\n| **SolarWinds attack**            | 2021 software supply chain attack distributing malware via a legitimate software update             |\n| **CHIPS Act (2022)**             | US legislation investing ~$280B to onshore semiconductor manufacturing and reduce supply chain risk |\n| **Vendor assessment**            | Process to evaluate vendor security, reliability, and compliance                                    |\n| **Right to audit clause**        | Contractual right to inspect a vendor's internal processes and verify compliance                    |\n| **Penetration testing (vendor)** | Simulated cyberattack against vendor systems to validate their security posture                     |\n| **MSP**                          | Managed Service Provider — manages IT services on behalf of another organization                    |\n| **SLA**                          | Service Level Agreement — defines expected service standards and penalties for non-compliance       |\n| **MOA**                          | Memorandum of Agreement — formal, specific roles and responsibilities between parties               |\n| **MOU**                          | Memorandum of Understanding — non-binding declaration of intent to collaborate                      |\n| **MSA**                          | Master Service Agreement — blanket terms across multiple transactions                               |\n| **SOW**                          | Statement of Work — project-specific deliverables, timelines, and milestones                        |\n| **NDA**                          | Non-disclosure Agreement — confidentiality commitment for sensitive shared information              |\n| **BPA**                          | Business Partnership Agreement — governs joint ventures including IP ownership and profit sharing   |"
+        "raw_content": "## 6. Contracts and Agreements\n\nContracts are the formal framework that defines the rights, obligations, and expectations of both parties in a business relationship.\n\n> *Un contrato es el mapa de la relación: sin él, cada parte puede tener una idea diferente del destino. Con él, ambos saben exactamente a dónde van y quién conduce.*\n\n### Types of Contracts and Agreements\n\n| Agreement                          | Acronym             | Purpose                                                                                                                                                                   |\n| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **Basic Contract**                 | —                   | Establishes roles, responsibilities, and repercussions; foundation of any business relationship                                                                           |\n| **Service Level Agreement**        | SLA                 | Defines the standard of service a client can expect; specifies penalties for non-compliance                                                                               |\n| **Memorandum of Agreement**        | MOA                 | Formal document outlining specific responsibilities and roles of collaborating parties                                                                                    |\n| **Memorandum of Understanding**    | MOU                 | Less binding; declares mutual intent to explore a partnership without fine details                                                                                        |\n| **Master Service Agreement**       | MSA                 | Blanket agreement covering general terms across multiple transactions/proyects; supplemented by individual work orders                                                    |\n| **Statement of Work**              | SOW / Scope of Work | Specifies deliverables, timelines, and milestones for a particular project. Provides detailed information about specific task, deliverables, and tomelines for a project. |\n| **Non-disclosure Agreement**       | NDA                 | Ensures sensitive information shared during negotiations remains confidential between parties                                                                             |\n| **Business Partnership Agreement** | BPA                 | Outlines profit sharing, decision-making, ownership of IP, and exit strategies for joint ventures                                                                         |\n\n> Combination example: \n> \n> NDA\n> └── MSA (marco general)\n>     ├── SLA (estándares de servicio)\n>     ├── SOW Proyecto 1 — Pen Test Q1\n>     ├── SOW Proyecto 2 — Auditoría Q2\n>     └── SOW Proyecto 3 — Incident Response Q3\n> \n> Y si en algún momento las dos empresas deciden hacer algo juntas (co-desarrollar una herramienta, por ejemplo), agregan un BPA encima de todo eso para regular la propiedad compartida del resultado.\n> \n> \n\n### Key Distinctions\n\n**MOA vs. MOU:**\n\n|                   | MOA                                    | MOU                            |\n| ----------------- | -------------------------------------- | ------------------------------ |\n| **Binding level** | More formal and binding                | Less binding                   |\n| **Scope**         | Specific responsibilities and roles    | Broad mutual intent            |\n| **Use case**      | Joint campaigns with defined ownership | Exploring a future partnership |\n\n**MSA vs. SOW:**\n\n- The **MSA** sets overarching terms (payment structure, confidentiality) for a recurring relationship\n- The **SOW** provides project-specific details (deliverables, timeline, milestones) under the MSA umbrella\n\n> *El MSA es el contrato marco de una empresa con su proveedor de servicios. El SOW es la orden de trabajo específica para cada proyecto individual.*\n\n**NDA Use Case:**\nA startup sharing proprietary technology with a potential investor would require an NDA to prevent that information from reaching competitors — even if the investor ultimately declines the opportunity.\n\n**BPA / Joint Venture:**\nUsed when two entities pool resources for mutual benefit. Clarifies intellectual property ownership, revenue distribution, and exit strategies.\n\n---"
       }
     ]
   },
@@ -4082,8 +3827,7 @@ const STUDY_DATA = [
           "**Regulations** — e.g., new data protection laws require policy revisions",
           "**Cultural shifts** — e.g., rise of remote work requires new secure access procedures"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The strategic leadership, structures, and processes that ensure an organization's IT infrastructure aligns with its business objectives — encompassing rules, responsibilities, and practices that guide IT resource management.\n\n> *Es como la constitución de un país: no dice exactamente cómo hacer cada cosa del día a día, pero establece los principios, valores y estructuras de poder que determinan cómo se toman todas las demás decisiones.*\n\nGovernance is the **first component of the GRC triad** — Governance, Risk, and Compliance.\n\n### What Governance Shapes\n\n| Output | Description |\n| --- | --- |\n| **Guidelines** | Non-mandatory recommended approaches for handling situations |\n| **Policies** | High-level commitments and intentions (e.g., data protection, ethical conduct) |\n| **Standards** | Specific mandatory rules tied to a policy; often set by industry or regulatory bodies |\n| **Procedures** | Step-by-step instructions that implement policies and standards consistently |\n\n### Why Governance Matters\n\n| Area | Purpose |\n| --- | --- |\n| **Risk Management** | Identify, assess, and manage potential security risks |\n| **Strategic Alignment** | Ensure IT strategy supports business objectives |\n| **Resource Management** | Enable efficient and effective use of IT assets |\n| **Performance Measurement** | Monitor and measure IT process effectiveness |\n\n### Monitoring and Revision\n\nGovernance frameworks must evolve as three forces change:\n\n- **Technology** — e.g., adoption of cloud services requires updated access policies\n- **Regulations** — e.g., new data protection laws require policy revisions\n- **Cultural shifts** — e.g., rise of remote work requires new secure access procedures\n\n> *Imagina una empresa de software que en 2015 se mueve a la nube, en 2018 enfrenta el GDPR y en 2020 adopta el trabajo remoto. Su marco de gobernanza debe actualizarse en cada una de esas olas, o quedará obsoleto y expuesto.*"
+        "raw_content": "## 1. Governance Overview\n\n* **Definition:** The strategic leadership, structures, and processes that ensure an organization's IT infrastructure aligns with its business objectives — encompassing rules, responsibilities, and practices that guide IT resource management.\n\n> *Es como la constitución de un país: no dice exactamente cómo hacer cada cosa del día a día, pero establece los principios, valores y estructuras de poder que determinan cómo se toman todas las demás decisiones.*\n\nGovernance is the **first component of the GRC triad** — Governance, Risk, and Compliance.\n\n### What Governance Shapes\n\n| Output | Description |\n| --- | --- |\n| **Guidelines** | Non-mandatory recommended approaches for handling situations |\n| **Policies** | High-level commitments and intentions (e.g., data protection, ethical conduct) |\n| **Standards** | Specific mandatory rules tied to a policy; often set by industry or regulatory bodies |\n| **Procedures** | Step-by-step instructions that implement policies and standards consistently |\n\n### Why Governance Matters\n\n| Area | Purpose |\n| --- | --- |\n| **Risk Management** | Identify, assess, and manage potential security risks |\n| **Strategic Alignment** | Ensure IT strategy supports business objectives |\n| **Resource Management** | Enable efficient and effective use of IT assets |\n| **Performance Measurement** | Monitor and measure IT process effectiveness |\n\n### Monitoring and Revision\n\nGovernance frameworks must evolve as three forces change:\n\n- **Technology** — e.g., adoption of cloud services requires updated access policies\n- **Regulations** — e.g., new data protection laws require policy revisions\n- **Cultural shifts** — e.g., rise of remote work requires new secure access procedures\n\n> *Imagina una empresa de software que en 2015 se mueve a la nube, en 2018 enfrenta el GDPR y en 2020 adopta el trabajo remoto. Su marco de gobernanza debe actualizarse en cada una de esas olas, o quedará obsoleto y expuesto.*\n\n---"
       },
       {
         "name": "Governance Structures",
@@ -4126,8 +3870,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The organizational bodies and frameworks that hold decision-making authority and accountability over IT and security operations.\n\n> *Son las diferentes \"ramas del gobierno\" de una empresa: así como un país tiene ejecutivo, legislativo y judicial, una organización tiene junta directiva, comités especializados y entes regulatorios externos que la vigilan.*\n\n### Structure Types\n\n| Structure | Description | Example |\n| --- | --- | --- |\n| **Board of Directors** | Elected by shareholders; sets strategic direction, establishes policies, makes major decisions | Tech company board with industry experts guiding market strategy |\n| **Committees** | Subgroups of the board focused on specific areas; allow detailed attention to complex domains | Audit committee, governance committee, **cybersecurity committee** |\n| **Government Entities** | External bodies that establish laws and regulations organizations must comply with | FTC (consumer protection), SEC (financial), CISA (cybersecurity) |\n| **Centralized Structure** | Decision-making concentrated at top management; consistent policies, slower local response | Large corporation maintaining uniform policies across all branches |\n| **Decentralized Structure** | Decision-making distributed throughout the organization; faster local decisions, risk of inconsistency | Tech startup encouraging departmental autonomy and innovation |\n\n> *La diferencia entre centralizado y descentralizado es como comparar una cadena de restaurantes (todos los Big Mac saben igual porque todo se decide desde arriba) versus una cooperativa de chefs locales (cada uno decide su menú, lo que genera creatividad pero también variabilidad).*"
+        "raw_content": "## 2. Governance Structures\n\n* **Definition:** The organizational bodies and frameworks that hold decision-making authority and accountability over IT and security operations.\n\n> *Son las diferentes \"ramas del gobierno\" de una empresa: así como un país tiene ejecutivo, legislativo y judicial, una organización tiene junta directiva, comités especializados y entes regulatorios externos que la vigilan.*\n\n### Structure Types\n\n| Structure | Description | Example |\n| --- | --- | --- |\n| **Board of Directors** | Elected by shareholders; sets strategic direction, establishes policies, makes major decisions | Tech company board with industry experts guiding market strategy |\n| **Committees** | Subgroups of the board focused on specific areas; allow detailed attention to complex domains | Audit committee, governance committee, **cybersecurity committee** |\n| **Government Entities** | External bodies that establish laws and regulations organizations must comply with | FTC (consumer protection), SEC (financial), CISA (cybersecurity) |\n| **Centralized Structure** | Decision-making concentrated at top management; consistent policies, slower local response | Large corporation maintaining uniform policies across all branches |\n| **Decentralized Structure** | Decision-making distributed throughout the organization; faster local decisions, risk of inconsistency | Tech startup encouraging departmental autonomy and innovation |\n\n> *La diferencia entre centralizado y descentralizado es como comparar una cadena de restaurantes (todos los Big Mac saben igual porque todo se decide desde arriba) versus una cooperativa de chefs locales (cada uno decide su menú, lo que genera creatividad pero también variabilidad).*\n\n---"
       },
       {
         "name": "Policies",
@@ -4172,8 +3915,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** High-level guidelines that outline an organization's commitments and intentions toward specific actions — they define the \"what\" and \"why,\" not the step-by-step \"how.\"\n\n> *Una política es como las reglas del hogar: \"en esta casa no se fuma.\" No te dice exactamente dónde poner el letrero o qué pasa si alguien viola la regla — eso lo definen los estándares y procedimientos. La política solo establece la intención.*\n\n### Key Policy Types\n\n| Policy | Purpose |\n| --- | --- |\n| **Acceptable Use Policy (AUP)** | Defines do's and don'ts for users interacting with organizational IT systems; prevents legal issues and security threats |\n| **Information Security Policy** | Governs protection of information assets (data classification, access control, encryption, physical security) |\n| **Business Continuity Policy** | Outlines how critical operations will continue during/after a disruption |\n| **Disaster Recovery Policy** | Specifies how IT systems and data will be recovered after a disaster (backups, restoration steps, alternate sites) |\n| **Incident Response Policy** | Plans for detecting, reporting, assessing, responding to, and learning from security incidents |\n| **SDLC Policy** | Guides software development through all stages: requirements → design → coding → testing → deployment → maintenance; includes secure coding standards |\n| **Change Management Policy** | Controls how changes to IT systems are requested, approved, implemented, and reviewed to minimize disruption |\n\n> *El AUP es como el contrato que firmas cuando te conectas al Wi-Fi de un hotel: define qué puedes y qué no puedes hacer con ese recurso compartido. Viola las reglas y pierdes el acceso — o algo peor.*"
+        "raw_content": "## 3. Policies\n\n* **Definition:** High-level guidelines that outline an organization's commitments and intentions toward specific actions — they define the \"what\" and \"why,\" not the step-by-step \"how.\"\n\n> *Una política es como las reglas del hogar: \"en esta casa no se fuma.\" No te dice exactamente dónde poner el letrero o qué pasa si alguien viola la regla — eso lo definen los estándares y procedimientos. La política solo establece la intención.*\n\n### Key Policy Types\n\n| Policy | Purpose |\n| --- | --- |\n| **Acceptable Use Policy (AUP)** | Defines do's and don'ts for users interacting with organizational IT systems; prevents legal issues and security threats |\n| **Information Security Policy** | Governs protection of information assets (data classification, access control, encryption, physical security) |\n| **Business Continuity Policy** | Outlines how critical operations will continue during/after a disruption |\n| **Disaster Recovery Policy** | Specifies how IT systems and data will be recovered after a disaster (backups, restoration steps, alternate sites) |\n| **Incident Response Policy** | Plans for detecting, reporting, assessing, responding to, and learning from security incidents |\n| **SDLC Policy** | Guides software development through all stages: requirements → design → coding → testing → deployment → maintenance; includes secure coding standards |\n| **Change Management Policy** | Controls how changes to IT systems are requested, approved, implemented, and reviewed to minimize disruption |\n\n> *El AUP es como el contrato que firmas cuando te conectas al Wi-Fi de un hotel: define qué puedes y qué no puedes hacer con ese recurso compartido. Viola las reglas y pierdes el acceso — o algo peor.*\n\n---"
       },
       {
         "name": "Standards",
@@ -4235,12 +3977,11 @@ const STUDY_DATA = [
           "**Environmental controls:** fire suppression, HVAC, power redundancy",
           "**Secure areas:** server rooms and data centers with stricter access and monitoring"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Specific, often mandatory rules that must be followed to implement a policy — more granular than policies and frequently defined by an industry body or regulatory authority.\n\n> *Si la política dice \"protege los datos del cliente,\" el estándar dice exactamente cómo: \"usa AES-256 para datos en reposo y TLS 1.2 o superior para datos en tránsito.\" La política pone el objetivo; el estándar pone el método obligatorio.*\n\n### Password Standards\n\nRequirements that enforce password robustness and resistance to brute-force attacks:\n\n- Minimum length: **8–12 characters**\n- Mix of: uppercase, lowercase, numbers, special characters\n- Regular rotation: every **60–90 days**\n- Prohibit reuse for a defined number of iterations\n- Use **password hashing and salting** to protect stored credentials\n\n### Access Control Standards\n\n| Model | Description | Typical Use |\n| --- | --- | --- |\n| **DAC** (Discretionary Access Control) | Resource owner decides who can access it | Standard enterprise environments |\n| **MAC** (Mandatory Access Control) | Labels/classifications determine access | Government, military |\n| **RBAC** (Role-Based Access Control) | Access based on job roles within the org | Most corporate environments |\n\nKey principles enforced by access control standards:\n\n- **Least Privilege** — users get only the minimum access needed to do their job\n- **Separation of Duties** — no single individual has complete control over a critical process\n\n### Physical Security Standards\n\n- **Perimeter security:** fences, gates, guards\n- **Surveillance:** CCTV systems\n- **Access control mechanisms:** biometric scanners, keycards\n- **Environmental controls:** fire suppression, HVAC, power redundancy\n- **Secure areas:** server rooms and data centers with stricter access and monitoring\n\n### Encryption Standards\n\n| Standard | Typical Use Case |\n| --- | --- |\n| **AES** (Advanced Encryption Standard) | Data at rest — strong security, efficient performance |\n| **RSA** | Data in transit — public key infrastructure for secure communications |"
+        "raw_content": "## 4. Standards\n\n* **Definition:** Specific, often mandatory rules that must be followed to implement a policy — more granular than policies and frequently defined by an industry body or regulatory authority.\n\n> *Si la política dice \"protege los datos del cliente,\" el estándar dice exactamente cómo: \"usa AES-256 para datos en reposo y TLS 1.2 o superior para datos en tránsito.\" La política pone el objetivo; el estándar pone el método obligatorio.*\n\n### Password Standards\n\nRequirements that enforce password robustness and resistance to brute-force attacks:\n\n- Minimum length: **8–12 characters**\n- Mix of: uppercase, lowercase, numbers, special characters\n- Regular rotation: every **60–90 days**\n- Prohibit reuse for a defined number of iterations\n- Use **password hashing and salting** to protect stored credentials\n\n### Access Control Standards\n\n| Model | Description | Typical Use |\n| --- | --- | --- |\n| **DAC** (Discretionary Access Control) | Resource owner decides who can access it | Standard enterprise environments |\n| **MAC** (Mandatory Access Control) | Labels/classifications determine access | Government, military |\n| **RBAC** (Role-Based Access Control) | Access based on job roles within the org | Most corporate environments |\n\nKey principles enforced by access control standards:\n\n- **Least Privilege** — users get only the minimum access needed to do their job\n- **Separation of Duties** — no single individual has complete control over a critical process\n\n### Physical Security Standards\n\n- **Perimeter security:** fences, gates, guards\n- **Surveillance:** CCTV systems\n- **Access control mechanisms:** biometric scanners, keycards\n- **Environmental controls:** fire suppression, HVAC, power redundancy\n- **Secure areas:** server rooms and data centers with stricter access and monitoring\n\n### Encryption Standards\n\n| Standard | Typical Use Case |\n| --- | --- |\n| **AES** (Advanced Encryption Standard) | Data at rest — strong security, efficient performance |\n| **RSA** | Data in transit — public key infrastructure for secure communications |\n\n---"
       },
       {
         "name": "Procedures",
-        "definition": "A checklist or step-by-step guide for detecting and responding to a specific type of incident — ensures consistency and speed regardless of who executes it.",
+        "definition": "Step-by-step instructions that describe exactly how to perform a specific task consistently and in compliance with policies and standards — the operational \"how-to.\"",
         "analogy": "*Si la política dice \"haz backups\" y el estándar dice \"usa AES-256,\" el procedimiento dice: cada lunes a las 2 AM, ejecuta el script X, verifica el checksum, almacena en el servidor Y, y manda el reporte al equipo Z. Es la receta completa.*",
         "tables": [
           {
@@ -4263,13 +4004,21 @@ const STUDY_DATA = [
         "list_items": [
           "Always plan for **rollback** if the change causes negative results",
           "Schedule disruptive changes during a designated **maintenance window**",
-          "Test significant changes before full deployment",
+          "Test significant changes before full deployment"
+        ],
+        "raw_content": "## 5. Procedures\n\n* **Definition:** Step-by-step instructions that describe exactly how to perform a specific task consistently and in compliance with policies and standards — the operational \"how-to.\"\n\n> *Si la política dice \"haz backups\" y el estándar dice \"usa AES-256,\" el procedimiento dice: cada lunes a las 2 AM, ejecuta el script X, verifica el checksum, almacena en el servidor Y, y manda el reporte al equipo Z. Es la receta completa.*\n\n### Change Management Procedures\n\nA systematic approach to implementing organizational or IT changes with minimal disruption:\n\n1. Identify the need for change and assess potential impacts\n2. Develop an implementation plan (who, what, resources)\n3. Implement in stages to allow issues to surface gradually\n4. Conduct a post-change review and document lessons learned\n\nAdditional considerations:\n- Always plan for **rollback** if the change causes negative results\n- Schedule disruptive changes during a designated **maintenance window**\n- Test significant changes before full deployment\n\n### Onboarding and Offboarding Procedures\n\n| Phase | Key Activities |\n| --- | --- |\n| **Onboarding** | Orientation, role-specific training, system access provisioning, team integration |\n| **Offboarding** | Retrieve company property, **disable system access**, conduct exit interview, gather feedback |\n\n> *El offboarding es tan crítico como el onboarding desde el punto de vista de seguridad. Un empleado que se va con acceso activo a los sistemas es una puerta abierta — intencional o no.*"
+      },
+      {
+        "name": "Playbooks",
+        "definition": "A checklist or step-by-step guide for detecting and responding to a specific type of incident — ensures consistency and speed regardless of who executes it.",
+        "analogy": "",
+        "tables": [],
+        "list_items": [
           "Cybersecurity incident response (e.g., ransomware, phishing, data breach)",
           "IT operations (e.g., server failure, DDoS)",
           "Customer service escalations"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Step-by-step instructions that describe exactly how to perform a specific task consistently and in compliance with policies and standards — the operational \"how-to.\"\n\n> *Si la política dice \"haz backups\" y el estándar dice \"usa AES-256,\" el procedimiento dice: cada lunes a las 2 AM, ejecuta el script X, verifica el checksum, almacena en el servidor Y, y manda el reporte al equipo Z. Es la receta completa.*\n\n### Change Management Procedures\n\nA systematic approach to implementing organizational or IT changes with minimal disruption:\n\n1. Identify the need for change and assess potential impacts\n2. Develop an implementation plan (who, what, resources)\n3. Implement in stages to allow issues to surface gradually\n4. Conduct a post-change review and document lessons learned\n\nAdditional considerations:\n- Always plan for **rollback** if the change causes negative results\n- Schedule disruptive changes during a designated **maintenance window**\n- Test significant changes before full deployment\n\n### Onboarding and Offboarding Procedures\n\n| Phase | Key Activities |\n| --- | --- |\n| **Onboarding** | Orientation, role-specific training, system access provisioning, team integration |\n| **Offboarding** | Retrieve company property, **disable system access**, conduct exit interview, gather feedback |\n\n> *El offboarding es tan crítico como el onboarding desde el punto de vista de seguridad. Un empleado que se va con acceso activo a los sistemas es una puerta abierta — intencional o no.*\n\n### Playbooks\n\n* **Definition:** A checklist or step-by-step guide for detecting and responding to a specific type of incident — ensures consistency and speed regardless of who executes it.\n\nPlaybooks are used for:\n- Cybersecurity incident response (e.g., ransomware, phishing, data breach)\n- IT operations (e.g., server failure, DDoS)\n- Customer service escalations\n\nPlaybooks typically include: resources required · steps to execute · expected outcomes · escalation paths"
+        "raw_content": "### Playbooks\n\n* **Definition:** A checklist or step-by-step guide for detecting and responding to a specific type of incident — ensures consistency and speed regardless of who executes it.\n\nPlaybooks are used for:\n- Cybersecurity incident response (e.g., ransomware, phishing, data breach)\n- IT operations (e.g., server failure, DDoS)\n- Customer service escalations\n\nPlaybooks typically include: resources required · steps to execute · expected outcomes · escalation paths\n\n---"
       },
       {
         "name": "Governance Considerations",
@@ -4309,8 +4058,7 @@ const STUDY_DATA = [
           "Example: **Agile methodologies** (Scrum, Kanban) in software development — not legally required but industry standard",
           "Organizations that ignore industry standards risk competitive disadvantage"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The regulatory, legal, industry-specific, and geographical factors that an organization must account for when designing and maintaining its governance framework.\n\n> *Gobernar una empresa global es como jugar ajedrez en varios tableros simultáneamente: las reglas del juego cambian dependiendo del país, la industria y hasta la ciudad donde operas.*\n\n### Regulatory Considerations\n\nOrganizations must comply with regulations that vary by industry and location:\n\n- Non-compliance leads to: **fines, sanctions, reputational damage**\n- Example: **GDPR** (EU) — governs data collection, storage, and use for EU citizens worldwide\n\n### Legal Considerations\n\nCover areas beyond regulation: contract law, intellectual property, corporate law, employment law.\n\n- Key legal risk: **litigation** from businesses, customers, or employees\n- Causes: breach of contract, product liability, employment disputes\n\n### Industry Considerations\n\nIndustry-specific standards and best practices that may not be legally binding but set competitive expectations:\n\n- Example: **Agile methodologies** (Scrum, Kanban) in software development — not legally required but industry standard\n- Organizations that ignore industry standards risk competitive disadvantage\n\n### Geographical Considerations\n\n| Scope | Example |\n| --- | --- |\n| **Local** | City zoning laws prohibiting certain business operations in residential areas |\n| **Regional** | **CCPA** (California) — consumer data rights for California residents |\n| **National** | **ADA** (USA) — accessibility requirements for employees and customers |\n| **Global** | **GDPR** (EU) — applies to any company worldwide that handles EU citizen data |\n\n> *El GDPR es el ejemplo perfecto de una regulación global: aunque tu empresa esté en Costa Rica, si tienes un cliente en Alemania y manejas sus datos, el GDPR te aplica. Las fronteras físicas ya no definen los límites legales.*\n\n⚠️ Key challenge: **Conflict of laws** — different jurisdictions may have contradictory requirements; organizations need deep legal understanding of each market they operate in."
+        "raw_content": "## 6. Governance Considerations\n\n* **Definition:** The regulatory, legal, industry-specific, and geographical factors that an organization must account for when designing and maintaining its governance framework.\n\n> *Gobernar una empresa global es como jugar ajedrez en varios tableros simultáneamente: las reglas del juego cambian dependiendo del país, la industria y hasta la ciudad donde operas.*\n\n### Regulatory Considerations\n\nOrganizations must comply with regulations that vary by industry and location:\n\n- Non-compliance leads to: **fines, sanctions, reputational damage**\n- Example: **GDPR** (EU) — governs data collection, storage, and use for EU citizens worldwide\n\n### Legal Considerations\n\nCover areas beyond regulation: contract law, intellectual property, corporate law, employment law.\n\n- Key legal risk: **litigation** from businesses, customers, or employees\n- Causes: breach of contract, product liability, employment disputes\n\n### Industry Considerations\n\nIndustry-specific standards and best practices that may not be legally binding but set competitive expectations:\n\n- Example: **Agile methodologies** (Scrum, Kanban) in software development — not legally required but industry standard\n- Organizations that ignore industry standards risk competitive disadvantage\n\n### Geographical Considerations\n\n| Scope | Example |\n| --- | --- |\n| **Local** | City zoning laws prohibiting certain business operations in residential areas |\n| **Regional** | **CCPA** (California) — consumer data rights for California residents |\n| **National** | **ADA** (USA) — accessibility requirements for employees and customers |\n| **Global** | **GDPR** (EU) — applies to any company worldwide that handles EU citizen data |\n\n> *El GDPR es el ejemplo perfecto de una regulación global: aunque tu empresa esté en Costa Rica, si tienes un cliente en Alemania y manejas sus datos, el GDPR te aplica. Las fronteras físicas ya no definen los límites legales.*\n\n⚠️ Key challenge: **Conflict of laws** — different jurisdictions may have contradictory requirements; organizations need deep legal understanding of each market they operate in.\n\n---"
       },
       {
         "name": "Compliance",
@@ -4374,8 +4122,7 @@ const STUDY_DATA = [
           "**Real-time monitoring** — flags violations as they occur (e.g., unauthorized access to patient records)",
           "**Automated reporting** — generates compliance reports on-demand (e.g., flagging suspicious bank transactions for AML review)"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The adherence to laws, regulations, standards, and internal policies applicable to an organization's operations — demonstrated through monitoring and reporting.\n\n> *Compliance es como la revisión técnica vehicular: no basta con que tu carro funcione bien; tienes que poder demostrárselo a una autoridad externa con documentación y evidencia. Sin el sticker, no circula.*\n\n### Compliance Reporting\n\n| Type | Who Sees It | Example |\n| --- | --- | --- |\n| **Internal** | Compliance department, internal auditors | Financial institution reporting all transactions above threshold to internal compliance officer |\n| **External** | Regulatory bodies, third-party auditors, customers | Pharmaceutical company submitting Good Manufacturing Practice (GMP) reports to the FDA |\n\n### Compliance Monitoring Components\n\n| Component | Description |\n| --- | --- |\n| **Due Diligence** | Exhaustive review of operations to identify potential compliance risks |\n| **Due Care** | The steps taken to mitigate identified compliance risks |\n| **Attestation** | Formal declaration by a responsible party that processes and controls are compliant |\n| **Acknowledgement** | Recognition and acceptance of compliance requirements by all relevant parties |\n| **Internal Monitoring** | Regular internal review of operations against internal policies |\n| **External Monitoring** | Third-party audits to verify compliance with external regulations or standards |\n\n> *Due diligence es revisar el historial de crédito antes de firmar el préstamo. Due care es no gastar más de lo que puedes pagar una vez que ya lo tienes. Uno es investigar el riesgo; el otro es actuar responsablemente para mitigarlo.*\n\n### Role of Automation in Compliance\n\nAutomated compliance systems provide:\n- **Streamlined data collection** — eliminates manual gathering and human error\n- **Real-time monitoring** — flags violations as they occur (e.g., unauthorized access to patient records)\n- **Automated reporting** — generates compliance reports on-demand (e.g., flagging suspicious bank transactions for AML review)"
+        "raw_content": "## 7. Compliance\n\n* **Definition:** The adherence to laws, regulations, standards, and internal policies applicable to an organization's operations — demonstrated through monitoring and reporting.\n\n> *Compliance es como la revisión técnica vehicular: no basta con que tu carro funcione bien; tienes que poder demostrárselo a una autoridad externa con documentación y evidencia. Sin el sticker, no circula.*\n\n### Compliance Reporting\n\n| Type | Who Sees It | Example |\n| --- | --- | --- |\n| **Internal** | Compliance department, internal auditors | Financial institution reporting all transactions above threshold to internal compliance officer |\n| **External** | Regulatory bodies, third-party auditors, customers | Pharmaceutical company submitting Good Manufacturing Practice (GMP) reports to the FDA |\n\n### Compliance Monitoring Components\n\n| Component | Description |\n| --- | --- |\n| **Due Diligence** | Exhaustive review of operations to identify potential compliance risks |\n| **Due Care** | The steps taken to mitigate identified compliance risks |\n| **Attestation** | Formal declaration by a responsible party that processes and controls are compliant |\n| **Acknowledgement** | Recognition and acceptance of compliance requirements by all relevant parties |\n| **Internal Monitoring** | Regular internal review of operations against internal policies |\n| **External Monitoring** | Third-party audits to verify compliance with external regulations or standards |\n\n> *Due diligence es revisar el historial de crédito antes de firmar el préstamo. Due care es no gastar más de lo que puedes pagar una vez que ya lo tienes. Uno es investigar el riesgo; el otro es actuar responsablemente para mitigarlo.*\n\n### Role of Automation in Compliance\n\nAutomated compliance systems provide:\n- **Streamlined data collection** — eliminates manual gathering and human error\n- **Real-time monitoring** — flags violations as they occur (e.g., unauthorized access to patient records)\n- **Automated reporting** — generates compliance reports on-demand (e.g., flagging suspicious bank transactions for AML review)\n\n---"
       },
       {
         "name": "Non-Compliance Consequences",
@@ -4423,86 +4170,7 @@ const STUDY_DATA = [
           "Regularly reviewing and updating compliance programs",
           "Maintaining audit trails and documentation for attestation"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The legal, financial, reputational, and operational penalties an organization faces when it fails to adhere to applicable laws, regulations, or contractual obligations.\n\n> *Incumplir con las regulaciones de ciberseguridad es como manejar sin seguro: mientras no pase nada, parece que ahorras dinero. Pero cuando ocurre el accidente, el costo es exponencialmente mayor — y en algunos casos, te quitan la licencia para siempre.*\n\n### Consequence Types\n\n| Consequence | Description | Real-World Example |\n| --- | --- | --- |\n| **Fines** | Monetary penalties from regulatory bodies | GDPR: up to **€20M or 4% of global annual turnover** (whichever is higher); British Airways fined £183M for a breach affecting 500,000 customers |\n| **Sanctions** | Operational restrictions or bans imposed by regulators | Chinese government sanctioned companies for violating cybersecurity law — warnings, fines, income confiscation |\n| **Reputational Damage** | Long-term public trust loss; stock price decline | Equifax 2017 breach: 147M records exposed, stock dropped **30%+** in weeks |\n| **Loss of License** | Revocation of operating license or certification | NY DFS revoked a Bitcoin company's license for failing to meet cybersecurity requirements |\n| **Contractual Impacts** | Breach of client or partner contracts; legal disputes, penalties, or termination | Software firm violating data protection regulations sued by clients; contracts terminated |\n\n> *Equifax es el caso de estudio perfecto de consecuencias en cascada: primero el daño reputacional, luego las demandas, luego las investigaciones regulatorias, y finalmente una multa de $575 millones con la FTC. No cumplir no solo duele hoy — duele por años.*\n\n### Prevention\n\nOrganizations avoid non-compliance consequences by:\n- Understanding and adhering to all relevant laws and regulations\n- Implementing robust cybersecurity measures\n- Regularly reviewing and updating compliance programs\n- Maintaining audit trails and documentation for attestation"
-      },
-      {
-        "name": "Key Terms",
-        "definition": "GRC: Governance, Risk, and Compliance — the strategic triad for organizational security management",
-        "analogy": "",
-        "tables": [
-          {
-            "headers": [
-              "Term",
-              "Meaning"
-            ],
-            "rows": [
-              [
-                "**GRC**",
-                "Governance, Risk, and Compliance — the strategic triad for organizational security management"
-              ],
-              [
-                "**AUP**",
-                "Acceptable Use Policy — defines permitted and prohibited use of IT resources"
-              ],
-              [
-                "**SDLC**",
-                "Software Development Lifecycle — structured process guiding software from concept to retirement"
-              ],
-              [
-                "**DAC**",
-                "Discretionary Access Control — owner determines access permissions"
-              ],
-              [
-                "**MAC**",
-                "Mandatory Access Control — access determined by labels/classifications"
-              ],
-              [
-                "**RBAC**",
-                "Role-Based Access Control — access determined by job role"
-              ],
-              [
-                "**GDPR**",
-                "General Data Protection Regulation — EU regulation governing personal data of EU citizens"
-              ],
-              [
-                "**CCPA**",
-                "California Consumer Privacy Act — state-level data rights for California residents"
-              ],
-              [
-                "**ADA**",
-                "Americans with Disabilities Act — national law requiring accessibility accommodations"
-              ],
-              [
-                "**Due Diligence**",
-                "Exhaustive review to identify compliance risks"
-              ],
-              [
-                "**Due Care**",
-                "Actions taken to mitigate identified risks"
-              ],
-              [
-                "**Attestation**",
-                "Formal declaration of compliance by responsible party"
-              ],
-              [
-                "**Playbook**",
-                "Step-by-step incident response or operational guide"
-              ],
-              [
-                "**Least Privilege**",
-                "Principle limiting user access to only what is needed for their role"
-              ],
-              [
-                "**Separation of Duties**",
-                "Principle preventing any single person from controlling an entire critical process"
-              ]
-            ]
-          }
-        ],
-        "list_items": [],
-        "spanish_words": [],
-        "raw_content": "| Term | Meaning |\n| --- | --- |\n| **GRC** | Governance, Risk, and Compliance — the strategic triad for organizational security management |\n| **AUP** | Acceptable Use Policy — defines permitted and prohibited use of IT resources |\n| **SDLC** | Software Development Lifecycle — structured process guiding software from concept to retirement |\n| **DAC** | Discretionary Access Control — owner determines access permissions |\n| **MAC** | Mandatory Access Control — access determined by labels/classifications |\n| **RBAC** | Role-Based Access Control — access determined by job role |\n| **GDPR** | General Data Protection Regulation — EU regulation governing personal data of EU citizens |\n| **CCPA** | California Consumer Privacy Act — state-level data rights for California residents |\n| **ADA** | Americans with Disabilities Act — national law requiring accessibility accommodations |\n| **Due Diligence** | Exhaustive review to identify compliance risks |\n| **Due Care** | Actions taken to mitigate identified risks |\n| **Attestation** | Formal declaration of compliance by responsible party |\n| **Playbook** | Step-by-step incident response or operational guide |\n| **Least Privilege** | Principle limiting user access to only what is needed for their role |\n| **Separation of Duties** | Principle preventing any single person from controlling an entire critical process |"
+        "raw_content": "## 8. Non-Compliance Consequences\n\n* **Definition:** The legal, financial, reputational, and operational penalties an organization faces when it fails to adhere to applicable laws, regulations, or contractual obligations.\n\n> *Incumplir con las regulaciones de ciberseguridad es como manejar sin seguro: mientras no pase nada, parece que ahorras dinero. Pero cuando ocurre el accidente, el costo es exponencialmente mayor — y en algunos casos, te quitan la licencia para siempre.*\n\n### Consequence Types\n\n| Consequence | Description | Real-World Example |\n| --- | --- | --- |\n| **Fines** | Monetary penalties from regulatory bodies | GDPR: up to **€20M or 4% of global annual turnover** (whichever is higher); British Airways fined £183M for a breach affecting 500,000 customers |\n| **Sanctions** | Operational restrictions or bans imposed by regulators | Chinese government sanctioned companies for violating cybersecurity law — warnings, fines, income confiscation |\n| **Reputational Damage** | Long-term public trust loss; stock price decline | Equifax 2017 breach: 147M records exposed, stock dropped **30%+** in weeks |\n| **Loss of License** | Revocation of operating license or certification | NY DFS revoked a Bitcoin company's license for failing to meet cybersecurity requirements |\n| **Contractual Impacts** | Breach of client or partner contracts; legal disputes, penalties, or termination | Software firm violating data protection regulations sued by clients; contracts terminated |\n\n> *Equifax es el caso de estudio perfecto de consecuencias en cascada: primero el daño reputacional, luego las demandas, luego las investigaciones regulatorias, y finalmente una multa de $575 millones con la FTC. No cumplir no solo duele hoy — duele por años.*\n\n### Prevention\n\nOrganizations avoid non-compliance consequences by:\n- Understanding and adhering to all relevant laws and regulations\n- Implementing robust cybersecurity measures\n- Regularly reviewing and updating compliance programs\n- Maintaining audit trails and documentation for attestation\n\n---"
       }
     ]
   },
@@ -4556,8 +4224,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Asset management is the systematic process of developing, operating, maintaining, and selling assets in a cost-effective manner; change management is a structured approach to transitioning individuals, teams, and organizations from a current state to a desired future state.\n\n> *Imagina que tu empresa es una cocina de restaurante. La gestión de activos es el inventario de cada cuchillo, olla y licuadora — quién lo tiene, dónde está y cuándo fue revisado. La gestión de cambios es el proceso formal para aprobar que el chef principal cambie la receta estrella sin que el caos se apodere de la cocina.*\n\n### Why Both Matter in Cybersecurity\n\n| Pillar | Purpose | Security Benefit |\n| --- | --- | --- |\n| **Asset Management** | Identify, catalog, and monitor all digital assets | Reduces vulnerabilities; ensures consistent security protocols |\n| **Change Management** | Control how system modifications are executed | Prevents security gaps and misconfigurations from untested changes |\n\n### Objectives Covered (SY0-701)\n\n| Objective | Statement |\n| --- | --- |\n| **1.3** | Explain the importance of change management processes and the impact to security |\n| **4.1** | Apply common security techniques to computing resources (given a scenario) |\n| **4.2** | Explain security implications of proper hardware, software, and data asset management |"
+        "raw_content": "## 1. Asset and Change Management Overview\n\n* **Definition:** Asset management is the systematic process of developing, operating, maintaining, and selling assets in a cost-effective manner; change management is a structured approach to transitioning individuals, teams, and organizations from a current state to a desired future state.\n\n> *Imagina que tu empresa es una cocina de restaurante. La gestión de activos es el inventario de cada cuchillo, olla y licuadora — quién lo tiene, dónde está y cuándo fue revisado. La gestión de cambios es el proceso formal para aprobar que el chef principal cambie la receta estrella sin que el caos se apodere de la cocina.*\n\n### Why Both Matter in Cybersecurity\n\n| Pillar | Purpose | Security Benefit |\n| --- | --- | --- |\n| **Asset Management** | Identify, catalog, and monitor all digital assets | Reduces vulnerabilities; ensures consistent security protocols |\n| **Change Management** | Control how system modifications are executed | Prevents security gaps and misconfigurations from untested changes |\n\n### Objectives Covered (SY0-701)\n\n| Objective | Statement |\n| --- | --- |\n| **1.3** | Explain the importance of change management processes and the impact to security |\n| **4.1** | Apply common security techniques to computing resources (given a scenario) |\n| **4.2** | Explain security implications of proper hardware, software, and data asset management |\n\n---"
       },
       {
         "name": "Acquisition and Procurement",
@@ -4598,8 +4265,7 @@ const STUDY_DATA = [
           "End-user training on the new product",
           "Integration into existing organizational workflows"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Acquisition is the act of obtaining goods and services; procurement is the broader end-to-end process of sourcing and obtaining those goods and services, including all upstream evaluation steps.\n\n> *Acquisition es el momento en que recibes la pizza en la puerta. Procurement es todo lo que pasó antes: elegir la pizzería, comparar precios, revisar ingredientes, hacer el pedido y confirmar el pago.*\n\n### Purchase Options\n\n| Method | Best For | Notes |\n| --- | --- | --- |\n| **Company Credit Card** | Low-cost, urgent items (ink, paper) | Transaction limits and item types set per employee role |\n| **Individual Purchase / Reimbursement** | Emergency or no-card situations | Employee pays out-of-pocket; submits receipts for reimbursement |\n| **Purchase Order (PO)** | Large or expensive acquisitions | Formal document from purchasing dept; not a payment — a legally binding promise to pay |\n\n### Internal Approval Process\n\nBefore hardware or software can be purchased, organizations commonly require:\n\n- Alignment with company goals and budget\n- Security and compatibility assessment against existing infrastructure\n- Multi-level authorization (e.g., ITPR process used by the US Navy)\n\n### Post-Procurement Steps\n\nAfter approval, the procurement process continues with:\n\n- Compatibility testing with current systems\n- Security checks and configuration hardening\n- End-user training on the new product\n- Integration into existing organizational workflows"
+        "raw_content": "## 2. Acquisition and Procurement\n\n* **Definition:** Acquisition is the act of obtaining goods and services; procurement is the broader end-to-end process of sourcing and obtaining those goods and services, including all upstream evaluation steps.\n\n> *Acquisition es el momento en que recibes la pizza en la puerta. Procurement es todo lo que pasó antes: elegir la pizzería, comparar precios, revisar ingredientes, hacer el pedido y confirmar el pago.*\n\n### Purchase Options\n\n| Method | Best For | Notes |\n| --- | --- | --- |\n| **Company Credit Card** | Low-cost, urgent items (ink, paper) | Transaction limits and item types set per employee role |\n| **Individual Purchase / Reimbursement** | Emergency or no-card situations | Employee pays out-of-pocket; submits receipts for reimbursement |\n| **Purchase Order (PO)** | Large or expensive acquisitions | Formal document from purchasing dept; not a payment — a legally binding promise to pay |\n\n### Internal Approval Process\n\nBefore hardware or software can be purchased, organizations commonly require:\n\n- Alignment with company goals and budget\n- Security and compatibility assessment against existing infrastructure\n- Multi-level authorization (e.g., ITPR process used by the US Navy)\n\n### Post-Procurement Steps\n\nAfter approval, the procurement process continues with:\n\n- Compatibility testing with current systems\n- Security checks and configuration hardening\n- End-user training on the new product\n- Integration into existing organizational workflows\n\n---"
       },
       {
         "name": "Mobile Asset Deployments",
@@ -4644,12 +4310,11 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Mobile device deployment models define how personal and company-owned devices (smartphones, tablets, wearables) are managed and integrated into an organization's network.\n\n> *Elegir un modelo de dispositivos es como decidir si los empleados de un restaurante usan su propio uniforme (BYOD), uno que la empresa les da pero pueden usar en casa (COPE), o uno que elijen de un catálogo aprobado (CYOD).*\n\n### The Three Deployment Models\n\n| Model | Full Name | Who Owns the Device | Personal Use Allowed | Key Benefit | Key Risk |\n| --- | --- | --- | --- | --- | --- |\n| **BYOD** | Bring Your Own Device | Employee | Yes | Lower cost for employer; employee uses one device | Reduced corporate control; security enforcement difficult |\n| **COPE** | Corporate-Owned, Personally Enabled | Organization | Yes | Full MDM control; standardized models | Higher upfront cost; employee privacy concerns |\n| **CYOD** | Choose Your Own Device | Organization | Generally No | Employee has choice; limited support scope | Higher upfront cost; employees may need two devices |\n\n### Model Selection Criteria\n\nThree key factors when choosing a deployment model:\n\n1. **Cost** — BYOD has hidden security/compatibility costs; COPE/CYOD have high upfront but lower ongoing support costs\n2. **Security** — CYOD offers the best corporate control and full MDM integration\n3. **Employee Satisfaction** — BYOD and CYOD offer more choice; COPE has less employee flexibility"
+        "raw_content": "## 3. Mobile Asset Deployments\n\n* **Definition:** Mobile device deployment models define how personal and company-owned devices (smartphones, tablets, wearables) are managed and integrated into an organization's network.\n\n> *Elegir un modelo de dispositivos es como decidir si los empleados de un restaurante usan su propio uniforme (BYOD), uno que la empresa les da pero pueden usar en casa (COPE), o uno que elijen de un catálogo aprobado (CYOD).*\n\n### The Three Deployment Models\n\n| Model | Full Name | Who Owns the Device | Personal Use Allowed | Key Benefit | Key Risk |\n| --- | --- | --- | --- | --- | --- |\n| **BYOD** | Bring Your Own Device | Employee | Yes | Lower cost for employer; employee uses one device | Reduced corporate control; security enforcement difficult |\n| **COPE** | Corporate-Owned, Personally Enabled | Organization | Yes | Full MDM control; standardized models | Higher upfront cost; employee privacy concerns |\n| **CYOD** | Choose Your Own Device | Organization | Generally No | Employee has choice; limited support scope | Higher upfront cost; employees may need two devices |\n\n### Model Selection Criteria\n\nThree key factors when choosing a deployment model:\n\n1. **Cost** — BYOD has hidden security/compatibility costs; COPE/CYOD have high upfront but lower ongoing support costs\n2. **Security** — CYOD offers the best corporate control and full MDM integration\n3. **Employee Satisfaction** — BYOD and CYOD offer more choice; COPE has less employee flexibility\n\n---"
       },
       {
         "name": "Asset Management — Assignment, Accounting, and Tracking",
-        "definition": "A Mobile Device Management solution is a centralized platform that allows organizations to securely manage and monitor employee mobile devices, enforce corporate policies, push updates, and remotely lock or wipe devices.",
+        "definition": "Asset management involves the systematic governance and lifecycle tracking of all organizational assets, including assignment of ownership, classification, monitoring, and enumeration of every asset from acquisition to disposal.",
         "analogy": "*Gestionar activos tecnológicos es como administrar una biblioteca: cada libro (activo) tiene un número de catálogo, está asignado a una sección, y se registra quién lo tiene prestado y cuándo fue revisado por última vez.*",
         "tables": [
           {
@@ -4689,18 +4354,25 @@ const STUDY_DATA = [
             ]
           }
         ],
+        "list_items": [],
+        "raw_content": "## 4. Asset Management — Assignment, Accounting, and Tracking\n\n* **Definition:** Asset management involves the systematic governance and lifecycle tracking of all organizational assets, including assignment of ownership, classification, monitoring, and enumeration of every asset from acquisition to disposal.\n\n> *Gestionar activos tecnológicos es como administrar una biblioteca: cada libro (activo) tiene un número de catálogo, está asignado a una sección, y se registra quién lo tiene prestado y cuándo fue revisado por última vez.*\n\n### Assignment and Accounting\n\n| Concept | Description |\n| --- | --- |\n| **Ownership / Allocation** | Each asset is formally assigned to a person or department |\n| **Classification** | Assets are categorized by function, value, or sensitivity to guide maintenance and replacement decisions |\n\n### Monitoring and Tracking\n\n| Concept | Description |\n| --- | --- |\n| **Asset Monitoring** | Maintains an inventory of every asset — specs, location, assigned user, last serviced |\n| **Asset Tracking** | Extends monitoring with GPS/software tracking of physical location, status, and condition |\n| **Enumeration** | Identifies and counts connected assets using scanners and tools; detects unauthorized devices |"
+      },
+      {
+        "name": "Mobile Device Management (MDM)",
+        "definition": "A Mobile Device Management solution is a centralized platform that allows organizations to securely manage and monitor employee mobile devices, enforce corporate policies, push updates, and remotely lock or wipe devices.",
+        "analogy": "*Un MDM es como el mando a distancia central de una sala de cine: desde un solo lugar puedes encender y apagar cada pantalla, actualizar el contenido y, si alguien se lleva una pantalla sin permiso, apagarla remotamente.*",
+        "tables": [],
         "list_items": [
           "Enforce corporate security policies across all managed devices",
           "Push software patches and applications to thousands of devices simultaneously",
           "Remotely lock or wipe a lost or stolen device",
           "Ensure consistency and standardization across a diverse device ecosystem"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Asset management involves the systematic governance and lifecycle tracking of all organizational assets, including assignment of ownership, classification, monitoring, and enumeration of every asset from acquisition to disposal.\n\n> *Gestionar activos tecnológicos es como administrar una biblioteca: cada libro (activo) tiene un número de catálogo, está asignado a una sección, y se registra quién lo tiene prestado y cuándo fue revisado por última vez.*\n\n### Assignment and Accounting\n\n| Concept | Description |\n| --- | --- |\n| **Ownership / Allocation** | Each asset is formally assigned to a person or department |\n| **Classification** | Assets are categorized by function, value, or sensitivity to guide maintenance and replacement decisions |\n\n### Monitoring and Tracking\n\n| Concept | Description |\n| --- | --- |\n| **Asset Monitoring** | Maintains an inventory of every asset — specs, location, assigned user, last serviced |\n| **Asset Tracking** | Extends monitoring with GPS/software tracking of physical location, status, and condition |\n| **Enumeration** | Identifies and counts connected assets using scanners and tools; detects unauthorized devices |\n\n### Mobile Device Management (MDM)\n\n* **Definition:** A Mobile Device Management solution is a centralized platform that allows organizations to securely manage and monitor employee mobile devices, enforce corporate policies, push updates, and remotely lock or wipe devices.\n\n> *Un MDM es como el mando a distancia central de una sala de cine: desde un solo lugar puedes encender y apagar cada pantalla, actualizar el contenido y, si alguien se lleva una pantalla sin permiso, apagarla remotamente.*\n\n**MDM Capabilities:**\n\n- Enforce corporate security policies across all managed devices\n- Push software patches and applications to thousands of devices simultaneously\n- Remotely lock or wipe a lost or stolen device\n- Ensure consistency and standardization across a diverse device ecosystem"
+        "raw_content": "### Mobile Device Management (MDM)\n\n* **Definition:** A Mobile Device Management solution is a centralized platform that allows organizations to securely manage and monitor employee mobile devices, enforce corporate policies, push updates, and remotely lock or wipe devices.\n\n> *Un MDM es como el mando a distancia central de una sala de cine: desde un solo lugar puedes encender y apagar cada pantalla, actualizar el contenido y, si alguien se lleva una pantalla sin permiso, apagarla remotamente.*\n\n**MDM Capabilities:**\n\n- Enforce corporate security policies across all managed devices\n- Push software patches and applications to thousands of devices simultaneously\n- Remotely lock or wipe a lost or stolen device\n- Ensure consistency and standardization across a diverse device ecosystem\n\n---"
       },
       {
         "name": "Asset Disposal and Decommissioning",
-        "definition": "Data retention defines how long specific types of data must be stored before disposal, balancing regulatory requirements, business needs, and security risk.",
+        "definition": "Asset disposal and decommissioning is the structured process of safely retiring digital assets — including sanitizing or destroying stored data and certifying that disposal has occurred — in accordance with regulatory requirements.",
         "analogy": "*Desechar un disco duro sin sanearlo es como tirar una libreta de contraseñas en la basura sin desgarrarla. El proceso de disposición segura garantiza que nadie que encuentre ese disco pueda leer lo que había en él.*",
         "tables": [
           {
@@ -4734,15 +4406,31 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [
-          "Shredding, pulverizing, melting, incinerating the physical storage media",
+          "Shredding, pulverizing, melting, incinerating the physical storage media"
+        ],
+        "raw_content": "## 5. Asset Disposal and Decommissioning\n\n* **Definition:** Asset disposal and decommissioning is the structured process of safely retiring digital assets — including sanitizing or destroying stored data and certifying that disposal has occurred — in accordance with regulatory requirements.\n\n> *Desechar un disco duro sin sanearlo es como tirar una libreta de contraseñas en la basura sin desgarrarla. El proceso de disposición segura garantiza que nadie que encuentre ese disco pueda leer lo que había en él.*\n\n**Reference Standard:** NIST Special Publication 800-88 — *Guidelines for Media Sanitization*\n\n### Sanitization Methods\n\n| Method | How It Works | Notes |\n| --- | --- | --- |\n| **Overwriting (Multiple Passes)** | Replaces existing data with random series of bits; repeated 1, 7, or 35 times | More passes = higher classification data; does not destroy the device |\n| **Degaussing** | Strong magnetic field disrupts magnetic domains on HDD or tape | Permanently destroys data and the device's ability to store data again |\n| **Secure Erase** | Firmware-level purge of all data blocks | Precursor to Cryptographic Erase; some flaws discovered over time |\n| **Cryptographic Erase (CE)** | Data is pre-encrypted; disposal destroys only the encryption keys | Fastest method (30–60 seconds); device can be repurposed safely |\n\n### Destruction Methods\n\nUsed when sanitization is insufficient (e.g., top secret data):\n\n- Shredding, pulverizing, melting, incinerating the physical storage media"
+      },
+      {
+        "name": "Certification",
+        "definition": "Certification is documented proof that data or hardware has been securely sanitized or destroyed, creating an audit trail for regulatory compliance.",
+        "analogy": "*La certificación de disposición es como el recibo del depósito en un incinerador: no solo deshiciste el documento confidencial, sino que tienes prueba de cuándo, cómo y quién lo hizo.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Certification\n\n* **Definition:** Certification is documented proof that data or hardware has been securely sanitized or destroyed, creating an audit trail for regulatory compliance.\n\n> *La certificación de disposición es como el recibo del depósito en un incinerador: no solo deshiciste el documento confidencial, sino que tienes prueba de cuándo, cómo y quién lo hizo.*"
+      },
+      {
+        "name": "Data Retention",
+        "definition": "Data retention defines how long specific types of data must be stored before disposal, balancing regulatory requirements, business needs, and security risk.",
+        "analogy": "*La retención de datos es como saber cuánto tiempo debes guardar tus declaraciones de impuestos. No guardas todo para siempre, pero tampoco botas todo de inmediato — hay plazos legales y prácticos que debes respetar.*",
+        "tables": [],
+        "list_items": [
           "Regulatory mandates (financial records, medical records)",
           "Historical analysis, trend prediction, dispute resolution",
           "Storage costs scale with volume",
           "More stored data = larger attack surface",
           "Data management complexity increases"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Asset disposal and decommissioning is the structured process of safely retiring digital assets — including sanitizing or destroying stored data and certifying that disposal has occurred — in accordance with regulatory requirements.\n\n> *Desechar un disco duro sin sanearlo es como tirar una libreta de contraseñas en la basura sin desgarrarla. El proceso de disposición segura garantiza que nadie que encuentre ese disco pueda leer lo que había en él.*\n\n**Reference Standard:** NIST Special Publication 800-88 — *Guidelines for Media Sanitization*\n\n### Sanitization Methods\n\n| Method | How It Works | Notes |\n| --- | --- | --- |\n| **Overwriting (Multiple Passes)** | Replaces existing data with random series of bits; repeated 1, 7, or 35 times | More passes = higher classification data; does not destroy the device |\n| **Degaussing** | Strong magnetic field disrupts magnetic domains on HDD or tape | Permanently destroys data and the device's ability to store data again |\n| **Secure Erase** | Firmware-level purge of all data blocks | Precursor to Cryptographic Erase; some flaws discovered over time |\n| **Cryptographic Erase (CE)** | Data is pre-encrypted; disposal destroys only the encryption keys | Fastest method (30–60 seconds); device can be repurposed safely |\n\n### Destruction Methods\n\nUsed when sanitization is insufficient (e.g., top secret data):\n\n- Shredding, pulverizing, melting, incinerating the physical storage media\n\n### Certification\n\n* **Definition:** Certification is documented proof that data or hardware has been securely sanitized or destroyed, creating an audit trail for regulatory compliance.\n\n> *La certificación de disposición es como el recibo del depósito en un incinerador: no solo deshiciste el documento confidencial, sino que tienes prueba de cuándo, cómo y quién lo hizo.*\n\n### Data Retention\n\n* **Definition:** Data retention defines how long specific types of data must be stored before disposal, balancing regulatory requirements, business needs, and security risk.\n\n> *La retención de datos es como saber cuánto tiempo debes guardar tus declaraciones de impuestos. No guardas todo para siempre, pero tampoco botas todo de inmediato — hay plazos legales y prácticos que debes respetar.*\n\n**Why Retain Data?**\n- Regulatory mandates (financial records, medical records)\n- Historical analysis, trend prediction, dispute resolution\n\n**Why Not Retain Everything?**\n- Storage costs scale with volume\n- More stored data = larger attack surface\n- Data management complexity increases\n\n> ⚠️ **Key principle:** *The more you store, the more you must secure.*"
+        "raw_content": "### Data Retention\n\n* **Definition:** Data retention defines how long specific types of data must be stored before disposal, balancing regulatory requirements, business needs, and security risk.\n\n> *La retención de datos es como saber cuánto tiempo debes guardar tus declaraciones de impuestos. No guardas todo para siempre, pero tampoco botas todo de inmediato — hay plazos legales y prácticos que debes respetar.*\n\n**Why Retain Data?**\n- Regulatory mandates (financial records, medical records)\n- Historical analysis, trend prediction, dispute resolution\n\n**Why Not Retain Everything?**\n- Storage costs scale with volume\n- More stored data = larger attack surface\n- Data management complexity increases\n\n> ⚠️ **Key principle:** *The more you store, the more you must secure.*\n\n---"
       },
       {
         "name": "Change Management",
@@ -4775,8 +4463,7 @@ const STUDY_DATA = [
           "What are the immediate and long-term effects on operations, reputation, and users?",
           "Are there unforeseen challenges?"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Change management is the orchestrated strategy to transition teams, departments, or entire organizations from their existing state to a more secure and desirable future state through controlled, structured, and approved processes.\n\n> *La gestión de cambios es como solicitar un permiso de construcción antes de remodelar tu casa. No puedes simplemente tumbar una pared sin planos aprobados, un inspector, y asegurarte de que no hay tuberías o cables detrás de ella.*\n\n### Key Roles in Change Management\n\n| Role | Responsibility |\n| --- | --- |\n| **Change Advisory Board (CAB)** | Body of representatives from across the organization that evaluates, approves, and schedules proposed changes |\n| **Change Owner** | Individual or team that initiates the change request; advocates for the change and details its benefits and challenges |\n| **Stakeholder** | Any person with a vested interest in the change — directly impacted or involved in its assessment/implementation |\n\n### Impact Analysis\n\nBefore implementing any change, answer:\n\n- What could go wrong?\n- What are the immediate and long-term effects on operations, reputation, and users?\n- Are there unforeseen challenges?"
+        "raw_content": "## 6. Change Management\n\n* **Definition:** Change management is the orchestrated strategy to transition teams, departments, or entire organizations from their existing state to a more secure and desirable future state through controlled, structured, and approved processes.\n\n> *La gestión de cambios es como solicitar un permiso de construcción antes de remodelar tu casa. No puedes simplemente tumbar una pared sin planos aprobados, un inspector, y asegurarte de que no hay tuberías o cables detrás de ella.*\n\n### Key Roles in Change Management\n\n| Role | Responsibility |\n| --- | --- |\n| **Change Advisory Board (CAB)** | Body of representatives from across the organization that evaluates, approves, and schedules proposed changes |\n| **Change Owner** | Individual or team that initiates the change request; advocates for the change and details its benefits and challenges |\n| **Stakeholder** | Any person with a vested interest in the change — directly impacted or involved in its assessment/implementation |\n\n### Impact Analysis\n\nBefore implementing any change, answer:\n\n- What could go wrong?\n- What are the immediate and long-term effects on operations, reputation, and users?\n- Are there unforeseen challenges?\n\n---"
       },
       {
         "name": "Change Management Process Steps",
@@ -4843,8 +4530,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The change management process is a structured five-step workflow that governs how proposed changes are evaluated, executed, validated, and recorded across an organization.\n\n> *El proceso de gestión de cambios es como una receta de cocina profesional: no improvisas, sigues pasos en orden, verificas el resultado al final y anotas lo que aprendiste para la próxima vez.*\n\n### The Five Steps\n\n| Step | Name | Description |\n| --- | --- | --- |\n| 1 | **Prepare** | Assess the current state; identify inefficiencies; gather resources; engage stakeholders |\n| 2 | **Create a Vision** | Define the desired future state and explain the reasons for the change; build stakeholder buy-in |\n| 3 | **Implement** | Execute the plan; conduct training; communicate continuously; address concerns |\n| 4 | **Verify** | Measure effectiveness against objectives; use surveys, metrics, and interviews; address discrepancies |\n| 5 | **Document** | Create a historical record of the change — what was done, when, and why |\n\n### Critical Supporting Practices\n\n| Practice | Purpose |\n| --- | --- |\n| **Scheduled Maintenance Windows** | Pre-defined time slots for changes to minimize disruption (e.g., Saturdays midnight–4 a.m.) |\n| **Backout Plan** | Predetermined rollback strategy if the change fails; returns systems to their previous stable state |\n| **Testing Results** | Post-implementation validation that desired outcomes were achieved and no new issues were introduced |\n| **Standard Operating Procedures (SOPs)** | Step-by-step documented instructions ensuring consistency, reducing errors across implementations |"
+        "raw_content": "## 7. Change Management Process Steps\n\n* **Definition:** The change management process is a structured five-step workflow that governs how proposed changes are evaluated, executed, validated, and recorded across an organization.\n\n> *El proceso de gestión de cambios es como una receta de cocina profesional: no improvisas, sigues pasos en orden, verificas el resultado al final y anotas lo que aprendiste para la próxima vez.*\n\n### The Five Steps\n\n| Step | Name | Description |\n| --- | --- | --- |\n| 1 | **Prepare** | Assess the current state; identify inefficiencies; gather resources; engage stakeholders |\n| 2 | **Create a Vision** | Define the desired future state and explain the reasons for the change; build stakeholder buy-in |\n| 3 | **Implement** | Execute the plan; conduct training; communicate continuously; address concerns |\n| 4 | **Verify** | Measure effectiveness against objectives; use surveys, metrics, and interviews; address discrepancies |\n| 5 | **Document** | Create a historical record of the change — what was done, when, and why |\n\n### Critical Supporting Practices\n\n| Practice | Purpose |\n| --- | --- |\n| **Scheduled Maintenance Windows** | Pre-defined time slots for changes to minimize disruption (e.g., Saturdays midnight–4 a.m.) |\n| **Backout Plan** | Predetermined rollback strategy if the change fails; returns systems to their previous stable state |\n| **Testing Results** | Post-implementation validation that desired outcomes were achieved and no new issues were introduced |\n| **Standard Operating Procedures (SOPs)** | Step-by-step documented instructions ensuring consistency, reducing errors across implementations |\n\n---"
       },
       {
         "name": "Technical Implications of Changes",
@@ -4889,8 +4575,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Technical implications of changes refer to the broad downstream effects a single system modification can have across interconnected systems, configurations, applications, and security controls.\n\n> *Cambiar una configuración en un sistema corporativo es como mover una pieza en un móvil colgante: aunque solo tocas una parte, todo lo demás se mueve. Tienes que saber qué está conectado a qué antes de jalar cualquier hilo.*\n\n### Key Technical Considerations\n\n| Element | Description |\n| --- | --- |\n| **Allow Lists** | Specifies entities permitted to access a resource; must be reviewed before any change |\n| **Deny Lists / Block Lists** | Specifies entities blocked from a resource; adding/removing IPs can inadvertently expose or restrict services |\n| **Restricted Activities** | Certain operations (e.g., shutting down a sensitive server) may be off-limits; must be identified before a change is approved |\n| **Downtime** | Even minor changes risk causing downtime; estimate impact and schedule within maintenance windows |\n| **Service / Application Restarts** | Required for many changes; can disrupt active users, cause data loss in transit, or create processing backlogs |\n| **Legacy Applications** | Older software is less flexible and more sensitive to changes; minor updates elsewhere can cause crashes |\n| **Dependencies** | Modern systems are interconnected; a change in one area can cascade across multiple systems and partner architectures |"
+        "raw_content": "## 8. Technical Implications of Changes\n\n* **Definition:** Technical implications of changes refer to the broad downstream effects a single system modification can have across interconnected systems, configurations, applications, and security controls.\n\n> *Cambiar una configuración en un sistema corporativo es como mover una pieza en un móvil colgante: aunque solo tocas una parte, todo lo demás se mueve. Tienes que saber qué está conectado a qué antes de jalar cualquier hilo.*\n\n### Key Technical Considerations\n\n| Element | Description |\n| --- | --- |\n| **Allow Lists** | Specifies entities permitted to access a resource; must be reviewed before any change |\n| **Deny Lists / Block Lists** | Specifies entities blocked from a resource; adding/removing IPs can inadvertently expose or restrict services |\n| **Restricted Activities** | Certain operations (e.g., shutting down a sensitive server) may be off-limits; must be identified before a change is approved |\n| **Downtime** | Even minor changes risk causing downtime; estimate impact and schedule within maintenance windows |\n| **Service / Application Restarts** | Required for many changes; can disrupt active users, cause data loss in transit, or create processing backlogs |\n| **Legacy Applications** | Older software is less flexible and more sensitive to changes; minor updates elsewhere can cause crashes |\n| **Dependencies** | Modern systems are interconnected; a change in one area can cascade across multiple systems and partner architectures |\n\n---"
       },
       {
         "name": "Documenting Changes",
@@ -4923,130 +4608,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Documenting changes is the process of creating and maintaining clear records of all implemented changes — including version control, updated diagrams, revised policies, and closed change tickets — to ensure accountability and provide a reference for future operations.\n\n> *Documentar un cambio es como llevar la bitácora de un barco: no importa cuánto confíes en tu memoria, el capitán que viene después de ti necesita saber exactamente qué ruta se tomó, qué ocurrió y qué decisiones se tomaron en el camino.*\n\n### Documentation Components\n\n| Component | Purpose |\n| --- | --- |\n| **Version Control** | Tracks and manages changes to documents, software, and files; allows rollback to a previous stable state |\n| **Updated Diagrams** | Network and system diagrams must reflect the new state post-change; outdated diagrams cause misconfigurations |\n| **Revised Policies and Procedures** | If a change reveals gaps or issues, update SOPs to prevent recurrence — continuous improvement |\n| **Updated Change Requests / Trouble Tickets** | Closes the loop; provides a clear timeline, informs stakeholders, and creates a historical audit record |\n\n> ⚠️ **Common mistake:** Believing you'll \"remember\" the changes without writing them down. In enterprise-scale networks spanning multiple continents, undocumented changes directly cause misconfigurations and team misunderstandings."
-      },
-      {
-        "name": "Key Terms",
-        "definition": "Asset Management: Systematic governance of organizational assets across their entire lifecycle",
-        "analogy": "",
-        "tables": [
-          {
-            "headers": [
-              "Term",
-              "Definition"
-            ],
-            "rows": [
-              [
-                "**Asset Management**",
-                "Systematic governance of organizational assets across their entire lifecycle"
-              ],
-              [
-                "**Change Management**",
-                "Structured process to implement system changes in a controlled, approved manner"
-              ],
-              [
-                "**BYOD**",
-                "Bring Your Own Device — employee uses personal device for work"
-              ],
-              [
-                "**COPE**",
-                "Corporate-Owned, Personally Enabled — company device with personal use allowed"
-              ],
-              [
-                "**CYOD**",
-                "Choose Your Own Device — employee selects from a pre-approved company device list"
-              ],
-              [
-                "**MDM**",
-                "Mobile Device Management — centralized platform for managing and securing mobile devices"
-              ],
-              [
-                "**CAB**",
-                "Change Advisory Board — cross-organizational body that evaluates and approves proposed changes"
-              ],
-              [
-                "**Change Owner**",
-                "Individual or team initiating and advocating for a proposed change"
-              ],
-              [
-                "**Stakeholder**",
-                "Any person vested in or affected by a proposed change"
-              ],
-              [
-                "**Impact Analysis**",
-                "Pre-change assessment of potential risks, disruptions, and downstream effects"
-              ],
-              [
-                "**Backout Plan**",
-                "Rollback strategy to restore systems to their previous state if a change fails"
-              ],
-              [
-                "**SOP**",
-                "Standard Operating Procedure — step-by-step instructions for executing a specific task"
-              ],
-              [
-                "**Sanitization**",
-                "Process of making data inaccessible and irretrievable from a storage medium"
-              ],
-              [
-                "**Degaussing**",
-                "Using a magnetic field to destroy data on magnetic storage media"
-              ],
-              [
-                "**Cryptographic Erase (CE)**",
-                "Sanitization by destroying encryption keys rather than the underlying data"
-              ],
-              [
-                "**Certification**",
-                "Documented proof that asset disposal or data destruction was properly completed"
-              ],
-              [
-                "**Data Retention**",
-                "Policy defining how long data must be stored before it can be disposed of"
-              ],
-              [
-                "**Version Control**",
-                "System that tracks and manages changes to files and software over time"
-              ],
-              [
-                "**Enumeration**",
-                "Identifying and counting assets connected to a network using scanners and tools"
-              ],
-              [
-                "**Acquisition**",
-                "The act of obtaining goods or services"
-              ],
-              [
-                "**Procurement**",
-                "The full end-to-end process of sourcing, evaluating, and obtaining goods or services"
-              ],
-              [
-                "**Purchase Order (PO)**",
-                "Formal document authorizing a specific purchase; a legally binding payment promise"
-              ],
-              [
-                "**Legacy Application**",
-                "Older software still in use that is sensitive to change due to limited support and flexibility"
-              ],
-              [
-                "**Dependency**",
-                "A relationship where one system or application relies on another to function correctly"
-              ],
-              [
-                "**Allow List**",
-                "A list specifying which entities are permitted to access a resource"
-              ],
-              [
-                "**Deny List / Block List**",
-                "A list specifying which entities are blocked from accessing a resource"
-              ]
-            ]
-          }
-        ],
-        "list_items": [],
-        "spanish_words": [],
-        "raw_content": "| Term | Definition |\n| --- | --- |\n| **Asset Management** | Systematic governance of organizational assets across their entire lifecycle |\n| **Change Management** | Structured process to implement system changes in a controlled, approved manner |\n| **BYOD** | Bring Your Own Device — employee uses personal device for work |\n| **COPE** | Corporate-Owned, Personally Enabled — company device with personal use allowed |\n| **CYOD** | Choose Your Own Device — employee selects from a pre-approved company device list |\n| **MDM** | Mobile Device Management — centralized platform for managing and securing mobile devices |\n| **CAB** | Change Advisory Board — cross-organizational body that evaluates and approves proposed changes |\n| **Change Owner** | Individual or team initiating and advocating for a proposed change |\n| **Stakeholder** | Any person vested in or affected by a proposed change |\n| **Impact Analysis** | Pre-change assessment of potential risks, disruptions, and downstream effects |\n| **Backout Plan** | Rollback strategy to restore systems to their previous state if a change fails |\n| **SOP** | Standard Operating Procedure — step-by-step instructions for executing a specific task |\n| **Sanitization** | Process of making data inaccessible and irretrievable from a storage medium |\n| **Degaussing** | Using a magnetic field to destroy data on magnetic storage media |\n| **Cryptographic Erase (CE)** | Sanitization by destroying encryption keys rather than the underlying data |\n| **Certification** | Documented proof that asset disposal or data destruction was properly completed |\n| **Data Retention** | Policy defining how long data must be stored before it can be disposed of |\n| **Version Control** | System that tracks and manages changes to files and software over time |\n| **Enumeration** | Identifying and counting assets connected to a network using scanners and tools |\n| **Acquisition** | The act of obtaining goods or services |\n| **Procurement** | The full end-to-end process of sourcing, evaluating, and obtaining goods or services |\n| **Purchase Order (PO)** | Formal document authorizing a specific purchase; a legally binding payment promise |\n| **Legacy Application** | Older software still in use that is sensitive to change due to limited support and flexibility |\n| **Dependency** | A relationship where one system or application relies on another to function correctly |\n| **Allow List** | A list specifying which entities are permitted to access a resource |\n| **Deny List / Block List** | A list specifying which entities are blocked from accessing a resource |"
+        "raw_content": "## 9. Documenting Changes\n\n* **Definition:** Documenting changes is the process of creating and maintaining clear records of all implemented changes — including version control, updated diagrams, revised policies, and closed change tickets — to ensure accountability and provide a reference for future operations.\n\n> *Documentar un cambio es como llevar la bitácora de un barco: no importa cuánto confíes en tu memoria, el capitán que viene después de ti necesita saber exactamente qué ruta se tomó, qué ocurrió y qué decisiones se tomaron en el camino.*\n\n### Documentation Components\n\n| Component | Purpose |\n| --- | --- |\n| **Version Control** | Tracks and manages changes to documents, software, and files; allows rollback to a previous stable state |\n| **Updated Diagrams** | Network and system diagrams must reflect the new state post-change; outdated diagrams cause misconfigurations |\n| **Revised Policies and Procedures** | If a change reveals gaps or issues, update SOPs to prevent recurrence — continuous improvement |\n| **Updated Change Requests / Trouble Tickets** | Closes the loop; provides a clear timeline, informs stakeholders, and creates a historical audit record |\n\n> ⚠️ **Common mistake:** Believing you'll \"remember\" the changes without writing them down. In enterprise-scale networks spanning multiple continents, undocumented changes directly cause misconfigurations and team misunderstandings.\n\n---"
       }
     ]
   },
@@ -5085,8 +4647,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A systematic evaluation of an organization's information systems, applications, and security controls to ascertain their efficiency and effectiveness, typically conducted by an independent entity.\n\n> *Es como una inspección oficial del departamento de salud a un restaurante: alguien externo llega con una lista de verificación y evalúa si todo está cumpliendo las normas, sin importar lo que el dueño diga sobre su propio negocio.*\n\nAudits can be **internal** or **external** depending on who conducts them. They are crucial for identifying gaps in security policies, procedures, and controls, and for ensuring compliance with regulatory standards such as:\n\n| Regulation | Full Name | Scope |\n| ---------- | --------- | ----- |\n| **GDPR** | General Data Protection Regulation | Data protection across all industries |\n| **HIPAA** | Health Insurance Portability and Accountability Act | Healthcare |\n| **PCI DSS** | Payment Card Industry Data Security Standard | Credit card data handling |"
+        "raw_content": "## 1. Audits\n\n* **Definition:** A systematic evaluation of an organization's information systems, applications, and security controls to ascertain their efficiency and effectiveness, typically conducted by an independent entity.\n\n> *Es como una inspección oficial del departamento de salud a un restaurante: alguien externo llega con una lista de verificación y evalúa si todo está cumpliendo las normas, sin importar lo que el dueño diga sobre su propio negocio.*\n\nAudits can be **internal** or **external** depending on who conducts them. They are crucial for identifying gaps in security policies, procedures, and controls, and for ensuring compliance with regulatory standards such as:\n\n| Regulation | Full Name | Scope |\n| ---------- | --------- | ----- |\n| **GDPR** | General Data Protection Regulation | Data protection across all industries |\n| **HIPAA** | Health Insurance Portability and Accountability Act | Healthcare |\n| **PCI DSS** | Payment Card Industry Data Security Standard | Credit card data handling |\n\n---"
       },
       {
         "name": "Assessments",
@@ -5098,33 +4659,55 @@ const STUDY_DATA = [
           "**Vulnerability assessments** — identify weaknesses in systems.",
           "**Threat assessments** — analyze potential threats to the organization."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A detailed analysis of an organization's security systems performed to identify vulnerabilities and risks, often conducted before implementing new systems or making significant changes to existing ones.\n\n> *Es como una revisión técnica que le hace un mecánico a tu carro antes de un viaje largo: no es para multarte, sino para identificar qué piezas pueden fallar antes de que salgas a la carretera.*\n\nAssessments are categorized into:\n\n- **Risk assessments** — evaluate likelihood and impact of threats.\n- **Vulnerability assessments** — identify weaknesses in systems.\n- **Threat assessments** — analyze potential threats to the organization."
+        "raw_content": "## 2. Assessments\n\n* **Definition:** A detailed analysis of an organization's security systems performed to identify vulnerabilities and risks, often conducted before implementing new systems or making significant changes to existing ones.\n\n> *Es como una revisión técnica que le hace un mecánico a tu carro antes de un viaje largo: no es para multarte, sino para identificar qué piezas pueden fallar antes de que salgas a la carretera.*\n\nAssessments are categorized into:\n\n- **Risk assessments** — evaluate likelihood and impact of threats.\n- **Vulnerability assessments** — identify weaknesses in systems.\n- **Threat assessments** — analyze potential threats to the organization.\n\n---"
       },
       {
         "name": "Internal Audits",
-        "definition": "A group of individuals, typically members of the company's board of directors, who oversee the organization's audit and compliance activities.",
+        "definition": "Systematic evaluations conducted by an organization's own audit team to assess the effectiveness of internal controls, compliance with regulations, and the integrity of information systems and processes.",
         "analogy": "*Es el propio equipo de control de calidad de una fábrica revisando sus propias líneas de producción para ver si están cumpliendo los estándares internos, antes de que llegue cualquier inspector externo.*",
         "tables": [],
         "list_items": [
           "Review of password policies (complexity requirements, rotation schedules, employee adherence).",
-          "Audit of user access controls — verifying least privilege, segregation of duties, and proper revocation when employees change roles or leave.",
+          "Audit of user access controls — verifying least privilege, segregation of duties, and proper revocation when employees change roles or leave."
+        ],
+        "raw_content": "## 3. Internal Audits\n\n* **Definition:** Systematic evaluations conducted by an organization's own audit team to assess the effectiveness of internal controls, compliance with regulations, and the integrity of information systems and processes.\n\n> *Es el propio equipo de control de calidad de una fábrica revisando sus propias líneas de producción para ver si están cumpliendo los estándares internos, antes de que llegue cualquier inspector externo.*\n\nInternal audits commonly focus on: data protection, network security, access controls, and incident response procedures.\n\n### Example Focus Areas\n\n- Review of password policies (complexity requirements, rotation schedules, employee adherence).\n- Audit of user access controls — verifying least privilege, segregation of duties, and proper revocation when employees change roles or leave.\n\n### Audit Process Steps (Access Control Example)\n\n1. Review access control policies and procedures against best practices and regulatory requirements.\n2. Examine access rights granted to users and verify alignment with job responsibilities.\n3. Check processes for granting, modifying, and revoking access rights.\n4. Test effectiveness of controls by attempting access with limited-permission accounts.\n5. Document findings and recommend improvements."
+      },
+      {
+        "name": "Compliance in Internal Audits",
+        "definition": "The process of ensuring that an organization's information systems and security practices adhere to established standards, regulations, and laws.",
+        "analogy": "*Es asegurarte de que todas las operaciones de tu empresa sigan las reglas del juego que dicta la ley o la industria, para evitar multas, demandas y pérdida de confianza.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Compliance in Internal Audits\n\n* **Definition:** The process of ensuring that an organization's information systems and security practices adhere to established standards, regulations, and laws.\n\n> *Es asegurarte de que todas las operaciones de tu empresa sigan las reglas del juego que dicta la ley o la industria, para evitar multas, demandas y pérdida de confianza.*\n\nCompliance activities include implementing specific security controls, maintaining policies and procedures, and regularly auditing the organization's security posture. Some governing laws and regulations **require** internal audits on a quarterly or annual basis depending on the industry."
+      },
+      {
+        "name": "Audit Committee",
+        "definition": "A group of individuals, typically members of the company's board of directors, who oversee the organization's audit and compliance activities.",
+        "analogy": "*Es la junta de supervisores del equipo de auditoría — los que se aseguran de que los auditores hagan bien su trabajo y de que los hallazgos sean atendidos a nivel ejecutivo.*",
+        "tables": [],
+        "list_items": [
           "Reviewing financial reporting processes and internal controls.",
           "Overseeing the performance of internal and external audits.",
           "Ensuring organizational compliance with legal and regulatory requirements.",
           "Reviewing and addressing issues raised by auditors."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Systematic evaluations conducted by an organization's own audit team to assess the effectiveness of internal controls, compliance with regulations, and the integrity of information systems and processes.\n\n> *Es el propio equipo de control de calidad de una fábrica revisando sus propias líneas de producción para ver si están cumpliendo los estándares internos, antes de que llegue cualquier inspector externo.*\n\nInternal audits commonly focus on: data protection, network security, access controls, and incident response procedures.\n\n### Example Focus Areas\n\n- Review of password policies (complexity requirements, rotation schedules, employee adherence).\n- Audit of user access controls — verifying least privilege, segregation of duties, and proper revocation when employees change roles or leave.\n\n### Audit Process Steps (Access Control Example)\n\n1. Review access control policies and procedures against best practices and regulatory requirements.\n2. Examine access rights granted to users and verify alignment with job responsibilities.\n3. Check processes for granting, modifying, and revoking access rights.\n4. Test effectiveness of controls by attempting access with limited-permission accounts.\n5. Document findings and recommend improvements.\n\n### Compliance in Internal Audits\n\n* **Definition:** The process of ensuring that an organization's information systems and security practices adhere to established standards, regulations, and laws.\n\n> *Es asegurarte de que todas las operaciones de tu empresa sigan las reglas del juego que dicta la ley o la industria, para evitar multas, demandas y pérdida de confianza.*\n\nCompliance activities include implementing specific security controls, maintaining policies and procedures, and regularly auditing the organization's security posture. Some governing laws and regulations **require** internal audits on a quarterly or annual basis depending on the industry.\n\n### Audit Committee\n\n* **Definition:** A group of individuals, typically members of the company's board of directors, who oversee the organization's audit and compliance activities.\n\n> *Es la junta de supervisores del equipo de auditoría — los que se aseguran de que los auditores hagan bien su trabajo y de que los hallazgos sean atendidos a nivel ejecutivo.*\n\nResponsibilities include:\n\n- Reviewing financial reporting processes and internal controls.\n- Overseeing the performance of internal and external audits.\n- Ensuring organizational compliance with legal and regulatory requirements.\n- Reviewing and addressing issues raised by auditors."
+        "raw_content": "### Audit Committee\n\n* **Definition:** A group of individuals, typically members of the company's board of directors, who oversee the organization's audit and compliance activities.\n\n> *Es la junta de supervisores del equipo de auditoría — los que se aseguran de que los auditores hagan bien su trabajo y de que los hallazgos sean atendidos a nivel ejecutivo.*\n\nResponsibilities include:\n\n- Reviewing financial reporting processes and internal controls.\n- Overseeing the performance of internal and external audits.\n- Ensuring organizational compliance with legal and regulatory requirements.\n- Reviewing and addressing issues raised by auditors.\n\n---"
       },
       {
         "name": "Internal Assessments",
-        "definition": "Internal evaluations conducted by an organization to assess its compliance with specific standards or regulations, used to identify gaps and prepare for formal audits.",
+        "definition": "In-depth analyses conducted within an organization to identify and evaluate potential risks and vulnerabilities in information systems, distinct from formal audits.",
         "analogy": "*Mientras el auditor revisa si estás cumpliendo las reglas, el equipo de assessment busca activamente los huecos en la pared antes de que alguien los encuentre desde afuera.*",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** In-depth analyses conducted within an organization to identify and evaluate potential risks and vulnerabilities in information systems, distinct from formal audits.\n\n> *Mientras el auditor revisa si estás cumpliendo las reglas, el equipo de assessment busca activamente los huecos en la pared antes de que alguien los encuentre desde afuera.*\n\nMost internal assessments are conducted as **self-assessments**. Large organizations may also have a dedicated internal assessment group that travels across the enterprise to assess sprawling networks.\n\n### Self-Assessments\n\n* **Definition:** Internal evaluations conducted by an organization to assess its compliance with specific standards or regulations, used to identify gaps and prepare for formal audits.\n\n> *Es como hacer un simulacro de examen en casa antes del examen oficial, para saber qué temas tienes flojos antes de que llegue el profesor a evaluarte.*\n\n### Internal Assessment Process (Web Application Example)\n\n1. **Threat modeling** — identify potential threats (SQL injection, XSS, DoS).\n2. **Vulnerability assessment** — use automated scanning tools and manual testing.\n3. **Risk assessment** — evaluate impact, likelihood, potential damage, and mitigation cost.\n4. **Recommend mitigation strategies** — code fixes, additional security controls, architectural changes."
+        "raw_content": "## 4. Internal Assessments\n\n* **Definition:** In-depth analyses conducted within an organization to identify and evaluate potential risks and vulnerabilities in information systems, distinct from formal audits.\n\n> *Mientras el auditor revisa si estás cumpliendo las reglas, el equipo de assessment busca activamente los huecos en la pared antes de que alguien los encuentre desde afuera.*\n\nMost internal assessments are conducted as **self-assessments**. Large organizations may also have a dedicated internal assessment group that travels across the enterprise to assess sprawling networks."
+      },
+      {
+        "name": "Self-Assessments",
+        "definition": "Internal evaluations conducted by an organization to assess its compliance with specific standards or regulations, used to identify gaps and prepare for formal audits.",
+        "analogy": "*Es como hacer un simulacro de examen en casa antes del examen oficial, para saber qué temas tienes flojos antes de que llegue el profesor a evaluarte.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Self-Assessments\n\n* **Definition:** Internal evaluations conducted by an organization to assess its compliance with specific standards or regulations, used to identify gaps and prepare for formal audits.\n\n> *Es como hacer un simulacro de examen en casa antes del examen oficial, para saber qué temas tienes flojos antes de que llegue el profesor a evaluarte.*\n\n### Internal Assessment Process (Web Application Example)\n\n1. **Threat modeling** — identify potential threats (SQL injection, XSS, DoS).\n2. **Vulnerability assessment** — use automated scanning tools and manual testing.\n3. **Risk assessment** — evaluate impact, likelihood, potential damage, and mitigation cost.\n4. **Recommend mitigation strategies** — code fixes, additional security controls, architectural changes.\n\n---"
       },
       {
         "name": "Performing an Internal Assessment (MCIT Checklist)",
@@ -5166,8 +4749,7 @@ const STUDY_DATA = [
           "Participants should include **administration, IT staff, and cybersecurity professionals**.",
           "Fields captured: item, yes/no, department/vendor responsible, comments, action items, assigned to."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The practical execution of an internal assessment using a structured checklist, where personnel from across the organization answer yes/no questions to identify cybersecurity gaps and assign action items.\n\n> *Es como usar una lista de verificación para preparar un avión antes de despegar: cada ítem tiene un responsable y una respuesta clara de sí o no, porque no hay espacio para ambigüedades cuando está en juego la seguridad.*\n\nThe **MCIT Cybersecurity Self-Assessment Checklist** (Minnesota Counties Intergovernmental Trust) is a sample framework. Key characteristics:\n\n- Each question is **yes or no**.\n- Each action item is assigned to a specific individual or group.\n- Participants should include **administration, IT staff, and cybersecurity professionals**.\n- Fields captured: item, yes/no, department/vendor responsible, comments, action items, assigned to.\n\n### Sample Question Categories\n\n| # | Sample Question Area |\n| - | -------------------- |\n| 1 | Has the organization experienced a cybersecurity incident in the past 12 months? Have deficiencies been addressed? |\n| 2 | Is there a data security incident response plan? |\n| 3 | Is a business continuity plan established with inventory of vital operations, IT assets, and third-party agreements? |\n| 4 | Does every device have updated antivirus/anti-malware software? |\n| 5 | Is there a mobile device policy? Has staff been trained on it? Are BYOD rules defined? |"
+        "raw_content": "## 5. Performing an Internal Assessment (MCIT Checklist)\n\n* **Definition:** The practical execution of an internal assessment using a structured checklist, where personnel from across the organization answer yes/no questions to identify cybersecurity gaps and assign action items.\n\n> *Es como usar una lista de verificación para preparar un avión antes de despegar: cada ítem tiene un responsable y una respuesta clara de sí o no, porque no hay espacio para ambigüedades cuando está en juego la seguridad.*\n\nThe **MCIT Cybersecurity Self-Assessment Checklist** (Minnesota Counties Intergovernmental Trust) is a sample framework. Key characteristics:\n\n- Each question is **yes or no**.\n- Each action item is assigned to a specific individual or group.\n- Participants should include **administration, IT staff, and cybersecurity professionals**.\n- Fields captured: item, yes/no, department/vendor responsible, comments, action items, assigned to.\n\n### Sample Question Categories\n\n| # | Sample Question Area |\n| - | -------------------- |\n| 1 | Has the organization experienced a cybersecurity incident in the past 12 months? Have deficiencies been addressed? |\n| 2 | Is there a data security incident response plan? |\n| 3 | Is a business continuity plan established with inventory of vital operations, IT assets, and third-party agreements? |\n| 4 | Does every device have updated antivirus/anti-malware software? |\n| 5 | Is there a mobile device policy? Has staff been trained on it? Are BYOD rules defined? |\n\n---"
       },
       {
         "name": "External Audits",
@@ -5175,8 +4757,7 @@ const STUDY_DATA = [
         "analogy": "*Es contratar a un inspector externo — alguien que no tiene ningún interés en ocultar los problemas — para que diga exactamente cómo está la situación de seguridad de tu empresa.*",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Systematic evaluations conducted by independent entities to assess an organization's information systems, applications, and security controls, providing an objective perspective on the organization's true security posture.\n\n> *Es contratar a un inspector externo — alguien que no tiene ningún interés en ocultar los problemas — para que diga exactamente cómo está la situación de seguridad de tu empresa.*\n\nExternal audits cover: data protection, network security, access controls, and incident response. They identify compliance gaps against GDPR, HIPAA, PCI DSS, and others.\n\n**Example:** A financial institution hires an external auditor quarterly to evaluate PCI DSS compliance — reviewing the cardholder data environment, firewalls, encryption methods, and access controls."
+        "raw_content": "## 6. External Audits\n\n* **Definition:** Systematic evaluations conducted by independent entities to assess an organization's information systems, applications, and security controls, providing an objective perspective on the organization's true security posture.\n\n> *Es contratar a un inspector externo — alguien que no tiene ningún interés en ocultar los problemas — para que diga exactamente cómo está la situación de seguridad de tu empresa.*\n\nExternal audits cover: data protection, network security, access controls, and incident response. They identify compliance gaps against GDPR, HIPAA, PCI DSS, and others.\n\n**Example:** A financial institution hires an external auditor quarterly to evaluate PCI DSS compliance — reviewing the cardholder data environment, firewalls, encryption methods, and access controls.\n\n---"
       },
       {
         "name": "External Assessments",
@@ -5184,8 +4765,7 @@ const STUDY_DATA = [
         "analogy": "*Es contratar a una empresa especializada para que intente encontrar los huecos de seguridad de tu organización antes de que los atacantes reales lo hagan.*",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Detailed analyses conducted by independent entities or firms to identify vulnerabilities and risks in an organization's security system, using a combination of automated scanning tools and manual testing.\n\n> *Es contratar a una empresa especializada para que intente encontrar los huecos de seguridad de tu organización antes de que los atacantes reales lo hagan.*\n\nExternal assessments take forms including: risk assessments, vulnerability assessments, and threat assessments.\n\n**Example:** A healthcare organization engages a cybersecurity firm to scan its electronic health record system for known vulnerabilities (outdated software, misconfigured settings) to ensure HIPAA compliance."
+        "raw_content": "## 7. External Assessments\n\n* **Definition:** Detailed analyses conducted by independent entities or firms to identify vulnerabilities and risks in an organization's security system, using a combination of automated scanning tools and manual testing.\n\n> *Es contratar a una empresa especializada para que intente encontrar los huecos de seguridad de tu organización antes de que los atacantes reales lo hagan.*\n\nExternal assessments take forms including: risk assessments, vulnerability assessments, and threat assessments.\n\n**Example:** A healthcare organization engages a cybersecurity firm to scan its electronic health record system for known vulnerabilities (outdated software, misconfigured settings) to ensure HIPAA compliance.\n\n---"
       },
       {
         "name": "Regulatory Compliance (External Context)",
@@ -5193,8 +4773,7 @@ const STUDY_DATA = [
         "analogy": "*Es seguir las reglas del país donde tu empresa opera, igual que un conductor que debe conocer y cumplir las leyes de tránsito del lugar donde maneja, no solo del lugar donde aprendió.*",
         "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The goal organizations aspire to achieve in their efforts to ensure awareness of and adherence to relevant laws, policies, and regulations through harmonized security controls.\n\n> *Es seguir las reglas del país donde tu empresa opera, igual que un conductor que debe conocer y cumplir las leyes de tránsito del lugar donde maneja, no solo del lugar donde aprendió.*\n\nOrganizations increasingly adopt consolidated frameworks (such as the **NIST Cybersecurity Framework**) as the overarching compliance mechanism, with individual regulatory controls (HIPAA, PCI DSS, etc.) implemented within that larger framework."
+        "raw_content": "## 8. Regulatory Compliance (External Context)\n\n* **Definition:** The goal organizations aspire to achieve in their efforts to ensure awareness of and adherence to relevant laws, policies, and regulations through harmonized security controls.\n\n> *Es seguir las reglas del país donde tu empresa opera, igual que un conductor que debe conocer y cumplir las leyes de tránsito del lugar donde maneja, no solo del lugar donde aprendió.*\n\nOrganizations increasingly adopt consolidated frameworks (such as the **NIST Cybersecurity Framework**) as the overarching compliance mechanism, with individual regulatory controls (HIPAA, PCI DSS, etc.) implemented within that larger framework.\n\n---"
       },
       {
         "name": "Examinations",
@@ -5207,8 +4786,7 @@ const STUDY_DATA = [
           "Review of organizational policies, procedures, and controls.",
           "Verification of current certifications for key personnel."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Detailed external inspections of an organization's security infrastructure covering network security, data protection, access controls, personnel testing, policy review, and certification verification.\n\n> *Es como la revisión técnica vehicular obligatoria combinada con un examen de conocimiento del conductor: no solo revisan el carro, también evalúan si el conductor sabe lo que hace.*\n\nExaminations may include:\n\n- Technical assessment of network systems, ICS/SCADA equipment, and operational procedures.\n- Knowledge-based exams for employees to validate they can perform their roles.\n- Review of organizational policies, procedures, and controls.\n- Verification of current certifications for key personnel.\n\n**Example:** Nuclear power plants are subject to examinations every 1–5 years covering computer network systems, ICS/SCADA equipment, and knowledge-based employee testing."
+        "raw_content": "## 9. Examinations\n\n* **Definition:** Detailed external inspections of an organization's security infrastructure covering network security, data protection, access controls, personnel testing, policy review, and certification verification.\n\n> *Es como la revisión técnica vehicular obligatoria combinada con un examen de conocimiento del conductor: no solo revisan el carro, también evalúan si el conductor sabe lo que hace.*\n\nExaminations may include:\n\n- Technical assessment of network systems, ICS/SCADA equipment, and operational procedures.\n- Knowledge-based exams for employees to validate they can perform their roles.\n- Review of organizational policies, procedures, and controls.\n- Verification of current certifications for key personnel.\n\n**Example:** Nuclear power plants are subject to examinations every 1–5 years covering computer network systems, ICS/SCADA equipment, and knowledge-based employee testing.\n\n---"
       },
       {
         "name": "Independent Third-Party Audits",
@@ -5220,8 +4798,7 @@ const STUDY_DATA = [
           "Help build trust with customers, stakeholders, and regulatory bodies.",
           "Required by many regulations including GDPR and PCI DSS."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Audits conducted by an external, independent entity that provide an unbiased perspective on an organization's security posture, helping identify weaknesses that might be overlooked internally.\n\n> *Es como pedir una segunda opinión médica a un especialista que no conoce al paciente: no tiene historia previa ni interés en quedar bien, solo dice lo que ve.*\n\nKey benefits:\n\n- Provide validation of security measures.\n- Help build trust with customers, stakeholders, and regulatory bodies.\n- Required by many regulations including GDPR and PCI DSS."
+        "raw_content": "## 10. Independent Third-Party Audits\n\n* **Definition:** Audits conducted by an external, independent entity that provide an unbiased perspective on an organization's security posture, helping identify weaknesses that might be overlooked internally.\n\n> *Es como pedir una segunda opinión médica a un especialista que no conoce al paciente: no tiene historia previa ni interés en quedar bien, solo dice lo que ve.*\n\nKey benefits:\n\n- Provide validation of security measures.\n- Help build trust with customers, stakeholders, and regulatory bodies.\n- Required by many regulations including GDPR and PCI DSS.\n\n---"
       },
       {
         "name": "Performing an External Assessment (HIPAA Checklist Example)",
@@ -5262,34 +4839,83 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The practical execution of an external assessment where an independent assessor uses a structured checklist to validate that an organization meets regulatory requirements, with the organization providing documented evidence for each item.\n\n> *Es como preparar tu carpeta de documentos para una auditoría de impuestos: alguien externo llega, hace preguntas específicas, y tú debes tener los papeles que prueben que estás haciendo las cosas como se debe.*\n\n**Example framework:** Government of San Bernardino County HIPAA Audit Checklist.\n\n### HIPAA External Assessment Categories\n\n| Category | Examples |\n| -------- | -------- |\n| **General Governance** | HIPAA Privacy and Security Survey completion; Security Officer contact info |\n| **Administrative Safeguards** | Risk assessment at entity level; risk assessments for systems housing ePHI; risk management policy; organizational chart |\n| **Physical Safeguards** | Physical security policies; data destruction/media reuse procedures; role-based access lists; logs of employees by PHI access type |\n| **Technical Safeguards** | Encryption policies; IT monitoring controls; system-generated user access listings for PHI systems |\n| **Privacy - General Governance** | HIPAA privacy policy documentation; Compliance/Privacy Officer contact info |\n| **HITECH** | Breach notification processes; entity-level risk assessment documentation |\n\n> **HITECH** (Health Information Technology for Economic and Clinical Health Act) — created to motivate implementation of electronic health records and supporting technologies in the U.S.\n\nExternal assessments **do not fix** security issues — they are a **validation function** proving the organization meets a level of compliance and is prepared to defend against known threats."
+        "raw_content": "## 11. Performing an External Assessment (HIPAA Checklist Example)\n\n* **Definition:** The practical execution of an external assessment where an independent assessor uses a structured checklist to validate that an organization meets regulatory requirements, with the organization providing documented evidence for each item.\n\n> *Es como preparar tu carpeta de documentos para una auditoría de impuestos: alguien externo llega, hace preguntas específicas, y tú debes tener los papeles que prueben que estás haciendo las cosas como se debe.*\n\n**Example framework:** Government of San Bernardino County HIPAA Audit Checklist.\n\n### HIPAA External Assessment Categories\n\n| Category | Examples |\n| -------- | -------- |\n| **General Governance** | HIPAA Privacy and Security Survey completion; Security Officer contact info |\n| **Administrative Safeguards** | Risk assessment at entity level; risk assessments for systems housing ePHI; risk management policy; organizational chart |\n| **Physical Safeguards** | Physical security policies; data destruction/media reuse procedures; role-based access lists; logs of employees by PHI access type |\n| **Technical Safeguards** | Encryption policies; IT monitoring controls; system-generated user access listings for PHI systems |\n| **Privacy - General Governance** | HIPAA privacy policy documentation; Compliance/Privacy Officer contact info |\n| **HITECH** | Breach notification processes; entity-level risk assessment documentation |\n\n> **HITECH** (Health Information Technology for Economic and Clinical Health Act) — created to motivate implementation of electronic health records and supporting technologies in the U.S.\n\nExternal assessments **do not fix** security issues — they are a **validation function** proving the organization meets a level of compliance and is prepared to defend against known threats.\n\n---"
       },
       {
         "name": "Penetration Testing",
-        "definition": "A combined approach where Red Team (offensive) and Blue Team (defensive) work together in a single engagement to improve the organization's overall security posture.",
+        "definition": "A simulated cyber attack against a computer system, network, or web application designed to identify vulnerabilities that could be exploited by real attackers, also known as pentesting or ethical hacking.",
         "analogy": "*Es como contratar a un ladrón profesional para que intente robar tu casa y te diga después exactamente cómo lo hizo y cómo puedes impedirlo la próxima vez.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 12. Penetration Testing\n\n* **Definition:** A simulated cyber attack against a computer system, network, or web application designed to identify vulnerabilities that could be exploited by real attackers, also known as pentesting or ethical hacking.\n\n> *Es como contratar a un ladrón profesional para que intente robar tu casa y te diga después exactamente cómo lo hizo y cómo puedes impedirlo la próxima vez.*\n\nThe goal is not to cause damage but to identify and fix vulnerabilities before malicious actors exploit them."
+      },
+      {
+        "name": "Physical Penetration Testing",
+        "definition": "Testing of the physical security of an organization by attempting to bypass locks, access cards, security cameras, and other physical security measures.",
+        "analogy": "*Es cuando un evaluador profesional intenta entrar a tu edificio disfrazado de repartidor, colándose por una puerta segura, o clonando tarjetas de acceso — todo con permiso de la empresa.*",
         "tables": [],
         "list_items": [
           "Identifying physical vulnerabilities in locks, access cards, and cameras.",
           "Improving security awareness about physical best practices (e.g., not allowing tailgating).",
-          "Preventing unauthorized physical access.",
+          "Preventing unauthorized physical access."
+        ],
+        "raw_content": "### Physical Penetration Testing\n\n* **Definition:** Testing of the physical security of an organization by attempting to bypass locks, access cards, security cameras, and other physical security measures.\n\n> *Es cuando un evaluador profesional intenta entrar a tu edificio disfrazado de repartidor, colándose por una puerta segura, o clonando tarjetas de acceso — todo con permiso de la empresa.*\n\nTechniques include: tailgating through security doors, cloning access cards.\n\nBenefits:\n- Identifying physical vulnerabilities in locks, access cards, and cameras.\n- Improving security awareness about physical best practices (e.g., not allowing tailgating).\n- Preventing unauthorized physical access."
+      },
+      {
+        "name": "Offensive Penetration Testing (Red Teaming)",
+        "definition": "A proactive and aggressive approach that involves actively seeking out vulnerabilities and attempting to exploit them using the same techniques a real attacker would use.",
+        "analogy": "*El equipo rojo son los villanos de práctica: hacen todo lo que haría un atacante real, pero con autorización, para que la empresa sepa exactamente cómo es vulnerable.*",
+        "tables": [],
+        "list_items": [
           "Simulates real-world attacks for network defenders to observe and learn from.",
-          "Results can be used to justify cybersecurity investment by demonstrating critical vulnerabilities.",
+          "Results can be used to justify cybersecurity investment by demonstrating critical vulnerabilities."
+        ],
+        "raw_content": "### Offensive Penetration Testing (Red Teaming)\n\n* **Definition:** A proactive and aggressive approach that involves actively seeking out vulnerabilities and attempting to exploit them using the same techniques a real attacker would use.\n\n> *El equipo rojo son los villanos de práctica: hacen todo lo que haría un atacante real, pero con autorización, para que la empresa sepa exactamente cómo es vulnerable.*\n\nBenefits:\n- Simulates real-world attacks for network defenders to observe and learn from.\n- Results can be used to justify cybersecurity investment by demonstrating critical vulnerabilities."
+      },
+      {
+        "name": "Defensive Penetration Testing (Blue Teaming)",
+        "definition": "A reactive approach focused on strengthening systems, detecting and responding to attacks, and improving incident response times.",
+        "analogy": "*El equipo azul son los defensores del partido: no lanzan el ataque, pero practican cómo detectarlo, contenerlo y recuperarse de él lo más rápido posible.*",
+        "tables": [],
+        "list_items": [
           "Improves incident response times to minimize damage.",
           "Strengthens systems through active monitoring for attack signs.",
-          "Enhances detection capabilities for future attacks.",
+          "Enhances detection capabilities for future attacks."
+        ],
+        "raw_content": "### Defensive Penetration Testing (Blue Teaming)\n\n* **Definition:** A reactive approach focused on strengthening systems, detecting and responding to attacks, and improving incident response times.\n\n> *El equipo azul son los defensores del partido: no lanzan el ataque, pero practican cómo detectarlo, contenerlo y recuperarse de él lo más rápido posible.*\n\nBenefits:\n- Improves incident response times to minimize damage.\n- Strengthens systems through active monitoring for attack signs.\n- Enhances detection capabilities for future attacks."
+      },
+      {
+        "name": "Integrated Penetration Testing (Purple Teaming)",
+        "definition": "A combined approach where Red Team (offensive) and Blue Team (defensive) work together in a single engagement to improve the organization's overall security posture.",
+        "analogy": "*El equipo morado es cuando los villanos y los héroes del partido entrenan juntos: el equipo rojo ataca, el azul defiende, y al final ambos se sientan a compartir lo que aprendieron para mejorar juntos.*",
+        "tables": [],
+        "list_items": [
           "Red Team launches a simulated attack; Blue Team tries to detect and respond.",
           "If Blue Team detects the attack → Red Team escalates to more advanced techniques.",
           "If Blue Team does not detect the attack → Red Team walks Blue Team through the attack and helps configure sensors to catch it in the future."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A simulated cyber attack against a computer system, network, or web application designed to identify vulnerabilities that could be exploited by real attackers, also known as pentesting or ethical hacking.\n\n> *Es como contratar a un ladrón profesional para que intente robar tu casa y te diga después exactamente cómo lo hizo y cómo puedes impedirlo la próxima vez.*\n\nThe goal is not to cause damage but to identify and fix vulnerabilities before malicious actors exploit them.\n\n### Physical Penetration Testing\n\n* **Definition:** Testing of the physical security of an organization by attempting to bypass locks, access cards, security cameras, and other physical security measures.\n\n> *Es cuando un evaluador profesional intenta entrar a tu edificio disfrazado de repartidor, colándose por una puerta segura, o clonando tarjetas de acceso — todo con permiso de la empresa.*\n\nTechniques include: tailgating through security doors, cloning access cards.\n\nBenefits:\n- Identifying physical vulnerabilities in locks, access cards, and cameras.\n- Improving security awareness about physical best practices (e.g., not allowing tailgating).\n- Preventing unauthorized physical access.\n\n### Offensive Penetration Testing (Red Teaming)\n\n* **Definition:** A proactive and aggressive approach that involves actively seeking out vulnerabilities and attempting to exploit them using the same techniques a real attacker would use.\n\n> *El equipo rojo son los villanos de práctica: hacen todo lo que haría un atacante real, pero con autorización, para que la empresa sepa exactamente cómo es vulnerable.*\n\nBenefits:\n- Simulates real-world attacks for network defenders to observe and learn from.\n- Results can be used to justify cybersecurity investment by demonstrating critical vulnerabilities.\n\n### Defensive Penetration Testing (Blue Teaming)\n\n* **Definition:** A reactive approach focused on strengthening systems, detecting and responding to attacks, and improving incident response times.\n\n> *El equipo azul son los defensores del partido: no lanzan el ataque, pero practican cómo detectarlo, contenerlo y recuperarse de él lo más rápido posible.*\n\nBenefits:\n- Improves incident response times to minimize damage.\n- Strengthens systems through active monitoring for attack signs.\n- Enhances detection capabilities for future attacks.\n\n### Integrated Penetration Testing (Purple Teaming)\n\n* **Definition:** A combined approach where Red Team (offensive) and Blue Team (defensive) work together in a single engagement to improve the organization's overall security posture.\n\n> *El equipo morado es cuando los villanos y los héroes del partido entrenan juntos: el equipo rojo ataca, el azul defiende, y al final ambos se sientan a compartir lo que aprendieron para mejorar juntos.*\n\nHow it works:\n- Red Team launches a simulated attack; Blue Team tries to detect and respond.\n- If Blue Team detects the attack → Red Team escalates to more advanced techniques.\n- If Blue Team does not detect the attack → Red Team walks Blue Team through the attack and helps configure sensors to catch it in the future.\n\nBenefits: Promotes collaboration, comprehensive security assessment, combined attack simulation and response practice."
+        "raw_content": "### Integrated Penetration Testing (Purple Teaming)\n\n* **Definition:** A combined approach where Red Team (offensive) and Blue Team (defensive) work together in a single engagement to improve the organization's overall security posture.\n\n> *El equipo morado es cuando los villanos y los héroes del partido entrenan juntos: el equipo rojo ataca, el azul defiende, y al final ambos se sientan a compartir lo que aprendieron para mejorar juntos.*\n\nHow it works:\n- Red Team launches a simulated attack; Blue Team tries to detect and respond.\n- If Blue Team detects the attack → Red Team escalates to more advanced techniques.\n- If Blue Team does not detect the attack → Red Team walks Blue Team through the attack and helps configure sensors to catch it in the future.\n\nBenefits: Promotes collaboration, comprehensive security assessment, combined attack simulation and response practice.\n\n---"
       },
       {
         "name": "Reconnaissance in Penetration Testing",
-        "definition": "Reconnaissance where the attacker gathers information without directly engaging the target, using open-source intelligence, public databases, or observing network traffic — less detectable but yields less information.",
+        "definition": "The initial phase of penetration testing where the attacker gathers as much information as possible about the target system to plan the attack and increase its success rate.",
         "analogy": "*Es como un ladrón que observa el banco días antes del robo: estudia cuándo abren, cuántas cámaras hay, por dónde entra el guardia — todo antes de actuar.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 13. Reconnaissance in Penetration Testing\n\n* **Definition:** The initial phase of penetration testing where the attacker gathers as much information as possible about the target system to plan the attack and increase its success rate.\n\n> *Es como un ladrón que observa el banco días antes del robo: estudia cuándo abren, cuántas cámaras hay, por dónde entra el guardia — todo antes de actuar.*\n\nInformation gathered includes: IP addresses, domain details, mail servers, and existing security/detection systems."
+      },
+      {
+        "name": "Active Reconnaissance",
+        "definition": "Reconnaissance where the attacker directly engages with the target system by pinging it, scanning ports, or attempting connections — yielding more information but at a higher risk of detection.",
+        "analogy": "*Es cuando llegas al banco y empiezas a hacer preguntas directas al personal: obtienes más información, pero todos te van a notar y recordar.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Active Reconnaissance\n\n* **Definition:** Reconnaissance where the attacker directly engages with the target system by pinging it, scanning ports, or attempting connections — yielding more information but at a higher risk of detection.\n\n> *Es cuando llegas al banco y empiezas a hacer preguntas directas al personal: obtienes más información, pero todos te van a notar y recordar.*\n\n**Example tool:** `Nmap` for port scanning — system defenders can see the scan occurring and trace its origin."
+      },
+      {
+        "name": "Passive Reconnaissance",
+        "definition": "Reconnaissance where the attacker gathers information without directly engaging the target, using open-source intelligence, public databases, or observing network traffic — less detectable but yields less information.",
+        "analogy": "*Es investigar el banco desde la comodidad de tu casa usando Google Maps, redes sociales y reseñas en línea: nadie te ve, pero la información es más limitada.*",
         "tables": [
           {
             "headers": [
@@ -5317,13 +4943,20 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The initial phase of penetration testing where the attacker gathers as much information as possible about the target system to plan the attack and increase its success rate.\n\n> *Es como un ladrón que observa el banco días antes del robo: estudia cuándo abren, cuántas cámaras hay, por dónde entra el guardia — todo antes de actuar.*\n\nInformation gathered includes: IP addresses, domain details, mail servers, and existing security/detection systems.\n\n### Active Reconnaissance\n\n* **Definition:** Reconnaissance where the attacker directly engages with the target system by pinging it, scanning ports, or attempting connections — yielding more information but at a higher risk of detection.\n\n> *Es cuando llegas al banco y empiezas a hacer preguntas directas al personal: obtienes más información, pero todos te van a notar y recordar.*\n\n**Example tool:** `Nmap` for port scanning — system defenders can see the scan occurring and trace its origin.\n\n### Passive Reconnaissance\n\n* **Definition:** Reconnaissance where the attacker gathers information without directly engaging the target, using open-source intelligence, public databases, or observing network traffic — less detectable but yields less information.\n\n> *Es investigar el banco desde la comodidad de tu casa usando Google Maps, redes sociales y reseñas en línea: nadie te ve, pero la información es más limitada.*\n\n**Example tool:** `WHOIS` — gathers domain contact information for use in phishing campaigns.\n\n### Penetration Testing Environments\n\n| Environment | Description | Reconnaissance Need |\n| ----------- | ----------- | ------------------- |\n| **Known** | Testers receive detailed info: network diagrams, IP addresses, OS versions, credentials. Simulates insider threat. | Low to none — information already provided. |\n| **Partially Known** | Hybrid — testers receive limited info (some IP ranges, some endpoints). Simulates an attacker with partial insider knowledge. | Moderate — fills knowledge gaps. |\n| **Unknown** | Testers receive minimal/no info (only company name or web domain). Simulates a real external attacker. | Extensive — starts with full reconnaissance. |"
+        "raw_content": "### Passive Reconnaissance\n\n* **Definition:** Reconnaissance where the attacker gathers information without directly engaging the target, using open-source intelligence, public databases, or observing network traffic — less detectable but yields less information.\n\n> *Es investigar el banco desde la comodidad de tu casa usando Google Maps, redes sociales y reseñas en línea: nadie te ve, pero la información es más limitada.*\n\n**Example tool:** `WHOIS` — gathers domain contact information for use in phishing campaigns.\n\n### Penetration Testing Environments\n\n| Environment | Description | Reconnaissance Need |\n| ----------- | ----------- | ------------------- |\n| **Known** | Testers receive detailed info: network diagrams, IP addresses, OS versions, credentials. Simulates insider threat. | Low to none — information already provided. |\n| **Partially Known** | Hybrid — testers receive limited info (some IP ranges, some endpoints). Simulates an attacker with partial insider knowledge. | Moderate — fills knowledge gaps. |\n| **Unknown** | Testers receive minimal/no info (only company name or web domain). Simulates a real external attacker. | Extensive — starts with full reconnaissance. |\n\n---"
       },
       {
         "name": "Performing a Basic Penetration Test (Metasploit)",
-        "definition": "Communication channels established between Metasploit and a compromised host after a successful exploit, allowing multiple simultaneous connections to different targets.",
+        "definition": "A practical penetration test using Metasploit to perform reconnaissance with Nmap, identify a vulnerable service, configure an exploit and payload, establish a shell session, and perform post-exploitation actions on the target.",
         "analogy": "*Es como el simulacro de un asalto bancario controlado: tienes el mapa del edificio, sabes dónde están las cámaras, entras, llegas a la bóveda, y luego le reportas al banco exactamente cómo lo hiciste para que lo corrijan.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 14. Performing a Basic Penetration Test (Metasploit)\n\n* **Definition:** A practical penetration test using Metasploit to perform reconnaissance with Nmap, identify a vulnerable service, configure an exploit and payload, establish a shell session, and perform post-exploitation actions on the target.\n\n> *Es como el simulacro de un asalto bancario controlado: tienes el mapa del edificio, sabes dónde están las cámaras, entras, llegas a la bóveda, y luego le reportas al banco exactamente cómo lo hiciste para que lo corrijan.*"
+      },
+      {
+        "name": "Metasploit Framework Overview",
+        "definition": "A multipurpose computer security and penetration testing framework that contains tools for reconnaissance, exploitation, and post-exploitation, available by default on Kali Linux and Parrot Linux.",
+        "analogy": "*Es la navaja suiza del pentester: tiene todo lo que necesita en un solo lugar, desde los binoculares para reconocimiento hasta las llaves maestras para entrar.*",
         "tables": [
           {
             "headers": [
@@ -5413,17 +5046,24 @@ const STUDY_DATA = [
             ]
           }
         ],
+        "list_items": [],
+        "raw_content": "### Metasploit Framework Overview\n\n* **Definition:** A multipurpose computer security and penetration testing framework that contains tools for reconnaissance, exploitation, and post-exploitation, available by default on Kali Linux and Parrot Linux.\n\n> *Es la navaja suiza del pentester: tiene todo lo que necesita en un solo lugar, desde los binoculares para reconocimiento hasta las llaves maestras para entrar.*\n\n### Metasploit Module Categories\n\n| Category | Count (v6.1.27) | Purpose |\n| -------- | --------------- | ------- |\n| **Exploits** | ~2,200 | Code that delivers a payload and attacks a specific vulnerability on a target system |\n| **Auxiliary** | ~1,100 | Scanners, sniffers, fuzzers, spoofers, and other non-exploit features (e.g., port scanning) |\n| **Post** | ~400 | Post-exploitation tasks on a compromised host (persistence, data exfiltration, pivoting) |\n| **Payloads** | ~600 | Code that exploits deliver and run — grants control, elevated permissions, or a shell |\n| **Encoders** | 45 | Ensure payloads reach the destination intact and undetected (bypass IDS, firewalls, ACLs) |\n| **NOPs** | 10 | Non-operations — keep payload sizes consistent and assist with evasion |\n| **Evasion** | 9 | Techniques to bypass security defenses |\n\n### Module Naming Convention\n\n```textile\n[module_type]/[platform]/[target_service]/[module_name]\n\n# Ejemplo:\nexploit/windows/smb/ms17_010_psexec\n# exploit   = tipo de módulo\n# windows   = plataforma objetivo\n# smb       = servicio objetivo\n# ms17_010  = vulnerabilidad (EternalBlue / CVE-2017-0144, base de WannaCry)\n```\n\n### Common Metasploit Variables\n\n| Variable | Description |\n| -------- | ----------- |\n| `RHOST` | Remote Host — IP address of the target |\n| `RPORT` | Remote Port — port on the target |\n| `LHOST` | Local Host — attacker machine IP (used by reverse payloads) |\n| `LPORT` | Local Port — listening port on attacker machine |\n\n### Basic Pentest Workflow\n\n```textile\n1. msfconsole                          # Iniciar Metasploit\n2. search [service/CVE]                # Buscar exploit disponible\n3. use [exploit_path or number]        # Seleccionar el exploit\n4. options                             # Ver opciones requeridas\n5. set RHOST [target_IP]               # Configurar host objetivo\n6. show payloads                       # Ver payloads compatibles\n7. set payload [payload_name]          # Seleccionar payload\n8. run                                 # Ejecutar el ataque\n9. sessions -l                         # Listar sesiones activas\n10. sessions [number]                  # Interactuar con sesión\n```\n\n### Payload Types\n\n| Type | Example | Behavior |\n| ---- | ------- | -------- |\n| **Bind Shell** | `command/unix/bind_perl` | Opens a port on the target; attacker connects to it |\n| **Reverse TCP Shell** | `windows/x64/meterpreter/reverse_tcp` | Target connects back to attacker (bypasses firewalls) |"
+      },
+      {
+        "name": "Sessions",
+        "definition": "Communication channels established between Metasploit and a compromised host after a successful exploit, allowing multiple simultaneous connections to different targets.",
+        "analogy": "*Una sesión en Metasploit es como tener una línea telefónica abierta con la máquina comprometida: puedes pausarla, retomarla, y hasta tener varias líneas abiertas al mismo tiempo con distintos objetivos.*",
+        "tables": [],
         "list_items": [
           "`Ctrl+Z` → background a session.",
           "`sessions -l` → list all active sessions.",
           "`sessions [number]` → interact with a specific session."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A practical penetration test using Metasploit to perform reconnaissance with Nmap, identify a vulnerable service, configure an exploit and payload, establish a shell session, and perform post-exploitation actions on the target.\n\n> *Es como el simulacro de un asalto bancario controlado: tienes el mapa del edificio, sabes dónde están las cámaras, entras, llegas a la bóveda, y luego le reportas al banco exactamente cómo lo hiciste para que lo corrijan.*\n\n### Metasploit Framework Overview\n\n* **Definition:** A multipurpose computer security and penetration testing framework that contains tools for reconnaissance, exploitation, and post-exploitation, available by default on Kali Linux and Parrot Linux.\n\n> *Es la navaja suiza del pentester: tiene todo lo que necesita en un solo lugar, desde los binoculares para reconocimiento hasta las llaves maestras para entrar.*\n\n### Metasploit Module Categories\n\n| Category | Count (v6.1.27) | Purpose |\n| -------- | --------------- | ------- |\n| **Exploits** | ~2,200 | Code that delivers a payload and attacks a specific vulnerability on a target system |\n| **Auxiliary** | ~1,100 | Scanners, sniffers, fuzzers, spoofers, and other non-exploit features (e.g., port scanning) |\n| **Post** | ~400 | Post-exploitation tasks on a compromised host (persistence, data exfiltration, pivoting) |\n| **Payloads** | ~600 | Code that exploits deliver and run — grants control, elevated permissions, or a shell |\n| **Encoders** | 45 | Ensure payloads reach the destination intact and undetected (bypass IDS, firewalls, ACLs) |\n| **NOPs** | 10 | Non-operations — keep payload sizes consistent and assist with evasion |\n| **Evasion** | 9 | Techniques to bypass security defenses |\n\n### Module Naming Convention\n\n```textile\n[module_type]/[platform]/[target_service]/[module_name]\n\n# Ejemplo:\nexploit/windows/smb/ms17_010_psexec\n# exploit   = tipo de módulo\n# windows   = plataforma objetivo\n# smb       = servicio objetivo\n# ms17_010  = vulnerabilidad (EternalBlue / CVE-2017-0144, base de WannaCry)\n```\n\n### Common Metasploit Variables\n\n| Variable | Description |\n| -------- | ----------- |\n| `RHOST` | Remote Host — IP address of the target |\n| `RPORT` | Remote Port — port on the target |\n| `LHOST` | Local Host — attacker machine IP (used by reverse payloads) |\n| `LPORT` | Local Port — listening port on attacker machine |\n\n### Basic Pentest Workflow\n\n```textile\n1. msfconsole                          # Iniciar Metasploit\n2. search [service/CVE]                # Buscar exploit disponible\n3. use [exploit_path or number]        # Seleccionar el exploit\n4. options                             # Ver opciones requeridas\n5. set RHOST [target_IP]               # Configurar host objetivo\n6. show payloads                       # Ver payloads compatibles\n7. set payload [payload_name]          # Seleccionar payload\n8. run                                 # Ejecutar el ataque\n9. sessions -l                         # Listar sesiones activas\n10. sessions [number]                  # Interactuar con sesión\n```\n\n### Payload Types\n\n| Type | Example | Behavior |\n| ---- | ------- | -------- |\n| **Bind Shell** | `command/unix/bind_perl` | Opens a port on the target; attacker connects to it |\n| **Reverse TCP Shell** | `windows/x64/meterpreter/reverse_tcp` | Target connects back to attacker (bypasses firewalls) |\n\n### Sessions\n\n* **Definition:** Communication channels established between Metasploit and a compromised host after a successful exploit, allowing multiple simultaneous connections to different targets.\n\n> *Una sesión en Metasploit es como tener una línea telefónica abierta con la máquina comprometida: puedes pausarla, retomarla, y hasta tener varias líneas abiertas al mismo tiempo con distintos objetivos.*\n\n- `Ctrl+Z` → background a session.\n- `sessions -l` → list all active sessions.\n- `sessions [number]` → interact with a specific session.\n\n### Lab Scenario (Metasploitable 2 — UnrealIRCD Backdoor)\n\n```textile\nObjetivo vulnerable: 172.16.218.130\nServicio explotado: UnrealIRCD 3281 en puerto 6667\nVulnerabilidad: Backdoor introducido en el código fuente (2011)\nExploit usado: exploit/unix/irc/unreal_ircd_3281_backdoor\nPayload usado: command/unix/bind_perl (bind shell en puerto 4444)\nResultado: Acceso root al servidor objetivo\n```"
+        "raw_content": "### Sessions\n\n* **Definition:** Communication channels established between Metasploit and a compromised host after a successful exploit, allowing multiple simultaneous connections to different targets.\n\n> *Una sesión en Metasploit es como tener una línea telefónica abierta con la máquina comprometida: puedes pausarla, retomarla, y hasta tener varias líneas abiertas al mismo tiempo con distintos objetivos.*\n\n- `Ctrl+Z` → background a session.\n- `sessions -l` → list all active sessions.\n- `sessions [number]` → interact with a specific session.\n\n### Lab Scenario (Metasploitable 2 — UnrealIRCD Backdoor)\n\n```textile\nObjetivo vulnerable: 172.16.218.130\nServicio explotado: UnrealIRCD 3281 en puerto 6667\nVulnerabilidad: Backdoor introducido en el código fuente (2011)\nExploit usado: exploit/unix/irc/unreal_ircd_3281_backdoor\nPayload usado: command/unix/bind_perl (bind shell en puerto 4444)\nResultado: Acceso root al servidor objetivo\n```\n\n---"
       },
       {
         "name": "Attestation of Findings",
-        "definition": "A formal document provided by the penetration testing firm to the organization, serving as an official record that the penetration test was completed during a specified period.",
+        "definition": "A formal validation or confirmation provided by an entity that asserts the accuracy and authenticity of specific information — in penetration testing, it proves that the test actually occurred and that the findings are valid based on evidence presented.",
         "analogy": "*Es la diferencia entre decirle a alguien que eres médico y mostrarle tu título y tu expediente clínico: la atestación es la prueba formal de que lo que dices es real y verificable.*",
         "tables": [
           {
@@ -5454,7 +5094,16 @@ const STUDY_DATA = [
                 "Evidence may be shown but not necessarily left behind"
               ]
             ]
-          },
+          }
+        ],
+        "list_items": [],
+        "raw_content": "## 15. Attestation of Findings\n\n* **Definition:** A formal validation or confirmation provided by an entity that asserts the accuracy and authenticity of specific information — in penetration testing, it proves that the test actually occurred and that the findings are valid based on evidence presented.\n\n> *Es la diferencia entre decirle a alguien que eres médico y mostrarle tu título y tu expediente clínico: la atestación es la prueba formal de que lo que dices es real y verificable.*\n\nAttestation may be required when penetration tests are conducted for compliance or regulatory purposes (GLBA, HIPAA, Sarbanes-Oxley, PCI DSS).\n\n### Attestation vs. Penetration Test Report\n\n| | **Penetration Test Report** | **Attestation of Findings** |\n| - | --------------------------- | --------------------------- |\n| **Contains** | Findings + remediation recommendations | Findings + evidence proving the test occurred |\n| **Evidence** | Not necessarily included | Required — logs, data, screenshots, exploit code shown |\n| **Purpose** | Guide the organization to fix issues | Prove to a third party that the assessment was completed |\n| **Evidence left with org?** | Report delivered | Evidence may be shown but not necessarily left behind |"
+      },
+      {
+        "name": "Letter of Attestation",
+        "definition": "A formal document provided by the penetration testing firm to the organization, serving as an official record that the penetration test was completed during a specified period.",
+        "analogy": "*Es el certificado oficial que te da el taller mecánico después de revisar tu carro: lo puedes mostrar a quien sea para probar que la revisión sí se hizo y qué fue lo que encontraron.*",
+        "tables": [
           {
             "headers": [
               "Type",
@@ -5493,162 +5142,7 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A formal validation or confirmation provided by an entity that asserts the accuracy and authenticity of specific information — in penetration testing, it proves that the test actually occurred and that the findings are valid based on evidence presented.\n\n> *Es la diferencia entre decirle a alguien que eres médico y mostrarle tu título y tu expediente clínico: la atestación es la prueba formal de que lo que dices es real y verificable.*\n\nAttestation may be required when penetration tests are conducted for compliance or regulatory purposes (GLBA, HIPAA, Sarbanes-Oxley, PCI DSS).\n\n### Attestation vs. Penetration Test Report\n\n| | **Penetration Test Report** | **Attestation of Findings** |\n| - | --------------------------- | --------------------------- |\n| **Contains** | Findings + remediation recommendations | Findings + evidence proving the test occurred |\n| **Evidence** | Not necessarily included | Required — logs, data, screenshots, exploit code shown |\n| **Purpose** | Guide the organization to fix issues | Prove to a third party that the assessment was completed |\n| **Evidence left with org?** | Report delivered | Evidence may be shown but not necessarily left behind |\n\n### Letter of Attestation\n\n* **Definition:** A formal document provided by the penetration testing firm to the organization, serving as an official record that the penetration test was completed during a specified period.\n\n> *Es el certificado oficial que te da el taller mecánico después de revisar tu carro: lo puedes mostrar a quien sea para probar que la revisión sí se hizo y qué fue lo que encontraron.*\n\nUsed by organizations to prove to third parties (auditors, regulators) that a security assessment was conducted.\n\n### Additional Attestation Types\n\n| Type | Definition |\n| ---- | ---------- |\n| **Software Attestation** | Validates the integrity of software using cryptographic techniques (e.g., verifying a digital signature on a software update to confirm it hasn't been tampered with) |\n| **Hardware Attestation** | Validates the integrity of hardware components (e.g., a TPM stores hardware/firmware measurements checked at boot time to detect unexpected changes) |\n| **System Attestation** | Validates the security posture of a system (e.g., a cloud provider attests that its services meet ISO 27001 or SOC 2 standards) |\n\n### Attestation in Internal vs. External Audits\n\n| Context | Role of Attestation |\n| ------- | ------------------- |\n| **Internal Audits** | Auditor attests accuracy of financial records, effectiveness of risk management, and adherence to internal policies |\n| **External Audits** | Independent third party attests financial statements, regulatory adherence, and operational efficiency |\n\nAttestation strengthens **trust**, enhances **transparency**, and ensures **accountability** within an organization by providing formal validation that builds confidence among stakeholders."
-      },
-      {
-        "name": "Key Terms Glossary",
-        "definition": "Audit: Systematic evaluation of systems and controls by an independent entity",
-        "analogy": "",
-        "tables": [
-          {
-            "headers": [
-              "Term",
-              "Definition"
-            ],
-            "rows": [
-              [
-                "**Audit**",
-                "Systematic evaluation of systems and controls by an independent entity"
-              ],
-              [
-                "**Assessment**",
-                "In-depth analysis to identify vulnerabilities and risks"
-              ],
-              [
-                "**Internal Audit**",
-                "Evaluation by the organization's own audit team"
-              ],
-              [
-                "**External Audit**",
-                "Evaluation by an independent third party"
-              ],
-              [
-                "**Self-Assessment**",
-                "Organization's internal evaluation against specific standards"
-              ],
-              [
-                "**Audit Committee**",
-                "Board-level group overseeing audit and compliance activities"
-              ],
-              [
-                "**Compliance**",
-                "Adherence to laws, regulations, standards, and internal policies"
-              ],
-              [
-                "**Examination**",
-                "Detailed external inspection including personnel testing and policy review"
-              ],
-              [
-                "**Red Team**",
-                "Offensive penetration testing team simulating real attackers"
-              ],
-              [
-                "**Blue Team**",
-                "Defensive penetration testing team detecting and responding to attacks"
-              ],
-              [
-                "**Purple Team**",
-                "Integrated approach combining Red and Blue Team in one engagement"
-              ],
-              [
-                "**Reconnaissance**",
-                "Information gathering phase before a penetration test"
-              ],
-              [
-                "**Active Reconnaissance**",
-                "Direct engagement with the target to gather information (higher detection risk)"
-              ],
-              [
-                "**Passive Reconnaissance**",
-                "Information gathering without engaging the target (lower detection risk)"
-              ],
-              [
-                "**Known Environment**",
-                "Pen test where testers receive full details about the target infrastructure"
-              ],
-              [
-                "**Partially Known Environment**",
-                "Pen test where testers receive limited information about the target"
-              ],
-              [
-                "**Unknown Environment**",
-                "Pen test where testers receive minimal or no information about the target"
-              ],
-              [
-                "**Metasploit**",
-                "Multipurpose penetration testing framework with exploits, payloads, and post modules"
-              ],
-              [
-                "**Payload**",
-                "Code delivered by an exploit that runs on the target to grant access or control"
-              ],
-              [
-                "**Bind Shell**",
-                "Shell where the target opens a listening port; attacker connects to it"
-              ],
-              [
-                "**Reverse Shell**",
-                "Shell where the target connects back to the attacker's listener"
-              ],
-              [
-                "**Session**",
-                "Active communication channel between Metasploit and a compromised host"
-              ],
-              [
-                "**Attestation**",
-                "Formal validation asserting the accuracy and authenticity of findings"
-              ],
-              [
-                "**Letter of Attestation**",
-                "Official document proving a penetration test was completed"
-              ],
-              [
-                "**Software Attestation**",
-                "Cryptographic validation of software integrity"
-              ],
-              [
-                "**Hardware Attestation**",
-                "Validation of hardware integrity (e.g., via TPM)"
-              ],
-              [
-                "**System Attestation**",
-                "Validation of a system's overall security posture"
-              ],
-              [
-                "**GLBA**",
-                "Gramm-Leach-Bliley Act — financial data privacy regulation"
-              ],
-              [
-                "**HITECH**",
-                "Health Information Technology for Economic and Clinical Health Act"
-              ],
-              [
-                "**TPM**",
-                "Trusted Platform Module — hardware chip for security measurements and attestation"
-              ],
-              [
-                "**EternalBlue**",
-                "MS17-010 vulnerability exploited by WannaCry ransomware, targets SMB"
-              ],
-              [
-                "**Metasploitable 2**",
-                "Intentionally vulnerable Linux VM created by Rapid7 for penetration testing practice"
-              ],
-              [
-                "**MCIT**",
-                "Minnesota Counties Intergovernmental Trust — source of sample internal assessment checklist"
-              ],
-              [
-                "**NOPs**",
-                "No-Operations — CPU instructions that do nothing; used to keep payload sizes consistent"
-              ]
-            ]
-          }
-        ],
-        "list_items": [],
-        "spanish_words": [],
-        "raw_content": "| Term | Definition |\n| ---- | ---------- |\n| **Audit** | Systematic evaluation of systems and controls by an independent entity |\n| **Assessment** | In-depth analysis to identify vulnerabilities and risks |\n| **Internal Audit** | Evaluation by the organization's own audit team |\n| **External Audit** | Evaluation by an independent third party |\n| **Self-Assessment** | Organization's internal evaluation against specific standards |\n| **Audit Committee** | Board-level group overseeing audit and compliance activities |\n| **Compliance** | Adherence to laws, regulations, standards, and internal policies |\n| **Examination** | Detailed external inspection including personnel testing and policy review |\n| **Red Team** | Offensive penetration testing team simulating real attackers |\n| **Blue Team** | Defensive penetration testing team detecting and responding to attacks |\n| **Purple Team** | Integrated approach combining Red and Blue Team in one engagement |\n| **Reconnaissance** | Information gathering phase before a penetration test |\n| **Active Reconnaissance** | Direct engagement with the target to gather information (higher detection risk) |\n| **Passive Reconnaissance** | Information gathering without engaging the target (lower detection risk) |\n| **Known Environment** | Pen test where testers receive full details about the target infrastructure |\n| **Partially Known Environment** | Pen test where testers receive limited information about the target |\n| **Unknown Environment** | Pen test where testers receive minimal or no information about the target |\n| **Metasploit** | Multipurpose penetration testing framework with exploits, payloads, and post modules |\n| **Payload** | Code delivered by an exploit that runs on the target to grant access or control |\n| **Bind Shell** | Shell where the target opens a listening port; attacker connects to it |\n| **Reverse Shell** | Shell where the target connects back to the attacker's listener |\n| **Session** | Active communication channel between Metasploit and a compromised host |\n| **Attestation** | Formal validation asserting the accuracy and authenticity of findings |\n| **Letter of Attestation** | Official document proving a penetration test was completed |\n| **Software Attestation** | Cryptographic validation of software integrity |\n| **Hardware Attestation** | Validation of hardware integrity (e.g., via TPM) |\n| **System Attestation** | Validation of a system's overall security posture |\n| **GLBA** | Gramm-Leach-Bliley Act — financial data privacy regulation |\n| **HITECH** | Health Information Technology for Economic and Clinical Health Act |\n| **TPM** | Trusted Platform Module — hardware chip for security measurements and attestation |\n| **EternalBlue** | MS17-010 vulnerability exploited by WannaCry ransomware, targets SMB |\n| **Metasploitable 2** | Intentionally vulnerable Linux VM created by Rapid7 for penetration testing practice |\n| **MCIT** | Minnesota Counties Intergovernmental Trust — source of sample internal assessment checklist |\n| **NOPs** | No-Operations — CPU instructions that do nothing; used to keep payload sizes consistent |"
+        "raw_content": "### Letter of Attestation\n\n* **Definition:** A formal document provided by the penetration testing firm to the organization, serving as an official record that the penetration test was completed during a specified period.\n\n> *Es el certificado oficial que te da el taller mecánico después de revisar tu carro: lo puedes mostrar a quien sea para probar que la revisión sí se hizo y qué fue lo que encontraron.*\n\nUsed by organizations to prove to third parties (auditors, regulators) that a security assessment was conducted.\n\n### Additional Attestation Types\n\n| Type | Definition |\n| ---- | ---------- |\n| **Software Attestation** | Validates the integrity of software using cryptographic techniques (e.g., verifying a digital signature on a software update to confirm it hasn't been tampered with) |\n| **Hardware Attestation** | Validates the integrity of hardware components (e.g., a TPM stores hardware/firmware measurements checked at boot time to detect unexpected changes) |\n| **System Attestation** | Validates the security posture of a system (e.g., a cloud provider attests that its services meet ISO 27001 or SOC 2 standards) |\n\n### Attestation in Internal vs. External Audits\n\n| Context | Role of Attestation |\n| ------- | ------------------- |\n| **Internal Audits** | Auditor attests accuracy of financial records, effectiveness of risk management, and adherence to internal policies |\n| **External Audits** | Independent third party attests financial statements, regulatory adherence, and operational efficiency |\n\nAttestation strengthens **trust**, enhances **transparency**, and ensures **accountability** within an organization by providing formal validation that builds confidence among stakeholders.\n\n---"
       }
     ]
   },
@@ -5665,12 +5159,11 @@ const STUDY_DATA = [
           "Redundancy reduces the chance of **total system failure** by giving the organization a backup to fall back on when the primary system fails.",
           "High resilience ensures organizations can **swiftly recover** and continue business operations even during a cyberattack or technical failure."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Cyber resilience is an entity's ability to continuously deliver its intended outcome despite adverse cyber events; redundancy is having additional systems, equipment, or processes to ensure continued functionality if the primary ones fail.\n\n> *Si la resiliencia cibernética es la capacidad de un barco de seguir flotando aunque tenga una vía de agua, la redundancia son los compartimentos estancos extra que evitan que ese barco se hunda por completo.*\n\nThis section maps to **Domain 3, Objective 3.4**: *Explain the importance of resilience and recovery in security architecture.* It covers, in order: High Availability, Data Redundancy (RAID), Configuring a RAID, Capacity Planning, Powering Data Centers, Data Backups, Continuity of Operations Plan, Redundant Site Considerations, and Resilience & Recovery Testing.\n\n* Redundancy reduces the chance of **total system failure** by giving the organization a backup to fall back on when the primary system fails.\n* High resilience ensures organizations can **swiftly recover** and continue business operations even during a cyberattack or technical failure."
+        "raw_content": "## 1. Cyber Resilience and Redundancy (Overview)\n\n* **Definition:** Cyber resilience is an entity's ability to continuously deliver its intended outcome despite adverse cyber events; redundancy is having additional systems, equipment, or processes to ensure continued functionality if the primary ones fail.\n\n> *Si la resiliencia cibernética es la capacidad de un barco de seguir flotando aunque tenga una vía de agua, la redundancia son los compartimentos estancos extra que evitan que ese barco se hunda por completo.*\n\nThis section maps to **Domain 3, Objective 3.4**: *Explain the importance of resilience and recovery in security architecture.* It covers, in order: High Availability, Data Redundancy (RAID), Configuring a RAID, Capacity Planning, Powering Data Centers, Data Backups, Continuity of Operations Plan, Redundant Site Considerations, and Resilience & Recovery Testing.\n\n* Redundancy reduces the chance of **total system failure** by giving the organization a backup to fall back on when the primary system fails.\n* High resilience ensures organizations can **swiftly recover** and continue business operations even during a cyberattack or technical failure.\n\n---"
       },
       {
         "name": "High Availability",
-        "definition": "Distributing data, applications, and services across several different cloud-based environments as an additional layer of redundancy.",
+        "definition": "High availability (HA) is the ability of a service to remain continuously available by minimizing downtime to the lowest amount possible.",
         "analogy": "*Es como un restaurante con varios cocineros: si uno se enferma, los demás siguen sirviendo platos sin que el cliente note la diferencia.*",
         "tables": [
           {
@@ -5691,7 +5184,38 @@ const STUDY_DATA = [
                 "~31 seconds"
               ]
             ]
-          },
+          }
+        ],
+        "list_items": [],
+        "raw_content": "## 2. High Availability\n\n* **Definition:** High availability (HA) is the ability of a service to remain continuously available by minimizing downtime to the lowest amount possible.\n\n> *Es como un restaurante con varios cocineros: si uno se enferma, los demás siguen sirviendo platos sin que el cliente note la diferencia.*\n\nTo achieve HA, systems should use **load balancing or clustering**, have **redundancy** built in, and (in cloud environments) use a **multi-cloud** approach so the service can withstand multiple points of failure before becoming unavailable.\n\n### Uptime & The \"Nines\" of Availability\n\nAvailability is measured as **uptime**, expressed as a percentage of time the system stays online over a given period.\n\n| Standard | Uptime % | Max Downtime/Year |\n| --- | --- | --- |\n| **Five Nines** (gold standard) | 99.999% | ~5 minutes |\n| **Six Nines** (some cloud networks) | 99.9999% | ~31 seconds |\n\n> Most organizations actually need more downtime than this to install patches, replace failed drives, or swap network hardware — so planned maintenance windows must be factored in."
+      },
+      {
+        "name": "Load Balancing",
+        "definition": "The process of distributing workloads across multiple computing resources to optimize resource use, maximize throughput, minimize response time, and prevent overloading any single resource.",
+        "analogy": "*Es como un guardia de tránsito en una intersección concurrida: dirige los autos (peticiones) hacia distintos carriles (servidores) para que ninguno se congestione.*",
+        "tables": [],
+        "list_items": [
+          "Requests go to the **load balancer first**, which then redirects them to whichever server (of several) can respond efficiently.",
+          "Example: a small blog with a few dozen readers can run on one server, but once it grows to thousands of readers, a single server is insufficient — two or three servers behind a load balancer prevent overload."
+        ],
+        "raw_content": "### Load Balancing\n\n* **Definition:** The process of distributing workloads across multiple computing resources to optimize resource use, maximize throughput, minimize response time, and prevent overloading any single resource.\n\n> *Es como un guardia de tránsito en una intersección concurrida: dirige los autos (peticiones) hacia distintos carriles (servidores) para que ninguno se congestione.*\n\n- Requests go to the **load balancer first**, which then redirects them to whichever server (of several) can respond efficiently.\n- Example: a small blog with a few dozen readers can run on one server, but once it grows to thousands of readers, a single server is insufficient — two or three servers behind a load balancer prevent overload."
+      },
+      {
+        "name": "Clustering",
+        "definition": "The use of multiple computers, storage devices, or redundant network connections working together as a single system to provide higher availability, reliability, and scalability.",
+        "analogy": "*Es como un equipo de relevos: si un corredor se lesiona, otro miembro del equipo toma la posta sin que la carrera se detenga.*",
+        "tables": [],
+        "list_items": [
+          "Clustering focuses on keeping an application available during a **hardware failure**, eliminating single points of failure — unlike load balancing, which focuses on distributing traffic.",
+          "Load balancing and clustering can be **combined**: load balancing manages resources under normal conditions, while clustering takes over if a component or system fails."
+        ],
+        "raw_content": "### Clustering\n\n* **Definition:** The use of multiple computers, storage devices, or redundant network connections working together as a single system to provide higher availability, reliability, and scalability.\n\n> *Es como un equipo de relevos: si un corredor se lesiona, otro miembro del equipo toma la posta sin que la carrera se detenga.*\n\n- Clustering focuses on keeping an application available during a **hardware failure**, eliminating single points of failure — unlike load balancing, which focuses on distributing traffic.\n- Load balancing and clustering can be **combined**: load balancing manages resources under normal conditions, while clustering takes over if a component or system fails."
+      },
+      {
+        "name": "Redundancy (Built into the Architecture)",
+        "definition": "The duplication of critical components or functions of a system to increase its overall reliability.",
+        "analogy": "*Es como llevar una llanta de repuesto en el carro: no la usas todos los días, pero te salva cuando la principal falla.*",
+        "tables": [
           {
             "headers": [
               "Redundancy Type",
@@ -5718,24 +5242,83 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [
-          "Requests go to the **load balancer first**, which then redirects them to whichever server (of several) can respond efficiently.",
-          "Example: a small blog with a few dozen readers can run on one server, but once it grows to thousands of readers, a single server is insufficient — two or three servers behind a load balancer prevent overload.",
-          "Clustering focuses on keeping an application available during a **hardware failure**, eliminating single points of failure — unlike load balancing, which focuses on distributing traffic.",
-          "Load balancing and clustering can be **combined**: load balancing manages resources under normal conditions, while clustering takes over if a component or system fails.",
           "Example: Dion Training uses **Stripe** as its primary payment processor and keeps a secondary processor pre-configured in case Stripe suffers a catastrophic outage.",
           "Example: two **domain controllers** (primary + secondary) let one be patched/restarted while the other keeps serving users.",
-          "⚠️ Full hardware redundancy roughly **doubles cost** — each design decision should weigh whether redundancy is needed in hardware, or can instead be achieved via software/cloud services.",
+          "⚠️ Full hardware redundancy roughly **doubles cost** — each design decision should weigh whether redundancy is needed in hardware, or can instead be achieved via software/cloud services."
+        ],
+        "raw_content": "### Redundancy (Built into the Architecture)\n\n* **Definition:** The duplication of critical components or functions of a system to increase its overall reliability.\n\n> *Es como llevar una llanta de repuesto en el carro: no la usas todos los días, pero te salva cuando la principal falla.*\n\n| Redundancy Type | How It's Achieved |\n| --- | --- |\n| **Power supplies** | Dual power supplies in a server, UPS, backup generator, or connections to two+ power grids |\n| **Network connections** | Multiple cabled connections, or a cable + wireless connection |\n| **Servers/services** | Load-balanced or clustered server architecture; redundant software service instances |\n| **Service providers** | Two or more providers (e.g., ISP, payment processor) so a backup is always available |\n\n- Example: Dion Training uses **Stripe** as its primary payment processor and keeps a secondary processor pre-configured in case Stripe suffers a catastrophic outage.\n- Example: two **domain controllers** (primary + secondary) let one be patched/restarted while the other keeps serving users.\n- ⚠️ Full hardware redundancy roughly **doubles cost** — each design decision should weigh whether redundancy is needed in hardware, or can instead be achieved via software/cloud services."
+      },
+      {
+        "name": "Multi-Cloud Systems",
+        "definition": "Distributing data, applications, and services across several different cloud-based environments as an additional layer of redundancy.",
+        "analogy": "*Es como tener cuentas en dos bancos diferentes: si uno tiene un problema técnico, sigues teniendo acceso a tu dinero en el otro.*",
+        "tables": [],
+        "list_items": [
           "Mitigates single point of failure — if one cloud provider goes down, workload shifts to another with minimal disruption.",
           "Adds flexibility for **scaling** and **cost optimization** (different providers have different pricing).",
           "Avoids **vendor lock-in**, giving more leverage in negotiations or migrations."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** High availability (HA) is the ability of a service to remain continuously available by minimizing downtime to the lowest amount possible.\n\n> *Es como un restaurante con varios cocineros: si uno se enferma, los demás siguen sirviendo platos sin que el cliente note la diferencia.*\n\nTo achieve HA, systems should use **load balancing or clustering**, have **redundancy** built in, and (in cloud environments) use a **multi-cloud** approach so the service can withstand multiple points of failure before becoming unavailable.\n\n### Uptime & The \"Nines\" of Availability\n\nAvailability is measured as **uptime**, expressed as a percentage of time the system stays online over a given period.\n\n| Standard | Uptime % | Max Downtime/Year |\n| --- | --- | --- |\n| **Five Nines** (gold standard) | 99.999% | ~5 minutes |\n| **Six Nines** (some cloud networks) | 99.9999% | ~31 seconds |\n\n> Most organizations actually need more downtime than this to install patches, replace failed drives, or swap network hardware — so planned maintenance windows must be factored in.\n\n### Load Balancing\n\n* **Definition:** The process of distributing workloads across multiple computing resources to optimize resource use, maximize throughput, minimize response time, and prevent overloading any single resource.\n\n> *Es como un guardia de tránsito en una intersección concurrida: dirige los autos (peticiones) hacia distintos carriles (servidores) para que ninguno se congestione.*\n\n- Requests go to the **load balancer first**, which then redirects them to whichever server (of several) can respond efficiently.\n- Example: a small blog with a few dozen readers can run on one server, but once it grows to thousands of readers, a single server is insufficient — two or three servers behind a load balancer prevent overload.\n\n### Clustering\n\n* **Definition:** The use of multiple computers, storage devices, or redundant network connections working together as a single system to provide higher availability, reliability, and scalability.\n\n> *Es como un equipo de relevos: si un corredor se lesiona, otro miembro del equipo toma la posta sin que la carrera se detenga.*\n\n- Clustering focuses on keeping an application available during a **hardware failure**, eliminating single points of failure — unlike load balancing, which focuses on distributing traffic.\n- Load balancing and clustering can be **combined**: load balancing manages resources under normal conditions, while clustering takes over if a component or system fails.\n\n### Redundancy (Built into the Architecture)\n\n* **Definition:** The duplication of critical components or functions of a system to increase its overall reliability.\n\n> *Es como llevar una llanta de repuesto en el carro: no la usas todos los días, pero te salva cuando la principal falla.*\n\n| Redundancy Type | How It's Achieved |\n| --- | --- |\n| **Power supplies** | Dual power supplies in a server, UPS, backup generator, or connections to two+ power grids |\n| **Network connections** | Multiple cabled connections, or a cable + wireless connection |\n| **Servers/services** | Load-balanced or clustered server architecture; redundant software service instances |\n| **Service providers** | Two or more providers (e.g., ISP, payment processor) so a backup is always available |\n\n- Example: Dion Training uses **Stripe** as its primary payment processor and keeps a secondary processor pre-configured in case Stripe suffers a catastrophic outage.\n- Example: two **domain controllers** (primary + secondary) let one be patched/restarted while the other keeps serving users.\n- ⚠️ Full hardware redundancy roughly **doubles cost** — each design decision should weigh whether redundancy is needed in hardware, or can instead be achieved via software/cloud services.\n\n### Multi-Cloud Systems\n\n* **Definition:** Distributing data, applications, and services across several different cloud-based environments as an additional layer of redundancy.\n\n> *Es como tener cuentas en dos bancos diferentes: si uno tiene un problema técnico, sigues teniendo acceso a tu dinero en el otro.*\n\nBenefits:\n- Mitigates single point of failure — if one cloud provider goes down, workload shifts to another with minimal disruption.\n- Adds flexibility for **scaling** and **cost optimization** (different providers have different pricing).\n- Avoids **vendor lock-in**, giving more leverage in negotiations or migrations.\n\n⚠️ Requires consistent **data management, unified threat management, and policy enforcement** across all cloud environments to maintain security and compliance posture."
+        "raw_content": "### Multi-Cloud Systems\n\n* **Definition:** Distributing data, applications, and services across several different cloud-based environments as an additional layer of redundancy.\n\n> *Es como tener cuentas en dos bancos diferentes: si uno tiene un problema técnico, sigues teniendo acceso a tu dinero en el otro.*\n\nBenefits:\n- Mitigates single point of failure — if one cloud provider goes down, workload shifts to another with minimal disruption.\n- Adds flexibility for **scaling** and **cost optimization** (different providers have different pricing).\n- Avoids **vendor lock-in**, giving more leverage in negotiations or migrations.\n\n⚠️ Requires consistent **data management, unified threat management, and policy enforcement** across all cloud environments to maintain security and compliance posture.\n\n---"
       },
       {
         "name": "Data Redundancy (RAID)",
-        "definition": "Combines RAID 1 and RAID 0 — data is first mirrored into RAID 1 sets, then striped across those mirrored sets using RAID 0.",
+        "definition": "A RAID (Redundant Array of Independent Disks) combines multiple physical storage devices into a single logical storage device recognized by the operating system, used to achieve data redundancy and/or performance.",
         "analogy": "*Es como repartir las páginas de un libro importante entre varios amigos: si uno pierde su parte, los demás (o una copia extra) permiten reconstruir el libro completo.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 3. Data Redundancy (RAID)\n\n* **Definition:** A RAID (Redundant Array of Independent Disks) combines multiple physical storage devices into a single logical storage device recognized by the operating system, used to achieve data redundancy and/or performance.\n\n> *Es como repartir las páginas de un libro importante entre varios amigos: si uno pierde su parte, los demás (o una copia extra) permiten reconstruir el libro completo.*"
+      },
+      {
+        "name": "RAID 0 — Striping",
+        "definition": "Splits (stripes) data evenly across two or more disks to increase performance; provides **no redundancy or fault tolerance**.",
+        "analogy": "*Es como repartir el trabajo entre dos albañiles para terminar más rápido — pero si uno se ausenta, la obra completa se detiene.*",
+        "tables": [],
+        "list_items": [
+          "Keyword: **striping**",
+          "Minimum **2 disks** required.",
+          "Use case: high-end video editing workstations needing raw read/write speed."
+        ],
+        "raw_content": "### RAID 0 — Striping\n\n* **Definition:** Splits (stripes) data evenly across two or more disks to increase performance; provides **no redundancy or fault tolerance**.\n\n> *Es como repartir el trabajo entre dos albañiles para terminar más rápido — pero si uno se ausenta, la obra completa se detiene.*\n\n- Keyword: **striping**\n- Minimum **2 disks** required.\n- Use case: high-end video editing workstations needing raw read/write speed."
+      },
+      {
+        "name": "RAID 1 — Mirroring",
+        "definition": "Maintains an identical, mirrored copy of data on two or more storage devices to provide fault tolerance and read performance.",
+        "analogy": "*Es como tener un gemelo idéntico que guarda exactamente la misma información que tú: si a uno le pasa algo, el otro sigue funcionando con todo intacto.*",
+        "tables": [],
+        "list_items": [
+          "Keyword: **mirroring**",
+          "Can survive the loss of **1 device** with zero downtime/data loss (least downtime of all RAID types — full copy is always ready).",
+          "Use case: storing finished video projects with an always-available backup."
+        ],
+        "raw_content": "### RAID 1 — Mirroring\n\n* **Definition:** Maintains an identical, mirrored copy of data on two or more storage devices to provide fault tolerance and read performance.\n\n> *Es como tener un gemelo idéntico que guarda exactamente la misma información que tú: si a uno le pasa algo, el otro sigue funcionando con todo intacto.*\n\n- Keyword: **mirroring**\n- Can survive the loss of **1 device** with zero downtime/data loss (least downtime of all RAID types — full copy is always ready).\n- Use case: storing finished video projects with an always-available backup."
+      },
+      {
+        "name": "RAID 5 — Striping with Parity",
+        "definition": "Stripes data across multiple disks and writes parity data across the array to provide fault tolerance; requires a minimum of **3 disks**.",
+        "analogy": "*Es como un grupo de estudio donde, si alguien pierde sus apuntes de una clase, los demás pueden reconstruir esa clase combinando lo que cada uno recuerda (la \"paridad\").*",
+        "tables": [],
+        "list_items": [
+          "Keyword: **striping with parity**",
+          "Survives the loss of **1 disk**; data is rebuilt from parity, but performance slows because missing data is calculated on the fly.",
+          "Supports **hot swap**: a failed drive can be pulled and a new one installed while the server keeps running; the array rebuilds the missing data using stripes + parity."
+        ],
+        "raw_content": "### RAID 5 — Striping with Parity\n\n* **Definition:** Stripes data across multiple disks and writes parity data across the array to provide fault tolerance; requires a minimum of **3 disks**.\n\n> *Es como un grupo de estudio donde, si alguien pierde sus apuntes de una clase, los demás pueden reconstruir esa clase combinando lo que cada uno recuerda (la \"paridad\").*\n\n- Keyword: **striping with parity**\n- Survives the loss of **1 disk**; data is rebuilt from parity, but performance slows because missing data is calculated on the fly.\n- Supports **hot swap**: a failed drive can be pulled and a new one installed while the server keeps running; the array rebuilds the missing data using stripes + parity."
+      },
+      {
+        "name": "RAID 6 — Striping with Double Parity",
+        "definition": "Like RAID 5, but writes **two** sets of parity data instead of one; requires a minimum of **4 disks**.",
+        "analogy": "*\"RAID 6 es uno mejor que RAID 5\" — es como llevar dos copias de seguridad de tus apuntes en vez de una, por si pierdes dos compañeros de estudio a la vez en lugar de solo uno.*",
+        "tables": [],
+        "list_items": [
+          "Keyword: **striping with double parity**",
+          "Can survive the loss of **2 disks** simultaneously without downtime — more resiliency than RAID 5."
+        ],
+        "raw_content": "### RAID 6 — Striping with Double Parity\n\n* **Definition:** Like RAID 5, but writes **two** sets of parity data instead of one; requires a minimum of **4 disks**.\n\n> *\"RAID 6 es uno mejor que RAID 5\" — es como llevar dos copias de seguridad de tus apuntes en vez de una, por si pierdes dos compañeros de estudio a la vez en lugar de solo uno.*\n\n- Keyword: **striping with double parity**\n- Can survive the loss of **2 disks** simultaneously without downtime — more resiliency than RAID 5."
+      },
+      {
+        "name": "RAID 10 (RAID 1+0) — Striped Array of Mirrored Arrays",
+        "definition": "Combines RAID 1 and RAID 0 — data is first mirrored into RAID 1 sets, then striped across those mirrored sets using RAID 0.",
+        "analogy": "*Es como tener dos parejas de gemelos idénticos (mirroring) y luego repartir el trabajo entre las dos parejas para ir más rápido (striping).*",
         "tables": [
           {
             "headers": [
@@ -5809,24 +5392,12 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [
-          "Keyword: **striping**",
-          "Minimum **2 disks** required.",
-          "Use case: high-end video editing workstations needing raw read/write speed.",
-          "Keyword: **mirroring**",
-          "Can survive the loss of **1 device** with zero downtime/data loss (least downtime of all RAID types — full copy is always ready).",
-          "Use case: storing finished video projects with an always-available backup.",
-          "Keyword: **striping with parity**",
-          "Survives the loss of **1 disk**; data is rebuilt from parity, but performance slows because missing data is calculated on the fly.",
-          "Supports **hot swap**: a failed drive can be pulled and a new one installed while the server keeps running; the array rebuilds the missing data using stripes + parity.",
-          "Keyword: **striping with double parity**",
-          "Can survive the loss of **2 disks** simultaneously without downtime — more resiliency than RAID 5.",
           "Keyword: **striped array of mirrored arrays**",
           "Requires an **even number** of disks, minimum **4** (to form 2 mirrored RAID 1 sets).",
           "Provides fault tolerance (mirroring) **and** faster speed (striping).",
           "Can survive the loss of **up to 2 disks**, but only if they are **not from the same mirrored pair** — losing both disks in one mirror pair causes data loss; losing fault tolerance (but not data) if you lose one disk per pair."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A RAID (Redundant Array of Independent Disks) combines multiple physical storage devices into a single logical storage device recognized by the operating system, used to achieve data redundancy and/or performance.\n\n> *Es como repartir las páginas de un libro importante entre varios amigos: si uno pierde su parte, los demás (o una copia extra) permiten reconstruir el libro completo.*\n\n### RAID 0 — Striping\n\n* **Definition:** Splits (stripes) data evenly across two or more disks to increase performance; provides **no redundancy or fault tolerance**.\n\n> *Es como repartir el trabajo entre dos albañiles para terminar más rápido — pero si uno se ausenta, la obra completa se detiene.*\n\n- Keyword: **striping**\n- Minimum **2 disks** required.\n- Use case: high-end video editing workstations needing raw read/write speed.\n\n### RAID 1 — Mirroring\n\n* **Definition:** Maintains an identical, mirrored copy of data on two or more storage devices to provide fault tolerance and read performance.\n\n> *Es como tener un gemelo idéntico que guarda exactamente la misma información que tú: si a uno le pasa algo, el otro sigue funcionando con todo intacto.*\n\n- Keyword: **mirroring**\n- Can survive the loss of **1 device** with zero downtime/data loss (least downtime of all RAID types — full copy is always ready).\n- Use case: storing finished video projects with an always-available backup.\n\n### RAID 5 — Striping with Parity\n\n* **Definition:** Stripes data across multiple disks and writes parity data across the array to provide fault tolerance; requires a minimum of **3 disks**.\n\n> *Es como un grupo de estudio donde, si alguien pierde sus apuntes de una clase, los demás pueden reconstruir esa clase combinando lo que cada uno recuerda (la \"paridad\").*\n\n- Keyword: **striping with parity**\n- Survives the loss of **1 disk**; data is rebuilt from parity, but performance slows because missing data is calculated on the fly.\n- Supports **hot swap**: a failed drive can be pulled and a new one installed while the server keeps running; the array rebuilds the missing data using stripes + parity.\n\n### RAID 6 — Striping with Double Parity\n\n* **Definition:** Like RAID 5, but writes **two** sets of parity data instead of one; requires a minimum of **4 disks**.\n\n> *\"RAID 6 es uno mejor que RAID 5\" — es como llevar dos copias de seguridad de tus apuntes en vez de una, por si pierdes dos compañeros de estudio a la vez en lugar de solo uno.*\n\n- Keyword: **striping with double parity**\n- Can survive the loss of **2 disks** simultaneously without downtime — more resiliency than RAID 5.\n\n### RAID 10 (RAID 1+0) — Striped Array of Mirrored Arrays\n\n* **Definition:** Combines RAID 1 and RAID 0 — data is first mirrored into RAID 1 sets, then striped across those mirrored sets using RAID 0.\n\n> *Es como tener dos parejas de gemelos idénticos (mirroring) y luego repartir el trabajo entre las dos parejas para ir más rápido (striping).*\n\n- Keyword: **striped array of mirrored arrays**\n- Requires an **even number** of disks, minimum **4** (to form 2 mirrored RAID 1 sets).\n- Provides fault tolerance (mirroring) **and** faster speed (striping).\n- Can survive the loss of **up to 2 disks**, but only if they are **not from the same mirrored pair** — losing both disks in one mirror pair causes data loss; losing fault tolerance (but not data) if you lose one disk per pair.\n\n### RAID Resilience Classification\n\n| Classification | Description | Example RAID Levels |\n| --- | --- | --- |\n| **Failure-Resistant** | Withstands hardware malfunction without losing data, via mirroring | RAID 1, RAID 10 |\n| **Fault-Tolerant** | Continues operating with no downtime and can rebuild lost data from remaining healthy devices (mirroring or striping with parity) | RAID 1, RAID 5, RAID 6, RAID 10 |\n| **Disaster-Tolerant** | Broadest protection; uses two independent zones with full access to all data (full mirrors) | RAID 1, RAID 10 |\n\n> *Piensa en estas tres categorías como niveles de un seguro: resistente a fallos es el seguro básico, tolerante a fallos es el seguro completo, y tolerante a desastres es el seguro que te cubre incluso si toda la casa se incendia.*\n\n### RAID Quick Comparison\n\n| RAID | Min. Disks | Keyword | Max Disk Loss (no downtime) | Fault Tolerance? |\n| --- | --- | --- | --- | --- |\n| **RAID 0** | 2 | Striping | 0 | ❌ No |\n| **RAID 1** | 2 | Mirroring | 1 | ✅ Yes |\n| **RAID 5** | 3 | Striping + parity | 1 | ✅ Yes |\n| **RAID 6** | 4 | Striping + double parity | 2 | ✅ Yes |\n| **RAID 10** | 4 (even #) | Striped mirrors | 2 (1 per mirror pair) | ✅ Yes |\n\nUsing RAIDs increases overall **availability** when designing high-availability systems for enterprise networks."
+        "raw_content": "### RAID 10 (RAID 1+0) — Striped Array of Mirrored Arrays\n\n* **Definition:** Combines RAID 1 and RAID 0 — data is first mirrored into RAID 1 sets, then striped across those mirrored sets using RAID 0.\n\n> *Es como tener dos parejas de gemelos idénticos (mirroring) y luego repartir el trabajo entre las dos parejas para ir más rápido (striping).*\n\n- Keyword: **striped array of mirrored arrays**\n- Requires an **even number** of disks, minimum **4** (to form 2 mirrored RAID 1 sets).\n- Provides fault tolerance (mirroring) **and** faster speed (striping).\n- Can survive the loss of **up to 2 disks**, but only if they are **not from the same mirrored pair** — losing both disks in one mirror pair causes data loss; losing fault tolerance (but not data) if you lose one disk per pair.\n\n### RAID Resilience Classification\n\n| Classification | Description | Example RAID Levels |\n| --- | --- | --- |\n| **Failure-Resistant** | Withstands hardware malfunction without losing data, via mirroring | RAID 1, RAID 10 |\n| **Fault-Tolerant** | Continues operating with no downtime and can rebuild lost data from remaining healthy devices (mirroring or striping with parity) | RAID 1, RAID 5, RAID 6, RAID 10 |\n| **Disaster-Tolerant** | Broadest protection; uses two independent zones with full access to all data (full mirrors) | RAID 1, RAID 10 |\n\n> *Piensa en estas tres categorías como niveles de un seguro: resistente a fallos es el seguro básico, tolerante a fallos es el seguro completo, y tolerante a desastres es el seguro que te cubre incluso si toda la casa se incendia.*\n\n### RAID Quick Comparison\n\n| RAID | Min. Disks | Keyword | Max Disk Loss (no downtime) | Fault Tolerance? |\n| --- | --- | --- | --- | --- |\n| **RAID 0** | 2 | Striping | 0 | ❌ No |\n| **RAID 1** | 2 | Mirroring | 1 | ✅ Yes |\n| **RAID 5** | 3 | Striping + parity | 1 | ✅ Yes |\n| **RAID 6** | 4 | Striping + double parity | 2 | ✅ Yes |\n| **RAID 10** | 4 (even #) | Striped mirrors | 2 (1 per mirror pair) | ✅ Yes |\n\nUsing RAIDs increases overall **availability** when designing high-availability systems for enterprise networks.\n\n---"
       },
       {
         "name": "Configuring a RAID (Hands-On Demo)",
@@ -5837,26 +5408,59 @@ const STUDY_DATA = [
           "Windows 10 machine with a C: drive (OS) plus **four blank, initialized disks**.",
           "Goal: build two RAIDs — one for **performance** (video editing), one for **redundancy**."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The practical process of creating software RAID arrays — in this case using the Windows Disk Management tool — to apply RAID 0 and RAID 1 concepts on physical disks.\n\n> *Es como decidir si organizas tu clóset para encontrar la ropa más rápido (RAID 0, rendimiento) o para tener un respaldo idéntico de tu ropa favorita por si se moja una parte (RAID 1, redundancia).*\n\n### Demo Setup\n- Windows 10 machine with a C: drive (OS) plus **four blank, initialized disks**.\n- Goal: build two RAIDs — one for **performance** (video editing), one for **redundancy**.\n\n### Building RAID 0 (Striped Volume — Disks 1 & 2)\n1. Right-click Disk 1 → **New Striped Volume**.\n2. Add Disk 2, assign drive letter (e.g., `D:`), name it (e.g., \"editing\").\n3. Result: two 800 GB drives combine into **1.57 TB** logical drive D — 100% usable space, but **if either disk fails, all of drive D is lost**.\n\n### Building RAID 1 (Mirrored Volume — Disks 3 & 4)\n1. Select both remaining disks → **New Mirrored Volume**.\n2. Name it (e.g., \"redundant\" → drive `R:`), format it.\n3. Result: only **one disk's worth of capacity** is usable (50% overhead) because both disks hold identical data — one acts as primary, one as backup. If either fails, the other keeps serving data, providing **fault tolerance**.\n\n> ⚠️ **Trade-off:** Performance + double space (RAID 0) **or** redundancy + half space (RAID 1) — you can't have both with the same set of disks, but you can build both arrays side-by-side for different purposes (as shown here: one scratch drive, one redundant storage drive)."
+        "raw_content": "## 4. Configuring a RAID (Hands-On Demo)\n\n* **Definition:** The practical process of creating software RAID arrays — in this case using the Windows Disk Management tool — to apply RAID 0 and RAID 1 concepts on physical disks.\n\n> *Es como decidir si organizas tu clóset para encontrar la ropa más rápido (RAID 0, rendimiento) o para tener un respaldo idéntico de tu ropa favorita por si se moja una parte (RAID 1, redundancia).*\n\n### Demo Setup\n- Windows 10 machine with a C: drive (OS) plus **four blank, initialized disks**.\n- Goal: build two RAIDs — one for **performance** (video editing), one for **redundancy**.\n\n### Building RAID 0 (Striped Volume — Disks 1 & 2)\n1. Right-click Disk 1 → **New Striped Volume**.\n2. Add Disk 2, assign drive letter (e.g., `D:`), name it (e.g., \"editing\").\n3. Result: two 800 GB drives combine into **1.57 TB** logical drive D — 100% usable space, but **if either disk fails, all of drive D is lost**.\n\n### Building RAID 1 (Mirrored Volume — Disks 3 & 4)\n1. Select both remaining disks → **New Mirrored Volume**.\n2. Name it (e.g., \"redundant\" → drive `R:`), format it.\n3. Result: only **one disk's worth of capacity** is usable (50% overhead) because both disks hold identical data — one acts as primary, one as backup. If either fails, the other keeps serving data, providing **fault tolerance**.\n\n> ⚠️ **Trade-off:** Performance + double space (RAID 0) **or** redundancy + half space (RAID 1) — you can't have both with the same set of disks, but you can build both arrays side-by-side for different purposes (as shown here: one scratch drive, one redundant storage drive).\n\n---"
       },
       {
         "name": "Capacity Planning",
-        "definition": "Optimizing business processes so they can withstand fluctuations (increases or decreases) in demand, often via streamlining, automation, or outsourcing.",
+        "definition": "A critical strategic planning effort that ensures an organization is adequately equipped to meet future demands at the right time and in the most cost-effective manner, across four key aspects: people, technology, infrastructure, and processes.",
         "analogy": "*Es como planificar un viaje familiar largo: necesitas suficiente gasolina (tecnología), espacio en el carro (infraestructura), conductores de repuesto (personas), y una buena ruta (procesos) antes de salir.*",
         "tables": [],
+        "list_items": [],
+        "raw_content": "## 5. Capacity Planning\n\n* **Definition:** A critical strategic planning effort that ensures an organization is adequately equipped to meet future demands at the right time and in the most cost-effective manner, across four key aspects: people, technology, infrastructure, and processes.\n\n> *Es como planificar un viaje familiar largo: necesitas suficiente gasolina (tecnología), espacio en el carro (infraestructura), conductores de repuesto (personas), y una buena ruta (procesos) antes de salir.*"
+      },
+      {
+        "name": "People",
+        "definition": "Analyzing current personnel skillsets/capacity and forecasting future workforce needs (hiring, training, downsizing).",
+        "analogy": "*Es como un equipo de fútbol que ficha jugadores extra justo antes de un torneo importante y los deja ir cuando termina la temporada.*",
+        "tables": [],
         "list_items": [
-          "Example: a retail store hires ~20 seasonal employees starting October 1st for the holiday rush, then offboards them after January 1st once demand drops.",
-          "Example: an e-commerce site must know its concurrent-user capacity; cloud-based services allow elastic scaling up during high-demand periods and back down afterward to control costs.",
-          "Example: a theater network operations center for the US government had to calculate power consumption and heat output per server to decide which servers could be hosted locally versus moved to the cloud due to limited data center square footage.",
+          "Example: a retail store hires ~20 seasonal employees starting October 1st for the holiday rush, then offboards them after January 1st once demand drops."
+        ],
+        "raw_content": "### People\n\n* **Definition:** Analyzing current personnel skillsets/capacity and forecasting future workforce needs (hiring, training, downsizing).\n\n> *Es como un equipo de fútbol que ficha jugadores extra justo antes de un torneo importante y los deja ir cuando termina la temporada.*\n\n- Example: a retail store hires ~20 seasonal employees starting October 1st for the holiday rush, then offboards them after January 1st once demand drops."
+      },
+      {
+        "name": "Technology",
+        "definition": "Understanding current technological resources (hardware/software), their utilization rate, and future technological demand, to determine if existing tech can scale or new investment is needed.",
+        "analogy": "*Es como asegurarte de que tu cocina tenga suficientes estufas antes de aceptar pedidos para una fiesta enorme, no después.*",
+        "tables": [],
+        "list_items": [
+          "Example: an e-commerce site must know its concurrent-user capacity; cloud-based services allow elastic scaling up during high-demand periods and back down afterward to control costs."
+        ],
+        "raw_content": "### Technology\n\n* **Definition:** Understanding current technological resources (hardware/software), their utilization rate, and future technological demand, to determine if existing tech can scale or new investment is needed.\n\n> *Es como asegurarte de que tu cocina tenga suficientes estufas antes de aceptar pedidos para una fiesta enorme, no después.*\n\n- Example: an e-commerce site must know its concurrent-user capacity; cloud-based services allow elastic scaling up during high-demand periods and back down afterward to control costs."
+      },
+      {
+        "name": "Infrastructure",
+        "definition": "Planning for the physical space and utilities (offices, warehouses, production facilities, data centers) needed to support ongoing operations.",
+        "analogy": "*Es como planificar cuántos estacionamientos necesita un edificio antes de construirlo, no después de que ya no caben los carros.*",
+        "tables": [],
+        "list_items": [
+          "Example: a theater network operations center for the US government had to calculate power consumption and heat output per server to decide which servers could be hosted locally versus moved to the cloud due to limited data center square footage."
+        ],
+        "raw_content": "### Infrastructure\n\n* **Definition:** Planning for the physical space and utilities (offices, warehouses, production facilities, data centers) needed to support ongoing operations.\n\n> *Es como planificar cuántos estacionamientos necesita un edificio antes de construirlo, no después de que ya no caben los carros.*\n\n- Example: a theater network operations center for the US government had to calculate power consumption and heat output per server to decide which servers could be hosted locally versus moved to the cloud due to limited data center square footage."
+      },
+      {
+        "name": "Process",
+        "definition": "Optimizing business processes so they can withstand fluctuations (increases or decreases) in demand, often via streamlining, automation, or outsourcing.",
+        "analogy": "*Es como tener una línea de ensamblaje automática en lugar de armar cada producto a mano cuando llegan mil pedidos de golpe.*",
+        "tables": [],
+        "list_items": [
           "Example: manually onboarding 500 seasonal call-center employees would take days; automating account creation removes that bottleneck."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A critical strategic planning effort that ensures an organization is adequately equipped to meet future demands at the right time and in the most cost-effective manner, across four key aspects: people, technology, infrastructure, and processes.\n\n> *Es como planificar un viaje familiar largo: necesitas suficiente gasolina (tecnología), espacio en el carro (infraestructura), conductores de repuesto (personas), y una buena ruta (procesos) antes de salir.*\n\n### People\n\n* **Definition:** Analyzing current personnel skillsets/capacity and forecasting future workforce needs (hiring, training, downsizing).\n\n> *Es como un equipo de fútbol que ficha jugadores extra justo antes de un torneo importante y los deja ir cuando termina la temporada.*\n\n- Example: a retail store hires ~20 seasonal employees starting October 1st for the holiday rush, then offboards them after January 1st once demand drops.\n\n### Technology\n\n* **Definition:** Understanding current technological resources (hardware/software), their utilization rate, and future technological demand, to determine if existing tech can scale or new investment is needed.\n\n> *Es como asegurarte de que tu cocina tenga suficientes estufas antes de aceptar pedidos para una fiesta enorme, no después.*\n\n- Example: an e-commerce site must know its concurrent-user capacity; cloud-based services allow elastic scaling up during high-demand periods and back down afterward to control costs.\n\n### Infrastructure\n\n* **Definition:** Planning for the physical space and utilities (offices, warehouses, production facilities, data centers) needed to support ongoing operations.\n\n> *Es como planificar cuántos estacionamientos necesita un edificio antes de construirlo, no después de que ya no caben los carros.*\n\n- Example: a theater network operations center for the US government had to calculate power consumption and heat output per server to decide which servers could be hosted locally versus moved to the cloud due to limited data center square footage.\n\n### Process\n\n* **Definition:** Optimizing business processes so they can withstand fluctuations (increases or decreases) in demand, often via streamlining, automation, or outsourcing.\n\n> *Es como tener una línea de ensamblaje automática en lugar de armar cada producto a mano cuando llegan mil pedidos de golpe.*\n\n- Example: manually onboarding 500 seasonal call-center employees would take days; automating account creation removes that bottleneck.\n\n### Real-World Example: Telemedicine Rollout\n\nA healthcare provider introducing telemedicine must address all four aspects together:\n1. **People** — train existing staff, hire remote-healthcare specialists.\n2. **Technology** — invest in a secure, compliant telemedicine platform that scales to handle traffic and data storage.\n3. **Infrastructure** — set up dedicated, private spaces for remote consultations.\n4. **Process** — build new workflows for scheduling, conducting, and following up on virtual visits, aligned with privacy regulations.\n\n> Capacity planning is not just about meeting today's demand — it's about being prepared for tomorrow's challenges and opportunities."
+        "raw_content": "### Process\n\n* **Definition:** Optimizing business processes so they can withstand fluctuations (increases or decreases) in demand, often via streamlining, automation, or outsourcing.\n\n> *Es como tener una línea de ensamblaje automática en lugar de armar cada producto a mano cuando llegan mil pedidos de golpe.*\n\n- Example: manually onboarding 500 seasonal call-center employees would take days; automating account creation removes that bottleneck.\n\n### Real-World Example: Telemedicine Rollout\n\nA healthcare provider introducing telemedicine must address all four aspects together:\n1. **People** — train existing staff, hire remote-healthcare specialists.\n2. **Technology** — invest in a secure, compliant telemedicine platform that scales to handle traffic and data storage.\n3. **Infrastructure** — set up dedicated, private spaces for remote consultations.\n4. **Process** — build new workflows for scheduling, conducting, and following up on virtual visits, aligned with privacy regulations.\n\n> Capacity planning is not just about meeting today's demand — it's about being prepared for tomorrow's challenges and opportunities.\n\n---"
       },
       {
         "name": "Powering Data Centers",
-        "definition": "A centralized hub that receives electrical power from a primary source and distributes it to one or more secondary circuits, using integrated circuit protection, monitoring, and load balancing.",
+        "definition": "The practice of architecting infrastructure with multiple forms of redundant power to keep data centers operational under all circumstances.",
         "analogy": "*Es como el sistema eléctrico de un hospital: tiene la corriente normal, baterías de respaldo y generadores, porque no puede permitirse un apagón ni un segundo.*",
         "tables": [
           {
@@ -5892,7 +5496,37 @@ const STUDY_DATA = [
                 "0V — note: power restoration can itself cause a damaging spike"
               ]
             ]
-          },
+          }
+        ],
+        "list_items": [],
+        "raw_content": "## 6. Powering Data Centers\n\n* **Definition:** The practice of architecting infrastructure with multiple forms of redundant power to keep data centers operational under all circumstances.\n\n> *Es como el sistema eléctrico de un hospital: tiene la corriente normal, baterías de respaldo y generadores, porque no puede permitirse un apagón ni un segundo.*\n\n### The Five Power Conditions\n\n| Condition | Description | Example (US 120V baseline) |\n| --- | --- | --- |\n| **Surge** | Small, unexpected voltage *increase* | 120V → 125–130V |\n| **Spike** | Short transient voltage spike, often from short circuits, tripped breakers, or lightning | 120V → 150–175V+ |\n| **Sag** | Small, unexpected voltage *decrease*, short duration | 120V → 115–117V |\n| **Undervoltage event** (formerly \"brownout\") | Sustained, more significant voltage drop | 120V → 70–80V |\n| **Power loss event** (a.k.a. power failure / \"blackout\") | Total loss of power for a period of time | 0V — note: power restoration can itself cause a damaging spike |\n\n> *Imagina la corriente eléctrica como el caudal de un río: un surge/spike es una crecida repentina, un sag/undervoltage es una sequía parcial, y un power loss es que el río se seca por completo.*"
+      },
+      {
+        "name": "Line Conditioner",
+        "definition": "A device that overcomes minor fluctuations (surges, sags, undervoltage) by adjusting the power signal back to standard levels, delivering clean power.",
+        "analogy": "*Es como un filtro de agua que normaliza la presión, quitando tanto el exceso como la falta, pero no puede crear agua de la nada si se corta el suministro por completo.*",
+        "tables": [],
+        "list_items": [
+          "Cannot keep systems running through a significant undervoltage event or total power failure."
+        ],
+        "raw_content": "### Line Conditioner\n\n* **Definition:** A device that overcomes minor fluctuations (surges, sags, undervoltage) by adjusting the power signal back to standard levels, delivering clean power.\n\n> *Es como un filtro de agua que normaliza la presión, quitando tanto el exceso como la falta, pero no puede crear agua de la nada si se corta el suministro por completo.*\n\n- Cannot keep systems running through a significant undervoltage event or total power failure."
+      },
+      {
+        "name": "Uninterruptible Power Supply (UPS)",
+        "definition": "A device providing emergency (battery) power to a system when the normal input power source has failed; also performs line-conditioning functions.",
+        "analogy": "*Es como una batería portátil para tu celular: te da tiempo extra, pero no dura para siempre.*",
+        "tables": [],
+        "list_items": [
+          "Typically provides only **15–60 minutes** of battery power during a complete outage — designed to bridge short gaps or allow safe shutdown, not for long-term outages.",
+          "Rack-mounted UPS units in data centers typically sustain a server rack for **~10–15 minutes**."
+        ],
+        "raw_content": "### Uninterruptible Power Supply (UPS)\n\n* **Definition:** A device providing emergency (battery) power to a system when the normal input power source has failed; also performs line-conditioning functions.\n\n> *Es como una batería portátil para tu celular: te da tiempo extra, pero no dura para siempre.*\n\n- Typically provides only **15–60 minutes** of battery power during a complete outage — designed to bridge short gaps or allow safe shutdown, not for long-term outages.\n- Rack-mounted UPS units in data centers typically sustain a server rack for **~10–15 minutes**."
+      },
+      {
+        "name": "Generators",
+        "definition": "A machine that converts mechanical energy into electrical energy via electromagnetic induction, used for extended backup power.",
+        "analogy": "*Es como pasar de la batería de tu celular (UPS) a un panel solar portátil (generador): te da energía por mucho más tiempo, pero tarda un poco en encenderse.*",
+        "tables": [
           {
             "headers": [
               "Generator Type",
@@ -5919,19 +5553,32 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [
-          "Cannot keep systems running through a significant undervoltage event or total power failure.",
-          "Typically provides only **15–60 minutes** of battery power during a complete outage — designed to bridge short gaps or allow safe shutdown, not for long-term outages.",
-          "Rack-mounted UPS units in data centers typically sustain a server rack for **~10–15 minutes**.",
-          "Standby/permanent generators typically take **30–60 seconds** to start up and reach full speed.",
+          "Standby/permanent generators typically take **30–60 seconds** to start up and reach full speed."
+        ],
+        "raw_content": "### Generators\n\n* **Definition:** A machine that converts mechanical energy into electrical energy via electromagnetic induction, used for extended backup power.\n\n> *Es como pasar de la batería de tu celular (UPS) a un panel solar portátil (generador): te da energía por mucho más tiempo, pero tarda un poco en encenderse.*\n\n| Generator Type | Fuel/Power Source | Characteristics |\n| --- | --- | --- |\n| **Portable gas engine** | Gasoline | Least expensive, low power output, noisy, high maintenance, manually started, connected via extension cord |\n| **Permanently installed** | Diesel, propane, or natural gas | Backbone of data center emergency power; can power an entire building for hours/days/weeks; auto-starts during outages |\n| **Battery inverter** | Lead-acid, nickel-cadmium, or lithium-ion batteries | Quieter, low maintenance, but only short-duration/limited wattage — bridges the gap until a longer-term generator comes online |\n\n- Standby/permanent generators typically take **30–60 seconds** to start up and reach full speed."
+      },
+      {
+        "name": "Power Distribution Center (PDC)",
+        "definition": "A centralized hub that receives electrical power from a primary source and distributes it to one or more secondary circuits, using integrated circuit protection, monitoring, and load balancing.",
+        "analogy": "*Es como el panel de breakers de tu casa, pero a escala industrial: reparte la corriente de forma controlada para que ningún circuito se sobrecargue.*",
+        "tables": [],
+        "list_items": [
           "Can integrate with large UPS units and permanently installed generators for a seamless transition during a power loss event."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The practice of architecting infrastructure with multiple forms of redundant power to keep data centers operational under all circumstances.\n\n> *Es como el sistema eléctrico de un hospital: tiene la corriente normal, baterías de respaldo y generadores, porque no puede permitirse un apagón ni un segundo.*\n\n### The Five Power Conditions\n\n| Condition | Description | Example (US 120V baseline) |\n| --- | --- | --- |\n| **Surge** | Small, unexpected voltage *increase* | 120V → 125–130V |\n| **Spike** | Short transient voltage spike, often from short circuits, tripped breakers, or lightning | 120V → 150–175V+ |\n| **Sag** | Small, unexpected voltage *decrease*, short duration | 120V → 115–117V |\n| **Undervoltage event** (formerly \"brownout\") | Sustained, more significant voltage drop | 120V → 70–80V |\n| **Power loss event** (a.k.a. power failure / \"blackout\") | Total loss of power for a period of time | 0V — note: power restoration can itself cause a damaging spike |\n\n> *Imagina la corriente eléctrica como el caudal de un río: un surge/spike es una crecida repentina, un sag/undervoltage es una sequía parcial, y un power loss es que el río se seca por completo.*\n\n### Line Conditioner\n\n* **Definition:** A device that overcomes minor fluctuations (surges, sags, undervoltage) by adjusting the power signal back to standard levels, delivering clean power.\n\n> *Es como un filtro de agua que normaliza la presión, quitando tanto el exceso como la falta, pero no puede crear agua de la nada si se corta el suministro por completo.*\n\n- Cannot keep systems running through a significant undervoltage event or total power failure.\n\n### Uninterruptible Power Supply (UPS)\n\n* **Definition:** A device providing emergency (battery) power to a system when the normal input power source has failed; also performs line-conditioning functions.\n\n> *Es como una batería portátil para tu celular: te da tiempo extra, pero no dura para siempre.*\n\n- Typically provides only **15–60 minutes** of battery power during a complete outage — designed to bridge short gaps or allow safe shutdown, not for long-term outages.\n- Rack-mounted UPS units in data centers typically sustain a server rack for **~10–15 minutes**.\n\n### Generators\n\n* **Definition:** A machine that converts mechanical energy into electrical energy via electromagnetic induction, used for extended backup power.\n\n> *Es como pasar de la batería de tu celular (UPS) a un panel solar portátil (generador): te da energía por mucho más tiempo, pero tarda un poco en encenderse.*\n\n| Generator Type | Fuel/Power Source | Characteristics |\n| --- | --- | --- |\n| **Portable gas engine** | Gasoline | Least expensive, low power output, noisy, high maintenance, manually started, connected via extension cord |\n| **Permanently installed** | Diesel, propane, or natural gas | Backbone of data center emergency power; can power an entire building for hours/days/weeks; auto-starts during outages |\n| **Battery inverter** | Lead-acid, nickel-cadmium, or lithium-ion batteries | Quieter, low maintenance, but only short-duration/limited wattage — bridges the gap until a longer-term generator comes online |\n\n- Standby/permanent generators typically take **30–60 seconds** to start up and reach full speed.\n\n### Power Distribution Center (PDC)\n\n* **Definition:** A centralized hub that receives electrical power from a primary source and distributes it to one or more secondary circuits, using integrated circuit protection, monitoring, and load balancing.\n\n> *Es como el panel de breakers de tu casa, pero a escala industrial: reparte la corriente de forma controlada para que ningún circuito se sobrecargue.*\n\n- Can integrate with large UPS units and permanently installed generators for a seamless transition during a power loss event."
+        "raw_content": "### Power Distribution Center (PDC)\n\n* **Definition:** A centralized hub that receives electrical power from a primary source and distributes it to one or more secondary circuits, using integrated circuit protection, monitoring, and load balancing.\n\n> *Es como el panel de breakers de tu casa, pero a escala industrial: reparte la corriente de forma controlada para que ningún circuito se sobrecargue.*\n\n- Can integrate with large UPS units and permanently installed generators for a seamless transition during a power loss event.\n\n---"
       },
       {
         "name": "Data Backups",
-        "definition": "Also called change tracking or logging — maintaining a meticulous record of every change made to data over time, enabling precise recovery to a specific point in time.",
+        "definition": "The process of creating duplicate copies of digital information to protect it against data loss, corruption, or unavailability — the cybersecurity \"don't put all your eggs in one basket\" principle.",
         "analogy": "*Es como tener fotocopias de tus documentos importantes guardadas en distintos lugares, en vez de confiar solo en el original.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 7. Data Backups\n\n* **Definition:** The process of creating duplicate copies of digital information to protect it against data loss, corruption, or unavailability — the cybersecurity \"don't put all your eggs in one basket\" principle.\n\n> *Es como tener fotocopias de tus documentos importantes guardadas en distintos lugares, en vez de confiar solo en el original.*"
+      },
+      {
+        "name": "Onsite vs. Offsite Backups",
+        "definition": "Onsite backups are stored physically within the organization's own facility; offsite backups are stored at a geographically separate location to protect against physical disasters.",
+        "analogy": "*Onsite es como guardar una copia de tu llave en el cajón de tu propia casa; offsite es como dejarle esa copia a un familiar que vive en otra ciudad — si tu casa se incendia, la copia de la ciudad vecina sigue intacta.*",
         "tables": [
           {
             "headers": [
@@ -5951,7 +5598,31 @@ const STUDY_DATA = [
                 "Slower to restore (especially physical media)"
               ]
             ]
-          },
+          }
+        ],
+        "list_items": [
+          "Historical example: nightly onsite tape backups + weekly shipment of tapes to a facility ~1,000 miles away (pre-cloud era); today this is replaced by high-speed internet links between sites."
+        ],
+        "raw_content": "### Onsite vs. Offsite Backups\n\n* **Definition:** Onsite backups are stored physically within the organization's own facility; offsite backups are stored at a geographically separate location to protect against physical disasters.\n\n> *Onsite es como guardar una copia de tu llave en el cajón de tu propia casa; offsite es como dejarle esa copia a un familiar que vive en otra ciudad — si tu casa se incendia, la copia de la ciudad vecina sigue intacta.*\n\n| Type | Pros | Cons |\n| --- | --- | --- |\n| **Onsite** | Fast to restore from | Vulnerable to the same disaster (fire, flood) that hits the primary site |\n| **Offsite** | Protected from local/regional disasters; often cloud-based or shipped tapes | Slower to restore (especially physical media) |\n\n- Historical example: nightly onsite tape backups + weekly shipment of tapes to a facility ~1,000 miles away (pre-cloud era); today this is replaced by high-speed internet links between sites."
+      },
+      {
+        "name": "Backup Frequency & RPO",
+        "definition": "The Recovery Point Objective (RPO) defines the maximum acceptable amount of data loss (measured in time), which dictates how frequently backups must run.",
+        "analogy": "*Es como decidir cada cuánto guardas el progreso de un videojuego: si solo aceptas perder 5 minutos de avance, guardas cada 5 minutos.*",
+        "tables": [],
+        "list_items": [
+          "If RPO = 1 hour → backups must run at least hourly.",
+          "If RPO = 2 days → daily/nightly backups suffice.",
+          "Frequency should also reflect **rate of data change**: high-change environments may need backups every 30–45 minutes; low-change environments can run daily.",
+          "Balance backup frequency against available **time, storage, bandwidth, and cost**."
+        ],
+        "raw_content": "### Backup Frequency & RPO\n\n* **Definition:** The Recovery Point Objective (RPO) defines the maximum acceptable amount of data loss (measured in time), which dictates how frequently backups must run.\n\n> *Es como decidir cada cuánto guardas el progreso de un videojuego: si solo aceptas perder 5 minutos de avance, guardas cada 5 minutos.*\n\n- If RPO = 1 hour → backups must run at least hourly.\n- If RPO = 2 days → daily/nightly backups suffice.\n- Frequency should also reflect **rate of data change**: high-change environments may need backups every 30–45 minutes; low-change environments can run daily.\n- Balance backup frequency against available **time, storage, bandwidth, and cost**."
+      },
+      {
+        "name": "Encryption of Backups",
+        "definition": "Safeguarding backup data from unauthorized access by encrypting it both at rest and in transit.",
+        "analogy": "*Es como guardar tus fotocopias importantes dentro de una caja fuerte cerrada con llave, no solo en un cajón cualquiera.*",
+        "tables": [
           {
             "headers": [
               "Type",
@@ -5969,29 +5640,74 @@ const STUDY_DATA = [
             ]
           }
         ],
+        "list_items": [],
+        "raw_content": "### Encryption of Backups\n\n* **Definition:** Safeguarding backup data from unauthorized access by encrypting it both at rest and in transit.\n\n> *Es como guardar tus fotocopias importantes dentro de una caja fuerte cerrada con llave, no solo en un cajón cualquiera.*\n\n| Type | Protects |\n| --- | --- |\n| **Data-at-rest encryption** | Data as it's written to the storage device |\n| **Data-in-transit encryption** | Data while moving to/from the backup destination |"
+      },
+      {
+        "name": "Snapshots",
+        "definition": "Point-in-time copies that capture a consistent, \"frozen\" state of data, recording only changes since the previous snapshot (more efficient than full backups).",
+        "analogy": "*Es como tomar una foto de tu escritorio cada hora en vez de fotografiar toda la casa: solo capturas lo que cambió.*",
+        "tables": [],
         "list_items": [
-          "Historical example: nightly onsite tape backups + weekly shipment of tapes to a facility ~1,000 miles away (pre-cloud era); today this is replaced by high-speed internet links between sites.",
-          "If RPO = 1 hour → backups must run at least hourly.",
-          "If RPO = 2 days → daily/nightly backups suffice.",
-          "Frequency should also reflect **rate of data change**: high-change environments may need backups every 30–45 minutes; low-change environments can run daily.",
-          "Balance backup frequency against available **time, storage, bandwidth, and cost**.",
           "Reduces storage needs and allows more frequent, faster backups.",
-          "Especially valuable for databases/file servers, enabling rollback to a known-good state after corruption or accidental deletion.",
-          "If one server crashes, the other continues without interruption — ideal for high-availability environments that cannot tolerate downtime.",
+          "Especially valuable for databases/file servers, enabling rollback to a known-good state after corruption or accidental deletion."
+        ],
+        "raw_content": "### Snapshots\n\n* **Definition:** Point-in-time copies that capture a consistent, \"frozen\" state of data, recording only changes since the previous snapshot (more efficient than full backups).\n\n> *Es como tomar una foto de tu escritorio cada hora en vez de fotografiar toda la casa: solo capturas lo que cambió.*\n\n- Reduces storage needs and allows more frequent, faster backups.\n- Especially valuable for databases/file servers, enabling rollback to a known-good state after corruption or accidental deletion."
+      },
+      {
+        "name": "Data Recovery Process",
+        "definition": "Recovery is the ultimate goal of any backup strategy — regaining access to data after loss or system failure.",
+        "analogy": "*Es como el plan de evacuación de un edificio: de nada sirve tenerlo escrito si nunca se practica con un simulacro.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Data Recovery Process\n\n* **Definition:** Recovery is the ultimate goal of any backup strategy — regaining access to data after loss or system failure.\n\n> *Es como el plan de evacuación de un edificio: de nada sirve tenerlo escrito si nunca se practica con un simulacro.*\n\n1. **Select the right backup** (snapshot, offsite, or another onsite copy).\n2. **Initiate the recovery process** (access storage, begin restoration).\n3. **Data validation** (verify integrity/consistency of restored data).\n4. **Testing and validation** of the entire recovery process (identify bottlenecks).\n5. **Documentation and reporting** (record steps, time taken, challenges — for post-incident analysis/compliance).\n6. **Notification** of relevant stakeholders (IT, management, end users).\n\n⚠️ Backups are useless if recovery hasn't been tested — **practicing recovery at least once per month** is a best practice."
+      },
+      {
+        "name": "Replication",
+        "definition": "Making real-time or near real-time copies of data, keeping it stored in two places simultaneously (unlike periodic backups).",
+        "analogy": "*Es como dos relojes sincronizados al milisegundo: si uno se detiene, el otro sigue marcando la hora correcta sin perder ni un segundo.*",
+        "tables": [],
+        "list_items": [
+          "If one server crashes, the other continues without interruption — ideal for high-availability environments that cannot tolerate downtime."
+        ],
+        "raw_content": "### Replication\n\n* **Definition:** Making real-time or near real-time copies of data, keeping it stored in two places simultaneously (unlike periodic backups).\n\n> *Es como dos relojes sincronizados al milisegundo: si uno se detiene, el otro sigue marcando la hora correcta sin perder ni un segundo.*\n\n- If one server crashes, the other continues without interruption — ideal for high-availability environments that cannot tolerate downtime."
+      },
+      {
+        "name": "Journaling",
+        "definition": "Also called change tracking or logging — maintaining a meticulous record of every change made to data over time, enabling precise recovery to a specific point in time.",
+        "analogy": "*Es como el historial de \"control de cambios\" de un documento de Word: puedes ver y revertir cada edición individual, no solo la última versión guardada.*",
+        "tables": [],
+        "list_items": [
           "Especially valuable for databases and critical systems, legal proceedings, and compliance audits.",
           "Requires careful management of: data tracking granularity, journal size/retention policy, and security against tampering."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The process of creating duplicate copies of digital information to protect it against data loss, corruption, or unavailability — the cybersecurity \"don't put all your eggs in one basket\" principle.\n\n> *Es como tener fotocopias de tus documentos importantes guardadas en distintos lugares, en vez de confiar solo en el original.*\n\n### Onsite vs. Offsite Backups\n\n* **Definition:** Onsite backups are stored physically within the organization's own facility; offsite backups are stored at a geographically separate location to protect against physical disasters.\n\n> *Onsite es como guardar una copia de tu llave en el cajón de tu propia casa; offsite es como dejarle esa copia a un familiar que vive en otra ciudad — si tu casa se incendia, la copia de la ciudad vecina sigue intacta.*\n\n| Type | Pros | Cons |\n| --- | --- | --- |\n| **Onsite** | Fast to restore from | Vulnerable to the same disaster (fire, flood) that hits the primary site |\n| **Offsite** | Protected from local/regional disasters; often cloud-based or shipped tapes | Slower to restore (especially physical media) |\n\n- Historical example: nightly onsite tape backups + weekly shipment of tapes to a facility ~1,000 miles away (pre-cloud era); today this is replaced by high-speed internet links between sites.\n\n### Backup Frequency & RPO\n\n* **Definition:** The Recovery Point Objective (RPO) defines the maximum acceptable amount of data loss (measured in time), which dictates how frequently backups must run.\n\n> *Es como decidir cada cuánto guardas el progreso de un videojuego: si solo aceptas perder 5 minutos de avance, guardas cada 5 minutos.*\n\n- If RPO = 1 hour → backups must run at least hourly.\n- If RPO = 2 days → daily/nightly backups suffice.\n- Frequency should also reflect **rate of data change**: high-change environments may need backups every 30–45 minutes; low-change environments can run daily.\n- Balance backup frequency against available **time, storage, bandwidth, and cost**.\n\n### Encryption of Backups\n\n* **Definition:** Safeguarding backup data from unauthorized access by encrypting it both at rest and in transit.\n\n> *Es como guardar tus fotocopias importantes dentro de una caja fuerte cerrada con llave, no solo en un cajón cualquiera.*\n\n| Type | Protects |\n| --- | --- |\n| **Data-at-rest encryption** | Data as it's written to the storage device |\n| **Data-in-transit encryption** | Data while moving to/from the backup destination |\n\n### Snapshots\n\n* **Definition:** Point-in-time copies that capture a consistent, \"frozen\" state of data, recording only changes since the previous snapshot (more efficient than full backups).\n\n> *Es como tomar una foto de tu escritorio cada hora en vez de fotografiar toda la casa: solo capturas lo que cambió.*\n\n- Reduces storage needs and allows more frequent, faster backups.\n- Especially valuable for databases/file servers, enabling rollback to a known-good state after corruption or accidental deletion.\n\n### Data Recovery Process\n\n* **Definition:** Recovery is the ultimate goal of any backup strategy — regaining access to data after loss or system failure.\n\n> *Es como el plan de evacuación de un edificio: de nada sirve tenerlo escrito si nunca se practica con un simulacro.*\n\n1. **Select the right backup** (snapshot, offsite, or another onsite copy).\n2. **Initiate the recovery process** (access storage, begin restoration).\n3. **Data validation** (verify integrity/consistency of restored data).\n4. **Testing and validation** of the entire recovery process (identify bottlenecks).\n5. **Documentation and reporting** (record steps, time taken, challenges — for post-incident analysis/compliance).\n6. **Notification** of relevant stakeholders (IT, management, end users).\n\n⚠️ Backups are useless if recovery hasn't been tested — **practicing recovery at least once per month** is a best practice.\n\n### Replication\n\n* **Definition:** Making real-time or near real-time copies of data, keeping it stored in two places simultaneously (unlike periodic backups).\n\n> *Es como dos relojes sincronizados al milisegundo: si uno se detiene, el otro sigue marcando la hora correcta sin perder ni un segundo.*\n\n- If one server crashes, the other continues without interruption — ideal for high-availability environments that cannot tolerate downtime.\n\n### Journaling\n\n* **Definition:** Also called change tracking or logging — maintaining a meticulous record of every change made to data over time, enabling precise recovery to a specific point in time.\n\n> *Es como el historial de \"control de cambios\" de un documento de Word: puedes ver y revertir cada edición individual, no solo la última versión guardada.*\n\n- Especially valuable for databases and critical systems, legal proceedings, and compliance audits.\n- Requires careful management of: data tracking granularity, journal size/retention policy, and security against tampering."
+        "raw_content": "### Journaling\n\n* **Definition:** Also called change tracking or logging — maintaining a meticulous record of every change made to data over time, enabling precise recovery to a specific point in time.\n\n> *Es como el historial de \"control de cambios\" de un documento de Word: puedes ver y revertir cada edición individual, no solo la última versión guardada.*\n\n- Especially valuable for databases and critical systems, legal proceedings, and compliance audits.\n- Requires careful management of: data tracking granularity, journal size/retention policy, and security against tampering.\n\n---"
       },
       {
         "name": "Continuity of Operations Plan (COOP)",
-        "definition": "A subset of the BCP that focuses specifically on resuming operations quickly after a **disaster** (e.g., hurricanes, fires, floods, earthquakes).",
+        "definition": "A plan ensuring an organization can recover from a disruptive event or disaster, composed of two major components: the Business Continuity Plan (BCP) and the Disaster Recovery Plan (DRP).",
         "analogy": "*Es como tener dos manuales distintos en una caja de emergencias: uno para \"problemas cotidianos\" (BCP) y otro específico para \"catástrofes mayores\" (DRP).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 8. Continuity of Operations Plan (COOP)\n\n* **Definition:** A plan ensuring an organization can recover from a disruptive event or disaster, composed of two major components: the Business Continuity Plan (BCP) and the Disaster Recovery Plan (DRP).\n\n> *Es como tener dos manuales distintos en una caja de emergencias: uno para \"problemas cotidianos\" (BCP) y otro específico para \"catástrofes mayores\" (DRP).*"
+      },
+      {
+        "name": "Business Continuity Plan (BCP)",
+        "definition": "Plans and processes used to respond to a **disruptive event** (not necessarily catastrophic) — covers both technical and non-technical disruptions to the business.",
+        "analogy": "*Es como el plan B de un restaurante si se le acaba un ingrediente clave: ajusta el menú para seguir sirviendo clientes sin cerrar el local.*",
         "tables": [],
         "list_items": [
           "Example: switching to a backup credit-card processor (then a tertiary one) if the primary merchant account is cancelled.",
-          "Example: a company near a major city created a \"Riots and Protests\" BCP section after street barricades prevented employees from reaching the office in 2020.",
+          "Example: a company near a major city created a \"Riots and Protests\" BCP section after street barricades prevented employees from reaching the office in 2020."
+        ],
+        "raw_content": "### Business Continuity Plan (BCP)\n\n* **Definition:** Plans and processes used to respond to a **disruptive event** (not necessarily catastrophic) — covers both technical and non-technical disruptions to the business.\n\n> *Es como el plan B de un restaurante si se le acaba un ingrediente clave: ajusta el menú para seguir sirviendo clientes sin cerrar el local.*\n\n- Example: switching to a backup credit-card processor (then a tertiary one) if the primary merchant account is cancelled.\n- Example: a company near a major city created a \"Riots and Protests\" BCP section after street barricades prevented employees from reaching the office in 2020."
+      },
+      {
+        "name": "Disaster Recovery Plan (DRP)",
+        "definition": "A subset of the BCP that focuses specifically on resuming operations quickly after a **disaster** (e.g., hurricanes, fires, floods, earthquakes).",
+        "analogy": "*Es como el seguro contra incendios de tu casa: es una parte específica de tu plan financiero general, pero solo entra en acción ante una catástrofe puntual.*",
+        "tables": [],
+        "list_items": [
           "Example: Dion Training (Orlando, FL — hurricane-prone) hosts infrastructure entirely in AWS, spread across multiple regions/availability zones, and splits staff between the US and the Philippines so either team can cover for the other during regional disasters (hurricanes, floods, power/internet outages).",
           "**Rule of thumb:** Incident → BCP issue. Disaster → DRP issue.",
           "BCP/DRP development is the **responsibility of senior management** — without their support, the plan stalls.",
@@ -5999,13 +5715,61 @@ const STUDY_DATA = [
           "The committee determines **recovery priorities**, identifies/prioritizes critical systems, defines the **scope** of the plan (to avoid scope creep), and reports back to senior management — based on the organization's **risk appetite and risk tolerance**.",
           "Large organizations may break the plan down by **business function** or **geographical area**, but all pieces must remain coherent during a crisis."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A plan ensuring an organization can recover from a disruptive event or disaster, composed of two major components: the Business Continuity Plan (BCP) and the Disaster Recovery Plan (DRP).\n\n> *Es como tener dos manuales distintos en una caja de emergencias: uno para \"problemas cotidianos\" (BCP) y otro específico para \"catástrofes mayores\" (DRP).*\n\n### Business Continuity Plan (BCP)\n\n* **Definition:** Plans and processes used to respond to a **disruptive event** (not necessarily catastrophic) — covers both technical and non-technical disruptions to the business.\n\n> *Es como el plan B de un restaurante si se le acaba un ingrediente clave: ajusta el menú para seguir sirviendo clientes sin cerrar el local.*\n\n- Example: switching to a backup credit-card processor (then a tertiary one) if the primary merchant account is cancelled.\n- Example: a company near a major city created a \"Riots and Protests\" BCP section after street barricades prevented employees from reaching the office in 2020.\n\n### Disaster Recovery Plan (DRP)\n\n* **Definition:** A subset of the BCP that focuses specifically on resuming operations quickly after a **disaster** (e.g., hurricanes, fires, floods, earthquakes).\n\n> *Es como el seguro contra incendios de tu casa: es una parte específica de tu plan financiero general, pero solo entra en acción ante una catástrofe puntual.*\n\n- Example: Dion Training (Orlando, FL — hurricane-prone) hosts infrastructure entirely in AWS, spread across multiple regions/availability zones, and splits staff between the US and the Philippines so either team can cover for the other during regional disasters (hurricanes, floods, power/internet outages).\n- **Rule of thumb:** Incident → BCP issue. Disaster → DRP issue.\n\n### BC Committee & Senior Management Role\n\n> *Es como la junta directiva de un edificio de apartamentos: necesitas representantes de distintas áreas (no solo del electricista) para decidir cómo actuar ante una emergencia que afecta a todos.*\n\n- BCP/DRP development is the **responsibility of senior management** — without their support, the plan stalls.\n- Senior management appoints a **business continuity coordinator** who leads a **business continuity committee** with representatives from technology, legal, security, communications, and other departments (not just IT).\n- The committee determines **recovery priorities**, identifies/prioritizes critical systems, defines the **scope** of the plan (to avoid scope creep), and reports back to senior management — based on the organization's **risk appetite and risk tolerance**.\n- Large organizations may break the plan down by **business function** or **geographical area**, but all pieces must remain coherent during a crisis."
+        "raw_content": "### Disaster Recovery Plan (DRP)\n\n* **Definition:** A subset of the BCP that focuses specifically on resuming operations quickly after a **disaster** (e.g., hurricanes, fires, floods, earthquakes).\n\n> *Es como el seguro contra incendios de tu casa: es una parte específica de tu plan financiero general, pero solo entra en acción ante una catástrofe puntual.*\n\n- Example: Dion Training (Orlando, FL — hurricane-prone) hosts infrastructure entirely in AWS, spread across multiple regions/availability zones, and splits staff between the US and the Philippines so either team can cover for the other during regional disasters (hurricanes, floods, power/internet outages).\n- **Rule of thumb:** Incident → BCP issue. Disaster → DRP issue.\n\n### BC Committee & Senior Management Role\n\n> *Es como la junta directiva de un edificio de apartamentos: necesitas representantes de distintas áreas (no solo del electricista) para decidir cómo actuar ante una emergencia que afecta a todos.*\n\n- BCP/DRP development is the **responsibility of senior management** — without their support, the plan stalls.\n- Senior management appoints a **business continuity coordinator** who leads a **business continuity committee** with representatives from technology, legal, security, communications, and other departments (not just IT).\n- The committee determines **recovery priorities**, identifies/prioritizes critical systems, defines the **scope** of the plan (to avoid scope creep), and reports back to senior management — based on the organization's **risk appetite and risk tolerance**.\n- Large organizations may break the plan down by **business function** or **geographical area**, but all pieces must remain coherent during a crisis.\n\n---"
       },
       {
         "name": "Redundant Site Considerations",
-        "definition": "Spreading resources and redundant sites across different physical/geographic locations to increase redundancy.",
+        "definition": "A redundant site is a backup location or facility that can take over essential functions and operations if the primary site experiences a failure or disruption.",
         "analogy": "*Es como tener una casa de respaldo a la que mudarte si la principal sufre un desastre — la pregunta es qué tan amueblada está esa casa de repuesto.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 9. Redundant Site Considerations\n\n* **Definition:** A redundant site is a backup location or facility that can take over essential functions and operations if the primary site experiences a failure or disruption.\n\n> *Es como tener una casa de respaldo a la que mudarte si la principal sufre un desastre — la pregunta es qué tan amueblada está esa casa de repuesto.*"
+      },
+      {
+        "name": "Hot Site",
+        "definition": "A site that is up and running continuously, ready for an almost-instant switchover from the main site with minimal downtime.",
+        "analogy": "*Es como un departamento gemelo, completamente amueblado y con todo encendido, listo para que te mudes en cuestión de minutos.*",
+        "tables": [],
+        "list_items": [
+          "Requires \"one of everything\" (duplicate hardware) plus continuous data mirroring — historically expensive, now much easier/cheaper via cloud platforms (AWS, Azure, GCP).",
+          "Usually reserved for **mission-critical functions/people only** (e.g., 50 of 500 employees), due to cost — covers servers/data readily, but office space for all staff is a separate challenge."
+        ],
+        "raw_content": "### Hot Site\n\n* **Definition:** A site that is up and running continuously, ready for an almost-instant switchover from the main site with minimal downtime.\n\n> *Es como un departamento gemelo, completamente amueblado y con todo encendido, listo para que te mudes en cuestión de minutos.*\n\n- Requires \"one of everything\" (duplicate hardware) plus continuous data mirroring — historically expensive, now much easier/cheaper via cloud platforms (AWS, Azure, GCP).\n- Usually reserved for **mission-critical functions/people only** (e.g., 50 of 500 employees), due to cost — covers servers/data readily, but office space for all staff is a separate challenge."
+      },
+      {
+        "name": "Warm Site",
+        "definition": "A partially equipped site with power, phone lines, and network connectivity already in place, but lacking computers/phones — operational within a few days rather than hours.",
+        "analogy": "*Es como un apartamento con la electricidad y el agua ya conectadas, pero sin muebles — necesitas comprar algunas cosas antes de mudarte.*",
+        "tables": [],
+        "list_items": [
+          "Cheaper than a hot site, with a longer recovery time trade-off."
+        ],
+        "raw_content": "### Warm Site\n\n* **Definition:** A partially equipped site with power, phone lines, and network connectivity already in place, but lacking computers/phones — operational within a few days rather than hours.\n\n> *Es como un apartamento con la electricidad y el agua ya conectadas, pero sin muebles — necesitas comprar algunas cosas antes de mudarte.*\n\n- Cheaper than a hot site, with a longer recovery time trade-off."
+      },
+      {
+        "name": "Cold Site",
+        "definition": "A site with minimal facilities (e.g., just a leased empty building with basic utilities like bathrooms, tables/chairs) — no network, phones, or computers.",
+        "analogy": "*Es como alquilar un terreno vacío: tienes el espacio, pero tienes que construir todo desde cero.*",
+        "tables": [],
+        "list_items": [
+          "Cheapest and slowest option — can take **1–2 months** to convert into a functioning headquarters."
+        ],
+        "raw_content": "### Cold Site\n\n* **Definition:** A site with minimal facilities (e.g., just a leased empty building with basic utilities like bathrooms, tables/chairs) — no network, phones, or computers.\n\n> *Es como alquilar un terreno vacío: tienes el espacio, pero tienes que construir todo desde cero.*\n\n- Cheapest and slowest option — can take **1–2 months** to convert into a functioning headquarters."
+      },
+      {
+        "name": "Mobile Site",
+        "definition": "A portable recovery unit (trailers or tents) that can be configured as a hot, warm, or cold site and delivered to any location, rather than relying on a fixed building.",
+        "analogy": "*Es como un hospital de campaña militar: no necesitas un edificio, lo llevas contigo a donde se necesite.*",
+        "tables": [],
+        "list_items": [
+          "Example: the US military's **DJC2** (Deployable Joint Command and Control) system can deploy anywhere in ~72 hours, provide partial functionality in ~24 hours after arrival, and reach full functionality within 7 days (used after the 2010 Haiti earthquake) — fully self-contained with power, connectivity, and technicians for up to 200 people."
+        ],
+        "raw_content": "### Mobile Site\n\n* **Definition:** A portable recovery unit (trailers or tents) that can be configured as a hot, warm, or cold site and delivered to any location, rather than relying on a fixed building.\n\n> *Es como un hospital de campaña militar: no necesitas un edificio, lo llevas contigo a donde se necesite.*\n\n- Example: the US military's **DJC2** (Deployable Joint Command and Control) system can deploy anywhere in ~72 hours, provide partial functionality in ~24 hours after arrival, and reach full functionality within 7 days (used after the 2010 Haiti earthquake) — fully self-contained with power, connectivity, and technicians for up to 200 people."
+      },
+      {
+        "name": "Virtual Site",
+        "definition": "A modern, cloud-based approach offering hot, warm, or cold site equivalents within a cloud environment.",
+        "analogy": "*Es como tener una casa de respaldo que existe \"en la nube\": puedes hacerla aparecer instantáneamente (virtual hot), a medias (virtual warm), o solo guardar los planos hasta que la necesites (virtual cold).*",
         "tables": [
           {
             "headers": [
@@ -6028,90 +5792,80 @@ const STUDY_DATA = [
             ]
           }
         ],
+        "list_items": [],
+        "raw_content": "### Virtual Site\n\n* **Definition:** A modern, cloud-based approach offering hot, warm, or cold site equivalents within a cloud environment.\n\n> *Es como tener una casa de respaldo que existe \"en la nube\": puedes hacerla aparecer instantáneamente (virtual hot), a medias (virtual warm), o solo guardar los planos hasta que la necesites (virtual cold).*\n\n| Virtual Site Type | Behavior |\n| --- | --- |\n| **Virtual hot site** | Fully replicated, instantly accessible cloud environment |\n| **Virtual warm site** | Partially replicated resources/data, quickly scalable to full functionality |\n| **Virtual cold site** | Critical data/configs stored in the cloud; resources activated only during a disaster, minimizing ongoing cost |\n\nOffers rapid scalability, cost-effectiveness, and easy maintenance."
+      },
+      {
+        "name": "Platform Diversity",
+        "definition": "Diversifying operating systems, networking equipment, and cloud platform providers used for redundancy, to mitigate the risk of a single point of failure.",
+        "analogy": "*Es como no guardar todas tus contraseñas en el mismo gestor: si ese proveedor específico sufre una vulnerabilidad, no pierdes acceso a todo a la vez.*",
+        "tables": [],
         "list_items": [
-          "Requires \"one of everything\" (duplicate hardware) plus continuous data mirroring — historically expensive, now much easier/cheaper via cloud platforms (AWS, Azure, GCP).",
-          "Usually reserved for **mission-critical functions/people only** (e.g., 50 of 500 employees), due to cost — covers servers/data readily, but office space for all staff is a separate challenge.",
-          "Cheaper than a hot site, with a longer recovery time trade-off.",
-          "Cheapest and slowest option — can take **1–2 months** to convert into a functioning headquarters.",
-          "Example: the US military's **DJC2** (Deployable Joint Command and Control) system can deploy anywhere in ~72 hours, provide partial functionality in ~24 hours after arrival, and reach full functionality within 7 days (used after the 2010 Haiti earthquake) — fully self-contained with power, connectivity, and technicians for up to 200 people.",
           "Example: if the primary site uses Cisco equipment, the redundant site might use a different vendor — so a Cisco-specific vulnerability doesn't take down both sites simultaneously.",
           "Trade-off: platform diversity adds complexity/support cost vs. using identical equipment everywhere (simpler support, lower maintenance, but shared vulnerability risk). Senior management weighs this risk/reward decision."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A redundant site is a backup location or facility that can take over essential functions and operations if the primary site experiences a failure or disruption.\n\n> *Es como tener una casa de respaldo a la que mudarte si la principal sufre un desastre — la pregunta es qué tan amueblada está esa casa de repuesto.*\n\n### Hot Site\n\n* **Definition:** A site that is up and running continuously, ready for an almost-instant switchover from the main site with minimal downtime.\n\n> *Es como un departamento gemelo, completamente amueblado y con todo encendido, listo para que te mudes en cuestión de minutos.*\n\n- Requires \"one of everything\" (duplicate hardware) plus continuous data mirroring — historically expensive, now much easier/cheaper via cloud platforms (AWS, Azure, GCP).\n- Usually reserved for **mission-critical functions/people only** (e.g., 50 of 500 employees), due to cost — covers servers/data readily, but office space for all staff is a separate challenge.\n\n### Warm Site\n\n* **Definition:** A partially equipped site with power, phone lines, and network connectivity already in place, but lacking computers/phones — operational within a few days rather than hours.\n\n> *Es como un apartamento con la electricidad y el agua ya conectadas, pero sin muebles — necesitas comprar algunas cosas antes de mudarte.*\n\n- Cheaper than a hot site, with a longer recovery time trade-off.\n\n### Cold Site\n\n* **Definition:** A site with minimal facilities (e.g., just a leased empty building with basic utilities like bathrooms, tables/chairs) — no network, phones, or computers.\n\n> *Es como alquilar un terreno vacío: tienes el espacio, pero tienes que construir todo desde cero.*\n\n- Cheapest and slowest option — can take **1–2 months** to convert into a functioning headquarters.\n\n### Mobile Site\n\n* **Definition:** A portable recovery unit (trailers or tents) that can be configured as a hot, warm, or cold site and delivered to any location, rather than relying on a fixed building.\n\n> *Es como un hospital de campaña militar: no necesitas un edificio, lo llevas contigo a donde se necesite.*\n\n- Example: the US military's **DJC2** (Deployable Joint Command and Control) system can deploy anywhere in ~72 hours, provide partial functionality in ~24 hours after arrival, and reach full functionality within 7 days (used after the 2010 Haiti earthquake) — fully self-contained with power, connectivity, and technicians for up to 200 people.\n\n### Virtual Site\n\n* **Definition:** A modern, cloud-based approach offering hot, warm, or cold site equivalents within a cloud environment.\n\n> *Es como tener una casa de respaldo que existe \"en la nube\": puedes hacerla aparecer instantáneamente (virtual hot), a medias (virtual warm), o solo guardar los planos hasta que la necesites (virtual cold).*\n\n| Virtual Site Type | Behavior |\n| --- | --- |\n| **Virtual hot site** | Fully replicated, instantly accessible cloud environment |\n| **Virtual warm site** | Partially replicated resources/data, quickly scalable to full functionality |\n| **Virtual cold site** | Critical data/configs stored in the cloud; resources activated only during a disaster, minimizing ongoing cost |\n\nOffers rapid scalability, cost-effectiveness, and easy maintenance.\n\n### Platform Diversity\n\n* **Definition:** Diversifying operating systems, networking equipment, and cloud platform providers used for redundancy, to mitigate the risk of a single point of failure.\n\n> *Es como no guardar todas tus contraseñas en el mismo gestor: si ese proveedor específico sufre una vulnerabilidad, no pierdes acceso a todo a la vez.*\n\n- Example: if the primary site uses Cisco equipment, the redundant site might use a different vendor — so a Cisco-specific vulnerability doesn't take down both sites simultaneously.\n- Trade-off: platform diversity adds complexity/support cost vs. using identical equipment everywhere (simpler support, lower maintenance, but shared vulnerability risk). Senior management weighs this risk/reward decision.\n\n### Geographic Dispersion\n\n* **Definition:** Spreading resources and redundant sites across different physical/geographic locations to increase redundancy.\n\n> *Es como no poner todos los respaldos de tu negocio en el mismo vecindario que podría ser afectado por el mismo huracán.*"
+        "raw_content": "### Platform Diversity\n\n* **Definition:** Diversifying operating systems, networking equipment, and cloud platform providers used for redundancy, to mitigate the risk of a single point of failure.\n\n> *Es como no guardar todas tus contraseñas en el mismo gestor: si ese proveedor específico sufre una vulnerabilidad, no pierdes acceso a todo a la vez.*\n\n- Example: if the primary site uses Cisco equipment, the redundant site might use a different vendor — so a Cisco-specific vulnerability doesn't take down both sites simultaneously.\n- Trade-off: platform diversity adds complexity/support cost vs. using identical equipment everywhere (simpler support, lower maintenance, but shared vulnerability risk). Senior management weighs this risk/reward decision."
+      },
+      {
+        "name": "Geographic Dispersion",
+        "definition": "Spreading resources and redundant sites across different physical/geographic locations to increase redundancy.",
+        "analogy": "*Es como no poner todos los respaldos de tu negocio en el mismo vecindario que podría ser afectado por el mismo huracán.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Geographic Dispersion\n\n* **Definition:** Spreading resources and redundant sites across different physical/geographic locations to increase redundancy.\n\n> *Es como no poner todos los respaldos de tu negocio en el mismo vecindario que podría ser afectado por el mismo huracán.*\n\n---"
       },
       {
         "name": "Resilience and Recovery Testing",
-        "definition": "Replicating data and system processes onto a secondary system, then running both primary and secondary systems simultaneously to verify the secondary's reliability and stability without disrupting day-to-day operations.",
+        "definition": "Resilience testing assesses a system's ability to withstand and adapt to disruptive events; recovery testing evaluates a system's capacity to restore normal operations after a disruptive event — together they act as a \"fire drill\" for the organization.",
         "analogy": "*Es como los simulacros de incendio en una oficina: no esperas a que ocurra un incendio real para descubrir si la gente sabe cómo salir.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 10. Resilience and Recovery Testing\n\n* **Definition:** Resilience testing assesses a system's ability to withstand and adapt to disruptive events; recovery testing evaluates a system's capacity to restore normal operations after a disruptive event — together they act as a \"fire drill\" for the organization.\n\n> *Es como los simulacros de incendio en una oficina: no esperas a que ocurra un incendio real para descubrir si la gente sabe cómo salir.*"
+      },
+      {
+        "name": "Tabletop Exercise",
+        "definition": "A simulated, scenario-based discussion among key stakeholders to assess and improve preparedness/response to a specific emergency, without deploying actual resources.",
+        "analogy": "*Es como un juego de mesa de \"qué harías si...\": un facilitador presenta una crisis ficticia (el \"inject\") y cada participante explica cómo respondería su equipo.*",
         "tables": [],
         "list_items": [
           "Low-cost, highly engaging; helps stakeholders identify gaps/seams in their plans, which then get folded into SOPs and incident-response playbooks.",
-          "Also functions as a **team-building** exercise.",
+          "Also functions as a **team-building** exercise."
+        ],
+        "raw_content": "### Tabletop Exercise\n\n* **Definition:** A simulated, scenario-based discussion among key stakeholders to assess and improve preparedness/response to a specific emergency, without deploying actual resources.\n\n> *Es como un juego de mesa de \"qué harías si...\": un facilitador presenta una crisis ficticia (el \"inject\") y cada participante explica cómo respondería su equipo.*\n\n- Low-cost, highly engaging; helps stakeholders identify gaps/seams in their plans, which then get folded into SOPs and incident-response playbooks.\n- Also functions as a **team-building** exercise."
+      },
+      {
+        "name": "Failover Test",
+        "definition": "A controlled experiment verifying the seamless transition of a system/application from a primary component to a backup/secondary component during a failure.",
+        "analogy": "*Es como ensayar mudarte de tu casa principal a la de respaldo, de verdad, para confirmar que la llave sí abre la puerta y que todo encaja.*",
+        "tables": [],
+        "list_items": [
           "More resource-, time-, and energy-intensive than a tabletop exercise, since real cutover actions are taken (e.g., East Coast → West Coast data center).",
           "A **rollback plan** should exist in case the failover doesn't work as expected.",
-          "Best practice: test at least **once per year**.",
+          "Best practice: test at least **once per year**."
+        ],
+        "raw_content": "### Failover Test\n\n* **Definition:** A controlled experiment verifying the seamless transition of a system/application from a primary component to a backup/secondary component during a failure.\n\n> *Es como ensayar mudarte de tu casa principal a la de respaldo, de verdad, para confirmar que la llave sí abre la puerta y que todo encaja.*\n\n- More resource-, time-, and energy-intensive than a tabletop exercise, since real cutover actions are taken (e.g., East Coast → West Coast data center).\n- A **rollback plan** should exist in case the failover doesn't work as expected.\n- Best practice: test at least **once per year**."
+      },
+      {
+        "name": "Simulation",
+        "definition": "A computer-generated or artificial representation of a real-world system/scenario used to mimic conditions, interactions, or failures and assess/refine system or team response.",
+        "analogy": "*Es como un campo de entrenamiento de paintball para defensores y atacantes: todo es virtual, pero las reacciones y decisiones son reales.*",
+        "tables": [],
+        "list_items": [
           "Example: spinning up a virtualized corporate network in the cloud where a **red team** attacks and a **blue team** defends in real time, with post-exercise feedback for both sides.",
-          "Unlike a tabletop (paper scenario), participants actually perform response actions inside a virtualized environment — tests both the plan **and** the people.",
+          "Unlike a tabletop (paper scenario), participants actually perform response actions inside a virtualized environment — tests both the plan **and** the people."
+        ],
+        "raw_content": "### Simulation\n\n* **Definition:** A computer-generated or artificial representation of a real-world system/scenario used to mimic conditions, interactions, or failures and assess/refine system or team response.\n\n> *Es como un campo de entrenamiento de paintball para defensores y atacantes: todo es virtual, pero las reacciones y decisiones son reales.*\n\n- Example: spinning up a virtualized corporate network in the cloud where a **red team** attacks and a **blue team** defends in real time, with post-exercise feedback for both sides.\n- Unlike a tabletop (paper scenario), participants actually perform response actions inside a virtualized environment — tests both the plan **and** the people."
+      },
+      {
+        "name": "Parallel Processing",
+        "definition": "Replicating data and system processes onto a secondary system, then running both primary and secondary systems simultaneously to verify the secondary's reliability and stability without disrupting day-to-day operations.",
+        "analogy": "*Es como tener un piloto y un copiloto manejando el mismo avión en simuladores idénticos al mismo tiempo, para comprobar que ambos pueden llevarlo a salvo si uno falla.*",
+        "tables": [],
+        "list_items": [
           "Requires meticulous planning and execution to ensure **zero disruption** to ongoing operations.",
           "Used in resilience testing (handling multiple simultaneous failures: outages, hardware failures, data corruption) and recovery testing (evaluating efficient recovery from multiple failure points)."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Resilience testing assesses a system's ability to withstand and adapt to disruptive events; recovery testing evaluates a system's capacity to restore normal operations after a disruptive event — together they act as a \"fire drill\" for the organization.\n\n> *Es como los simulacros de incendio en una oficina: no esperas a que ocurra un incendio real para descubrir si la gente sabe cómo salir.*\n\n### Tabletop Exercise\n\n* **Definition:** A simulated, scenario-based discussion among key stakeholders to assess and improve preparedness/response to a specific emergency, without deploying actual resources.\n\n> *Es como un juego de mesa de \"qué harías si...\": un facilitador presenta una crisis ficticia (el \"inject\") y cada participante explica cómo respondería su equipo.*\n\n- Low-cost, highly engaging; helps stakeholders identify gaps/seams in their plans, which then get folded into SOPs and incident-response playbooks.\n- Also functions as a **team-building** exercise.\n\n### Failover Test\n\n* **Definition:** A controlled experiment verifying the seamless transition of a system/application from a primary component to a backup/secondary component during a failure.\n\n> *Es como ensayar mudarte de tu casa principal a la de respaldo, de verdad, para confirmar que la llave sí abre la puerta y que todo encaja.*\n\n- More resource-, time-, and energy-intensive than a tabletop exercise, since real cutover actions are taken (e.g., East Coast → West Coast data center).\n- A **rollback plan** should exist in case the failover doesn't work as expected.\n- Best practice: test at least **once per year**.\n\n### Simulation\n\n* **Definition:** A computer-generated or artificial representation of a real-world system/scenario used to mimic conditions, interactions, or failures and assess/refine system or team response.\n\n> *Es como un campo de entrenamiento de paintball para defensores y atacantes: todo es virtual, pero las reacciones y decisiones son reales.*\n\n- Example: spinning up a virtualized corporate network in the cloud where a **red team** attacks and a **blue team** defends in real time, with post-exercise feedback for both sides.\n- Unlike a tabletop (paper scenario), participants actually perform response actions inside a virtualized environment — tests both the plan **and** the people.\n\n### Parallel Processing\n\n* **Definition:** Replicating data and system processes onto a secondary system, then running both primary and secondary systems simultaneously to verify the secondary's reliability and stability without disrupting day-to-day operations.\n\n> *Es como tener un piloto y un copiloto manejando el mismo avión en simuladores idénticos al mismo tiempo, para comprobar que ambos pueden llevarlo a salvo si uno falla.*\n\n- Requires meticulous planning and execution to ensure **zero disruption** to ongoing operations.\n- Used in resilience testing (handling multiple simultaneous failures: outages, hardware failures, data corruption) and recovery testing (evaluating efficient recovery from multiple failure points).\n\n> ⚠️ Resilience/recovery testing must be **routine, not one-time** — plans should be regularly tested, adapted, and improved as the threat landscape and vulnerabilities evolve. Organizational resilience is an ongoing journey, not a checkbox."
-      },
-      {
-        "name": "Key Terms",
-        "definition": "HA: High Availability",
-        "analogy": "",
-        "tables": [
-          {
-            "headers": [
-              "Term",
-              "Meaning"
-            ],
-            "rows": [
-              [
-                "**HA**",
-                "High Availability"
-              ],
-              [
-                "**RAID**",
-                "Redundant Array of Independent Disks"
-              ],
-              [
-                "**RPO**",
-                "Recovery Point Objective — max acceptable data loss, measured in time"
-              ],
-              [
-                "**PDC**",
-                "Power Distribution Center"
-              ],
-              [
-                "**UPS**",
-                "Uninterruptible Power Supply"
-              ],
-              [
-                "**BCP**",
-                "Business Continuity Plan"
-              ],
-              [
-                "**DRP**",
-                "Disaster Recovery Plan"
-              ],
-              [
-                "**COOP**",
-                "Continuity of Operations Plan"
-              ],
-              [
-                "**DJC2**",
-                "Deployable Joint Command and Control (US military mobile site system)"
-              ]
-            ]
-          }
-        ],
-        "list_items": [],
-        "spanish_words": [],
-        "raw_content": "| Term | Meaning |\n| --- | --- |\n| **HA** | High Availability |\n| **RAID** | Redundant Array of Independent Disks |\n| **RPO** | Recovery Point Objective — max acceptable data loss, measured in time |\n| **PDC** | Power Distribution Center |\n| **UPS** | Uninterruptible Power Supply |\n| **BCP** | Business Continuity Plan |\n| **DRP** | Disaster Recovery Plan |\n| **COOP** | Continuity of Operations Plan |\n| **DJC2** | Deployable Joint Command and Control (US military mobile site system) |"
+        "raw_content": "### Parallel Processing\n\n* **Definition:** Replicating data and system processes onto a secondary system, then running both primary and secondary systems simultaneously to verify the secondary's reliability and stability without disrupting day-to-day operations.\n\n> *Es como tener un piloto y un copiloto manejando el mismo avión en simuladores idénticos al mismo tiempo, para comprobar que ambos pueden llevarlo a salvo si uno falla.*\n\n- Requires meticulous planning and execution to ensure **zero disruption** to ongoing operations.\n- Used in resilience testing (handling multiple simultaneous failures: outages, hardware failures, data corruption) and recovery testing (evaluating efficient recovery from multiple failure points).\n\n> ⚠️ Resilience/recovery testing must be **routine, not one-time** — plans should be regularly tested, adapted, and improved as the threat landscape and vulnerabilities evolve. Organizational resilience is an ongoing journey, not a checkbox.\n\n---"
       }
     ]
   },
@@ -6121,8 +5875,43 @@ const STUDY_DATA = [
     "concepts": [
       {
         "name": "On-Premise vs. Cloud Deployments",
-        "definition": "An architecture combining on-premise infrastructure with private and public cloud services, allowing workloads to move between environments based on need (data security, compliance, interoperability, cost).",
+        "definition": "Two opposing models for hosting IT infrastructure — on-premise keeps hardware and services physically inside the organization's own facilities, while cloud computing delivers servers, storage, databases, networking, and software as services over the internet.",
         "analogy": "*Es como comparar tener tu propia casa (on-premise: tú la construyes, la reparas y la cuidas) contra vivir en un apartamento alquilado en un edificio con administración (cloud: el dueño del edificio se encarga del mantenimiento, la plomería y la seguridad general, pero tú sigues siendo responsable de cerrar tu puerta con llave).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 1. On-Premise vs. Cloud Deployments\n\n* **Definition:** Two opposing models for hosting IT infrastructure — on-premise keeps hardware and services physically inside the organization's own facilities, while cloud computing delivers servers, storage, databases, networking, and software as services over the internet.\n\n> *Es como comparar tener tu propia casa (on-premise: tú la construyes, la reparas y la cuidas) contra vivir en un apartamento alquilado en un edificio con administración (cloud: el dueño del edificio se encarga del mantenimiento, la plomería y la seguridad general, pero tú sigues siendo responsable de cerrar tu puerta con llave).*"
+      },
+      {
+        "name": "On-Premise Solutions",
+        "definition": "Computing infrastructure physically located on-site, fully owned and maintained by the business itself (hardware, software updates, security measures, upgrades).",
+        "analogy": "",
+        "tables": [],
+        "list_items": [
+          "Example: a small law firm keeps all client data on local servers to retain full control over sensitive legal documents.",
+          "Benefit: complete control over data, no third-party exposure, immediate access."
+        ],
+        "raw_content": "### On-Premise Solutions\n\n* **Definition:** Computing infrastructure physically located on-site, fully owned and maintained by the business itself (hardware, software updates, security measures, upgrades).\n* Example: a small law firm keeps all client data on local servers to retain full control over sensitive legal documents.\n* Benefit: complete control over data, no third-party exposure, immediate access.\n\n### Cloud Computing — Sub-Concepts"
+      },
+      {
+        "name": "Responsibility Matrix",
+        "definition": "A document/agreement that outlines which security and management tasks belong to the cloud service provider versus the customer; the split varies by service model (IaaS, PaaS, SaaS).",
+        "analogy": "*Es como un contrato de alquiler que dice claramente: \"el edificio se encarga del agua y la electricidad (proveedor), pero tú te encargas de cerrar con llave y de no dejar la estufa encendida (cliente).\"*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "#### Responsibility Matrix\n\n* **Definition:** A document/agreement that outlines which security and management tasks belong to the cloud service provider versus the customer; the split varies by service model (IaaS, PaaS, SaaS).\n\n> *Es como un contrato de alquiler que dice claramente: \"el edificio se encarga del agua y la electricidad (proveedor), pero tú te encargas de cerrar con llave y de no dejar la estufa encendida (cliente).\"*"
+      },
+      {
+        "name": "Third-Party Vendors",
+        "definition": "External companies that provide specialized cloud-supporting services such as management tools, security solutions, or analytics (e.g., CloudHealth by VMware for cost management and governance).",
+        "analogy": "*Son como los contratistas externos que el edificio llama para tareas específicas: el técnico de cámaras, el de fumigación, el de jardinería — no son parte del staff fijo, pero el edificio depende de ellos.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "#### Third-Party Vendors\n\n* **Definition:** External companies that provide specialized cloud-supporting services such as management tools, security solutions, or analytics (e.g., CloudHealth by VMware for cost management and governance).\n\n> *Son como los contratistas externos que el edificio llama para tareas específicas: el técnico de cámaras, el de fumigación, el de jardinería — no son parte del staff fijo, pero el edificio depende de ellos.*"
+      },
+      {
+        "name": "Hybrid Solutions",
+        "definition": "An architecture combining on-premise infrastructure with private and public cloud services, allowing workloads to move between environments based on need (data security, compliance, interoperability, cost).",
+        "analogy": "*Es como tener una caja fuerte en tu propia casa para las joyas más valiosas, pero rentar una bodega externa para guardar los muebles que usas poco — usas el lugar correcto según qué tan sensible o voluminoso sea lo que guardas.*",
         "tables": [
           {
             "headers": [
@@ -6182,12 +5971,9 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [
-          "Example: a small law firm keeps all client data on local servers to retain full control over sensitive legal documents.",
-          "Benefit: complete control over data, no third-party exposure, immediate access.",
           "Example: a healthcare organization keeps patient data on-premise (HIPAA compliance) but uses the cloud for email hosting and data analysis."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Two opposing models for hosting IT infrastructure — on-premise keeps hardware and services physically inside the organization's own facilities, while cloud computing delivers servers, storage, databases, networking, and software as services over the internet.\n\n> *Es como comparar tener tu propia casa (on-premise: tú la construyes, la reparas y la cuidas) contra vivir en un apartamento alquilado en un edificio con administración (cloud: el dueño del edificio se encarga del mantenimiento, la plomería y la seguridad general, pero tú sigues siendo responsable de cerrar tu puerta con llave).*\n\n### On-Premise Solutions\n\n* **Definition:** Computing infrastructure physically located on-site, fully owned and maintained by the business itself (hardware, software updates, security measures, upgrades).\n* Example: a small law firm keeps all client data on local servers to retain full control over sensitive legal documents.\n* Benefit: complete control over data, no third-party exposure, immediate access.\n\n### Cloud Computing — Sub-Concepts\n\n#### Responsibility Matrix\n\n* **Definition:** A document/agreement that outlines which security and management tasks belong to the cloud service provider versus the customer; the split varies by service model (IaaS, PaaS, SaaS).\n\n> *Es como un contrato de alquiler que dice claramente: \"el edificio se encarga del agua y la electricidad (proveedor), pero tú te encargas de cerrar con llave y de no dejar la estufa encendida (cliente).\"*\n\n#### Third-Party Vendors\n\n* **Definition:** External companies that provide specialized cloud-supporting services such as management tools, security solutions, or analytics (e.g., CloudHealth by VMware for cost management and governance).\n\n> *Son como los contratistas externos que el edificio llama para tareas específicas: el técnico de cámaras, el de fumigación, el de jardinería — no son parte del staff fijo, pero el edificio depende de ellos.*\n\n#### Hybrid Solutions\n\n* **Definition:** An architecture combining on-premise infrastructure with private and public cloud services, allowing workloads to move between environments based on need (data security, compliance, interoperability, cost).\n* Example: a healthcare organization keeps patient data on-premise (HIPAA compliance) but uses the cloud for email hosting and data analysis.\n\n> *Es como tener una caja fuerte en tu propia casa para las joyas más valiosas, pero rentar una bodega externa para guardar los muebles que usas poco — usas el lugar correcto según qué tan sensible o voluminoso sea lo que guardas.*\n\n### Key Considerations in Cloud Computing\n\n| Consideration | Meaning |\n| --- | --- |\n| **Availability** | System can be accessed when needed (e.g., AWS S3/EC2 SLA of 99.99% uptime) |\n| **Resilience** | Ability to recover from failures via distributed/redundant infrastructure (e.g., GCP storage survives simultaneous data center failures) |\n| **Cost** | Lower upfront cost but ongoing usage-based costs can add up (pay-as-you-go vs. reserved instances) |\n| **Responsiveness** | Speed at which resources adapt to demand changes (e.g., Azure auto-scaling during a sale) |\n| **Scalability** | Ability to handle increased workload without infrastructure limits (e.g., Netflix scaling on AWS) |\n| **Ease of Deployment** | Cloud services set up in minutes/hours without physical installation (e.g., Shopify) |\n| **Risk Transference** | Some risk shifts to the provider, but customer still owns data/app security (e.g., Salesforce) |\n| **Ease of Recovery** | Built-in backup/recovery reduces data loss risk (e.g., Dropbox file recovery) |\n| **Patch Availability** | Provider regularly issues patches automatically (e.g., Office 365 updates) |\n| **Inability to Patch** | Compatibility issues or lack of environment control can block patching (e.g., legacy apps in the cloud) |\n| **Power** | Provider manages power supply/infrastructure, reducing customer burden |\n| **Compute** | The CPU, memory, and storage resources available to the customer (AWS offers multiple instance tiers) |\n\n> *Estos puntos son como la lista de preguntas que harías antes de mudarte a un edificio nuevo: ¿hay luz todo el tiempo? ¿qué pasa si se cae un piso? ¿cuánto me cuesta el mantenimiento? ¿puedo crecer si tengo más muebles? — cada una pesa distinto según tus necesidades.*"
+        "raw_content": "#### Hybrid Solutions\n\n* **Definition:** An architecture combining on-premise infrastructure with private and public cloud services, allowing workloads to move between environments based on need (data security, compliance, interoperability, cost).\n* Example: a healthcare organization keeps patient data on-premise (HIPAA compliance) but uses the cloud for email hosting and data analysis.\n\n> *Es como tener una caja fuerte en tu propia casa para las joyas más valiosas, pero rentar una bodega externa para guardar los muebles que usas poco — usas el lugar correcto según qué tan sensible o voluminoso sea lo que guardas.*\n\n### Key Considerations in Cloud Computing\n\n| Consideration | Meaning |\n| --- | --- |\n| **Availability** | System can be accessed when needed (e.g., AWS S3/EC2 SLA of 99.99% uptime) |\n| **Resilience** | Ability to recover from failures via distributed/redundant infrastructure (e.g., GCP storage survives simultaneous data center failures) |\n| **Cost** | Lower upfront cost but ongoing usage-based costs can add up (pay-as-you-go vs. reserved instances) |\n| **Responsiveness** | Speed at which resources adapt to demand changes (e.g., Azure auto-scaling during a sale) |\n| **Scalability** | Ability to handle increased workload without infrastructure limits (e.g., Netflix scaling on AWS) |\n| **Ease of Deployment** | Cloud services set up in minutes/hours without physical installation (e.g., Shopify) |\n| **Risk Transference** | Some risk shifts to the provider, but customer still owns data/app security (e.g., Salesforce) |\n| **Ease of Recovery** | Built-in backup/recovery reduces data loss risk (e.g., Dropbox file recovery) |\n| **Patch Availability** | Provider regularly issues patches automatically (e.g., Office 365 updates) |\n| **Inability to Patch** | Compatibility issues or lack of environment control can block patching (e.g., legacy apps in the cloud) |\n| **Power** | Provider manages power supply/infrastructure, reducing customer burden |\n| **Compute** | The CPU, memory, and storage resources available to the customer (AWS offers multiple instance tiers) |\n\n> *Estos puntos son como la lista de preguntas que harías antes de mudarte a un edificio nuevo: ¿hay luz todo el tiempo? ¿qué pasa si se cae un piso? ¿cuánto me cuesta el mantenimiento? ¿puedo crecer si tengo más muebles? — cada una pesa distinto según tus necesidades.*\n\n---"
       },
       {
         "name": "Cloud Security",
@@ -6245,13 +6031,20 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** The set of security considerations and threats specific to cloud environments, arising from shared infrastructure, multi-tenancy, and provider/customer shared responsibility.\n\n> *Es como vivir en un edificio de apartamentos: aunque tengas tu propia puerta con llave, si el edificio entero tiene mala seguridad en la entrada principal, el riesgo te afecta a ti también — la seguridad de la nube es responsabilidad compartida.*\n\n### Cloud Security Threats\n\n| Threat | Description | Mitigation |\n| --- | --- | --- |\n| **Shared Physical Server Vulnerabilities** | Multiple tenants share the same physical server; a compromise can spill over | Hypervisor protection, secure multi-tenancy, regular vulnerability scanning/patching |\n| **Inadequate Virtual Environment Security** | Weak VM security can lead to unauthorized access/breaches | Secure VM templates, regular patching, monitoring, network segmentation |\n| **User Access Management** | Weak passwords, excessive permissions, lack of monitoring | Strong password policies, MFA, least privilege, activity monitoring |\n| **Lack of Up-to-Date Security Measures** | Dynamic cloud environments leave systems vulnerable if not maintained | Regular patching, policy review, staying current on threats |\n| **Single Points of Failure** | Reliance on one resource/process causes total outage | Redundancy, failover procedures, multiple servers/providers |\n| **Weak Authentication & Encryption Practices** | Allows unauthorized access or exposes data in transit/storage | MFA, strong encryption algorithms, secure key management |\n| **Unclear Policies** | Lack of clear guidelines for data handling, access control, incident response | Comprehensive, regularly reviewed policies + employee training |\n| **Data Remnants** | Residual data left behind after deletion due to inadequate processes | Secure deletion methods, secure backup management, deletion verification |\n\n> *Cada amenaza es como una grieta distinta en la seguridad de un edificio: una puerta sin llave (acceso débil), un guardia dormido (falta de actualizaciones), o basura mal desechada con documentos sensibles todavía legibles (data remnants).*"
+        "raw_content": "## 2. Cloud Security\n\n* **Definition:** The set of security considerations and threats specific to cloud environments, arising from shared infrastructure, multi-tenancy, and provider/customer shared responsibility.\n\n> *Es como vivir en un edificio de apartamentos: aunque tengas tu propia puerta con llave, si el edificio entero tiene mala seguridad en la entrada principal, el riesgo te afecta a ti también — la seguridad de la nube es responsabilidad compartida.*\n\n### Cloud Security Threats\n\n| Threat | Description | Mitigation |\n| --- | --- | --- |\n| **Shared Physical Server Vulnerabilities** | Multiple tenants share the same physical server; a compromise can spill over | Hypervisor protection, secure multi-tenancy, regular vulnerability scanning/patching |\n| **Inadequate Virtual Environment Security** | Weak VM security can lead to unauthorized access/breaches | Secure VM templates, regular patching, monitoring, network segmentation |\n| **User Access Management** | Weak passwords, excessive permissions, lack of monitoring | Strong password policies, MFA, least privilege, activity monitoring |\n| **Lack of Up-to-Date Security Measures** | Dynamic cloud environments leave systems vulnerable if not maintained | Regular patching, policy review, staying current on threats |\n| **Single Points of Failure** | Reliance on one resource/process causes total outage | Redundancy, failover procedures, multiple servers/providers |\n| **Weak Authentication & Encryption Practices** | Allows unauthorized access or exposes data in transit/storage | MFA, strong encryption algorithms, secure key management |\n| **Unclear Policies** | Lack of clear guidelines for data handling, access control, incident response | Comprehensive, regularly reviewed policies + employee training |\n| **Data Remnants** | Residual data left behind after deletion due to inadequate processes | Secure deletion methods, secure backup management, deletion verification |\n\n> *Cada amenaza es como una grieta distinta en la seguridad de un edificio: una puerta sin llave (acceso débil), un guardia dormido (falta de actualizaciones), o basura mal desechada con documentos sensibles todavía legibles (data remnants).*\n\n---"
       },
       {
         "name": "Virtualization and Containerization",
-        "definition": "A method of running applications in isolated user spaces (containers) that share the host's OS kernel but bundle the application with all its dependencies.",
+        "definition": "Virtualization emulates full servers (each with its own OS) on shared physical hardware via a hypervisor; containerization is a lighter alternative that encapsulates an application and its dependencies in an isolated container sharing the host OS kernel.",
         "analogy": "*La virtualización es como construir varios apartamentos completamente independientes dentro de un edificio (cada uno con su propia cocina y baño). La contenedorización es más como rentar cuartos en una casa de huéspedes: cada inquilino tiene su espacio privado, pero todos comparten la misma cocina y plomería central (el kernel del sistema operativo).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 3. Virtualization and Containerization\n\n* **Definition:** Virtualization emulates full servers (each with its own OS) on shared physical hardware via a hypervisor; containerization is a lighter alternative that encapsulates an application and its dependencies in an isolated container sharing the host OS kernel.\n\n> *La virtualización es como construir varios apartamentos completamente independientes dentro de un edificio (cada uno con su propia cocina y baño). La contenedorización es más como rentar cuartos en una casa de huéspedes: cada inquilino tiene su espacio privado, pero todos comparten la misma cocina y plomería central (el kernel del sistema operativo).*"
+      },
+      {
+        "name": "Hypervisors",
+        "definition": "Software that manages distribution of a physical server's resources (CPU, memory, disk) among virtual machines.",
+        "analogy": "*Un hipervisor tipo 1 es como un edificio diseñado desde cero solo para apartamentos — ultra eficiente. Uno tipo 2 es como subdividir una casa familiar ya existente para meter inquilinos — funciona, pero hay más \"desperdicio\" de espacio y recursos.*",
         "tables": [
           {
             "headers": [
@@ -6277,7 +6070,16 @@ const STUDY_DATA = [
                 "Slower (OS overhead)"
               ]
             ]
-          },
+          }
+        ],
+        "list_items": [],
+        "raw_content": "### Hypervisors\n\n* **Definition:** Software that manages distribution of a physical server's resources (CPU, memory, disk) among virtual machines.\n\n| Type | Also Known As | Runs On | Examples | Performance |\n| --- | --- | --- | --- | --- |\n| **Type 1** | Bare metal / native hypervisor | Directly on host hardware | Microsoft Hyper-V, Citrix XenServer, VMware ESXi/vSphere | Faster, more efficient |\n| **Type 2** | Hosted hypervisor | Within a standard OS (Windows/Mac/Linux) | VirtualBox, VMware Workstation | Slower (OS overhead) |\n\n> *Un hipervisor tipo 1 es como un edificio diseñado desde cero solo para apartamentos — ultra eficiente. Uno tipo 2 es como subdividir una casa familiar ya existente para meter inquilinos — funciona, pero hay más \"desperdicio\" de espacio y recursos.*"
+      },
+      {
+        "name": "Containerization",
+        "definition": "A method of running applications in isolated user spaces (containers) that share the host's OS kernel but bundle the application with all its dependencies.",
+        "analogy": "*Asegurar una máquina virtual es básicamente aplicar las mismas reglas de seguridad de un servidor físico normal — actualizaciones, antivirus, contraseñas fuertes — pero además cuidando que los \"apartamentos virtuales\" no compartan tuberías que permitan que un problema en uno afecte a los demás.*",
+        "tables": [
           {
             "headers": [
               "Vulnerability",
@@ -6328,8 +6130,7 @@ const STUDY_DATA = [
           "Track VMs to avoid VM sprawl",
           "Encrypt the files that host the VMs"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Virtualization emulates full servers (each with its own OS) on shared physical hardware via a hypervisor; containerization is a lighter alternative that encapsulates an application and its dependencies in an isolated container sharing the host OS kernel.\n\n> *La virtualización es como construir varios apartamentos completamente independientes dentro de un edificio (cada uno con su propia cocina y baño). La contenedorización es más como rentar cuartos en una casa de huéspedes: cada inquilino tiene su espacio privado, pero todos comparten la misma cocina y plomería central (el kernel del sistema operativo).*\n\n### Hypervisors\n\n* **Definition:** Software that manages distribution of a physical server's resources (CPU, memory, disk) among virtual machines.\n\n| Type | Also Known As | Runs On | Examples | Performance |\n| --- | --- | --- | --- | --- |\n| **Type 1** | Bare metal / native hypervisor | Directly on host hardware | Microsoft Hyper-V, Citrix XenServer, VMware ESXi/vSphere | Faster, more efficient |\n| **Type 2** | Hosted hypervisor | Within a standard OS (Windows/Mac/Linux) | VirtualBox, VMware Workstation | Slower (OS overhead) |\n\n> *Un hipervisor tipo 1 es como un edificio diseñado desde cero solo para apartamentos — ultra eficiente. Uno tipo 2 es como subdividir una casa familiar ya existente para meter inquilinos — funciona, pero hay más \"desperdicio\" de espacio y recursos.*\n\n### Containerization\n\n* **Definition:** A method of running applications in isolated user spaces (containers) that share the host's OS kernel but bundle the application with all its dependencies.\n* Benefits: efficiency/speed, portability, scalability, isolation, consistency.\n* Popular technologies: Docker, Kubernetes, Red Hat OpenShift.\n\n### Virtualization Vulnerabilities\n\n| Vulnerability | Description | Mitigation |\n| --- | --- | --- |\n| **VM Escape** | Attacker breaks out of an isolated VM to interact directly with the hypervisor, potentially pivoting to other VMs | Host VMs of the same classification/segment together; keep hypervisor patched |\n| **Privilege Elevation** | User grants themselves higher privileges; catastrophic if achieved at the hypervisor level | Stay current on hotfixes/service packs |\n| **Live VM Migration** | Moving a VM between physical hosts can be intercepted (adversary-in-the-middle) since transmitted data is unencrypted | Encrypt migration traffic, secure the migration path |\n| **Resource Reuse** | Memory/storage not properly cleared before reassignment can expose previous tenant's data | Secure resource clearing/reset procedures |\n| **VM Sprawl** | VMs created/deployed without proper oversight, becoming hard to track | Inventory tracking, governance, patch compliance auditing |\n| **Containerization OS Risk** | All containers share one OS; compromising that OS puts every hosted application at risk | OS hardening and patching |\n\n### Securing Virtual Machines\n\n- Keep operating systems, applications, and hypervisors patched/updated\n- Install antivirus + software firewall on each VM, enforce strong passwords/policies\n- Limit connections between VMs and physical machines (virtual network cords/shares) to preserve isolation\n- Distribute VMs across multiple physical servers to limit denial-of-service blast radius\n- Track VMs to avoid VM sprawl\n- Encrypt the files that host the VMs\n\n> *Asegurar una máquina virtual es básicamente aplicar las mismas reglas de seguridad de un servidor físico normal — actualizaciones, antivirus, contraseñas fuertes — pero además cuidando que los \"apartamentos virtuales\" no compartan tuberías que permitan que un problema en uno afecte a los demás.*"
+        "raw_content": "### Containerization\n\n* **Definition:** A method of running applications in isolated user spaces (containers) that share the host's OS kernel but bundle the application with all its dependencies.\n* Benefits: efficiency/speed, portability, scalability, isolation, consistency.\n* Popular technologies: Docker, Kubernetes, Red Hat OpenShift.\n\n### Virtualization Vulnerabilities\n\n| Vulnerability | Description | Mitigation |\n| --- | --- | --- |\n| **VM Escape** | Attacker breaks out of an isolated VM to interact directly with the hypervisor, potentially pivoting to other VMs | Host VMs of the same classification/segment together; keep hypervisor patched |\n| **Privilege Elevation** | User grants themselves higher privileges; catastrophic if achieved at the hypervisor level | Stay current on hotfixes/service packs |\n| **Live VM Migration** | Moving a VM between physical hosts can be intercepted (adversary-in-the-middle) since transmitted data is unencrypted | Encrypt migration traffic, secure the migration path |\n| **Resource Reuse** | Memory/storage not properly cleared before reassignment can expose previous tenant's data | Secure resource clearing/reset procedures |\n| **VM Sprawl** | VMs created/deployed without proper oversight, becoming hard to track | Inventory tracking, governance, patch compliance auditing |\n| **Containerization OS Risk** | All containers share one OS; compromising that OS puts every hosted application at risk | OS hardening and patching |\n\n### Securing Virtual Machines\n\n- Keep operating systems, applications, and hypervisors patched/updated\n- Install antivirus + software firewall on each VM, enforce strong passwords/policies\n- Limit connections between VMs and physical machines (virtual network cords/shares) to preserve isolation\n- Distribute VMs across multiple physical servers to limit denial-of-service blast radius\n- Track VMs to avoid VM sprawl\n- Encrypt the files that host the VMs\n\n> *Asegurar una máquina virtual es básicamente aplicar las mismas reglas de seguridad de un servidor físico normal — actualizaciones, antivirus, contraseñas fuertes — pero además cuidando que los \"apartamentos virtuales\" no compartan tuberías que permitan que un problema en uno afecte a los demás.*\n\n---"
       },
       {
         "name": "Serverless Computing",
@@ -6345,8 +6146,7 @@ const STUDY_DATA = [
           "**Vendor Lock-in:** reliance on a provider's proprietary interfaces makes switching providers difficult",
           "**Immaturity of Best Practices:** serverless is a relatively new field, so standardized practices are still evolving"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A cloud execution model where the cloud provider dynamically manages server provisioning and allocation; developers write and deploy individual functions triggered by events, without managing servers directly (function-as-a-service).\n\n> *Es como pedir comida a domicilio en lugar de tener tu propia cocina: no te preocupas por comprar la estufa, mantener el gas o limpiar — solo \"activas\" el pedido (la función) cuando lo necesitas, y pagas solo por lo que consumes.*\n\n### Examples\n\n- **AWS Lambda** — runs code without provisioning/managing servers, auto-scales to demand\n- **Google Cloud Functions** — single-purpose functions triggered by cloud service events\n\n### Benefits\n\n- Reduced operational cost (pay only for compute time used)\n- Automatic scaling precisely matched to workload\n- Developers focus on code, not server/runtime management → faster time to market\n\n### Risks / Challenges\n\n- **Vendor Lock-in:** reliance on a provider's proprietary interfaces makes switching providers difficult\n- **Immaturity of Best Practices:** serverless is a relatively new field, so standardized practices are still evolving"
+        "raw_content": "## 4. Serverless Computing\n\n* **Definition:** A cloud execution model where the cloud provider dynamically manages server provisioning and allocation; developers write and deploy individual functions triggered by events, without managing servers directly (function-as-a-service).\n\n> *Es como pedir comida a domicilio en lugar de tener tu propia cocina: no te preocupas por comprar la estufa, mantener el gas o limpiar — solo \"activas\" el pedido (la función) cuando lo necesitas, y pagas solo por lo que consumes.*\n\n### Examples\n\n- **AWS Lambda** — runs code without provisioning/managing servers, auto-scales to demand\n- **Google Cloud Functions** — single-purpose functions triggered by cloud service events\n\n### Benefits\n\n- Reduced operational cost (pay only for compute time used)\n- Automatic scaling precisely matched to workload\n- Developers focus on code, not server/runtime management → faster time to market\n\n### Risks / Challenges\n\n- **Vendor Lock-in:** reliance on a provider's proprietary interfaces makes switching providers difficult\n- **Immaturity of Best Practices:** serverless is a relatively new field, so standardized practices are still evolving\n\n---"
       },
       {
         "name": "Microservices",
@@ -6403,22 +6203,37 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An architectural style that structures an application as a collection of small, autonomous, independently-running services, each modeled around a specific business function, communicating through lightweight mechanisms.\n\n> *Es como pasar de un solo restaurante gigante que hace de todo (cocina, caja, limpieza, todo mezclado y si algo falla cierra el local entero) a un food court donde cada puesto es independiente: si el puesto de pizza tiene un problema, los demás puestos siguen funcionando normalmente.*\n\n### Real-World Example\n\nNetflix migrated from a monolithic architecture to microservices to handle scale — separate microservices now handle recommendations, signups, video encoding, etc.\n\n### Benefits\n\n| Benefit | Description |\n| --- | --- |\n| **Scalability** | Each service scales independently based on its own demand |\n| **Flexibility** | Services can use different languages/data stores and be managed by different teams |\n| **Resilience** | Failure of one service does not bring down the entire system |\n| **Faster Deployment/Updates** | Services deploy and update independently, reducing release risk |\n\n### Challenges\n\n| Challenge | Description |\n| --- | --- |\n| **Complexity** | Managing inter-service communication, data consistency, distributed testing |\n| **Data Management** | Each service may have its own database, complicating cross-service consistency |\n| **Network Latency** | Increased inter-service communication slows response times |\n| **Security** | More services communicating over a network = larger attack surface |"
+        "raw_content": "## 5. Microservices\n\n* **Definition:** An architectural style that structures an application as a collection of small, autonomous, independently-running services, each modeled around a specific business function, communicating through lightweight mechanisms.\n\n> *Es como pasar de un solo restaurante gigante que hace de todo (cocina, caja, limpieza, todo mezclado y si algo falla cierra el local entero) a un food court donde cada puesto es independiente: si el puesto de pizza tiene un problema, los demás puestos siguen funcionando normalmente.*\n\n### Real-World Example\n\nNetflix migrated from a monolithic architecture to microservices to handle scale — separate microservices now handle recommendations, signups, video encoding, etc.\n\n### Benefits\n\n| Benefit | Description |\n| --- | --- |\n| **Scalability** | Each service scales independently based on its own demand |\n| **Flexibility** | Services can use different languages/data stores and be managed by different teams |\n| **Resilience** | Failure of one service does not bring down the entire system |\n| **Faster Deployment/Updates** | Services deploy and update independently, reducing release risk |\n\n### Challenges\n\n| Challenge | Description |\n| --- | --- |\n| **Complexity** | Managing inter-service communication, data consistency, distributed testing |\n| **Data Management** | Each service may have its own database, complicating cross-service consistency |\n| **Network Latency** | Increased inter-service communication slows response times |\n| **Security** | More services communicating over a network = larger attack surface |\n\n---"
       },
       {
         "name": "Network Infrastructure — Physical vs. Logical Separation",
-        "definition": "Creating boundaries within a shared network using firewalls, VLANs, and other rule-based network devices to restrict access between segments.",
+        "definition": "Network infrastructure is the hardware, software, services, and facilities that support an enterprise network; its components can be separated either physically or logically to control access and contain risk.",
         "analogy": "*Es como decidir entre construir un muro físico de concreto alrededor de un edificio (separación física) versus simplemente poner reglas y guardias en las puertas internas que dicen quién puede pasar a qué piso (separación lógica).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 6. Network Infrastructure — Physical vs. Logical Separation\n\n* **Definition:** Network infrastructure is the hardware, software, services, and facilities that support an enterprise network; its components can be separated either physically or logically to control access and contain risk.\n\n> *Es como decidir entre construir un muro físico de concreto alrededor de un edificio (separación física) versus simplemente poner reglas y guardias en las puertas internas que dicen quién puede pasar a qué piso (separación lógica).*"
+      },
+      {
+        "name": "Physical Separation (Air Gapping)",
+        "definition": "Completely isolating a system from other networks (local and internet) by removing all direct/indirect connections, including wireless.",
+        "analogy": "",
         "tables": [],
         "list_items": [
           "Examples: military/government classified networks; ICS systems in power plants or water treatment facilities.",
-          "⚠️ **Not infallible** — sophisticated attacks like **Stuxnet** have demonstrated that air-gapped systems can still be compromised.",
+          "⚠️ **Not infallible** — sophisticated attacks like **Stuxnet** have demonstrated that air-gapped systems can still be compromised."
+        ],
+        "raw_content": "### Physical Separation (Air Gapping)\n\n* **Definition:** Completely isolating a system from other networks (local and internet) by removing all direct/indirect connections, including wireless.\n* Examples: military/government classified networks; ICS systems in power plants or water treatment facilities.\n* ⚠️ **Not infallible** — sophisticated attacks like **Stuxnet** have demonstrated that air-gapped systems can still be compromised."
+      },
+      {
+        "name": "Logical Separation",
+        "definition": "Creating boundaries within a shared network using firewalls, VLANs, and other rule-based network devices to restrict access between segments.",
+        "analogy": "",
+        "tables": [],
+        "list_items": [
           "Examples: VLANs segregating HR traffic from Marketing traffic on the same physical network; firewalls creating a **screened subnet** to separate external-facing services from the internal network.",
           "Easier to implement and more flexible than physical separation, but less secure — misconfigured firewalls/VLANs can be exploited."
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Network infrastructure is the hardware, software, services, and facilities that support an enterprise network; its components can be separated either physically or logically to control access and contain risk.\n\n> *Es como decidir entre construir un muro físico de concreto alrededor de un edificio (separación física) versus simplemente poner reglas y guardias en las puertas internas que dicen quién puede pasar a qué piso (separación lógica).*\n\n### Physical Separation (Air Gapping)\n\n* **Definition:** Completely isolating a system from other networks (local and internet) by removing all direct/indirect connections, including wireless.\n* Examples: military/government classified networks; ICS systems in power plants or water treatment facilities.\n* ⚠️ **Not infallible** — sophisticated attacks like **Stuxnet** have demonstrated that air-gapped systems can still be compromised.\n\n### Logical Separation\n\n* **Definition:** Creating boundaries within a shared network using firewalls, VLANs, and other rule-based network devices to restrict access between segments.\n* Examples: VLANs segregating HR traffic from Marketing traffic on the same physical network; firewalls creating a **screened subnet** to separate external-facing services from the internal network.\n* Easier to implement and more flexible than physical separation, but less secure — misconfigured firewalls/VLANs can be exploited."
+        "raw_content": "### Logical Separation\n\n* **Definition:** Creating boundaries within a shared network using firewalls, VLANs, and other rule-based network devices to restrict access between segments.\n* Examples: VLANs segregating HR traffic from Marketing traffic on the same physical network; firewalls creating a **screened subnet** to separate external-facing services from the internal network.\n* Easier to implement and more flexible than physical separation, but less secure — misconfigured firewalls/VLANs can be exploited.\n\n---"
       },
       {
         "name": "Software-Defined Networking (SDN)",
@@ -6450,13 +6265,28 @@ const STUDY_DATA = [
           "**Google's B4 Project** — uses SDN to manage data center network bandwidth efficiently",
           "**AT&T Domain 2.0 Initiative** — transforms AT&T's network into an SDN to cut costs and automate management"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** An approach to network management that enables dynamic, programmatic, and centralized network configuration by decoupling the network's control functions from its forwarding functions.\n\n> *Es como pasar de un edificio donde cada piso tiene su propio panel eléctrico independiente y manual, a un sistema central inteligente donde un solo panel controla y reprograma la electricidad de todo el edificio desde un solo lugar.*\n\n### The Three Planes of SDN\n\n| Plane | Role |\n| --- | --- |\n| **Data Plane** (forwarding plane) | Physically moves packets between devices using protocols like IP/Ethernet |\n| **Control Plane** | The centralized \"brain\" that decides where traffic is sent (replaces per-router control logic) |\n| **Application Plane** | Hosts network applications that instruct the controller on desired behavior |\n\n### Real-World Examples\n\n- **Google's B4 Project** — uses SDN to manage data center network bandwidth efficiently\n- **AT&T Domain 2.0 Initiative** — transforms AT&T's network into an SDN to cut costs and automate management"
+        "raw_content": "## 7. Software-Defined Networking (SDN)\n\n* **Definition:** An approach to network management that enables dynamic, programmatic, and centralized network configuration by decoupling the network's control functions from its forwarding functions.\n\n> *Es como pasar de un edificio donde cada piso tiene su propio panel eléctrico independiente y manual, a un sistema central inteligente donde un solo panel controla y reprograma la electricidad de todo el edificio desde un solo lugar.*\n\n### The Three Planes of SDN\n\n| Plane | Role |\n| --- | --- |\n| **Data Plane** (forwarding plane) | Physically moves packets between devices using protocols like IP/Ethernet |\n| **Control Plane** | The centralized \"brain\" that decides where traffic is sent (replaces per-router control logic) |\n| **Application Plane** | Hosts network applications that instruct the controller on desired behavior |\n\n### Real-World Examples\n\n- **Google's B4 Project** — uses SDN to manage data center network bandwidth efficiently\n- **AT&T Domain 2.0 Initiative** — transforms AT&T's network into an SDN to cut costs and automate management\n\n---"
       },
       {
         "name": "Infrastructure as Code (IaC)",
-        "definition": "A \"snowflake\" is a system configuration/build that is unique and inconsistent with others, introducing risk through unpredictability.",
+        "definition": "Automating the provisioning and management of computing resources through machine-readable definition files or scripts (e.g., YAML, JSON, HCL) instead of manual configuration.",
         "analogy": "*Es como tener una receta de cocina escrita con precisión exacta en lugar de improvisar cada vez: si sigues la misma receta, el platillo sale idéntico cada vez, sin importar quién la cocine o cuántas veces se repita.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 8. Infrastructure as Code (IaC)\n\n* **Definition:** Automating the provisioning and management of computing resources through machine-readable definition files or scripts (e.g., YAML, JSON, HCL) instead of manual configuration.\n\n> *Es como tener una receta de cocina escrita con precisión exacta en lugar de improvisar cada vez: si sigues la misma receta, el platillo sale idéntico cada vez, sin importar quién la cocine o cuántas veces se repita.*"
+      },
+      {
+        "name": "Idempotence",
+        "definition": "The property of an operation producing the same result no matter how many times it is executed, regardless of the system's initial state.",
+        "analogy": "*Es como tener un control remoto que siempre deja la TV en el canal 5 sin importar en qué canal estaba antes — el resultado final es siempre el mismo, sin importar el punto de partida.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Idempotence\n\n* **Definition:** The property of an operation producing the same result no matter how many times it is executed, regardless of the system's initial state.\n\n> *Es como tener un control remoto que siempre deja la TV en el canal 5 sin importar en qué canal estaba antes — el resultado final es siempre el mismo, sin importar el punto de partida.*"
+      },
+      {
+        "name": "Snowflake Systems",
+        "definition": "A \"snowflake\" is a system configuration/build that is unique and inconsistent with others, introducing risk through unpredictability.",
+        "analogy": "",
         "tables": [],
         "list_items": [
           "Speed and efficiency in provisioning/deprovisioning",
@@ -6468,8 +6298,7 @@ const STUDY_DATA = [
           "Complexity as IaC scope grows (mitigated by modularization/documentation)",
           "Security risks — sensitive data or insecure configs can be inadvertently exposed in code files"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Automating the provisioning and management of computing resources through machine-readable definition files or scripts (e.g., YAML, JSON, HCL) instead of manual configuration.\n\n> *Es como tener una receta de cocina escrita con precisión exacta en lugar de improvisar cada vez: si sigues la misma receta, el platillo sale idéntico cada vez, sin importar quién la cocine o cuántas veces se repita.*\n\n### Idempotence\n\n* **Definition:** The property of an operation producing the same result no matter how many times it is executed, regardless of the system's initial state.\n\n> *Es como tener un control remoto que siempre deja la TV en el canal 5 sin importar en qué canal estaba antes — el resultado final es siempre el mismo, sin importar el punto de partida.*\n\n### Goal: Eliminating Snowflake Systems\n\n* **Definition:** A \"snowflake\" is a system configuration/build that is unique and inconsistent with others, introducing risk through unpredictability.\n\n### Benefits\n\n- Speed and efficiency in provisioning/deprovisioning\n- Consistency and standardization across environments\n- Scalability through easy replication of setups\n- Cost savings from reduced manual configuration\n- Auditability and compliance (code is versioned and reviewable)\n\n### Challenges\n\n- Learning curve — requires new skills and a shifted mindset\n- Complexity as IaC scope grows (mitigated by modularization/documentation)\n- Security risks — sensitive data or insecure configs can be inadvertently exposed in code files"
+        "raw_content": "### Snowflake Systems\n\n* **Definition:** A \"snowflake\" is a system configuration/build that is unique and inconsistent with others, introducing risk through unpredictability.\n\n### Benefits\n\n- Speed and efficiency in provisioning/deprovisioning\n- Consistency and standardization across environments\n- Scalability through easy replication of setups\n- Cost savings from reduced manual configuration\n- Auditability and compliance (code is versioned and reviewable)\n\n### Challenges\n\n- Learning curve — requires new skills and a shifted mindset\n- Complexity as IaC scope grows (mitigated by modularization/documentation)\n- Security risks — sensitive data or insecure configs can be inadvertently exposed in code files\n\n---"
       },
       {
         "name": "Centralized vs. Decentralized Architectures",
@@ -6518,21 +6347,51 @@ const STUDY_DATA = [
           }
         ],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Centralized architecture coordinates and manages all computing functions from a single location/authority; decentralized architecture distributes computing functions across multiple independent systems or locations with no single point of control.\n\n> *Centralizado es como una sola oficina matriz que toma todas las decisiones para todas las sucursales. Descentralizado es como darle autonomía a cada sucursal para que opere y decida por su cuenta, sin depender de una sola oficina central.*\n\n### Centralized Architecture\n\n| Benefits | Risks |\n| --- | --- |\n| Efficiency and control over resources | Single point of failure (central server failure disrupts entire network) |\n| Consistency and accuracy of information | Scalability issues as the organization grows |\n| Cost-effective maintenance (one system) | Attractive, high-value target for cyber-criminals |\n\n### Decentralized Architecture\n\n| Benefits | Risks |\n| --- | --- |\n| Resiliency — one node failing doesn't stop the system | Security risks from more entry points (e.g., remote connections) |\n| Scalability — new nodes added easily | Management challenges — complex coordination across nodes |\n| Flexibility — supports remote work/distributed teams | Data inconsistency across nodes / synchronization issues |"
+        "raw_content": "## 9. Centralized vs. Decentralized Architectures\n\n* **Definition:** Centralized architecture coordinates and manages all computing functions from a single location/authority; decentralized architecture distributes computing functions across multiple independent systems or locations with no single point of control.\n\n> *Centralizado es como una sola oficina matriz que toma todas las decisiones para todas las sucursales. Descentralizado es como darle autonomía a cada sucursal para que opere y decida por su cuenta, sin depender de una sola oficina central.*\n\n### Centralized Architecture\n\n| Benefits | Risks |\n| --- | --- |\n| Efficiency and control over resources | Single point of failure (central server failure disrupts entire network) |\n| Consistency and accuracy of information | Scalability issues as the organization grows |\n| Cost-effective maintenance (one system) | Attractive, high-value target for cyber-criminals |\n\n### Decentralized Architecture\n\n| Benefits | Risks |\n| --- | --- |\n| Resiliency — one node failing doesn't stop the system | Security risks from more entry points (e.g., remote connections) |\n| Scalability — new nodes added easily | Management challenges — complex coordination across nodes |\n| Flexibility — supports remote work/distributed teams | Data inconsistency across nodes / synchronization issues |\n\n---"
       },
       {
         "name": "Internet of Things (IoT)",
-        "definition": "Devices that detect environmental changes (temperature, humidity, light, motion, pressure, chemical composition) and convert them into data for processing — the \"eyes and ears\" of the IoT ecosystem.",
+        "definition": "A network of physical devices, vehicles, appliances, and other items embedded with sensors, software, and network connectivity that allows them to connect and exchange data in near real time.",
         "analogy": "*Es como una casa donde cada electrodoméstico tiene \"boca y oídos\" propios y puede hablar con los demás: el refrigerador le avisa al control central que falta leche, y el control central enciende las luces cuando detecta movimiento.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "## 10. Internet of Things (IoT)\n\n* **Definition:** A network of physical devices, vehicles, appliances, and other items embedded with sensors, software, and network connectivity that allows them to connect and exchange data in near real time.\n\n> *Es como una casa donde cada electrodoméstico tiene \"boca y oídos\" propios y puede hablar con los demás: el refrigerador le avisa al control central que falta leche, y el control central enciende las luces cuando detecta movimiento.*"
+      },
+      {
+        "name": "Hub / Control System",
+        "definition": "The central point that connects all IoT devices, collecting, processing, and analyzing their data, then sending commands back. Can be a physical device (Amazon Echo, Google Home) or a software platform (an app).",
+        "analogy": "",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Hub / Control System\n\n* **Definition:** The central point that connects all IoT devices, collecting, processing, and analyzing their data, then sending commands back. Can be a physical device (Amazon Echo, Google Home) or a software platform (an app)."
+      },
+      {
+        "name": "Smart Devices",
+        "definition": "Everyday objects enhanced with computing capability and internet connectivity, able to sense their environment, process data, and act without human intervention (e.g., a smart refrigerator suggesting recipes and ordering groceries).",
+        "analogy": "",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Smart Devices\n\n* **Definition:** Everyday objects enhanced with computing capability and internet connectivity, able to sense their environment, process data, and act without human intervention (e.g., a smart refrigerator suggesting recipes and ordering groceries)."
+      },
+      {
+        "name": "Wearables",
+        "definition": "A subset of smart devices designed to be worn on the body, monitoring health/fitness metrics and providing hands-free interaction (e.g., smartwatches, fitness trackers, VR/AR headsets).",
+        "analogy": "",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "### Wearables\n\n* **Definition:** A subset of smart devices designed to be worn on the body, monitoring health/fitness metrics and providing hands-free interaction (e.g., smartwatches, fitness trackers, VR/AR headsets)."
+      },
+      {
+        "name": "Sensors",
+        "definition": "Devices that detect environmental changes (temperature, humidity, light, motion, pressure, chemical composition) and convert them into data for processing — the \"eyes and ears\" of the IoT ecosystem.",
+        "analogy": "*El hub es el cerebro, los dispositivos inteligentes son las manos, los wearables son lo que llevas puesto, y los sensores son los ojos y oídos — juntos forman un cuerpo completo que percibe y actúa sobre su entorno.*",
         "tables": [],
         "list_items": [
           "**Weak default settings** — default usernames/passwords that are easy to guess or widely known",
           "**Poorly configured network services** — open ports, unencrypted communication, unnecessary exposed services",
           "⚠️ **Mitigation:** keep IoT devices on a separate, segmented network"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A network of physical devices, vehicles, appliances, and other items embedded with sensors, software, and network connectivity that allows them to connect and exchange data in near real time.\n\n> *Es como una casa donde cada electrodoméstico tiene \"boca y oídos\" propios y puede hablar con los demás: el refrigerador le avisa al control central que falta leche, y el control central enciende las luces cuando detecta movimiento.*\n\n### Hub / Control System\n\n* **Definition:** The central point that connects all IoT devices, collecting, processing, and analyzing their data, then sending commands back. Can be a physical device (Amazon Echo, Google Home) or a software platform (an app).\n\n### Smart Devices\n\n* **Definition:** Everyday objects enhanced with computing capability and internet connectivity, able to sense their environment, process data, and act without human intervention (e.g., a smart refrigerator suggesting recipes and ordering groceries).\n\n### Wearables\n\n* **Definition:** A subset of smart devices designed to be worn on the body, monitoring health/fitness metrics and providing hands-free interaction (e.g., smartwatches, fitness trackers, VR/AR headsets).\n\n### Sensors\n\n* **Definition:** Devices that detect environmental changes (temperature, humidity, light, motion, pressure, chemical composition) and convert them into data for processing — the \"eyes and ears\" of the IoT ecosystem.\n\n> *El hub es el cerebro, los dispositivos inteligentes son las manos, los wearables son lo que llevas puesto, y los sensores son los ojos y oídos — juntos forman un cuerpo completo que percibe y actúa sobre su entorno.*\n\n### IoT Security Risks\n\n- **Weak default settings** — default usernames/passwords that are easy to guess or widely known\n- **Poorly configured network services** — open ports, unencrypted communication, unnecessary exposed services\n- ⚠️ **Mitigation:** keep IoT devices on a separate, segmented network"
+        "raw_content": "### Sensors\n\n* **Definition:** Devices that detect environmental changes (temperature, humidity, light, motion, pressure, chemical composition) and convert them into data for processing — the \"eyes and ears\" of the IoT ecosystem.\n\n> *El hub es el cerebro, los dispositivos inteligentes son las manos, los wearables son lo que llevas puesto, y los sensores son los ojos y oídos — juntos forman un cuerpo completo que percibe y actúa sobre su entorno.*\n\n### IoT Security Risks\n\n- **Weak default settings** — default usernames/passwords that are easy to guess or widely known\n- **Poorly configured network services** — open ports, unencrypted communication, unnecessary exposed services\n- ⚠️ **Mitigation:** keep IoT devices on a separate, segmented network\n\n---"
       },
       {
         "name": "ICS and SCADA",
@@ -6590,13 +6449,25 @@ const STUDY_DATA = [
           "Conduct regular security audits",
           "Provide employee security training"
         ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** Industrial Control Systems (ICS) are control systems used to monitor and manage industrial processes (electrical, water, oil, gas, manufacturing); SCADA (Supervisory Control and Data Acquisition) is a subset of ICS used specifically for geographically dispersed industrial processes.\n\n> *ICS es como el sistema de control de una sola fábrica. SCADA es como el sistema de control de toda una red de fábricas y plantas repartidas en distintas ciudades, todas supervisadas y coordinadas desde un mismo centro de mando remoto.*\n\n### ICS Components\n\n| Component | Description |\n| --- | --- |\n| **Distributed Control Systems (DCS)** | Control production systems within a single location |\n| **Programmable Logic Controllers (PLC)** | Control specific processes such as assembly lines |\n\n### SCADA Examples\n\n- Electrical power generation, transmission, and distribution systems\n- Water treatment and distribution systems\n- Oil and gas pipeline monitoring and control systems\n\n### Risks and Vulnerabilities\n\n| Risk | Description |\n| --- | --- |\n| **Unauthorized Access** | Inadequate protection allows manipulation of system operations |\n| **Malware Attacks** | Malware can disrupt industrial operations |\n| **Lack of Updates** | Many ICS/SCADA systems run outdated, unpatched software |\n| **Physical Threats** | Susceptible to physical damage to hardware/infrastructure |\n\n> ⚠️ ICS and SCADA systems were originally designed for isolated environments where security was not a primary concern; modern digitalization and connectivity now expose them to cyber threats they were never built to resist.\n\n### Securing ICS and SCADA\n\n- Implement strong access control (strong passwords, MFA, least privilege)\n- Regularly update and patch systems\n- Use firewalls and intrusion detection systems\n- Conduct regular security audits\n- Provide employee security training"
+        "raw_content": "## 11. ICS and SCADA\n\n* **Definition:** Industrial Control Systems (ICS) are control systems used to monitor and manage industrial processes (electrical, water, oil, gas, manufacturing); SCADA (Supervisory Control and Data Acquisition) is a subset of ICS used specifically for geographically dispersed industrial processes.\n\n> *ICS es como el sistema de control de una sola fábrica. SCADA es como el sistema de control de toda una red de fábricas y plantas repartidas en distintas ciudades, todas supervisadas y coordinadas desde un mismo centro de mando remoto.*\n\n### ICS Components\n\n| Component | Description |\n| --- | --- |\n| **Distributed Control Systems (DCS)** | Control production systems within a single location |\n| **Programmable Logic Controllers (PLC)** | Control specific processes such as assembly lines |\n\n### SCADA Examples\n\n- Electrical power generation, transmission, and distribution systems\n- Water treatment and distribution systems\n- Oil and gas pipeline monitoring and control systems\n\n### Risks and Vulnerabilities\n\n| Risk | Description |\n| --- | --- |\n| **Unauthorized Access** | Inadequate protection allows manipulation of system operations |\n| **Malware Attacks** | Malware can disrupt industrial operations |\n| **Lack of Updates** | Many ICS/SCADA systems run outdated, unpatched software |\n| **Physical Threats** | Susceptible to physical damage to hardware/infrastructure |\n\n> ⚠️ ICS and SCADA systems were originally designed for isolated environments where security was not a primary concern; modern digitalization and connectivity now expose them to cyber threats they were never built to resist.\n\n### Securing ICS and SCADA\n\n- Implement strong access control (strong passwords, MFA, least privilege)\n- Regularly update and patch systems\n- Use firewalls and intrusion detection systems\n- Conduct regular security audits\n- Provide employee security training\n\n---"
       },
       {
         "name": "Embedded Systems",
-        "definition": "A major embedded-system challenge where downtime is unacceptable, devices are physically hard to reach, or systems were never designed with update mechanisms in mind.",
+        "definition": "A specialized computing component designed to perform one or two dedicated functions within a larger mechanical or electrical device, integrating both hardware and (often) mechanical elements.",
         "analogy": "*Es como un empleado ultra-especializado que solo sabe hacer una tarea a la perfección (por ejemplo, solo controlar el airbag de un carro), a diferencia de una computadora normal que es como un empleado generalista que puede hacer de todo un poco.*",
+        "tables": [],
+        "list_items": [
+          "Consumer electronics: smartphones, digital cameras, washing machines, microwaves",
+          "Automotive: engine control, anti-lock braking systems, airbag deployment",
+          "Healthcare: pacemakers, insulin pumps, imaging systems",
+          "Industrial: automation, process control, robotics"
+        ],
+        "raw_content": "## 12. Embedded Systems\n\n* **Definition:** A specialized computing component designed to perform one or two dedicated functions within a larger mechanical or electrical device, integrating both hardware and (often) mechanical elements.\n\n> *Es como un empleado ultra-especializado que solo sabe hacer una tarea a la perfección (por ejemplo, solo controlar el airbag de un carro), a diferencia de una computadora normal que es como un empleado generalista que puede hacer de todo un poco.*\n\n### Examples\n\n- Consumer electronics: smartphones, digital cameras, washing machines, microwaves\n- Automotive: engine control, anti-lock braking systems, airbag deployment\n- Healthcare: pacemakers, insulin pumps, imaging systems\n- Industrial: automation, process control, robotics"
+      },
+      {
+        "name": "Real-Time Operating System (RTOS)",
+        "definition": "An operating system designed for real-time applications, processing data as it arrives — typically without buffering delays — ensuring timely, predictable execution for time-sensitive applications (e.g., flight navigation, medical equipment).",
+        "analogy": "*Un RTOS es como un mesero de restaurante de comida rápida que debe atender cada orden en el momento exacto en que llega, sin acumular pedidos en una fila de espera — la rapidez y el tiempo de respuesta son críticos.*",
         "tables": [
           {
             "headers": [
@@ -6623,69 +6494,42 @@ const STUDY_DATA = [
             ]
           }
         ],
-        "list_items": [
-          "Consumer electronics: smartphones, digital cameras, washing machines, microwaves",
-          "Automotive: engine control, anti-lock braking systems, airbag deployment",
-          "Healthcare: pacemakers, insulin pumps, imaging systems",
-          "Industrial: automation, process control, robotics",
-          "Mitigation: **over-the-air (OTA) updates** — patches delivered and installed remotely, requiring careful planning and robust security to avoid introducing new vulnerabilities during the update."
-        ],
-        "spanish_words": [],
-        "raw_content": "* **Definition:** A specialized computing component designed to perform one or two dedicated functions within a larger mechanical or electrical device, integrating both hardware and (often) mechanical elements.\n\n> *Es como un empleado ultra-especializado que solo sabe hacer una tarea a la perfección (por ejemplo, solo controlar el airbag de un carro), a diferencia de una computadora normal que es como un empleado generalista que puede hacer de todo un poco.*\n\n### Examples\n\n- Consumer electronics: smartphones, digital cameras, washing machines, microwaves\n- Automotive: engine control, anti-lock braking systems, airbag deployment\n- Healthcare: pacemakers, insulin pumps, imaging systems\n- Industrial: automation, process control, robotics\n\n### Real-Time Operating System (RTOS)\n\n* **Definition:** An operating system designed for real-time applications, processing data as it arrives — typically without buffering delays — ensuring timely, predictable execution for time-sensitive applications (e.g., flight navigation, medical equipment).\n\n> *Un RTOS es como un mesero de restaurante de comida rápida que debe atender cada orden en el momento exacto en que llega, sin acumular pedidos en una fila de espera — la rapidez y el tiempo de respuesta son críticos.*\n\n### Embedded System Risks\n\n| Risk | Description |\n| --- | --- |\n| **Hardware Failure** | Embedded systems often operate in harsh environments, prone to physical failure |\n| **Software Bugs** | Can cause malfunctions and safety risks |\n| **Security Vulnerabilities** | Can be targeted by attackers for unauthorized access or disruption |\n| **Outdated Systems** | Long operational lifespans lead to outdated, more vulnerable software/hardware |\n\n### Securing Embedded Systems\n\n#### Network Segmentation\n* **Definition:** Dividing a network into multiple segments/subnets so a breach in one segment doesn't automatically grant access to others.\n\n#### Wrappers\n* **Definition:** Protective measures (e.g., IPsec) applied to data in transit so that an interceptor can only see the wrapper's header (entry/exit points), not the actual data — useful when data crosses an unsecured network.\n\n#### Firmware Code Control\n* **Definition:** Managing and controlling the low-level software that operates device hardware, using secure coding practices, code reviews, automated testing, secure boot mechanisms, and cryptographic signatures to ensure only authorized firmware runs.\n\n#### Inability to Patch\n* **Definition:** A major embedded-system challenge where downtime is unacceptable, devices are physically hard to reach, or systems were never designed with update mechanisms in mind.\n* Mitigation: **over-the-air (OTA) updates** — patches delivered and installed remotely, requiring careful planning and robust security to avoid introducing new vulnerabilities during the update.\n\n> *Asegurar un sistema embebido es como blindar un reloj suizo que nunca se puede abrir fácilmente: divides sus engranajes en compartimentos (segmentación), envuelves sus piezas sensibles (wrappers), controlas quién fabrica sus repuestos internos (firmware), y buscas formas de darle mantenimiento sin tener que desarmarlo por completo (actualizaciones remotas).*"
+        "list_items": [],
+        "raw_content": "### Real-Time Operating System (RTOS)\n\n* **Definition:** An operating system designed for real-time applications, processing data as it arrives — typically without buffering delays — ensuring timely, predictable execution for time-sensitive applications (e.g., flight navigation, medical equipment).\n\n> *Un RTOS es como un mesero de restaurante de comida rápida que debe atender cada orden en el momento exacto en que llega, sin acumular pedidos en una fila de espera — la rapidez y el tiempo de respuesta son críticos.*\n\n### Embedded System Risks\n\n| Risk | Description |\n| --- | --- |\n| **Hardware Failure** | Embedded systems often operate in harsh environments, prone to physical failure |\n| **Software Bugs** | Can cause malfunctions and safety risks |\n| **Security Vulnerabilities** | Can be targeted by attackers for unauthorized access or disruption |\n| **Outdated Systems** | Long operational lifespans lead to outdated, more vulnerable software/hardware |\n\n### Securing Embedded Systems"
       },
       {
-        "name": "Key Terms",
-        "definition": "Hypervisor: Software that manages distribution of physical server resources among virtual machines",
+        "name": "Network Segmentation",
+        "definition": "Dividing a network into multiple segments/subnets so a breach in one segment doesn't automatically grant access to others.",
         "analogy": "",
-        "tables": [
-          {
-            "headers": [
-              "Term",
-              "Definition"
-            ],
-            "rows": [
-              [
-                "**Hypervisor**",
-                "Software that manages distribution of physical server resources among virtual machines"
-              ],
-              [
-                "**VM Escape**",
-                "An attack where a process breaks out of VM isolation to access the hypervisor"
-              ],
-              [
-                "**Snowflake System**",
-                "A uniquely configured system inconsistent with standardized builds, introducing risk"
-              ],
-              [
-                "**Idempotence**",
-                "Property where repeated execution of an operation always yields the same result"
-              ],
-              [
-                "**Air Gap**",
-                "Physical isolation of a system from all other networks"
-              ],
-              [
-                "**Screened Subnet**",
-                "A logically separated subnetwork hosting external-facing services, isolated from the internal network"
-              ],
-              [
-                "**RTOS**",
-                "Real-Time Operating System — processes data as it arrives with predictable, minimal delay"
-              ],
-              [
-                "**OTA Update**",
-                "Over-the-Air update — remote delivery and installation of patches"
-              ],
-              [
-                "**FaaS**",
-                "Function as a Service — the operating model underlying serverless computing"
-              ]
-            ]
-          }
-        ],
+        "tables": [],
         "list_items": [],
-        "spanish_words": [],
-        "raw_content": "| Term | Definition |\n| --- | --- |\n| **Hypervisor** | Software that manages distribution of physical server resources among virtual machines |\n| **VM Escape** | An attack where a process breaks out of VM isolation to access the hypervisor |\n| **Snowflake System** | A uniquely configured system inconsistent with standardized builds, introducing risk |\n| **Idempotence** | Property where repeated execution of an operation always yields the same result |\n| **Air Gap** | Physical isolation of a system from all other networks |\n| **Screened Subnet** | A logically separated subnetwork hosting external-facing services, isolated from the internal network |\n| **RTOS** | Real-Time Operating System — processes data as it arrives with predictable, minimal delay |\n| **OTA Update** | Over-the-Air update — remote delivery and installation of patches |\n| **FaaS** | Function as a Service — the operating model underlying serverless computing |"
+        "raw_content": "#### Network Segmentation\n* **Definition:** Dividing a network into multiple segments/subnets so a breach in one segment doesn't automatically grant access to others."
+      },
+      {
+        "name": "Wrappers",
+        "definition": "Protective measures (e.g., IPsec) applied to data in transit so that an interceptor can only see the wrapper's header (entry/exit points), not the actual data — useful when data crosses an unsecured network.",
+        "analogy": "",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "#### Wrappers\n* **Definition:** Protective measures (e.g., IPsec) applied to data in transit so that an interceptor can only see the wrapper's header (entry/exit points), not the actual data — useful when data crosses an unsecured network."
+      },
+      {
+        "name": "Firmware Code Control",
+        "definition": "Managing and controlling the low-level software that operates device hardware, using secure coding practices, code reviews, automated testing, secure boot mechanisms, and cryptographic signatures to ensure only authorized firmware runs.",
+        "analogy": "",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "#### Firmware Code Control\n* **Definition:** Managing and controlling the low-level software that operates device hardware, using secure coding practices, code reviews, automated testing, secure boot mechanisms, and cryptographic signatures to ensure only authorized firmware runs."
+      },
+      {
+        "name": "Inability to Patch",
+        "definition": "A major embedded-system challenge where downtime is unacceptable, devices are physically hard to reach, or systems were never designed with update mechanisms in mind.",
+        "analogy": "*Asegurar un sistema embebido es como blindar un reloj suizo que nunca se puede abrir fácilmente: divides sus engranajes en compartimentos (segmentación), envuelves sus piezas sensibles (wrappers), controlas quién fabrica sus repuestos internos (firmware), y buscas formas de darle mantenimiento sin tener que desarmarlo por completo (actualizaciones remotas).*",
+        "tables": [],
+        "list_items": [
+          "Mitigation: **over-the-air (OTA) updates** — patches delivered and installed remotely, requiring careful planning and robust security to avoid introducing new vulnerabilities during the update."
+        ],
+        "raw_content": "#### Inability to Patch\n* **Definition:** A major embedded-system challenge where downtime is unacceptable, devices are physically hard to reach, or systems were never designed with update mechanisms in mind.\n* Mitigation: **over-the-air (OTA) updates** — patches delivered and installed remotely, requiring careful planning and robust security to avoid introducing new vulnerabilities during the update.\n\n> *Asegurar un sistema embebido es como blindar un reloj suizo que nunca se puede abrir fácilmente: divides sus engranajes en compartimentos (segmentación), envuelves sus piezas sensibles (wrappers), controlas quién fabrica sus repuestos internos (firmware), y buscas formas de darle mantenimiento sin tener que desarmarlo por completo (actualizaciones remotas).*\n\n---"
       }
     ]
   }
