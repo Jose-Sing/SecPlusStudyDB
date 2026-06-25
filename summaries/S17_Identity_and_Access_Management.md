@@ -520,7 +520,7 @@ UAC prompts appear as a dialog box when an action requires elevated privileges (
 
 * **Definition:** Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.
 
-The **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices.
+The **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices. **User Account Control (UAC)** is a mechanism designed to ensure that actions requiring administrative rights are explicitly authorized by the user
 
 > *El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*
 

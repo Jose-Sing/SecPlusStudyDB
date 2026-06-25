@@ -4839,6 +4839,91 @@ const STUDY_DATA = [
           "The **SOW** provides project-specific details (deliverables, timeline, milestones) under the MSA umbrella"
         ],
         "raw_content": "Contracts are the formal framework that defines the rights, obligations, and expectations of both parties in a business relationship.\n\n> *Un contrato es el mapa de la relación: sin él, cada parte puede tener una idea diferente del destino. Con él, ambos saben exactamente a dónde van y quién conduce.*\n\n### Types of Contracts and Agreements\n\n| Agreement                          | Acronym             | Purpose                                                                                                                                                                   |\n| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **Basic Contract**                 | —                   | Establishes roles, responsibilities, and repercussions; foundation of any business relationship                                                                           |\n| **Service Level Agreement**        | SLA                 | Defines the standard of service a client can expect; specifies penalties for non-compliance                                                                               |\n| **Memorandum of Agreement**        | MOA                 | Formal document outlining specific responsibilities and roles of collaborating parties                                                                                    |\n| **Memorandum of Understanding**    | MOU                 | Less binding; declares mutual intent to explore a partnership without fine details                                                                                        |\n| **Master Service Agreement**       | MSA                 | Blanket agreement covering general terms across multiple transactions/proyects; supplemented by individual work orders                                                    |\n| **Statement of Work**              | SOW / Scope of Work | Specifies deliverables, timelines, and milestones for a particular project. Provides detailed information about specific task, deliverables, and tomelines for a project. |\n| **Non-disclosure Agreement**       | NDA                 | Ensures sensitive information shared during negotiations remains confidential between parties                                                                             |\n| **Business Partnership Agreement** | BPA                 | Outlines profit sharing, decision-making, ownership of IP, and exit strategies for joint ventures                                                                         |\n\n> Combination example: \n> \n> NDA\n> └── MSA (marco general)\n>     ├── SLA (estándares de servicio)\n>     ├── SOW Proyecto 1 — Pen Test Q1\n>     ├── SOW Proyecto 2 — Auditoría Q2\n>     └── SOW Proyecto 3 — Incident Response Q3\n> \n> Y si en algún momento las dos empresas deciden hacer algo juntas (co-desarrollar una herramienta, por ejemplo), agregan un BPA encima de todo eso para regular la propiedad compartida del resultado.\n> \n> \n\n### Key Distinctions\n\n**MOA vs. MOU:**\n\n|                   | MOA                                    | MOU                            |\n| ----------------- | -------------------------------------- | ------------------------------ |\n| **Binding level** | More formal and binding                | Less binding                   |\n| **Scope**         | Specific responsibilities and roles    | Broad mutual intent            |\n| **Use case**      | Joint campaigns with defined ownership | Exploring a future partnership |\n\n**MSA vs. SOW:**\n\n- The **MSA** sets overarching terms (payment structure, confidentiality) for a recurring relationship\n- The **SOW** provides project-specific details (deliverables, timeline, milestones) under the MSA umbrella\n\n> *El MSA es el contrato marco de una empresa con su proveedor de servicios. El SOW es la orden de trabajo específica para cada proyecto individual.*\n\n**NDA Use Case:**\nA startup sharing proprietary technology with a potential investor would require an NDA to prevent that information from reaching competitors — even if the investor ultimately declines the opportunity.\n\n**BPA / Joint Venture:**\nUsed when two entities pool resources for mutual benefit. Clarifies intellectual property ownership, revenue distribution, and exit strategies.\n\n---"
+      },
+      {
+        "name": "Key Terms",
+        "definition": "Third-party vendor risk: Security and operational risks introduced by external entities in the supply chain",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Third-party vendor risk**",
+                "Security and operational risks introduced by external entities in the supply chain"
+              ],
+              [
+                "**Supply chain attack**",
+                "Attack targeting a weaker supplier to compromise a more secure primary target"
+              ],
+              [
+                "**Chip washing**",
+                "Repackaging a microchip with a counterfeit or malware-embedded chip"
+              ],
+              [
+                "**Trusted Foundry Program**",
+                "DoD program ensuring chips are manufactured securely and free of unauthorized functions"
+              ],
+              [
+                "**SolarWinds attack**",
+                "2021 software supply chain attack distributing malware via a legitimate software update"
+              ],
+              [
+                "**CHIPS Act (2022)**",
+                "US legislation investing ~$280B to onshore semiconductor manufacturing and reduce supply chain risk"
+              ],
+              [
+                "**Vendor assessment**",
+                "Process to evaluate vendor security, reliability, and compliance"
+              ],
+              [
+                "**Right to audit clause**",
+                "Contractual right to inspect a vendor's internal processes and verify compliance"
+              ],
+              [
+                "**Penetration testing (vendor)**",
+                "Simulated cyberattack against vendor systems to validate their security posture"
+              ],
+              [
+                "**MSP**",
+                "Managed Service Provider — manages IT services on behalf of another organization"
+              ],
+              [
+                "**SLA**",
+                "Service Level Agreement — defines expected service standards and penalties for non-compliance"
+              ],
+              [
+                "**MOA**",
+                "Memorandum of Agreement — formal, specific roles and responsibilities between parties"
+              ],
+              [
+                "**MOU**",
+                "Memorandum of Understanding — non-binding declaration of intent to collaborate"
+              ],
+              [
+                "**MSA**",
+                "Master Service Agreement — blanket terms across multiple transactions"
+              ],
+              [
+                "**SOW**",
+                "Statement of Work — project-specific deliverables, timelines, and milestones"
+              ],
+              [
+                "**NDA**",
+                "Non-disclosure Agreement — confidentiality commitment for sensitive shared information"
+              ],
+              [
+                "**BPA**",
+                "Business Partnership Agreement — governs joint ventures including IP ownership and profit sharing"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term                             | Definition                                                                                          |\n| -------------------------------- | --------------------------------------------------------------------------------------------------- |\n| **Third-party vendor risk**      | Security and operational risks introduced by external entities in the supply chain                  |\n| **Supply chain attack**          | Attack targeting a weaker supplier to compromise a more secure primary target                       |\n| **Chip washing**                 | Repackaging a microchip with a counterfeit or malware-embedded chip                                 |\n| **Trusted Foundry Program**      | DoD program ensuring chips are manufactured securely and free of unauthorized functions             |\n| **SolarWinds attack**            | 2021 software supply chain attack distributing malware via a legitimate software update             |\n| **CHIPS Act (2022)**             | US legislation investing ~$280B to onshore semiconductor manufacturing and reduce supply chain risk |\n| **Vendor assessment**            | Process to evaluate vendor security, reliability, and compliance                                    |\n| **Right to audit clause**        | Contractual right to inspect a vendor's internal processes and verify compliance                    |\n| **Penetration testing (vendor)** | Simulated cyberattack against vendor systems to validate their security posture                     |\n| **MSP**                          | Managed Service Provider — manages IT services on behalf of another organization                    |\n| **SLA**                          | Service Level Agreement — defines expected service standards and penalties for non-compliance       |\n| **MOA**                          | Memorandum of Agreement — formal, specific roles and responsibilities between parties               |\n| **MOU**                          | Memorandum of Understanding — non-binding declaration of intent to collaborate                      |\n| **MSA**                          | Master Service Agreement — blanket terms across multiple transactions                               |\n| **SOW**                          | Statement of Work — project-specific deliverables, timelines, and milestones                        |\n| **NDA**                          | Non-disclosure Agreement — confidentiality commitment for sensitive shared information              |\n| **BPA**                          | Business Partnership Agreement — governs joint ventures including IP ownership and profit sharing   |"
       }
     ],
     "flashcards": [
@@ -5278,6 +5363,83 @@ const STUDY_DATA = [
           "Maintaining audit trails and documentation for attestation"
         ],
         "raw_content": "* **Definition:** The legal, financial, reputational, and operational penalties an organization faces when it fails to adhere to applicable laws, regulations, or contractual obligations.\n\n> *Incumplir con las regulaciones de ciberseguridad es como manejar sin seguro: mientras no pase nada, parece que ahorras dinero. Pero cuando ocurre el accidente, el costo es exponencialmente mayor — y en algunos casos, te quitan la licencia para siempre.*\n\n### Consequence Types\n\n| Consequence | Description | Real-World Example |\n| --- | --- | --- |\n| **Fines** | Monetary penalties from regulatory bodies | GDPR: up to **€20M or 4% of global annual turnover** (whichever is higher); British Airways fined £183M for a breach affecting 500,000 customers |\n| **Sanctions** | Operational restrictions or bans imposed by regulators | Chinese government sanctioned companies for violating cybersecurity law — warnings, fines, income confiscation |\n| **Reputational Damage** | Long-term public trust loss; stock price decline | Equifax 2017 breach: 147M records exposed, stock dropped **30%+** in weeks |\n| **Loss of License** | Revocation of operating license or certification | NY DFS revoked a Bitcoin company's license for failing to meet cybersecurity requirements |\n| **Contractual Impacts** | Breach of client or partner contracts; legal disputes, penalties, or termination | Software firm violating data protection regulations sued by clients; contracts terminated |\n\n> *Equifax es el caso de estudio perfecto de consecuencias en cascada: primero el daño reputacional, luego las demandas, luego las investigaciones regulatorias, y finalmente una multa de $575 millones con la FTC. No cumplir no solo duele hoy — duele por años.*\n\n### Prevention\n\nOrganizations avoid non-compliance consequences by:\n- Understanding and adhering to all relevant laws and regulations\n- Implementing robust cybersecurity measures\n- Regularly reviewing and updating compliance programs\n- Maintaining audit trails and documentation for attestation\n\n---"
+      },
+      {
+        "name": "Key Terms",
+        "definition": "GRC: Governance, Risk, and Compliance — the strategic triad for organizational security management",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**GRC**",
+                "Governance, Risk, and Compliance — the strategic triad for organizational security management"
+              ],
+              [
+                "**AUP**",
+                "Acceptable Use Policy — defines permitted and prohibited use of IT resources"
+              ],
+              [
+                "**SDLC**",
+                "Software Development Lifecycle — structured process guiding software from concept to retirement"
+              ],
+              [
+                "**DAC**",
+                "Discretionary Access Control — owner determines access permissions"
+              ],
+              [
+                "**MAC**",
+                "Mandatory Access Control — access determined by labels/classifications"
+              ],
+              [
+                "**RBAC**",
+                "Role-Based Access Control — access determined by job role"
+              ],
+              [
+                "**GDPR**",
+                "General Data Protection Regulation — EU regulation governing personal data of EU citizens"
+              ],
+              [
+                "**CCPA**",
+                "California Consumer Privacy Act — state-level data rights for California residents"
+              ],
+              [
+                "**ADA**",
+                "Americans with Disabilities Act — national law requiring accessibility accommodations"
+              ],
+              [
+                "**Due Diligence**",
+                "Exhaustive review to identify compliance risks"
+              ],
+              [
+                "**Due Care**",
+                "Actions taken to mitigate identified risks"
+              ],
+              [
+                "**Attestation**",
+                "Formal declaration of compliance by responsible party"
+              ],
+              [
+                "**Playbook**",
+                "Step-by-step incident response or operational guide"
+              ],
+              [
+                "**Least Privilege**",
+                "Principle limiting user access to only what is needed for their role"
+              ],
+              [
+                "**Separation of Duties**",
+                "Principle preventing any single person from controlling an entire critical process"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Meaning |\n| --- | --- |\n| **GRC** | Governance, Risk, and Compliance — the strategic triad for organizational security management |\n| **AUP** | Acceptable Use Policy — defines permitted and prohibited use of IT resources |\n| **SDLC** | Software Development Lifecycle — structured process guiding software from concept to retirement |\n| **DAC** | Discretionary Access Control — owner determines access permissions |\n| **MAC** | Mandatory Access Control — access determined by labels/classifications |\n| **RBAC** | Role-Based Access Control — access determined by job role |\n| **GDPR** | General Data Protection Regulation — EU regulation governing personal data of EU citizens |\n| **CCPA** | California Consumer Privacy Act — state-level data rights for California residents |\n| **ADA** | Americans with Disabilities Act — national law requiring accessibility accommodations |\n| **Due Diligence** | Exhaustive review to identify compliance risks |\n| **Due Care** | Actions taken to mitigate identified risks |\n| **Attestation** | Formal declaration of compliance by responsible party |\n| **Playbook** | Step-by-step incident response or operational guide |\n| **Least Privilege** | Principle limiting user access to only what is needed for their role |\n| **Separation of Duties** | Principle preventing any single person from controlling an entire critical process |"
       }
     ],
     "flashcards": [
@@ -5747,6 +5909,127 @@ const STUDY_DATA = [
         ],
         "list_items": [],
         "raw_content": "* **Definition:** Documenting changes is the process of creating and maintaining clear records of all implemented changes — including version control, updated diagrams, revised policies, and closed change tickets — to ensure accountability and provide a reference for future operations.\n\n> *Documentar un cambio es como llevar la bitácora de un barco: no importa cuánto confíes en tu memoria, el capitán que viene después de ti necesita saber exactamente qué ruta se tomó, qué ocurrió y qué decisiones se tomaron en el camino.*\n\n### Documentation Components\n\n| Component | Purpose |\n| --- | --- |\n| **Version Control** | Tracks and manages changes to documents, software, and files; allows rollback to a previous stable state |\n| **Updated Diagrams** | Network and system diagrams must reflect the new state post-change; outdated diagrams cause misconfigurations |\n| **Revised Policies and Procedures** | If a change reveals gaps or issues, update SOPs to prevent recurrence — continuous improvement |\n| **Updated Change Requests / Trouble Tickets** | Closes the loop; provides a clear timeline, informs stakeholders, and creates a historical audit record |\n\n> ⚠️ **Common mistake:** Believing you'll \"remember\" the changes without writing them down. In enterprise-scale networks spanning multiple continents, undocumented changes directly cause misconfigurations and team misunderstandings.\n\n---"
+      },
+      {
+        "name": "Key Terms",
+        "definition": "Asset Management: Systematic governance of organizational assets across their entire lifecycle",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Asset Management**",
+                "Systematic governance of organizational assets across their entire lifecycle"
+              ],
+              [
+                "**Change Management**",
+                "Structured process to implement system changes in a controlled, approved manner"
+              ],
+              [
+                "**BYOD**",
+                "Bring Your Own Device — employee uses personal device for work"
+              ],
+              [
+                "**COPE**",
+                "Corporate-Owned, Personally Enabled — company device with personal use allowed"
+              ],
+              [
+                "**CYOD**",
+                "Choose Your Own Device — employee selects from a pre-approved company device list"
+              ],
+              [
+                "**MDM**",
+                "Mobile Device Management — centralized platform for managing and securing mobile devices"
+              ],
+              [
+                "**CAB**",
+                "Change Advisory Board — cross-organizational body that evaluates and approves proposed changes"
+              ],
+              [
+                "**Change Owner**",
+                "Individual or team initiating and advocating for a proposed change"
+              ],
+              [
+                "**Stakeholder**",
+                "Any person vested in or affected by a proposed change"
+              ],
+              [
+                "**Impact Analysis**",
+                "Pre-change assessment of potential risks, disruptions, and downstream effects"
+              ],
+              [
+                "**Backout Plan**",
+                "Rollback strategy to restore systems to their previous state if a change fails"
+              ],
+              [
+                "**SOP**",
+                "Standard Operating Procedure — step-by-step instructions for executing a specific task"
+              ],
+              [
+                "**Sanitization**",
+                "Process of making data inaccessible and irretrievable from a storage medium"
+              ],
+              [
+                "**Degaussing**",
+                "Using a magnetic field to destroy data on magnetic storage media"
+              ],
+              [
+                "**Cryptographic Erase (CE)**",
+                "Sanitization by destroying encryption keys rather than the underlying data"
+              ],
+              [
+                "**Certification**",
+                "Documented proof that asset disposal or data destruction was properly completed"
+              ],
+              [
+                "**Data Retention**",
+                "Policy defining how long data must be stored before it can be disposed of"
+              ],
+              [
+                "**Version Control**",
+                "System that tracks and manages changes to files and software over time"
+              ],
+              [
+                "**Enumeration**",
+                "Identifying and counting assets connected to a network using scanners and tools"
+              ],
+              [
+                "**Acquisition**",
+                "The act of obtaining goods or services"
+              ],
+              [
+                "**Procurement**",
+                "The full end-to-end process of sourcing, evaluating, and obtaining goods or services"
+              ],
+              [
+                "**Purchase Order (PO)**",
+                "Formal document authorizing a specific purchase; a legally binding payment promise"
+              ],
+              [
+                "**Legacy Application**",
+                "Older software still in use that is sensitive to change due to limited support and flexibility"
+              ],
+              [
+                "**Dependency**",
+                "A relationship where one system or application relies on another to function correctly"
+              ],
+              [
+                "**Allow List**",
+                "A list specifying which entities are permitted to access a resource"
+              ],
+              [
+                "**Deny List / Block List**",
+                "A list specifying which entities are blocked from accessing a resource"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Definition |\n| --- | --- |\n| **Asset Management** | Systematic governance of organizational assets across their entire lifecycle |\n| **Change Management** | Structured process to implement system changes in a controlled, approved manner |\n| **BYOD** | Bring Your Own Device — employee uses personal device for work |\n| **COPE** | Corporate-Owned, Personally Enabled — company device with personal use allowed |\n| **CYOD** | Choose Your Own Device — employee selects from a pre-approved company device list |\n| **MDM** | Mobile Device Management — centralized platform for managing and securing mobile devices |\n| **CAB** | Change Advisory Board — cross-organizational body that evaluates and approves proposed changes |\n| **Change Owner** | Individual or team initiating and advocating for a proposed change |\n| **Stakeholder** | Any person vested in or affected by a proposed change |\n| **Impact Analysis** | Pre-change assessment of potential risks, disruptions, and downstream effects |\n| **Backout Plan** | Rollback strategy to restore systems to their previous state if a change fails |\n| **SOP** | Standard Operating Procedure — step-by-step instructions for executing a specific task |\n| **Sanitization** | Process of making data inaccessible and irretrievable from a storage medium |\n| **Degaussing** | Using a magnetic field to destroy data on magnetic storage media |\n| **Cryptographic Erase (CE)** | Sanitization by destroying encryption keys rather than the underlying data |\n| **Certification** | Documented proof that asset disposal or data destruction was properly completed |\n| **Data Retention** | Policy defining how long data must be stored before it can be disposed of |\n| **Version Control** | System that tracks and manages changes to files and software over time |\n| **Enumeration** | Identifying and counting assets connected to a network using scanners and tools |\n| **Acquisition** | The act of obtaining goods or services |\n| **Procurement** | The full end-to-end process of sourcing, evaluating, and obtaining goods or services |\n| **Purchase Order (PO)** | Formal document authorizing a specific purchase; a legally binding payment promise |\n| **Legacy Application** | Older software still in use that is sensitive to change due to limited support and flexibility |\n| **Dependency** | A relationship where one system or application relies on another to function correctly |\n| **Allow List** | A list specifying which entities are permitted to access a resource |\n| **Deny List / Block List** | A list specifying which entities are blocked from accessing a resource |"
       }
     ],
     "flashcards": [
@@ -6254,6 +6537,159 @@ const STUDY_DATA = [
         ],
         "list_items": [],
         "raw_content": "* **Definition:** A formal validation or confirmation provided by an entity that asserts the accuracy and authenticity of specific information — in penetration testing, it proves that the test actually occurred and that the findings are valid based on evidence presented.\n\n> *Es la diferencia entre decirle a alguien que eres médico y mostrarle tu título y tu expediente clínico: la atestación es la prueba formal de que lo que dices es real y verificable.*\n\nAttestation may be required when penetration tests are conducted for compliance or regulatory purposes (GLBA, HIPAA, Sarbanes-Oxley, PCI DSS).\n\n### Attestation vs. Penetration Test Report\n\n| | **Penetration Test Report** | **Attestation of Findings** |\n| - | --------------------------- | --------------------------- |\n| **Contains** | Findings + remediation recommendations | Findings + evidence proving the test occurred |\n| **Evidence** | Not necessarily included | Required — logs, data, screenshots, exploit code shown |\n| **Purpose** | Guide the organization to fix issues | Prove to a third party that the assessment was completed |\n| **Evidence left with org?** | Report delivered | Evidence may be shown but not necessarily left behind |\n\n### Letter of Attestation\n\n* **Definition:** A formal document provided by the penetration testing firm to the organization, serving as an official record that the penetration test was completed during a specified period.\n\n> *Es el certificado oficial que te da el taller mecánico después de revisar tu carro: lo puedes mostrar a quien sea para probar que la revisión sí se hizo y qué fue lo que encontraron.*\n\nUsed by organizations to prove to third parties (auditors, regulators) that a security assessment was conducted.\n\n### Additional Attestation Types\n\n| Type | Definition |\n| ---- | ---------- |\n| **Software Attestation** | Validates the integrity of software using cryptographic techniques (e.g., verifying a digital signature on a software update to confirm it hasn't been tampered with) |\n| **Hardware Attestation** | Validates the integrity of hardware components (e.g., a TPM stores hardware/firmware measurements checked at boot time to detect unexpected changes) |\n| **System Attestation** | Validates the security posture of a system (e.g., a cloud provider attests that its services meet ISO 27001 or SOC 2 standards) |\n\n### Attestation in Internal vs. External Audits\n\n| Context | Role of Attestation |\n| ------- | ------------------- |\n| **Internal Audits** | Auditor attests accuracy of financial records, effectiveness of risk management, and adherence to internal policies |\n| **External Audits** | Independent third party attests financial statements, regulatory adherence, and operational efficiency |\n\nAttestation strengthens **trust**, enhances **transparency**, and ensures **accountability** within an organization by providing formal validation that builds confidence among stakeholders.\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "Audit: Systematic evaluation of systems and controls by an independent entity",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Audit**",
+                "Systematic evaluation of systems and controls by an independent entity"
+              ],
+              [
+                "**Assessment**",
+                "In-depth analysis to identify vulnerabilities and risks"
+              ],
+              [
+                "**Internal Audit**",
+                "Evaluation by the organization's own audit team"
+              ],
+              [
+                "**External Audit**",
+                "Evaluation by an independent third party"
+              ],
+              [
+                "**Self-Assessment**",
+                "Organization's internal evaluation against specific standards"
+              ],
+              [
+                "**Audit Committee**",
+                "Board-level group overseeing audit and compliance activities"
+              ],
+              [
+                "**Compliance**",
+                "Adherence to laws, regulations, standards, and internal policies"
+              ],
+              [
+                "**Examination**",
+                "Detailed external inspection including personnel testing and policy review"
+              ],
+              [
+                "**Red Team**",
+                "Offensive penetration testing team simulating real attackers"
+              ],
+              [
+                "**Blue Team**",
+                "Defensive penetration testing team detecting and responding to attacks"
+              ],
+              [
+                "**Purple Team**",
+                "Integrated approach combining Red and Blue Team in one engagement"
+              ],
+              [
+                "**Reconnaissance**",
+                "Information gathering phase before a penetration test"
+              ],
+              [
+                "**Active Reconnaissance**",
+                "Direct engagement with the target to gather information (higher detection risk)"
+              ],
+              [
+                "**Passive Reconnaissance**",
+                "Information gathering without engaging the target (lower detection risk)"
+              ],
+              [
+                "**Known Environment**",
+                "Pen test where testers receive full details about the target infrastructure"
+              ],
+              [
+                "**Partially Known Environment**",
+                "Pen test where testers receive limited information about the target"
+              ],
+              [
+                "**Unknown Environment**",
+                "Pen test where testers receive minimal or no information about the target"
+              ],
+              [
+                "**Metasploit**",
+                "Multipurpose penetration testing framework with exploits, payloads, and post modules"
+              ],
+              [
+                "**Payload**",
+                "Code delivered by an exploit that runs on the target to grant access or control"
+              ],
+              [
+                "**Bind Shell**",
+                "Shell where the target opens a listening port; attacker connects to it"
+              ],
+              [
+                "**Reverse Shell**",
+                "Shell where the target connects back to the attacker's listener"
+              ],
+              [
+                "**Session**",
+                "Active communication channel between Metasploit and a compromised host"
+              ],
+              [
+                "**Attestation**",
+                "Formal validation asserting the accuracy and authenticity of findings"
+              ],
+              [
+                "**Letter of Attestation**",
+                "Official document proving a penetration test was completed"
+              ],
+              [
+                "**Software Attestation**",
+                "Cryptographic validation of software integrity"
+              ],
+              [
+                "**Hardware Attestation**",
+                "Validation of hardware integrity (e.g., via TPM)"
+              ],
+              [
+                "**System Attestation**",
+                "Validation of a system's overall security posture"
+              ],
+              [
+                "**GLBA**",
+                "Gramm-Leach-Bliley Act — financial data privacy regulation"
+              ],
+              [
+                "**HITECH**",
+                "Health Information Technology for Economic and Clinical Health Act"
+              ],
+              [
+                "**TPM**",
+                "Trusted Platform Module — hardware chip for security measurements and attestation"
+              ],
+              [
+                "**EternalBlue**",
+                "MS17-010 vulnerability exploited by WannaCry ransomware, targets SMB"
+              ],
+              [
+                "**Metasploitable 2**",
+                "Intentionally vulnerable Linux VM created by Rapid7 for penetration testing practice"
+              ],
+              [
+                "**MCIT**",
+                "Minnesota Counties Intergovernmental Trust — source of sample internal assessment checklist"
+              ],
+              [
+                "**NOPs**",
+                "No-Operations — CPU instructions that do nothing; used to keep payload sizes consistent"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Definition |\n| ---- | ---------- |\n| **Audit** | Systematic evaluation of systems and controls by an independent entity |\n| **Assessment** | In-depth analysis to identify vulnerabilities and risks |\n| **Internal Audit** | Evaluation by the organization's own audit team |\n| **External Audit** | Evaluation by an independent third party |\n| **Self-Assessment** | Organization's internal evaluation against specific standards |\n| **Audit Committee** | Board-level group overseeing audit and compliance activities |\n| **Compliance** | Adherence to laws, regulations, standards, and internal policies |\n| **Examination** | Detailed external inspection including personnel testing and policy review |\n| **Red Team** | Offensive penetration testing team simulating real attackers |\n| **Blue Team** | Defensive penetration testing team detecting and responding to attacks |\n| **Purple Team** | Integrated approach combining Red and Blue Team in one engagement |\n| **Reconnaissance** | Information gathering phase before a penetration test |\n| **Active Reconnaissance** | Direct engagement with the target to gather information (higher detection risk) |\n| **Passive Reconnaissance** | Information gathering without engaging the target (lower detection risk) |\n| **Known Environment** | Pen test where testers receive full details about the target infrastructure |\n| **Partially Known Environment** | Pen test where testers receive limited information about the target |\n| **Unknown Environment** | Pen test where testers receive minimal or no information about the target |\n| **Metasploit** | Multipurpose penetration testing framework with exploits, payloads, and post modules |\n| **Payload** | Code delivered by an exploit that runs on the target to grant access or control |\n| **Bind Shell** | Shell where the target opens a listening port; attacker connects to it |\n| **Reverse Shell** | Shell where the target connects back to the attacker's listener |\n| **Session** | Active communication channel between Metasploit and a compromised host |\n| **Attestation** | Formal validation asserting the accuracy and authenticity of findings |\n| **Letter of Attestation** | Official document proving a penetration test was completed |\n| **Software Attestation** | Cryptographic validation of software integrity |\n| **Hardware Attestation** | Validation of hardware integrity (e.g., via TPM) |\n| **System Attestation** | Validation of a system's overall security posture |\n| **GLBA** | Gramm-Leach-Bliley Act — financial data privacy regulation |\n| **HITECH** | Health Information Technology for Economic and Clinical Health Act |\n| **TPM** | Trusted Platform Module — hardware chip for security measurements and attestation |\n| **EternalBlue** | MS17-010 vulnerability exploited by WannaCry ransomware, targets SMB |\n| **Metasploitable 2** | Intentionally vulnerable Linux VM created by Rapid7 for penetration testing practice |\n| **MCIT** | Minnesota Counties Intergovernmental Trust — source of sample internal assessment checklist |\n| **NOPs** | No-Operations — CPU instructions that do nothing; used to keep payload sizes consistent |"
       }
     ],
     "flashcards": [
@@ -6817,6 +7253,59 @@ const STUDY_DATA = [
           "Used in resilience testing (handling multiple simultaneous failures: outages, hardware failures, data corruption) and recovery testing (evaluating efficient recovery from multiple failure points)."
         ],
         "raw_content": "* **Definition:** Resilience testing assesses a system's ability to withstand and adapt to disruptive events; recovery testing evaluates a system's capacity to restore normal operations after a disruptive event — together they act as a \"fire drill\" for the organization.\n\n> *Es como los simulacros de incendio en una oficina: no esperas a que ocurra un incendio real para descubrir si la gente sabe cómo salir.*\n\n### Tabletop Exercise\n\n* **Definition:** A simulated, scenario-based discussion among key stakeholders to assess and improve preparedness/response to a specific emergency, without deploying actual resources.\n\n> *Es como un juego de mesa de \"qué harías si...\": un facilitador presenta una crisis ficticia (el \"inject\") y cada participante explica cómo respondería su equipo.*\n\n- Low-cost, highly engaging; helps stakeholders identify gaps/seams in their plans, which then get folded into SOPs and incident-response playbooks.\n- Also functions as a **team-building** exercise.\n\n### Failover Test\n\n* **Definition:** A controlled experiment verifying the seamless transition of a system/application from a primary component to a backup/secondary component during a failure.\n\n> *Es como ensayar mudarte de tu casa principal a la de respaldo, de verdad, para confirmar que la llave sí abre la puerta y que todo encaja.*\n\n- More resource-, time-, and energy-intensive than a tabletop exercise, since real cutover actions are taken (e.g., East Coast → West Coast data center).\n- A **rollback plan** should exist in case the failover doesn't work as expected.\n- Best practice: test at least **once per year**.\n\n### Simulation\n\n* **Definition:** A computer-generated or artificial representation of a real-world system/scenario used to mimic conditions, interactions, or failures and assess/refine system or team response.\n\n> *Es como un campo de entrenamiento de paintball para defensores y atacantes: todo es virtual, pero las reacciones y decisiones son reales.*\n\n- Example: spinning up a virtualized corporate network in the cloud where a **red team** attacks and a **blue team** defends in real time, with post-exercise feedback for both sides.\n- Unlike a tabletop (paper scenario), participants actually perform response actions inside a virtualized environment — tests both the plan **and** the people.\n\n### Parallel Processing\n\n* **Definition:** Replicating data and system processes onto a secondary system, then running both primary and secondary systems simultaneously to verify the secondary's reliability and stability without disrupting day-to-day operations.\n\n> *Es como tener un piloto y un copiloto manejando el mismo avión en simuladores idénticos al mismo tiempo, para comprobar que ambos pueden llevarlo a salvo si uno falla.*\n\n- Requires meticulous planning and execution to ensure **zero disruption** to ongoing operations.\n- Used in resilience testing (handling multiple simultaneous failures: outages, hardware failures, data corruption) and recovery testing (evaluating efficient recovery from multiple failure points).\n\n> ⚠️ Resilience/recovery testing must be **routine, not one-time** — plans should be regularly tested, adapted, and improved as the threat landscape and vulnerabilities evolve. Organizational resilience is an ongoing journey, not a checkbox.\n\n---"
+      },
+      {
+        "name": "Key Terms",
+        "definition": "HA: High Availability",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**HA**",
+                "High Availability"
+              ],
+              [
+                "**RAID**",
+                "Redundant Array of Independent Disks"
+              ],
+              [
+                "**RPO**",
+                "Recovery Point Objective — max acceptable data loss, measured in time"
+              ],
+              [
+                "**PDC**",
+                "Power Distribution Center"
+              ],
+              [
+                "**UPS**",
+                "Uninterruptible Power Supply"
+              ],
+              [
+                "**BCP**",
+                "Business Continuity Plan"
+              ],
+              [
+                "**DRP**",
+                "Disaster Recovery Plan"
+              ],
+              [
+                "**COOP**",
+                "Continuity of Operations Plan"
+              ],
+              [
+                "**DJC2**",
+                "Deployable Joint Command and Control (US military mobile site system)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Meaning |\n| --- | --- |\n| **HA** | High Availability |\n| **RAID** | Redundant Array of Independent Disks |\n| **RPO** | Recovery Point Objective — max acceptable data loss, measured in time |\n| **PDC** | Power Distribution Center |\n| **UPS** | Uninterruptible Power Supply |\n| **BCP** | Business Continuity Plan |\n| **DRP** | Disaster Recovery Plan |\n| **COOP** | Continuity of Operations Plan |\n| **DJC2** | Deployable Joint Command and Control (US military mobile site system) |\n\n---"
       }
     ],
     "flashcards": [
@@ -7609,6 +8098,59 @@ const STUDY_DATA = [
           "Mitigation: **over-the-air (OTA) updates** — patches delivered and installed remotely, requiring careful planning and robust security to avoid introducing new vulnerabilities during the update."
         ],
         "raw_content": "* **Definition:** A specialized computing component designed to perform one or two dedicated functions within a larger mechanical or electrical device, integrating both hardware and (often) mechanical elements.\n\n> *Es como un empleado ultra-especializado que solo sabe hacer una tarea a la perfección (por ejemplo, solo controlar el airbag de un carro), a diferencia de una computadora normal que es como un empleado generalista que puede hacer de todo un poco.*\n\n### Examples\n\n- Consumer electronics: smartphones, digital cameras, washing machines, microwaves\n- Automotive: engine control, anti-lock braking systems, airbag deployment\n- Healthcare: pacemakers, insulin pumps, imaging systems\n- Industrial: automation, process control, robotics\n\n### Real-Time Operating System (RTOS)\n\n* **Definition:** An operating system designed for real-time applications, processing data as it arrives — typically without buffering delays — ensuring timely, predictable execution for time-sensitive applications (e.g., flight navigation, medical equipment).\n\n> *Un RTOS es como un mesero de restaurante de comida rápida que debe atender cada orden en el momento exacto en que llega, sin acumular pedidos en una fila de espera — la rapidez y el tiempo de respuesta son críticos.*\n\n### Embedded System Risks\n\n| Risk | Description |\n| --- | --- |\n| **Hardware Failure** | Embedded systems often operate in harsh environments, prone to physical failure |\n| **Software Bugs** | Can cause malfunctions and safety risks |\n| **Security Vulnerabilities** | Can be targeted by attackers for unauthorized access or disruption |\n| **Outdated Systems** | Long operational lifespans lead to outdated, more vulnerable software/hardware |\n\n### Securing Embedded Systems\n\n#### Network Segmentation\n* **Definition:** Dividing a network into multiple segments/subnets so a breach in one segment doesn't automatically grant access to others.\n\n#### Wrappers\n* **Definition:** Protective measures (e.g., IPsec) applied to data in transit so that an interceptor can only see the wrapper's header (entry/exit points), not the actual data — useful when data crosses an unsecured network.\n\n#### Firmware Code Control\n* **Definition:** Managing and controlling the low-level software that operates device hardware, using secure coding practices, code reviews, automated testing, secure boot mechanisms, and cryptographic signatures to ensure only authorized firmware runs.\n\n#### Inability to Patch\n* **Definition:** A major embedded-system challenge where downtime is unacceptable, devices are physically hard to reach, or systems were never designed with update mechanisms in mind.\n* Mitigation: **over-the-air (OTA) updates** — patches delivered and installed remotely, requiring careful planning and robust security to avoid introducing new vulnerabilities during the update.\n\n> *Asegurar un sistema embebido es como blindar un reloj suizo que nunca se puede abrir fácilmente: divides sus engranajes en compartimentos (segmentación), envuelves sus piezas sensibles (wrappers), controlas quién fabrica sus repuestos internos (firmware), y buscas formas de darle mantenimiento sin tener que desarmarlo por completo (actualizaciones remotas).*\n\n---"
+      },
+      {
+        "name": "Key Terms",
+        "definition": "Hypervisor: Software that manages distribution of physical server resources among virtual machines",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Hypervisor**",
+                "Software that manages distribution of physical server resources among virtual machines"
+              ],
+              [
+                "**VM Escape**",
+                "An attack where a process breaks out of VM isolation to access the hypervisor"
+              ],
+              [
+                "**Snowflake System**",
+                "A uniquely configured system inconsistent with standardized builds, introducing risk"
+              ],
+              [
+                "**Idempotence**",
+                "Property where repeated execution of an operation always yields the same result"
+              ],
+              [
+                "**Air Gap**",
+                "Physical isolation of a system from all other networks"
+              ],
+              [
+                "**Screened Subnet**",
+                "A logically separated subnetwork hosting external-facing services, isolated from the internal network"
+              ],
+              [
+                "**RTOS**",
+                "Real-Time Operating System — processes data as it arrives with predictable, minimal delay"
+              ],
+              [
+                "**OTA Update**",
+                "Over-the-Air update — remote delivery and installation of patches"
+              ],
+              [
+                "**FaaS**",
+                "Function as a Service — the operating model underlying serverless computing"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Definition |\n| --- | --- |\n| **Hypervisor** | Software that manages distribution of physical server resources among virtual machines |\n| **VM Escape** | An attack where a process breaks out of VM isolation to access the hypervisor |\n| **Snowflake System** | A uniquely configured system inconsistent with standardized builds, introducing risk |\n| **Idempotence** | Property where repeated execution of an operation always yields the same result |\n| **Air Gap** | Physical isolation of a system from all other networks |\n| **Screened Subnet** | A logically separated subnetwork hosting external-facing services, isolated from the internal network |\n| **RTOS** | Real-Time Operating System — processes data as it arrives with predictable, minimal delay |\n| **OTA Update** | Over-the-Air update — remote delivery and installation of patches |\n| **FaaS** | Function as a Service — the operating model underlying serverless computing |\n\n---"
       }
     ],
     "flashcards": [
@@ -9450,7 +9992,220 @@ const STUDY_DATA = [
           "Use **groups** to manage permissions at scale rather than assigning to individual users",
           "Regularly **audit** permissions to remove unnecessary access"
         ],
-        "raw_content": "* **Definition:** Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.\n\nThe **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices.\n\n> *El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*\n\n### Permission Assignment Best Practices\n\n- Set permissions at the **folder level** where possible — they propagate to all files within the folder\n- Always apply **least privilege** when assigning file and folder permissions\n- Use **groups** to manage permissions at scale rather than assigning to individual users\n- Regularly **audit** permissions to remove unnecessary access\n\n---"
+        "raw_content": "* **Definition:** Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.\n\nThe **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices. **User Account Control (UAC)** is a mechanism designed to ensure that actions requiring administrative rights are explicitly authorized by the user\n\n> *El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*\n\n### Permission Assignment Best Practices\n\n- Set permissions at the **folder level** where possible — they propagate to all files within the folder\n- Always apply **least privilege** when assigning file and folder permissions\n- Use **groups** to manage permissions at scale rather than assigning to individual users\n- Regularly **audit** permissions to remove unnecessary access\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "IAM: Identity and Access Management — framework managing who has access to what and when",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**IAM**",
+                "Identity and Access Management — framework managing who has access to what and when"
+              ],
+              [
+                "**Identification**",
+                "Claiming an identity (username/email)"
+              ],
+              [
+                "**Authentication**",
+                "Proving the claimed identity"
+              ],
+              [
+                "**Authorization**",
+                "Determining what an authenticated user can access"
+              ],
+              [
+                "**Accounting / Auditing**",
+                "Tracking and recording user activities"
+              ],
+              [
+                "**Provisioning**",
+                "Creating and configuring user accounts and permissions"
+              ],
+              [
+                "**Deprovisioning**",
+                "Removing user access when no longer needed"
+              ],
+              [
+                "**Identity Proofing**",
+                "Verifying identity before account creation"
+              ],
+              [
+                "**Interoperability**",
+                "Ability of different systems to share identity information using standards"
+              ],
+              [
+                "**Attestation**",
+                "Periodic review to validate accounts and permissions are current"
+              ],
+              [
+                "**MFA**",
+                "Multifactor Authentication — using 2+ independent authentication factors"
+              ],
+              [
+                "**Knowledge Factor**",
+                "Something you know (password, PIN)"
+              ],
+              [
+                "**Possession Factor**",
+                "Something you have (smart card, hardware token, OTP)"
+              ],
+              [
+                "**Inherence Factor**",
+                "Something you are (biometrics: fingerprint, face, iris)"
+              ],
+              [
+                "**Behavior Factor**",
+                "Something you do (keystroke dynamics, mouse patterns)"
+              ],
+              [
+                "**Location Factor**",
+                "Somewhere you are (GPS, IP geolocation)"
+              ],
+              [
+                "**Smart Card**",
+                "Credit-card-sized device with embedded IC for high-security authentication"
+              ],
+              [
+                "**Hardware Token**",
+                "Physical key fob generating a time-based OTP every 30–60 seconds"
+              ],
+              [
+                "**Software Token**",
+                "Authenticator app (Google/Microsoft Authenticator) generating TOTP"
+              ],
+              [
+                "**OTP**",
+                "One-Time Password — valid for a single use and short time window"
+              ],
+              [
+                "**Passkey**",
+                "Passwordless credential using public key cryptography tied to device lock screen"
+              ],
+              [
+                "**Leet Speak**",
+                "Text substituting letters for numbers/symbols (e.g., `p@$$w0rd`)"
+              ],
+              [
+                "**Password Spraying**",
+                "Trying few common passwords against many accounts to avoid lockout"
+              ],
+              [
+                "**Brute Force Attack**",
+                "Trying every possible password combination"
+              ],
+              [
+                "**Dictionary Attack**",
+                "Using a wordlist of common passwords and variants"
+              ],
+              [
+                "**Hybrid Attack**",
+                "Combining dictionary words with brute-forced appended characters"
+              ],
+              [
+                "**SSO**",
+                "Single Sign-On — one login credential for multiple systems"
+              ],
+              [
+                "**IdP**",
+                "Identity Provider — system that manages and verifies user identities"
+              ],
+              [
+                "**LDAP**",
+                "Lightweight Directory Access Protocol — directory service for user info and SSO"
+              ],
+              [
+                "**LDAPS**",
+                "LDAP over SSL/TLS — encrypted version of LDAP"
+              ],
+              [
+                "**OAuth**",
+                "Open Authorization — token-based standard allowing third-party access without exposing passwords"
+              ],
+              [
+                "**JWT**",
+                "JSON Web Token — used by OAuth to transfer claims in Base64-encoded signed format"
+              ],
+              [
+                "**SAML**",
+                "Security Assertion Markup Language — XML standard for SSO across organizations"
+              ],
+              [
+                "**Federation**",
+                "Trusted relationship allowing cross-organization identity sharing"
+              ],
+              [
+                "**OpenID Connect**",
+                "Authentication layer built on OAuth 2.0, used in federated identity"
+              ],
+              [
+                "**PAM**",
+                "Privileged Access Management — controls managing privileged account access"
+              ],
+              [
+                "**JIT Permissions**",
+                "Just-In-Time — admin access granted only for a specific task and time"
+              ],
+              [
+                "**Password Vaulting**",
+                "Encrypted storage of privileged credentials with access logging"
+              ],
+              [
+                "**Temporal Account**",
+                "Time-limited account auto-disabled after a project or period ends"
+              ],
+              [
+                "**MAC**",
+                "Mandatory Access Control — label-based, centrally controlled access"
+              ],
+              [
+                "**DAC**",
+                "Discretionary Access Control — owner-controlled access"
+              ],
+              [
+                "**RBAC (Role)**",
+                "Role-Based Access Control — permissions tied to job roles/groups"
+              ],
+              [
+                "**RBAC (Rule)**",
+                "Rule-Based Access Control — administrator-defined rules applied system-wide"
+              ],
+              [
+                "**ABAC**",
+                "Attribute-Based Access Control — context-aware, multi-attribute decisions"
+              ],
+              [
+                "**Permission Creep**",
+                "Gradual accumulation of excessive access rights as a user changes roles"
+              ],
+              [
+                "**Least Privilege**",
+                "Granting only the minimum access needed for job functions"
+              ],
+              [
+                "**UAC**",
+                "User Account Control — Windows mechanism requiring explicit approval for admin actions"
+              ],
+              [
+                "**Magic Link**",
+                "Single-use login link sent to email, valid for a short time"
+              ],
+              [
+                "**2FA**",
+                "Two-Factor Authentication — a specific form of MFA using exactly two factors"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Definition |\n| --- | --- |\n| **IAM** | Identity and Access Management — framework managing who has access to what and when |\n| **Identification** | Claiming an identity (username/email) |\n| **Authentication** | Proving the claimed identity |\n| **Authorization** | Determining what an authenticated user can access |\n| **Accounting / Auditing** | Tracking and recording user activities |\n| **Provisioning** | Creating and configuring user accounts and permissions |\n| **Deprovisioning** | Removing user access when no longer needed |\n| **Identity Proofing** | Verifying identity before account creation |\n| **Interoperability** | Ability of different systems to share identity information using standards |\n| **Attestation** | Periodic review to validate accounts and permissions are current |\n| **MFA** | Multifactor Authentication — using 2+ independent authentication factors |\n| **Knowledge Factor** | Something you know (password, PIN) |\n| **Possession Factor** | Something you have (smart card, hardware token, OTP) |\n| **Inherence Factor** | Something you are (biometrics: fingerprint, face, iris) |\n| **Behavior Factor** | Something you do (keystroke dynamics, mouse patterns) |\n| **Location Factor** | Somewhere you are (GPS, IP geolocation) |\n| **Smart Card** | Credit-card-sized device with embedded IC for high-security authentication |\n| **Hardware Token** | Physical key fob generating a time-based OTP every 30–60 seconds |\n| **Software Token** | Authenticator app (Google/Microsoft Authenticator) generating TOTP |\n| **OTP** | One-Time Password — valid for a single use and short time window |\n| **Passkey** | Passwordless credential using public key cryptography tied to device lock screen |\n| **Leet Speak** | Text substituting letters for numbers/symbols (e.g., `p@$$w0rd`) |\n| **Password Spraying** | Trying few common passwords against many accounts to avoid lockout |\n| **Brute Force Attack** | Trying every possible password combination |\n| **Dictionary Attack** | Using a wordlist of common passwords and variants |\n| **Hybrid Attack** | Combining dictionary words with brute-forced appended characters |\n| **SSO** | Single Sign-On — one login credential for multiple systems |\n| **IdP** | Identity Provider — system that manages and verifies user identities |\n| **LDAP** | Lightweight Directory Access Protocol — directory service for user info and SSO |\n| **LDAPS** | LDAP over SSL/TLS — encrypted version of LDAP |\n| **OAuth** | Open Authorization — token-based standard allowing third-party access without exposing passwords |\n| **JWT** | JSON Web Token — used by OAuth to transfer claims in Base64-encoded signed format |\n| **SAML** | Security Assertion Markup Language — XML standard for SSO across organizations |\n| **Federation** | Trusted relationship allowing cross-organization identity sharing |\n| **OpenID Connect** | Authentication layer built on OAuth 2.0, used in federated identity |\n| **PAM** | Privileged Access Management — controls managing privileged account access |\n| **JIT Permissions** | Just-In-Time — admin access granted only for a specific task and time |\n| **Password Vaulting** | Encrypted storage of privileged credentials with access logging |\n| **Temporal Account** | Time-limited account auto-disabled after a project or period ends |\n| **MAC** | Mandatory Access Control — label-based, centrally controlled access |\n| **DAC** | Discretionary Access Control — owner-controlled access |\n| **RBAC (Role)** | Role-Based Access Control — permissions tied to job roles/groups |\n| **RBAC (Rule)** | Rule-Based Access Control — administrator-defined rules applied system-wide |\n| **ABAC** | Attribute-Based Access Control — context-aware, multi-attribute decisions |\n| **Permission Creep** | Gradual accumulation of excessive access rights as a user changes roles |\n| **Least Privilege** | Granting only the minimum access needed for job functions |\n| **UAC** | User Account Control — Windows mechanism requiring explicit approval for admin actions |\n| **Magic Link** | Single-use login link sent to email, valid for a short time |\n| **2FA** | Two-Factor Authentication — a specific form of MFA using exactly two factors |"
       }
     ],
     "flashcards": [
@@ -9710,7 +10465,7 @@ const STUDY_DATA = [
         "name": "Assigning Permissions — User Account Types",
         "definition": "Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.",
         "analogy": "*El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*",
-        "raw_content": "* **Definition:** Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.\n\nThe **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices.\n\n> *El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*"
+        "raw_content": "* **Definition:** Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.\n\nThe **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices. **User Account Control (UAC)** is a mechanism designed to ensure that actions requiring administrative rights are explicitly authorized by the user\n\n> *El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*"
       }
     ]
   }

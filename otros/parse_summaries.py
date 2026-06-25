@@ -126,7 +126,9 @@ def parse_file(filepath):
     concepts = []
     flashcards = []
     skip = ["Study Summary", "Section", "Table of Contents",
-            "Quick Reference", "Cheatsheet", "My Notes", "Key Terms", "Glossary"]
+            "Quick Reference", "Cheatsheet", "My Notes"]
+    
+    no_flashcard = ["Key Terms", "Glossary"]
 
     for block in blocks:
         name = block["name"]
@@ -155,7 +157,7 @@ def parse_file(filepath):
                 break
 
         is_concept = (block["level"] == 2)
-        is_flashcard = is_concept or has_explicit_def
+        is_flashcard = (is_concept or has_explicit_def) and not any(t in name for t in no_flashcard)
 
         if is_flashcard:
             flashcards.append({
