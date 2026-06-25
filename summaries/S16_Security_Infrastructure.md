@@ -1,592 +1,483 @@
-# 🛡️ CompTIA Security+ — Dion Training
+# 🛡️ CompTIA Security+ — SY0-701 (Dion Training)
 
 ## Section 16: Security Infrastructure | Study Summary
 
-> **Keywords:** Ports · Protocols · Firewalls · IDS · IPS · VPN · IPSec · SD-WAN · SASE · 802.1x · EAP · Network Appliances · Port Security · Infrastructure Controls
+> **Keywords:** Ports · Protocols · Firewalls · ACL · IDS · IPS · Network Appliances · Port Security · 802.1x · EAP · VPN · IPSec · TLS · SD-WAN · SASE · Infrastructure Controls
 
 ---
 
-## 1. Ports and Protocols
+## 1. Security Infrastructure Overview
 
-* **Definition:** A **port** is a logical communication endpoint on a computer or server identified by a number (0–65,535) that is paired with a **protocol** — a defined set of rules governing how data is exchanged between devices.
+* **Definition:** The cohesive combination of hardware, software, networks, data, and policies working together to safeguard an organization's information and assets.
 
-> *Un puerto es como la ventanilla de un banco: cada ventanilla (número de puerto) atiende un servicio específico (protocolo), y el cliente sabe exactamente a cuál formarse dependiendo de lo que necesite.*
+Security infrastructure encompasses every layer of a network from the physical devices to the policies that govern their use. Ensuring a robust and secure infrastructure is vital to thwart potential cyber threats and keep organizational data uncompromised. This section covers **Domains 3 and 4**, specifically **Objectives 3.2** (apply security principles to secure enterprise architecture) and **4.5** (modify enterprise capabilities to enhance security).
 
-### Port Classifications
+> *Es como la infraestructura de un edificio: no solo los muros y las puertas, sino también las cámaras, las llaves, los guardias y los reglamentos internos. Todos trabajan juntos para que el edificio sea seguro.*
 
-| Type | Description |
-| --- | --- |
-| **Inbound port** | The server is listening and waiting for a connection |
-| **Outbound port** | Opened by the client to initiate a connection; uses a random high-number port |
+---
 
-### Port Number Ranges
+## 2. Ports and Protocols
 
-| Range | Name | Description |
+* **Definition:** A port is a logical communication endpoint on a computer or server that allows inbound or outbound network traffic; a protocol is the defined set of rules and conventions governing that communication.
+
+Ports are classified as **inbound** (the device is listening for a connection) or **outbound** (the device opens a temporary port to initiate a connection). Port numbers range from 0 to 65,535 and are divided into three groups:
+
+| Group | Range | Description |
 | --- | --- | --- |
-| **0–1023** | Well-Known Ports | Assigned by IANA to standard protocols (HTTP, SSH, DNS, etc.) |
-| **1024–49,151** | Registered Ports | Vendors register these for proprietary protocols (e.g., RDP on 3389, MS SQL on 1433) |
-| **49,152–65,535** | Dynamic / Private Ports | Temporarily assigned by clients for outbound connections; no registration required |
+| **Well-Known Ports** | 0 – 1,023 | Designated by IANA for commonly used protocols (e.g., HTTP port 80) |
+| **Registered Ports** | 1,024 – 49,151 | Used by vendors for proprietary protocols; must be registered with IANA |
+| **Dynamic / Private Ports** | 49,152 – 65,535 | Used by clients for temporary outbound connections; no registration required |
 
-### Critical Ports to Memorize
+> *Los puertos son como las puertas numeradas de un edificio de apartamentos: cada puerta lleva a un servicio específico. Algunos números todos los conocen (puerta 80 = recepción web), otros los reservan empresas, y otros los usan los visitantes temporalmente al entrar.*
 
-| Port | Protocol | Transport | Description |
+### Key Ports Reference Table
+
+| Port(s) | Protocol | Transport | Description |
 | --- | --- | --- | --- |
-| **21** | FTP | TCP | File Transfer Protocol |
-| **22** | SSH / SCP / SFTP | TCP | Secure remote access, secure copy, secure file transfer |
-| **23** | Telnet | TCP | Unencrypted remote access (legacy, insecure) |
-| **25** | SMTP | TCP | Sending email |
-| **53** | DNS | TCP/UDP | Domain name resolution |
-| **69** | TFTP | UDP | Trivial File Transfer (used with network boot OS) |
-| **80** | HTTP | TCP | Unencrypted web traffic |
-| **88** | Kerberos | UDP | Network authentication protocol |
-| **110** | POP3 | TCP | Retrieving email from server |
-| **119** | NNTP | TCP | Accessing newsgroups |
-| **135** | RPC | TCP/UDP | Remote Procedure Call (Windows IPC) |
-| **137–139** | NetBIOS | UDP/TCP | Windows name resolution, file and printer sharing |
-| **143** | IMAP | TCP | Accessing email on server |
-| **161** | SNMP | UDP | Network device management |
-| **162** | SNMP Traps | UDP | SNMP alert messages |
-| **389** | LDAP | TCP | Directory services |
-| **443** | HTTPS | TCP | Encrypted web traffic (TLS) |
-| **445** | SMB | TCP | Windows file and printer sharing |
-| **465 / 587** | SMTPS | TCP | Secure email sending (SSL/TLS) |
-| **514** | Syslog | UDP | Log message forwarding |
-| **636** | LDAPS | TCP | Encrypted LDAP (SSL/TLS) |
-| **993** | IMAPS | TCP | Secure IMAP email retrieval |
-| **995** | POP3S | TCP | Secure POP3 email retrieval |
-| **1433** | Microsoft SQL | TCP | MS SQL Server communication |
-| **1645 / 1646** | RADIUS (TCP) | TCP | Remote authentication, authorization, accounting |
-| **1812 / 1813** | RADIUS (UDP) | UDP | RADIUS over UDP |
-| **3389** | RDP | TCP | Remote Desktop Protocol |
-| **6514** | Syslog TLS | TCP | Encrypted syslog |
+| 21 | FTP | TCP | File Transfer Protocol — file transfer between hosts |
+| 22 | SSH / SCP / SFTP | TCP | Secure remote access, secure copy, and secure file transfer |
+| 23 | Telnet | TCP | Unencrypted remote access (legacy, insecure) |
+| 25 | SMTP | TCP | Sending email |
+| 53 | DNS | TCP / UDP | Translates domain names to IP addresses |
+| 69 | TFTP | UDP | Trivial file transfer; used with network-based OS |
+| 80 | HTTP | TCP | Unencrypted web traffic |
+| 88 | Kerberos | UDP | Network authentication protocol |
+| 110 | POP3 | TCP | Retrieve email from server |
+| 119 | NNTP | TCP | Access to newsgroups |
+| 135 | RPC | TCP / UDP | Communication between system processes (Windows file sharing) |
+| 137–139 | NetBIOS | UDP / TCP | Windows local network naming, file, and printer sharing |
+| 143 | IMAP | TCP | Access email messages on a server |
+| 161 | SNMP | UDP | Manage network devices |
+| 162 | SNMP Traps | UDP | Receive SNMP trap alert messages |
+| 389 | LDAP | TCP | Directory services |
+| 443 | HTTPS | TCP | Encrypted web browsing (TLS) |
+| 445 | SMB | TCP | File and printer sharing over a network |
+| 465 / 587 | SMTPS | TCP | Secure email sending (SSL/TLS) |
+| 514 | Syslog | UDP | Send log messages |
+| 636 | LDAPS | TCP | Encrypted LDAP (SSL/TLS) |
+| 993 | IMAPS | TCP | Secure IMAP (SSL/TLS) |
+| 995 | POP3S | TCP | Secure POP3 (SSL/TLS) |
+| 1433 | Microsoft SQL | TCP | SQL Server communications |
+| 1645 / 1646 | RADIUS | TCP | Remote authentication, authorization, accounting |
+| 1812 / 1813 | RADIUS | UDP | Remote authentication, authorization, accounting (UDP version) |
+| 3389 | RDP | TCP | Remote Desktop Protocol |
+| 6514 | Syslog TLS | TCP | Encrypted Syslog |
+
+⚠️ **Exam Tip:** You will not be asked directly "what port does SSH use?" but you *will* see scenario questions where knowing ports is required — e.g., why a firewall is blocking a connection or which port to open/close.
 
 ---
 
-## 2. Firewalls
+## 3. Firewalls
 
-* **Definition:** A **firewall** is a network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules, protecting a network from unauthorized access and threats.
+* **Definition:** A network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules to protect a network from unauthorized access and threats.
 
-> *Un firewall es como el guardia de seguridad en la entrada de un edificio corporativo: revisa a cada visitante según una lista de reglas y decide quién puede entrar y quién no.*
+Firewalls can be **hardware appliances** or **software** installed on a client or server. Their primary role is to inspect and control traffic at a network boundary. Placing a firewall at a segment boundary creates a **Screened Subnet** (formerly called a DMZ), acting as a protective buffer between untrusted external networks and trusted internal ones.
 
-### Screened Subnet (formerly DMZ)
+> *Un firewall es como el portero de un edificio de oficinas: revisa a cada visitante antes de dejarlo entrar, y solo permite pasar a quienes tienen una razón legítima.*
 
-A **screened subnet** (also called **dual-homed host**) is a buffer zone between an external untrusted network and the internal trusted network. It hosts public-facing services (web servers, email, DNS) and prevents a breach in that zone from directly reaching the core internal network.
+### Types of Firewalls
 
-⚠️ The term **DMZ** may still appear in device configuration menus, but the Security+ exam uses **screened subnet**.
-
-### Firewall Types — Comparison
-
-| Type | OSI Layer | Inspection Depth | Notes |
+| Firewall Type | OSI Layer | How it works | Trade-off |
 | --- | --- | --- | --- |
-| **Packet Filtering** | Layer 4 | Headers only (IP + port) | Fast, minimal; cannot prevent IP spoofing or TCP attacks |
-| **Stateful** | Layer 4 | Headers + connection state | Tracks session state; allows return traffic automatically |
-| **Circuit-Level Proxy** | Layer 5 | Session layer (e.g., SOCKS) | Validates handshake; does not inspect payload content |
-| **Application-Level Proxy** | Layer 7 | Full deep packet inspection | Inspects payload per application; slower but most thorough |
-| **Kernel Proxy (5th Gen)** | All layers | Full stack | Minimal performance impact; inspects every layer |
+| **Packet Filtering** | Layer 4 | Inspects only the packet header (IP + port); similar to a router ACL | Fast but cannot prevent IP spoofing or fragmentation attacks |
+| **Stateful** | Layer 4–5 | Tracks connection state; remembers outbound requests to validate return traffic | More secure than packet filtering; slight performance impact |
+| **Circuit-Level Proxy** (SOCKS) | Layer 5 | Proxies at the session layer without inspecting payload content | Limited inspection depth |
+| **Application-Level Proxy** | Layer 7 | Deep packet inspection per application type (HTTP vs FTP handled differently) | High security but slower; best placed close to the application server |
+| **Kernel Proxy** | All layers | Full inspection at every layer with minimal performance impact | Complex; should be placed close to protected system |
 
-### Advanced Firewall Solutions
+### Advanced / Modern Firewall Types
 
-#### Next-Generation Firewall (NGFW)
-* **Definition:** An advanced firewall that combines traditional stateful inspection with application awareness, intrusion prevention signatures, and deep packet inspection in a single, efficient engine.
-
-- Application-aware: distinguishes traffic by specific application, not just port
-- Inline deployment; supports custom signatures
-- Fast; full-stack visibility
-- ⚠️ Can create vendor lock-in; more complex to manage than basic firewalls
-
-#### Unified Threat Management (UTM)
-* **Definition:** A single network appliance that integrates multiple security functions including firewall, IPS, antivirus, antispam, VPN, content filtering, and DLP into one platform.
-
-- Reduces device count and maintenance overhead
-- ⚠️ Single point of failure — if it fails, the entire security stack fails
-- Less efficient per function than specialized single-purpose devices
-- Best placed inline between LAN and Internet (gateway position)
-
-#### Web Application Firewall (WAF)
-* **Definition:** A specialized firewall focused on inspecting HTTP/HTTPS traffic to protect web applications from attacks such as cross-site scripting (XSS) and SQL injection using defined rule sets.
-
-- Can be deployed as an appliance or software plugin
-- **Inline:** Can block live attacks but may slow traffic and generate false positives
-- **Out-of-band:** Receives mirrored traffic via SPAN port; detects but cannot block in real time
-
-### Layer 4 vs. Layer 7 Firewalls
-
-| Attribute | Layer 4 Firewall | Layer 7 Firewall |
+| Type | Acronym | Key Characteristics |
 | --- | --- | --- |
-| Also known as | Packet-filtering / stateful | Application proxy |
-| Inspects | Port numbers and protocols | Payload content and application behavior |
-| Performance | Faster | Slower due to deep inspection |
-| Security depth | Lower | Higher |
+| **Next-Generation Firewall** | NGFW | Application-aware, signature-based IPS inline, deep packet inspection, full-stack visibility, fast; may create vendor lock-in |
+| **Unified Threat Management** | UTM | Single appliance combining firewall, AV, IPS, VPN, content filtering, DLP; lower cost but single point of failure |
+| **Web Application Firewall** | WAF | Inspects HTTP/HTTPS traffic; prevents XSS and SQL injection; can be inline (blocks live attacks) or out-of-band (detect-only, like IDS) |
+
+⚠️ **Key distinction:** NGFW uses a single efficient engine per function; UTM uses separate engines per function — NGFW wins on performance. UTM wins on cost and simplicity.
 
 ---
 
-## 3. Firewall Configuration and ACLs
+## 4. Configuring Firewalls — ACLs
 
-* **Definition:** An **Access Control List (ACL)** is a rule set placed on a firewall, router, or network device that **permits or denies traffic** through an interface based on source, destination, protocol, and port.
+* **Definition:** An Access Control List (ACL) is a rule set placed on a firewall, router, or network device that permits or denies traffic through an interface based on defined criteria.
 
-> *Una ACL es como el reglamento interno de un condominio: define exactamente quién puede entrar por qué puerta, en qué horario, y qué tipo de vehículo puede pasar. Todo lo que no está en la lista está prohibido por defecto.*
+ACL rules are processed **top-down** — the first matching rule wins and the rest of the list is skipped. For this reason, **specific rules go at the top; generic rules go at the bottom**. Most devices support an **implied deny** at the bottom, but best practice is to always add an **explicit deny-all** final rule and to **log all actions**, including denies.
 
-### ACL Key Rules
-
-- Rules are processed **top-down**; the first match wins and stops further evaluation
-- **Specific rules go at the top; generic rules go at the bottom**
-- Many devices support **implicit deny** at the end; best practice is to always add an **explicit deny all** rule as the last entry
-- **Always log** matched actions, including denies
+> *Las ACLs son como la lista de invitados en una fiesta VIP: el portero revisa de arriba hacia abajo. Si tu nombre aparece en el primer ítem, entras. Si llegas al final de la lista y no estás, te quedás afuera.*
 
 ### ACL Rule Components
 
-| Field | Description |
+| Component | Description |
 | --- | --- |
-| **Traffic type** | Protocol (TCP, UDP, ICMP, etc.) |
-| **Source** | Source IP address or range |
+| **Type of traffic** | Protocol (TCP, UDP, ICMP, etc.) |
+| **Source** | Origin IP address or range |
 | **Destination** | Destination IP address or range |
 | **Action** | Permit or Deny |
-| **Port** | Specific port number or range |
 
-### Software Firewalls
-
-- **Windows Defender Firewall with Advanced Security** → supports inbound/outbound rules, profiles (Domain, Private, Public), and logging
-- **macOS Firewall** → simpler UI; advanced control requires `pf` or `ipfw` CLI tools
-- **Stealth Mode** (macOS) → device does not respond to ping sweeps; improves obscurity
+**Configuration environments:** Hardware firewalls (web-based GUI), Windows Defender Firewall with Advanced Security (GUI or command-line), Mac OS Firewall (System Preferences → Security → Firewall), Linux (PF, IPFW).
 
 ---
 
-## 4. IDS and IPS
+## 5. Intrusion Detection System (IDS)
 
-* **Definition:** An **Intrusion Detection System (IDS)** monitors network or host activity for suspicious behavior and generates alerts, while an **Intrusion Prevention System (IPS)** does the same but also takes automated action to block or stop the threat.
+* **Definition:** A security system that monitors network or host activity to detect unauthorized access or attacks, then logs and alerts on findings without actively blocking them.
 
-> *Un IDS es como una cámara de seguridad: graba y avisa si ve algo sospechoso, pero no actúa. Un IPS es como un guardia armado: detecta y también interviene de inmediato.*
+An IDS **detects, logs, reports, and alerts** — it does **not** prevent attacks. When it finds something suspicious, it notifies an administrator or analyst who then decides how to respond.
 
-### IDS vs. IPS
+> *Un IDS es como una cámara de seguridad con alarma: ve lo que pasa y avisa, pero no puede detener al intruso físicamente.*
 
-| Feature | IDS | IPS |
+### IDS Types by Placement
+
+| Type | Acronym | What it monitors |
 | --- | --- | --- |
-| Detects threats | ✅ | ✅ |
-| Logs and alerts | ✅ | ✅ |
-| Blocks / takes action | ❌ | ✅ |
-| Typical placement | Mirrored/SPAN port (passive) | Inline, behind the firewall |
+| **Network-based IDS** | NIDS | Traffic on the network segment; connected to a SPAN/mirror port on a backbone switch |
+| **Host-based IDS** | HIDS | Traffic to/from a single server or endpoint plus suspicious processes and file access |
+| **Wireless IDS** | WIDS | Wireless network attacks: flooding, disassociation, de-authentication attacks |
 
-### IDS/IPS Types by Scope
+### IDS Detection Methods
 
-#### Network-Based (NIDS / NIPS)
-* **Definition:** A standalone device or appliance that monitors all traffic crossing a network segment, typically connected via a SPAN or mirrored port on a backbone switch.
+| Method | How it works | Weakness |
+| --- | --- | --- |
+| **Signature-based** | Matches traffic against a database of known attack signatures | Requires frequent updates; ineffective against zero-day attacks |
+| **Anomaly-based** (behavioral) | Compares traffic to a normal baseline; flags deviations | Higher rate of false positives |
 
-- Detects port scans, suspicious payloads, traffic to/from suspicious IPs
-- NIPS is placed inline (right behind the firewall) to block in real time
-- NIDS uses a mirrored port for passive monitoring only
+**Signature-based sub-types:**
+- **Pattern-matching** — recognizes specific attack step sequences; common in NIDS and WIDS
+- **Stateful-matching** — compares against a known system baseline; common in HIDS
 
-#### Host-Based (HIDS / HIPS)
-* **Definition:** Software installed directly on a server or endpoint that monitors traffic to/from that specific host, as well as suspicious processes and file access.
-
-- HIPS can block unauthorized changes to critical system files
-- More granular than network-based systems; specific to one host
-
-#### Wireless (WIDS / WIPS)
-* **Definition:** A system focused on detecting and preventing attacks against wireless networks, including de-authentication attacks, disassociation floods, and rogue access points.
-
-- WIPS can disconnect the offending wireless device from the network
-
-### Detection Methods
-
-#### Signature-Based Detection
-* **Definition:** Analyzes traffic against a database of known attack signatures; can only detect previously identified threats.
-
-- Requires frequent database updates
-- ⚠️ Ineffective against zero-day attacks
-- Sub-types: **pattern-matching** (common in NIDS/WIDS) and **stateful-matching** (common in HIDS)
-
-#### Anomaly-Based Detection
-* **Definition:** Establishes a baseline of normal traffic behavior and alerts when activity deviates significantly from that baseline (behavioral detection).
-
-- Effective against unknown/novel attacks
-- ⚠️ Higher rate of false positives than signature-based
-- Sub-types: statistical, protocol, traffic, rule/heuristic, and application-based
+**Anomaly-based sub-types:** statistical, protocol, traffic, rule/heuristic, application-based.
 
 ---
 
-## 5. Network Appliances
+## 6. Intrusion Prevention System (IPS)
 
-* **Definition:** A **network appliance** is a dedicated hardware device with pre-installed software designed to perform specific networking functions such as load balancing, proxying, monitoring, or security enforcement within a network.
+* **Definition:** A security system that monitors network or host activity for malicious behavior and actively takes action to block or stop detected threats, in addition to logging and alerting.
 
-> *Un appliance de red es como un electrodoméstico especializado: no es una computadora de propósito general, sino un dispositivo diseñado específicamente para una sola tarea, como una cafetera que solo hace café.*
+An IPS does everything an IDS does, **plus it takes action** — blocking traffic, terminating connections, or removing wireless clients. Placement matters: a **NIPS** should be placed **inline just behind the firewall** (in the traffic path) so it can block threats. A **NIDS** connects via a **mirrored port** (passive, out of path).
+
+> *Si el IDS es la cámara con alarma, el IPS es el guardia de seguridad que actúa: ve la amenaza y la detiene en el momento.*
+
+⚠️ **Key risk with IPS:** False positives block legitimate traffic; false negatives allow real threats through. Tuning is critical.
+
+| Behavior | IDS | IPS |
+| --- | --- | --- |
+| Detect and alert | ✅ | ✅ |
+| Log events | ✅ | ✅ |
+| Block / take action | ❌ | ✅ |
+| Placement | Mirror/SPAN port (passive) | Inline (in traffic path) |
+
+---
+
+## 7. Network Appliances
+
+* **Definition:** Dedicated hardware devices with pre-installed software designed to perform specific networking services — such as load balancing, proxying, monitoring, or access control — within a network infrastructure.
+
+> *Los appliances de red son como los electrodomésticos especializados de una cocina profesional: cada uno tiene un trabajo específico que hace mejor que una cocina doméstica genérica.*
 
 ### Load Balancers
 
-* **Definition:** A device that distributes incoming network or application traffic across multiple servers to optimize performance, prevent overload on any single server, and maintain high availability.
+* **Definition:** A network appliance that distributes incoming network or application traffic across multiple servers to optimize performance, prevent overload, and ensure high availability.
 
-- Continuously performs **health checks** on servers; redirects traffic if a server fails
-- Minimizes downtime during planned maintenance or unexpected failures
-- Advanced variant: **ADC (Application Delivery Controller)** — adds SSL termination, HTTP compression, and content caching
+Load balancers perform **continuous health checks** on servers; if one fails, traffic is redirected to remaining servers. An advanced version is the **Application Delivery Controller (ADC)**, which adds SSL termination, HTTP compression, and content caching on top of basic load distribution.
 
 ### Proxy Servers
 
-* **Definition:** An intermediary device between a client and a server that manages requests, enforces policies, caches content, and can mask the identity of internal endpoints.
+* **Definition:** An intermediary server that sits between clients and servers to handle requests on behalf of clients, providing content caching, request filtering, login management, and security functions.
 
-- **Content caching** → stores local copies of responses to reduce bandwidth and speed up repeat requests
-- **Request filtering** → enforces organizational policies for network usage
-- Helps defend against DDoS by masking internal endpoint IPs
-- Can enforce authentication, data encryption, and geographic data routing for compliance
+Proxy servers cache responses to reduce bandwidth, enforce organizational policies, mask internal endpoints (protecting against direct attacks), and can route traffic to maintain data sovereignty compliance. They also contribute to load balancing by distributing requests across servers.
 
-### Sensors
+### Network Sensors
 
-* **Definition:** Devices or software tools that continuously monitor network conditions, traffic patterns, and data flows to detect anomalies, security breaches, or performance issues in real time.
+* **Definition:** Devices or software that continuously monitor, detect, and analyze traffic and data flow across the network to identify unusual activity, security breaches, or performance issues in real time.
 
-- Used as the data collection layer for IDS/IPS systems
-- Trigger alerts on events like sudden traffic spikes from unknown IPs (potential DDoS)
-- Enable proactive response by providing real-time operational visibility
+Sensors feed data into IDS/IPS systems. They track performance anomalies (traffic spikes, service degradation), trigger alerts for the network operations team, and can detect early indicators of attacks like DDoS attempts from unknown IP addresses.
 
 ### Jump Servers (Jump Boxes)
 
-* **Definition:** A dedicated, hardened gateway server used by administrators to securely access devices in different security zones within a network; all administrative access is funneled through this single point.
+* **Definition:** A dedicated, hardened gateway server that system administrators use to securely access devices located in different security zones within a network.
 
-- Reduces attack surface by limiting direct access to sensitive internal devices
-- Centralizes logging for audit and incident response purposes
-- Hosts admin tools and scripts for routine tasks and troubleshooting
-- ⚠️ Must be heavily secured — it is a high-value target due to its privileged access
+Jump servers provide a **single controlled access point** for administrative tasks, reducing the attack surface by preventing direct access to sensitive internal systems. They also **centralize logging** of all administrative activity, making audits and incident response significantly faster. Jump boxes are heavily secured with advanced monitoring software and typically host administrative tools and scripts needed for routine maintenance.
 
 ---
 
-## 6. Port Security
+## 8. Port Security
 
-* **Definition:** A network switch feature that restricts which devices can connect to a specific port based on their **MAC address**, preventing unauthorized devices from gaining network access.
+* **Definition:** A network switch feature that restricts which devices can connect to a specific switch port based on the MAC address of their network interface card, preventing unauthorized device access.
 
-> *La seguridad de puertos es como una estación de tren donde cada asiento está asignado a un pasajero específico por número de identificación: si no eres tú, no puedes sentarte ahí, aunque el tren esté lleno.*
+Switches use a **CAM (Content Addressable Memory) table** to store MAC address-to-port mappings and forward traffic only to the intended device. Attackers can exploit this with **MAC flooding** — sending large numbers of fake MAC addresses to overflow the CAM table, causing the switch to **fail open** and behave like a hub, rebroadcasting all traffic to all ports.
 
-### How Switches Work
+**Port security** mitigates this by binding specific MAC addresses to specific switch ports.
 
-- Switches operate at **Layer 2** of the OSI model and make decisions based on MAC addresses
-- Maintain a **CAM table** (Content Addressable Memory) that maps MAC addresses to switch ports
-- Each port is its own **collision domain**, enabling full-duplex communication
-
-### MAC Flooding Attack
-
-An attacker floods the switch with random MAC addresses, overflowing the CAM table. The switch **fails open** and begins broadcasting all traffic out every port (behaving like a hub), allowing an attacker to capture all network traffic.
-
-- **Defense:** Enable port security or MAC filtering on switch interfaces
+> *La seguridad de puertos en un switch es como la lista de dispositivos autorizados en una sala de servidores: si el dispositivo no está en la lista, la puerta no se abre, sin importar quién lo intente conectar.*
 
 ### Sticky MAC (Persistent MAC Learning)
 
-* **Definition:** A port security feature that dynamically learns and locks the first MAC address connected to a port as the only authorized MAC address for that port.
+* **Definition:** A port security feature that dynamically learns and locks the first MAC address connected to a switch port, blocking any subsequent device from connecting to that port.
 
-- Simplifies setup; no need to pre-configure each MAC manually
-- ⚠️ Can be bypassed by **MAC spoofing** — attacker clones an approved MAC address
+⚠️ **Limitation of MAC-based port security:** Attackers can bypass it by **MAC spoofing** — changing their NIC's MAC address to a known-authorized address. This requires additional controls like 802.1x.
 
 ---
 
-## 7. 802.1x Authentication
+## 9. 802.1x Authentication
 
-* **Definition:** An IEEE standard framework for **port-based network access control** that requires devices to authenticate before being granted access to a wired or wireless network, operating at Layer 2.
+* **Definition:** An IEEE standardized framework for port-based network access control that authenticates devices connecting to wired or wireless networks before granting them access.
 
-> *El 802.1x es como el control de acceso de un aeropuerto: no importa en qué puerta intentes entrar (switch o AP), siempre debes mostrar tu pasaporte (credenciales) antes de pasar.*
-
-### 802.1x Roles
+802.1x is a **framework** — it relies on other protocols (RADIUS or TACACS+) for the actual authentication. It operates at **Layer 2 (Data Link)** and requires three roles:
 
 | Role | Description |
 | --- | --- |
 | **Supplicant** | The device or user requesting network access |
-| **Authenticator** | The network device the supplicant connects through (switch, AP, VPN concentrator) |
-| **Authentication Server** | Centralized server that performs the actual authentication (RADIUS or TACACS+) |
+| **Authenticator** | The network device through which access is requested (switch, WAP, VPN concentrator) |
+| **Authentication Server** | The centralized server performing authentication (RADIUS or TACACS+) |
 
-### RADIUS vs. TACACS+
+### RADIUS vs TACACS+
 
 | Feature | RADIUS | TACACS+ |
 | --- | --- | --- |
 | Platform | Cross-platform | Cisco proprietary only |
-| Transport | UDP | TCP |
-| Authentication + Authorization | Combined | Separated (more secure) |
-| Protocol support | Limited (no NetBIOS, X.25) | All networking protocols |
-| Best use | Mixed-vendor networks | All-Cisco networks |
+| Transport | UDP (faster, less secure) | TCP (slower, more secure) |
+| AAA process | Combined | Independent (more granular) |
+| Protocol support | Does not support RAP, NetBIOS Frame, X.25 PAD | Supports all networking protocols |
+| Best for | Mixed-vendor networks | All-Cisco environments |
 
 ---
 
-## 8. EAP — Extensible Authentication Protocol
+## 10. EAP — Extensible Authentication Protocol
 
-* **Definition:** A **flexible authentication framework** used with 802.1x that supports multiple authentication methods including passwords, digital certificates, and public key infrastructure. EAP is not a single protocol but a family of variants.
+* **Definition:** A flexible authentication framework (not a single protocol) that defines multiple methods for authenticating clients and servers in conjunction with 802.1x, supporting passwords, certificates, and PKI.
 
-> *EAP es como un conector USB-C: no importa qué tipo de cable necesites (contraseña, certificado digital, token), el mismo puerto universal puede soportar todos los métodos de autenticación.*
+> *EAP es como el sistema de llaves de un hotel moderno: puede ser una llave magnética, una app en el celular, una huella dactilar o un código PIN. El hotel (802.1x) decide cuál método usar, pero la forma de abrir la puerta (EAP) puede variar.*
 
 ### EAP Variants
 
-#### EAP-MD5
-* **Definition:** Uses simple passwords and the challenge-handshake authentication process for remote access; provides one-way authentication only (no mutual authentication).
+| Variant | Authentication Method | Mutual Auth? | Notes |
+| --- | --- | --- | --- |
+| **EAP-MD5** | Password (challenge-handshake) | ❌ One-way | Simple; requires strong passwords; weakest EAP variant |
+| **EAP-TLS** | Digital certificates on both client and server | ✅ | Immune to password attacks; strongest common EAP variant |
+| **EAP-TTLS** | Server certificate + client password | ✅ | More secure than MD5; less secure than TLS |
+| **EAP-FAST** | Protected Access Credential (PAC) instead of certificate | ✅ | No certificate required; uses PAC for mutual auth |
+| **PEAP** | Server certificate + client password via MS Active Directory | ✅ | Common in Windows/Active Directory environments |
+| **EAP-LEAP** | Cisco proprietary | ✅ | Cisco-only; avoid in mixed-vendor networks |
 
-- Weakest EAP variant; vulnerable to password-based attacks
-
-#### EAP-TLS
-* **Definition:** Uses digital certificates installed on both the client and the server for mutual authentication; immune to password-based attacks.
-
-- Strongest EAP variant; both client and server authenticate each other
-- Requires a PKI infrastructure to issue certificates to all clients
-
-#### EAP-TTLS
-* **Definition:** Requires a digital certificate on the server only; the client authenticates using a password, creating a secure tunnel for the password exchange.
-
-- More secure than EAP-MD5 (server is verified); less secure than EAP-TLS (client uses password)
-
-#### EAP-FAST
-* **Definition:** Uses a **Protected Access Credential (PAC)** instead of certificates to establish mutual authentication between two devices; FAST = Flexible Authentication via Secure Tunneling.
-
-- Does not require a PKI infrastructure; easier to deploy than EAP-TLS
-
-#### PEAP (Protected EAP)
-* **Definition:** Supports mutual authentication using a server-side digital certificate and Microsoft Active Directory to validate the client's password credential.
-
-- Common in Microsoft environments; server certificate required but not client certificate
-
-#### EAP-LEAP
-* **Definition:** A **Cisco proprietary** lightweight EAP variant; works only on Cisco devices.
-
-- ⚠️ Avoid unless running an all-Cisco infrastructure; not cross-platform
-
-### EAP Variants at a Glance
-
-| Variant | Client cert | Server cert | Mutual auth | Cross-platform |
-| --- | --- | --- | --- | --- |
-| **EAP-MD5** | ❌ | ❌ | ❌ | ✅ |
-| **EAP-TLS** | ✅ | ✅ | ✅ | ✅ |
-| **EAP-TTLS** | ❌ | ✅ | ✅ | ✅ |
-| **EAP-FAST** | ❌ | ❌ (PAC) | ✅ | ✅ |
-| **PEAP** | ❌ | ✅ | ✅ | ✅ |
-| **EAP-LEAP** | ❌ | ❌ | ✅ | ❌ (Cisco only) |
+⚠️ All variants except **EAP-LEAP** are cross-platform. Use LEAP only if running an all-Cisco network.
 
 ---
 
-## 9. Securing Network Communications — VPN
+## 11. Securing Network Communications — VPNs
 
-* **Definition:** A **Virtual Private Network (VPN)** extends a private network across a public network, allowing users to send and receive data as if their devices were directly connected to the organization's private network, using an encrypted tunnel.
+* **Definition:** A Virtual Private Network (VPN) extends a private network across a public network, allowing users to send and receive data as if their device were directly connected to the organization's private network.
 
-> *Una VPN es como un tubo blindado dentro de una tubería pública: otros pueden ver el tubo, pero no pueden ver lo que va adentro ni interceptar su contenido.*
+VPN traffic is sent through a **secure encrypted tunnel** from the user's device or site over the untrusted Internet back to the organization's network. There are three VPN types:
 
-### VPN Types by Configuration
+> *Una VPN es como un tubo sellado e invisible que atraviesa una ciudad pública: nadie que esté en la calle puede ver lo que pasa dentro del tubo, aunque físicamente esté debajo de sus pies.*
 
-#### Site-to-Site VPN
-* **Definition:** Connects two entire network sites (e.g., branch office to headquarters) over the public Internet using routers or VPN concentrators at each end, replacing expensive dedicated leased lines.
+### VPN Types
 
-- All traffic from the remote site flows through the HQ network before reaching the Internet
-- Cost-effective alternative to MPLS or leased lines
-
-#### Client-to-Site VPN
-* **Definition:** Connects a single device (laptop, phone, tablet) to the organization's headquarters network over the public Internet.
-
-- User installs VPN client software and authenticates to connect
-- Most common remote work setup
-
-#### Clientless VPN
-* **Definition:** A remote access VPN that uses a standard web browser and the HTTPS/TLS protocol (port 443) — no dedicated software or hardware client required.
-
-- Used every time you connect to an HTTPS website (the browser acts as the VPN client)
-- Relies on **TLS** (Layers 5–6–7) for encryption
-
-### VPN Tunnel Modes
-
-| Mode | Usage | Description |
+| Type | Description | Use case |
 | --- | --- | --- |
-| **Full Tunnel** | Most secure | All traffic routed through HQ network; local resources (home printer) inaccessible |
-| **Split Tunnel** | Better performance | Only corporate-bound traffic goes through VPN; Internet traffic exits locally |
+| **Site-to-site VPN** | Connects two entire network locations (e.g., branch office to HQ) over the Internet | Replaces expensive dedicated leased lines between offices |
+| **Client-to-site VPN** | Connects a single remote device (laptop, phone) directly to the corporate network | Remote workers connecting to HQ |
+| **Clientless VPN** | Uses a web browser and HTTPS/TLS to create a secure tunnel; no client software required | Everyday HTTPS web browsing |
 
-⚠️ **Split tunnel risk:** An attacker who compromises the device over the unencrypted Internet path could pivot through the device and into the corporate VPN tunnel.
+### Full Tunnel vs Split Tunnel
+
+| Mode | Traffic routing | Security | Performance |
+| --- | --- | --- | --- |
+| **Full Tunnel** | All traffic — including Internet traffic — routes through HQ VPN | Higher (all traffic inspected at HQ) | Lower (more latency) |
+| **Split Tunnel** | Only traffic bound for HQ routes through VPN; Internet traffic goes direct | Lower (Internet traffic bypasses HQ) | Higher (less latency) |
+
+⚠️ **Use full tunnel on untrusted networks** (hotels, coffee shops) to prevent attackers from pivoting through your device into the HQ network via the split tunnel.
 
 ---
 
-## 10. IPSec — Internet Protocol Security
+## 12. Securing Network Communications — TLS
 
-* **Definition:** A suite of protocols that provides **authentication, encryption, integrity, and anti-replay protection** for IP communications, most commonly used to secure site-to-site and client-to-site VPN tunnels.
+* **Definition:** Transport Layer Security (TLS) is a cryptographic protocol that operates at Layers 5–7 of the OSI model to provide encrypted, authenticated communication between a client and server — the foundation of HTTPS and clientless VPNs.
 
-> *IPSec es como un servicio de mensajería certificada: sella el paquete, verifica quién lo envió, garantiza que no fue abierto en el camino, y comprueba que no es una copia de un paquete anterior.*
+TLS uses **TCP** for connection establishment (more overhead, more reliable). **DTLS (Datagram TLS)** is the UDP-based variant that provides the same security with less overhead — ideal for video streaming and real-time applications.
 
-### IPSec Security Properties
+> *TLS es como un sobre cerrado con lacre: el mensajero (la red) puede ver a quién va dirigido el sobre (los encabezados), pero no puede leer lo que hay dentro (el contenido cifrado).*
 
-| Property | How IPSec Provides It |
-| --- | --- |
-| **Confidentiality** | Encrypts the data payload |
-| **Integrity** | Hashes the data before and after transmission; compares hashes to detect tampering |
-| **Authentication** | Each party verifies the identity of the other |
-| **Anti-Replay** | Checks sequence numbers on all packets to prevent duplicate or replayed packets |
+---
+
+## 13. Securing Network Communications — IPSec
+
+* **Definition:** Internet Protocol Security (IPSec) is a suite of protocols that authenticates and encrypts each IP packet in a data stream to create a secure encrypted tunnel between two devices, providing confidentiality, integrity, authentication, and anti-replay protection.
+
+IPSec is the most widely used protocol for site-to-site and client-to-site VPNs. It provides:
+- **Confidentiality** — data encryption
+- **Integrity** — hash comparison before and after transmission
+- **Authentication** — each party verifies the other's identity
+- **Anti-replay** — packet sequence numbers prevent duplicate or captured packets from being resent
+
+> *IPSec es como un servicio de mensajería blindado con GPS, firma biométrica del destinatario, sello de integridad en el paquete y un número de serie único para que no puedan enviar el mismo paquete dos veces.*
 
 ### IPSec Tunnel Establishment — 5 Steps
 
-```
-1. Request to start key exchange (PC1 → Router1)
-2. IKE Phase 1 → Authenticate parties; establish ISAKMP management tunnel
-3. IKE Phase 2 → Negotiate security associations; establish data tunnel (tunnel inside tunnel)
-4. Data Transfer → Encrypted data flows between endpoints using negotiated keys
-5. Tunnel Termination → Security associations deleted (mutual agreement or timeout)
-```
+1. **Request to start key exchange** — initiating party sends a request
+2. **IKE Phase 1** — parties authenticate and establish a secure negotiation channel (ISAKMP tunnel)
+3. **IKE Phase 2** — negotiate security association parameters and establish the actual data tunnel (tunnel within a tunnel)
+4. **Data transfer** — encrypted data flows through the established tunnel
+5. **Tunnel termination** — security associations are deleted by mutual agreement or timeout
 
 ### IPSec Modes
 
-| Mode | Used For | Description |
+| Mode | Packet handling | Best for |
 | --- | --- | --- |
-| **Transport Mode** | Client-to-site VPN | Uses the original IP header; does NOT increase packet size |
-| **Tunneling Mode** | Site-to-site VPN | Encapsulates the entire packet with a new IP header; increases packet size (may exceed 1,500-byte MTU) |
+| **Transport Mode** | Uses original IP header; adds minimal overhead | Client-to-site VPN; avoids MTU fragmentation issues |
+| **Tunneling Mode** | Encapsulates entire original packet inside a new packet with a new header | Site-to-site VPN; may require jumbo frames (>1,500 byte MTU) |
 
-⚠️ Tunneling mode may require **jumbo frames** (up to 9,000 bytes) or reducing inner MTU to ~1,400 bytes to stay below the 1,500-byte default.
+### IPSec Protocols: AH vs ESP
 
-### IPSec Protocols
-
-#### AH — Authentication Header
-* **Definition:** Provides **connectionless integrity and data origin authentication** for IP datagrams and protects against replay attacks; does NOT provide confidentiality (data is not encrypted).
-
-- Acts as a cryptographic fingerprint to verify the packet's origin and integrity
-
-#### ESP — Encapsulating Security Payload
-* **Definition:** Provides **authentication, integrity, replay protection, AND confidentiality** by encrypting the packet payload; protects the data content but not the outer IP header in transport mode.
-
-- In tunneling mode, ESP can encrypt both the payload and the original headers
-
----
-
-## 11. TLS and DTLS
-
-* **Definition:** Cryptographic protocols designed to provide secure, encrypted communications over a network, with TLS running over TCP and DTLS running over UDP.
-
-> *Es como decidir entre enviar una carta certificada por correo que requiere firma de recibido (TLS sobre TCP) o enviar un mensaje rápido por radio-walkie-talkie pero con cifrado militar (DTLS sobre UDP).*
-
-
-### TLS — Transport Layer Security
-* **Definition:** A cryptographic protocol that provides encrypted, authenticated communication at Layers 5–7 of the OSI model, using **TCP** as its transport; most commonly seen as the foundation of HTTPS and clientless VPNs.
-
-- The padlock in a browser indicates an active TLS connection over port 443
-- Higher overhead than UDP; more reliable
-
-### DTLS — Datagram Transport Layer Security
-* **Definition:** A UDP-based version of TLS that provides equivalent security with lower overhead, making it ideal for latency-sensitive applications like video streaming and real-time communications.
-
-- Same security guarantees as TLS; faster due to UDP's reduced overhead
-
----
-
-## 12. SD-WAN — Software-Defined Wide Area Network
-
-* **Definition:** A virtualized WAN architecture that uses software-defined networking principles to manage and optimize wide area network connections across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized software control plane.
-
-> *Una SD-WAN es como un GPS inteligente para el tráfico de tu empresa: en lugar de siempre tomar la misma autopista (MPLS), el sistema elige en tiempo real la ruta más rápida y segura disponible, ya sea por carretera, autopista o atajo.*
-
-- Replaces hardware-centric WAN routing (traditional star topology) with intelligent, dynamic path selection
-- Improves performance for cloud-first enterprises by routing traffic directly to cloud services without backhauling through HQ
-- Provides centralized visibility, management, and control across all WAN links
-- Supports transport over MPLS, cellular, satellite, broadband, and microwave links
-
----
-
-## 13. SASE — Secure Access Service Edge
-
-* **Definition:** A cloud-native framework that consolidates wide area networking (WAN) capabilities and network security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), Secure Web Gateways, and CASBs — into a single unified cloud-based service.
-
-> *SASE es como un sistema de seguridad y transporte todo-en-uno entregado desde la nube: en lugar de tener guardias en cada edificio y un sistema de transporte separado, hay un servicio centralizado en la nube que maneja todo para todos tus usuarios, sin importar desde dónde se conecten.*
-
-### SASE vs. SD-WAN
-
-| Feature | SD-WAN | SASE |
+| Protocol | Provides | Does NOT provide |
 | --- | --- | --- |
-| Focus | WAN optimization and routing | WAN + security consolidated in cloud |
-| Deployment | Appliance or virtual | Cloud-native |
-| Security services | Limited | Full stack (FW, VPN, ZTNA, CASB, SWG) |
-| Ideal for | Branch office connectivity | Distributed, mobile, cloud-heavy enterprises |
+| **AH — Authentication Header** | Integrity, data origin authentication, anti-replay protection | Confidentiality (no encryption) |
+| **ESP — Encapsulating Security Payload** | Authentication, integrity, replay protection, **confidentiality (encryption)** | Full end-to-end header encryption in transport mode |
 
-### Cloud Provider Equivalents
+---
 
-| Provider | SASE-Aligned Service |
+## 14. SD-WAN
+
+* **Definition:** A Software-Defined Wide Area Network (SD-WAN) is a virtualized WAN architecture that uses software-defined networking principles to manage and optimize WAN connections — enabling intelligent traffic routing across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized control plane.
+
+Traditional WANs force all branch traffic back to HQ in a star topology — good for security but creates latency and poor user experience. SD-WAN solves this by intelligently identifying application types and routing traffic to the most efficient path dynamically.
+
+> *SD-WAN es como un GPS inteligente para los datos corporativos: en vez de obligar a todos los carros (paquetes) a pasar por la misma carretera principal (HQ), el GPS decide en tiempo real cuál ruta es más rápida, más económica o más segura para cada viaje.*
+
+**Key use case:** Organizations with many branch offices moving to cloud services (IaaS, PaaS, SaaS) that are being bottlenecked by traditional centralized WAN architectures.
+
+---
+
+## 15. SASE — Secure Access Service Edge
+
+* **Definition:** A network security framework that consolidates wide-area networking (WAN) capabilities with security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), and Cloud Access Security Brokers (CASBs) — into a single cloud-native service.
+
+SASE is designed for distributed enterprises with remote workers, branch offices, and cloud-based applications. It uses **Software-Defined Networking (SDN)** to deliver security and networking from the cloud rather than hardware appliances, providing flexibility, scalability, and cost efficiency.
+
+> *SASE es como cambiar tu propio departamento de seguridad, recepcionistas, y sala de servidores por un servicio de seguridad en la nube que sigue al empleado a donde vaya, sin importar desde qué país o dispositivo se conecte.*
+
+### SASE by Cloud Provider
+
+| Provider | SASE-aligned Service |
 | --- | --- |
-| **AWS** | Virtual Private Cloud (VPC) |
-| **Microsoft Azure** | Azure Virtual WAN + ExpressRoute |
-| **Google Cloud (GCP)** | Google Cloud Interconnect + Cloud VPN |
+| **AWS** | VPC — Virtual Private Cloud |
+| **Microsoft Azure** | Azure Virtual WAN + Azure ExpressRoute |
+| **Google Cloud Platform** | Google Cloud Interconnect + Google Cloud VPN |
 
 ---
 
-## 14. Infrastructure Considerations
+## 16. Infrastructure Considerations — Device Placement
 
-* **Definition:** The set of architectural decisions — including device placement, security zone configuration, attack surface management, connectivity choices, device roles, and failure mode settings — that collectively determine the security, performance, and resilience of a network.
+* **Definition:** The deliberate positioning of network devices (routers, switches, access points, firewalls) within a network architecture to optimize data flow, minimize latency, and maximize security.
 
-> *Diseñar una infraestructura de red es como planear la distribución de una ciudad: dónde pones los puntos de control, las zonas residenciales vs. comerciales, y qué pasa cuando un semáforo falla, todo afecta la seguridad y el flujo de tráfico.*
+- **Routers** at the network edge to direct and filter inbound/outbound traffic
+- **Access points** positioned for coverage while minimizing wireless signal leakage outside facilities
+- **Switches** placed to serve as centralized connection points for network devices per segment
 
-### Device Placement
+Improper placement leads to bottlenecks, vulnerability points, or connectivity gaps.
 
-- **Routers** at the network edge to filter and direct ingress/egress traffic
-- **Access points** positioned to contain wireless signals within facility boundaries and minimize interference
-- **Switches** as central connection points for all network devices per segment
-- Poor placement → bottlenecks, blind spots, and unprotected vulnerability points
+---
 
-### Security Zones and Screened Subnets
+## 17. Infrastructure Considerations — Security Zones and Screened Subnets
 
-- **Security zone:** A logically isolated network segment containing devices with similar trust levels and security requirements; each zone has its own access controls and policies
-- **Screened subnet:** A buffer zone between the internal trusted network and the external untrusted network (Internet); hosts public-facing services (web, email, DNS)
-- ⚠️ A breach inside the screened subnet must not provide direct access to the internal core network
+* **Definition:** A security zone is a logically isolated network segment containing devices with similar security requirements and trust levels; a screened subnet is a buffer zone between an untrusted external network and a trusted internal network, used to host public-facing services.
 
-### Attack Surface
+> *Las zonas de seguridad son como las plantas de un edificio corporativo: la recepción (zona pública), las oficinas generales (zona interna), y la sala de servidores (zona confidencial) tienen controles de acceso diferentes porque tienen distintos niveles de sensibilidad.*
 
-The **attack surface** is the sum of all points where an unauthorized user could attempt to enter or extract data from a system or network.
+⚠️ **Terminology change:** "DMZ" (demilitarized zone) is the older term. The current Security+ exam uses **"screened subnet"**. Some network appliances still display "DMZ" in their interfaces — know both terms.
 
-- Grows as networks expand (more devices, apps, access points)
-- Reduce it by: eliminating unused ports, patching software, enforcing access controls, removing unnecessary services
+A **screened subnet** hosts public-facing services (web servers, email servers, DNS servers) so that a breach in that subnet does not give attackers direct access to the core internal network.
 
-### Connectivity Methods
+---
+
+## 18. Infrastructure Considerations — Attack Surface
+
+* **Definition:** The total sum of all points (ports, protocols, devices, applications, interfaces) where an unauthorized user could potentially attempt to enter or extract data from a system, network, or application.
+
+As networks grow and add devices, applications, and access points, the attack surface expands. A larger attack surface means more opportunities for exploitation. Common contributors include improper device placement, misconfigured devices, outdated software, unnecessary open ports, and weak access controls.
+
+**Mitigation:** Regularly assess and minimize the attack surface by identifying and eliminating vulnerabilities or implementing compensating controls.
+
+---
+
+## 19. Infrastructure Considerations — Connectivity Methods
+
+* **Definition:** The technologies and methods used to connect network components to each other and to external networks, each with different trade-offs in performance, security, mobility, and cost.
 
 | Method | Advantages | Disadvantages |
 | --- | --- | --- |
-| **Wired (Ethernet)** | High speed, stable, secure | Limited mobility; wiring constraints |
-| **Wireless (Wi-Fi)** | Flexible, scalable | Interference, security risks if misconfigured |
-| **Fiber Optic** | High speed, long distance, minimal degradation | Higher cost to install |
-| **Microwave / Satellite** | Covers remote areas | Latency, weather interference |
-| **Hybrid** | Redundancy and resilience | Complexity in management |
-
-### Device Attributes — Active vs. Passive and Inline vs. Tap
-
-| Attribute | Description | Example |
-| --- | --- | --- |
-| **Active** | Monitors and acts on traffic in real time | IPS, Firewall |
-| **Passive** | Observes and reports without intervening | IDS, Network sensor |
-| **Inline** | Placed directly in the traffic path; can block | Firewall, IPS, Router |
-| **Tap / Monitor** | Receives a copy of traffic via SPAN port; cannot block | NIDS, Sensor |
-
-### Failure Modes
-
-#### Fail-Open
-* **Definition:** When a device fails, it allows all traffic to pass through without inspection or filtering to ensure network continuity remains uninterrupted.
-
-- Prioritizes **availability** over security
-- Example use: guest wireless networks where data sensitivity is low
-
-#### Fail-Closed
-* **Definition:** When a device fails, it blocks all traffic to maintain security, even at the cost of network connectivity.
-
-- Prioritizes **security** over availability
-- Example use: firewalls protecting sensitive financial or classified data systems
+| **Wired (Ethernet)** | Stable, fast, secure | Limits mobility; requires physical cabling |
+| **Wireless (Wi-Fi, microwave, satellite)** | Flexible, scalable | Subject to interference; more security vulnerabilities |
+| **Fiber Optic** | High speed, long distance, minimal signal degradation | Higher installation cost |
+| **Hybrid** | Combines strengths of multiple methods; adds redundancy | More complex to manage |
 
 ---
 
-## 15. Selecting Infrastructure Controls
+## 20. Infrastructure Considerations — Device Attributes (Active vs Passive / Inline vs Tap)
 
-* **Definition:** The process of identifying, evaluating, and implementing security measures and safeguards to mitigate risks and protect an organization's network assets, aligned to defined objectives and frameworks.
+* **Definition:** Device attributes describe whether a network security device actively intervenes in traffic (active) or passively observes it (passive), and whether it is placed directly in the traffic path (inline) or outside it (tap/monitor).
 
-> *Seleccionar controles de seguridad es como diseñar el sistema de seguridad de un museo: no puedes blindar cada centímetro, entonces priorizas las salas con las obras más valiosas, usas múltiples capas (cámaras, guardias, vitrinas), y revisas el sistema regularmente.*
+| Attribute | Description | Example |
+| --- | --- | --- |
+| **Active (Inline)** | Device sits in the traffic path and can block or modify traffic | IPS, Firewall |
+| **Passive (Tap/Monitor)** | Device observes a copy of traffic without affecting it | IDS, Network Sensor (SPAN port) |
+
+- **Inline devices** — critical for real-time threat mitigation and filtering
+- **Tap/monitor devices** — ideal for monitoring network health and security without risking service disruption
+
+Selection depends on the organizational goal: real-time blocking (inline) vs. non-disruptive monitoring (passive tap).
+
+---
+
+## 21. Infrastructure Considerations — Failure Modes
+
+* **Definition:** The configured behavior of a security device when it encounters an error, overload, or malfunction — either allowing all traffic through (fail-open) or blocking all traffic (fail-closed).
+
+| Mode | Behavior on failure | Security | Availability |
+| --- | --- | --- | --- |
+| **Fail-Open** | All traffic passes without inspection | ❌ No security during failure | ✅ Network stays up |
+| **Fail-Closed** | All traffic is blocked | ✅ Security maintained | ❌ Network goes down |
+
+> *Fail-open es como una puerta automática que se queda abierta si hay un apagón — conveniente, pero inseguro. Fail-closed es como una caja fuerte que se sella automáticamente si hay un error — segura, pero no puedes entrar.*
+
+**Decision factors:** The criticality of what is being protected.
+- Sensitive financial data servers → **fail-closed** (security over availability)
+- Guest wireless network → **fail-open** (availability over security, low-value assets)
+
+---
+
+## 22. Selecting Infrastructure Controls
+
+* **Definition:** The process of identifying, evaluating, and implementing safeguards or measures to mitigate potential risks and protect an organization's assets within its network infrastructure.
+
+> *Seleccionar controles es como equipar una casa: no cualquier casa necesita una cámara de seguridad, una alarma, un perro guardián y un guardia armado al mismo tiempo. Se elige según el valor de lo que se protege y el presupuesto disponible.*
 
 ### Key Principles for Control Selection
 
 | Principle | Description |
 | --- | --- |
-| **Least Privilege** | Users and systems receive only the access necessary to perform their function |
-| **Defense in Depth** | Multiple security layers ensure that if one fails, others remain; no single point of protection |
-| **Risk-Based Approach** | Controls are prioritized by the level of risk they mitigate; limited resources go where risk is highest |
-| **Lifecycle Management** | Controls are regularly reviewed, updated, and retired as threats and infrastructure evolve |
-| **Open Design Principle** | Security controls undergo transparent, rigorous testing and scrutiny to verify effectiveness |
+| **Least Privilege** | Users and systems get only the minimum access rights needed to perform their duties |
+| **Defense in Depth** | Multiple layers of security ensure that if one control fails, others remain effective |
+| **Risk-Based Approach** | Prioritize controls based on organizational risk and vulnerability severity |
+| **Lifecycle Management** | Regularly review, update, and retire controls as threats and infrastructure evolve |
+| **Open Design Principle** | Ensure controls undergo rigorous testing and transparency for accountability |
 
 ### Control Selection Methodology
 
-1. **Assess current state** — understand existing infrastructure, vulnerabilities, and controls in place
-2. **Gap analysis** — identify the difference between current and desired security posture
+1. **Assess current state** — understand existing infrastructure, vulnerabilities, and controls
+2. **Gap analysis** — identify discrepancies between current and desired security posture
 3. **Set clear objectives** — define what the controls must achieve (data protection, uptime, compliance)
-4. **Benchmarking** — compare performance and security metrics to industry best practices
-5. **Cost-benefit analysis** — balance security investment against the value of the protection provided
-6. **Stakeholder involvement** — ensure decision-makers and users understand and support the controls
-7. **Monitoring and feedback loops** — continuously evaluate control effectiveness; adjust as threats evolve
+4. **Benchmarking** — compare against industry best practices and standards (NIST, ISO)
+5. **Cost-benefit analysis** — balance security level against financial and resource investment
+6. **Stakeholder involvement** — ensure controls align with business operations and user adoption
+7. **Monitoring and feedback loops** — continuously validate control effectiveness as threats evolve
 
-### Best Practices
+### Recommended Frameworks
 
-- Conduct a **comprehensive risk assessment** before selecting controls; repeat it at major infrastructure changes
-- Align control selection to established frameworks: **NIST Cybersecurity Framework**, **NIST Risk Management Framework**, **ISO standards**
-- Customize frameworks to match your organization's specific risk profile and operations
-- Conduct regular **stakeholder training** — controls are only effective if people understand and follow them
-- Control selection is **not a one-time event** — review annually or quarterly
+- **NIST Cybersecurity Framework (CSF)** — comprehensive, widely used in the industry
+- **NIST Risk Management Framework (RMF)** — in-depth risk management methodology
+- **ISO standards** — internationally vetted guidelines for information security management
+
+⚠️ **Control selection is not a one-time event.** Reassess annually or quarterly, and always reassess after significant infrastructure changes or business operational changes.
 
 ---

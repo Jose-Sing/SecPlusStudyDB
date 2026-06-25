@@ -7805,340 +7805,315 @@ const STUDY_DATA = [
     "sectionTitle": "Section 16: Security Infrastructure",
     "concepts": [
       {
+        "name": "Security Infrastructure Overview",
+        "definition": "The cohesive combination of hardware, software, networks, data, and policies working together to safeguard an organization's information and assets.",
+        "analogy": "*Es como la infraestructura de un edificio: no solo los muros y las puertas, sino también las cámaras, las llaves, los guardias y los reglamentos internos. Todos trabajan juntos para que el edificio sea seguro.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The cohesive combination of hardware, software, networks, data, and policies working together to safeguard an organization's information and assets.\n\nSecurity infrastructure encompasses every layer of a network from the physical devices to the policies that govern their use. Ensuring a robust and secure infrastructure is vital to thwart potential cyber threats and keep organizational data uncompromised. This section covers **Domains 3 and 4**, specifically **Objectives 3.2** (apply security principles to secure enterprise architecture) and **4.5** (modify enterprise capabilities to enhance security).\n\n> *Es como la infraestructura de un edificio: no solo los muros y las puertas, sino también las cámaras, las llaves, los guardias y los reglamentos internos. Todos trabajan juntos para que el edificio sea seguro.*\n\n---"
+      },
+      {
         "name": "Ports and Protocols",
-        "definition": "A **port** is a logical communication endpoint on a computer or server identified by a number (0–65,535) that is paired with a **protocol** — a defined set of rules governing how data is exchanged between devices.",
-        "analogy": "*Un puerto es como la ventanilla de un banco: cada ventanilla (número de puerto) atiende un servicio específico (protocolo), y el cliente sabe exactamente a cuál formarse dependiendo de lo que necesite.*",
+        "definition": "A port is a logical communication endpoint on a computer or server that allows inbound or outbound network traffic; a protocol is the defined set of rules and conventions governing that communication.",
+        "analogy": "*Los puertos son como las puertas numeradas de un edificio de apartamentos: cada puerta lleva a un servicio específico. Algunos números todos los conocen (puerta 80 = recepción web), otros los reservan empresas, y otros los usan los visitantes temporalmente al entrar.*",
         "tables": [
           {
             "headers": [
-              "Type",
-              "Description"
-            ],
-            "rows": [
-              [
-                "**Inbound port**",
-                "The server is listening and waiting for a connection"
-              ],
-              [
-                "**Outbound port**",
-                "Opened by the client to initiate a connection; uses a random high-number port"
-              ]
-            ]
-          },
-          {
-            "headers": [
+              "Group",
               "Range",
-              "Name",
               "Description"
             ],
             "rows": [
               [
-                "**0–1023**",
-                "Well-Known Ports",
-                "Assigned by IANA to standard protocols (HTTP, SSH, DNS, etc.)"
+                "**Well-Known Ports**",
+                "0 – 1,023",
+                "Designated by IANA for commonly used protocols (e.g., HTTP port 80)"
               ],
               [
-                "**1024–49,151**",
-                "Registered Ports",
-                "Vendors register these for proprietary protocols (e.g., RDP on 3389, MS SQL on 1433)"
+                "**Registered Ports**",
+                "1,024 – 49,151",
+                "Used by vendors for proprietary protocols; must be registered with IANA"
               ],
               [
-                "**49,152–65,535**",
-                "Dynamic / Private Ports",
-                "Temporarily assigned by clients for outbound connections; no registration required"
+                "**Dynamic / Private Ports**",
+                "49,152 – 65,535",
+                "Used by clients for temporary outbound connections; no registration required"
               ]
             ]
           },
           {
             "headers": [
-              "Port",
+              "Port(s)",
               "Protocol",
               "Transport",
               "Description"
             ],
             "rows": [
               [
-                "**21**",
+                "21",
                 "FTP",
                 "TCP",
-                "File Transfer Protocol"
+                "File Transfer Protocol — file transfer between hosts"
               ],
               [
-                "**22**",
+                "22",
                 "SSH / SCP / SFTP",
                 "TCP",
-                "Secure remote access, secure copy, secure file transfer"
+                "Secure remote access, secure copy, and secure file transfer"
               ],
               [
-                "**23**",
+                "23",
                 "Telnet",
                 "TCP",
                 "Unencrypted remote access (legacy, insecure)"
               ],
               [
-                "**25**",
+                "25",
                 "SMTP",
                 "TCP",
                 "Sending email"
               ],
               [
-                "**53**",
+                "53",
                 "DNS",
-                "TCP/UDP",
-                "Domain name resolution"
+                "TCP / UDP",
+                "Translates domain names to IP addresses"
               ],
               [
-                "**69**",
+                "69",
                 "TFTP",
                 "UDP",
-                "Trivial File Transfer (used with network boot OS)"
+                "Trivial file transfer; used with network-based OS"
               ],
               [
-                "**80**",
+                "80",
                 "HTTP",
                 "TCP",
                 "Unencrypted web traffic"
               ],
               [
-                "**88**",
+                "88",
                 "Kerberos",
                 "UDP",
                 "Network authentication protocol"
               ],
               [
-                "**110**",
+                "110",
                 "POP3",
                 "TCP",
-                "Retrieving email from server"
+                "Retrieve email from server"
               ],
               [
-                "**119**",
+                "119",
                 "NNTP",
                 "TCP",
-                "Accessing newsgroups"
+                "Access to newsgroups"
               ],
               [
-                "**135**",
+                "135",
                 "RPC",
-                "TCP/UDP",
-                "Remote Procedure Call (Windows IPC)"
+                "TCP / UDP",
+                "Communication between system processes (Windows file sharing)"
               ],
               [
-                "**137–139**",
+                "137–139",
                 "NetBIOS",
-                "UDP/TCP",
-                "Windows name resolution, file and printer sharing"
+                "UDP / TCP",
+                "Windows local network naming, file, and printer sharing"
               ],
               [
-                "**143**",
+                "143",
                 "IMAP",
                 "TCP",
-                "Accessing email on server"
+                "Access email messages on a server"
               ],
               [
-                "**161**",
+                "161",
                 "SNMP",
                 "UDP",
-                "Network device management"
+                "Manage network devices"
               ],
               [
-                "**162**",
+                "162",
                 "SNMP Traps",
                 "UDP",
-                "SNMP alert messages"
+                "Receive SNMP trap alert messages"
               ],
               [
-                "**389**",
+                "389",
                 "LDAP",
                 "TCP",
                 "Directory services"
               ],
               [
-                "**443**",
+                "443",
                 "HTTPS",
                 "TCP",
-                "Encrypted web traffic (TLS)"
+                "Encrypted web browsing (TLS)"
               ],
               [
-                "**445**",
+                "445",
                 "SMB",
                 "TCP",
-                "Windows file and printer sharing"
+                "File and printer sharing over a network"
               ],
               [
-                "**465 / 587**",
+                "465 / 587",
                 "SMTPS",
                 "TCP",
                 "Secure email sending (SSL/TLS)"
               ],
               [
-                "**514**",
+                "514",
                 "Syslog",
                 "UDP",
-                "Log message forwarding"
+                "Send log messages"
               ],
               [
-                "**636**",
+                "636",
                 "LDAPS",
                 "TCP",
                 "Encrypted LDAP (SSL/TLS)"
               ],
               [
-                "**993**",
+                "993",
                 "IMAPS",
                 "TCP",
-                "Secure IMAP email retrieval"
+                "Secure IMAP (SSL/TLS)"
               ],
               [
-                "**995**",
+                "995",
                 "POP3S",
                 "TCP",
-                "Secure POP3 email retrieval"
+                "Secure POP3 (SSL/TLS)"
               ],
               [
-                "**1433**",
+                "1433",
                 "Microsoft SQL",
                 "TCP",
-                "MS SQL Server communication"
+                "SQL Server communications"
               ],
               [
-                "**1645 / 1646**",
-                "RADIUS (TCP)",
+                "1645 / 1646",
+                "RADIUS",
                 "TCP",
                 "Remote authentication, authorization, accounting"
               ],
               [
-                "**1812 / 1813**",
-                "RADIUS (UDP)",
+                "1812 / 1813",
+                "RADIUS",
                 "UDP",
-                "RADIUS over UDP"
+                "Remote authentication, authorization, accounting (UDP version)"
               ],
               [
-                "**3389**",
+                "3389",
                 "RDP",
                 "TCP",
                 "Remote Desktop Protocol"
               ],
               [
-                "**6514**",
+                "6514",
                 "Syslog TLS",
                 "TCP",
-                "Encrypted syslog"
+                "Encrypted Syslog"
               ]
             ]
           }
         ],
         "list_items": [],
-        "raw_content": "* **Definition:** A **port** is a logical communication endpoint on a computer or server identified by a number (0–65,535) that is paired with a **protocol** — a defined set of rules governing how data is exchanged between devices.\n\n> *Un puerto es como la ventanilla de un banco: cada ventanilla (número de puerto) atiende un servicio específico (protocolo), y el cliente sabe exactamente a cuál formarse dependiendo de lo que necesite.*\n\n### Port Classifications\n\n| Type | Description |\n| --- | --- |\n| **Inbound port** | The server is listening and waiting for a connection |\n| **Outbound port** | Opened by the client to initiate a connection; uses a random high-number port |\n\n### Port Number Ranges\n\n| Range | Name | Description |\n| --- | --- | --- |\n| **0–1023** | Well-Known Ports | Assigned by IANA to standard protocols (HTTP, SSH, DNS, etc.) |\n| **1024–49,151** | Registered Ports | Vendors register these for proprietary protocols (e.g., RDP on 3389, MS SQL on 1433) |\n| **49,152–65,535** | Dynamic / Private Ports | Temporarily assigned by clients for outbound connections; no registration required |\n\n### Critical Ports to Memorize\n\n| Port | Protocol | Transport | Description |\n| --- | --- | --- | --- |\n| **21** | FTP | TCP | File Transfer Protocol |\n| **22** | SSH / SCP / SFTP | TCP | Secure remote access, secure copy, secure file transfer |\n| **23** | Telnet | TCP | Unencrypted remote access (legacy, insecure) |\n| **25** | SMTP | TCP | Sending email |\n| **53** | DNS | TCP/UDP | Domain name resolution |\n| **69** | TFTP | UDP | Trivial File Transfer (used with network boot OS) |\n| **80** | HTTP | TCP | Unencrypted web traffic |\n| **88** | Kerberos | UDP | Network authentication protocol |\n| **110** | POP3 | TCP | Retrieving email from server |\n| **119** | NNTP | TCP | Accessing newsgroups |\n| **135** | RPC | TCP/UDP | Remote Procedure Call (Windows IPC) |\n| **137–139** | NetBIOS | UDP/TCP | Windows name resolution, file and printer sharing |\n| **143** | IMAP | TCP | Accessing email on server |\n| **161** | SNMP | UDP | Network device management |\n| **162** | SNMP Traps | UDP | SNMP alert messages |\n| **389** | LDAP | TCP | Directory services |\n| **443** | HTTPS | TCP | Encrypted web traffic (TLS) |\n| **445** | SMB | TCP | Windows file and printer sharing |\n| **465 / 587** | SMTPS | TCP | Secure email sending (SSL/TLS) |\n| **514** | Syslog | UDP | Log message forwarding |\n| **636** | LDAPS | TCP | Encrypted LDAP (SSL/TLS) |\n| **993** | IMAPS | TCP | Secure IMAP email retrieval |\n| **995** | POP3S | TCP | Secure POP3 email retrieval |\n| **1433** | Microsoft SQL | TCP | MS SQL Server communication |\n| **1645 / 1646** | RADIUS (TCP) | TCP | Remote authentication, authorization, accounting |\n| **1812 / 1813** | RADIUS (UDP) | UDP | RADIUS over UDP |\n| **3389** | RDP | TCP | Remote Desktop Protocol |\n| **6514** | Syslog TLS | TCP | Encrypted syslog |\n\n---"
+        "raw_content": "* **Definition:** A port is a logical communication endpoint on a computer or server that allows inbound or outbound network traffic; a protocol is the defined set of rules and conventions governing that communication.\n\nPorts are classified as **inbound** (the device is listening for a connection) or **outbound** (the device opens a temporary port to initiate a connection). Port numbers range from 0 to 65,535 and are divided into three groups:\n\n| Group | Range | Description |\n| --- | --- | --- |\n| **Well-Known Ports** | 0 – 1,023 | Designated by IANA for commonly used protocols (e.g., HTTP port 80) |\n| **Registered Ports** | 1,024 – 49,151 | Used by vendors for proprietary protocols; must be registered with IANA |\n| **Dynamic / Private Ports** | 49,152 – 65,535 | Used by clients for temporary outbound connections; no registration required |\n\n> *Los puertos son como las puertas numeradas de un edificio de apartamentos: cada puerta lleva a un servicio específico. Algunos números todos los conocen (puerta 80 = recepción web), otros los reservan empresas, y otros los usan los visitantes temporalmente al entrar.*\n\n### Key Ports Reference Table\n\n| Port(s) | Protocol | Transport | Description |\n| --- | --- | --- | --- |\n| 21 | FTP | TCP | File Transfer Protocol — file transfer between hosts |\n| 22 | SSH / SCP / SFTP | TCP | Secure remote access, secure copy, and secure file transfer |\n| 23 | Telnet | TCP | Unencrypted remote access (legacy, insecure) |\n| 25 | SMTP | TCP | Sending email |\n| 53 | DNS | TCP / UDP | Translates domain names to IP addresses |\n| 69 | TFTP | UDP | Trivial file transfer; used with network-based OS |\n| 80 | HTTP | TCP | Unencrypted web traffic |\n| 88 | Kerberos | UDP | Network authentication protocol |\n| 110 | POP3 | TCP | Retrieve email from server |\n| 119 | NNTP | TCP | Access to newsgroups |\n| 135 | RPC | TCP / UDP | Communication between system processes (Windows file sharing) |\n| 137–139 | NetBIOS | UDP / TCP | Windows local network naming, file, and printer sharing |\n| 143 | IMAP | TCP | Access email messages on a server |\n| 161 | SNMP | UDP | Manage network devices |\n| 162 | SNMP Traps | UDP | Receive SNMP trap alert messages |\n| 389 | LDAP | TCP | Directory services |\n| 443 | HTTPS | TCP | Encrypted web browsing (TLS) |\n| 445 | SMB | TCP | File and printer sharing over a network |\n| 465 / 587 | SMTPS | TCP | Secure email sending (SSL/TLS) |\n| 514 | Syslog | UDP | Send log messages |\n| 636 | LDAPS | TCP | Encrypted LDAP (SSL/TLS) |\n| 993 | IMAPS | TCP | Secure IMAP (SSL/TLS) |\n| 995 | POP3S | TCP | Secure POP3 (SSL/TLS) |\n| 1433 | Microsoft SQL | TCP | SQL Server communications |\n| 1645 / 1646 | RADIUS | TCP | Remote authentication, authorization, accounting |\n| 1812 / 1813 | RADIUS | UDP | Remote authentication, authorization, accounting (UDP version) |\n| 3389 | RDP | TCP | Remote Desktop Protocol |\n| 6514 | Syslog TLS | TCP | Encrypted Syslog |\n\n⚠️ **Exam Tip:** You will not be asked directly \"what port does SSH use?\" but you *will* see scenario questions where knowing ports is required — e.g., why a firewall is blocking a connection or which port to open/close.\n\n---"
       },
       {
         "name": "Firewalls",
-        "definition": "A **firewall** is a network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules, protecting a network from unauthorized access and threats.",
-        "analogy": "*Un firewall es como el guardia de seguridad en la entrada de un edificio corporativo: revisa a cada visitante según una lista de reglas y decide quién puede entrar y quién no.*",
+        "definition": "A network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules to protect a network from unauthorized access and threats.",
+        "analogy": "*Un firewall es como el portero de un edificio de oficinas: revisa a cada visitante antes de dejarlo entrar, y solo permite pasar a quienes tienen una razón legítima.*",
         "tables": [
           {
             "headers": [
-              "Type",
+              "Firewall Type",
               "OSI Layer",
-              "Inspection Depth",
-              "Notes"
+              "How it works",
+              "Trade-off"
             ],
             "rows": [
               [
                 "**Packet Filtering**",
                 "Layer 4",
-                "Headers only (IP + port)",
-                "Fast, minimal; cannot prevent IP spoofing or TCP attacks"
+                "Inspects only the packet header (IP + port); similar to a router ACL",
+                "Fast but cannot prevent IP spoofing or fragmentation attacks"
               ],
               [
                 "**Stateful**",
-                "Layer 4",
-                "Headers + connection state",
-                "Tracks session state; allows return traffic automatically"
+                "Layer 4–5",
+                "Tracks connection state; remembers outbound requests to validate return traffic",
+                "More secure than packet filtering; slight performance impact"
               ],
               [
-                "**Circuit-Level Proxy**",
+                "**Circuit-Level Proxy** (SOCKS)",
                 "Layer 5",
-                "Session layer (e.g., SOCKS)",
-                "Validates handshake; does not inspect payload content"
+                "Proxies at the session layer without inspecting payload content",
+                "Limited inspection depth"
               ],
               [
                 "**Application-Level Proxy**",
                 "Layer 7",
-                "Full deep packet inspection",
-                "Inspects payload per application; slower but most thorough"
+                "Deep packet inspection per application type (HTTP vs FTP handled differently)",
+                "High security but slower; best placed close to the application server"
               ],
               [
-                "**Kernel Proxy (5th Gen)**",
+                "**Kernel Proxy**",
                 "All layers",
-                "Full stack",
-                "Minimal performance impact; inspects every layer"
+                "Full inspection at every layer with minimal performance impact",
+                "Complex; should be placed close to protected system"
               ]
             ]
           },
           {
             "headers": [
-              "Attribute",
-              "Layer 4 Firewall",
-              "Layer 7 Firewall"
+              "Type",
+              "Acronym",
+              "Key Characteristics"
             ],
             "rows": [
               [
-                "Also known as",
-                "Packet-filtering / stateful",
-                "Application proxy"
+                "**Next-Generation Firewall**",
+                "NGFW",
+                "Application-aware, signature-based IPS inline, deep packet inspection, full-stack visibility, fast; may create vendor lock-in"
               ],
               [
-                "Inspects",
-                "Port numbers and protocols",
-                "Payload content and application behavior"
+                "**Unified Threat Management**",
+                "UTM",
+                "Single appliance combining firewall, AV, IPS, VPN, content filtering, DLP; lower cost but single point of failure"
               ],
               [
-                "Performance",
-                "Faster",
-                "Slower due to deep inspection"
-              ],
-              [
-                "Security depth",
-                "Lower",
-                "Higher"
+                "**Web Application Firewall**",
+                "WAF",
+                "Inspects HTTP/HTTPS traffic; prevents XSS and SQL injection; can be inline (blocks live attacks) or out-of-band (detect-only, like IDS)"
               ]
             ]
           }
         ],
-        "list_items": [
-          "Application-aware: distinguishes traffic by specific application, not just port",
-          "Inline deployment; supports custom signatures",
-          "Fast; full-stack visibility",
-          "⚠️ Can create vendor lock-in; more complex to manage than basic firewalls",
-          "Reduces device count and maintenance overhead",
-          "⚠️ Single point of failure — if it fails, the entire security stack fails",
-          "Less efficient per function than specialized single-purpose devices",
-          "Best placed inline between LAN and Internet (gateway position)",
-          "Can be deployed as an appliance or software plugin",
-          "**Inline:** Can block live attacks but may slow traffic and generate false positives",
-          "**Out-of-band:** Receives mirrored traffic via SPAN port; detects but cannot block in real time"
-        ],
-        "raw_content": "* **Definition:** A **firewall** is a network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules, protecting a network from unauthorized access and threats.\n\n> *Un firewall es como el guardia de seguridad en la entrada de un edificio corporativo: revisa a cada visitante según una lista de reglas y decide quién puede entrar y quién no.*\n\n### Screened Subnet (formerly DMZ)\n\nA **screened subnet** (also called **dual-homed host**) is a buffer zone between an external untrusted network and the internal trusted network. It hosts public-facing services (web servers, email, DNS) and prevents a breach in that zone from directly reaching the core internal network.\n\n⚠️ The term **DMZ** may still appear in device configuration menus, but the Security+ exam uses **screened subnet**.\n\n### Firewall Types — Comparison\n\n| Type | OSI Layer | Inspection Depth | Notes |\n| --- | --- | --- | --- |\n| **Packet Filtering** | Layer 4 | Headers only (IP + port) | Fast, minimal; cannot prevent IP spoofing or TCP attacks |\n| **Stateful** | Layer 4 | Headers + connection state | Tracks session state; allows return traffic automatically |\n| **Circuit-Level Proxy** | Layer 5 | Session layer (e.g., SOCKS) | Validates handshake; does not inspect payload content |\n| **Application-Level Proxy** | Layer 7 | Full deep packet inspection | Inspects payload per application; slower but most thorough |\n| **Kernel Proxy (5th Gen)** | All layers | Full stack | Minimal performance impact; inspects every layer |\n\n### Advanced Firewall Solutions\n\n#### Next-Generation Firewall (NGFW)\n* **Definition:** An advanced firewall that combines traditional stateful inspection with application awareness, intrusion prevention signatures, and deep packet inspection in a single, efficient engine.\n\n- Application-aware: distinguishes traffic by specific application, not just port\n- Inline deployment; supports custom signatures\n- Fast; full-stack visibility\n- ⚠️ Can create vendor lock-in; more complex to manage than basic firewalls\n\n#### Unified Threat Management (UTM)\n* **Definition:** A single network appliance that integrates multiple security functions including firewall, IPS, antivirus, antispam, VPN, content filtering, and DLP into one platform.\n\n- Reduces device count and maintenance overhead\n- ⚠️ Single point of failure — if it fails, the entire security stack fails\n- Less efficient per function than specialized single-purpose devices\n- Best placed inline between LAN and Internet (gateway position)\n\n#### Web Application Firewall (WAF)\n* **Definition:** A specialized firewall focused on inspecting HTTP/HTTPS traffic to protect web applications from attacks such as cross-site scripting (XSS) and SQL injection using defined rule sets.\n\n- Can be deployed as an appliance or software plugin\n- **Inline:** Can block live attacks but may slow traffic and generate false positives\n- **Out-of-band:** Receives mirrored traffic via SPAN port; detects but cannot block in real time\n\n### Layer 4 vs. Layer 7 Firewalls\n\n| Attribute | Layer 4 Firewall | Layer 7 Firewall |\n| --- | --- | --- |\n| Also known as | Packet-filtering / stateful | Application proxy |\n| Inspects | Port numbers and protocols | Payload content and application behavior |\n| Performance | Faster | Slower due to deep inspection |\n| Security depth | Lower | Higher |\n\n---"
+        "list_items": [],
+        "raw_content": "* **Definition:** A network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules to protect a network from unauthorized access and threats.\n\nFirewalls can be **hardware appliances** or **software** installed on a client or server. Their primary role is to inspect and control traffic at a network boundary. Placing a firewall at a segment boundary creates a **Screened Subnet** (formerly called a DMZ), acting as a protective buffer between untrusted external networks and trusted internal ones.\n\n> *Un firewall es como el portero de un edificio de oficinas: revisa a cada visitante antes de dejarlo entrar, y solo permite pasar a quienes tienen una razón legítima.*\n\n### Types of Firewalls\n\n| Firewall Type | OSI Layer | How it works | Trade-off |\n| --- | --- | --- | --- |\n| **Packet Filtering** | Layer 4 | Inspects only the packet header (IP + port); similar to a router ACL | Fast but cannot prevent IP spoofing or fragmentation attacks |\n| **Stateful** | Layer 4–5 | Tracks connection state; remembers outbound requests to validate return traffic | More secure than packet filtering; slight performance impact |\n| **Circuit-Level Proxy** (SOCKS) | Layer 5 | Proxies at the session layer without inspecting payload content | Limited inspection depth |\n| **Application-Level Proxy** | Layer 7 | Deep packet inspection per application type (HTTP vs FTP handled differently) | High security but slower; best placed close to the application server |\n| **Kernel Proxy** | All layers | Full inspection at every layer with minimal performance impact | Complex; should be placed close to protected system |\n\n### Advanced / Modern Firewall Types\n\n| Type | Acronym | Key Characteristics |\n| --- | --- | --- |\n| **Next-Generation Firewall** | NGFW | Application-aware, signature-based IPS inline, deep packet inspection, full-stack visibility, fast; may create vendor lock-in |\n| **Unified Threat Management** | UTM | Single appliance combining firewall, AV, IPS, VPN, content filtering, DLP; lower cost but single point of failure |\n| **Web Application Firewall** | WAF | Inspects HTTP/HTTPS traffic; prevents XSS and SQL injection; can be inline (blocks live attacks) or out-of-band (detect-only, like IDS) |\n\n⚠️ **Key distinction:** NGFW uses a single efficient engine per function; UTM uses separate engines per function — NGFW wins on performance. UTM wins on cost and simplicity.\n\n---"
       },
       {
-        "name": "Firewall Configuration and ACLs",
-        "definition": "An **Access Control List (ACL)** is a rule set placed on a firewall, router, or network device that **permits or denies traffic** through an interface based on source, destination, protocol, and port.",
-        "analogy": "*Una ACL es como el reglamento interno de un condominio: define exactamente quién puede entrar por qué puerta, en qué horario, y qué tipo de vehículo puede pasar. Todo lo que no está en la lista está prohibido por defecto.*",
+        "name": "Configuring Firewalls — ACLs",
+        "definition": "An Access Control List (ACL) is a rule set placed on a firewall, router, or network device that permits or denies traffic through an interface based on defined criteria.",
+        "analogy": "*Las ACLs son como la lista de invitados en una fiesta VIP: el portero revisa de arriba hacia abajo. Si tu nombre aparece en el primer ítem, entras. Si llegas al final de la lista y no estás, te quedás afuera.*",
         "tables": [
           {
             "headers": [
-              "Field",
+              "Component",
               "Description"
             ],
             "rows": [
               [
-                "**Traffic type**",
+                "**Type of traffic**",
                 "Protocol (TCP, UDP, ICMP, etc.)"
               ],
               [
                 "**Source**",
-                "Source IP address or range"
+                "Origin IP address or range"
               ],
               [
                 "**Destination**",
@@ -8147,118 +8122,126 @@ const STUDY_DATA = [
               [
                 "**Action**",
                 "Permit or Deny"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** An Access Control List (ACL) is a rule set placed on a firewall, router, or network device that permits or denies traffic through an interface based on defined criteria.\n\nACL rules are processed **top-down** — the first matching rule wins and the rest of the list is skipped. For this reason, **specific rules go at the top; generic rules go at the bottom**. Most devices support an **implied deny** at the bottom, but best practice is to always add an **explicit deny-all** final rule and to **log all actions**, including denies.\n\n> *Las ACLs son como la lista de invitados en una fiesta VIP: el portero revisa de arriba hacia abajo. Si tu nombre aparece en el primer ítem, entras. Si llegas al final de la lista y no estás, te quedás afuera.*\n\n### ACL Rule Components\n\n| Component | Description |\n| --- | --- |\n| **Type of traffic** | Protocol (TCP, UDP, ICMP, etc.) |\n| **Source** | Origin IP address or range |\n| **Destination** | Destination IP address or range |\n| **Action** | Permit or Deny |\n\n**Configuration environments:** Hardware firewalls (web-based GUI), Windows Defender Firewall with Advanced Security (GUI or command-line), Mac OS Firewall (System Preferences → Security → Firewall), Linux (PF, IPFW).\n\n---"
+      },
+      {
+        "name": "Intrusion Detection System (IDS)",
+        "definition": "A security system that monitors network or host activity to detect unauthorized access or attacks, then logs and alerts on findings without actively blocking them.",
+        "analogy": "*Un IDS es como una cámara de seguridad con alarma: ve lo que pasa y avisa, pero no puede detener al intruso físicamente.*",
+        "tables": [
+          {
+            "headers": [
+              "Type",
+              "Acronym",
+              "What it monitors"
+            ],
+            "rows": [
+              [
+                "**Network-based IDS**",
+                "NIDS",
+                "Traffic on the network segment; connected to a SPAN/mirror port on a backbone switch"
               ],
               [
-                "**Port**",
-                "Specific port number or range"
+                "**Host-based IDS**",
+                "HIDS",
+                "Traffic to/from a single server or endpoint plus suspicious processes and file access"
+              ],
+              [
+                "**Wireless IDS**",
+                "WIDS",
+                "Wireless network attacks: flooding, disassociation, de-authentication attacks"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Method",
+              "How it works",
+              "Weakness"
+            ],
+            "rows": [
+              [
+                "**Signature-based**",
+                "Matches traffic against a database of known attack signatures",
+                "Requires frequent updates; ineffective against zero-day attacks"
+              ],
+              [
+                "**Anomaly-based** (behavioral)",
+                "Compares traffic to a normal baseline; flags deviations",
+                "Higher rate of false positives"
               ]
             ]
           }
         ],
         "list_items": [
-          "Rules are processed **top-down**; the first match wins and stops further evaluation",
-          "**Specific rules go at the top; generic rules go at the bottom**",
-          "Many devices support **implicit deny** at the end; best practice is to always add an **explicit deny all** rule as the last entry",
-          "**Always log** matched actions, including denies",
-          "**Windows Defender Firewall with Advanced Security** → supports inbound/outbound rules, profiles (Domain, Private, Public), and logging",
-          "**macOS Firewall** → simpler UI; advanced control requires `pf` or `ipfw` CLI tools",
-          "**Stealth Mode** (macOS) → device does not respond to ping sweeps; improves obscurity"
+          "**Pattern-matching** — recognizes specific attack step sequences; common in NIDS and WIDS",
+          "**Stateful-matching** — compares against a known system baseline; common in HIDS"
         ],
-        "raw_content": "* **Definition:** An **Access Control List (ACL)** is a rule set placed on a firewall, router, or network device that **permits or denies traffic** through an interface based on source, destination, protocol, and port.\n\n> *Una ACL es como el reglamento interno de un condominio: define exactamente quién puede entrar por qué puerta, en qué horario, y qué tipo de vehículo puede pasar. Todo lo que no está en la lista está prohibido por defecto.*\n\n### ACL Key Rules\n\n- Rules are processed **top-down**; the first match wins and stops further evaluation\n- **Specific rules go at the top; generic rules go at the bottom**\n- Many devices support **implicit deny** at the end; best practice is to always add an **explicit deny all** rule as the last entry\n- **Always log** matched actions, including denies\n\n### ACL Rule Components\n\n| Field | Description |\n| --- | --- |\n| **Traffic type** | Protocol (TCP, UDP, ICMP, etc.) |\n| **Source** | Source IP address or range |\n| **Destination** | Destination IP address or range |\n| **Action** | Permit or Deny |\n| **Port** | Specific port number or range |\n\n### Software Firewalls\n\n- **Windows Defender Firewall with Advanced Security** → supports inbound/outbound rules, profiles (Domain, Private, Public), and logging\n- **macOS Firewall** → simpler UI; advanced control requires `pf` or `ipfw` CLI tools\n- **Stealth Mode** (macOS) → device does not respond to ping sweeps; improves obscurity\n\n---"
+        "raw_content": "* **Definition:** A security system that monitors network or host activity to detect unauthorized access or attacks, then logs and alerts on findings without actively blocking them.\n\nAn IDS **detects, logs, reports, and alerts** — it does **not** prevent attacks. When it finds something suspicious, it notifies an administrator or analyst who then decides how to respond.\n\n> *Un IDS es como una cámara de seguridad con alarma: ve lo que pasa y avisa, pero no puede detener al intruso físicamente.*\n\n### IDS Types by Placement\n\n| Type | Acronym | What it monitors |\n| --- | --- | --- |\n| **Network-based IDS** | NIDS | Traffic on the network segment; connected to a SPAN/mirror port on a backbone switch |\n| **Host-based IDS** | HIDS | Traffic to/from a single server or endpoint plus suspicious processes and file access |\n| **Wireless IDS** | WIDS | Wireless network attacks: flooding, disassociation, de-authentication attacks |\n\n### IDS Detection Methods\n\n| Method | How it works | Weakness |\n| --- | --- | --- |\n| **Signature-based** | Matches traffic against a database of known attack signatures | Requires frequent updates; ineffective against zero-day attacks |\n| **Anomaly-based** (behavioral) | Compares traffic to a normal baseline; flags deviations | Higher rate of false positives |\n\n**Signature-based sub-types:**\n- **Pattern-matching** — recognizes specific attack step sequences; common in NIDS and WIDS\n- **Stateful-matching** — compares against a known system baseline; common in HIDS\n\n**Anomaly-based sub-types:** statistical, protocol, traffic, rule/heuristic, application-based.\n\n---"
       },
       {
-        "name": "IDS and IPS",
-        "definition": "An **Intrusion Detection System (IDS)** monitors network or host activity for suspicious behavior and generates alerts, while an **Intrusion Prevention System (IPS)** does the same but also takes automated action to block or stop the threat.",
-        "analogy": "*Un IDS es como una cámara de seguridad: graba y avisa si ve algo sospechoso, pero no actúa. Un IPS es como un guardia armado: detecta y también interviene de inmediato.*",
+        "name": "Intrusion Prevention System (IPS)",
+        "definition": "A security system that monitors network or host activity for malicious behavior and actively takes action to block or stop detected threats, in addition to logging and alerting.",
+        "analogy": "*Si el IDS es la cámara con alarma, el IPS es el guardia de seguridad que actúa: ve la amenaza y la detiene en el momento.*",
         "tables": [
           {
             "headers": [
-              "Feature",
+              "Behavior",
               "IDS",
               "IPS"
             ],
             "rows": [
               [
-                "Detects threats",
+                "Detect and alert",
                 "✅",
                 "✅"
               ],
               [
-                "Logs and alerts",
+                "Log events",
                 "✅",
                 "✅"
               ],
               [
-                "Blocks / takes action",
+                "Block / take action",
                 "❌",
                 "✅"
               ],
               [
-                "Typical placement",
-                "Mirrored/SPAN port (passive)",
-                "Inline, behind the firewall"
+                "Placement",
+                "Mirror/SPAN port (passive)",
+                "Inline (in traffic path)"
               ]
             ]
           }
         ],
-        "list_items": [
-          "Detects port scans, suspicious payloads, traffic to/from suspicious IPs",
-          "NIPS is placed inline (right behind the firewall) to block in real time",
-          "NIDS uses a mirrored port for passive monitoring only",
-          "HIPS can block unauthorized changes to critical system files",
-          "More granular than network-based systems; specific to one host",
-          "WIPS can disconnect the offending wireless device from the network",
-          "Requires frequent database updates",
-          "⚠️ Ineffective against zero-day attacks",
-          "Sub-types: **pattern-matching** (common in NIDS/WIDS) and **stateful-matching** (common in HIDS)",
-          "Effective against unknown/novel attacks",
-          "⚠️ Higher rate of false positives than signature-based",
-          "Sub-types: statistical, protocol, traffic, rule/heuristic, and application-based"
-        ],
-        "raw_content": "* **Definition:** An **Intrusion Detection System (IDS)** monitors network or host activity for suspicious behavior and generates alerts, while an **Intrusion Prevention System (IPS)** does the same but also takes automated action to block or stop the threat.\n\n> *Un IDS es como una cámara de seguridad: graba y avisa si ve algo sospechoso, pero no actúa. Un IPS es como un guardia armado: detecta y también interviene de inmediato.*\n\n### IDS vs. IPS\n\n| Feature | IDS | IPS |\n| --- | --- | --- |\n| Detects threats | ✅ | ✅ |\n| Logs and alerts | ✅ | ✅ |\n| Blocks / takes action | ❌ | ✅ |\n| Typical placement | Mirrored/SPAN port (passive) | Inline, behind the firewall |\n\n### IDS/IPS Types by Scope\n\n#### Network-Based (NIDS / NIPS)\n* **Definition:** A standalone device or appliance that monitors all traffic crossing a network segment, typically connected via a SPAN or mirrored port on a backbone switch.\n\n- Detects port scans, suspicious payloads, traffic to/from suspicious IPs\n- NIPS is placed inline (right behind the firewall) to block in real time\n- NIDS uses a mirrored port for passive monitoring only\n\n#### Host-Based (HIDS / HIPS)\n* **Definition:** Software installed directly on a server or endpoint that monitors traffic to/from that specific host, as well as suspicious processes and file access.\n\n- HIPS can block unauthorized changes to critical system files\n- More granular than network-based systems; specific to one host\n\n#### Wireless (WIDS / WIPS)\n* **Definition:** A system focused on detecting and preventing attacks against wireless networks, including de-authentication attacks, disassociation floods, and rogue access points.\n\n- WIPS can disconnect the offending wireless device from the network\n\n### Detection Methods\n\n#### Signature-Based Detection\n* **Definition:** Analyzes traffic against a database of known attack signatures; can only detect previously identified threats.\n\n- Requires frequent database updates\n- ⚠️ Ineffective against zero-day attacks\n- Sub-types: **pattern-matching** (common in NIDS/WIDS) and **stateful-matching** (common in HIDS)\n\n#### Anomaly-Based Detection\n* **Definition:** Establishes a baseline of normal traffic behavior and alerts when activity deviates significantly from that baseline (behavioral detection).\n\n- Effective against unknown/novel attacks\n- ⚠️ Higher rate of false positives than signature-based\n- Sub-types: statistical, protocol, traffic, rule/heuristic, and application-based\n\n---"
+        "list_items": [],
+        "raw_content": "* **Definition:** A security system that monitors network or host activity for malicious behavior and actively takes action to block or stop detected threats, in addition to logging and alerting.\n\nAn IPS does everything an IDS does, **plus it takes action** — blocking traffic, terminating connections, or removing wireless clients. Placement matters: a **NIPS** should be placed **inline just behind the firewall** (in the traffic path) so it can block threats. A **NIDS** connects via a **mirrored port** (passive, out of path).\n\n> *Si el IDS es la cámara con alarma, el IPS es el guardia de seguridad que actúa: ve la amenaza y la detiene en el momento.*\n\n⚠️ **Key risk with IPS:** False positives block legitimate traffic; false negatives allow real threats through. Tuning is critical.\n\n| Behavior | IDS | IPS |\n| --- | --- | --- |\n| Detect and alert | ✅ | ✅ |\n| Log events | ✅ | ✅ |\n| Block / take action | ❌ | ✅ |\n| Placement | Mirror/SPAN port (passive) | Inline (in traffic path) |\n\n---"
       },
       {
         "name": "Network Appliances",
-        "definition": "A **network appliance** is a dedicated hardware device with pre-installed software designed to perform specific networking functions such as load balancing, proxying, monitoring, or security enforcement within a network.",
-        "analogy": "*Un appliance de red es como un electrodoméstico especializado: no es una computadora de propósito general, sino un dispositivo diseñado específicamente para una sola tarea, como una cafetera que solo hace café.*",
+        "definition": "Dedicated hardware devices with pre-installed software designed to perform specific networking services — such as load balancing, proxying, monitoring, or access control — within a network infrastructure.",
+        "analogy": "*Los appliances de red son como los electrodomésticos especializados de una cocina profesional: cada uno tiene un trabajo específico que hace mejor que una cocina doméstica genérica.*",
         "tables": [],
-        "list_items": [
-          "Continuously performs **health checks** on servers; redirects traffic if a server fails",
-          "Minimizes downtime during planned maintenance or unexpected failures",
-          "Advanced variant: **ADC (Application Delivery Controller)** — adds SSL termination, HTTP compression, and content caching",
-          "**Content caching** → stores local copies of responses to reduce bandwidth and speed up repeat requests",
-          "**Request filtering** → enforces organizational policies for network usage",
-          "Helps defend against DDoS by masking internal endpoint IPs",
-          "Can enforce authentication, data encryption, and geographic data routing for compliance",
-          "Used as the data collection layer for IDS/IPS systems",
-          "Trigger alerts on events like sudden traffic spikes from unknown IPs (potential DDoS)",
-          "Enable proactive response by providing real-time operational visibility",
-          "Reduces attack surface by limiting direct access to sensitive internal devices",
-          "Centralizes logging for audit and incident response purposes",
-          "Hosts admin tools and scripts for routine tasks and troubleshooting",
-          "⚠️ Must be heavily secured — it is a high-value target due to its privileged access"
-        ],
-        "raw_content": "* **Definition:** A **network appliance** is a dedicated hardware device with pre-installed software designed to perform specific networking functions such as load balancing, proxying, monitoring, or security enforcement within a network.\n\n> *Un appliance de red es como un electrodoméstico especializado: no es una computadora de propósito general, sino un dispositivo diseñado específicamente para una sola tarea, como una cafetera que solo hace café.*\n\n### Load Balancers\n\n* **Definition:** A device that distributes incoming network or application traffic across multiple servers to optimize performance, prevent overload on any single server, and maintain high availability.\n\n- Continuously performs **health checks** on servers; redirects traffic if a server fails\n- Minimizes downtime during planned maintenance or unexpected failures\n- Advanced variant: **ADC (Application Delivery Controller)** — adds SSL termination, HTTP compression, and content caching\n\n### Proxy Servers\n\n* **Definition:** An intermediary device between a client and a server that manages requests, enforces policies, caches content, and can mask the identity of internal endpoints.\n\n- **Content caching** → stores local copies of responses to reduce bandwidth and speed up repeat requests\n- **Request filtering** → enforces organizational policies for network usage\n- Helps defend against DDoS by masking internal endpoint IPs\n- Can enforce authentication, data encryption, and geographic data routing for compliance\n\n### Sensors\n\n* **Definition:** Devices or software tools that continuously monitor network conditions, traffic patterns, and data flows to detect anomalies, security breaches, or performance issues in real time.\n\n- Used as the data collection layer for IDS/IPS systems\n- Trigger alerts on events like sudden traffic spikes from unknown IPs (potential DDoS)\n- Enable proactive response by providing real-time operational visibility\n\n### Jump Servers (Jump Boxes)\n\n* **Definition:** A dedicated, hardened gateway server used by administrators to securely access devices in different security zones within a network; all administrative access is funneled through this single point.\n\n- Reduces attack surface by limiting direct access to sensitive internal devices\n- Centralizes logging for audit and incident response purposes\n- Hosts admin tools and scripts for routine tasks and troubleshooting\n- ⚠️ Must be heavily secured — it is a high-value target due to its privileged access\n\n---"
+        "list_items": [],
+        "raw_content": "* **Definition:** Dedicated hardware devices with pre-installed software designed to perform specific networking services — such as load balancing, proxying, monitoring, or access control — within a network infrastructure.\n\n> *Los appliances de red son como los electrodomésticos especializados de una cocina profesional: cada uno tiene un trabajo específico que hace mejor que una cocina doméstica genérica.*\n\n### Load Balancers\n\n* **Definition:** A network appliance that distributes incoming network or application traffic across multiple servers to optimize performance, prevent overload, and ensure high availability.\n\nLoad balancers perform **continuous health checks** on servers; if one fails, traffic is redirected to remaining servers. An advanced version is the **Application Delivery Controller (ADC)**, which adds SSL termination, HTTP compression, and content caching on top of basic load distribution.\n\n### Proxy Servers\n\n* **Definition:** An intermediary server that sits between clients and servers to handle requests on behalf of clients, providing content caching, request filtering, login management, and security functions.\n\nProxy servers cache responses to reduce bandwidth, enforce organizational policies, mask internal endpoints (protecting against direct attacks), and can route traffic to maintain data sovereignty compliance. They also contribute to load balancing by distributing requests across servers.\n\n### Network Sensors\n\n* **Definition:** Devices or software that continuously monitor, detect, and analyze traffic and data flow across the network to identify unusual activity, security breaches, or performance issues in real time.\n\nSensors feed data into IDS/IPS systems. They track performance anomalies (traffic spikes, service degradation), trigger alerts for the network operations team, and can detect early indicators of attacks like DDoS attempts from unknown IP addresses.\n\n### Jump Servers (Jump Boxes)\n\n* **Definition:** A dedicated, hardened gateway server that system administrators use to securely access devices located in different security zones within a network.\n\nJump servers provide a **single controlled access point** for administrative tasks, reducing the attack surface by preventing direct access to sensitive internal systems. They also **centralize logging** of all administrative activity, making audits and incident response significantly faster. Jump boxes are heavily secured with advanced monitoring software and typically host administrative tools and scripts needed for routine maintenance.\n\n---"
       },
       {
         "name": "Port Security",
-        "definition": "A network switch feature that restricts which devices can connect to a specific port based on their **MAC address**, preventing unauthorized devices from gaining network access.",
-        "analogy": "*La seguridad de puertos es como una estación de tren donde cada asiento está asignado a un pasajero específico por número de identificación: si no eres tú, no puedes sentarte ahí, aunque el tren esté lleno.*",
+        "definition": "A network switch feature that restricts which devices can connect to a specific switch port based on the MAC address of their network interface card, preventing unauthorized device access.",
+        "analogy": "*La seguridad de puertos en un switch es como la lista de dispositivos autorizados en una sala de servidores: si el dispositivo no está en la lista, la puerta no se abre, sin importar quién lo intente conectar.*",
         "tables": [],
-        "list_items": [
-          "Switches operate at **Layer 2** of the OSI model and make decisions based on MAC addresses",
-          "Maintain a **CAM table** (Content Addressable Memory) that maps MAC addresses to switch ports",
-          "Each port is its own **collision domain**, enabling full-duplex communication",
-          "**Defense:** Enable port security or MAC filtering on switch interfaces",
-          "Simplifies setup; no need to pre-configure each MAC manually",
-          "⚠️ Can be bypassed by **MAC spoofing** — attacker clones an approved MAC address"
-        ],
-        "raw_content": "* **Definition:** A network switch feature that restricts which devices can connect to a specific port based on their **MAC address**, preventing unauthorized devices from gaining network access.\n\n> *La seguridad de puertos es como una estación de tren donde cada asiento está asignado a un pasajero específico por número de identificación: si no eres tú, no puedes sentarte ahí, aunque el tren esté lleno.*\n\n### How Switches Work\n\n- Switches operate at **Layer 2** of the OSI model and make decisions based on MAC addresses\n- Maintain a **CAM table** (Content Addressable Memory) that maps MAC addresses to switch ports\n- Each port is its own **collision domain**, enabling full-duplex communication\n\n### MAC Flooding Attack\n\nAn attacker floods the switch with random MAC addresses, overflowing the CAM table. The switch **fails open** and begins broadcasting all traffic out every port (behaving like a hub), allowing an attacker to capture all network traffic.\n\n- **Defense:** Enable port security or MAC filtering on switch interfaces\n\n### Sticky MAC (Persistent MAC Learning)\n\n* **Definition:** A port security feature that dynamically learns and locks the first MAC address connected to a port as the only authorized MAC address for that port.\n\n- Simplifies setup; no need to pre-configure each MAC manually\n- ⚠️ Can be bypassed by **MAC spoofing** — attacker clones an approved MAC address\n\n---"
+        "list_items": [],
+        "raw_content": "* **Definition:** A network switch feature that restricts which devices can connect to a specific switch port based on the MAC address of their network interface card, preventing unauthorized device access.\n\nSwitches use a **CAM (Content Addressable Memory) table** to store MAC address-to-port mappings and forward traffic only to the intended device. Attackers can exploit this with **MAC flooding** — sending large numbers of fake MAC addresses to overflow the CAM table, causing the switch to **fail open** and behave like a hub, rebroadcasting all traffic to all ports.\n\n**Port security** mitigates this by binding specific MAC addresses to specific switch ports.\n\n> *La seguridad de puertos en un switch es como la lista de dispositivos autorizados en una sala de servidores: si el dispositivo no está en la lista, la puerta no se abre, sin importar quién lo intente conectar.*\n\n### Sticky MAC (Persistent MAC Learning)\n\n* **Definition:** A port security feature that dynamically learns and locks the first MAC address connected to a switch port, blocking any subsequent device from connecting to that port.\n\n⚠️ **Limitation of MAC-based port security:** Attackers can bypass it by **MAC spoofing** — changing their NIC's MAC address to a known-authorized address. This requires additional controls like 802.1x.\n\n---"
       },
       {
         "name": "802.1x Authentication",
-        "definition": "An IEEE standard framework for **port-based network access control** that requires devices to authenticate before being granted access to a wired or wireless network, operating at Layer 2.",
-        "analogy": "*El 802.1x es como el control de acceso de un aeropuerto: no importa en qué puerta intentes entrar (switch o AP), siempre debes mostrar tu pasaporte (credenciales) antes de pasar.*",
+        "definition": "An IEEE standardized framework for port-based network access control that authenticates devices connecting to wired or wireless networks before granting them access.",
+        "analogy": "",
         "tables": [
           {
             "headers": [
@@ -8272,11 +8255,11 @@ const STUDY_DATA = [
               ],
               [
                 "**Authenticator**",
-                "The network device the supplicant connects through (switch, AP, VPN concentrator)"
+                "The network device through which access is requested (switch, WAP, VPN concentrator)"
               ],
               [
                 "**Authentication Server**",
-                "Centralized server that performs the actual authentication (RADIUS or TACACS+)"
+                "The centralized server performing authentication (RADIUS or TACACS+)"
               ]
             ]
           },
@@ -8294,277 +8277,269 @@ const STUDY_DATA = [
               ],
               [
                 "Transport",
-                "UDP",
-                "TCP"
+                "UDP (faster, less secure)",
+                "TCP (slower, more secure)"
               ],
               [
-                "Authentication + Authorization",
+                "AAA process",
                 "Combined",
-                "Separated (more secure)"
+                "Independent (more granular)"
               ],
               [
                 "Protocol support",
-                "Limited (no NetBIOS, X.25)",
-                "All networking protocols"
+                "Does not support RAP, NetBIOS Frame, X.25 PAD",
+                "Supports all networking protocols"
               ],
               [
-                "Best use",
+                "Best for",
                 "Mixed-vendor networks",
-                "All-Cisco networks"
+                "All-Cisco environments"
               ]
             ]
           }
         ],
         "list_items": [],
-        "raw_content": "* **Definition:** An IEEE standard framework for **port-based network access control** that requires devices to authenticate before being granted access to a wired or wireless network, operating at Layer 2.\n\n> *El 802.1x es como el control de acceso de un aeropuerto: no importa en qué puerta intentes entrar (switch o AP), siempre debes mostrar tu pasaporte (credenciales) antes de pasar.*\n\n### 802.1x Roles\n\n| Role | Description |\n| --- | --- |\n| **Supplicant** | The device or user requesting network access |\n| **Authenticator** | The network device the supplicant connects through (switch, AP, VPN concentrator) |\n| **Authentication Server** | Centralized server that performs the actual authentication (RADIUS or TACACS+) |\n\n### RADIUS vs. TACACS+\n\n| Feature | RADIUS | TACACS+ |\n| --- | --- | --- |\n| Platform | Cross-platform | Cisco proprietary only |\n| Transport | UDP | TCP |\n| Authentication + Authorization | Combined | Separated (more secure) |\n| Protocol support | Limited (no NetBIOS, X.25) | All networking protocols |\n| Best use | Mixed-vendor networks | All-Cisco networks |\n\n---"
+        "raw_content": "* **Definition:** An IEEE standardized framework for port-based network access control that authenticates devices connecting to wired or wireless networks before granting them access.\n\n802.1x is a **framework** — it relies on other protocols (RADIUS or TACACS+) for the actual authentication. It operates at **Layer 2 (Data Link)** and requires three roles:\n\n| Role | Description |\n| --- | --- |\n| **Supplicant** | The device or user requesting network access |\n| **Authenticator** | The network device through which access is requested (switch, WAP, VPN concentrator) |\n| **Authentication Server** | The centralized server performing authentication (RADIUS or TACACS+) |\n\n### RADIUS vs TACACS+\n\n| Feature | RADIUS | TACACS+ |\n| --- | --- | --- |\n| Platform | Cross-platform | Cisco proprietary only |\n| Transport | UDP (faster, less secure) | TCP (slower, more secure) |\n| AAA process | Combined | Independent (more granular) |\n| Protocol support | Does not support RAP, NetBIOS Frame, X.25 PAD | Supports all networking protocols |\n| Best for | Mixed-vendor networks | All-Cisco environments |\n\n---"
       },
       {
         "name": "EAP — Extensible Authentication Protocol",
-        "definition": "A **flexible authentication framework** used with 802.1x that supports multiple authentication methods including passwords, digital certificates, and public key infrastructure. EAP is not a single protocol but a family of variants.",
-        "analogy": "*EAP es como un conector USB-C: no importa qué tipo de cable necesites (contraseña, certificado digital, token), el mismo puerto universal puede soportar todos los métodos de autenticación.*",
+        "definition": "A flexible authentication framework (not a single protocol) that defines multiple methods for authenticating clients and servers in conjunction with 802.1x, supporting passwords, certificates, and PKI.",
+        "analogy": "*EAP es como el sistema de llaves de un hotel moderno: puede ser una llave magnética, una app en el celular, una huella dactilar o un código PIN. El hotel (802.1x) decide cuál método usar, pero la forma de abrir la puerta (EAP) puede variar.*",
         "tables": [
           {
             "headers": [
               "Variant",
-              "Client cert",
-              "Server cert",
-              "Mutual auth",
-              "Cross-platform"
+              "Authentication Method",
+              "Mutual Auth?",
+              "Notes"
             ],
             "rows": [
               [
                 "**EAP-MD5**",
-                "❌",
-                "❌",
-                "❌",
-                "✅"
+                "Password (challenge-handshake)",
+                "❌ One-way",
+                "Simple; requires strong passwords; weakest EAP variant"
               ],
               [
                 "**EAP-TLS**",
+                "Digital certificates on both client and server",
                 "✅",
-                "✅",
-                "✅",
-                "✅"
+                "Immune to password attacks; strongest common EAP variant"
               ],
               [
                 "**EAP-TTLS**",
-                "❌",
+                "Server certificate + client password",
                 "✅",
-                "✅",
-                "✅"
+                "More secure than MD5; less secure than TLS"
               ],
               [
                 "**EAP-FAST**",
-                "❌",
-                "❌ (PAC)",
+                "Protected Access Credential (PAC) instead of certificate",
                 "✅",
-                "✅"
+                "No certificate required; uses PAC for mutual auth"
               ],
               [
                 "**PEAP**",
-                "❌",
+                "Server certificate + client password via MS Active Directory",
                 "✅",
-                "✅",
-                "✅"
+                "Common in Windows/Active Directory environments"
               ],
               [
                 "**EAP-LEAP**",
-                "❌",
-                "❌",
+                "Cisco proprietary",
                 "✅",
-                "❌ (Cisco only)"
-              ]
-            ]
-          }
-        ],
-        "list_items": [
-          "Weakest EAP variant; vulnerable to password-based attacks",
-          "Strongest EAP variant; both client and server authenticate each other",
-          "Requires a PKI infrastructure to issue certificates to all clients",
-          "More secure than EAP-MD5 (server is verified); less secure than EAP-TLS (client uses password)",
-          "Does not require a PKI infrastructure; easier to deploy than EAP-TLS",
-          "Common in Microsoft environments; server certificate required but not client certificate",
-          "⚠️ Avoid unless running an all-Cisco infrastructure; not cross-platform"
-        ],
-        "raw_content": "* **Definition:** A **flexible authentication framework** used with 802.1x that supports multiple authentication methods including passwords, digital certificates, and public key infrastructure. EAP is not a single protocol but a family of variants.\n\n> *EAP es como un conector USB-C: no importa qué tipo de cable necesites (contraseña, certificado digital, token), el mismo puerto universal puede soportar todos los métodos de autenticación.*\n\n### EAP Variants\n\n#### EAP-MD5\n* **Definition:** Uses simple passwords and the challenge-handshake authentication process for remote access; provides one-way authentication only (no mutual authentication).\n\n- Weakest EAP variant; vulnerable to password-based attacks\n\n#### EAP-TLS\n* **Definition:** Uses digital certificates installed on both the client and the server for mutual authentication; immune to password-based attacks.\n\n- Strongest EAP variant; both client and server authenticate each other\n- Requires a PKI infrastructure to issue certificates to all clients\n\n#### EAP-TTLS\n* **Definition:** Requires a digital certificate on the server only; the client authenticates using a password, creating a secure tunnel for the password exchange.\n\n- More secure than EAP-MD5 (server is verified); less secure than EAP-TLS (client uses password)\n\n#### EAP-FAST\n* **Definition:** Uses a **Protected Access Credential (PAC)** instead of certificates to establish mutual authentication between two devices; FAST = Flexible Authentication via Secure Tunneling.\n\n- Does not require a PKI infrastructure; easier to deploy than EAP-TLS\n\n#### PEAP (Protected EAP)\n* **Definition:** Supports mutual authentication using a server-side digital certificate and Microsoft Active Directory to validate the client's password credential.\n\n- Common in Microsoft environments; server certificate required but not client certificate\n\n#### EAP-LEAP\n* **Definition:** A **Cisco proprietary** lightweight EAP variant; works only on Cisco devices.\n\n- ⚠️ Avoid unless running an all-Cisco infrastructure; not cross-platform\n\n### EAP Variants at a Glance\n\n| Variant | Client cert | Server cert | Mutual auth | Cross-platform |\n| --- | --- | --- | --- | --- |\n| **EAP-MD5** | ❌ | ❌ | ❌ | ✅ |\n| **EAP-TLS** | ✅ | ✅ | ✅ | ✅ |\n| **EAP-TTLS** | ❌ | ✅ | ✅ | ✅ |\n| **EAP-FAST** | ❌ | ❌ (PAC) | ✅ | ✅ |\n| **PEAP** | ❌ | ✅ | ✅ | ✅ |\n| **EAP-LEAP** | ❌ | ❌ | ✅ | ❌ (Cisco only) |\n\n---"
-      },
-      {
-        "name": "Securing Network Communications — VPN",
-        "definition": "A **Virtual Private Network (VPN)** extends a private network across a public network, allowing users to send and receive data as if their devices were directly connected to the organization's private network, using an encrypted tunnel.",
-        "analogy": "*Una VPN es como un tubo blindado dentro de una tubería pública: otros pueden ver el tubo, pero no pueden ver lo que va adentro ni interceptar su contenido.*",
-        "tables": [
-          {
-            "headers": [
-              "Mode",
-              "Usage",
-              "Description"
-            ],
-            "rows": [
-              [
-                "**Full Tunnel**",
-                "Most secure",
-                "All traffic routed through HQ network; local resources (home printer) inaccessible"
-              ],
-              [
-                "**Split Tunnel**",
-                "Better performance",
-                "Only corporate-bound traffic goes through VPN; Internet traffic exits locally"
-              ]
-            ]
-          }
-        ],
-        "list_items": [
-          "All traffic from the remote site flows through the HQ network before reaching the Internet",
-          "Cost-effective alternative to MPLS or leased lines",
-          "User installs VPN client software and authenticates to connect",
-          "Most common remote work setup",
-          "Used every time you connect to an HTTPS website (the browser acts as the VPN client)",
-          "Relies on **TLS** (Layers 5–6–7) for encryption"
-        ],
-        "raw_content": "* **Definition:** A **Virtual Private Network (VPN)** extends a private network across a public network, allowing users to send and receive data as if their devices were directly connected to the organization's private network, using an encrypted tunnel.\n\n> *Una VPN es como un tubo blindado dentro de una tubería pública: otros pueden ver el tubo, pero no pueden ver lo que va adentro ni interceptar su contenido.*\n\n### VPN Types by Configuration\n\n#### Site-to-Site VPN\n* **Definition:** Connects two entire network sites (e.g., branch office to headquarters) over the public Internet using routers or VPN concentrators at each end, replacing expensive dedicated leased lines.\n\n- All traffic from the remote site flows through the HQ network before reaching the Internet\n- Cost-effective alternative to MPLS or leased lines\n\n#### Client-to-Site VPN\n* **Definition:** Connects a single device (laptop, phone, tablet) to the organization's headquarters network over the public Internet.\n\n- User installs VPN client software and authenticates to connect\n- Most common remote work setup\n\n#### Clientless VPN\n* **Definition:** A remote access VPN that uses a standard web browser and the HTTPS/TLS protocol (port 443) — no dedicated software or hardware client required.\n\n- Used every time you connect to an HTTPS website (the browser acts as the VPN client)\n- Relies on **TLS** (Layers 5–6–7) for encryption\n\n### VPN Tunnel Modes\n\n| Mode | Usage | Description |\n| --- | --- | --- |\n| **Full Tunnel** | Most secure | All traffic routed through HQ network; local resources (home printer) inaccessible |\n| **Split Tunnel** | Better performance | Only corporate-bound traffic goes through VPN; Internet traffic exits locally |\n\n⚠️ **Split tunnel risk:** An attacker who compromises the device over the unencrypted Internet path could pivot through the device and into the corporate VPN tunnel.\n\n---"
-      },
-      {
-        "name": "IPSec — Internet Protocol Security",
-        "definition": "A suite of protocols that provides **authentication, encryption, integrity, and anti-replay protection** for IP communications, most commonly used to secure site-to-site and client-to-site VPN tunnels.",
-        "analogy": "*IPSec es como un servicio de mensajería certificada: sella el paquete, verifica quién lo envió, garantiza que no fue abierto en el camino, y comprueba que no es una copia de un paquete anterior.*",
-        "tables": [
-          {
-            "headers": [
-              "Property",
-              "How IPSec Provides It"
-            ],
-            "rows": [
-              [
-                "**Confidentiality**",
-                "Encrypts the data payload"
-              ],
-              [
-                "**Integrity**",
-                "Hashes the data before and after transmission; compares hashes to detect tampering"
-              ],
-              [
-                "**Authentication**",
-                "Each party verifies the identity of the other"
-              ],
-              [
-                "**Anti-Replay**",
-                "Checks sequence numbers on all packets to prevent duplicate or replayed packets"
-              ]
-            ]
-          },
-          {
-            "headers": [
-              "Mode",
-              "Used For",
-              "Description"
-            ],
-            "rows": [
-              [
-                "**Transport Mode**",
-                "Client-to-site VPN",
-                "Uses the original IP header; does NOT increase packet size"
-              ],
-              [
-                "**Tunneling Mode**",
-                "Site-to-site VPN",
-                "Encapsulates the entire packet with a new IP header; increases packet size (may exceed 1,500-byte MTU)"
-              ]
-            ]
-          }
-        ],
-        "list_items": [
-          "Acts as a cryptographic fingerprint to verify the packet's origin and integrity",
-          "In tunneling mode, ESP can encrypt both the payload and the original headers"
-        ],
-        "raw_content": "* **Definition:** A suite of protocols that provides **authentication, encryption, integrity, and anti-replay protection** for IP communications, most commonly used to secure site-to-site and client-to-site VPN tunnels.\n\n> *IPSec es como un servicio de mensajería certificada: sella el paquete, verifica quién lo envió, garantiza que no fue abierto en el camino, y comprueba que no es una copia de un paquete anterior.*\n\n### IPSec Security Properties\n\n| Property | How IPSec Provides It |\n| --- | --- |\n| **Confidentiality** | Encrypts the data payload |\n| **Integrity** | Hashes the data before and after transmission; compares hashes to detect tampering |\n| **Authentication** | Each party verifies the identity of the other |\n| **Anti-Replay** | Checks sequence numbers on all packets to prevent duplicate or replayed packets |\n\n### IPSec Tunnel Establishment — 5 Steps\n\n```\n1. Request to start key exchange (PC1 → Router1)\n2. IKE Phase 1 → Authenticate parties; establish ISAKMP management tunnel\n3. IKE Phase 2 → Negotiate security associations; establish data tunnel (tunnel inside tunnel)\n4. Data Transfer → Encrypted data flows between endpoints using negotiated keys\n5. Tunnel Termination → Security associations deleted (mutual agreement or timeout)\n```\n\n### IPSec Modes\n\n| Mode | Used For | Description |\n| --- | --- | --- |\n| **Transport Mode** | Client-to-site VPN | Uses the original IP header; does NOT increase packet size |\n| **Tunneling Mode** | Site-to-site VPN | Encapsulates the entire packet with a new IP header; increases packet size (may exceed 1,500-byte MTU) |\n\n⚠️ Tunneling mode may require **jumbo frames** (up to 9,000 bytes) or reducing inner MTU to ~1,400 bytes to stay below the 1,500-byte default.\n\n### IPSec Protocols\n\n#### AH — Authentication Header\n* **Definition:** Provides **connectionless integrity and data origin authentication** for IP datagrams and protects against replay attacks; does NOT provide confidentiality (data is not encrypted).\n\n- Acts as a cryptographic fingerprint to verify the packet's origin and integrity\n\n#### ESP — Encapsulating Security Payload\n* **Definition:** Provides **authentication, integrity, replay protection, AND confidentiality** by encrypting the packet payload; protects the data content but not the outer IP header in transport mode.\n\n- In tunneling mode, ESP can encrypt both the payload and the original headers\n\n---"
-      },
-      {
-        "name": "TLS and DTLS",
-        "definition": "Cryptographic protocols designed to provide secure, encrypted communications over a network, with TLS running over TCP and DTLS running over UDP.",
-        "analogy": "*Es como decidir entre enviar una carta certificada por correo que requiere firma de recibido (TLS sobre TCP) o enviar un mensaje rápido por radio-walkie-talkie pero con cifrado militar (DTLS sobre UDP).*",
-        "tables": [],
-        "list_items": [
-          "The padlock in a browser indicates an active TLS connection over port 443",
-          "Higher overhead than UDP; more reliable",
-          "Same security guarantees as TLS; faster due to UDP's reduced overhead"
-        ],
-        "raw_content": "* **Definition:** Cryptographic protocols designed to provide secure, encrypted communications over a network, with TLS running over TCP and DTLS running over UDP.\n\n> *Es como decidir entre enviar una carta certificada por correo que requiere firma de recibido (TLS sobre TCP) o enviar un mensaje rápido por radio-walkie-talkie pero con cifrado militar (DTLS sobre UDP).*\n\n\n### TLS — Transport Layer Security\n* **Definition:** A cryptographic protocol that provides encrypted, authenticated communication at Layers 5–7 of the OSI model, using **TCP** as its transport; most commonly seen as the foundation of HTTPS and clientless VPNs.\n\n- The padlock in a browser indicates an active TLS connection over port 443\n- Higher overhead than UDP; more reliable\n\n### DTLS — Datagram Transport Layer Security\n* **Definition:** A UDP-based version of TLS that provides equivalent security with lower overhead, making it ideal for latency-sensitive applications like video streaming and real-time communications.\n\n- Same security guarantees as TLS; faster due to UDP's reduced overhead\n\n---"
-      },
-      {
-        "name": "SD-WAN — Software-Defined Wide Area Network",
-        "definition": "A virtualized WAN architecture that uses software-defined networking principles to manage and optimize wide area network connections across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized software control plane.",
-        "analogy": "*Una SD-WAN es como un GPS inteligente para el tráfico de tu empresa: en lugar de siempre tomar la misma autopista (MPLS), el sistema elige en tiempo real la ruta más rápida y segura disponible, ya sea por carretera, autopista o atajo.*",
-        "tables": [],
-        "list_items": [
-          "Replaces hardware-centric WAN routing (traditional star topology) with intelligent, dynamic path selection",
-          "Improves performance for cloud-first enterprises by routing traffic directly to cloud services without backhauling through HQ",
-          "Provides centralized visibility, management, and control across all WAN links",
-          "Supports transport over MPLS, cellular, satellite, broadband, and microwave links"
-        ],
-        "raw_content": "* **Definition:** A virtualized WAN architecture that uses software-defined networking principles to manage and optimize wide area network connections across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized software control plane.\n\n> *Una SD-WAN es como un GPS inteligente para el tráfico de tu empresa: en lugar de siempre tomar la misma autopista (MPLS), el sistema elige en tiempo real la ruta más rápida y segura disponible, ya sea por carretera, autopista o atajo.*\n\n- Replaces hardware-centric WAN routing (traditional star topology) with intelligent, dynamic path selection\n- Improves performance for cloud-first enterprises by routing traffic directly to cloud services without backhauling through HQ\n- Provides centralized visibility, management, and control across all WAN links\n- Supports transport over MPLS, cellular, satellite, broadband, and microwave links\n\n---"
-      },
-      {
-        "name": "SASE — Secure Access Service Edge",
-        "definition": "A cloud-native framework that consolidates wide area networking (WAN) capabilities and network security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), Secure Web Gateways, and CASBs — into a single unified cloud-based service.",
-        "analogy": "*SASE es como un sistema de seguridad y transporte todo-en-uno entregado desde la nube: en lugar de tener guardias en cada edificio y un sistema de transporte separado, hay un servicio centralizado en la nube que maneja todo para todos tus usuarios, sin importar desde dónde se conecten.*",
-        "tables": [
-          {
-            "headers": [
-              "Feature",
-              "SD-WAN",
-              "SASE"
-            ],
-            "rows": [
-              [
-                "Focus",
-                "WAN optimization and routing",
-                "WAN + security consolidated in cloud"
-              ],
-              [
-                "Deployment",
-                "Appliance or virtual",
-                "Cloud-native"
-              ],
-              [
-                "Security services",
-                "Limited",
-                "Full stack (FW, VPN, ZTNA, CASB, SWG)"
-              ],
-              [
-                "Ideal for",
-                "Branch office connectivity",
-                "Distributed, mobile, cloud-heavy enterprises"
-              ]
-            ]
-          },
-          {
-            "headers": [
-              "Provider",
-              "SASE-Aligned Service"
-            ],
-            "rows": [
-              [
-                "**AWS**",
-                "Virtual Private Cloud (VPC)"
-              ],
-              [
-                "**Microsoft Azure**",
-                "Azure Virtual WAN + ExpressRoute"
-              ],
-              [
-                "**Google Cloud (GCP)**",
-                "Google Cloud Interconnect + Cloud VPN"
+                "Cisco-only; avoid in mixed-vendor networks"
               ]
             ]
           }
         ],
         "list_items": [],
-        "raw_content": "* **Definition:** A cloud-native framework that consolidates wide area networking (WAN) capabilities and network security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), Secure Web Gateways, and CASBs — into a single unified cloud-based service.\n\n> *SASE es como un sistema de seguridad y transporte todo-en-uno entregado desde la nube: en lugar de tener guardias en cada edificio y un sistema de transporte separado, hay un servicio centralizado en la nube que maneja todo para todos tus usuarios, sin importar desde dónde se conecten.*\n\n### SASE vs. SD-WAN\n\n| Feature | SD-WAN | SASE |\n| --- | --- | --- |\n| Focus | WAN optimization and routing | WAN + security consolidated in cloud |\n| Deployment | Appliance or virtual | Cloud-native |\n| Security services | Limited | Full stack (FW, VPN, ZTNA, CASB, SWG) |\n| Ideal for | Branch office connectivity | Distributed, mobile, cloud-heavy enterprises |\n\n### Cloud Provider Equivalents\n\n| Provider | SASE-Aligned Service |\n| --- | --- |\n| **AWS** | Virtual Private Cloud (VPC) |\n| **Microsoft Azure** | Azure Virtual WAN + ExpressRoute |\n| **Google Cloud (GCP)** | Google Cloud Interconnect + Cloud VPN |\n\n---"
+        "raw_content": "* **Definition:** A flexible authentication framework (not a single protocol) that defines multiple methods for authenticating clients and servers in conjunction with 802.1x, supporting passwords, certificates, and PKI.\n\n> *EAP es como el sistema de llaves de un hotel moderno: puede ser una llave magnética, una app en el celular, una huella dactilar o un código PIN. El hotel (802.1x) decide cuál método usar, pero la forma de abrir la puerta (EAP) puede variar.*\n\n### EAP Variants\n\n| Variant | Authentication Method | Mutual Auth? | Notes |\n| --- | --- | --- | --- |\n| **EAP-MD5** | Password (challenge-handshake) | ❌ One-way | Simple; requires strong passwords; weakest EAP variant |\n| **EAP-TLS** | Digital certificates on both client and server | ✅ | Immune to password attacks; strongest common EAP variant |\n| **EAP-TTLS** | Server certificate + client password | ✅ | More secure than MD5; less secure than TLS |\n| **EAP-FAST** | Protected Access Credential (PAC) instead of certificate | ✅ | No certificate required; uses PAC for mutual auth |\n| **PEAP** | Server certificate + client password via MS Active Directory | ✅ | Common in Windows/Active Directory environments |\n| **EAP-LEAP** | Cisco proprietary | ✅ | Cisco-only; avoid in mixed-vendor networks |\n\n⚠️ All variants except **EAP-LEAP** are cross-platform. Use LEAP only if running an all-Cisco network.\n\n---"
       },
       {
-        "name": "Infrastructure Considerations",
-        "definition": "The set of architectural decisions — including device placement, security zone configuration, attack surface management, connectivity choices, device roles, and failure mode settings — that collectively determine the security, performance, and resilience of a network.",
-        "analogy": "*Diseñar una infraestructura de red es como planear la distribución de una ciudad: dónde pones los puntos de control, las zonas residenciales vs. comerciales, y qué pasa cuando un semáforo falla, todo afecta la seguridad y el flujo de tráfico.*",
+        "name": "Securing Network Communications — VPNs",
+        "definition": "A Virtual Private Network (VPN) extends a private network across a public network, allowing users to send and receive data as if their device were directly connected to the organization's private network.",
+        "analogy": "*Una VPN es como un tubo sellado e invisible que atraviesa una ciudad pública: nadie que esté en la calle puede ver lo que pasa dentro del tubo, aunque físicamente esté debajo de sus pies.*",
+        "tables": [
+          {
+            "headers": [
+              "Type",
+              "Description",
+              "Use case"
+            ],
+            "rows": [
+              [
+                "**Site-to-site VPN**",
+                "Connects two entire network locations (e.g., branch office to HQ) over the Internet",
+                "Replaces expensive dedicated leased lines between offices"
+              ],
+              [
+                "**Client-to-site VPN**",
+                "Connects a single remote device (laptop, phone) directly to the corporate network",
+                "Remote workers connecting to HQ"
+              ],
+              [
+                "**Clientless VPN**",
+                "Uses a web browser and HTTPS/TLS to create a secure tunnel; no client software required",
+                "Everyday HTTPS web browsing"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Mode",
+              "Traffic routing",
+              "Security",
+              "Performance"
+            ],
+            "rows": [
+              [
+                "**Full Tunnel**",
+                "All traffic — including Internet traffic — routes through HQ VPN",
+                "Higher (all traffic inspected at HQ)",
+                "Lower (more latency)"
+              ],
+              [
+                "**Split Tunnel**",
+                "Only traffic bound for HQ routes through VPN; Internet traffic goes direct",
+                "Lower (Internet traffic bypasses HQ)",
+                "Higher (less latency)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A Virtual Private Network (VPN) extends a private network across a public network, allowing users to send and receive data as if their device were directly connected to the organization's private network.\n\nVPN traffic is sent through a **secure encrypted tunnel** from the user's device or site over the untrusted Internet back to the organization's network. There are three VPN types:\n\n> *Una VPN es como un tubo sellado e invisible que atraviesa una ciudad pública: nadie que esté en la calle puede ver lo que pasa dentro del tubo, aunque físicamente esté debajo de sus pies.*\n\n### VPN Types\n\n| Type | Description | Use case |\n| --- | --- | --- |\n| **Site-to-site VPN** | Connects two entire network locations (e.g., branch office to HQ) over the Internet | Replaces expensive dedicated leased lines between offices |\n| **Client-to-site VPN** | Connects a single remote device (laptop, phone) directly to the corporate network | Remote workers connecting to HQ |\n| **Clientless VPN** | Uses a web browser and HTTPS/TLS to create a secure tunnel; no client software required | Everyday HTTPS web browsing |\n\n### Full Tunnel vs Split Tunnel\n\n| Mode | Traffic routing | Security | Performance |\n| --- | --- | --- | --- |\n| **Full Tunnel** | All traffic — including Internet traffic — routes through HQ VPN | Higher (all traffic inspected at HQ) | Lower (more latency) |\n| **Split Tunnel** | Only traffic bound for HQ routes through VPN; Internet traffic goes direct | Lower (Internet traffic bypasses HQ) | Higher (less latency) |\n\n⚠️ **Use full tunnel on untrusted networks** (hotels, coffee shops) to prevent attackers from pivoting through your device into the HQ network via the split tunnel.\n\n---"
+      },
+      {
+        "name": "Securing Network Communications — TLS",
+        "definition": "Transport Layer Security (TLS) is a cryptographic protocol that operates at Layers 5–7 of the OSI model to provide encrypted, authenticated communication between a client and server — the foundation of HTTPS and clientless VPNs.",
+        "analogy": "*TLS es como un sobre cerrado con lacre: el mensajero (la red) puede ver a quién va dirigido el sobre (los encabezados), pero no puede leer lo que hay dentro (el contenido cifrado).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Transport Layer Security (TLS) is a cryptographic protocol that operates at Layers 5–7 of the OSI model to provide encrypted, authenticated communication between a client and server — the foundation of HTTPS and clientless VPNs.\n\nTLS uses **TCP** for connection establishment (more overhead, more reliable). **DTLS (Datagram TLS)** is the UDP-based variant that provides the same security with less overhead — ideal for video streaming and real-time applications.\n\n> *TLS es como un sobre cerrado con lacre: el mensajero (la red) puede ver a quién va dirigido el sobre (los encabezados), pero no puede leer lo que hay dentro (el contenido cifrado).*\n\n---"
+      },
+      {
+        "name": "Securing Network Communications — IPSec",
+        "definition": "Internet Protocol Security (IPSec) is a suite of protocols that authenticates and encrypts each IP packet in a data stream to create a secure encrypted tunnel between two devices, providing confidentiality, integrity, authentication, and anti-replay protection.",
+        "analogy": "*IPSec es como un servicio de mensajería blindado con GPS, firma biométrica del destinatario, sello de integridad en el paquete y un número de serie único para que no puedan enviar el mismo paquete dos veces.*",
+        "tables": [
+          {
+            "headers": [
+              "Mode",
+              "Packet handling",
+              "Best for"
+            ],
+            "rows": [
+              [
+                "**Transport Mode**",
+                "Uses original IP header; adds minimal overhead",
+                "Client-to-site VPN; avoids MTU fragmentation issues"
+              ],
+              [
+                "**Tunneling Mode**",
+                "Encapsulates entire original packet inside a new packet with a new header",
+                "Site-to-site VPN; may require jumbo frames (>1,500 byte MTU)"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Protocol",
+              "Provides",
+              "Does NOT provide"
+            ],
+            "rows": [
+              [
+                "**AH — Authentication Header**",
+                "Integrity, data origin authentication, anti-replay protection",
+                "Confidentiality (no encryption)"
+              ],
+              [
+                "**ESP — Encapsulating Security Payload**",
+                "Authentication, integrity, replay protection, **confidentiality (encryption)**",
+                "Full end-to-end header encryption in transport mode"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "**Confidentiality** — data encryption",
+          "**Integrity** — hash comparison before and after transmission",
+          "**Authentication** — each party verifies the other's identity",
+          "**Anti-replay** — packet sequence numbers prevent duplicate or captured packets from being resent"
+        ],
+        "raw_content": "* **Definition:** Internet Protocol Security (IPSec) is a suite of protocols that authenticates and encrypts each IP packet in a data stream to create a secure encrypted tunnel between two devices, providing confidentiality, integrity, authentication, and anti-replay protection.\n\nIPSec is the most widely used protocol for site-to-site and client-to-site VPNs. It provides:\n- **Confidentiality** — data encryption\n- **Integrity** — hash comparison before and after transmission\n- **Authentication** — each party verifies the other's identity\n- **Anti-replay** — packet sequence numbers prevent duplicate or captured packets from being resent\n\n> *IPSec es como un servicio de mensajería blindado con GPS, firma biométrica del destinatario, sello de integridad en el paquete y un número de serie único para que no puedan enviar el mismo paquete dos veces.*\n\n### IPSec Tunnel Establishment — 5 Steps\n\n1. **Request to start key exchange** — initiating party sends a request\n2. **IKE Phase 1** — parties authenticate and establish a secure negotiation channel (ISAKMP tunnel)\n3. **IKE Phase 2** — negotiate security association parameters and establish the actual data tunnel (tunnel within a tunnel)\n4. **Data transfer** — encrypted data flows through the established tunnel\n5. **Tunnel termination** — security associations are deleted by mutual agreement or timeout\n\n### IPSec Modes\n\n| Mode | Packet handling | Best for |\n| --- | --- | --- |\n| **Transport Mode** | Uses original IP header; adds minimal overhead | Client-to-site VPN; avoids MTU fragmentation issues |\n| **Tunneling Mode** | Encapsulates entire original packet inside a new packet with a new header | Site-to-site VPN; may require jumbo frames (>1,500 byte MTU) |\n\n### IPSec Protocols: AH vs ESP\n\n| Protocol | Provides | Does NOT provide |\n| --- | --- | --- |\n| **AH — Authentication Header** | Integrity, data origin authentication, anti-replay protection | Confidentiality (no encryption) |\n| **ESP — Encapsulating Security Payload** | Authentication, integrity, replay protection, **confidentiality (encryption)** | Full end-to-end header encryption in transport mode |\n\n---"
+      },
+      {
+        "name": "SD-WAN",
+        "definition": "A Software-Defined Wide Area Network (SD-WAN) is a virtualized WAN architecture that uses software-defined networking principles to manage and optimize WAN connections — enabling intelligent traffic routing across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized control plane.",
+        "analogy": "*SD-WAN es como un GPS inteligente para los datos corporativos: en vez de obligar a todos los carros (paquetes) a pasar por la misma carretera principal (HQ), el GPS decide en tiempo real cuál ruta es más rápida, más económica o más segura para cada viaje.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A Software-Defined Wide Area Network (SD-WAN) is a virtualized WAN architecture that uses software-defined networking principles to manage and optimize WAN connections — enabling intelligent traffic routing across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized control plane.\n\nTraditional WANs force all branch traffic back to HQ in a star topology — good for security but creates latency and poor user experience. SD-WAN solves this by intelligently identifying application types and routing traffic to the most efficient path dynamically.\n\n> *SD-WAN es como un GPS inteligente para los datos corporativos: en vez de obligar a todos los carros (paquetes) a pasar por la misma carretera principal (HQ), el GPS decide en tiempo real cuál ruta es más rápida, más económica o más segura para cada viaje.*\n\n**Key use case:** Organizations with many branch offices moving to cloud services (IaaS, PaaS, SaaS) that are being bottlenecked by traditional centralized WAN architectures.\n\n---"
+      },
+      {
+        "name": "SASE — Secure Access Service Edge",
+        "definition": "A network security framework that consolidates wide-area networking (WAN) capabilities with security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), and Cloud Access Security Brokers (CASBs) — into a single cloud-native service.",
+        "analogy": "*SASE es como cambiar tu propio departamento de seguridad, recepcionistas, y sala de servidores por un servicio de seguridad en la nube que sigue al empleado a donde vaya, sin importar desde qué país o dispositivo se conecte.*",
+        "tables": [
+          {
+            "headers": [
+              "Provider",
+              "SASE-aligned Service"
+            ],
+            "rows": [
+              [
+                "**AWS**",
+                "VPC — Virtual Private Cloud"
+              ],
+              [
+                "**Microsoft Azure**",
+                "Azure Virtual WAN + Azure ExpressRoute"
+              ],
+              [
+                "**Google Cloud Platform**",
+                "Google Cloud Interconnect + Google Cloud VPN"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A network security framework that consolidates wide-area networking (WAN) capabilities with security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), and Cloud Access Security Brokers (CASBs) — into a single cloud-native service.\n\nSASE is designed for distributed enterprises with remote workers, branch offices, and cloud-based applications. It uses **Software-Defined Networking (SDN)** to deliver security and networking from the cloud rather than hardware appliances, providing flexibility, scalability, and cost efficiency.\n\n> *SASE es como cambiar tu propio departamento de seguridad, recepcionistas, y sala de servidores por un servicio de seguridad en la nube que sigue al empleado a donde vaya, sin importar desde qué país o dispositivo se conecte.*\n\n### SASE by Cloud Provider\n\n| Provider | SASE-aligned Service |\n| --- | --- |\n| **AWS** | VPC — Virtual Private Cloud |\n| **Microsoft Azure** | Azure Virtual WAN + Azure ExpressRoute |\n| **Google Cloud Platform** | Google Cloud Interconnect + Google Cloud VPN |\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Device Placement",
+        "definition": "The deliberate positioning of network devices (routers, switches, access points, firewalls) within a network architecture to optimize data flow, minimize latency, and maximize security.",
+        "analogy": "",
+        "tables": [],
+        "list_items": [
+          "**Routers** at the network edge to direct and filter inbound/outbound traffic",
+          "**Access points** positioned for coverage while minimizing wireless signal leakage outside facilities",
+          "**Switches** placed to serve as centralized connection points for network devices per segment"
+        ],
+        "raw_content": "* **Definition:** The deliberate positioning of network devices (routers, switches, access points, firewalls) within a network architecture to optimize data flow, minimize latency, and maximize security.\n\n- **Routers** at the network edge to direct and filter inbound/outbound traffic\n- **Access points** positioned for coverage while minimizing wireless signal leakage outside facilities\n- **Switches** placed to serve as centralized connection points for network devices per segment\n\nImproper placement leads to bottlenecks, vulnerability points, or connectivity gaps.\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Security Zones and Screened Subnets",
+        "definition": "A security zone is a logically isolated network segment containing devices with similar security requirements and trust levels; a screened subnet is a buffer zone between an untrusted external network and a trusted internal network, used to host public-facing services.",
+        "analogy": "*Las zonas de seguridad son como las plantas de un edificio corporativo: la recepción (zona pública), las oficinas generales (zona interna), y la sala de servidores (zona confidencial) tienen controles de acceso diferentes porque tienen distintos niveles de sensibilidad.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A security zone is a logically isolated network segment containing devices with similar security requirements and trust levels; a screened subnet is a buffer zone between an untrusted external network and a trusted internal network, used to host public-facing services.\n\n> *Las zonas de seguridad son como las plantas de un edificio corporativo: la recepción (zona pública), las oficinas generales (zona interna), y la sala de servidores (zona confidencial) tienen controles de acceso diferentes porque tienen distintos niveles de sensibilidad.*\n\n⚠️ **Terminology change:** \"DMZ\" (demilitarized zone) is the older term. The current Security+ exam uses **\"screened subnet\"**. Some network appliances still display \"DMZ\" in their interfaces — know both terms.\n\nA **screened subnet** hosts public-facing services (web servers, email servers, DNS servers) so that a breach in that subnet does not give attackers direct access to the core internal network.\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Attack Surface",
+        "definition": "The total sum of all points (ports, protocols, devices, applications, interfaces) where an unauthorized user could potentially attempt to enter or extract data from a system, network, or application.",
+        "analogy": "",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The total sum of all points (ports, protocols, devices, applications, interfaces) where an unauthorized user could potentially attempt to enter or extract data from a system, network, or application.\n\nAs networks grow and add devices, applications, and access points, the attack surface expands. A larger attack surface means more opportunities for exploitation. Common contributors include improper device placement, misconfigured devices, outdated software, unnecessary open ports, and weak access controls.\n\n**Mitigation:** Regularly assess and minimize the attack surface by identifying and eliminating vulnerabilities or implementing compensating controls.\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Connectivity Methods",
+        "definition": "The technologies and methods used to connect network components to each other and to external networks, each with different trade-offs in performance, security, mobility, and cost.",
+        "analogy": "",
         "tables": [
           {
             "headers": [
@@ -8575,31 +8550,35 @@ const STUDY_DATA = [
             "rows": [
               [
                 "**Wired (Ethernet)**",
-                "High speed, stable, secure",
-                "Limited mobility; wiring constraints"
+                "Stable, fast, secure",
+                "Limits mobility; requires physical cabling"
               ],
               [
-                "**Wireless (Wi-Fi)**",
+                "**Wireless (Wi-Fi, microwave, satellite)**",
                 "Flexible, scalable",
-                "Interference, security risks if misconfigured"
+                "Subject to interference; more security vulnerabilities"
               ],
               [
                 "**Fiber Optic**",
-                "High speed, long distance, minimal degradation",
-                "Higher cost to install"
-              ],
-              [
-                "**Microwave / Satellite**",
-                "Covers remote areas",
-                "Latency, weather interference"
+                "High speed, long distance, minimal signal degradation",
+                "Higher installation cost"
               ],
               [
                 "**Hybrid**",
-                "Redundancy and resilience",
-                "Complexity in management"
+                "Combines strengths of multiple methods; adds redundancy",
+                "More complex to manage"
               ]
             ]
-          },
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The technologies and methods used to connect network components to each other and to external networks, each with different trade-offs in performance, security, mobility, and cost.\n\n| Method | Advantages | Disadvantages |\n| --- | --- | --- |\n| **Wired (Ethernet)** | Stable, fast, secure | Limits mobility; requires physical cabling |\n| **Wireless (Wi-Fi, microwave, satellite)** | Flexible, scalable | Subject to interference; more security vulnerabilities |\n| **Fiber Optic** | High speed, long distance, minimal signal degradation | Higher installation cost |\n| **Hybrid** | Combines strengths of multiple methods; adds redundancy | More complex to manage |\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Device Attributes (Active vs Passive / Inline vs Tap)",
+        "definition": "Device attributes describe whether a network security device actively intervenes in traffic (active) or passively observes it (passive), and whether it is placed directly in the traffic path (inline) or outside it (tap/monitor).",
+        "analogy": "",
+        "tables": [
           {
             "headers": [
               "Attribute",
@@ -8608,49 +8587,62 @@ const STUDY_DATA = [
             ],
             "rows": [
               [
-                "**Active**",
-                "Monitors and acts on traffic in real time",
+                "**Active (Inline)**",
+                "Device sits in the traffic path and can block or modify traffic",
                 "IPS, Firewall"
               ],
               [
-                "**Passive**",
-                "Observes and reports without intervening",
-                "IDS, Network sensor"
-              ],
-              [
-                "**Inline**",
-                "Placed directly in the traffic path; can block",
-                "Firewall, IPS, Router"
-              ],
-              [
-                "**Tap / Monitor**",
-                "Receives a copy of traffic via SPAN port; cannot block",
-                "NIDS, Sensor"
+                "**Passive (Tap/Monitor)**",
+                "Device observes a copy of traffic without affecting it",
+                "IDS, Network Sensor (SPAN port)"
               ]
             ]
           }
         ],
         "list_items": [
-          "**Routers** at the network edge to filter and direct ingress/egress traffic",
-          "**Access points** positioned to contain wireless signals within facility boundaries and minimize interference",
-          "**Switches** as central connection points for all network devices per segment",
-          "Poor placement → bottlenecks, blind spots, and unprotected vulnerability points",
-          "**Security zone:** A logically isolated network segment containing devices with similar trust levels and security requirements; each zone has its own access controls and policies",
-          "**Screened subnet:** A buffer zone between the internal trusted network and the external untrusted network (Internet); hosts public-facing services (web, email, DNS)",
-          "⚠️ A breach inside the screened subnet must not provide direct access to the internal core network",
-          "Grows as networks expand (more devices, apps, access points)",
-          "Reduce it by: eliminating unused ports, patching software, enforcing access controls, removing unnecessary services",
-          "Prioritizes **availability** over security",
-          "Example use: guest wireless networks where data sensitivity is low",
-          "Prioritizes **security** over availability",
-          "Example use: firewalls protecting sensitive financial or classified data systems"
+          "**Inline devices** — critical for real-time threat mitigation and filtering",
+          "**Tap/monitor devices** — ideal for monitoring network health and security without risking service disruption"
         ],
-        "raw_content": "* **Definition:** The set of architectural decisions — including device placement, security zone configuration, attack surface management, connectivity choices, device roles, and failure mode settings — that collectively determine the security, performance, and resilience of a network.\n\n> *Diseñar una infraestructura de red es como planear la distribución de una ciudad: dónde pones los puntos de control, las zonas residenciales vs. comerciales, y qué pasa cuando un semáforo falla, todo afecta la seguridad y el flujo de tráfico.*\n\n### Device Placement\n\n- **Routers** at the network edge to filter and direct ingress/egress traffic\n- **Access points** positioned to contain wireless signals within facility boundaries and minimize interference\n- **Switches** as central connection points for all network devices per segment\n- Poor placement → bottlenecks, blind spots, and unprotected vulnerability points\n\n### Security Zones and Screened Subnets\n\n- **Security zone:** A logically isolated network segment containing devices with similar trust levels and security requirements; each zone has its own access controls and policies\n- **Screened subnet:** A buffer zone between the internal trusted network and the external untrusted network (Internet); hosts public-facing services (web, email, DNS)\n- ⚠️ A breach inside the screened subnet must not provide direct access to the internal core network\n\n### Attack Surface\n\nThe **attack surface** is the sum of all points where an unauthorized user could attempt to enter or extract data from a system or network.\n\n- Grows as networks expand (more devices, apps, access points)\n- Reduce it by: eliminating unused ports, patching software, enforcing access controls, removing unnecessary services\n\n### Connectivity Methods\n\n| Method | Advantages | Disadvantages |\n| --- | --- | --- |\n| **Wired (Ethernet)** | High speed, stable, secure | Limited mobility; wiring constraints |\n| **Wireless (Wi-Fi)** | Flexible, scalable | Interference, security risks if misconfigured |\n| **Fiber Optic** | High speed, long distance, minimal degradation | Higher cost to install |\n| **Microwave / Satellite** | Covers remote areas | Latency, weather interference |\n| **Hybrid** | Redundancy and resilience | Complexity in management |\n\n### Device Attributes — Active vs. Passive and Inline vs. Tap\n\n| Attribute | Description | Example |\n| --- | --- | --- |\n| **Active** | Monitors and acts on traffic in real time | IPS, Firewall |\n| **Passive** | Observes and reports without intervening | IDS, Network sensor |\n| **Inline** | Placed directly in the traffic path; can block | Firewall, IPS, Router |\n| **Tap / Monitor** | Receives a copy of traffic via SPAN port; cannot block | NIDS, Sensor |\n\n### Failure Modes\n\n#### Fail-Open\n* **Definition:** When a device fails, it allows all traffic to pass through without inspection or filtering to ensure network continuity remains uninterrupted.\n\n- Prioritizes **availability** over security\n- Example use: guest wireless networks where data sensitivity is low\n\n#### Fail-Closed\n* **Definition:** When a device fails, it blocks all traffic to maintain security, even at the cost of network connectivity.\n\n- Prioritizes **security** over availability\n- Example use: firewalls protecting sensitive financial or classified data systems\n\n---"
+        "raw_content": "* **Definition:** Device attributes describe whether a network security device actively intervenes in traffic (active) or passively observes it (passive), and whether it is placed directly in the traffic path (inline) or outside it (tap/monitor).\n\n| Attribute | Description | Example |\n| --- | --- | --- |\n| **Active (Inline)** | Device sits in the traffic path and can block or modify traffic | IPS, Firewall |\n| **Passive (Tap/Monitor)** | Device observes a copy of traffic without affecting it | IDS, Network Sensor (SPAN port) |\n\n- **Inline devices** — critical for real-time threat mitigation and filtering\n- **Tap/monitor devices** — ideal for monitoring network health and security without risking service disruption\n\nSelection depends on the organizational goal: real-time blocking (inline) vs. non-disruptive monitoring (passive tap).\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Failure Modes",
+        "definition": "The configured behavior of a security device when it encounters an error, overload, or malfunction — either allowing all traffic through (fail-open) or blocking all traffic (fail-closed).",
+        "analogy": "*Fail-open es como una puerta automática que se queda abierta si hay un apagón — conveniente, pero inseguro. Fail-closed es como una caja fuerte que se sella automáticamente si hay un error — segura, pero no puedes entrar.*",
+        "tables": [
+          {
+            "headers": [
+              "Mode",
+              "Behavior on failure",
+              "Security",
+              "Availability"
+            ],
+            "rows": [
+              [
+                "**Fail-Open**",
+                "All traffic passes without inspection",
+                "❌ No security during failure",
+                "✅ Network stays up"
+              ],
+              [
+                "**Fail-Closed**",
+                "All traffic is blocked",
+                "✅ Security maintained",
+                "❌ Network goes down"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Sensitive financial data servers → **fail-closed** (security over availability)",
+          "Guest wireless network → **fail-open** (availability over security, low-value assets)"
+        ],
+        "raw_content": "* **Definition:** The configured behavior of a security device when it encounters an error, overload, or malfunction — either allowing all traffic through (fail-open) or blocking all traffic (fail-closed).\n\n| Mode | Behavior on failure | Security | Availability |\n| --- | --- | --- | --- |\n| **Fail-Open** | All traffic passes without inspection | ❌ No security during failure | ✅ Network stays up |\n| **Fail-Closed** | All traffic is blocked | ✅ Security maintained | ❌ Network goes down |\n\n> *Fail-open es como una puerta automática que se queda abierta si hay un apagón — conveniente, pero inseguro. Fail-closed es como una caja fuerte que se sella automáticamente si hay un error — segura, pero no puedes entrar.*\n\n**Decision factors:** The criticality of what is being protected.\n- Sensitive financial data servers → **fail-closed** (security over availability)\n- Guest wireless network → **fail-open** (availability over security, low-value assets)\n\n---"
       },
       {
         "name": "Selecting Infrastructure Controls",
-        "definition": "The process of identifying, evaluating, and implementing security measures and safeguards to mitigate risks and protect an organization's network assets, aligned to defined objectives and frameworks.",
-        "analogy": "*Seleccionar controles de seguridad es como diseñar el sistema de seguridad de un museo: no puedes blindar cada centímetro, entonces priorizas las salas con las obras más valiosas, usas múltiples capas (cámaras, guardias, vitrinas), y revisas el sistema regularmente.*",
+        "definition": "The process of identifying, evaluating, and implementing safeguards or measures to mitigate potential risks and protect an organization's assets within its network infrastructure.",
+        "analogy": "*Seleccionar controles es como equipar una casa: no cualquier casa necesita una cámara de seguridad, una alarma, un perro guardián y un guardia armado al mismo tiempo. Se elige según el valor de lo que se protege y el presupuesto disponible.*",
         "tables": [
           {
             "headers": [
@@ -8660,295 +8652,1065 @@ const STUDY_DATA = [
             "rows": [
               [
                 "**Least Privilege**",
-                "Users and systems receive only the access necessary to perform their function"
+                "Users and systems get only the minimum access rights needed to perform their duties"
               ],
               [
                 "**Defense in Depth**",
-                "Multiple security layers ensure that if one fails, others remain; no single point of protection"
+                "Multiple layers of security ensure that if one control fails, others remain effective"
               ],
               [
                 "**Risk-Based Approach**",
-                "Controls are prioritized by the level of risk they mitigate; limited resources go where risk is highest"
+                "Prioritize controls based on organizational risk and vulnerability severity"
               ],
               [
                 "**Lifecycle Management**",
-                "Controls are regularly reviewed, updated, and retired as threats and infrastructure evolve"
+                "Regularly review, update, and retire controls as threats and infrastructure evolve"
               ],
               [
                 "**Open Design Principle**",
-                "Security controls undergo transparent, rigorous testing and scrutiny to verify effectiveness"
+                "Ensure controls undergo rigorous testing and transparency for accountability"
               ]
             ]
           }
         ],
         "list_items": [
-          "Conduct a **comprehensive risk assessment** before selecting controls; repeat it at major infrastructure changes",
-          "Align control selection to established frameworks: **NIST Cybersecurity Framework**, **NIST Risk Management Framework**, **ISO standards**",
-          "Customize frameworks to match your organization's specific risk profile and operations",
-          "Conduct regular **stakeholder training** — controls are only effective if people understand and follow them",
-          "Control selection is **not a one-time event** — review annually or quarterly"
+          "**NIST Cybersecurity Framework (CSF)** — comprehensive, widely used in the industry",
+          "**NIST Risk Management Framework (RMF)** — in-depth risk management methodology",
+          "**ISO standards** — internationally vetted guidelines for information security management"
         ],
-        "raw_content": "* **Definition:** The process of identifying, evaluating, and implementing security measures and safeguards to mitigate risks and protect an organization's network assets, aligned to defined objectives and frameworks.\n\n> *Seleccionar controles de seguridad es como diseñar el sistema de seguridad de un museo: no puedes blindar cada centímetro, entonces priorizas las salas con las obras más valiosas, usas múltiples capas (cámaras, guardias, vitrinas), y revisas el sistema regularmente.*\n\n### Key Principles for Control Selection\n\n| Principle | Description |\n| --- | --- |\n| **Least Privilege** | Users and systems receive only the access necessary to perform their function |\n| **Defense in Depth** | Multiple security layers ensure that if one fails, others remain; no single point of protection |\n| **Risk-Based Approach** | Controls are prioritized by the level of risk they mitigate; limited resources go where risk is highest |\n| **Lifecycle Management** | Controls are regularly reviewed, updated, and retired as threats and infrastructure evolve |\n| **Open Design Principle** | Security controls undergo transparent, rigorous testing and scrutiny to verify effectiveness |\n\n### Control Selection Methodology\n\n1. **Assess current state** — understand existing infrastructure, vulnerabilities, and controls in place\n2. **Gap analysis** — identify the difference between current and desired security posture\n3. **Set clear objectives** — define what the controls must achieve (data protection, uptime, compliance)\n4. **Benchmarking** — compare performance and security metrics to industry best practices\n5. **Cost-benefit analysis** — balance security investment against the value of the protection provided\n6. **Stakeholder involvement** — ensure decision-makers and users understand and support the controls\n7. **Monitoring and feedback loops** — continuously evaluate control effectiveness; adjust as threats evolve\n\n### Best Practices\n\n- Conduct a **comprehensive risk assessment** before selecting controls; repeat it at major infrastructure changes\n- Align control selection to established frameworks: **NIST Cybersecurity Framework**, **NIST Risk Management Framework**, **ISO standards**\n- Customize frameworks to match your organization's specific risk profile and operations\n- Conduct regular **stakeholder training** — controls are only effective if people understand and follow them\n- Control selection is **not a one-time event** — review annually or quarterly\n\n---"
+        "raw_content": "* **Definition:** The process of identifying, evaluating, and implementing safeguards or measures to mitigate potential risks and protect an organization's assets within its network infrastructure.\n\n> *Seleccionar controles es como equipar una casa: no cualquier casa necesita una cámara de seguridad, una alarma, un perro guardián y un guardia armado al mismo tiempo. Se elige según el valor de lo que se protege y el presupuesto disponible.*\n\n### Key Principles for Control Selection\n\n| Principle | Description |\n| --- | --- |\n| **Least Privilege** | Users and systems get only the minimum access rights needed to perform their duties |\n| **Defense in Depth** | Multiple layers of security ensure that if one control fails, others remain effective |\n| **Risk-Based Approach** | Prioritize controls based on organizational risk and vulnerability severity |\n| **Lifecycle Management** | Regularly review, update, and retire controls as threats and infrastructure evolve |\n| **Open Design Principle** | Ensure controls undergo rigorous testing and transparency for accountability |\n\n### Control Selection Methodology\n\n1. **Assess current state** — understand existing infrastructure, vulnerabilities, and controls\n2. **Gap analysis** — identify discrepancies between current and desired security posture\n3. **Set clear objectives** — define what the controls must achieve (data protection, uptime, compliance)\n4. **Benchmarking** — compare against industry best practices and standards (NIST, ISO)\n5. **Cost-benefit analysis** — balance security level against financial and resource investment\n6. **Stakeholder involvement** — ensure controls align with business operations and user adoption\n7. **Monitoring and feedback loops** — continuously validate control effectiveness as threats evolve\n\n### Recommended Frameworks\n\n- **NIST Cybersecurity Framework (CSF)** — comprehensive, widely used in the industry\n- **NIST Risk Management Framework (RMF)** — in-depth risk management methodology\n- **ISO standards** — internationally vetted guidelines for information security management\n\n⚠️ **Control selection is not a one-time event.** Reassess annually or quarterly, and always reassess after significant infrastructure changes or business operational changes.\n\n---"
       }
     ],
     "flashcards": [
       {
+        "name": "Security Infrastructure Overview",
+        "definition": "The cohesive combination of hardware, software, networks, data, and policies working together to safeguard an organization's information and assets.",
+        "analogy": "*Es como la infraestructura de un edificio: no solo los muros y las puertas, sino también las cámaras, las llaves, los guardias y los reglamentos internos. Todos trabajan juntos para que el edificio sea seguro.*",
+        "raw_content": "* **Definition:** The cohesive combination of hardware, software, networks, data, and policies working together to safeguard an organization's information and assets.\n\nSecurity infrastructure encompasses every layer of a network from the physical devices to the policies that govern their use. Ensuring a robust and secure infrastructure is vital to thwart potential cyber threats and keep organizational data uncompromised. This section covers **Domains 3 and 4**, specifically **Objectives 3.2** (apply security principles to secure enterprise architecture) and **4.5** (modify enterprise capabilities to enhance security).\n\n> *Es como la infraestructura de un edificio: no solo los muros y las puertas, sino también las cámaras, las llaves, los guardias y los reglamentos internos. Todos trabajan juntos para que el edificio sea seguro.*\n\n---"
+      },
+      {
         "name": "Ports and Protocols",
-        "definition": "A **port** is a logical communication endpoint on a computer or server identified by a number (0–65,535) that is paired with a **protocol** — a defined set of rules governing how data is exchanged between devices.",
-        "analogy": "*Un puerto es como la ventanilla de un banco: cada ventanilla (número de puerto) atiende un servicio específico (protocolo), y el cliente sabe exactamente a cuál formarse dependiendo de lo que necesite.*",
-        "raw_content": "* **Definition:** A **port** is a logical communication endpoint on a computer or server identified by a number (0–65,535) that is paired with a **protocol** — a defined set of rules governing how data is exchanged between devices.\n\n> *Un puerto es como la ventanilla de un banco: cada ventanilla (número de puerto) atiende un servicio específico (protocolo), y el cliente sabe exactamente a cuál formarse dependiendo de lo que necesite.*"
+        "definition": "A port is a logical communication endpoint on a computer or server that allows inbound or outbound network traffic; a protocol is the defined set of rules and conventions governing that communication.",
+        "analogy": "*Los puertos son como las puertas numeradas de un edificio de apartamentos: cada puerta lleva a un servicio específico. Algunos números todos los conocen (puerta 80 = recepción web), otros los reservan empresas, y otros los usan los visitantes temporalmente al entrar.*",
+        "raw_content": "* **Definition:** A port is a logical communication endpoint on a computer or server that allows inbound or outbound network traffic; a protocol is the defined set of rules and conventions governing that communication.\n\nPorts are classified as **inbound** (the device is listening for a connection) or **outbound** (the device opens a temporary port to initiate a connection). Port numbers range from 0 to 65,535 and are divided into three groups:\n\n| Group | Range | Description |\n| --- | --- | --- |\n| **Well-Known Ports** | 0 – 1,023 | Designated by IANA for commonly used protocols (e.g., HTTP port 80) |\n| **Registered Ports** | 1,024 – 49,151 | Used by vendors for proprietary protocols; must be registered with IANA |\n| **Dynamic / Private Ports** | 49,152 – 65,535 | Used by clients for temporary outbound connections; no registration required |\n\n> *Los puertos son como las puertas numeradas de un edificio de apartamentos: cada puerta lleva a un servicio específico. Algunos números todos los conocen (puerta 80 = recepción web), otros los reservan empresas, y otros los usan los visitantes temporalmente al entrar.*"
       },
       {
         "name": "Firewalls",
-        "definition": "A **firewall** is a network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules, protecting a network from unauthorized access and threats.",
-        "analogy": "*Un firewall es como el guardia de seguridad en la entrada de un edificio corporativo: revisa a cada visitante según una lista de reglas y decide quién puede entrar y quién no.*",
-        "raw_content": "* **Definition:** A **firewall** is a network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules, protecting a network from unauthorized access and threats.\n\n> *Un firewall es como el guardia de seguridad en la entrada de un edificio corporativo: revisa a cada visitante según una lista de reglas y decide quién puede entrar y quién no.*"
+        "definition": "A network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules to protect a network from unauthorized access and threats.",
+        "analogy": "*Un firewall es como el portero de un edificio de oficinas: revisa a cada visitante antes de dejarlo entrar, y solo permite pasar a quienes tienen una razón legítima.*",
+        "raw_content": "* **Definition:** A network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules to protect a network from unauthorized access and threats.\n\nFirewalls can be **hardware appliances** or **software** installed on a client or server. Their primary role is to inspect and control traffic at a network boundary. Placing a firewall at a segment boundary creates a **Screened Subnet** (formerly called a DMZ), acting as a protective buffer between untrusted external networks and trusted internal ones.\n\n> *Un firewall es como el portero de un edificio de oficinas: revisa a cada visitante antes de dejarlo entrar, y solo permite pasar a quienes tienen una razón legítima.*"
       },
       {
-        "name": "Next-Generation Firewall (NGFW)",
-        "definition": "An advanced firewall that combines traditional stateful inspection with application awareness, intrusion prevention signatures, and deep packet inspection in a single, efficient engine.",
-        "analogy": "",
-        "raw_content": "* **Definition:** An advanced firewall that combines traditional stateful inspection with application awareness, intrusion prevention signatures, and deep packet inspection in a single, efficient engine.\n\n- Application-aware: distinguishes traffic by specific application, not just port\n- Inline deployment; supports custom signatures\n- Fast; full-stack visibility\n- ⚠️ Can create vendor lock-in; more complex to manage than basic firewalls"
+        "name": "Configuring Firewalls — ACLs",
+        "definition": "An Access Control List (ACL) is a rule set placed on a firewall, router, or network device that permits or denies traffic through an interface based on defined criteria.",
+        "analogy": "*Las ACLs son como la lista de invitados en una fiesta VIP: el portero revisa de arriba hacia abajo. Si tu nombre aparece en el primer ítem, entras. Si llegas al final de la lista y no estás, te quedás afuera.*",
+        "raw_content": "* **Definition:** An Access Control List (ACL) is a rule set placed on a firewall, router, or network device that permits or denies traffic through an interface based on defined criteria.\n\nACL rules are processed **top-down** — the first matching rule wins and the rest of the list is skipped. For this reason, **specific rules go at the top; generic rules go at the bottom**. Most devices support an **implied deny** at the bottom, but best practice is to always add an **explicit deny-all** final rule and to **log all actions**, including denies.\n\n> *Las ACLs son como la lista de invitados en una fiesta VIP: el portero revisa de arriba hacia abajo. Si tu nombre aparece en el primer ítem, entras. Si llegas al final de la lista y no estás, te quedás afuera.*"
       },
       {
-        "name": "Unified Threat Management (UTM)",
-        "definition": "A single network appliance that integrates multiple security functions including firewall, IPS, antivirus, antispam, VPN, content filtering, and DLP into one platform.",
-        "analogy": "",
-        "raw_content": "* **Definition:** A single network appliance that integrates multiple security functions including firewall, IPS, antivirus, antispam, VPN, content filtering, and DLP into one platform.\n\n- Reduces device count and maintenance overhead\n- ⚠️ Single point of failure — if it fails, the entire security stack fails\n- Less efficient per function than specialized single-purpose devices\n- Best placed inline between LAN and Internet (gateway position)"
+        "name": "Intrusion Detection System (IDS)",
+        "definition": "A security system that monitors network or host activity to detect unauthorized access or attacks, then logs and alerts on findings without actively blocking them.",
+        "analogy": "*Un IDS es como una cámara de seguridad con alarma: ve lo que pasa y avisa, pero no puede detener al intruso físicamente.*",
+        "raw_content": "* **Definition:** A security system that monitors network or host activity to detect unauthorized access or attacks, then logs and alerts on findings without actively blocking them.\n\nAn IDS **detects, logs, reports, and alerts** — it does **not** prevent attacks. When it finds something suspicious, it notifies an administrator or analyst who then decides how to respond.\n\n> *Un IDS es como una cámara de seguridad con alarma: ve lo que pasa y avisa, pero no puede detener al intruso físicamente.*"
       },
       {
-        "name": "Web Application Firewall (WAF)",
-        "definition": "A specialized firewall focused on inspecting HTTP/HTTPS traffic to protect web applications from attacks such as cross-site scripting (XSS) and SQL injection using defined rule sets.",
-        "analogy": "",
-        "raw_content": "* **Definition:** A specialized firewall focused on inspecting HTTP/HTTPS traffic to protect web applications from attacks such as cross-site scripting (XSS) and SQL injection using defined rule sets.\n\n- Can be deployed as an appliance or software plugin\n- **Inline:** Can block live attacks but may slow traffic and generate false positives\n- **Out-of-band:** Receives mirrored traffic via SPAN port; detects but cannot block in real time"
-      },
-      {
-        "name": "Firewall Configuration and ACLs",
-        "definition": "An **Access Control List (ACL)** is a rule set placed on a firewall, router, or network device that **permits or denies traffic** through an interface based on source, destination, protocol, and port.",
-        "analogy": "*Una ACL es como el reglamento interno de un condominio: define exactamente quién puede entrar por qué puerta, en qué horario, y qué tipo de vehículo puede pasar. Todo lo que no está en la lista está prohibido por defecto.*",
-        "raw_content": "* **Definition:** An **Access Control List (ACL)** is a rule set placed on a firewall, router, or network device that **permits or denies traffic** through an interface based on source, destination, protocol, and port.\n\n> *Una ACL es como el reglamento interno de un condominio: define exactamente quién puede entrar por qué puerta, en qué horario, y qué tipo de vehículo puede pasar. Todo lo que no está en la lista está prohibido por defecto.*"
-      },
-      {
-        "name": "IDS and IPS",
-        "definition": "An **Intrusion Detection System (IDS)** monitors network or host activity for suspicious behavior and generates alerts, while an **Intrusion Prevention System (IPS)** does the same but also takes automated action to block or stop the threat.",
-        "analogy": "*Un IDS es como una cámara de seguridad: graba y avisa si ve algo sospechoso, pero no actúa. Un IPS es como un guardia armado: detecta y también interviene de inmediato.*",
-        "raw_content": "* **Definition:** An **Intrusion Detection System (IDS)** monitors network or host activity for suspicious behavior and generates alerts, while an **Intrusion Prevention System (IPS)** does the same but also takes automated action to block or stop the threat.\n\n> *Un IDS es como una cámara de seguridad: graba y avisa si ve algo sospechoso, pero no actúa. Un IPS es como un guardia armado: detecta y también interviene de inmediato.*"
-      },
-      {
-        "name": "Network-Based (NIDS / NIPS)",
-        "definition": "A standalone device or appliance that monitors all traffic crossing a network segment, typically connected via a SPAN or mirrored port on a backbone switch.",
-        "analogy": "",
-        "raw_content": "* **Definition:** A standalone device or appliance that monitors all traffic crossing a network segment, typically connected via a SPAN or mirrored port on a backbone switch.\n\n- Detects port scans, suspicious payloads, traffic to/from suspicious IPs\n- NIPS is placed inline (right behind the firewall) to block in real time\n- NIDS uses a mirrored port for passive monitoring only"
-      },
-      {
-        "name": "Host-Based (HIDS / HIPS)",
-        "definition": "Software installed directly on a server or endpoint that monitors traffic to/from that specific host, as well as suspicious processes and file access.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Software installed directly on a server or endpoint that monitors traffic to/from that specific host, as well as suspicious processes and file access.\n\n- HIPS can block unauthorized changes to critical system files\n- More granular than network-based systems; specific to one host"
-      },
-      {
-        "name": "Wireless (WIDS / WIPS)",
-        "definition": "A system focused on detecting and preventing attacks against wireless networks, including de-authentication attacks, disassociation floods, and rogue access points.",
-        "analogy": "",
-        "raw_content": "* **Definition:** A system focused on detecting and preventing attacks against wireless networks, including de-authentication attacks, disassociation floods, and rogue access points.\n\n- WIPS can disconnect the offending wireless device from the network"
-      },
-      {
-        "name": "Signature-Based Detection",
-        "definition": "Analyzes traffic against a database of known attack signatures; can only detect previously identified threats.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Analyzes traffic against a database of known attack signatures; can only detect previously identified threats.\n\n- Requires frequent database updates\n- ⚠️ Ineffective against zero-day attacks\n- Sub-types: **pattern-matching** (common in NIDS/WIDS) and **stateful-matching** (common in HIDS)"
-      },
-      {
-        "name": "Anomaly-Based Detection",
-        "definition": "Establishes a baseline of normal traffic behavior and alerts when activity deviates significantly from that baseline (behavioral detection).",
-        "analogy": "",
-        "raw_content": "* **Definition:** Establishes a baseline of normal traffic behavior and alerts when activity deviates significantly from that baseline (behavioral detection).\n\n- Effective against unknown/novel attacks\n- ⚠️ Higher rate of false positives than signature-based\n- Sub-types: statistical, protocol, traffic, rule/heuristic, and application-based\n\n---"
+        "name": "Intrusion Prevention System (IPS)",
+        "definition": "A security system that monitors network or host activity for malicious behavior and actively takes action to block or stop detected threats, in addition to logging and alerting.",
+        "analogy": "*Si el IDS es la cámara con alarma, el IPS es el guardia de seguridad que actúa: ve la amenaza y la detiene en el momento.*",
+        "raw_content": "* **Definition:** A security system that monitors network or host activity for malicious behavior and actively takes action to block or stop detected threats, in addition to logging and alerting.\n\nAn IPS does everything an IDS does, **plus it takes action** — blocking traffic, terminating connections, or removing wireless clients. Placement matters: a **NIPS** should be placed **inline just behind the firewall** (in the traffic path) so it can block threats. A **NIDS** connects via a **mirrored port** (passive, out of path).\n\n> *Si el IDS es la cámara con alarma, el IPS es el guardia de seguridad que actúa: ve la amenaza y la detiene en el momento.*\n\n⚠️ **Key risk with IPS:** False positives block legitimate traffic; false negatives allow real threats through. Tuning is critical.\n\n| Behavior | IDS | IPS |\n| --- | --- | --- |\n| Detect and alert | ✅ | ✅ |\n| Log events | ✅ | ✅ |\n| Block / take action | ❌ | ✅ |\n| Placement | Mirror/SPAN port (passive) | Inline (in traffic path) |\n\n---"
       },
       {
         "name": "Network Appliances",
-        "definition": "A **network appliance** is a dedicated hardware device with pre-installed software designed to perform specific networking functions such as load balancing, proxying, monitoring, or security enforcement within a network.",
-        "analogy": "*Un appliance de red es como un electrodoméstico especializado: no es una computadora de propósito general, sino un dispositivo diseñado específicamente para una sola tarea, como una cafetera que solo hace café.*",
-        "raw_content": "* **Definition:** A **network appliance** is a dedicated hardware device with pre-installed software designed to perform specific networking functions such as load balancing, proxying, monitoring, or security enforcement within a network.\n\n> *Un appliance de red es como un electrodoméstico especializado: no es una computadora de propósito general, sino un dispositivo diseñado específicamente para una sola tarea, como una cafetera que solo hace café.*"
+        "definition": "Dedicated hardware devices with pre-installed software designed to perform specific networking services — such as load balancing, proxying, monitoring, or access control — within a network infrastructure.",
+        "analogy": "*Los appliances de red son como los electrodomésticos especializados de una cocina profesional: cada uno tiene un trabajo específico que hace mejor que una cocina doméstica genérica.*",
+        "raw_content": "* **Definition:** Dedicated hardware devices with pre-installed software designed to perform specific networking services — such as load balancing, proxying, monitoring, or access control — within a network infrastructure.\n\n> *Los appliances de red son como los electrodomésticos especializados de una cocina profesional: cada uno tiene un trabajo específico que hace mejor que una cocina doméstica genérica.*"
       },
       {
         "name": "Load Balancers",
-        "definition": "A device that distributes incoming network or application traffic across multiple servers to optimize performance, prevent overload on any single server, and maintain high availability.",
+        "definition": "A network appliance that distributes incoming network or application traffic across multiple servers to optimize performance, prevent overload, and ensure high availability.",
         "analogy": "",
-        "raw_content": "* **Definition:** A device that distributes incoming network or application traffic across multiple servers to optimize performance, prevent overload on any single server, and maintain high availability.\n\n- Continuously performs **health checks** on servers; redirects traffic if a server fails\n- Minimizes downtime during planned maintenance or unexpected failures\n- Advanced variant: **ADC (Application Delivery Controller)** — adds SSL termination, HTTP compression, and content caching"
+        "raw_content": "* **Definition:** A network appliance that distributes incoming network or application traffic across multiple servers to optimize performance, prevent overload, and ensure high availability.\n\nLoad balancers perform **continuous health checks** on servers; if one fails, traffic is redirected to remaining servers. An advanced version is the **Application Delivery Controller (ADC)**, which adds SSL termination, HTTP compression, and content caching on top of basic load distribution."
       },
       {
         "name": "Proxy Servers",
-        "definition": "An intermediary device between a client and a server that manages requests, enforces policies, caches content, and can mask the identity of internal endpoints.",
+        "definition": "An intermediary server that sits between clients and servers to handle requests on behalf of clients, providing content caching, request filtering, login management, and security functions.",
         "analogy": "",
-        "raw_content": "* **Definition:** An intermediary device between a client and a server that manages requests, enforces policies, caches content, and can mask the identity of internal endpoints.\n\n- **Content caching** → stores local copies of responses to reduce bandwidth and speed up repeat requests\n- **Request filtering** → enforces organizational policies for network usage\n- Helps defend against DDoS by masking internal endpoint IPs\n- Can enforce authentication, data encryption, and geographic data routing for compliance"
+        "raw_content": "* **Definition:** An intermediary server that sits between clients and servers to handle requests on behalf of clients, providing content caching, request filtering, login management, and security functions.\n\nProxy servers cache responses to reduce bandwidth, enforce organizational policies, mask internal endpoints (protecting against direct attacks), and can route traffic to maintain data sovereignty compliance. They also contribute to load balancing by distributing requests across servers."
       },
       {
-        "name": "Sensors",
-        "definition": "Devices or software tools that continuously monitor network conditions, traffic patterns, and data flows to detect anomalies, security breaches, or performance issues in real time.",
+        "name": "Network Sensors",
+        "definition": "Devices or software that continuously monitor, detect, and analyze traffic and data flow across the network to identify unusual activity, security breaches, or performance issues in real time.",
         "analogy": "",
-        "raw_content": "* **Definition:** Devices or software tools that continuously monitor network conditions, traffic patterns, and data flows to detect anomalies, security breaches, or performance issues in real time.\n\n- Used as the data collection layer for IDS/IPS systems\n- Trigger alerts on events like sudden traffic spikes from unknown IPs (potential DDoS)\n- Enable proactive response by providing real-time operational visibility"
+        "raw_content": "* **Definition:** Devices or software that continuously monitor, detect, and analyze traffic and data flow across the network to identify unusual activity, security breaches, or performance issues in real time.\n\nSensors feed data into IDS/IPS systems. They track performance anomalies (traffic spikes, service degradation), trigger alerts for the network operations team, and can detect early indicators of attacks like DDoS attempts from unknown IP addresses."
       },
       {
         "name": "Jump Servers (Jump Boxes)",
-        "definition": "A dedicated, hardened gateway server used by administrators to securely access devices in different security zones within a network; all administrative access is funneled through this single point.",
+        "definition": "A dedicated, hardened gateway server that system administrators use to securely access devices located in different security zones within a network.",
         "analogy": "",
-        "raw_content": "* **Definition:** A dedicated, hardened gateway server used by administrators to securely access devices in different security zones within a network; all administrative access is funneled through this single point.\n\n- Reduces attack surface by limiting direct access to sensitive internal devices\n- Centralizes logging for audit and incident response purposes\n- Hosts admin tools and scripts for routine tasks and troubleshooting\n- ⚠️ Must be heavily secured — it is a high-value target due to its privileged access\n\n---"
+        "raw_content": "* **Definition:** A dedicated, hardened gateway server that system administrators use to securely access devices located in different security zones within a network.\n\nJump servers provide a **single controlled access point** for administrative tasks, reducing the attack surface by preventing direct access to sensitive internal systems. They also **centralize logging** of all administrative activity, making audits and incident response significantly faster. Jump boxes are heavily secured with advanced monitoring software and typically host administrative tools and scripts needed for routine maintenance.\n\n---"
       },
       {
         "name": "Port Security",
-        "definition": "A network switch feature that restricts which devices can connect to a specific port based on their **MAC address**, preventing unauthorized devices from gaining network access.",
-        "analogy": "*La seguridad de puertos es como una estación de tren donde cada asiento está asignado a un pasajero específico por número de identificación: si no eres tú, no puedes sentarte ahí, aunque el tren esté lleno.*",
-        "raw_content": "* **Definition:** A network switch feature that restricts which devices can connect to a specific port based on their **MAC address**, preventing unauthorized devices from gaining network access.\n\n> *La seguridad de puertos es como una estación de tren donde cada asiento está asignado a un pasajero específico por número de identificación: si no eres tú, no puedes sentarte ahí, aunque el tren esté lleno.*"
+        "definition": "A network switch feature that restricts which devices can connect to a specific switch port based on the MAC address of their network interface card, preventing unauthorized device access.",
+        "analogy": "*La seguridad de puertos en un switch es como la lista de dispositivos autorizados en una sala de servidores: si el dispositivo no está en la lista, la puerta no se abre, sin importar quién lo intente conectar.*",
+        "raw_content": "* **Definition:** A network switch feature that restricts which devices can connect to a specific switch port based on the MAC address of their network interface card, preventing unauthorized device access.\n\nSwitches use a **CAM (Content Addressable Memory) table** to store MAC address-to-port mappings and forward traffic only to the intended device. Attackers can exploit this with **MAC flooding** — sending large numbers of fake MAC addresses to overflow the CAM table, causing the switch to **fail open** and behave like a hub, rebroadcasting all traffic to all ports.\n\n**Port security** mitigates this by binding specific MAC addresses to specific switch ports.\n\n> *La seguridad de puertos en un switch es como la lista de dispositivos autorizados en una sala de servidores: si el dispositivo no está en la lista, la puerta no se abre, sin importar quién lo intente conectar.*"
       },
       {
         "name": "Sticky MAC (Persistent MAC Learning)",
-        "definition": "A port security feature that dynamically learns and locks the first MAC address connected to a port as the only authorized MAC address for that port.",
+        "definition": "A port security feature that dynamically learns and locks the first MAC address connected to a switch port, blocking any subsequent device from connecting to that port.",
         "analogy": "",
-        "raw_content": "* **Definition:** A port security feature that dynamically learns and locks the first MAC address connected to a port as the only authorized MAC address for that port.\n\n- Simplifies setup; no need to pre-configure each MAC manually\n- ⚠️ Can be bypassed by **MAC spoofing** — attacker clones an approved MAC address\n\n---"
+        "raw_content": "* **Definition:** A port security feature that dynamically learns and locks the first MAC address connected to a switch port, blocking any subsequent device from connecting to that port.\n\n⚠️ **Limitation of MAC-based port security:** Attackers can bypass it by **MAC spoofing** — changing their NIC's MAC address to a known-authorized address. This requires additional controls like 802.1x.\n\n---"
       },
       {
         "name": "802.1x Authentication",
-        "definition": "An IEEE standard framework for **port-based network access control** that requires devices to authenticate before being granted access to a wired or wireless network, operating at Layer 2.",
-        "analogy": "*El 802.1x es como el control de acceso de un aeropuerto: no importa en qué puerta intentes entrar (switch o AP), siempre debes mostrar tu pasaporte (credenciales) antes de pasar.*",
-        "raw_content": "* **Definition:** An IEEE standard framework for **port-based network access control** that requires devices to authenticate before being granted access to a wired or wireless network, operating at Layer 2.\n\n> *El 802.1x es como el control de acceso de un aeropuerto: no importa en qué puerta intentes entrar (switch o AP), siempre debes mostrar tu pasaporte (credenciales) antes de pasar.*"
+        "definition": "An IEEE standardized framework for port-based network access control that authenticates devices connecting to wired or wireless networks before granting them access.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IEEE standardized framework for port-based network access control that authenticates devices connecting to wired or wireless networks before granting them access.\n\n802.1x is a **framework** — it relies on other protocols (RADIUS or TACACS+) for the actual authentication. It operates at **Layer 2 (Data Link)** and requires three roles:\n\n| Role | Description |\n| --- | --- |\n| **Supplicant** | The device or user requesting network access |\n| **Authenticator** | The network device through which access is requested (switch, WAP, VPN concentrator) |\n| **Authentication Server** | The centralized server performing authentication (RADIUS or TACACS+) |"
       },
       {
         "name": "EAP — Extensible Authentication Protocol",
-        "definition": "A **flexible authentication framework** used with 802.1x that supports multiple authentication methods including passwords, digital certificates, and public key infrastructure. EAP is not a single protocol but a family of variants.",
-        "analogy": "*EAP es como un conector USB-C: no importa qué tipo de cable necesites (contraseña, certificado digital, token), el mismo puerto universal puede soportar todos los métodos de autenticación.*",
-        "raw_content": "* **Definition:** A **flexible authentication framework** used with 802.1x that supports multiple authentication methods including passwords, digital certificates, and public key infrastructure. EAP is not a single protocol but a family of variants.\n\n> *EAP es como un conector USB-C: no importa qué tipo de cable necesites (contraseña, certificado digital, token), el mismo puerto universal puede soportar todos los métodos de autenticación.*"
+        "definition": "A flexible authentication framework (not a single protocol) that defines multiple methods for authenticating clients and servers in conjunction with 802.1x, supporting passwords, certificates, and PKI.",
+        "analogy": "*EAP es como el sistema de llaves de un hotel moderno: puede ser una llave magnética, una app en el celular, una huella dactilar o un código PIN. El hotel (802.1x) decide cuál método usar, pero la forma de abrir la puerta (EAP) puede variar.*",
+        "raw_content": "* **Definition:** A flexible authentication framework (not a single protocol) that defines multiple methods for authenticating clients and servers in conjunction with 802.1x, supporting passwords, certificates, and PKI.\n\n> *EAP es como el sistema de llaves de un hotel moderno: puede ser una llave magnética, una app en el celular, una huella dactilar o un código PIN. El hotel (802.1x) decide cuál método usar, pero la forma de abrir la puerta (EAP) puede variar.*"
       },
       {
-        "name": "EAP-MD5",
-        "definition": "Uses simple passwords and the challenge-handshake authentication process for remote access; provides one-way authentication only (no mutual authentication).",
-        "analogy": "",
-        "raw_content": "* **Definition:** Uses simple passwords and the challenge-handshake authentication process for remote access; provides one-way authentication only (no mutual authentication).\n\n- Weakest EAP variant; vulnerable to password-based attacks"
+        "name": "Securing Network Communications — VPNs",
+        "definition": "A Virtual Private Network (VPN) extends a private network across a public network, allowing users to send and receive data as if their device were directly connected to the organization's private network.",
+        "analogy": "*Una VPN es como un tubo sellado e invisible que atraviesa una ciudad pública: nadie que esté en la calle puede ver lo que pasa dentro del tubo, aunque físicamente esté debajo de sus pies.*",
+        "raw_content": "* **Definition:** A Virtual Private Network (VPN) extends a private network across a public network, allowing users to send and receive data as if their device were directly connected to the organization's private network.\n\nVPN traffic is sent through a **secure encrypted tunnel** from the user's device or site over the untrusted Internet back to the organization's network. There are three VPN types:\n\n> *Una VPN es como un tubo sellado e invisible que atraviesa una ciudad pública: nadie que esté en la calle puede ver lo que pasa dentro del tubo, aunque físicamente esté debajo de sus pies.*"
       },
       {
-        "name": "EAP-TLS",
-        "definition": "Uses digital certificates installed on both the client and the server for mutual authentication; immune to password-based attacks.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Uses digital certificates installed on both the client and the server for mutual authentication; immune to password-based attacks.\n\n- Strongest EAP variant; both client and server authenticate each other\n- Requires a PKI infrastructure to issue certificates to all clients"
+        "name": "Securing Network Communications — TLS",
+        "definition": "Transport Layer Security (TLS) is a cryptographic protocol that operates at Layers 5–7 of the OSI model to provide encrypted, authenticated communication between a client and server — the foundation of HTTPS and clientless VPNs.",
+        "analogy": "*TLS es como un sobre cerrado con lacre: el mensajero (la red) puede ver a quién va dirigido el sobre (los encabezados), pero no puede leer lo que hay dentro (el contenido cifrado).*",
+        "raw_content": "* **Definition:** Transport Layer Security (TLS) is a cryptographic protocol that operates at Layers 5–7 of the OSI model to provide encrypted, authenticated communication between a client and server — the foundation of HTTPS and clientless VPNs.\n\nTLS uses **TCP** for connection establishment (more overhead, more reliable). **DTLS (Datagram TLS)** is the UDP-based variant that provides the same security with less overhead — ideal for video streaming and real-time applications.\n\n> *TLS es como un sobre cerrado con lacre: el mensajero (la red) puede ver a quién va dirigido el sobre (los encabezados), pero no puede leer lo que hay dentro (el contenido cifrado).*\n\n---"
       },
       {
-        "name": "EAP-TTLS",
-        "definition": "Requires a digital certificate on the server only; the client authenticates using a password, creating a secure tunnel for the password exchange.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Requires a digital certificate on the server only; the client authenticates using a password, creating a secure tunnel for the password exchange.\n\n- More secure than EAP-MD5 (server is verified); less secure than EAP-TLS (client uses password)"
+        "name": "Securing Network Communications — IPSec",
+        "definition": "Internet Protocol Security (IPSec) is a suite of protocols that authenticates and encrypts each IP packet in a data stream to create a secure encrypted tunnel between two devices, providing confidentiality, integrity, authentication, and anti-replay protection.",
+        "analogy": "*IPSec es como un servicio de mensajería blindado con GPS, firma biométrica del destinatario, sello de integridad en el paquete y un número de serie único para que no puedan enviar el mismo paquete dos veces.*",
+        "raw_content": "* **Definition:** Internet Protocol Security (IPSec) is a suite of protocols that authenticates and encrypts each IP packet in a data stream to create a secure encrypted tunnel between two devices, providing confidentiality, integrity, authentication, and anti-replay protection.\n\nIPSec is the most widely used protocol for site-to-site and client-to-site VPNs. It provides:\n- **Confidentiality** — data encryption\n- **Integrity** — hash comparison before and after transmission\n- **Authentication** — each party verifies the other's identity\n- **Anti-replay** — packet sequence numbers prevent duplicate or captured packets from being resent\n\n> *IPSec es como un servicio de mensajería blindado con GPS, firma biométrica del destinatario, sello de integridad en el paquete y un número de serie único para que no puedan enviar el mismo paquete dos veces.*"
       },
       {
-        "name": "EAP-FAST",
-        "definition": "Uses a **Protected Access Credential (PAC)** instead of certificates to establish mutual authentication between two devices; FAST = Flexible Authentication via Secure Tunneling.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Uses a **Protected Access Credential (PAC)** instead of certificates to establish mutual authentication between two devices; FAST = Flexible Authentication via Secure Tunneling.\n\n- Does not require a PKI infrastructure; easier to deploy than EAP-TLS"
-      },
-      {
-        "name": "PEAP (Protected EAP)",
-        "definition": "Supports mutual authentication using a server-side digital certificate and Microsoft Active Directory to validate the client's password credential.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Supports mutual authentication using a server-side digital certificate and Microsoft Active Directory to validate the client's password credential.\n\n- Common in Microsoft environments; server certificate required but not client certificate"
-      },
-      {
-        "name": "EAP-LEAP",
-        "definition": "A **Cisco proprietary** lightweight EAP variant; works only on Cisco devices.",
-        "analogy": "",
-        "raw_content": "* **Definition:** A **Cisco proprietary** lightweight EAP variant; works only on Cisco devices.\n\n- ⚠️ Avoid unless running an all-Cisco infrastructure; not cross-platform"
-      },
-      {
-        "name": "Securing Network Communications — VPN",
-        "definition": "A **Virtual Private Network (VPN)** extends a private network across a public network, allowing users to send and receive data as if their devices were directly connected to the organization's private network, using an encrypted tunnel.",
-        "analogy": "*Una VPN es como un tubo blindado dentro de una tubería pública: otros pueden ver el tubo, pero no pueden ver lo que va adentro ni interceptar su contenido.*",
-        "raw_content": "* **Definition:** A **Virtual Private Network (VPN)** extends a private network across a public network, allowing users to send and receive data as if their devices were directly connected to the organization's private network, using an encrypted tunnel.\n\n> *Una VPN es como un tubo blindado dentro de una tubería pública: otros pueden ver el tubo, pero no pueden ver lo que va adentro ni interceptar su contenido.*"
-      },
-      {
-        "name": "Site-to-Site VPN",
-        "definition": "Connects two entire network sites (e.g., branch office to headquarters) over the public Internet using routers or VPN concentrators at each end, replacing expensive dedicated leased lines.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Connects two entire network sites (e.g., branch office to headquarters) over the public Internet using routers or VPN concentrators at each end, replacing expensive dedicated leased lines.\n\n- All traffic from the remote site flows through the HQ network before reaching the Internet\n- Cost-effective alternative to MPLS or leased lines"
-      },
-      {
-        "name": "Client-to-Site VPN",
-        "definition": "Connects a single device (laptop, phone, tablet) to the organization's headquarters network over the public Internet.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Connects a single device (laptop, phone, tablet) to the organization's headquarters network over the public Internet.\n\n- User installs VPN client software and authenticates to connect\n- Most common remote work setup"
-      },
-      {
-        "name": "Clientless VPN",
-        "definition": "A remote access VPN that uses a standard web browser and the HTTPS/TLS protocol (port 443) — no dedicated software or hardware client required.",
-        "analogy": "",
-        "raw_content": "* **Definition:** A remote access VPN that uses a standard web browser and the HTTPS/TLS protocol (port 443) — no dedicated software or hardware client required.\n\n- Used every time you connect to an HTTPS website (the browser acts as the VPN client)\n- Relies on **TLS** (Layers 5–6–7) for encryption"
-      },
-      {
-        "name": "IPSec — Internet Protocol Security",
-        "definition": "A suite of protocols that provides **authentication, encryption, integrity, and anti-replay protection** for IP communications, most commonly used to secure site-to-site and client-to-site VPN tunnels.",
-        "analogy": "*IPSec es como un servicio de mensajería certificada: sella el paquete, verifica quién lo envió, garantiza que no fue abierto en el camino, y comprueba que no es una copia de un paquete anterior.*",
-        "raw_content": "* **Definition:** A suite of protocols that provides **authentication, encryption, integrity, and anti-replay protection** for IP communications, most commonly used to secure site-to-site and client-to-site VPN tunnels.\n\n> *IPSec es como un servicio de mensajería certificada: sella el paquete, verifica quién lo envió, garantiza que no fue abierto en el camino, y comprueba que no es una copia de un paquete anterior.*"
-      },
-      {
-        "name": "AH — Authentication Header",
-        "definition": "Provides **connectionless integrity and data origin authentication** for IP datagrams and protects against replay attacks; does NOT provide confidentiality (data is not encrypted).",
-        "analogy": "",
-        "raw_content": "* **Definition:** Provides **connectionless integrity and data origin authentication** for IP datagrams and protects against replay attacks; does NOT provide confidentiality (data is not encrypted).\n\n- Acts as a cryptographic fingerprint to verify the packet's origin and integrity"
-      },
-      {
-        "name": "ESP — Encapsulating Security Payload",
-        "definition": "Provides **authentication, integrity, replay protection, AND confidentiality** by encrypting the packet payload; protects the data content but not the outer IP header in transport mode.",
-        "analogy": "",
-        "raw_content": "* **Definition:** Provides **authentication, integrity, replay protection, AND confidentiality** by encrypting the packet payload; protects the data content but not the outer IP header in transport mode.\n\n- In tunneling mode, ESP can encrypt both the payload and the original headers\n\n---"
-      },
-      {
-        "name": "TLS and DTLS",
-        "definition": "Cryptographic protocols designed to provide secure, encrypted communications over a network, with TLS running over TCP and DTLS running over UDP.",
-        "analogy": "*Es como decidir entre enviar una carta certificada por correo que requiere firma de recibido (TLS sobre TCP) o enviar un mensaje rápido por radio-walkie-talkie pero con cifrado militar (DTLS sobre UDP).*",
-        "raw_content": "* **Definition:** Cryptographic protocols designed to provide secure, encrypted communications over a network, with TLS running over TCP and DTLS running over UDP.\n\n> *Es como decidir entre enviar una carta certificada por correo que requiere firma de recibido (TLS sobre TCP) o enviar un mensaje rápido por radio-walkie-talkie pero con cifrado militar (DTLS sobre UDP).*"
-      },
-      {
-        "name": "TLS — Transport Layer Security",
-        "definition": "A cryptographic protocol that provides encrypted, authenticated communication at Layers 5–7 of the OSI model, using **TCP** as its transport; most commonly seen as the foundation of HTTPS and clientless VPNs.",
-        "analogy": "",
-        "raw_content": "* **Definition:** A cryptographic protocol that provides encrypted, authenticated communication at Layers 5–7 of the OSI model, using **TCP** as its transport; most commonly seen as the foundation of HTTPS and clientless VPNs.\n\n- The padlock in a browser indicates an active TLS connection over port 443\n- Higher overhead than UDP; more reliable"
-      },
-      {
-        "name": "DTLS — Datagram Transport Layer Security",
-        "definition": "A UDP-based version of TLS that provides equivalent security with lower overhead, making it ideal for latency-sensitive applications like video streaming and real-time communications.",
-        "analogy": "",
-        "raw_content": "* **Definition:** A UDP-based version of TLS that provides equivalent security with lower overhead, making it ideal for latency-sensitive applications like video streaming and real-time communications.\n\n- Same security guarantees as TLS; faster due to UDP's reduced overhead\n\n---"
-      },
-      {
-        "name": "SD-WAN — Software-Defined Wide Area Network",
-        "definition": "A virtualized WAN architecture that uses software-defined networking principles to manage and optimize wide area network connections across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized software control plane.",
-        "analogy": "*Una SD-WAN es como un GPS inteligente para el tráfico de tu empresa: en lugar de siempre tomar la misma autopista (MPLS), el sistema elige en tiempo real la ruta más rápida y segura disponible, ya sea por carretera, autopista o atajo.*",
-        "raw_content": "* **Definition:** A virtualized WAN architecture that uses software-defined networking principles to manage and optimize wide area network connections across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized software control plane.\n\n> *Una SD-WAN es como un GPS inteligente para el tráfico de tu empresa: en lugar de siempre tomar la misma autopista (MPLS), el sistema elige en tiempo real la ruta más rápida y segura disponible, ya sea por carretera, autopista o atajo.*\n\n- Replaces hardware-centric WAN routing (traditional star topology) with intelligent, dynamic path selection\n- Improves performance for cloud-first enterprises by routing traffic directly to cloud services without backhauling through HQ\n- Provides centralized visibility, management, and control across all WAN links\n- Supports transport over MPLS, cellular, satellite, broadband, and microwave links\n\n---"
+        "name": "SD-WAN",
+        "definition": "A Software-Defined Wide Area Network (SD-WAN) is a virtualized WAN architecture that uses software-defined networking principles to manage and optimize WAN connections — enabling intelligent traffic routing across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized control plane.",
+        "analogy": "*SD-WAN es como un GPS inteligente para los datos corporativos: en vez de obligar a todos los carros (paquetes) a pasar por la misma carretera principal (HQ), el GPS decide en tiempo real cuál ruta es más rápida, más económica o más segura para cada viaje.*",
+        "raw_content": "* **Definition:** A Software-Defined Wide Area Network (SD-WAN) is a virtualized WAN architecture that uses software-defined networking principles to manage and optimize WAN connections — enabling intelligent traffic routing across multiple transport types (MPLS, broadband, cellular, microwave) from a centralized control plane.\n\nTraditional WANs force all branch traffic back to HQ in a star topology — good for security but creates latency and poor user experience. SD-WAN solves this by intelligently identifying application types and routing traffic to the most efficient path dynamically.\n\n> *SD-WAN es como un GPS inteligente para los datos corporativos: en vez de obligar a todos los carros (paquetes) a pasar por la misma carretera principal (HQ), el GPS decide en tiempo real cuál ruta es más rápida, más económica o más segura para cada viaje.*\n\n**Key use case:** Organizations with many branch offices moving to cloud services (IaaS, PaaS, SaaS) that are being bottlenecked by traditional centralized WAN architectures.\n\n---"
       },
       {
         "name": "SASE — Secure Access Service Edge",
-        "definition": "A cloud-native framework that consolidates wide area networking (WAN) capabilities and network security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), Secure Web Gateways, and CASBs — into a single unified cloud-based service.",
-        "analogy": "*SASE es como un sistema de seguridad y transporte todo-en-uno entregado desde la nube: en lugar de tener guardias en cada edificio y un sistema de transporte separado, hay un servicio centralizado en la nube que maneja todo para todos tus usuarios, sin importar desde dónde se conecten.*",
-        "raw_content": "* **Definition:** A cloud-native framework that consolidates wide area networking (WAN) capabilities and network security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), Secure Web Gateways, and CASBs — into a single unified cloud-based service.\n\n> *SASE es como un sistema de seguridad y transporte todo-en-uno entregado desde la nube: en lugar de tener guardias en cada edificio y un sistema de transporte separado, hay un servicio centralizado en la nube que maneja todo para todos tus usuarios, sin importar desde dónde se conecten.*"
+        "definition": "A network security framework that consolidates wide-area networking (WAN) capabilities with security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), and Cloud Access Security Brokers (CASBs) — into a single cloud-native service.",
+        "analogy": "*SASE es como cambiar tu propio departamento de seguridad, recepcionistas, y sala de servidores por un servicio de seguridad en la nube que sigue al empleado a donde vaya, sin importar desde qué país o dispositivo se conecte.*",
+        "raw_content": "* **Definition:** A network security framework that consolidates wide-area networking (WAN) capabilities with security services — including firewalls, VPNs, Zero Trust Network Access (ZTNA), and Cloud Access Security Brokers (CASBs) — into a single cloud-native service.\n\nSASE is designed for distributed enterprises with remote workers, branch offices, and cloud-based applications. It uses **Software-Defined Networking (SDN)** to deliver security and networking from the cloud rather than hardware appliances, providing flexibility, scalability, and cost efficiency.\n\n> *SASE es como cambiar tu propio departamento de seguridad, recepcionistas, y sala de servidores por un servicio de seguridad en la nube que sigue al empleado a donde vaya, sin importar desde qué país o dispositivo se conecte.*"
       },
       {
-        "name": "Infrastructure Considerations",
-        "definition": "The set of architectural decisions — including device placement, security zone configuration, attack surface management, connectivity choices, device roles, and failure mode settings — that collectively determine the security, performance, and resilience of a network.",
-        "analogy": "*Diseñar una infraestructura de red es como planear la distribución de una ciudad: dónde pones los puntos de control, las zonas residenciales vs. comerciales, y qué pasa cuando un semáforo falla, todo afecta la seguridad y el flujo de tráfico.*",
-        "raw_content": "* **Definition:** The set of architectural decisions — including device placement, security zone configuration, attack surface management, connectivity choices, device roles, and failure mode settings — that collectively determine the security, performance, and resilience of a network.\n\n> *Diseñar una infraestructura de red es como planear la distribución de una ciudad: dónde pones los puntos de control, las zonas residenciales vs. comerciales, y qué pasa cuando un semáforo falla, todo afecta la seguridad y el flujo de tráfico.*"
-      },
-      {
-        "name": "Fail-Open",
-        "definition": "When a device fails, it allows all traffic to pass through without inspection or filtering to ensure network continuity remains uninterrupted.",
+        "name": "Infrastructure Considerations — Device Placement",
+        "definition": "The deliberate positioning of network devices (routers, switches, access points, firewalls) within a network architecture to optimize data flow, minimize latency, and maximize security.",
         "analogy": "",
-        "raw_content": "* **Definition:** When a device fails, it allows all traffic to pass through without inspection or filtering to ensure network continuity remains uninterrupted.\n\n- Prioritizes **availability** over security\n- Example use: guest wireless networks where data sensitivity is low"
+        "raw_content": "* **Definition:** The deliberate positioning of network devices (routers, switches, access points, firewalls) within a network architecture to optimize data flow, minimize latency, and maximize security.\n\n- **Routers** at the network edge to direct and filter inbound/outbound traffic\n- **Access points** positioned for coverage while minimizing wireless signal leakage outside facilities\n- **Switches** placed to serve as centralized connection points for network devices per segment\n\nImproper placement leads to bottlenecks, vulnerability points, or connectivity gaps.\n\n---"
       },
       {
-        "name": "Fail-Closed",
-        "definition": "When a device fails, it blocks all traffic to maintain security, even at the cost of network connectivity.",
+        "name": "Infrastructure Considerations — Security Zones and Screened Subnets",
+        "definition": "A security zone is a logically isolated network segment containing devices with similar security requirements and trust levels; a screened subnet is a buffer zone between an untrusted external network and a trusted internal network, used to host public-facing services.",
+        "analogy": "*Las zonas de seguridad son como las plantas de un edificio corporativo: la recepción (zona pública), las oficinas generales (zona interna), y la sala de servidores (zona confidencial) tienen controles de acceso diferentes porque tienen distintos niveles de sensibilidad.*",
+        "raw_content": "* **Definition:** A security zone is a logically isolated network segment containing devices with similar security requirements and trust levels; a screened subnet is a buffer zone between an untrusted external network and a trusted internal network, used to host public-facing services.\n\n> *Las zonas de seguridad son como las plantas de un edificio corporativo: la recepción (zona pública), las oficinas generales (zona interna), y la sala de servidores (zona confidencial) tienen controles de acceso diferentes porque tienen distintos niveles de sensibilidad.*\n\n⚠️ **Terminology change:** \"DMZ\" (demilitarized zone) is the older term. The current Security+ exam uses **\"screened subnet\"**. Some network appliances still display \"DMZ\" in their interfaces — know both terms.\n\nA **screened subnet** hosts public-facing services (web servers, email servers, DNS servers) so that a breach in that subnet does not give attackers direct access to the core internal network.\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Attack Surface",
+        "definition": "The total sum of all points (ports, protocols, devices, applications, interfaces) where an unauthorized user could potentially attempt to enter or extract data from a system, network, or application.",
         "analogy": "",
-        "raw_content": "* **Definition:** When a device fails, it blocks all traffic to maintain security, even at the cost of network connectivity.\n\n- Prioritizes **security** over availability\n- Example use: firewalls protecting sensitive financial or classified data systems\n\n---"
+        "raw_content": "* **Definition:** The total sum of all points (ports, protocols, devices, applications, interfaces) where an unauthorized user could potentially attempt to enter or extract data from a system, network, or application.\n\nAs networks grow and add devices, applications, and access points, the attack surface expands. A larger attack surface means more opportunities for exploitation. Common contributors include improper device placement, misconfigured devices, outdated software, unnecessary open ports, and weak access controls.\n\n**Mitigation:** Regularly assess and minimize the attack surface by identifying and eliminating vulnerabilities or implementing compensating controls.\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Connectivity Methods",
+        "definition": "The technologies and methods used to connect network components to each other and to external networks, each with different trade-offs in performance, security, mobility, and cost.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The technologies and methods used to connect network components to each other and to external networks, each with different trade-offs in performance, security, mobility, and cost.\n\n| Method | Advantages | Disadvantages |\n| --- | --- | --- |\n| **Wired (Ethernet)** | Stable, fast, secure | Limits mobility; requires physical cabling |\n| **Wireless (Wi-Fi, microwave, satellite)** | Flexible, scalable | Subject to interference; more security vulnerabilities |\n| **Fiber Optic** | High speed, long distance, minimal signal degradation | Higher installation cost |\n| **Hybrid** | Combines strengths of multiple methods; adds redundancy | More complex to manage |\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Device Attributes (Active vs Passive / Inline vs Tap)",
+        "definition": "Device attributes describe whether a network security device actively intervenes in traffic (active) or passively observes it (passive), and whether it is placed directly in the traffic path (inline) or outside it (tap/monitor).",
+        "analogy": "",
+        "raw_content": "* **Definition:** Device attributes describe whether a network security device actively intervenes in traffic (active) or passively observes it (passive), and whether it is placed directly in the traffic path (inline) or outside it (tap/monitor).\n\n| Attribute | Description | Example |\n| --- | --- | --- |\n| **Active (Inline)** | Device sits in the traffic path and can block or modify traffic | IPS, Firewall |\n| **Passive (Tap/Monitor)** | Device observes a copy of traffic without affecting it | IDS, Network Sensor (SPAN port) |\n\n- **Inline devices** — critical for real-time threat mitigation and filtering\n- **Tap/monitor devices** — ideal for monitoring network health and security without risking service disruption\n\nSelection depends on the organizational goal: real-time blocking (inline) vs. non-disruptive monitoring (passive tap).\n\n---"
+      },
+      {
+        "name": "Infrastructure Considerations — Failure Modes",
+        "definition": "The configured behavior of a security device when it encounters an error, overload, or malfunction — either allowing all traffic through (fail-open) or blocking all traffic (fail-closed).",
+        "analogy": "*Fail-open es como una puerta automática que se queda abierta si hay un apagón — conveniente, pero inseguro. Fail-closed es como una caja fuerte que se sella automáticamente si hay un error — segura, pero no puedes entrar.*",
+        "raw_content": "* **Definition:** The configured behavior of a security device when it encounters an error, overload, or malfunction — either allowing all traffic through (fail-open) or blocking all traffic (fail-closed).\n\n| Mode | Behavior on failure | Security | Availability |\n| --- | --- | --- | --- |\n| **Fail-Open** | All traffic passes without inspection | ❌ No security during failure | ✅ Network stays up |\n| **Fail-Closed** | All traffic is blocked | ✅ Security maintained | ❌ Network goes down |\n\n> *Fail-open es como una puerta automática que se queda abierta si hay un apagón — conveniente, pero inseguro. Fail-closed es como una caja fuerte que se sella automáticamente si hay un error — segura, pero no puedes entrar.*\n\n**Decision factors:** The criticality of what is being protected.\n- Sensitive financial data servers → **fail-closed** (security over availability)\n- Guest wireless network → **fail-open** (availability over security, low-value assets)\n\n---"
       },
       {
         "name": "Selecting Infrastructure Controls",
-        "definition": "The process of identifying, evaluating, and implementing security measures and safeguards to mitigate risks and protect an organization's network assets, aligned to defined objectives and frameworks.",
-        "analogy": "*Seleccionar controles de seguridad es como diseñar el sistema de seguridad de un museo: no puedes blindar cada centímetro, entonces priorizas las salas con las obras más valiosas, usas múltiples capas (cámaras, guardias, vitrinas), y revisas el sistema regularmente.*",
-        "raw_content": "* **Definition:** The process of identifying, evaluating, and implementing security measures and safeguards to mitigate risks and protect an organization's network assets, aligned to defined objectives and frameworks.\n\n> *Seleccionar controles de seguridad es como diseñar el sistema de seguridad de un museo: no puedes blindar cada centímetro, entonces priorizas las salas con las obras más valiosas, usas múltiples capas (cámaras, guardias, vitrinas), y revisas el sistema regularmente.*"
+        "definition": "The process of identifying, evaluating, and implementing safeguards or measures to mitigate potential risks and protect an organization's assets within its network infrastructure.",
+        "analogy": "*Seleccionar controles es como equipar una casa: no cualquier casa necesita una cámara de seguridad, una alarma, un perro guardián y un guardia armado al mismo tiempo. Se elige según el valor de lo que se protege y el presupuesto disponible.*",
+        "raw_content": "* **Definition:** The process of identifying, evaluating, and implementing safeguards or measures to mitigate potential risks and protect an organization's assets within its network infrastructure.\n\n> *Seleccionar controles es como equipar una casa: no cualquier casa necesita una cámara de seguridad, una alarma, un perro guardián y un guardia armado al mismo tiempo. Se elige según el valor de lo que se protege y el presupuesto disponible.*"
+      }
+    ]
+  },
+  {
+    "sectionId": "S17",
+    "sectionTitle": "Section 17: Identity and Access Management",
+    "concepts": [
+      {
+        "name": "Identity and Access Management (IAM)",
+        "definition": "A framework of policies, processes, and technologies that ensures the right individuals have access to the right resources at the right times for the right reasons, encompassing identification, authentication, authorization, and accounting.",
+        "analogy": "*Imagina que eres el gerente de un edificio de oficinas: IAM es el sistema completo que controla quién puede entrar, a qué pisos puede subir, qué puede hacer adentro y de quién guarda registro de todas esas actividades. Sin ese sistema, cualquiera podría entrar a cualquier lugar.*",
+        "tables": [
+          {
+            "headers": [
+              "Process",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Identification**",
+                "User claims an identity (username, email)"
+              ],
+              [
+                "**Authentication**",
+                "System verifies the claimed identity"
+              ],
+              [
+                "**Authorization**",
+                "System determines what the authenticated user can access"
+              ],
+              [
+                "**Accounting (Auditing)**",
+                "System tracks and records user activities"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A framework of policies, processes, and technologies that ensures the right individuals have access to the right resources at the right times for the right reasons, encompassing identification, authentication, authorization, and accounting.\n\nIAM is a critical component of any enterprise security plan because it is linked to both the **cybersecurity** and **productivity** of an organization. IAM technologies provide tools for business processes that facilitate the management of electronic identities, including password management, network access control, and management of digital identities.\n\n> *Imagina que eres el gerente de un edificio de oficinas: IAM es el sistema completo que controla quién puede entrar, a qué pisos puede subir, qué puede hacer adentro y de quién guarda registro de todas esas actividades. Sin ese sistema, cualquiera podría entrar a cualquier lugar.*\n\nThe four main processes of IAM are:\n\n| Process | Description |\n| --- | --- |\n| **Identification** | User claims an identity (username, email) |\n| **Authentication** | System verifies the claimed identity |\n| **Authorization** | System determines what the authenticated user can access |\n| **Accounting (Auditing)** | System tracks and records user activities |\n\n---"
+      },
+      {
+        "name": "IAM: Identification",
+        "definition": "The process where a user claims an identity to a system, typically using a unique identifier such as a username or email address.",
+        "analogy": "*Es como llegar a la recepción de un hotel y decir tu nombre. Todavía no te piden el pasaporte — simplemente estás declarando quién eres. El sistema todavía no sabe si eres realmente tú.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process where a user claims an identity to a system, typically using a unique identifier such as a username or email address.\n\nIdentification ensures that users are considered legitimate by the system. For example, when operating an e-commerce website, you might verify that billing and delivery addresses match what the user has stated to prevent fraudulent payment methods.\n\n> *Es como llegar a la recepción de un hotel y decir tu nombre. Todavía no te piden el pasaporte — simplemente estás declarando quién eres. El sistema todavía no sabe si eres realmente tú.*\n\n---"
+      },
+      {
+        "name": "IAM: Authentication",
+        "definition": "The process of verifying the claimed identity of a user, device, or system, typically by validating credentials against a database of authorized users.",
+        "analogy": "*Siguiendo con el hotel: es cuando el recepcionista te pide el pasaporte o tu ID. Ahora sí están verificando que tú eres quien dices ser.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process of verifying the claimed identity of a user, device, or system, typically by validating credentials against a database of authorized users.\n\nAfter a user provides their username (identification), authentication requires them to prove that identity — through a password, biometric characteristic, or combination of multiple factors.\n\n> *Siguiendo con el hotel: es cuando el recepcionista te pide el pasaporte o tu ID. Ahora sí están verificando que tú eres quien dices ser.*\n\n---"
+      },
+      {
+        "name": "IAM: Authorization",
+        "definition": "The process that determines what permissions or levels of access an authenticated user has within a system.",
+        "analogy": "*Ya te verificaron en el hotel. Ahora la llave que te dan solo abre tu habitación y las áreas comunes, no las habitaciones de otros huéspedes ni la bodega del personal. Eso es autorización.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process that determines what permissions or levels of access an authenticated user has within a system.\n\nAuthorization happens **after** authentication succeeds. For example, an employee in HR should have access to personnel files, while an employee in Finance might only access financial data. Authorization enforces separation of duties and least privilege.\n\n> *Ya te verificaron en el hotel. Ahora la llave que te dan solo abre tu habitación y las áreas comunes, no las habitaciones de otros huéspedes ni la bodega del personal. Eso es autorización.*\n\n---"
+      },
+      {
+        "name": "IAM: Accounting (Auditing)",
+        "definition": "The process of tracking and recording user activities — including logins, logouts, actions performed, and system changes — for security monitoring, compliance, and forensic purposes.",
+        "analogy": "*Es la cámara de seguridad del hotel que graba quién entró a cada cuarto, a qué hora y cuánto tiempo estuvo adentro. Aunque no previene el problema, es la evidencia que permite investigarlo después.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process of tracking and recording user activities — including logins, logouts, actions performed, and system changes — for security monitoring, compliance, and forensic purposes.\n\nAccounting helps organizations to detect potential security incidents, find vulnerabilities, and provide evidence in the case of a security breach. It answers the question: *who did what, when, and from where?*\n\n> *Es la cámara de seguridad del hotel que graba quién entró a cada cuarto, a qué hora y cuánto tiempo estuvo adentro. Aunque no previene el problema, es la evidencia que permite investigarlo después.*\n\n---"
+      },
+      {
+        "name": "IAM: Provisioning and Deprovisioning",
+        "definition": "Provisioning is the process of creating user accounts and assigning appropriate permissions when a user joins. Deprovisioning is the process of removing access rights when a user no longer needs them, such as when they leave the organization.",
+        "analogy": "*Provisioning es cuando le hacen una llave nueva al empleado el primer día. Deprovisioning es asegurarse de que devuelva TODAS las llaves el último día y que esas llaves sean desactivadas inmediatamente, porque un ex-empleado enojado con acceso activo es una bomba de tiempo.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Provisioning is the process of creating user accounts and assigning appropriate permissions when a user joins. Deprovisioning is the process of removing access rights when a user no longer needs them, such as when they leave the organization.\n\n**Provisioning** includes setting up email accounts, access to internal networks, and any other systems required for the user's job function.\n\n**Deprovisioning** is critical to prevent unauthorized access to sensitive information and to prevent insider threats from former employees. Failure to deprovision promptly is a common security gap.\n\n> *Provisioning es cuando le hacen una llave nueva al empleado el primer día. Deprovisioning es asegurarse de que devuelva TODAS las llaves el último día y que esas llaves sean desactivadas inmediatamente, porque un ex-empleado enojado con acceso activo es una bomba de tiempo.*\n\n⚠️ **Exam tip:** Deprovisioning is particularly important to prevent **insider threats** from employees who have left the organization.\n\n---"
+      },
+      {
+        "name": "IAM: Identity Proofing",
+        "definition": "The process of verifying the identity of a user *before* an account is created, typically by checking personal details against a trusted data source or requiring government-issued identification.",
+        "analogy": "*Es como cuando abres una cuenta bancaria y te piden llevar dos formas de identificación. El banco no te crea la cuenta solo porque llegaste y dijiste quién eras.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process of verifying the identity of a user *before* an account is created, typically by checking personal details against a trusted data source or requiring government-issued identification.\n\nIdentity proofing prevents fraudulent account creation. It can involve checking a driver's license, passport, or other verifiable identity documents before onboarding a user into the system.\n\n> *Es como cuando abres una cuenta bancaria y te piden llevar dos formas de identificación. El banco no te crea la cuenta solo porque llegaste y dijiste quién eras.*\n\n---"
+      },
+      {
+        "name": "IAM: Interoperability",
+        "definition": "The ability of different systems, devices, and applications to work together and share identity and access information seamlessly, often using standards like SAML or OpenID Connect.",
+        "analogy": "*Es como los enchufes de viaje universales. SAML y OpenID Connect son los adaptadores que permiten que el sistema de identidad de una empresa se \"enchufe\" correctamente a los sistemas de otra empresa sin cortocircuitos.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The ability of different systems, devices, and applications to work together and share identity and access information seamlessly, often using standards like SAML or OpenID Connect.\n\nInteroperability in IAM allows for secure, seamless authentication and authorization between different systems within or across organizational boundaries. Without interoperability standards, each system would require its own separate authentication mechanism.\n\n> *Es como los enchufes de viaje universales. SAML y OpenID Connect son los adaptadores que permiten que el sistema de identidad de una empresa se \"enchufe\" correctamente a los sistemas de otra empresa sin cortocircuitos.*\n\n---"
+      },
+      {
+        "name": "IAM: Attestation",
+        "definition": "The process of validating that user accounts and access rights are correct and up-to-date, typically through regular reviews and audits to ensure users have only the minimum access necessary for their role.",
+        "analogy": "*Es la auditoría anual donde el jefe de cada departamento revisa la lista de quién tiene acceso a qué y confirma: \"sí, esta persona todavía necesita este acceso\" o \"espera, este empleado ya no trabaja aquí — ¿por qué sigue teniendo acceso?\"*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process of validating that user accounts and access rights are correct and up-to-date, typically through regular reviews and audits to ensure users have only the minimum access necessary for their role.\n\nAttestation is a periodic review process — often quarterly or annually — where managers confirm that their direct reports still require the specific permissions they currently hold. This combats **permission creep**.\n\n> *Es la auditoría anual donde el jefe de cada departamento revisa la lista de quién tiene acceso a qué y confirma: \"sí, esta persona todavía necesita este acceso\" o \"espera, este empleado ya no trabaja aquí — ¿por qué sigue teniendo acceso?\"*\n\n---"
+      },
+      {
+        "name": "Multifactor Authentication (MFA)",
+        "definition": "A security system that requires more than one method of authentication from independent categories of credentials to verify a user's identity, creating a layered defense against unauthorized access.",
+        "analogy": "*Es como una caja fuerte con dos llaves diferentes que pertenecen a dos personas distintas: aunque un ladrón consiga la llave de uno, sin la del otro no puede abrirla. Cada factor adicional es otra llave de un tipo diferente.*",
+        "tables": [
+          {
+            "headers": [
+              "Factor",
+              "Category",
+              "Examples"
+            ],
+            "rows": [
+              [
+                "**Something you know**",
+                "Knowledge-based",
+                "Password, PIN, security question"
+              ],
+              [
+                "**Something you have**",
+                "Possession-based",
+                "Smart card, hardware token (key fob), software token, SMS OTP"
+              ],
+              [
+                "**Something you are**",
+                "Inherence-based (biometric)",
+                "Fingerprint, facial recognition, iris scan, voice recognition"
+              ],
+              [
+                "**Something you do**",
+                "Behavior-based",
+                "Keystroke dynamics, mouse movement patterns, gait recognition"
+              ],
+              [
+                "**Somewhere you are**",
+                "Location-based",
+                "GPS location, IP address verification, network-based restriction"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A security system that requires more than one method of authentication from independent categories of credentials to verify a user's identity, creating a layered defense against unauthorized access.\n\nThe goal of MFA is to make it significantly harder for unauthorized persons to access a target, even if one credential factor is compromised. MFA combines at least two factors from across five independent categories.\n\n> *Es como una caja fuerte con dos llaves diferentes que pertenecen a dos personas distintas: aunque un ladrón consiga la llave de uno, sin la del otro no puede abrirla. Cada factor adicional es otra llave de un tipo diferente.*\n\n### MFA Authentication Factors\n\n| Factor | Category | Examples |\n| --- | --- | --- |\n| **Something you know** | Knowledge-based | Password, PIN, security question |\n| **Something you have** | Possession-based | Smart card, hardware token (key fob), software token, SMS OTP |\n| **Something you are** | Inherence-based (biometric) | Fingerprint, facial recognition, iris scan, voice recognition |\n| **Something you do** | Behavior-based | Keystroke dynamics, mouse movement patterns, gait recognition |\n| **Somewhere you are** | Location-based | GPS location, IP address verification, network-based restriction |\n\n⚠️ **Exam tip:** A username + password + security question is **single-factor** (all three are \"something you know\"). Two factors only count as MFA when they come from **different categories**.\n\n---"
+      },
+      {
+        "name": "MFA: Something You Know (Knowledge Factor)",
+        "definition": "An authentication factor based on information only the user should know, such as a password, PIN, or answer to a security question.",
+        "analogy": "*Es la combinación de la caja fuerte que solo tú te sabes. El problema es que si alguien te ve marcarla, o si la escribiste en un papel pegado en el refrigerador, ya no es un secreto.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An authentication factor based on information only the user should know, such as a password, PIN, or answer to a security question.\n\nThis is the most commonly used authentication factor. Its weakness is that it can be guessed, stolen via phishing, or cracked via brute force if the password is weak. It should always be combined with at least one other factor for sensitive systems.\n\n> *Es la combinación de la caja fuerte que solo tú te sabes. El problema es que si alguien te ve marcarla, o si la escribiste en un papel pegado en el refrigerador, ya no es un secreto.*\n\n---"
+      },
+      {
+        "name": "MFA: Something You Have (Possession Factor)",
+        "definition": "An authentication factor based on a physical object the user possesses, such as a smart card, hardware token (key fob), software token, or device receiving an SMS code.",
+        "analogy": "*Es la llave física de tu casa. Aunque alguien sepa tu dirección (algo que sabes), sin la llave física no puede entrar. El problema es que se puede perder, robar o copiar.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An authentication factor based on a physical object the user possesses, such as a smart card, hardware token (key fob), software token, or device receiving an SMS code.\n\n**Smart cards** are credit-card-sized cards embedded with an integrated circuit used in high-security access systems. **Hardware tokens (key fobs)** generate a unique code every 30–60 seconds. **Software tokens** (authenticator apps like Google Authenticator or Microsoft Authenticator) perform the same function without dedicated hardware. **SMS-based OTPs** send a time-limited code to the user's registered phone number.\n\n> *Es la llave física de tu casa. Aunque alguien sepa tu dirección (algo que sabes), sin la llave física no puede entrar. El problema es que se puede perder, robar o copiar.*\n\n---"
+      },
+      {
+        "name": "MFA: Something You Are (Inherence / Biometric Factor)",
+        "definition": "An authentication factor based on unique biological characteristics of the user, including fingerprints, facial recognition, iris scans, or voice recognition.",
+        "analogy": "*Es como el escáner de retina de una película de espías: no importa cuántas contraseñas roben, no pueden arrancarle los ojos al dueño. Tu cuerpo mismo es la credencial.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An authentication factor based on unique biological characteristics of the user, including fingerprints, facial recognition, iris scans, or voice recognition.\n\nApple's Touch ID has approximately a **1 in 50,000** chance of a false acceptance. Apple's Face ID improves this to approximately **1 in 1,000,000**, making it ~20 times more secure. Biometric factors are increasingly popular due to their difficulty to replicate.\n\n> *Es como el escáner de retina de una película de espías: no importa cuántas contraseñas roben, no pueden arrancarle los ojos al dueño. Tu cuerpo mismo es la credencial.*\n\n---"
+      },
+      {
+        "name": "MFA: Somewhere You Are (Location Factor)",
+        "definition": "An authentication factor that uses the user's geographic location — determined via GPS, IP address, or network context — to permit or deny access.",
+        "analogy": "*Es como la restricción de un concierto que solo vende boletos a personas dentro del país. No importa qué tan legítimo sea tu nombre y tu tarjeta: si estás en el lugar equivocado, no entras.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An authentication factor that uses the user's geographic location — determined via GPS, IP address, or network context — to permit or deny access.\n\nLocation-based factors can restrict access to users within specific countries, regions, or network segments. For example, blocking logins from IP addresses outside the United States, or requiring the user to be connected to the corporate VPN.\n\n> *Es como la restricción de un concierto que solo vende boletos a personas dentro del país. No importa qué tan legítimo sea tu nombre y tu tarjeta: si estás en el lugar equivocado, no entras.*\n\n---"
+      },
+      {
+        "name": "MFA: Something You Do (Behavior Factor)",
+        "definition": "An authentication factor based on unique behavioral patterns associated with a user, such as keystroke dynamics, mouse movement patterns, typing rhythm, or interaction style with a device.",
+        "analogy": "*Es como reconocer a alguien por la forma en que camina o escribe a máquina. Aunque alguien tome el control de tu sesión, el sistema puede detectar que los patrones de escritura o movimiento del mouse son diferentes.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An authentication factor based on unique behavioral patterns associated with a user, such as keystroke dynamics, mouse movement patterns, typing rhythm, or interaction style with a device.\n\nThis is one of the newer authentication categories and is often used as a **secondary or passive factor**, rarely as a standalone factor. Behavioral biometrics can continuously authenticate a user throughout a session, not just at login.\n\n> *Es como reconocer a alguien por la forma en que camina o escribe a máquina. Aunque alguien tome el control de tu sesión, el sistema puede detectar que los patrones de escritura o movimiento del mouse son diferentes.*\n\n---"
+      },
+      {
+        "name": "Passkeys",
+        "definition": "A passwordless authentication mechanism that uses public key cryptography, where the private key is stored securely on the user's device (protected by the device's lock screen) and the corresponding public key is stored on the authentication server.",
+        "analogy": "*Es como si tu huella digital fuera la llave maestra y tu teléfono fuera el llavero inteligente que nunca comparte la llave real, solo demuestra que la tienes. Aunque hackeen el sitio web, solo consiguen la cerradura, no la llave.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A passwordless authentication mechanism that uses public key cryptography, where the private key is stored securely on the user's device (protected by the device's lock screen) and the corresponding public key is stored on the authentication server.\n\nPasskeys eliminate the need to remember or type a password. When a user registers, a key pair is generated. To authenticate, the user simply unlocks their device (fingerprint, Face ID, PIN, or pattern) and the device presents the stored passkey to the service. Since only public keys are stored on the server, a server breach **does not expose user credentials**. Each passkey is unique to the service it was created for, preventing phishing misuse.\n\n> *Es como si tu huella digital fuera la llave maestra y tu teléfono fuera el llavero inteligente que nunca comparte la llave real, solo demuestra que la tienes. Aunque hackeen el sitio web, solo consiguen la cerradura, no la llave.*\n\nBenefits of passkeys include increased login success rates, lower drop-off rates, improved conversion rates, reduced MFA costs, and strong resistance to phishing and credential stuffing attacks.\n\n---"
+      },
+      {
+        "name": "Password Security — Password Policies",
+        "definition": "A set of rules and requirements enforced by an organization to ensure that users create strong passwords that are resistant to guessing, dictionary attacks, and brute-force attacks.",
+        "analogy": "*La política de contraseñas es como el reglamento de seguridad de un banco: define qué tan fuerte debe ser la caja fuerte, con qué frecuencia se cambia la combinación y cuántas combinaciones anteriores no se pueden reutilizar.*",
+        "tables": [
+          {
+            "headers": [
+              "Policy Element",
+              "Recommendation",
+              "Why It Matters"
+            ],
+            "rows": [
+              [
+                "**Password Length**",
+                "Minimum 12–16 characters",
+                "Each added character exponentially increases cracking time"
+              ],
+              [
+                "**Password Complexity**",
+                "Mix of uppercase, lowercase, numbers, special chars",
+                "Expands the keyspace from 10 (digits only) to 72+ characters per position"
+              ],
+              [
+                "**Password Reuse**",
+                "Enforce history of 24 passwords",
+                "Prevents users from cycling back to compromised old passwords"
+              ],
+              [
+                "**Password Expiration**",
+                "90 days (reconsidering per NIST)",
+                "Forces periodic rotation; NIST no longer recommends this without a password manager"
+              ],
+              [
+                "**Password Age (Minimum)**",
+                "3+ days before next change allowed",
+                "Prevents users from rapidly cycling through history to reuse old password"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A set of rules and requirements enforced by an organization to ensure that users create strong passwords that are resistant to guessing, dictionary attacks, and brute-force attacks.\n\nFive key characteristics of strong password policies:\n\n| Policy Element | Recommendation | Why It Matters |\n| --- | --- | --- |\n| **Password Length** | Minimum 12–16 characters | Each added character exponentially increases cracking time |\n| **Password Complexity** | Mix of uppercase, lowercase, numbers, special chars | Expands the keyspace from 10 (digits only) to 72+ characters per position |\n| **Password Reuse** | Enforce history of 24 passwords | Prevents users from cycling back to compromised old passwords |\n| **Password Expiration** | 90 days (reconsidering per NIST) | Forces periodic rotation; NIST no longer recommends this without a password manager |\n| **Password Age (Minimum)** | 3+ days before next change allowed | Prevents users from rapidly cycling through history to reuse old password |\n\n> *La política de contraseñas es como el reglamento de seguridad de un banco: define qué tan fuerte debe ser la caja fuerte, con qué frecuencia se cambia la combinación y cuántas combinaciones anteriores no se pueden reutilizar.*\n\n⚠️ **Exam tip:** NIST no longer recommends mandatory periodic password expiration unless a password manager is in use, due to the predictable weakening behavior it induces (e.g., `Password1` → `Password2` → `Password3`).\n\n---"
+      },
+      {
+        "name": "Password Security — Password Managers",
+        "definition": "Tools that securely store and manage passwords in an encrypted vault, generate strong unique passwords for each account, and automatically fill credentials during login.",
+        "analogy": "*El gestor de contraseñas es como tener un mayordomo de seguridad que recuerda miles de llaves diferentes, cada una específica para una puerta, y cuando llegas a la puerta correcta, él mismo la abre por ti sin que tengas que memorizar nada.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Tools that securely store and manage passwords in an encrypted vault, generate strong unique passwords for each account, and automatically fill credentials during login.\n\nKey features of password managers include **password generation** (creates long, complex, unique passwords per site), **autofill** (reduces human error during login), **secure sharing** (allows sharing access without revealing the actual password), and **cross-platform access** (available on all devices). Examples include Bitwarden, 1Password, and Dashlane.\n\n> *El gestor de contraseñas es como tener un mayordomo de seguridad que recuerda miles de llaves diferentes, cada una específica para una puerta, y cuando llegas a la puerta correcta, él mismo la abre por ti sin que tengas que memorizar nada.*\n\n---"
+      },
+      {
+        "name": "Password Security — Passwordless Authentication",
+        "definition": "Authentication methods that verify a user's identity without requiring a typed password, using biometrics, hardware tokens, one-time passwords, magic links, or passkeys.",
+        "analogy": "*La autenticación sin contraseña es como entrar a tu casa con reconocimiento facial en lugar de buscar la llave. Es más rápido, más seguro y no puedes \"olvidar\" tu cara como sí puedes olvidar una contraseña.*",
+        "tables": [
+          {
+            "headers": [
+              "Method",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Biometric Authentication**",
+                "Fingerprint, face scan, or iris used to authenticate"
+              ],
+              [
+                "**Hardware Token**",
+                "Physical security key generates a short-lived login code"
+              ],
+              [
+                "**One-Time Password (OTP)**",
+                "Code sent to email or phone, valid for 3–10 minutes, single use"
+              ],
+              [
+                "**Magic Link**",
+                "Link sent to email; clicking it logs the user in automatically"
+              ],
+              [
+                "**Passkey**",
+                "Browser/OS-integrated; uses device lock screen (fingerprint/PIN)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Authentication methods that verify a user's identity without requiring a typed password, using biometrics, hardware tokens, one-time passwords, magic links, or passkeys.\n\n| Method | Description |\n| --- | --- |\n| **Biometric Authentication** | Fingerprint, face scan, or iris used to authenticate |\n| **Hardware Token** | Physical security key generates a short-lived login code |\n| **One-Time Password (OTP)** | Code sent to email or phone, valid for 3–10 minutes, single use |\n| **Magic Link** | Link sent to email; clicking it logs the user in automatically |\n| **Passkey** | Browser/OS-integrated; uses device lock screen (fingerprint/PIN) |\n\n> *La autenticación sin contraseña es como entrar a tu casa con reconocimiento facial en lugar de buscar la llave. Es más rápido, más seguro y no puedes \"olvidar\" tu cara como sí puedes olvidar una contraseña.*\n\n---"
+      },
+      {
+        "name": "Password Attacks",
+        "definition": "Techniques used by attackers to recover or bypass passwords, including brute force, dictionary, password spraying, and hybrid attacks.",
+        "analogy": "*Los ataques de contraseñas son como los métodos que usaría un ladrón para abrir tu candado: probar cada combinación posible, usar una lista de combinaciones comunes, o probar las más comunes en muchos candados a la vez.*",
+        "tables": [
+          {
+            "headers": [
+              "Attack Type",
+              "Method",
+              "Best Defense"
+            ],
+            "rows": [
+              [
+                "**Brute Force**",
+                "Tries every possible character combination",
+                "Long + complex passwords; account lockout; MFA; CAPTCHA"
+              ],
+              [
+                "**Dictionary**",
+                "Uses a list of common passwords / \"leet speak\" variants",
+                "Complex unique passwords; MFA; lockout"
+              ],
+              [
+                "**Password Spraying**",
+                "Tries a few common passwords against many accounts",
+                "Unique passwords; MFA; lockout policies"
+              ],
+              [
+                "**Hybrid**",
+                "Combines dictionary words with brute-forced appended characters",
+                "Long + complex passwords; MFA"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Techniques used by attackers to recover or bypass passwords, including brute force, dictionary, password spraying, and hybrid attacks.\n\n> *Los ataques de contraseñas son como los métodos que usaría un ladrón para abrir tu candado: probar cada combinación posible, usar una lista de combinaciones comunes, o probar las más comunes en muchos candados a la vez.*\n\n### Types of Password Attacks\n\n| Attack Type | Method | Best Defense |\n| --- | --- | --- |\n| **Brute Force** | Tries every possible character combination | Long + complex passwords; account lockout; MFA; CAPTCHA |\n| **Dictionary** | Uses a list of common passwords / \"leet speak\" variants | Complex unique passwords; MFA; lockout |\n| **Password Spraying** | Tries a few common passwords against many accounts | Unique passwords; MFA; lockout policies |\n| **Hybrid** | Combines dictionary words with brute-forced appended characters | Long + complex passwords; MFA |\n\n---"
+      },
+      {
+        "name": "Password Attack: Brute Force",
+        "definition": "An attack that systematically tries every possible combination of characters until the correct password is found.",
+        "analogy": "*Es como un ladrón que prueba todas las combinaciones de un candado de 4 dígitos, una por una. Con un candado sencillo lo logra en minutos. Pero si el candado tiene 20 dígitos alfanuméricos, tardaría más años que la edad del universo.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An attack that systematically tries every possible combination of characters until the correct password is found.\n\nA 4-digit PIN has only 10,000 combinations and can be cracked in minutes by modern software (500–1,000 attempts/second). Increasing length exponentially increases difficulty: an 8-digit PIN has 100 million combinations — 10,000× more than a 4-digit PIN.\n\nMitigations: increase password complexity, increase length, limit login attempts, use MFA, implement CAPTCHA.\n\n> *Es como un ladrón que prueba todas las combinaciones de un candado de 4 dígitos, una por una. Con un candado sencillo lo logra en minutos. Pero si el candado tiene 20 dígitos alfanuméricos, tardaría más años que la edad del universo.*\n\n---"
+      },
+      {
+        "name": "Password Attack: Dictionary Attack",
+        "definition": "An attack that uses a pre-compiled list (\"hacker's dictionary\") of common passwords and their variants — including leet speak substitutions — to attempt to match a stored password hash.",
+        "analogy": "*En lugar de probar cada llave posible, el ladrón lleva consigo las 10,000 llaves más comunes del mundo. La mayoría de las puertas en el mundo usan una de esas. Si la tuya es una de ellas, te abre en segundos.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An attack that uses a pre-compiled list (\"hacker's dictionary\") of common passwords and their variants — including leet speak substitutions — to attempt to match a stored password hash.\n\nUnlike attacks using actual dictionary words, modern dictionary attacks use extensive wordlists including common passwords with letter-to-number/symbol substitutions (e.g., `p@$$w0rd`). These substitutions are known as **leet speak**.\n\n> *En lugar de probar cada llave posible, el ladrón lleva consigo las 10,000 llaves más comunes del mundo. La mayoría de las puertas en el mundo usan una de esas. Si la tuya es una de ellas, te abre en segundos.*\n\n---"
+      },
+      {
+        "name": "Password Attack: Password Spraying",
+        "definition": "An attack that tries a small number of commonly used passwords against a large number of accounts, specifically to avoid triggering account lockout policies.",
+        "analogy": "*En lugar de romper una caja fuerte específica con miles de intentos, el ladrón prueba \"1234\" en todas las cajas fuertes del edificio. Eventualmente alguna la tiene como combinación.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An attack that tries a small number of commonly used passwords against a large number of accounts, specifically to avoid triggering account lockout policies.\n\nPassword spraying is effective because in any large organization, statistically some users will be using weak passwords like `Password1`. By attempting only a few passwords per account, the attacker avoids detection by lockout thresholds.\n\n⚠️ **Exam tip:** Password spraying is the **inverse** of brute force — instead of many attempts on one account, it makes few attempts across many accounts.\n\n> *En lugar de romper una caja fuerte específica con miles de intentos, el ladrón prueba \"1234\" en todas las cajas fuertes del edificio. Eventualmente alguna la tiene como combinación.*\n\n---"
+      },
+      {
+        "name": "Password Attack: Hybrid Attack",
+        "definition": "An attack that combines elements of dictionary and brute force attacks — starting with dictionary words and then appending or modifying them with numbers, symbols, or patterns.",
+        "analogy": "*Es el ladrón inteligente que sabe que el reglamento del edificio obliga a que todas las contraseñas sean una palabra más un número. Entonces busca palabras comunes en su diccionario y le agrega fuerza bruta solo al número. Mucho más eficiente que probar todo desde cero.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An attack that combines elements of dictionary and brute force attacks — starting with dictionary words and then appending or modifying them with numbers, symbols, or patterns.\n\nHybrid attacks are effective when an organization enforces predictable password formats (e.g., \"8-letter word + 6-digit number\"). An attacker can use a dictionary for the word component and brute force the numeric portion.\n\n> *Es el ladrón inteligente que sabe que el reglamento del edificio obliga a que todas las contraseñas sean una palabra más un número. Entonces busca palabras comunes en su diccionario y le agrega fuerza bruta solo al número. Mucho más eficiente que probar todo desde cero.*\n\n---"
+      },
+      {
+        "name": "Single Sign-On (SSO)",
+        "definition": "An authentication process that allows a user to access multiple applications or websites by logging in only once with a single set of credentials, eliminating the need to authenticate separately to each system.",
+        "analogy": "*Es el pase VIP de un festival de música: lo validas una vez en la entrada principal y puedes entrar a todos los escenarios sin que te lo pidan de nuevo en cada uno. El festival (IdP) garantizó al personal de cada escenario que ya fuiste verificado.*",
+        "tables": [
+          {
+            "headers": [
+              "Benefit",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Improved user experience**",
+                "One set of credentials for all systems"
+              ],
+              [
+                "**Increased productivity**",
+                "No time lost logging into each application separately"
+              ],
+              [
+                "**Reduced IT support cost**",
+                "Fewer password reset requests to the helpdesk"
+              ],
+              [
+                "**Enhanced security**",
+                "Encourages stronger passwords; reduces password reuse across sites"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** An authentication process that allows a user to access multiple applications or websites by logging in only once with a single set of credentials, eliminating the need to authenticate separately to each system.\n\nSSO works based on a **trusted relationship** established between an application and an **Identity Provider (IdP)**. The IdP creates, maintains, and manages identity information and provides authentication services to relying applications.\n\n> *Es el pase VIP de un festival de música: lo validas una vez en la entrada principal y puedes entrar a todos los escenarios sin que te lo pidan de nuevo en cada uno. El festival (IdP) garantizó al personal de cada escenario que ya fuiste verificado.*\n\n### SSO Benefits\n\n| Benefit | Description |\n| --- | --- |\n| **Improved user experience** | One set of credentials for all systems |\n| **Increased productivity** | No time lost logging into each application separately |\n| **Reduced IT support cost** | Fewer password reset requests to the helpdesk |\n| **Enhanced security** | Encourages stronger passwords; reduces password reuse across sites |\n\n---"
+      },
+      {
+        "name": "SSO: LDAP",
+        "definition": "The Lightweight Directory Access Protocol (LDAP) is a protocol used to access and maintain distributed directory information services over an IP network, commonly used as a centralized repository for user information and authentication.",
+        "analogy": "*LDAP es como la guía telefónica de la empresa, pero inteligente. Cuando una aplicación necesita saber quién eres y qué puedes hacer, consulta esa guía. Y si usas LDAPS, la guía viene en un sobre sellado y cifrado para que nadie la intercepte en el camino.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The Lightweight Directory Access Protocol (LDAP) is a protocol used to access and maintain distributed directory information services over an IP network, commonly used as a centralized repository for user information and authentication.\n\nLDAP acts as the directory backbone for SSO in enterprise networks. It stores user information (names, groups, roles, certificates) and allows applications to query this directory to authenticate users and determine their authorization level.\n\nLDAP supports both plaintext transmission and a secure version: **LDAPS** (LDAP over SSL/TLS or StartTLS), which encrypts data in transit.\n\n> *LDAP es como la guía telefónica de la empresa, pero inteligente. Cuando una aplicación necesita saber quién eres y qué puedes hacer, consulta esa guía. Y si usas LDAPS, la guía viene en un sobre sellado y cifrado para que nadie la intercepte en el camino.*\n\n---"
+      },
+      {
+        "name": "SSO: OAuth",
+        "definition": "Open Authorization (OAuth) is an open standard for token-based authentication and authorization that allows third-party services to access user account information without exposing the user's password.",
+        "analogy": "*OAuth es como darle a alguien un voucher de acceso limitado en lugar de darle tu llave. El voucher dice \"esta persona puede ver mi sala pero no puede entrar a mi cuarto ni abrir mi caja fuerte.\" Tú nunca compartiste la llave real.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Open Authorization (OAuth) is an open standard for token-based authentication and authorization that allows third-party services to access user account information without exposing the user's password.\n\nOAuth is commonly seen when a website offers \"Log in with Google\" or \"Log in with Facebook.\" The user grants the third-party application access to specific scopes of their account (name, email, profile photo) without sharing their actual password. OAuth uses **JSON Web Tokens (JWT)** formatted as Base64-encoded strings in URLs and HTTP headers, which can be digitally signed for authentication and integrity.\n\n> *OAuth es como darle a alguien un voucher de acceso limitado en lugar de darle tu llave. El voucher dice \"esta persona puede ver mi sala pero no puede entrar a mi cuarto ni abrir mi caja fuerte.\" Tú nunca compartiste la llave real.*\n\n---"
+      },
+      {
+        "name": "SSO: SAML",
+        "definition": "Security Assertion Markup Language (SAML) is an XML-based standard for exchanging authentication and authorization data between an Identity Provider (IdP) and a Service Provider (SP), enabling SSO across different organizations and systems.",
+        "analogy": "*SAML es como una carta de recomendación notariada. El empleador (service provider) no conoce al candidato, pero confía en la carta firmada por la universidad de prestigio (IdP) que dice \"esta persona es quien dice ser y tiene estas calificaciones.\"*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Security Assertion Markup Language (SAML) is an XML-based standard for exchanging authentication and authorization data between an Identity Provider (IdP) and a Service Provider (SP), enabling SSO across different organizations and systems.\n\nWhen a user logs in using SAML, the service provider redirects the user to the IdP with a SAML request. The IdP verifies the user's identity and sends an assertion (a cryptographically signed XML document) back to the service provider, which then grants access. SAML **decouples** the service from the identity verification — the service provider does not authenticate the user directly; it receives confirmation from the IdP.\n\n> *SAML es como una carta de recomendación notariada. El empleador (service provider) no conoce al candidato, pero confía en la carta firmada por la universidad de prestigio (IdP) que dice \"esta persona es quien dice ser y tiene estas calificaciones.\"*\n\n---"
+      },
+      {
+        "name": "Federation",
+        "definition": "A process that allows for the sharing and use of electronic identities across multiple distinct identity management systems or organizations, enabling users to access different systems with a single set of credentials managed by their home organization.",
+        "analogy": "*La federación es como el pasaporte: tu gobierno (tu organización) te lo emite, y los otros países (otras organizaciones) lo aceptan porque confían en tu gobierno. No necesitas una identidad nueva en cada país que visitas.*",
+        "tables": [
+          {
+            "headers": [
+              "Step",
+              "Action"
+            ],
+            "rows": [
+              [
+                "1. Login initiation",
+                "User accesses a service provider and initiates login"
+              ],
+              [
+                "2. Redirect to IdP",
+                "Service provider redirects user to their home IdP"
+              ],
+              [
+                "3. Authenticate",
+                "User provides credentials to the IdP"
+              ],
+              [
+                "4. Assertion generated",
+                "IdP creates a signed token (SAML/OpenID Connect) with identity claims"
+              ],
+              [
+                "5. Return to SP",
+                "User is redirected back to the service provider with the assertion"
+              ],
+              [
+                "6. Verification and access",
+                "SP verifies the assertion and grants access"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A process that allows for the sharing and use of electronic identities across multiple distinct identity management systems or organizations, enabling users to access different systems with a single set of credentials managed by their home organization.\n\nFederation extends SSO **beyond a single organization**. It recognizes that partners, suppliers, and customers also need access to resources. Rather than creating internal accounts for every external user, the organization trusts the authentication provided by the external user's home network through a pre-established trust relationship.\n\n> *La federación es como el pasaporte: tu gobierno (tu organización) te lo emite, y los otros países (otras organizaciones) lo aceptan porque confían en tu gobierno. No necesitas una identidad nueva en cada país que visitas.*\n\n### Federation Step-by-Step Flow\n\n| Step | Action |\n| --- | --- |\n| 1. Login initiation | User accesses a service provider and initiates login |\n| 2. Redirect to IdP | Service provider redirects user to their home IdP |\n| 3. Authenticate | User provides credentials to the IdP |\n| 4. Assertion generated | IdP creates a signed token (SAML/OpenID Connect) with identity claims |\n| 5. Return to SP | User is redirected back to the service provider with the assertion |\n| 6. Verification and access | SP verifies the assertion and grants access |\n\nProtocols used: **SAML**, **OAuth**, **OpenID Connect**.\n\n---"
+      },
+      {
+        "name": "Privileged Access Management (PAM)",
+        "definition": "A set of policies, procedures, and technical controls used to restrict, monitor, and manage privileged accounts within an IT environment to prevent malicious abuse and minimize risk from excessive permissions.",
+        "analogy": "*PAM es como el armero de una película de acción: las armas más poderosas (cuentas privilegiadas) están bajo llave, con un registro de quién las tomó, para qué misión y cuánto tiempo. Nadie anda cargando el lanzacohetes todo el día, solo cuando lo necesita.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A set of policies, procedures, and technical controls used to restrict, monitor, and manage privileged accounts within an IT environment to prevent malicious abuse and minimize risk from excessive permissions.\n\nPAM is critical because privileged accounts (administrators, root accounts) can cause significant damage if compromised or misused. PAM consists of three key components: **just-in-time permissions**, **password vaulting**, and **temporal accounts**.\n\n> *PAM es como el armero de una película de acción: las armas más poderosas (cuentas privilegiadas) están bajo llave, con un registro de quién las tomó, para qué misión y cuánto tiempo. Nadie anda cargando el lanzacohetes todo el día, solo cuando lo necesita.*\n\n---"
+      },
+      {
+        "name": "PAM: Just-In-Time (JIT) Permissions",
+        "definition": "A security model where administrative access is granted only when needed for a specific task and for a limited time period, and is automatically revoked when the task is complete.",
+        "analogy": "*Es como una pistola con autobloqueo de tiempo: el guardia de seguridad puede acceder a ella para hacer una ronda, pero se bloquea automáticamente en cuanto termina. Nunca anda armado innecesariamente.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A security model where administrative access is granted only when needed for a specific task and for a limited time period, and is automatically revoked when the task is complete.\n\nJIT minimizes the attack surface of privileged accounts by ensuring that administrators do not maintain continuous, standing privileged access. If an administrator's account is compromised, an attacker only finds regular user privileges — not administrative access — unless a JIT session is actively in progress.\n\n> *Es como una pistola con autobloqueo de tiempo: el guardia de seguridad puede acceder a ella para hacer una ronda, pero se bloquea automáticamente en cuanto termina. Nunca anda armado innecesariamente.*\n\n---"
+      },
+      {
+        "name": "PAM: Password Vaulting",
+        "definition": "A technique used to store and manage privileged account credentials in a secure encrypted vault that requires multi-factor authentication to access, while logging all credential access for auditing purposes.",
+        "analogy": "*La bóveda de contraseñas es como la caja fuerte de las llaves maestras en un hotel: cualquier empleado autorizado puede acceder a ellas, pero hay un registro de quién las tomó, cuándo y para qué habitación. Nadie se lleva las llaves a su casa.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A technique used to store and manage privileged account credentials in a secure encrypted vault that requires multi-factor authentication to access, while logging all credential access for auditing purposes.\n\nPassword vaulting ensures that privileged credentials (admin accounts, root credentials) are not known to individuals by memory or stored insecurely. When a system administrator needs a privileged credential, they check it out from the vault — the process is logged — and the password may be automatically rotated after use.\n\n> *La bóveda de contraseñas es como la caja fuerte de las llaves maestras en un hotel: cualquier empleado autorizado puede acceder a ellas, pero hay un registro de quién las tomó, cuándo y para qué habitación. Nadie se lleva las llaves a su casa.*\n\n---"
+      },
+      {
+        "name": "PAM: Temporal Accounts",
+        "definition": "Time-limited accounts created for a specific purpose that are automatically disabled or deleted after a defined period, used for contractors, temporary staff, or short-term access needs.",
+        "analogy": "*Es como el gafete de visitante del edificio corporativo que tiene fecha de vencimiento impresa y se desactiva solo. El guardia no tiene que acordarse de desactivarlo — el sistema lo hace automáticamente.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Time-limited accounts created for a specific purpose that are automatically disabled or deleted after a defined period, used for contractors, temporary staff, or short-term access needs.\n\nTemporal accounts prevent access from lingering after a project ends. A contractor might be given a temporal account for the duration of a software installation project. Once the project completes, the account is automatically deactivated, eliminating the risk of forgotten active credentials.\n\n> *Es como el gafete de visitante del edificio corporativo que tiene fecha de vencimiento impresa y se desactiva solo. El guardia no tiene que acordarse de desactivarlo — el sistema lo hace automáticamente.*\n\n---"
+      },
+      {
+        "name": "Access Control Models",
+        "definition": "Frameworks that define how access permissions are assigned, managed, and enforced in an information system to control which users can access which resources and under what conditions.",
+        "analogy": "*Los modelos de control de acceso son como los diferentes sistemas de llaves en distintos tipos de edificios: el militar usa biométrico y clasificación (MAC), la oficina corporativa usa roles (RBAC), y la casa particular deja que el dueño decida quién tiene llave (DAC).*",
+        "tables": [
+          {
+            "headers": [
+              "Model",
+              "Acronym",
+              "Control Mechanism",
+              "Best Use Case"
+            ],
+            "rows": [
+              [
+                "Mandatory Access Control",
+                "MAC",
+                "Security labels assigned by central authority",
+                "High-security, military/government"
+              ],
+              [
+                "Discretionary Access Control",
+                "DAC",
+                "Resource owner decides who gets access",
+                "General enterprise file sharing"
+              ],
+              [
+                "Role-Based Access Control",
+                "RBAC",
+                "Permissions assigned to roles/groups",
+                "Organizations with defined job functions"
+              ],
+              [
+                "Rule-Based Access Control",
+                "RBAC",
+                "Rules applied to all users by administrators",
+                "Network devices (firewalls, routers)"
+              ],
+              [
+                "Attribute-Based Access Control",
+                "ABAC",
+                "Access based on user, environment, and resource attributes",
+                "Complex, context-aware access decisions"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Frameworks that define how access permissions are assigned, managed, and enforced in an information system to control which users can access which resources and under what conditions.\n\nThere are five primary access control models, each with a different approach to managing permissions:\n\n| Model | Acronym | Control Mechanism | Best Use Case |\n| --- | --- | --- | --- |\n| Mandatory Access Control | MAC | Security labels assigned by central authority | High-security, military/government |\n| Discretionary Access Control | DAC | Resource owner decides who gets access | General enterprise file sharing |\n| Role-Based Access Control | RBAC | Permissions assigned to roles/groups | Organizations with defined job functions |\n| Rule-Based Access Control | RBAC | Rules applied to all users by administrators | Network devices (firewalls, routers) |\n| Attribute-Based Access Control | ABAC | Access based on user, environment, and resource attributes | Complex, context-aware access decisions |\n\n> *Los modelos de control de acceso son como los diferentes sistemas de llaves en distintos tipos de edificios: el militar usa biométrico y clasificación (MAC), la oficina corporativa usa roles (RBAC), y la casa particular deja que el dueño decida quién tiene llave (DAC).*\n\n---"
+      },
+      {
+        "name": "Access Control: Mandatory Access Control (MAC)",
+        "definition": "An access control model where a central authority assigns security labels to both users and resources; access is granted only when a user's clearance level equals or exceeds the resource's classification level.",
+        "analogy": "*Es el sistema de clasificación militar: tu nivel de autorización determina qué carpetas puedes abrir. Sin importar si eres amigo del general, si no tienes el clearance correcto, el sistema te bloquea automáticamente.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An access control model where a central authority assigns security labels to both users and resources; access is granted only when a user's clearance level equals or exceeds the resource's classification level.\n\nMAC is the most restrictive model. Everything not explicitly permitted is forbidden. Commonly used in military and government environments where confidentiality is paramount. Every user and resource must carry a security label (e.g., Top Secret, Secret, Confidential, Unclassified).\n\n> *Es el sistema de clasificación militar: tu nivel de autorización determina qué carpetas puedes abrir. Sin importar si eres amigo del general, si no tienes el clearance correcto, el sistema te bloquea automáticamente.*\n\n---"
+      },
+      {
+        "name": "Access Control: Discretionary Access Control (DAC)",
+        "definition": "An access control model where the owner of a resource determines who can access it, making access decisions based on user identity, profile, or role — a form of need-to-know access control.",
+        "analogy": "*Es el dueño de un apartamento que decide a quién le da una copia de la llave. Muy flexible, pero si el dueño es descuidado y le da llaves a todo el mundo, la seguridad se va al piso.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An access control model where the owner of a resource determines who can access it, making access decisions based on user identity, profile, or role — a form of need-to-know access control.\n\nDAC is the most flexible model but also the least secure, as it relies on owners making correct security decisions. File sharing in Windows NTFS using permission settings is a common example of DAC.\n\n> *Es el dueño de un apartamento que decide a quién le da una copia de la llave. Muy flexible, pero si el dueño es descuidado y le da llaves a todo el mundo, la seguridad se va al piso.*\n\n---"
+      },
+      {
+        "name": "Access Control: Role-Based Access Control (RBAC)",
+        "definition": "An access control model where administrators assign permissions to roles (groups), and users inherit the permissions of the roles they are assigned to, rather than receiving permissions individually.",
+        "analogy": "*Es como los uniformes de trabajo: si eres médico, automáticamente tienes acceso a las áreas clínicas. Si te cambian a administrativo, te dan el uniforme nuevo y el acceso correspondiente. Nadie tiene que configurar permisos individuales.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An access control model where administrators assign permissions to roles (groups), and users inherit the permissions of the roles they are assigned to, rather than receiving permissions individually.\n\nRBAC is ideal for organizations with high employee turnover, since permissions are tied to the work role rather than the individual. In Windows domain environments, RBAC is typically implemented using **security groups**. Users can belong to multiple groups.\n\n> *Es como los uniformes de trabajo: si eres médico, automáticamente tienes acceso a las áreas clínicas. Si te cambian a administrativo, te dan el uniforme nuevo y el acceso correspondiente. Nadie tiene que configurar permisos individuales.*\n\n⚠️ **Exam tip:** Both **Rule-Based** and **Role-Based** access control share the acronym **RBAC** — context determines which one is meant.\n\n---"
+      },
+      {
+        "name": "Access Control: Rule-Based Access Control",
+        "definition": "An access control model where administrators define rules that apply to all users system-wide, such as access control lists (ACLs) on routers and firewalls, allowing or denying access based on defined conditions.",
+        "analogy": "*Es el reglamento del condominio que aplica a todos los residentes por igual: \"No se permiten visitas después de las 10 PM.\" No importa quién seas — la regla aplica para todos.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An access control model where administrators define rules that apply to all users system-wide, such as access control lists (ACLs) on routers and firewalls, allowing or denying access based on defined conditions.\n\nRule-based access control is applied uniformly across users. ACLs on network devices are a common implementation — a rule might block all traffic on port 23 (Telnet) or deny access from specific IP ranges, regardless of who is making the request.\n\n> *Es el reglamento del condominio que aplica a todos los residentes por igual: \"No se permiten visitas después de las 10 PM.\" No importa quién seas — la regla aplica para todos.*\n\n---"
+      },
+      {
+        "name": "Access Control: Attribute-Based Access Control (ABAC)",
+        "definition": "An access control model that evaluates multiple attributes — user attributes, environmental attributes, and resource attributes — to make context-aware access decisions.",
+        "analogy": "*ABAC es como el semáforo inteligente que cambia según el contexto: no solo quién eres (usuario), sino desde dónde llegas (entorno) y a qué quieres acceder (recurso). Es la intersección de todas las variables a la vez.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An access control model that evaluates multiple attributes — user attributes, environmental attributes, and resource attributes — to make context-aware access decisions.\n\nABAC is the most granular and flexible model. Access is permitted or denied based on the combination of: **user attributes** (name, role, clearance level), **environment attributes** (time of day, location, threat level), and **resource attributes** (creation date, file sensitivity, owner).\n\n> *ABAC es como el semáforo inteligente que cambia según el contexto: no solo quién eres (usuario), sino desde dónde llegas (entorno) y a qué quieres acceder (recurso). Es la intersección de todas las variables a la vez.*\n\n---"
+      },
+      {
+        "name": "Time of Day Restrictions",
+        "definition": "An access control mechanism that limits access to resources based on the time of day the request is made, used in conjunction with other access control models as an additional security layer.",
+        "analogy": "*Es como el sistema de apertura del banco que solo funciona en horario laboral. Aunque alguien robe las llaves del gerente, no puede abrir la bóveda a medianoche porque el sistema de tiempo la tiene bloqueada.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An access control mechanism that limits access to resources based on the time of day the request is made, used in conjunction with other access control models as an additional security layer.\n\nOrganizations can block logins outside of normal business hours (e.g., 8 AM–6 PM). An attempt to log in at 2 AM would be denied automatically, reducing the window of opportunity for insider threats and compromised account misuse.\n\n> *Es como el sistema de apertura del banco que solo funciona en horario laboral. Aunque alguien robe las llaves del gerente, no puede abrir la bóveda a medianoche porque el sistema de tiempo la tiene bloqueada.*\n\n---"
+      },
+      {
+        "name": "Principle of Least Privilege",
+        "definition": "A cybersecurity concept that states users, systems, and processes should be granted only the minimum levels of access necessary to perform their intended job functions — and nothing additional.",
+        "analogy": "*Es el principio del \"need-to-know\": el empleado de limpieza solo tiene llave de las oficinas que necesita limpiar, no del servidor room ni de la sala de juntas ejecutiva. El mensajero no necesita saber los secretos de la empresa para hacer su trabajo.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A cybersecurity concept that states users, systems, and processes should be granted only the minimum levels of access necessary to perform their intended job functions — and nothing additional.\n\nLeast privilege minimizes the potential damage from compromised accounts, insider threats, and accidental data modification. It requires continual review to prevent **permission creep** (also called **authorization creep**), where users accumulate excessive permissions as they change roles within an organization.\n\n> *Es el principio del \"need-to-know\": el empleado de limpieza solo tiene llave de las oficinas que necesita limpiar, no del servidor room ni de la sala de juntas ejecutiva. El mensajero no necesita saber los secretos de la empresa para hacer su trabajo.*\n\n⚠️ **Exam tip:** **Permission/authorization creep** is the gradual accumulation of access rights as users change roles. It must be actively reversed by revoking old permissions when a user transitions to a new position.\n\n---"
+      },
+      {
+        "name": "User Account Control (UAC)",
+        "definition": "A Windows security mechanism that ensures actions requiring administrative rights are explicitly authorized by the user, minimizing the risk of malicious software gaining administrative privileges without user consent.",
+        "analogy": "*UAC es el segundo factor de seguridad del sistema operativo: aunque ya iniciaste sesión, si una aplicación intenta hacer algo con superpoderes, el sistema te pregunta \"¿realmente autorizas esto?\" Evita que un malware silencioso tome el control sin que te enteres.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A Windows security mechanism that ensures actions requiring administrative rights are explicitly authorized by the user, minimizing the risk of malicious software gaining administrative privileges without user consent.\n\nUAC prompts appear as a dialog box when an action requires elevated privileges (e.g., installing software, changing system settings). Standard users must enter an administrator password; administrators must click \"Yes\" to confirm. Actions requiring elevation are marked with a **shield icon** in the Windows interface.\n\n> *UAC es el segundo factor de seguridad del sistema operativo: aunque ya iniciaste sesión, si una aplicación intenta hacer algo con superpoderes, el sistema te pregunta \"¿realmente autorizas esto?\" Evita que un malware silencioso tome el control sin que te enteres.*\n\n---"
+      },
+      {
+        "name": "Assigning Permissions — User Account Types",
+        "definition": "Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.",
+        "analogy": "*El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*",
+        "tables": [],
+        "list_items": [
+          "Set permissions at the **folder level** where possible — they propagate to all files within the folder",
+          "Always apply **least privilege** when assigning file and folder permissions",
+          "Use **groups** to manage permissions at scale rather than assigning to individual users",
+          "Regularly **audit** permissions to remove unnecessary access"
+        ],
+        "raw_content": "* **Definition:** Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.\n\nThe **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices.\n\n> *El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*\n\n### Permission Assignment Best Practices\n\n- Set permissions at the **folder level** where possible — they propagate to all files within the folder\n- Always apply **least privilege** when assigning file and folder permissions\n- Use **groups** to manage permissions at scale rather than assigning to individual users\n- Regularly **audit** permissions to remove unnecessary access\n\n---"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Identity and Access Management (IAM)",
+        "definition": "A framework of policies, processes, and technologies that ensures the right individuals have access to the right resources at the right times for the right reasons, encompassing identification, authentication, authorization, and accounting.",
+        "analogy": "*Imagina que eres el gerente de un edificio de oficinas: IAM es el sistema completo que controla quién puede entrar, a qué pisos puede subir, qué puede hacer adentro y de quién guarda registro de todas esas actividades. Sin ese sistema, cualquiera podría entrar a cualquier lugar.*",
+        "raw_content": "* **Definition:** A framework of policies, processes, and technologies that ensures the right individuals have access to the right resources at the right times for the right reasons, encompassing identification, authentication, authorization, and accounting.\n\nIAM is a critical component of any enterprise security plan because it is linked to both the **cybersecurity** and **productivity** of an organization. IAM technologies provide tools for business processes that facilitate the management of electronic identities, including password management, network access control, and management of digital identities.\n\n> *Imagina que eres el gerente de un edificio de oficinas: IAM es el sistema completo que controla quién puede entrar, a qué pisos puede subir, qué puede hacer adentro y de quién guarda registro de todas esas actividades. Sin ese sistema, cualquiera podría entrar a cualquier lugar.*\n\nThe four main processes of IAM are:\n\n| Process | Description |\n| --- | --- |\n| **Identification** | User claims an identity (username, email) |\n| **Authentication** | System verifies the claimed identity |\n| **Authorization** | System determines what the authenticated user can access |\n| **Accounting (Auditing)** | System tracks and records user activities |\n\n---"
+      },
+      {
+        "name": "IAM: Identification",
+        "definition": "The process where a user claims an identity to a system, typically using a unique identifier such as a username or email address.",
+        "analogy": "*Es como llegar a la recepción de un hotel y decir tu nombre. Todavía no te piden el pasaporte — simplemente estás declarando quién eres. El sistema todavía no sabe si eres realmente tú.*",
+        "raw_content": "* **Definition:** The process where a user claims an identity to a system, typically using a unique identifier such as a username or email address.\n\nIdentification ensures that users are considered legitimate by the system. For example, when operating an e-commerce website, you might verify that billing and delivery addresses match what the user has stated to prevent fraudulent payment methods.\n\n> *Es como llegar a la recepción de un hotel y decir tu nombre. Todavía no te piden el pasaporte — simplemente estás declarando quién eres. El sistema todavía no sabe si eres realmente tú.*\n\n---"
+      },
+      {
+        "name": "IAM: Authentication",
+        "definition": "The process of verifying the claimed identity of a user, device, or system, typically by validating credentials against a database of authorized users.",
+        "analogy": "*Siguiendo con el hotel: es cuando el recepcionista te pide el pasaporte o tu ID. Ahora sí están verificando que tú eres quien dices ser.*",
+        "raw_content": "* **Definition:** The process of verifying the claimed identity of a user, device, or system, typically by validating credentials against a database of authorized users.\n\nAfter a user provides their username (identification), authentication requires them to prove that identity — through a password, biometric characteristic, or combination of multiple factors.\n\n> *Siguiendo con el hotel: es cuando el recepcionista te pide el pasaporte o tu ID. Ahora sí están verificando que tú eres quien dices ser.*\n\n---"
+      },
+      {
+        "name": "IAM: Authorization",
+        "definition": "The process that determines what permissions or levels of access an authenticated user has within a system.",
+        "analogy": "*Ya te verificaron en el hotel. Ahora la llave que te dan solo abre tu habitación y las áreas comunes, no las habitaciones de otros huéspedes ni la bodega del personal. Eso es autorización.*",
+        "raw_content": "* **Definition:** The process that determines what permissions or levels of access an authenticated user has within a system.\n\nAuthorization happens **after** authentication succeeds. For example, an employee in HR should have access to personnel files, while an employee in Finance might only access financial data. Authorization enforces separation of duties and least privilege.\n\n> *Ya te verificaron en el hotel. Ahora la llave que te dan solo abre tu habitación y las áreas comunes, no las habitaciones de otros huéspedes ni la bodega del personal. Eso es autorización.*\n\n---"
+      },
+      {
+        "name": "IAM: Accounting (Auditing)",
+        "definition": "The process of tracking and recording user activities — including logins, logouts, actions performed, and system changes — for security monitoring, compliance, and forensic purposes.",
+        "analogy": "*Es la cámara de seguridad del hotel que graba quién entró a cada cuarto, a qué hora y cuánto tiempo estuvo adentro. Aunque no previene el problema, es la evidencia que permite investigarlo después.*",
+        "raw_content": "* **Definition:** The process of tracking and recording user activities — including logins, logouts, actions performed, and system changes — for security monitoring, compliance, and forensic purposes.\n\nAccounting helps organizations to detect potential security incidents, find vulnerabilities, and provide evidence in the case of a security breach. It answers the question: *who did what, when, and from where?*\n\n> *Es la cámara de seguridad del hotel que graba quién entró a cada cuarto, a qué hora y cuánto tiempo estuvo adentro. Aunque no previene el problema, es la evidencia que permite investigarlo después.*\n\n---"
+      },
+      {
+        "name": "IAM: Provisioning and Deprovisioning",
+        "definition": "Provisioning is the process of creating user accounts and assigning appropriate permissions when a user joins. Deprovisioning is the process of removing access rights when a user no longer needs them, such as when they leave the organization.",
+        "analogy": "*Provisioning es cuando le hacen una llave nueva al empleado el primer día. Deprovisioning es asegurarse de que devuelva TODAS las llaves el último día y que esas llaves sean desactivadas inmediatamente, porque un ex-empleado enojado con acceso activo es una bomba de tiempo.*",
+        "raw_content": "* **Definition:** Provisioning is the process of creating user accounts and assigning appropriate permissions when a user joins. Deprovisioning is the process of removing access rights when a user no longer needs them, such as when they leave the organization.\n\n**Provisioning** includes setting up email accounts, access to internal networks, and any other systems required for the user's job function.\n\n**Deprovisioning** is critical to prevent unauthorized access to sensitive information and to prevent insider threats from former employees. Failure to deprovision promptly is a common security gap.\n\n> *Provisioning es cuando le hacen una llave nueva al empleado el primer día. Deprovisioning es asegurarse de que devuelva TODAS las llaves el último día y que esas llaves sean desactivadas inmediatamente, porque un ex-empleado enojado con acceso activo es una bomba de tiempo.*\n\n⚠️ **Exam tip:** Deprovisioning is particularly important to prevent **insider threats** from employees who have left the organization.\n\n---"
+      },
+      {
+        "name": "IAM: Identity Proofing",
+        "definition": "The process of verifying the identity of a user *before* an account is created, typically by checking personal details against a trusted data source or requiring government-issued identification.",
+        "analogy": "*Es como cuando abres una cuenta bancaria y te piden llevar dos formas de identificación. El banco no te crea la cuenta solo porque llegaste y dijiste quién eras.*",
+        "raw_content": "* **Definition:** The process of verifying the identity of a user *before* an account is created, typically by checking personal details against a trusted data source or requiring government-issued identification.\n\nIdentity proofing prevents fraudulent account creation. It can involve checking a driver's license, passport, or other verifiable identity documents before onboarding a user into the system.\n\n> *Es como cuando abres una cuenta bancaria y te piden llevar dos formas de identificación. El banco no te crea la cuenta solo porque llegaste y dijiste quién eras.*\n\n---"
+      },
+      {
+        "name": "IAM: Interoperability",
+        "definition": "The ability of different systems, devices, and applications to work together and share identity and access information seamlessly, often using standards like SAML or OpenID Connect.",
+        "analogy": "*Es como los enchufes de viaje universales. SAML y OpenID Connect son los adaptadores que permiten que el sistema de identidad de una empresa se \"enchufe\" correctamente a los sistemas de otra empresa sin cortocircuitos.*",
+        "raw_content": "* **Definition:** The ability of different systems, devices, and applications to work together and share identity and access information seamlessly, often using standards like SAML or OpenID Connect.\n\nInteroperability in IAM allows for secure, seamless authentication and authorization between different systems within or across organizational boundaries. Without interoperability standards, each system would require its own separate authentication mechanism.\n\n> *Es como los enchufes de viaje universales. SAML y OpenID Connect son los adaptadores que permiten que el sistema de identidad de una empresa se \"enchufe\" correctamente a los sistemas de otra empresa sin cortocircuitos.*\n\n---"
+      },
+      {
+        "name": "IAM: Attestation",
+        "definition": "The process of validating that user accounts and access rights are correct and up-to-date, typically through regular reviews and audits to ensure users have only the minimum access necessary for their role.",
+        "analogy": "*Es la auditoría anual donde el jefe de cada departamento revisa la lista de quién tiene acceso a qué y confirma: \"sí, esta persona todavía necesita este acceso\" o \"espera, este empleado ya no trabaja aquí — ¿por qué sigue teniendo acceso?\"*",
+        "raw_content": "* **Definition:** The process of validating that user accounts and access rights are correct and up-to-date, typically through regular reviews and audits to ensure users have only the minimum access necessary for their role.\n\nAttestation is a periodic review process — often quarterly or annually — where managers confirm that their direct reports still require the specific permissions they currently hold. This combats **permission creep**.\n\n> *Es la auditoría anual donde el jefe de cada departamento revisa la lista de quién tiene acceso a qué y confirma: \"sí, esta persona todavía necesita este acceso\" o \"espera, este empleado ya no trabaja aquí — ¿por qué sigue teniendo acceso?\"*\n\n---"
+      },
+      {
+        "name": "Multifactor Authentication (MFA)",
+        "definition": "A security system that requires more than one method of authentication from independent categories of credentials to verify a user's identity, creating a layered defense against unauthorized access.",
+        "analogy": "*Es como una caja fuerte con dos llaves diferentes que pertenecen a dos personas distintas: aunque un ladrón consiga la llave de uno, sin la del otro no puede abrirla. Cada factor adicional es otra llave de un tipo diferente.*",
+        "raw_content": "* **Definition:** A security system that requires more than one method of authentication from independent categories of credentials to verify a user's identity, creating a layered defense against unauthorized access.\n\nThe goal of MFA is to make it significantly harder for unauthorized persons to access a target, even if one credential factor is compromised. MFA combines at least two factors from across five independent categories.\n\n> *Es como una caja fuerte con dos llaves diferentes que pertenecen a dos personas distintas: aunque un ladrón consiga la llave de uno, sin la del otro no puede abrirla. Cada factor adicional es otra llave de un tipo diferente.*"
+      },
+      {
+        "name": "MFA: Something You Know (Knowledge Factor)",
+        "definition": "An authentication factor based on information only the user should know, such as a password, PIN, or answer to a security question.",
+        "analogy": "*Es la combinación de la caja fuerte que solo tú te sabes. El problema es que si alguien te ve marcarla, o si la escribiste en un papel pegado en el refrigerador, ya no es un secreto.*",
+        "raw_content": "* **Definition:** An authentication factor based on information only the user should know, such as a password, PIN, or answer to a security question.\n\nThis is the most commonly used authentication factor. Its weakness is that it can be guessed, stolen via phishing, or cracked via brute force if the password is weak. It should always be combined with at least one other factor for sensitive systems.\n\n> *Es la combinación de la caja fuerte que solo tú te sabes. El problema es que si alguien te ve marcarla, o si la escribiste en un papel pegado en el refrigerador, ya no es un secreto.*\n\n---"
+      },
+      {
+        "name": "MFA: Something You Have (Possession Factor)",
+        "definition": "An authentication factor based on a physical object the user possesses, such as a smart card, hardware token (key fob), software token, or device receiving an SMS code.",
+        "analogy": "*Es la llave física de tu casa. Aunque alguien sepa tu dirección (algo que sabes), sin la llave física no puede entrar. El problema es que se puede perder, robar o copiar.*",
+        "raw_content": "* **Definition:** An authentication factor based on a physical object the user possesses, such as a smart card, hardware token (key fob), software token, or device receiving an SMS code.\n\n**Smart cards** are credit-card-sized cards embedded with an integrated circuit used in high-security access systems. **Hardware tokens (key fobs)** generate a unique code every 30–60 seconds. **Software tokens** (authenticator apps like Google Authenticator or Microsoft Authenticator) perform the same function without dedicated hardware. **SMS-based OTPs** send a time-limited code to the user's registered phone number.\n\n> *Es la llave física de tu casa. Aunque alguien sepa tu dirección (algo que sabes), sin la llave física no puede entrar. El problema es que se puede perder, robar o copiar.*\n\n---"
+      },
+      {
+        "name": "MFA: Something You Are (Inherence / Biometric Factor)",
+        "definition": "An authentication factor based on unique biological characteristics of the user, including fingerprints, facial recognition, iris scans, or voice recognition.",
+        "analogy": "*Es como el escáner de retina de una película de espías: no importa cuántas contraseñas roben, no pueden arrancarle los ojos al dueño. Tu cuerpo mismo es la credencial.*",
+        "raw_content": "* **Definition:** An authentication factor based on unique biological characteristics of the user, including fingerprints, facial recognition, iris scans, or voice recognition.\n\nApple's Touch ID has approximately a **1 in 50,000** chance of a false acceptance. Apple's Face ID improves this to approximately **1 in 1,000,000**, making it ~20 times more secure. Biometric factors are increasingly popular due to their difficulty to replicate.\n\n> *Es como el escáner de retina de una película de espías: no importa cuántas contraseñas roben, no pueden arrancarle los ojos al dueño. Tu cuerpo mismo es la credencial.*\n\n---"
+      },
+      {
+        "name": "MFA: Somewhere You Are (Location Factor)",
+        "definition": "An authentication factor that uses the user's geographic location — determined via GPS, IP address, or network context — to permit or deny access.",
+        "analogy": "*Es como la restricción de un concierto que solo vende boletos a personas dentro del país. No importa qué tan legítimo sea tu nombre y tu tarjeta: si estás en el lugar equivocado, no entras.*",
+        "raw_content": "* **Definition:** An authentication factor that uses the user's geographic location — determined via GPS, IP address, or network context — to permit or deny access.\n\nLocation-based factors can restrict access to users within specific countries, regions, or network segments. For example, blocking logins from IP addresses outside the United States, or requiring the user to be connected to the corporate VPN.\n\n> *Es como la restricción de un concierto que solo vende boletos a personas dentro del país. No importa qué tan legítimo sea tu nombre y tu tarjeta: si estás en el lugar equivocado, no entras.*\n\n---"
+      },
+      {
+        "name": "MFA: Something You Do (Behavior Factor)",
+        "definition": "An authentication factor based on unique behavioral patterns associated with a user, such as keystroke dynamics, mouse movement patterns, typing rhythm, or interaction style with a device.",
+        "analogy": "*Es como reconocer a alguien por la forma en que camina o escribe a máquina. Aunque alguien tome el control de tu sesión, el sistema puede detectar que los patrones de escritura o movimiento del mouse son diferentes.*",
+        "raw_content": "* **Definition:** An authentication factor based on unique behavioral patterns associated with a user, such as keystroke dynamics, mouse movement patterns, typing rhythm, or interaction style with a device.\n\nThis is one of the newer authentication categories and is often used as a **secondary or passive factor**, rarely as a standalone factor. Behavioral biometrics can continuously authenticate a user throughout a session, not just at login.\n\n> *Es como reconocer a alguien por la forma en que camina o escribe a máquina. Aunque alguien tome el control de tu sesión, el sistema puede detectar que los patrones de escritura o movimiento del mouse son diferentes.*\n\n---"
+      },
+      {
+        "name": "Passkeys",
+        "definition": "A passwordless authentication mechanism that uses public key cryptography, where the private key is stored securely on the user's device (protected by the device's lock screen) and the corresponding public key is stored on the authentication server.",
+        "analogy": "*Es como si tu huella digital fuera la llave maestra y tu teléfono fuera el llavero inteligente que nunca comparte la llave real, solo demuestra que la tienes. Aunque hackeen el sitio web, solo consiguen la cerradura, no la llave.*",
+        "raw_content": "* **Definition:** A passwordless authentication mechanism that uses public key cryptography, where the private key is stored securely on the user's device (protected by the device's lock screen) and the corresponding public key is stored on the authentication server.\n\nPasskeys eliminate the need to remember or type a password. When a user registers, a key pair is generated. To authenticate, the user simply unlocks their device (fingerprint, Face ID, PIN, or pattern) and the device presents the stored passkey to the service. Since only public keys are stored on the server, a server breach **does not expose user credentials**. Each passkey is unique to the service it was created for, preventing phishing misuse.\n\n> *Es como si tu huella digital fuera la llave maestra y tu teléfono fuera el llavero inteligente que nunca comparte la llave real, solo demuestra que la tienes. Aunque hackeen el sitio web, solo consiguen la cerradura, no la llave.*\n\nBenefits of passkeys include increased login success rates, lower drop-off rates, improved conversion rates, reduced MFA costs, and strong resistance to phishing and credential stuffing attacks.\n\n---"
+      },
+      {
+        "name": "Password Security — Password Policies",
+        "definition": "A set of rules and requirements enforced by an organization to ensure that users create strong passwords that are resistant to guessing, dictionary attacks, and brute-force attacks.",
+        "analogy": "*La política de contraseñas es como el reglamento de seguridad de un banco: define qué tan fuerte debe ser la caja fuerte, con qué frecuencia se cambia la combinación y cuántas combinaciones anteriores no se pueden reutilizar.*",
+        "raw_content": "* **Definition:** A set of rules and requirements enforced by an organization to ensure that users create strong passwords that are resistant to guessing, dictionary attacks, and brute-force attacks.\n\nFive key characteristics of strong password policies:\n\n| Policy Element | Recommendation | Why It Matters |\n| --- | --- | --- |\n| **Password Length** | Minimum 12–16 characters | Each added character exponentially increases cracking time |\n| **Password Complexity** | Mix of uppercase, lowercase, numbers, special chars | Expands the keyspace from 10 (digits only) to 72+ characters per position |\n| **Password Reuse** | Enforce history of 24 passwords | Prevents users from cycling back to compromised old passwords |\n| **Password Expiration** | 90 days (reconsidering per NIST) | Forces periodic rotation; NIST no longer recommends this without a password manager |\n| **Password Age (Minimum)** | 3+ days before next change allowed | Prevents users from rapidly cycling through history to reuse old password |\n\n> *La política de contraseñas es como el reglamento de seguridad de un banco: define qué tan fuerte debe ser la caja fuerte, con qué frecuencia se cambia la combinación y cuántas combinaciones anteriores no se pueden reutilizar.*\n\n⚠️ **Exam tip:** NIST no longer recommends mandatory periodic password expiration unless a password manager is in use, due to the predictable weakening behavior it induces (e.g., `Password1` → `Password2` → `Password3`).\n\n---"
+      },
+      {
+        "name": "Password Security — Password Managers",
+        "definition": "Tools that securely store and manage passwords in an encrypted vault, generate strong unique passwords for each account, and automatically fill credentials during login.",
+        "analogy": "*El gestor de contraseñas es como tener un mayordomo de seguridad que recuerda miles de llaves diferentes, cada una específica para una puerta, y cuando llegas a la puerta correcta, él mismo la abre por ti sin que tengas que memorizar nada.*",
+        "raw_content": "* **Definition:** Tools that securely store and manage passwords in an encrypted vault, generate strong unique passwords for each account, and automatically fill credentials during login.\n\nKey features of password managers include **password generation** (creates long, complex, unique passwords per site), **autofill** (reduces human error during login), **secure sharing** (allows sharing access without revealing the actual password), and **cross-platform access** (available on all devices). Examples include Bitwarden, 1Password, and Dashlane.\n\n> *El gestor de contraseñas es como tener un mayordomo de seguridad que recuerda miles de llaves diferentes, cada una específica para una puerta, y cuando llegas a la puerta correcta, él mismo la abre por ti sin que tengas que memorizar nada.*\n\n---"
+      },
+      {
+        "name": "Password Security — Passwordless Authentication",
+        "definition": "Authentication methods that verify a user's identity without requiring a typed password, using biometrics, hardware tokens, one-time passwords, magic links, or passkeys.",
+        "analogy": "*La autenticación sin contraseña es como entrar a tu casa con reconocimiento facial en lugar de buscar la llave. Es más rápido, más seguro y no puedes \"olvidar\" tu cara como sí puedes olvidar una contraseña.*",
+        "raw_content": "* **Definition:** Authentication methods that verify a user's identity without requiring a typed password, using biometrics, hardware tokens, one-time passwords, magic links, or passkeys.\n\n| Method | Description |\n| --- | --- |\n| **Biometric Authentication** | Fingerprint, face scan, or iris used to authenticate |\n| **Hardware Token** | Physical security key generates a short-lived login code |\n| **One-Time Password (OTP)** | Code sent to email or phone, valid for 3–10 minutes, single use |\n| **Magic Link** | Link sent to email; clicking it logs the user in automatically |\n| **Passkey** | Browser/OS-integrated; uses device lock screen (fingerprint/PIN) |\n\n> *La autenticación sin contraseña es como entrar a tu casa con reconocimiento facial en lugar de buscar la llave. Es más rápido, más seguro y no puedes \"olvidar\" tu cara como sí puedes olvidar una contraseña.*\n\n---"
+      },
+      {
+        "name": "Password Attacks",
+        "definition": "Techniques used by attackers to recover or bypass passwords, including brute force, dictionary, password spraying, and hybrid attacks.",
+        "analogy": "*Los ataques de contraseñas son como los métodos que usaría un ladrón para abrir tu candado: probar cada combinación posible, usar una lista de combinaciones comunes, o probar las más comunes en muchos candados a la vez.*",
+        "raw_content": "* **Definition:** Techniques used by attackers to recover or bypass passwords, including brute force, dictionary, password spraying, and hybrid attacks.\n\n> *Los ataques de contraseñas son como los métodos que usaría un ladrón para abrir tu candado: probar cada combinación posible, usar una lista de combinaciones comunes, o probar las más comunes en muchos candados a la vez.*"
+      },
+      {
+        "name": "Password Attack: Brute Force",
+        "definition": "An attack that systematically tries every possible combination of characters until the correct password is found.",
+        "analogy": "*Es como un ladrón que prueba todas las combinaciones de un candado de 4 dígitos, una por una. Con un candado sencillo lo logra en minutos. Pero si el candado tiene 20 dígitos alfanuméricos, tardaría más años que la edad del universo.*",
+        "raw_content": "* **Definition:** An attack that systematically tries every possible combination of characters until the correct password is found.\n\nA 4-digit PIN has only 10,000 combinations and can be cracked in minutes by modern software (500–1,000 attempts/second). Increasing length exponentially increases difficulty: an 8-digit PIN has 100 million combinations — 10,000× more than a 4-digit PIN.\n\nMitigations: increase password complexity, increase length, limit login attempts, use MFA, implement CAPTCHA.\n\n> *Es como un ladrón que prueba todas las combinaciones de un candado de 4 dígitos, una por una. Con un candado sencillo lo logra en minutos. Pero si el candado tiene 20 dígitos alfanuméricos, tardaría más años que la edad del universo.*\n\n---"
+      },
+      {
+        "name": "Password Attack: Dictionary Attack",
+        "definition": "An attack that uses a pre-compiled list (\"hacker's dictionary\") of common passwords and their variants — including leet speak substitutions — to attempt to match a stored password hash.",
+        "analogy": "*En lugar de probar cada llave posible, el ladrón lleva consigo las 10,000 llaves más comunes del mundo. La mayoría de las puertas en el mundo usan una de esas. Si la tuya es una de ellas, te abre en segundos.*",
+        "raw_content": "* **Definition:** An attack that uses a pre-compiled list (\"hacker's dictionary\") of common passwords and their variants — including leet speak substitutions — to attempt to match a stored password hash.\n\nUnlike attacks using actual dictionary words, modern dictionary attacks use extensive wordlists including common passwords with letter-to-number/symbol substitutions (e.g., `p@$$w0rd`). These substitutions are known as **leet speak**.\n\n> *En lugar de probar cada llave posible, el ladrón lleva consigo las 10,000 llaves más comunes del mundo. La mayoría de las puertas en el mundo usan una de esas. Si la tuya es una de ellas, te abre en segundos.*\n\n---"
+      },
+      {
+        "name": "Password Attack: Password Spraying",
+        "definition": "An attack that tries a small number of commonly used passwords against a large number of accounts, specifically to avoid triggering account lockout policies.",
+        "analogy": "*En lugar de romper una caja fuerte específica con miles de intentos, el ladrón prueba \"1234\" en todas las cajas fuertes del edificio. Eventualmente alguna la tiene como combinación.*",
+        "raw_content": "* **Definition:** An attack that tries a small number of commonly used passwords against a large number of accounts, specifically to avoid triggering account lockout policies.\n\nPassword spraying is effective because in any large organization, statistically some users will be using weak passwords like `Password1`. By attempting only a few passwords per account, the attacker avoids detection by lockout thresholds.\n\n⚠️ **Exam tip:** Password spraying is the **inverse** of brute force — instead of many attempts on one account, it makes few attempts across many accounts.\n\n> *En lugar de romper una caja fuerte específica con miles de intentos, el ladrón prueba \"1234\" en todas las cajas fuertes del edificio. Eventualmente alguna la tiene como combinación.*\n\n---"
+      },
+      {
+        "name": "Password Attack: Hybrid Attack",
+        "definition": "An attack that combines elements of dictionary and brute force attacks — starting with dictionary words and then appending or modifying them with numbers, symbols, or patterns.",
+        "analogy": "*Es el ladrón inteligente que sabe que el reglamento del edificio obliga a que todas las contraseñas sean una palabra más un número. Entonces busca palabras comunes en su diccionario y le agrega fuerza bruta solo al número. Mucho más eficiente que probar todo desde cero.*",
+        "raw_content": "* **Definition:** An attack that combines elements of dictionary and brute force attacks — starting with dictionary words and then appending or modifying them with numbers, symbols, or patterns.\n\nHybrid attacks are effective when an organization enforces predictable password formats (e.g., \"8-letter word + 6-digit number\"). An attacker can use a dictionary for the word component and brute force the numeric portion.\n\n> *Es el ladrón inteligente que sabe que el reglamento del edificio obliga a que todas las contraseñas sean una palabra más un número. Entonces busca palabras comunes en su diccionario y le agrega fuerza bruta solo al número. Mucho más eficiente que probar todo desde cero.*\n\n---"
+      },
+      {
+        "name": "Single Sign-On (SSO)",
+        "definition": "An authentication process that allows a user to access multiple applications or websites by logging in only once with a single set of credentials, eliminating the need to authenticate separately to each system.",
+        "analogy": "*Es el pase VIP de un festival de música: lo validas una vez en la entrada principal y puedes entrar a todos los escenarios sin que te lo pidan de nuevo en cada uno. El festival (IdP) garantizó al personal de cada escenario que ya fuiste verificado.*",
+        "raw_content": "* **Definition:** An authentication process that allows a user to access multiple applications or websites by logging in only once with a single set of credentials, eliminating the need to authenticate separately to each system.\n\nSSO works based on a **trusted relationship** established between an application and an **Identity Provider (IdP)**. The IdP creates, maintains, and manages identity information and provides authentication services to relying applications.\n\n> *Es el pase VIP de un festival de música: lo validas una vez en la entrada principal y puedes entrar a todos los escenarios sin que te lo pidan de nuevo en cada uno. El festival (IdP) garantizó al personal de cada escenario que ya fuiste verificado.*"
+      },
+      {
+        "name": "SSO: LDAP",
+        "definition": "The Lightweight Directory Access Protocol (LDAP) is a protocol used to access and maintain distributed directory information services over an IP network, commonly used as a centralized repository for user information and authentication.",
+        "analogy": "*LDAP es como la guía telefónica de la empresa, pero inteligente. Cuando una aplicación necesita saber quién eres y qué puedes hacer, consulta esa guía. Y si usas LDAPS, la guía viene en un sobre sellado y cifrado para que nadie la intercepte en el camino.*",
+        "raw_content": "* **Definition:** The Lightweight Directory Access Protocol (LDAP) is a protocol used to access and maintain distributed directory information services over an IP network, commonly used as a centralized repository for user information and authentication.\n\nLDAP acts as the directory backbone for SSO in enterprise networks. It stores user information (names, groups, roles, certificates) and allows applications to query this directory to authenticate users and determine their authorization level.\n\nLDAP supports both plaintext transmission and a secure version: **LDAPS** (LDAP over SSL/TLS or StartTLS), which encrypts data in transit.\n\n> *LDAP es como la guía telefónica de la empresa, pero inteligente. Cuando una aplicación necesita saber quién eres y qué puedes hacer, consulta esa guía. Y si usas LDAPS, la guía viene en un sobre sellado y cifrado para que nadie la intercepte en el camino.*\n\n---"
+      },
+      {
+        "name": "SSO: OAuth",
+        "definition": "Open Authorization (OAuth) is an open standard for token-based authentication and authorization that allows third-party services to access user account information without exposing the user's password.",
+        "analogy": "*OAuth es como darle a alguien un voucher de acceso limitado en lugar de darle tu llave. El voucher dice \"esta persona puede ver mi sala pero no puede entrar a mi cuarto ni abrir mi caja fuerte.\" Tú nunca compartiste la llave real.*",
+        "raw_content": "* **Definition:** Open Authorization (OAuth) is an open standard for token-based authentication and authorization that allows third-party services to access user account information without exposing the user's password.\n\nOAuth is commonly seen when a website offers \"Log in with Google\" or \"Log in with Facebook.\" The user grants the third-party application access to specific scopes of their account (name, email, profile photo) without sharing their actual password. OAuth uses **JSON Web Tokens (JWT)** formatted as Base64-encoded strings in URLs and HTTP headers, which can be digitally signed for authentication and integrity.\n\n> *OAuth es como darle a alguien un voucher de acceso limitado en lugar de darle tu llave. El voucher dice \"esta persona puede ver mi sala pero no puede entrar a mi cuarto ni abrir mi caja fuerte.\" Tú nunca compartiste la llave real.*\n\n---"
+      },
+      {
+        "name": "SSO: SAML",
+        "definition": "Security Assertion Markup Language (SAML) is an XML-based standard for exchanging authentication and authorization data between an Identity Provider (IdP) and a Service Provider (SP), enabling SSO across different organizations and systems.",
+        "analogy": "*SAML es como una carta de recomendación notariada. El empleador (service provider) no conoce al candidato, pero confía en la carta firmada por la universidad de prestigio (IdP) que dice \"esta persona es quien dice ser y tiene estas calificaciones.\"*",
+        "raw_content": "* **Definition:** Security Assertion Markup Language (SAML) is an XML-based standard for exchanging authentication and authorization data between an Identity Provider (IdP) and a Service Provider (SP), enabling SSO across different organizations and systems.\n\nWhen a user logs in using SAML, the service provider redirects the user to the IdP with a SAML request. The IdP verifies the user's identity and sends an assertion (a cryptographically signed XML document) back to the service provider, which then grants access. SAML **decouples** the service from the identity verification — the service provider does not authenticate the user directly; it receives confirmation from the IdP.\n\n> *SAML es como una carta de recomendación notariada. El empleador (service provider) no conoce al candidato, pero confía en la carta firmada por la universidad de prestigio (IdP) que dice \"esta persona es quien dice ser y tiene estas calificaciones.\"*\n\n---"
+      },
+      {
+        "name": "Federation",
+        "definition": "A process that allows for the sharing and use of electronic identities across multiple distinct identity management systems or organizations, enabling users to access different systems with a single set of credentials managed by their home organization.",
+        "analogy": "*La federación es como el pasaporte: tu gobierno (tu organización) te lo emite, y los otros países (otras organizaciones) lo aceptan porque confían en tu gobierno. No necesitas una identidad nueva en cada país que visitas.*",
+        "raw_content": "* **Definition:** A process that allows for the sharing and use of electronic identities across multiple distinct identity management systems or organizations, enabling users to access different systems with a single set of credentials managed by their home organization.\n\nFederation extends SSO **beyond a single organization**. It recognizes that partners, suppliers, and customers also need access to resources. Rather than creating internal accounts for every external user, the organization trusts the authentication provided by the external user's home network through a pre-established trust relationship.\n\n> *La federación es como el pasaporte: tu gobierno (tu organización) te lo emite, y los otros países (otras organizaciones) lo aceptan porque confían en tu gobierno. No necesitas una identidad nueva en cada país que visitas.*"
+      },
+      {
+        "name": "Privileged Access Management (PAM)",
+        "definition": "A set of policies, procedures, and technical controls used to restrict, monitor, and manage privileged accounts within an IT environment to prevent malicious abuse and minimize risk from excessive permissions.",
+        "analogy": "*PAM es como el armero de una película de acción: las armas más poderosas (cuentas privilegiadas) están bajo llave, con un registro de quién las tomó, para qué misión y cuánto tiempo. Nadie anda cargando el lanzacohetes todo el día, solo cuando lo necesita.*",
+        "raw_content": "* **Definition:** A set of policies, procedures, and technical controls used to restrict, monitor, and manage privileged accounts within an IT environment to prevent malicious abuse and minimize risk from excessive permissions.\n\nPAM is critical because privileged accounts (administrators, root accounts) can cause significant damage if compromised or misused. PAM consists of three key components: **just-in-time permissions**, **password vaulting**, and **temporal accounts**.\n\n> *PAM es como el armero de una película de acción: las armas más poderosas (cuentas privilegiadas) están bajo llave, con un registro de quién las tomó, para qué misión y cuánto tiempo. Nadie anda cargando el lanzacohetes todo el día, solo cuando lo necesita.*\n\n---"
+      },
+      {
+        "name": "PAM: Just-In-Time (JIT) Permissions",
+        "definition": "A security model where administrative access is granted only when needed for a specific task and for a limited time period, and is automatically revoked when the task is complete.",
+        "analogy": "*Es como una pistola con autobloqueo de tiempo: el guardia de seguridad puede acceder a ella para hacer una ronda, pero se bloquea automáticamente en cuanto termina. Nunca anda armado innecesariamente.*",
+        "raw_content": "* **Definition:** A security model where administrative access is granted only when needed for a specific task and for a limited time period, and is automatically revoked when the task is complete.\n\nJIT minimizes the attack surface of privileged accounts by ensuring that administrators do not maintain continuous, standing privileged access. If an administrator's account is compromised, an attacker only finds regular user privileges — not administrative access — unless a JIT session is actively in progress.\n\n> *Es como una pistola con autobloqueo de tiempo: el guardia de seguridad puede acceder a ella para hacer una ronda, pero se bloquea automáticamente en cuanto termina. Nunca anda armado innecesariamente.*\n\n---"
+      },
+      {
+        "name": "PAM: Password Vaulting",
+        "definition": "A technique used to store and manage privileged account credentials in a secure encrypted vault that requires multi-factor authentication to access, while logging all credential access for auditing purposes.",
+        "analogy": "*La bóveda de contraseñas es como la caja fuerte de las llaves maestras en un hotel: cualquier empleado autorizado puede acceder a ellas, pero hay un registro de quién las tomó, cuándo y para qué habitación. Nadie se lleva las llaves a su casa.*",
+        "raw_content": "* **Definition:** A technique used to store and manage privileged account credentials in a secure encrypted vault that requires multi-factor authentication to access, while logging all credential access for auditing purposes.\n\nPassword vaulting ensures that privileged credentials (admin accounts, root credentials) are not known to individuals by memory or stored insecurely. When a system administrator needs a privileged credential, they check it out from the vault — the process is logged — and the password may be automatically rotated after use.\n\n> *La bóveda de contraseñas es como la caja fuerte de las llaves maestras en un hotel: cualquier empleado autorizado puede acceder a ellas, pero hay un registro de quién las tomó, cuándo y para qué habitación. Nadie se lleva las llaves a su casa.*\n\n---"
+      },
+      {
+        "name": "PAM: Temporal Accounts",
+        "definition": "Time-limited accounts created for a specific purpose that are automatically disabled or deleted after a defined period, used for contractors, temporary staff, or short-term access needs.",
+        "analogy": "*Es como el gafete de visitante del edificio corporativo que tiene fecha de vencimiento impresa y se desactiva solo. El guardia no tiene que acordarse de desactivarlo — el sistema lo hace automáticamente.*",
+        "raw_content": "* **Definition:** Time-limited accounts created for a specific purpose that are automatically disabled or deleted after a defined period, used for contractors, temporary staff, or short-term access needs.\n\nTemporal accounts prevent access from lingering after a project ends. A contractor might be given a temporal account for the duration of a software installation project. Once the project completes, the account is automatically deactivated, eliminating the risk of forgotten active credentials.\n\n> *Es como el gafete de visitante del edificio corporativo que tiene fecha de vencimiento impresa y se desactiva solo. El guardia no tiene que acordarse de desactivarlo — el sistema lo hace automáticamente.*\n\n---"
+      },
+      {
+        "name": "Access Control Models",
+        "definition": "Frameworks that define how access permissions are assigned, managed, and enforced in an information system to control which users can access which resources and under what conditions.",
+        "analogy": "*Los modelos de control de acceso son como los diferentes sistemas de llaves en distintos tipos de edificios: el militar usa biométrico y clasificación (MAC), la oficina corporativa usa roles (RBAC), y la casa particular deja que el dueño decida quién tiene llave (DAC).*",
+        "raw_content": "* **Definition:** Frameworks that define how access permissions are assigned, managed, and enforced in an information system to control which users can access which resources and under what conditions.\n\nThere are five primary access control models, each with a different approach to managing permissions:\n\n| Model | Acronym | Control Mechanism | Best Use Case |\n| --- | --- | --- | --- |\n| Mandatory Access Control | MAC | Security labels assigned by central authority | High-security, military/government |\n| Discretionary Access Control | DAC | Resource owner decides who gets access | General enterprise file sharing |\n| Role-Based Access Control | RBAC | Permissions assigned to roles/groups | Organizations with defined job functions |\n| Rule-Based Access Control | RBAC | Rules applied to all users by administrators | Network devices (firewalls, routers) |\n| Attribute-Based Access Control | ABAC | Access based on user, environment, and resource attributes | Complex, context-aware access decisions |\n\n> *Los modelos de control de acceso son como los diferentes sistemas de llaves en distintos tipos de edificios: el militar usa biométrico y clasificación (MAC), la oficina corporativa usa roles (RBAC), y la casa particular deja que el dueño decida quién tiene llave (DAC).*\n\n---"
+      },
+      {
+        "name": "Access Control: Mandatory Access Control (MAC)",
+        "definition": "An access control model where a central authority assigns security labels to both users and resources; access is granted only when a user's clearance level equals or exceeds the resource's classification level.",
+        "analogy": "*Es el sistema de clasificación militar: tu nivel de autorización determina qué carpetas puedes abrir. Sin importar si eres amigo del general, si no tienes el clearance correcto, el sistema te bloquea automáticamente.*",
+        "raw_content": "* **Definition:** An access control model where a central authority assigns security labels to both users and resources; access is granted only when a user's clearance level equals or exceeds the resource's classification level.\n\nMAC is the most restrictive model. Everything not explicitly permitted is forbidden. Commonly used in military and government environments where confidentiality is paramount. Every user and resource must carry a security label (e.g., Top Secret, Secret, Confidential, Unclassified).\n\n> *Es el sistema de clasificación militar: tu nivel de autorización determina qué carpetas puedes abrir. Sin importar si eres amigo del general, si no tienes el clearance correcto, el sistema te bloquea automáticamente.*\n\n---"
+      },
+      {
+        "name": "Access Control: Discretionary Access Control (DAC)",
+        "definition": "An access control model where the owner of a resource determines who can access it, making access decisions based on user identity, profile, or role — a form of need-to-know access control.",
+        "analogy": "*Es el dueño de un apartamento que decide a quién le da una copia de la llave. Muy flexible, pero si el dueño es descuidado y le da llaves a todo el mundo, la seguridad se va al piso.*",
+        "raw_content": "* **Definition:** An access control model where the owner of a resource determines who can access it, making access decisions based on user identity, profile, or role — a form of need-to-know access control.\n\nDAC is the most flexible model but also the least secure, as it relies on owners making correct security decisions. File sharing in Windows NTFS using permission settings is a common example of DAC.\n\n> *Es el dueño de un apartamento que decide a quién le da una copia de la llave. Muy flexible, pero si el dueño es descuidado y le da llaves a todo el mundo, la seguridad se va al piso.*\n\n---"
+      },
+      {
+        "name": "Access Control: Role-Based Access Control (RBAC)",
+        "definition": "An access control model where administrators assign permissions to roles (groups), and users inherit the permissions of the roles they are assigned to, rather than receiving permissions individually.",
+        "analogy": "*Es como los uniformes de trabajo: si eres médico, automáticamente tienes acceso a las áreas clínicas. Si te cambian a administrativo, te dan el uniforme nuevo y el acceso correspondiente. Nadie tiene que configurar permisos individuales.*",
+        "raw_content": "* **Definition:** An access control model where administrators assign permissions to roles (groups), and users inherit the permissions of the roles they are assigned to, rather than receiving permissions individually.\n\nRBAC is ideal for organizations with high employee turnover, since permissions are tied to the work role rather than the individual. In Windows domain environments, RBAC is typically implemented using **security groups**. Users can belong to multiple groups.\n\n> *Es como los uniformes de trabajo: si eres médico, automáticamente tienes acceso a las áreas clínicas. Si te cambian a administrativo, te dan el uniforme nuevo y el acceso correspondiente. Nadie tiene que configurar permisos individuales.*\n\n⚠️ **Exam tip:** Both **Rule-Based** and **Role-Based** access control share the acronym **RBAC** — context determines which one is meant.\n\n---"
+      },
+      {
+        "name": "Access Control: Rule-Based Access Control",
+        "definition": "An access control model where administrators define rules that apply to all users system-wide, such as access control lists (ACLs) on routers and firewalls, allowing or denying access based on defined conditions.",
+        "analogy": "*Es el reglamento del condominio que aplica a todos los residentes por igual: \"No se permiten visitas después de las 10 PM.\" No importa quién seas — la regla aplica para todos.*",
+        "raw_content": "* **Definition:** An access control model where administrators define rules that apply to all users system-wide, such as access control lists (ACLs) on routers and firewalls, allowing or denying access based on defined conditions.\n\nRule-based access control is applied uniformly across users. ACLs on network devices are a common implementation — a rule might block all traffic on port 23 (Telnet) or deny access from specific IP ranges, regardless of who is making the request.\n\n> *Es el reglamento del condominio que aplica a todos los residentes por igual: \"No se permiten visitas después de las 10 PM.\" No importa quién seas — la regla aplica para todos.*\n\n---"
+      },
+      {
+        "name": "Access Control: Attribute-Based Access Control (ABAC)",
+        "definition": "An access control model that evaluates multiple attributes — user attributes, environmental attributes, and resource attributes — to make context-aware access decisions.",
+        "analogy": "*ABAC es como el semáforo inteligente que cambia según el contexto: no solo quién eres (usuario), sino desde dónde llegas (entorno) y a qué quieres acceder (recurso). Es la intersección de todas las variables a la vez.*",
+        "raw_content": "* **Definition:** An access control model that evaluates multiple attributes — user attributes, environmental attributes, and resource attributes — to make context-aware access decisions.\n\nABAC is the most granular and flexible model. Access is permitted or denied based on the combination of: **user attributes** (name, role, clearance level), **environment attributes** (time of day, location, threat level), and **resource attributes** (creation date, file sensitivity, owner).\n\n> *ABAC es como el semáforo inteligente que cambia según el contexto: no solo quién eres (usuario), sino desde dónde llegas (entorno) y a qué quieres acceder (recurso). Es la intersección de todas las variables a la vez.*\n\n---"
+      },
+      {
+        "name": "Time of Day Restrictions",
+        "definition": "An access control mechanism that limits access to resources based on the time of day the request is made, used in conjunction with other access control models as an additional security layer.",
+        "analogy": "*Es como el sistema de apertura del banco que solo funciona en horario laboral. Aunque alguien robe las llaves del gerente, no puede abrir la bóveda a medianoche porque el sistema de tiempo la tiene bloqueada.*",
+        "raw_content": "* **Definition:** An access control mechanism that limits access to resources based on the time of day the request is made, used in conjunction with other access control models as an additional security layer.\n\nOrganizations can block logins outside of normal business hours (e.g., 8 AM–6 PM). An attempt to log in at 2 AM would be denied automatically, reducing the window of opportunity for insider threats and compromised account misuse.\n\n> *Es como el sistema de apertura del banco que solo funciona en horario laboral. Aunque alguien robe las llaves del gerente, no puede abrir la bóveda a medianoche porque el sistema de tiempo la tiene bloqueada.*\n\n---"
+      },
+      {
+        "name": "Principle of Least Privilege",
+        "definition": "A cybersecurity concept that states users, systems, and processes should be granted only the minimum levels of access necessary to perform their intended job functions — and nothing additional.",
+        "analogy": "*Es el principio del \"need-to-know\": el empleado de limpieza solo tiene llave de las oficinas que necesita limpiar, no del servidor room ni de la sala de juntas ejecutiva. El mensajero no necesita saber los secretos de la empresa para hacer su trabajo.*",
+        "raw_content": "* **Definition:** A cybersecurity concept that states users, systems, and processes should be granted only the minimum levels of access necessary to perform their intended job functions — and nothing additional.\n\nLeast privilege minimizes the potential damage from compromised accounts, insider threats, and accidental data modification. It requires continual review to prevent **permission creep** (also called **authorization creep**), where users accumulate excessive permissions as they change roles within an organization.\n\n> *Es el principio del \"need-to-know\": el empleado de limpieza solo tiene llave de las oficinas que necesita limpiar, no del servidor room ni de la sala de juntas ejecutiva. El mensajero no necesita saber los secretos de la empresa para hacer su trabajo.*\n\n⚠️ **Exam tip:** **Permission/authorization creep** is the gradual accumulation of access rights as users change roles. It must be actively reversed by revoking old permissions when a user transitions to a new position.\n\n---"
+      },
+      {
+        "name": "User Account Control (UAC)",
+        "definition": "A Windows security mechanism that ensures actions requiring administrative rights are explicitly authorized by the user, minimizing the risk of malicious software gaining administrative privileges without user consent.",
+        "analogy": "*UAC es el segundo factor de seguridad del sistema operativo: aunque ya iniciaste sesión, si una aplicación intenta hacer algo con superpoderes, el sistema te pregunta \"¿realmente autorizas esto?\" Evita que un malware silencioso tome el control sin que te enteres.*",
+        "raw_content": "* **Definition:** A Windows security mechanism that ensures actions requiring administrative rights are explicitly authorized by the user, minimizing the risk of malicious software gaining administrative privileges without user consent.\n\nUAC prompts appear as a dialog box when an action requires elevated privileges (e.g., installing software, changing system settings). Standard users must enter an administrator password; administrators must click \"Yes\" to confirm. Actions requiring elevation are marked with a **shield icon** in the Windows interface.\n\n> *UAC es el segundo factor de seguridad del sistema operativo: aunque ya iniciaste sesión, si una aplicación intenta hacer algo con superpoderes, el sistema te pregunta \"¿realmente autorizas esto?\" Evita que un malware silencioso tome el control sin que te enteres.*\n\n---"
+      },
+      {
+        "name": "Assigning Permissions — User Account Types",
+        "definition": "Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.",
+        "analogy": "*El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*",
+        "raw_content": "* **Definition:** Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.\n\nThe **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices.\n\n> *El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*"
       }
     ]
   }
