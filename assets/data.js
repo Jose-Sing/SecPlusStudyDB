@@ -10468,5 +10468,790 @@ const STUDY_DATA = [
         "raw_content": "* **Definition:** Windows supports different account types with different privilege levels: local administrator accounts (full system control) and standard user accounts (restricted to personal storage areas and approved functions), aligned with the principle of least privilege.\n\nThe **local administrator account** is the most powerful account on a system — equivalent to a master key. It can change system settings, install applications, and perform all managerial tasks. **Standard user accounts** are restricted and cannot change system configuration or access other users' files. **Microsoft accounts** are online accounts that allow access to Microsoft services (Windows, Office 365, Xbox, Skype) across multiple devices. **User Account Control (UAC)** is a mechanism designed to ensure that actions requiring administrative rights are explicitly authorized by the user\n\n> *El administrador tiene la llave maestra del hotel que abre todas las puertas. El huésped estándar solo tiene la llave de su habitación y las áreas comunes. Darle la llave maestra a todos los huéspedes sería una catástrofe.*"
       }
     ]
+  },
+  {
+    "sectionId": "S18",
+    "sectionTitle": "Section 18: Vulnerabilities and Attacks",
+    "concepts": [
+      {
+        "name": "Vulnerabilities and Attacks — Overview",
+        "definition": "Vulnerabilities are weaknesses or flaws in hardware, software, configurations, or processes that can be exploited; attacks are deliberate actions by threat actors that exploit those vulnerabilities to cause unauthorized access, data theft, malware infection, denial of service, or other harm.",
+        "analogy": "*Es como una ciudad medieval: las vulnerabilidades son las grietas en la muralla, y los ataques son los ejércitos que buscan activamente esas grietas para entrar. Sin murallas sólidas y bien mantenidas, la ciudad cae.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Vulnerabilities are weaknesses or flaws in hardware, software, configurations, or processes that can be exploited; attacks are deliberate actions by threat actors that exploit those vulnerabilities to cause unauthorized access, data theft, malware infection, denial of service, or other harm.\n\nThis section covers Security+ objectives 2.2, 2.3, 2.4, 2.5, and 4.1, addressing common threat vectors, vulnerability types, indicators of malicious activity, mitigation techniques, and security techniques applied to computing resources.\n\n> *Es como una ciudad medieval: las vulnerabilidades son las grietas en la muralla, y los ataques son los ejércitos que buscan activamente esas grietas para entrar. Sin murallas sólidas y bien mantenidas, la ciudad cae.*\n\n---"
+      },
+      {
+        "name": "Hardware Vulnerabilities",
+        "definition": "Security flaws or weaknesses inherent in a device's physical components or design that can be exploited to compromise the integrity, confidentiality, or availability of the system and its data.",
+        "analogy": "*Es como un edificio con defectos de construcción: no importa cuántas cerraduras pongas en las puertas, si los cimientos están mal hechos, el edificio es vulnerable. El fabricante del edificio no está disponible para arreglarlo.*",
+        "tables": [
+          {
+            "headers": [
+              "Mitigation",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Hardening**",
+                "Closing unnecessary ports, disabling unused services, setting proper permissions on firmware, applications, and hardware"
+              ],
+              [
+                "**Patching**",
+                "Regularly updating software, firmware, and applications with the latest security patches"
+              ],
+              [
+                "**Configuration Enforcement**",
+                "Ensuring all devices adhere to a standard secure baseline configuration"
+              ],
+              [
+                "**Decommissioning**",
+                "Retiring and removing EOL/legacy systems from the network when they pose unacceptable security risk"
+              ],
+              [
+                "**Isolation**",
+                "Separating legacy or vulnerable systems from the enterprise network to limit breach impact"
+              ],
+              [
+                "**Segmentation**",
+                "Dividing the network into segments so a breach in one area does not compromise the entire enterprise"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "**End of Life (EOL):** Product has reached end of its lifecycle; vendor no longer provides updates or enhancements.",
+          "**Legacy systems:** Outdated technologies still in use but superseded by newer alternatives.",
+          "**Unsupported systems:** No longer receive official technical support, security updates, or patches."
+        ],
+        "raw_content": "* **Definition:** Security flaws or weaknesses inherent in a device's physical components or design that can be exploited to compromise the integrity, confidentiality, or availability of the system and its data.\n\nHardware vulnerabilities affect all device types: servers, workstations, laptops, switches, routers, network appliances, mobile devices, and IoT devices.\n\n> *Es como un edificio con defectos de construcción: no importa cuántas cerraduras pongas en las puertas, si los cimientos están mal hechos, el edificio es vulnerable. El fabricante del edificio no está disponible para arreglarlo.*\n\n### Hardware Vulnerabilities: Firmware\n\n* **Definition:** A specialized form of software stored on a hardware device (router, thermostat, etc.) that provides low-level control of the device's hardware and is vulnerable when developed without security in mind, using outdated practices, or left unpatched.\n\nFirmware vulnerabilities are especially dangerous because firmware often has privileged access to the system, giving an attacker who exploits firmware full control over device behavior. Firmware updates are frequently overlooked during routine maintenance, creating persistent vulnerabilities. Mitigation: regular firmware updates, security auditing, and device hardening.\n\n### Hardware Vulnerabilities: End of Life, Legacy, and Unsupported Systems\n\n* **Definition:** Hardware or software that no longer receives updates, patches, or official vendor support — leaving any existing security flaws permanently unaddressed.\n\nThese three terms are often used interchangeably:\n\n- **End of Life (EOL):** Product has reached end of its lifecycle; vendor no longer provides updates or enhancements.\n- **Legacy systems:** Outdated technologies still in use but superseded by newer alternatives.\n- **Unsupported systems:** No longer receive official technical support, security updates, or patches.\n\nKnown vulnerabilities in these systems will never be patched, leaving them permanently exploitable by existing exploits.\n\n### Hardware Vulnerabilities: Unpatched Systems\n\n* **Definition:** A device, application, or piece of software that has not been updated with the latest security patches, leaving it vulnerable to known exploits and attacks.\n\nUnpatched systems result from oversight, negligence, or challenges in deploying updates at enterprise scale. Mitigation requires a formal **patch management process**: monitoring for updates, assessing patch relevance and impact, and deploying patches in a timely manner.\n\n### Hardware Vulnerabilities: Hardware Misconfigurations\n\n* **Definition:** A condition where a device's settings, parameters, or options are not optimally set up, creating vulnerabilities, performance degradation, or unintended device behavior.\n\nMisconfigurations arise from default settings left unchanged, unnecessary services left enabled, or security features accidentally disabled. Mitigation: regular audits, configuration management practices, automated misconfiguration detection tools, and personnel training on correct configuration protocols.\n\n### Hardware Vulnerability Mitigations\n\n* **Definition:** The set of countermeasures applied to reduce or eliminate hardware vulnerabilities across devices and systems.\n\n| Mitigation                    | Description                                                                                                              |\n| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |\n| **Hardening**                 | Closing unnecessary ports, disabling unused services, setting proper permissions on firmware, applications, and hardware |\n| **Patching**                  | Regularly updating software, firmware, and applications with the latest security patches                                 |\n| **Configuration Enforcement** | Ensuring all devices adhere to a standard secure baseline configuration                                                  |\n| **Decommissioning**           | Retiring and removing EOL/legacy systems from the network when they pose unacceptable security risk                      |\n| **Isolation**                 | Separating legacy or vulnerable systems from the enterprise network to limit breach impact                               |\n| **Segmentation**              | Dividing the network into segments so a breach in one area does not compromise the entire enterprise                     |\n\n---"
+      },
+      {
+        "name": "Bluetooth Vulnerabilities and Attacks",
+        "definition": "Security weaknesses and deliberate exploits targeting the Bluetooth wireless protocol, which enables short-range data exchange between devices without an Internet connection.",
+        "analogy": "*Es como hablar en voz alta en un lugar público: cualquiera que esté cerca puede escuchar tu conversación si no tomas las precauciones adecuadas para proteger lo que dices.*",
+        "tables": [
+          {
+            "headers": [
+              "Practice",
+              "Why It Matters"
+            ],
+            "rows": [
+              [
+                "Turn off Bluetooth when not in use",
+                "Reduces attack surface to zero"
+              ],
+              [
+                "Set devices to non-discoverable by default",
+                "Prevents unknown devices from finding and initiating connections"
+              ],
+              [
+                "Regularly update firmware",
+                "Patches known Bluetooth vulnerabilities"
+              ],
+              [
+                "Only pair with known and trusted devices",
+                "Eliminates risk of connecting to malicious devices"
+              ],
+              [
+                "Use unique PINs or passkeys during pairing",
+                "Adds authentication layer against unauthorized pairing"
+              ],
+              [
+                "Be cautious of unsolicited connection requests",
+                "Unsolicited requests may carry malware (e.g., AirDrop-style attacks)"
+              ],
+              [
+                "Use encryption for sensitive data transfers",
+                "Ensures intercepted data remains unreadable"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Security weaknesses and deliberate exploits targeting the Bluetooth wireless protocol, which enables short-range data exchange between devices without an Internet connection.\n\n> *Es como hablar en voz alta en un lugar público: cualquiera que esté cerca puede escuchar tu conversación si no tomas las precauciones adecuadas para proteger lo que dices.*\n\n### Bluetooth Vulnerabilities: Insecure Pairing\n\n* **Definition:** A condition where Bluetooth devices establish a connection without proper authentication or using weak authentication methods, leaving them vulnerable to unauthorized access or interference.\n\nSome Bluetooth devices require no authentication at all; others use weak methods during pairing that are susceptible to exploitation.\n\n### Bluetooth Vulnerabilities: Device Spoofing\n\n* **Definition:** An attack where an attacker impersonates a legitimate Bluetooth device by mimicking its MAC address and device name to deceive a user into connecting to a malicious device instead.\n\n### Bluetooth Vulnerabilities: On-Path Attack\n\n* **Definition:** An attack that exploits a vulnerability in the Bluetooth communications protocol to intercept and alter communications between two Bluetooth devices without either party being aware.\n\n### Bluetooth Attack: Bluejacking\n\n* **Definition:** An attack where an attacker sends unsolicited messages to a Bluetooth-enabled device, often as a prank or to probe device visibility, without causing serious harm or accessing data.\n\n### Bluetooth Attack: Bluesnarfing\n\n* **Definition:** An attack involving unauthorized access to a device through its Bluetooth connection to steal information such as contacts, call logs, and text messages.\n\n### Bluetooth Attack: Bluebugging\n\n* **Definition:** An attack that goes beyond Bluesnarfing by allowing the attacker to take full control of a device's Bluetooth functions, potentially making calls, sending messages, or accessing the Internet from the victim's device.\n\n### Bluetooth Attack: Bluesmack\n\n* **Definition:** A Bluetooth denial-of-service attack where an attacker overwhelms a device by sending a large amount of data, causing it to crash or become unresponsive.\n\n### Bluetooth Attack: Blueborne\n\n* **Definition:** An airborne Bluetooth attack that can spread through the air to infect numerous devices within seconds without requiring any user interaction or the target device to be in discoverable mode.\n\n### Bluetooth Security Best Practices\n\n* **Definition:** Recommended behaviors and configurations that minimize exposure to Bluetooth-based attacks.\n\n| Practice                                       | Why It Matters                                                       |\n| ---------------------------------------------- | -------------------------------------------------------------------- |\n| Turn off Bluetooth when not in use             | Reduces attack surface to zero                                       |\n| Set devices to non-discoverable by default     | Prevents unknown devices from finding and initiating connections     |\n| Regularly update firmware                      | Patches known Bluetooth vulnerabilities                              |\n| Only pair with known and trusted devices       | Eliminates risk of connecting to malicious devices                   |\n| Use unique PINs or passkeys during pairing     | Adds authentication layer against unauthorized pairing               |\n| Be cautious of unsolicited connection requests | Unsolicited requests may carry malware (e.g., AirDrop-style attacks) |\n| Use encryption for sensitive data transfers    | Ensures intercepted data remains unreadable                          |\n\n---"
+      },
+      {
+        "name": "Mobile Vulnerabilities and Attacks",
+        "definition": "Security weaknesses specific to mobile devices (smartphones, tablets, wearables) arising from software installation practices, device privilege escalation, and insecure wireless connection methods.",
+        "analogy": "*Es como un carro con el seguro roto: los fabricantes construyen sistemas de seguridad integrados, pero si los desactivas o conectas el carro a redes no confiables, estás dejando la puerta abierta para que te lo roben.*",
+        "tables": [
+          {
+            "headers": [
+              "MDM Capability",
+              "Security Function"
+            ],
+            "rows": [
+              [
+                "Regular patching",
+                "Pushes security updates to all devices automatically"
+              ],
+              [
+                "Configuration management",
+                "Enforces standardized secure baseline on every device"
+              ],
+              [
+                "Sideloading prevention",
+                "Disables the ability to install apps from unofficial sources"
+              ],
+              [
+                "Jailbreak/root detection",
+                "Identifies and flags compromised devices"
+              ],
+              [
+                "VPN enforcement",
+                "Forces encrypted tunnel when connecting to corporate data over Wi-Fi or cellular"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Prefer cellular data over open Wi-Fi",
+          "When using Wi-Fi, require robust authentication (strong password or 802.1x)",
+          "Connect over Bluetooth only to known devices; keep device non-discoverable when not pairing"
+        ],
+        "raw_content": "* **Definition:** Security weaknesses specific to mobile devices (smartphones, tablets, wearables) arising from software installation practices, device privilege escalation, and insecure wireless connection methods.\n\n> *Es como un carro con el seguro roto: los fabricantes construyen sistemas de seguridad integrados, pero si los desactivas o conectas el carro a redes no confiables, estás dejando la puerta abierta para que te lo roben.*\n\n### Mobile Vulnerability: Sideloading\n\n* **Definition:** The practice of installing applications on a mobile device from unofficial sources outside the device's official app store, bypassing the store's security review process.\n\nSideloaded apps are not scanned or verified by the platform's submission process, making them a common delivery vehicle for malware. Mitigation: always download apps from official stores (App Store, Google Play) that enforce strict review processes.\n\n### Mobile Vulnerability: Jailbreaking and Rooting\n\n* **Definition:** The process of escalating user permissions on a mobile device (jailbreaking on iOS, rooting on Android) to circumvent built-in security measures provided by the manufacturer.\n\nWhile enabling greater device customization, jailbreaking/rooting prevents installation of manufacturer security updates, leaving the device permanently exposed to newly discovered exploits. Mitigation: keep the device's original security settings intact.\n\n⚠️ **Rooted/jailbroken devices cannot receive OEM security updates — every new CVE disclosed after rooting becomes a permanent vulnerability.**\n\n### Mobile Vulnerability: Insecure Connection Methods\n\n* **Definition:** The use of open or insufficiently protected Wi-Fi and Bluetooth connections that expose mobile devices to eavesdropping, on-path attacks, and unauthorized data access.\n\nMitigation options:\n\n- Prefer cellular data over open Wi-Fi\n- When using Wi-Fi, require robust authentication (strong password or 802.1x)\n- Connect over Bluetooth only to known devices; keep device non-discoverable when not pairing\n\n### Mobile Device Management (MDM)\n\n* **Definition:** A specialized solution used to minimize mobile security risk through centralized patch management, device configuration enforcement, and best-practice policy enforcement across an organization's mobile fleet.\n\n| MDM Capability           | Security Function                                                                |\n| ------------------------ | -------------------------------------------------------------------------------- |\n| Regular patching         | Pushes security updates to all devices automatically                             |\n| Configuration management | Enforces standardized secure baseline on every device                            |\n| Sideloading prevention   | Disables the ability to install apps from unofficial sources                     |\n| Jailbreak/root detection | Identifies and flags compromised devices                                         |\n| VPN enforcement          | Forces encrypted tunnel when connecting to corporate data over Wi-Fi or cellular |\n\n---"
+      },
+      {
+        "name": "Zero-Day Vulnerabilities",
+        "definition": "A vulnerability in software or hardware that is discovered and exploited by threat actors before the vendor or developer has had the opportunity to release a patch or fix for it — literally zero days old because it is newly discovered and unaddressed.",
+        "analogy": "*Es como una entrada secreta a un banco que solo el ladrón conoce. La dirección del banco ni siquiera sabe que esa puerta existe, por lo que no pueden cerrarla ni reforzarla.*",
+        "tables": [],
+        "list_items": [
+          "Bug bounty programs pay significant sums for disclosed zero-days (sometimes $1M+)",
+          "Nation-states and intelligence agencies stockpile zero-days for high-value espionage operations",
+          "Sold on the dark web to criminal organizations",
+          "Threat actors typically try known-vulnerability exploits first; zero-days are reserved for high-value targets where standard malware has failed"
+        ],
+        "raw_content": "* **Definition:** A vulnerability in software or hardware that is discovered and exploited by threat actors before the vendor or developer has had the opportunity to release a patch or fix for it — literally zero days old because it is newly discovered and unaddressed.\n\n> *Es como una entrada secreta a un banco que solo el ladrón conoce. La dirección del banco ni siquiera sabe que esa puerta existe, por lo que no pueden cerrarla ni reforzarla.*\n\nA **zero-day exploit** is the malicious code or attack technique that takes advantage of a zero-day vulnerability. A **zero-day attack** is when that exploit is deployed against a target. The term \"zero-day\" is used interchangeably for the vulnerability, the exploit, and the malware.\n\n⚠️ **Traditional antivirus and anti-malware cannot detect zero-day exploits because no signatures exist yet for a brand-new, never-before-seen attack.**\n\n### Zero-Day: Why They Are Dangerous and Valuable\n\nZero-days are expensive to develop and therefore treated as strategic assets:\n\n- Bug bounty programs pay significant sums for disclosed zero-days (sometimes $1M+)\n- Nation-states and intelligence agencies stockpile zero-days for high-value espionage operations\n- Sold on the dark web to criminal organizations\n- Threat actors typically try known-vulnerability exploits first; zero-days are reserved for high-value targets where standard malware has failed\n\nOnce a zero-day becomes publicly known, it is no longer a zero-day — vendors can now develop patches and AV vendors can create signatures.\n\n---"
+      },
+      {
+        "name": "Operating System Vulnerabilities",
+        "definition": "Security weaknesses in an operating system arising from missing patches, unknown flaws, configuration errors, data exfiltration risks, and malicious update injection that can compromise device security and integrity.",
+        "analogy": "*El sistema operativo es como el sistema nervioso central de un edificio: controla todo. Si alguien encuentra una forma de manipularlo, puede controlar las luces, las cerraduras, las cámaras y los ascensores al mismo tiempo.*",
+        "tables": [],
+        "list_items": [
+          "**Encryption of data at rest** — ensures stolen data is unreadable",
+          "**Endpoint protection tools** — monitor and restrict unauthorized data transfers",
+          "**Host-based firewall** — controls inbound/outbound traffic to prevent unauthorized data egress",
+          "Source updates only from trusted vendors and official channels",
+          "Maintain **application allow listing** to permit only recognized safe applications",
+          "Verify update authenticity via **digital signature or hash** before installation"
+        ],
+        "raw_content": "* **Definition:** Security weaknesses in an operating system arising from missing patches, unknown flaws, configuration errors, data exfiltration risks, and malicious update injection that can compromise device security and integrity.\n\n> *El sistema operativo es como el sistema nervioso central de un edificio: controla todo. Si alguien encuentra una forma de manipularlo, puede controlar las luces, las cerraduras, las cámaras y los ascensores al mismo tiempo.*\n\n### OS Vulnerability: Unpatched Systems\n\n* **Definition:** Operating systems that have not been updated with the latest security patches, leaving them susceptible to exploitation via known vulnerabilities matched with existing exploits.\n\nMitigation: schedule automatic updates; periodically verify that the latest patches have been applied.\n\n### OS Vulnerability: Zero-Day\n\n* **Definition:** As applied to operating systems, a newly discovered vulnerability unknown to the OS developer for which no patch yet exists, giving defenders zero days to react.\n\nMitigation: implement a **host-based Intrusion Prevention System (IPS)** to detect and block suspicious activities; maintain strong defense-in-depth posture through frequent updates.\n\n### OS Vulnerability: Misconfigurations\n\n* **Definition:** Incorrectly configured OS settings — such as default settings left unchanged, unnecessary services left enabled, or security features accidentally disabled — that create exploitable weaknesses.\n\nMitigation: deploy configuration management tools to standardize and automate configuration; conduct periodic audits.\n\n### OS Vulnerability: Data Exfiltration\n\n* **Definition:** Unauthorized transfer of data from within an organization to an external location, commonly achieved by exploiting an OS vulnerability to steal data without the organization's awareness.\n\nMitigation:\n\n- **Encryption of data at rest** — ensures stolen data is unreadable\n- **Endpoint protection tools** — monitor and restrict unauthorized data transfers\n- **Host-based firewall** — controls inbound/outbound traffic to prevent unauthorized data egress\n\n### OS Vulnerability: Malicious Updates\n\n* **Definition:** A deceptive attack where a malicious update masquerades as a legitimate security patch but contains malicious code that injects malware or an exploit into the system upon installation.\n\nMitigation:\n\n- Source updates only from trusted vendors and official channels\n- Maintain **application allow listing** to permit only recognized safe applications\n- Verify update authenticity via **digital signature or hash** before installation\n\n---"
+      },
+      {
+        "name": "SQL Injection",
+        "definition": "A code injection attack where malicious SQL statements are inserted into input fields, URL parameters, cookies, or HTTP headers to manipulate a database-driven application's queries and gain unauthorized access, exfiltrate data, or modify/delete records.",
+        "analogy": "*Es como si pudieras deslizar una nota extra en el pedido de un restaurante que dice \"y también dame todas las recetas de la cocina\" y el mesero la pasara literalmente a la cocina sin leerla.*",
+        "tables": [
+          {
+            "headers": [
+              "SQL Action",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "`SELECT`",
+                "Read data from the database"
+              ],
+              [
+                "`INSERT`",
+                "Write new data into the database"
+              ],
+              [
+                "`DELETE`",
+                "Remove data from the database"
+              ],
+              [
+                "`UPDATE`",
+                "Overwrite existing data with a newer version"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Defense",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Input validation / sanitization**",
+                "Filter and reject malicious characters before they reach the database query"
+              ],
+              [
+                "**Web Application Firewall (WAF)**",
+                "Placed between client and web server; performs input sanitization even if application code cannot be rewritten"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A code injection attack where malicious SQL statements are inserted into input fields, URL parameters, cookies, or HTTP headers to manipulate a database-driven application's queries and gain unauthorized access, exfiltrate data, or modify/delete records.\n\n> *Es como si pudieras deslizar una nota extra en el pedido de un restaurante que dice \"y también dame todas las recetas de la cocina\" y el mesero la pasara literalmente a la cocina sin leerla.*\n\n### SQL Basics (Context for the Attack)\n\nSQL (Structured Query Language) is the language used to interact with relational databases. The four primary actions are:\n\n| SQL Action | Purpose                                      |\n| ---------- | -------------------------------------------- |\n| `SELECT`   | Read data from the database                  |\n| `INSERT`   | Write new data into the database             |\n| `DELETE`   | Remove data from the database                |\n| `UPDATE`   | Overwrite existing data with a newer version |\n\nWhen a user logs in, the web app sends an SQL query such as:\n\n```\nSELECT * FROM Users WHERE user_id = 'Jason' AND password = 'Pass123'\n```\n\n### How SQL Injection Works\n\nAn attacker who does not know the password enters a crafted string in the password field:\n\n```\n' OR 1=1;\n```\n\nThis transforms the backend query into:\n\n```\nSELECT * FROM Users WHERE user_id = 'Jason' AND password = '' OR 1=1;'\n```\n\nThe apostrophe (`'`) acts as an escape character. The `OR 1=1` condition is always true, so Boolean logic grants access even without the correct password.\n\n⚠️ **Exam tip: Any input containing an apostrophe followed by a condition like `OR 1=1` (or any `x=x` that always evaluates to true) is an SQL injection attempt.**\n\n### SQL Injection: Prevention\n\n* **Definition:** Input validation and sanitization are the primary defenses against SQL injection, filtering out special characters (apostrophes, SQL keywords) before user input reaches the database.\n\n| Defense                             | Description                                                                                                    |\n| ----------------------------------- | -------------------------------------------------------------------------------------------------------------- |\n| **Input validation / sanitization** | Filter and reject malicious characters before they reach the database query                                    |\n| **Web Application Firewall (WAF)**  | Placed between client and web server; performs input sanitization even if application code cannot be rewritten |\n\n⚠️ **Exam tip: \"How do you prevent SQL injection?\" → Input validation. Always.**\n\n---"
+      },
+      {
+        "name": "XML Injection",
+        "definition": "An attack technique where malicious XML (Extensible Markup Language) code is inserted into input fields to manipulate or exploit an XML-driven application's parsing mechanisms, potentially leading to unauthorized access, data exposure, or denial of service.",
+        "analogy": "*Es como meter una instrucción falsa dentro de un formulario de pedidos de una empresa que usa formularios en papel. Si nadie valida el formulario antes de procesarlo, la instrucción falsa se ejecuta como si fuera legítima.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An attack technique where malicious XML (Extensible Markup Language) code is inserted into input fields to manipulate or exploit an XML-driven application's parsing mechanisms, potentially leading to unauthorized access, data exposure, or denial of service.\n\n> *Es como meter una instrucción falsa dentro de un formulario de pedidos de una empresa que usa formularios en papel. Si nadie valida el formulario antes de procesarlo, la instrucción falsa se ejecuta como si fuera legítima.*\n\nXML is used by web applications for authentication, authorization, and data exchange. XML data should always be sent inside an encrypted tunnel (TLS) and subjected to input validation before processing.\n\n### XML Attack: XML Bomb (Billion Laughs Attack)\n\n* **Definition:** An XML attack where entities are encoded to reference each other exponentially, causing the XML parser to expand them to enormous sizes that consume server memory and cause a crash or denial of service.\n\nThe attack is named \"billion laughs\" because the referenced entities are typically named `lol1` through `lol9`, each referencing the previous 10 times, creating a factorial explosion (~1 billion `lol` strings) from a tiny file. A simple file can consume up to 3 GB of memory.\n\n### XML Attack: XML External Entity (XXE)\n\n* **Definition:** An XML injection attack that embeds a request for a local system resource (such as a sensitive file) within the XML payload, causing the XML parser to read and return that file's contents to the attacker.\n\nExample: an XXE payload referencing `/etc/shadow` (Linux password hashes) would cause the server to read and return those hashes.\n\n⚠️ **Exam tip: Any code block in XML format appearing in a log or question is almost certainly an XML injection. XML looks like HTML but uses custom, user-defined tag names (not predefined HTML keywords like `<font>` or `<img>`).**\n\n### XML Injection: Prevention\n\nInput validation is the primary defense — validate and sanitize all XML input before processing to prevent XXE and XML bomb attacks.\n\n---"
+      },
+      {
+        "name": "Cross-Site Scripting (XSS)",
+        "definition": "A web security vulnerability where a malicious script is injected into a trusted website and served to other users, executing in their browsers at the trust level of the trusted site — bypassing the browser's security model.",
+        "analogy": "*Es como si un actor malicioso pudiera poner su propio letrero en la fachada de un banco reconocido. Los clientes ven el letrero del banco confiable, pero el mensaje es del atacante.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A web security vulnerability where a malicious script is injected into a trusted website and served to other users, executing in their browsers at the trust level of the trusted site — bypassing the browser's security model.\n\n> *Es como si un actor malicioso pudiera poner su propio letrero en la fachada de un banco reconocido. Los clientes ven el letrero del banco confiable, pero el mensaje es del atacante.*\n\nXSS relies on a trusted website failing to conduct proper input validation on user-generated content.\n\n### The Four Steps of a Cross-Site Scripting Attack\n\n1. Attacker identifies an input validation vulnerability in a trusted website\n2. Attacker crafts a URL that injects malicious code into the trusted site (and distributes the URL via phishing, forums, etc.)\n3. The trusted site returns a page that includes both its legitimate code and the injected malicious code\n4. The malicious code executes in the victim's browser at the permission level of the trusted site\n\n### XSS Type: Reflected (Non-Persistent)\n\n* **Definition:** An XSS attack where the injected script is reflected off the web server in response to a specific crafted URL click — it occurs once per click and does not persist in the site's database.\n\nExample payload embedded in URL: `<script type=\"application/javascript\">alert('xss')</script>`\n\n### XSS Type: Persistent (Stored)\n\n* **Definition:** An XSS attack where malicious code is stored in the website's backend database, automatically executing for every user who loads the affected page without requiring any link click.\n\nMore dangerous than reflected XSS because no user action (beyond visiting the page) is required.\n\n### XSS Type: DOM-Based\n\n* **Definition:** A client-side XSS attack that exploits the Document Object Model (DOM) in the victim's browser, modifying page content and layout using client-side scripts rather than exploiting the server.\n\nIndicator: payloads referencing `document.cookie`, `document.write`, or `document.location` — the word `document` signals DOM manipulation.\n\nExample: `diontraining.com/index.html#default=<script>alert(document.cookie)</script>`\n\nThis executes at the logged-in user's local permission level, making it especially dangerous if an administrator triggers it.\n\n⚠️ **Exam tip: Any URL or log snippet containing `<script>` or JavaScript code → XSS attack. Contains `document.something` → DOM-based XSS specifically.**\n\n### XSS Prevention\n\nInput validation and sanitization prevent injected scripts from being stored or reflected. Web Application Firewalls can also intercept XSS payloads.\n\n---"
+      },
+      {
+        "name": "Session Management and Cookies",
+        "definition": "Session management is the mechanism by which web applications uniquely identify and track individual authenticated users across multiple actions and requests, commonly implemented via cookies stored on the client device.",
+        "analogy": "*Es como el brazalete que te dan en un parque de diversiones: el parque sabe que pagaste y puedes entrar a las atracciones sin pagar cada vez. Si alguien te roba el brazalete, puede entrar como si fuera tú.*",
+        "tables": [
+          {
+            "headers": [
+              "Cookie Type",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Session (non-persistent) cookie**",
+                "Resides in memory; deleted when the browser session ends"
+              ],
+              [
+                "**Persistent cookie**",
+                "Stored in browser cache until deleted by the user or it expires"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Session management is the mechanism by which web applications uniquely identify and track individual authenticated users across multiple actions and requests, commonly implemented via cookies stored on the client device.\n\n> *Es como el brazalete que te dan en un parque de diversiones: el parque sabe que pagaste y puedes entrar a las atracciones sin pagar cada vez. Si alguien te roba el brazalete, puede entrar como si fuera tú.*\n\nHTTP is a stateless protocol — by default, web servers preserve no information between requests. Cookies solve this by storing session state on the client.\n\n| Cookie Type                         | Description                                                     |\n| ----------------------------------- | --------------------------------------------------------------- |\n| **Session (non-persistent) cookie** | Resides in memory; deleted when the browser session ends        |\n| **Persistent cookie**               | Stored in browser cache until deleted by the user or it expires |\n\nCookies must be encrypted and secured because they can contain sensitive session information.\n\n### Session Hijacking\n\n* **Definition:** A spoofing attack where an attacker steals or guesses a valid session token to take over an already-authenticated user's session without needing their credentials.\n\nMethods include cookie theft and session prediction (exploiting non-random, predictable token generation schemes).\n\n### Session Prediction\n\n* **Definition:** A form of spoofing attack where the attacker attempts to predict a session token (generated by a non-random algorithm) in order to hijack an existing authenticated session.\n\nPrevention: generate session tokens using truly random, non-predictable algorithms; tokens should be one-time-use for each session and reveal no client information.\n\n---"
+      },
+      {
+        "name": "Cross-Site Request Forgery (XSRF / CSRF)",
+        "definition": "A web exploit where a malicious script on an attacker's site exploits an existing authenticated session in the victim's browser to send unauthorized HTTP requests to a target website, causing actions to be performed without the victim's knowledge or consent.",
+        "analogy": "*Es como si alguien viera que tienes las manos ocupadas en el banco y aprovechara para hacer una firma falsa en tu nombre. El banco cree que eres tú porque ya estabas autenticado.*",
+        "tables": [
+          {
+            "headers": [
+              "Defense",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**User-specific anti-CSRF tokens** in all form submissions",
+                "Developers embed unique tokens that the attacker cannot predict"
+              ],
+              [
+                "**Randomized prompts / 2FA** for password resets",
+                "Attacker cannot bypass the additional verification step"
+              ],
+              [
+                "**Require current password** to change password or email",
+                "Blocks most XSRF attempts to take over accounts"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Have a feature that could lead to unauthorized access (e.g., password reset)",
+          "Rely on cookies for authentication",
+          "Use predictable patterns for session management"
+        ],
+        "raw_content": "* **Definition:** A web exploit where a malicious script on an attacker's site exploits an existing authenticated session in the victim's browser to send unauthorized HTTP requests to a target website, causing actions to be performed without the victim's knowledge or consent.\n\n> *Es como si alguien viera que tienes las manos ocupadas en el banco y aprovechara para hacer una firma falsa en tu nombre. El banco cree que eres tú porque ya estabas autenticado.*\n\nFor XSRF to work, the target site must:\n\n- Have a feature that could lead to unauthorized access (e.g., password reset)\n- Rely on cookies for authentication\n- Use predictable patterns for session management\n\nThe scariest aspect: the victim does not need to click a link — the attack can be triggered by loading a page in an already-open browser tab.\n\n### XSRF Prevention\n\n| Defense                                                    | Description                                                     |\n| ---------------------------------------------------------- | --------------------------------------------------------------- |\n| **User-specific anti-CSRF tokens** in all form submissions | Developers embed unique tokens that the attacker cannot predict |\n| **Randomized prompts / 2FA** for password resets           | Attacker cannot bypass the additional verification step         |\n| **Require current password** to change password or email   | Blocks most XSRF attempts to take over accounts                 |\n\n⚠️ **Exam tip: If a scenario describes tricking a victim into unknowingly performing an action on a site (especially changing password or email), the answer is XSRF/CSRF.**\n\n---"
+      },
+      {
+        "name": "Buffer Overflow",
+        "definition": "A software vulnerability that occurs when a process writes more data to a memory buffer than the buffer was allocated to hold, potentially overwriting adjacent memory and allowing an attacker to execute arbitrary code or crash the program.",
+        "analogy": "*Es como intentar meter 20 vasos de agua en un vaso que solo aguanta 16 onzas: el agua que sobra se derrama sobre la mesa y arruina todo lo que está alrededor.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A software vulnerability that occurs when a process writes more data to a memory buffer than the buffer was allocated to hold, potentially overwriting adjacent memory and allowing an attacker to execute arbitrary code or crash the program.\n\n> *Es como intentar meter 20 vasos de agua en un vaso que solo aguanta 16 onzas: el agua que sobra se derrama sobre la mesa y arruina todo lo que está alrededor.*\n\n85% of data breaches have used buffer overflow attacks as the initial attack vector.\n\n### How a Buffer Overflow Works\n\nA program reserves a fixed-size block of memory (a **stack**) when it starts. The stack stores return addresses — pointers that tell the program where to go after a function completes.\n\nIf an attacker floods the buffer with more data than it can hold:\n\n1. The excess data overwrites adjacent memory, including the return address pointer\n2. The attacker redirects the return pointer to memory they control, where malicious code (e.g., `/bin/sh`) has been placed\n3. When the legitimate program hits the return pointer, it executes the attacker's code instead\n\nThis technique is called **\"Smashing the Stack.\"**\n\n### NOP Sled\n\n* **Definition:** A series of NOP (No Operation) instructions inserted before the malicious payload to increase the chance that the CPU lands on the attacker's code after the return pointer is overwritten — the CPU \"slides\" through the NOPs until it reaches the malicious instruction.\n\nA NOP instruction (`\\x90`) tells the CPU to do nothing and advance to the next instruction.\n\n### Buffer Overflow Mitigation: ASLR\n\n* **Definition:** Address Space Layout Randomization (ASLR) is a programming technique that randomizes the memory addresses used by well-known programs and OS components, making it difficult for an attacker to predict where the return pointer should redirect execution.\n\nIntroduced in Windows Vista. Attackers can attempt to bypass ASLR via side-channel attacks, but this requires significantly more sophistication.\n\n---"
+      },
+      {
+        "name": "Race Conditions",
+        "definition": "A software vulnerability that occurs when the outcome of execution depends on the order and timing of events, and those events fail to execute in the sequence intended by the developer — allowing an attacker to insert actions between critical operations.",
+        "analogy": "*Es como cuando dos personas intentan tomar el último asiento en el cine al mismo tiempo: si no hay un proceso claro para decidir quién llega primero, el sistema no sabe qué hacer y puede tomar la decisión equivocada.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A software vulnerability that occurs when the outcome of execution depends on the order and timing of events, and those events fail to execute in the sequence intended by the developer — allowing an attacker to insert actions between critical operations.\n\n> *Es como cuando dos personas intentan tomar el último asiento en el cine al mismo tiempo: si no hay un proceso claro para decidir quién llega primero, el sistema no sabe qué hacer y puede tomar la decisión equivocada.*\n\nRace conditions are difficult to detect because they often occur outside of normally logged processes.\n\n### Race Condition: Time-of-Check (TOC)\n\n* **Definition:** A race condition where an attacker manipulates the state of a system resource (file, database record) after the application has already checked it but before the application acts on the result of that check.\n\nExample: an app checks if a user has sufficient funds for a transfer, but the attacker initiates multiple concurrent transfers in the gap between the check and the actual debit — overdrawing the account.\n\n### Race Condition: Time-of-Use (TOU)\n\n* **Definition:** A race condition where an attacker changes the state of a resource between the time it is checked and the time it is actually used — focusing on the use phase rather than the check phase.\n\n⚠️ **TOC and TOU are not independent vulnerabilities — they are two critical moments within the same race condition vulnerability, collectively called TOC/TOU.**\n\n### Race Condition: Time-of-Evaluation (TOE)\n\n* **Definition:** A race condition where an attacker manipulates the inputs or resources used during a decision-making or evaluation window, causing the system to reach an incorrect conclusion based on tampered data.\n\nExample: manipulating inputs to a calculation during the evaluation phase to produce an incorrect result that benefits the attacker.\n\n### Race Condition Mitigation: Mutexes and Locks\n\n* **Definition:** A mutex (mutually exclusive flag) is a synchronization mechanism that restricts a section of code to one thread at a time, preventing concurrent execution that would create a race condition.\n\nMost databases and file systems support resource locking. Example: SharePoint locks a file for editing by one user, preventing concurrent modifications.\n\n### Race Condition Risk: Deadlock\n\n* **Definition:** A condition where two or more processes are each waiting for the other to release a locked resource, creating a circular dependency that prevents any progress until external intervention removes the lock.\n\nDeadlocks are a side effect of improper mutex/lock design. Proper testing of lock logic is essential to prevent them.\n\n### The Dirty COW Exploit (Real-World Race Condition Example)\n\nA famous 2016 race condition exploit targeting Linux and Android. COW = Copy On Write. The exploit used timing to turn a read-only memory mapping into a writable one via the kernel's copy-on-write mechanism — enabling local privilege escalation without leaving log traces.\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "Vulnerability: A weakness or flaw in hardware, software, configuration, or process that can be exploited",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Vulnerability**",
+                "A weakness or flaw in hardware, software, configuration, or process that can be exploited"
+              ],
+              [
+                "**Attack**",
+                "A deliberate action by a threat actor to exploit a vulnerability"
+              ],
+              [
+                "**Firmware**",
+                "Low-level software stored on hardware devices providing hardware control"
+              ],
+              [
+                "**End of Life (EOL)**",
+                "Product that no longer receives vendor updates or support"
+              ],
+              [
+                "**Zero-Day**",
+                "Vulnerability/exploit discovered and used before the vendor can issue a patch"
+              ],
+              [
+                "**Sideloading**",
+                "Installing mobile apps from unofficial sources outside the official app store"
+              ],
+              [
+                "**Jailbreaking / Rooting**",
+                "Escalating device permissions to bypass manufacturer security controls"
+              ],
+              [
+                "**MDM**",
+                "Mobile Device Management — centralized control of mobile device security policies"
+              ],
+              [
+                "**SQL Injection**",
+                "Inserting malicious SQL into input fields to manipulate database queries"
+              ],
+              [
+                "**Input Validation**",
+                "Filtering and sanitizing user input to prevent injection attacks"
+              ],
+              [
+                "**XML Injection**",
+                "Inserting malicious XML code to exploit XML-driven application parsers"
+              ],
+              [
+                "**XML Bomb**",
+                "XML entity expansion attack that consumes memory to cause DoS"
+              ],
+              [
+                "**XXE**",
+                "XML External Entity — embeds file read requests within XML payloads"
+              ],
+              [
+                "**XSS**",
+                "Cross-Site Scripting — injecting malicious scripts into trusted websites"
+              ],
+              [
+                "**Persistent XSS**",
+                "XSS where malicious code is stored in the site's database"
+              ],
+              [
+                "**Reflected XSS**",
+                "Non-persistent XSS triggered by clicking a crafted URL"
+              ],
+              [
+                "**DOM XSS**",
+                "XSS that manipulates the browser's Document Object Model client-side"
+              ],
+              [
+                "**XSRF / CSRF**",
+                "Cross-Site Request Forgery — exploiting an authenticated session to perform unauthorized actions"
+              ],
+              [
+                "**Session Cookie**",
+                "Non-persistent cookie stored in memory for the duration of a browser session"
+              ],
+              [
+                "**Session Hijacking**",
+                "Stealing or guessing a session token to take over an authenticated session"
+              ],
+              [
+                "**Session Prediction**",
+                "Guessing a predictable session token to hijack a session"
+              ],
+              [
+                "**Buffer Overflow**",
+                "Writing more data to a memory buffer than it can hold to execute arbitrary code"
+              ],
+              [
+                "**Stack**",
+                "Reserved memory area where programs store return addresses for function calls"
+              ],
+              [
+                "**NOP Sled**",
+                "Series of no-operation instructions that slide CPU execution toward attacker's malicious code"
+              ],
+              [
+                "**ASLR**",
+                "Address Space Layout Randomization — randomizes memory addresses to prevent buffer overflow exploitation"
+              ],
+              [
+                "**Race Condition**",
+                "Vulnerability where outcome depends on timing/order of events failing to execute as intended"
+              ],
+              [
+                "**TOC**",
+                "Time-of-Check — attacker manipulates resource after check but before action"
+              ],
+              [
+                "**TOU**",
+                "Time-of-Use — attacker manipulates resource between check and use"
+              ],
+              [
+                "**TOE**",
+                "Time-of-Evaluation — attacker manipulates inputs during a decision-making window"
+              ],
+              [
+                "**Mutex**",
+                "Mutually Exclusive flag that restricts code section to one thread at a time"
+              ],
+              [
+                "**Deadlock**",
+                "Circular dependency where processes wait on each other's locks indefinitely"
+              ],
+              [
+                "**WAF**",
+                "Web Application Firewall — filters malicious requests between client and web server"
+              ],
+              [
+                "**Bluejacking**",
+                "Sending unsolicited Bluetooth messages to nearby devices"
+              ],
+              [
+                "**Bluesnarfing**",
+                "Unauthorized data theft via Bluetooth connection"
+              ],
+              [
+                "**Bluebugging**",
+                "Full Bluetooth takeover — attacker controls calls, messages, and Internet access"
+              ],
+              [
+                "**Bluesmack**",
+                "Bluetooth denial-of-service attack via data flooding"
+              ],
+              [
+                "**Blueborne**",
+                "Airborne Bluetooth attack spreading device-to-device without user interaction"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term                       | Definition                                                                                               |\n| -------------------------- | -------------------------------------------------------------------------------------------------------- |\n| **Vulnerability**          | A weakness or flaw in hardware, software, configuration, or process that can be exploited                |\n| **Attack**                 | A deliberate action by a threat actor to exploit a vulnerability                                         |\n| **Firmware**               | Low-level software stored on hardware devices providing hardware control                                 |\n| **End of Life (EOL)**      | Product that no longer receives vendor updates or support                                                |\n| **Zero-Day**               | Vulnerability/exploit discovered and used before the vendor can issue a patch                            |\n| **Sideloading**            | Installing mobile apps from unofficial sources outside the official app store                            |\n| **Jailbreaking / Rooting** | Escalating device permissions to bypass manufacturer security controls                                   |\n| **MDM**                    | Mobile Device Management — centralized control of mobile device security policies                        |\n| **SQL Injection**          | Inserting malicious SQL into input fields to manipulate database queries                                 |\n| **Input Validation**       | Filtering and sanitizing user input to prevent injection attacks                                         |\n| **XML Injection**          | Inserting malicious XML code to exploit XML-driven application parsers                                   |\n| **XML Bomb**               | XML entity expansion attack that consumes memory to cause DoS                                            |\n| **XXE**                    | XML External Entity — embeds file read requests within XML payloads                                      |\n| **XSS**                    | Cross-Site Scripting — injecting malicious scripts into trusted websites                                 |\n| **Persistent XSS**         | XSS where malicious code is stored in the site's database                                                |\n| **Reflected XSS**          | Non-persistent XSS triggered by clicking a crafted URL                                                   |\n| **DOM XSS**                | XSS that manipulates the browser's Document Object Model client-side                                     |\n| **XSRF / CSRF**            | Cross-Site Request Forgery — exploiting an authenticated session to perform unauthorized actions         |\n| **Session Cookie**         | Non-persistent cookie stored in memory for the duration of a browser session                             |\n| **Session Hijacking**      | Stealing or guessing a session token to take over an authenticated session                               |\n| **Session Prediction**     | Guessing a predictable session token to hijack a session                                                 |\n| **Buffer Overflow**        | Writing more data to a memory buffer than it can hold to execute arbitrary code                          |\n| **Stack**                  | Reserved memory area where programs store return addresses for function calls                            |\n| **NOP Sled**               | Series of no-operation instructions that slide CPU execution toward attacker's malicious code            |\n| **ASLR**                   | Address Space Layout Randomization — randomizes memory addresses to prevent buffer overflow exploitation |\n| **Race Condition**         | Vulnerability where outcome depends on timing/order of events failing to execute as intended             |\n| **TOC**                    | Time-of-Check — attacker manipulates resource after check but before action                              |\n| **TOU**                    | Time-of-Use — attacker manipulates resource between check and use                                        |\n| **TOE**                    | Time-of-Evaluation — attacker manipulates inputs during a decision-making window                         |\n| **Mutex**                  | Mutually Exclusive flag that restricts code section to one thread at a time                              |\n| **Deadlock**               | Circular dependency where processes wait on each other's locks indefinitely                              |\n| **WAF**                    | Web Application Firewall — filters malicious requests between client and web server                      |\n| **Bluejacking**            | Sending unsolicited Bluetooth messages to nearby devices                                                 |\n| **Bluesnarfing**           | Unauthorized data theft via Bluetooth connection                                                         |\n| **Bluebugging**            | Full Bluetooth takeover — attacker controls calls, messages, and Internet access                         |\n| **Bluesmack**              | Bluetooth denial-of-service attack via data flooding                                                     |\n| **Blueborne**              | Airborne Bluetooth attack spreading device-to-device without user interaction                            |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Vulnerabilities and Attacks — Overview",
+        "definition": "Vulnerabilities are weaknesses or flaws in hardware, software, configurations, or processes that can be exploited; attacks are deliberate actions by threat actors that exploit those vulnerabilities to cause unauthorized access, data theft, malware infection, denial of service, or other harm.",
+        "analogy": "*Es como una ciudad medieval: las vulnerabilidades son las grietas en la muralla, y los ataques son los ejércitos que buscan activamente esas grietas para entrar. Sin murallas sólidas y bien mantenidas, la ciudad cae.*",
+        "raw_content": "* **Definition:** Vulnerabilities are weaknesses or flaws in hardware, software, configurations, or processes that can be exploited; attacks are deliberate actions by threat actors that exploit those vulnerabilities to cause unauthorized access, data theft, malware infection, denial of service, or other harm.\n\nThis section covers Security+ objectives 2.2, 2.3, 2.4, 2.5, and 4.1, addressing common threat vectors, vulnerability types, indicators of malicious activity, mitigation techniques, and security techniques applied to computing resources.\n\n> *Es como una ciudad medieval: las vulnerabilidades son las grietas en la muralla, y los ataques son los ejércitos que buscan activamente esas grietas para entrar. Sin murallas sólidas y bien mantenidas, la ciudad cae.*\n\n---"
+      },
+      {
+        "name": "Hardware Vulnerabilities",
+        "definition": "Security flaws or weaknesses inherent in a device's physical components or design that can be exploited to compromise the integrity, confidentiality, or availability of the system and its data.",
+        "analogy": "*Es como un edificio con defectos de construcción: no importa cuántas cerraduras pongas en las puertas, si los cimientos están mal hechos, el edificio es vulnerable. El fabricante del edificio no está disponible para arreglarlo.*",
+        "raw_content": "* **Definition:** Security flaws or weaknesses inherent in a device's physical components or design that can be exploited to compromise the integrity, confidentiality, or availability of the system and its data.\n\nHardware vulnerabilities affect all device types: servers, workstations, laptops, switches, routers, network appliances, mobile devices, and IoT devices.\n\n> *Es como un edificio con defectos de construcción: no importa cuántas cerraduras pongas en las puertas, si los cimientos están mal hechos, el edificio es vulnerable. El fabricante del edificio no está disponible para arreglarlo.*"
+      },
+      {
+        "name": "Hardware Vulnerabilities: Firmware",
+        "definition": "A specialized form of software stored on a hardware device (router, thermostat, etc.) that provides low-level control of the device's hardware and is vulnerable when developed without security in mind, using outdated practices, or left unpatched.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A specialized form of software stored on a hardware device (router, thermostat, etc.) that provides low-level control of the device's hardware and is vulnerable when developed without security in mind, using outdated practices, or left unpatched.\n\nFirmware vulnerabilities are especially dangerous because firmware often has privileged access to the system, giving an attacker who exploits firmware full control over device behavior. Firmware updates are frequently overlooked during routine maintenance, creating persistent vulnerabilities. Mitigation: regular firmware updates, security auditing, and device hardening."
+      },
+      {
+        "name": "Hardware Vulnerabilities: End of Life, Legacy, and Unsupported Systems",
+        "definition": "Hardware or software that no longer receives updates, patches, or official vendor support — leaving any existing security flaws permanently unaddressed.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Hardware or software that no longer receives updates, patches, or official vendor support — leaving any existing security flaws permanently unaddressed.\n\nThese three terms are often used interchangeably:\n\n- **End of Life (EOL):** Product has reached end of its lifecycle; vendor no longer provides updates or enhancements.\n- **Legacy systems:** Outdated technologies still in use but superseded by newer alternatives.\n- **Unsupported systems:** No longer receive official technical support, security updates, or patches.\n\nKnown vulnerabilities in these systems will never be patched, leaving them permanently exploitable by existing exploits."
+      },
+      {
+        "name": "Hardware Vulnerabilities: Unpatched Systems",
+        "definition": "A device, application, or piece of software that has not been updated with the latest security patches, leaving it vulnerable to known exploits and attacks.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A device, application, or piece of software that has not been updated with the latest security patches, leaving it vulnerable to known exploits and attacks.\n\nUnpatched systems result from oversight, negligence, or challenges in deploying updates at enterprise scale. Mitigation requires a formal **patch management process**: monitoring for updates, assessing patch relevance and impact, and deploying patches in a timely manner."
+      },
+      {
+        "name": "Hardware Vulnerabilities: Hardware Misconfigurations",
+        "definition": "A condition where a device's settings, parameters, or options are not optimally set up, creating vulnerabilities, performance degradation, or unintended device behavior.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A condition where a device's settings, parameters, or options are not optimally set up, creating vulnerabilities, performance degradation, or unintended device behavior.\n\nMisconfigurations arise from default settings left unchanged, unnecessary services left enabled, or security features accidentally disabled. Mitigation: regular audits, configuration management practices, automated misconfiguration detection tools, and personnel training on correct configuration protocols."
+      },
+      {
+        "name": "Hardware Vulnerability Mitigations",
+        "definition": "The set of countermeasures applied to reduce or eliminate hardware vulnerabilities across devices and systems.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The set of countermeasures applied to reduce or eliminate hardware vulnerabilities across devices and systems.\n\n| Mitigation                    | Description                                                                                                              |\n| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |\n| **Hardening**                 | Closing unnecessary ports, disabling unused services, setting proper permissions on firmware, applications, and hardware |\n| **Patching**                  | Regularly updating software, firmware, and applications with the latest security patches                                 |\n| **Configuration Enforcement** | Ensuring all devices adhere to a standard secure baseline configuration                                                  |\n| **Decommissioning**           | Retiring and removing EOL/legacy systems from the network when they pose unacceptable security risk                      |\n| **Isolation**                 | Separating legacy or vulnerable systems from the enterprise network to limit breach impact                               |\n| **Segmentation**              | Dividing the network into segments so a breach in one area does not compromise the entire enterprise                     |\n\n---"
+      },
+      {
+        "name": "Bluetooth Vulnerabilities and Attacks",
+        "definition": "Security weaknesses and deliberate exploits targeting the Bluetooth wireless protocol, which enables short-range data exchange between devices without an Internet connection.",
+        "analogy": "*Es como hablar en voz alta en un lugar público: cualquiera que esté cerca puede escuchar tu conversación si no tomas las precauciones adecuadas para proteger lo que dices.*",
+        "raw_content": "* **Definition:** Security weaknesses and deliberate exploits targeting the Bluetooth wireless protocol, which enables short-range data exchange between devices without an Internet connection.\n\n> *Es como hablar en voz alta en un lugar público: cualquiera que esté cerca puede escuchar tu conversación si no tomas las precauciones adecuadas para proteger lo que dices.*"
+      },
+      {
+        "name": "Bluetooth Vulnerabilities: Insecure Pairing",
+        "definition": "A condition where Bluetooth devices establish a connection without proper authentication or using weak authentication methods, leaving them vulnerable to unauthorized access or interference.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A condition where Bluetooth devices establish a connection without proper authentication or using weak authentication methods, leaving them vulnerable to unauthorized access or interference.\n\nSome Bluetooth devices require no authentication at all; others use weak methods during pairing that are susceptible to exploitation."
+      },
+      {
+        "name": "Bluetooth Vulnerabilities: Device Spoofing",
+        "definition": "An attack where an attacker impersonates a legitimate Bluetooth device by mimicking its MAC address and device name to deceive a user into connecting to a malicious device instead.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack where an attacker impersonates a legitimate Bluetooth device by mimicking its MAC address and device name to deceive a user into connecting to a malicious device instead."
+      },
+      {
+        "name": "Bluetooth Vulnerabilities: On-Path Attack",
+        "definition": "An attack that exploits a vulnerability in the Bluetooth communications protocol to intercept and alter communications between two Bluetooth devices without either party being aware.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack that exploits a vulnerability in the Bluetooth communications protocol to intercept and alter communications between two Bluetooth devices without either party being aware."
+      },
+      {
+        "name": "Bluetooth Attack: Bluejacking",
+        "definition": "An attack where an attacker sends unsolicited messages to a Bluetooth-enabled device, often as a prank or to probe device visibility, without causing serious harm or accessing data.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack where an attacker sends unsolicited messages to a Bluetooth-enabled device, often as a prank or to probe device visibility, without causing serious harm or accessing data."
+      },
+      {
+        "name": "Bluetooth Attack: Bluesnarfing",
+        "definition": "An attack involving unauthorized access to a device through its Bluetooth connection to steal information such as contacts, call logs, and text messages.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack involving unauthorized access to a device through its Bluetooth connection to steal information such as contacts, call logs, and text messages."
+      },
+      {
+        "name": "Bluetooth Attack: Bluebugging",
+        "definition": "An attack that goes beyond Bluesnarfing by allowing the attacker to take full control of a device's Bluetooth functions, potentially making calls, sending messages, or accessing the Internet from the victim's device.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack that goes beyond Bluesnarfing by allowing the attacker to take full control of a device's Bluetooth functions, potentially making calls, sending messages, or accessing the Internet from the victim's device."
+      },
+      {
+        "name": "Bluetooth Attack: Bluesmack",
+        "definition": "A Bluetooth denial-of-service attack where an attacker overwhelms a device by sending a large amount of data, causing it to crash or become unresponsive.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A Bluetooth denial-of-service attack where an attacker overwhelms a device by sending a large amount of data, causing it to crash or become unresponsive."
+      },
+      {
+        "name": "Bluetooth Attack: Blueborne",
+        "definition": "An airborne Bluetooth attack that can spread through the air to infect numerous devices within seconds without requiring any user interaction or the target device to be in discoverable mode.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An airborne Bluetooth attack that can spread through the air to infect numerous devices within seconds without requiring any user interaction or the target device to be in discoverable mode."
+      },
+      {
+        "name": "Bluetooth Security Best Practices",
+        "definition": "Recommended behaviors and configurations that minimize exposure to Bluetooth-based attacks.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Recommended behaviors and configurations that minimize exposure to Bluetooth-based attacks.\n\n| Practice                                       | Why It Matters                                                       |\n| ---------------------------------------------- | -------------------------------------------------------------------- |\n| Turn off Bluetooth when not in use             | Reduces attack surface to zero                                       |\n| Set devices to non-discoverable by default     | Prevents unknown devices from finding and initiating connections     |\n| Regularly update firmware                      | Patches known Bluetooth vulnerabilities                              |\n| Only pair with known and trusted devices       | Eliminates risk of connecting to malicious devices                   |\n| Use unique PINs or passkeys during pairing     | Adds authentication layer against unauthorized pairing               |\n| Be cautious of unsolicited connection requests | Unsolicited requests may carry malware (e.g., AirDrop-style attacks) |\n| Use encryption for sensitive data transfers    | Ensures intercepted data remains unreadable                          |\n\n---"
+      },
+      {
+        "name": "Mobile Vulnerabilities and Attacks",
+        "definition": "Security weaknesses specific to mobile devices (smartphones, tablets, wearables) arising from software installation practices, device privilege escalation, and insecure wireless connection methods.",
+        "analogy": "*Es como un carro con el seguro roto: los fabricantes construyen sistemas de seguridad integrados, pero si los desactivas o conectas el carro a redes no confiables, estás dejando la puerta abierta para que te lo roben.*",
+        "raw_content": "* **Definition:** Security weaknesses specific to mobile devices (smartphones, tablets, wearables) arising from software installation practices, device privilege escalation, and insecure wireless connection methods.\n\n> *Es como un carro con el seguro roto: los fabricantes construyen sistemas de seguridad integrados, pero si los desactivas o conectas el carro a redes no confiables, estás dejando la puerta abierta para que te lo roben.*"
+      },
+      {
+        "name": "Mobile Vulnerability: Sideloading",
+        "definition": "The practice of installing applications on a mobile device from unofficial sources outside the device's official app store, bypassing the store's security review process.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The practice of installing applications on a mobile device from unofficial sources outside the device's official app store, bypassing the store's security review process.\n\nSideloaded apps are not scanned or verified by the platform's submission process, making them a common delivery vehicle for malware. Mitigation: always download apps from official stores (App Store, Google Play) that enforce strict review processes."
+      },
+      {
+        "name": "Mobile Vulnerability: Jailbreaking and Rooting",
+        "definition": "The process of escalating user permissions on a mobile device (jailbreaking on iOS, rooting on Android) to circumvent built-in security measures provided by the manufacturer.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The process of escalating user permissions on a mobile device (jailbreaking on iOS, rooting on Android) to circumvent built-in security measures provided by the manufacturer.\n\nWhile enabling greater device customization, jailbreaking/rooting prevents installation of manufacturer security updates, leaving the device permanently exposed to newly discovered exploits. Mitigation: keep the device's original security settings intact.\n\n⚠️ **Rooted/jailbroken devices cannot receive OEM security updates — every new CVE disclosed after rooting becomes a permanent vulnerability.**"
+      },
+      {
+        "name": "Mobile Vulnerability: Insecure Connection Methods",
+        "definition": "The use of open or insufficiently protected Wi-Fi and Bluetooth connections that expose mobile devices to eavesdropping, on-path attacks, and unauthorized data access.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The use of open or insufficiently protected Wi-Fi and Bluetooth connections that expose mobile devices to eavesdropping, on-path attacks, and unauthorized data access.\n\nMitigation options:\n\n- Prefer cellular data over open Wi-Fi\n- When using Wi-Fi, require robust authentication (strong password or 802.1x)\n- Connect over Bluetooth only to known devices; keep device non-discoverable when not pairing"
+      },
+      {
+        "name": "Mobile Device Management (MDM)",
+        "definition": "A specialized solution used to minimize mobile security risk through centralized patch management, device configuration enforcement, and best-practice policy enforcement across an organization's mobile fleet.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A specialized solution used to minimize mobile security risk through centralized patch management, device configuration enforcement, and best-practice policy enforcement across an organization's mobile fleet.\n\n| MDM Capability           | Security Function                                                                |\n| ------------------------ | -------------------------------------------------------------------------------- |\n| Regular patching         | Pushes security updates to all devices automatically                             |\n| Configuration management | Enforces standardized secure baseline on every device                            |\n| Sideloading prevention   | Disables the ability to install apps from unofficial sources                     |\n| Jailbreak/root detection | Identifies and flags compromised devices                                         |\n| VPN enforcement          | Forces encrypted tunnel when connecting to corporate data over Wi-Fi or cellular |\n\n---"
+      },
+      {
+        "name": "Zero-Day Vulnerabilities",
+        "definition": "A vulnerability in software or hardware that is discovered and exploited by threat actors before the vendor or developer has had the opportunity to release a patch or fix for it — literally zero days old because it is newly discovered and unaddressed.",
+        "analogy": "*Es como una entrada secreta a un banco que solo el ladrón conoce. La dirección del banco ni siquiera sabe que esa puerta existe, por lo que no pueden cerrarla ni reforzarla.*",
+        "raw_content": "* **Definition:** A vulnerability in software or hardware that is discovered and exploited by threat actors before the vendor or developer has had the opportunity to release a patch or fix for it — literally zero days old because it is newly discovered and unaddressed.\n\n> *Es como una entrada secreta a un banco que solo el ladrón conoce. La dirección del banco ni siquiera sabe que esa puerta existe, por lo que no pueden cerrarla ni reforzarla.*\n\nA **zero-day exploit** is the malicious code or attack technique that takes advantage of a zero-day vulnerability. A **zero-day attack** is when that exploit is deployed against a target. The term \"zero-day\" is used interchangeably for the vulnerability, the exploit, and the malware.\n\n⚠️ **Traditional antivirus and anti-malware cannot detect zero-day exploits because no signatures exist yet for a brand-new, never-before-seen attack.**"
+      },
+      {
+        "name": "Operating System Vulnerabilities",
+        "definition": "Security weaknesses in an operating system arising from missing patches, unknown flaws, configuration errors, data exfiltration risks, and malicious update injection that can compromise device security and integrity.",
+        "analogy": "*El sistema operativo es como el sistema nervioso central de un edificio: controla todo. Si alguien encuentra una forma de manipularlo, puede controlar las luces, las cerraduras, las cámaras y los ascensores al mismo tiempo.*",
+        "raw_content": "* **Definition:** Security weaknesses in an operating system arising from missing patches, unknown flaws, configuration errors, data exfiltration risks, and malicious update injection that can compromise device security and integrity.\n\n> *El sistema operativo es como el sistema nervioso central de un edificio: controla todo. Si alguien encuentra una forma de manipularlo, puede controlar las luces, las cerraduras, las cámaras y los ascensores al mismo tiempo.*"
+      },
+      {
+        "name": "OS Vulnerability: Unpatched Systems",
+        "definition": "Operating systems that have not been updated with the latest security patches, leaving them susceptible to exploitation via known vulnerabilities matched with existing exploits.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Operating systems that have not been updated with the latest security patches, leaving them susceptible to exploitation via known vulnerabilities matched with existing exploits.\n\nMitigation: schedule automatic updates; periodically verify that the latest patches have been applied."
+      },
+      {
+        "name": "OS Vulnerability: Zero-Day",
+        "definition": "As applied to operating systems, a newly discovered vulnerability unknown to the OS developer for which no patch yet exists, giving defenders zero days to react.",
+        "analogy": "",
+        "raw_content": "* **Definition:** As applied to operating systems, a newly discovered vulnerability unknown to the OS developer for which no patch yet exists, giving defenders zero days to react.\n\nMitigation: implement a **host-based Intrusion Prevention System (IPS)** to detect and block suspicious activities; maintain strong defense-in-depth posture through frequent updates."
+      },
+      {
+        "name": "OS Vulnerability: Misconfigurations",
+        "definition": "Incorrectly configured OS settings — such as default settings left unchanged, unnecessary services left enabled, or security features accidentally disabled — that create exploitable weaknesses.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Incorrectly configured OS settings — such as default settings left unchanged, unnecessary services left enabled, or security features accidentally disabled — that create exploitable weaknesses.\n\nMitigation: deploy configuration management tools to standardize and automate configuration; conduct periodic audits."
+      },
+      {
+        "name": "OS Vulnerability: Data Exfiltration",
+        "definition": "Unauthorized transfer of data from within an organization to an external location, commonly achieved by exploiting an OS vulnerability to steal data without the organization's awareness.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Unauthorized transfer of data from within an organization to an external location, commonly achieved by exploiting an OS vulnerability to steal data without the organization's awareness.\n\nMitigation:\n\n- **Encryption of data at rest** — ensures stolen data is unreadable\n- **Endpoint protection tools** — monitor and restrict unauthorized data transfers\n- **Host-based firewall** — controls inbound/outbound traffic to prevent unauthorized data egress"
+      },
+      {
+        "name": "OS Vulnerability: Malicious Updates",
+        "definition": "A deceptive attack where a malicious update masquerades as a legitimate security patch but contains malicious code that injects malware or an exploit into the system upon installation.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A deceptive attack where a malicious update masquerades as a legitimate security patch but contains malicious code that injects malware or an exploit into the system upon installation.\n\nMitigation:\n\n- Source updates only from trusted vendors and official channels\n- Maintain **application allow listing** to permit only recognized safe applications\n- Verify update authenticity via **digital signature or hash** before installation\n\n---"
+      },
+      {
+        "name": "SQL Injection",
+        "definition": "A code injection attack where malicious SQL statements are inserted into input fields, URL parameters, cookies, or HTTP headers to manipulate a database-driven application's queries and gain unauthorized access, exfiltrate data, or modify/delete records.",
+        "analogy": "*Es como si pudieras deslizar una nota extra en el pedido de un restaurante que dice \"y también dame todas las recetas de la cocina\" y el mesero la pasara literalmente a la cocina sin leerla.*",
+        "raw_content": "* **Definition:** A code injection attack where malicious SQL statements are inserted into input fields, URL parameters, cookies, or HTTP headers to manipulate a database-driven application's queries and gain unauthorized access, exfiltrate data, or modify/delete records.\n\n> *Es como si pudieras deslizar una nota extra en el pedido de un restaurante que dice \"y también dame todas las recetas de la cocina\" y el mesero la pasara literalmente a la cocina sin leerla.*"
+      },
+      {
+        "name": "SQL Injection: Prevention",
+        "definition": "Input validation and sanitization are the primary defenses against SQL injection, filtering out special characters (apostrophes, SQL keywords) before user input reaches the database.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Input validation and sanitization are the primary defenses against SQL injection, filtering out special characters (apostrophes, SQL keywords) before user input reaches the database.\n\n| Defense                             | Description                                                                                                    |\n| ----------------------------------- | -------------------------------------------------------------------------------------------------------------- |\n| **Input validation / sanitization** | Filter and reject malicious characters before they reach the database query                                    |\n| **Web Application Firewall (WAF)**  | Placed between client and web server; performs input sanitization even if application code cannot be rewritten |\n\n⚠️ **Exam tip: \"How do you prevent SQL injection?\" → Input validation. Always.**\n\n---"
+      },
+      {
+        "name": "XML Injection",
+        "definition": "An attack technique where malicious XML (Extensible Markup Language) code is inserted into input fields to manipulate or exploit an XML-driven application's parsing mechanisms, potentially leading to unauthorized access, data exposure, or denial of service.",
+        "analogy": "*Es como meter una instrucción falsa dentro de un formulario de pedidos de una empresa que usa formularios en papel. Si nadie valida el formulario antes de procesarlo, la instrucción falsa se ejecuta como si fuera legítima.*",
+        "raw_content": "* **Definition:** An attack technique where malicious XML (Extensible Markup Language) code is inserted into input fields to manipulate or exploit an XML-driven application's parsing mechanisms, potentially leading to unauthorized access, data exposure, or denial of service.\n\n> *Es como meter una instrucción falsa dentro de un formulario de pedidos de una empresa que usa formularios en papel. Si nadie valida el formulario antes de procesarlo, la instrucción falsa se ejecuta como si fuera legítima.*\n\nXML is used by web applications for authentication, authorization, and data exchange. XML data should always be sent inside an encrypted tunnel (TLS) and subjected to input validation before processing."
+      },
+      {
+        "name": "XML Attack: XML Bomb (Billion Laughs Attack)",
+        "definition": "An XML attack where entities are encoded to reference each other exponentially, causing the XML parser to expand them to enormous sizes that consume server memory and cause a crash or denial of service.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An XML attack where entities are encoded to reference each other exponentially, causing the XML parser to expand them to enormous sizes that consume server memory and cause a crash or denial of service.\n\nThe attack is named \"billion laughs\" because the referenced entities are typically named `lol1` through `lol9`, each referencing the previous 10 times, creating a factorial explosion (~1 billion `lol` strings) from a tiny file. A simple file can consume up to 3 GB of memory."
+      },
+      {
+        "name": "XML Attack: XML External Entity (XXE)",
+        "definition": "An XML injection attack that embeds a request for a local system resource (such as a sensitive file) within the XML payload, causing the XML parser to read and return that file's contents to the attacker.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An XML injection attack that embeds a request for a local system resource (such as a sensitive file) within the XML payload, causing the XML parser to read and return that file's contents to the attacker.\n\nExample: an XXE payload referencing `/etc/shadow` (Linux password hashes) would cause the server to read and return those hashes.\n\n⚠️ **Exam tip: Any code block in XML format appearing in a log or question is almost certainly an XML injection. XML looks like HTML but uses custom, user-defined tag names (not predefined HTML keywords like `<font>` or `<img>`).**"
+      },
+      {
+        "name": "Cross-Site Scripting (XSS)",
+        "definition": "A web security vulnerability where a malicious script is injected into a trusted website and served to other users, executing in their browsers at the trust level of the trusted site — bypassing the browser's security model.",
+        "analogy": "*Es como si un actor malicioso pudiera poner su propio letrero en la fachada de un banco reconocido. Los clientes ven el letrero del banco confiable, pero el mensaje es del atacante.*",
+        "raw_content": "* **Definition:** A web security vulnerability where a malicious script is injected into a trusted website and served to other users, executing in their browsers at the trust level of the trusted site — bypassing the browser's security model.\n\n> *Es como si un actor malicioso pudiera poner su propio letrero en la fachada de un banco reconocido. Los clientes ven el letrero del banco confiable, pero el mensaje es del atacante.*\n\nXSS relies on a trusted website failing to conduct proper input validation on user-generated content."
+      },
+      {
+        "name": "XSS Type: Reflected (Non-Persistent)",
+        "definition": "An XSS attack where the injected script is reflected off the web server in response to a specific crafted URL click — it occurs once per click and does not persist in the site's database.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An XSS attack where the injected script is reflected off the web server in response to a specific crafted URL click — it occurs once per click and does not persist in the site's database.\n\nExample payload embedded in URL: `<script type=\"application/javascript\">alert('xss')</script>`"
+      },
+      {
+        "name": "XSS Type: Persistent (Stored)",
+        "definition": "An XSS attack where malicious code is stored in the website's backend database, automatically executing for every user who loads the affected page without requiring any link click.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An XSS attack where malicious code is stored in the website's backend database, automatically executing for every user who loads the affected page without requiring any link click.\n\nMore dangerous than reflected XSS because no user action (beyond visiting the page) is required."
+      },
+      {
+        "name": "XSS Type: DOM-Based",
+        "definition": "A client-side XSS attack that exploits the Document Object Model (DOM) in the victim's browser, modifying page content and layout using client-side scripts rather than exploiting the server.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A client-side XSS attack that exploits the Document Object Model (DOM) in the victim's browser, modifying page content and layout using client-side scripts rather than exploiting the server.\n\nIndicator: payloads referencing `document.cookie`, `document.write`, or `document.location` — the word `document` signals DOM manipulation.\n\nExample: `diontraining.com/index.html#default=<script>alert(document.cookie)</script>`\n\nThis executes at the logged-in user's local permission level, making it especially dangerous if an administrator triggers it.\n\n⚠️ **Exam tip: Any URL or log snippet containing `<script>` or JavaScript code → XSS attack. Contains `document.something` → DOM-based XSS specifically.**"
+      },
+      {
+        "name": "Session Management and Cookies",
+        "definition": "Session management is the mechanism by which web applications uniquely identify and track individual authenticated users across multiple actions and requests, commonly implemented via cookies stored on the client device.",
+        "analogy": "*Es como el brazalete que te dan en un parque de diversiones: el parque sabe que pagaste y puedes entrar a las atracciones sin pagar cada vez. Si alguien te roba el brazalete, puede entrar como si fuera tú.*",
+        "raw_content": "* **Definition:** Session management is the mechanism by which web applications uniquely identify and track individual authenticated users across multiple actions and requests, commonly implemented via cookies stored on the client device.\n\n> *Es como el brazalete que te dan en un parque de diversiones: el parque sabe que pagaste y puedes entrar a las atracciones sin pagar cada vez. Si alguien te roba el brazalete, puede entrar como si fuera tú.*\n\nHTTP is a stateless protocol — by default, web servers preserve no information between requests. Cookies solve this by storing session state on the client.\n\n| Cookie Type                         | Description                                                     |\n| ----------------------------------- | --------------------------------------------------------------- |\n| **Session (non-persistent) cookie** | Resides in memory; deleted when the browser session ends        |\n| **Persistent cookie**               | Stored in browser cache until deleted by the user or it expires |\n\nCookies must be encrypted and secured because they can contain sensitive session information."
+      },
+      {
+        "name": "Session Hijacking",
+        "definition": "A spoofing attack where an attacker steals or guesses a valid session token to take over an already-authenticated user's session without needing their credentials.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A spoofing attack where an attacker steals or guesses a valid session token to take over an already-authenticated user's session without needing their credentials.\n\nMethods include cookie theft and session prediction (exploiting non-random, predictable token generation schemes)."
+      },
+      {
+        "name": "Session Prediction",
+        "definition": "A form of spoofing attack where the attacker attempts to predict a session token (generated by a non-random algorithm) in order to hijack an existing authenticated session.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A form of spoofing attack where the attacker attempts to predict a session token (generated by a non-random algorithm) in order to hijack an existing authenticated session.\n\nPrevention: generate session tokens using truly random, non-predictable algorithms; tokens should be one-time-use for each session and reveal no client information.\n\n---"
+      },
+      {
+        "name": "Cross-Site Request Forgery (XSRF / CSRF)",
+        "definition": "A web exploit where a malicious script on an attacker's site exploits an existing authenticated session in the victim's browser to send unauthorized HTTP requests to a target website, causing actions to be performed without the victim's knowledge or consent.",
+        "analogy": "*Es como si alguien viera que tienes las manos ocupadas en el banco y aprovechara para hacer una firma falsa en tu nombre. El banco cree que eres tú porque ya estabas autenticado.*",
+        "raw_content": "* **Definition:** A web exploit where a malicious script on an attacker's site exploits an existing authenticated session in the victim's browser to send unauthorized HTTP requests to a target website, causing actions to be performed without the victim's knowledge or consent.\n\n> *Es como si alguien viera que tienes las manos ocupadas en el banco y aprovechara para hacer una firma falsa en tu nombre. El banco cree que eres tú porque ya estabas autenticado.*\n\nFor XSRF to work, the target site must:\n\n- Have a feature that could lead to unauthorized access (e.g., password reset)\n- Rely on cookies for authentication\n- Use predictable patterns for session management\n\nThe scariest aspect: the victim does not need to click a link — the attack can be triggered by loading a page in an already-open browser tab."
+      },
+      {
+        "name": "Buffer Overflow",
+        "definition": "A software vulnerability that occurs when a process writes more data to a memory buffer than the buffer was allocated to hold, potentially overwriting adjacent memory and allowing an attacker to execute arbitrary code or crash the program.",
+        "analogy": "*Es como intentar meter 20 vasos de agua en un vaso que solo aguanta 16 onzas: el agua que sobra se derrama sobre la mesa y arruina todo lo que está alrededor.*",
+        "raw_content": "* **Definition:** A software vulnerability that occurs when a process writes more data to a memory buffer than the buffer was allocated to hold, potentially overwriting adjacent memory and allowing an attacker to execute arbitrary code or crash the program.\n\n> *Es como intentar meter 20 vasos de agua en un vaso que solo aguanta 16 onzas: el agua que sobra se derrama sobre la mesa y arruina todo lo que está alrededor.*\n\n85% of data breaches have used buffer overflow attacks as the initial attack vector."
+      },
+      {
+        "name": "NOP Sled",
+        "definition": "A series of NOP (No Operation) instructions inserted before the malicious payload to increase the chance that the CPU lands on the attacker's code after the return pointer is overwritten — the CPU \"slides\" through the NOPs until it reaches the malicious instruction.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A series of NOP (No Operation) instructions inserted before the malicious payload to increase the chance that the CPU lands on the attacker's code after the return pointer is overwritten — the CPU \"slides\" through the NOPs until it reaches the malicious instruction.\n\nA NOP instruction (`\\x90`) tells the CPU to do nothing and advance to the next instruction."
+      },
+      {
+        "name": "Buffer Overflow Mitigation: ASLR",
+        "definition": "Address Space Layout Randomization (ASLR) is a programming technique that randomizes the memory addresses used by well-known programs and OS components, making it difficult for an attacker to predict where the return pointer should redirect execution.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Address Space Layout Randomization (ASLR) is a programming technique that randomizes the memory addresses used by well-known programs and OS components, making it difficult for an attacker to predict where the return pointer should redirect execution.\n\nIntroduced in Windows Vista. Attackers can attempt to bypass ASLR via side-channel attacks, but this requires significantly more sophistication.\n\n---"
+      },
+      {
+        "name": "Race Conditions",
+        "definition": "A software vulnerability that occurs when the outcome of execution depends on the order and timing of events, and those events fail to execute in the sequence intended by the developer — allowing an attacker to insert actions between critical operations.",
+        "analogy": "*Es como cuando dos personas intentan tomar el último asiento en el cine al mismo tiempo: si no hay un proceso claro para decidir quién llega primero, el sistema no sabe qué hacer y puede tomar la decisión equivocada.*",
+        "raw_content": "* **Definition:** A software vulnerability that occurs when the outcome of execution depends on the order and timing of events, and those events fail to execute in the sequence intended by the developer — allowing an attacker to insert actions between critical operations.\n\n> *Es como cuando dos personas intentan tomar el último asiento en el cine al mismo tiempo: si no hay un proceso claro para decidir quién llega primero, el sistema no sabe qué hacer y puede tomar la decisión equivocada.*\n\nRace conditions are difficult to detect because they often occur outside of normally logged processes."
+      },
+      {
+        "name": "Race Condition: Time-of-Check (TOC)",
+        "definition": "A race condition where an attacker manipulates the state of a system resource (file, database record) after the application has already checked it but before the application acts on the result of that check.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A race condition where an attacker manipulates the state of a system resource (file, database record) after the application has already checked it but before the application acts on the result of that check.\n\nExample: an app checks if a user has sufficient funds for a transfer, but the attacker initiates multiple concurrent transfers in the gap between the check and the actual debit — overdrawing the account."
+      },
+      {
+        "name": "Race Condition: Time-of-Use (TOU)",
+        "definition": "A race condition where an attacker changes the state of a resource between the time it is checked and the time it is actually used — focusing on the use phase rather than the check phase.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A race condition where an attacker changes the state of a resource between the time it is checked and the time it is actually used — focusing on the use phase rather than the check phase.\n\n⚠️ **TOC and TOU are not independent vulnerabilities — they are two critical moments within the same race condition vulnerability, collectively called TOC/TOU.**"
+      },
+      {
+        "name": "Race Condition: Time-of-Evaluation (TOE)",
+        "definition": "A race condition where an attacker manipulates the inputs or resources used during a decision-making or evaluation window, causing the system to reach an incorrect conclusion based on tampered data.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A race condition where an attacker manipulates the inputs or resources used during a decision-making or evaluation window, causing the system to reach an incorrect conclusion based on tampered data.\n\nExample: manipulating inputs to a calculation during the evaluation phase to produce an incorrect result that benefits the attacker."
+      },
+      {
+        "name": "Race Condition Mitigation: Mutexes and Locks",
+        "definition": "A mutex (mutually exclusive flag) is a synchronization mechanism that restricts a section of code to one thread at a time, preventing concurrent execution that would create a race condition.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A mutex (mutually exclusive flag) is a synchronization mechanism that restricts a section of code to one thread at a time, preventing concurrent execution that would create a race condition.\n\nMost databases and file systems support resource locking. Example: SharePoint locks a file for editing by one user, preventing concurrent modifications."
+      },
+      {
+        "name": "Race Condition Risk: Deadlock",
+        "definition": "A condition where two or more processes are each waiting for the other to release a locked resource, creating a circular dependency that prevents any progress until external intervention removes the lock.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A condition where two or more processes are each waiting for the other to release a locked resource, creating a circular dependency that prevents any progress until external intervention removes the lock.\n\nDeadlocks are a side effect of improper mutex/lock design. Proper testing of lock logic is essential to prevent them."
+      }
+    ]
   }
 ];

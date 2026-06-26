@@ -2124,7 +2124,10 @@
         // italic with * or _
         result = result.replace(/\*([^*]+)\*/g, '<em class="italic text-on-surface-variant/90">$1</em>');
         // inline code
-        result = result.replace(/`([^`]+)`/g, '<code class="bg-surface-container-high text-primary px-1.5 py-0.5 rounded text-xs font-mono border border-outline-variant/30">$1</code>');
+        result = result.replace(/`([^`]+)`/g, function(match, p1) {
+            let escaped = p1.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return '<code class="bg-surface-container-high text-primary px-1.5 py-0.5 rounded text-xs font-mono border border-outline-variant/30">' + escaped + '</code>';
+        });
         // arrows →
         result = result.replace(/→/g, '<span class="text-primary font-bold">→</span>');
         return result;
