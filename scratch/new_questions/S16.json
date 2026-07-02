@@ -1,0 +1,364 @@
+[
+  {
+    "section": "S16",
+    "question": "A security administrator detects persistent SQL injection attack attempts targeting the database of a public-facing web server. The server is already behind a packet filtering firewall. Which of the following solutions is the BEST choice to mitigate this specific type of application-layer attack?",
+    "options": [
+      "A stateful packet inspection firewall",
+      "A Web Application Firewall (WAF)",
+      "A Next-Generation Firewall (NGFW) configured with IDS",
+      "A Protocol Packet Wrapper (PPW)"
+    ],
+    "answer": 1,
+    "explanation": "The critical modifier BEST points to the most specific and effective solution for the application layer (L7). A Web Application Firewall (WAF) is specifically designed to inspect HTTP/HTTPS traffic and prevent web-based attacks such as SQL Injection and Cross-Site Scripting (XSS). Stateful packet inspection firewalls operate at lower layers (L4) and do not analyze the request payload content. An NGFW provides broad perimeter defense, but a WAF is the specialized control for web application protection. PPW is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A growing organization wants to securely interconnect multiple physical branch offices and remote workers directly to their cloud resources. Management requires a solution that unifies intelligent network routing with integrated security services (such as CASB and Zero Trust) managed centrally from the cloud. Which of the following represents the BEST solution to meet this requirement?",
+    "options": [
+      "Software-Defined Wide Area Network (SD-WAN)",
+      "Virtual Private Network (VPN) with traditional IPsec tunnels",
+      "Cloud Edge Security Multiplexer (CESM)",
+      "Secure Access Service Edge (SASE)"
+    ],
+    "answer": 3,
+    "explanation": "The critical modifier BEST demands an integrated solution that combines network routing with cloud-native security services. SASE unifies SD-WAN with advanced security functions in a single cloud-delivered framework. SD-WAN provides network connectivity and intelligent routing but does not natively include the full cloud security suite of SASE. A traditional IPsec VPN lacks the dynamic routing optimization and centralized cloud management of SASE. CESM is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A network engineer is designing the wireless authentication process for an 802.1X corporate network. They want to implement an extensible protocol that encapsulates credentials inside a secure TLS tunnel, but requires ONLY a digital certificate on the authentication server to simplify deployment on user endpoints. Which EAP protocol should they select?",
+    "options": [
+      "Protected Extensible Authentication Protocol (PEAP)",
+      "EAP-TLS (EAP Transport Layer Security)",
+      "EAP-MD5 (Message Digest 5)",
+      "Secure Tunneling Authentication Protocol (STAP)"
+    ],
+    "answer": 0,
+    "explanation": "The critical modifier requires a protocol that uses a TLS tunnel but only requires a server-side certificate. PEAP establishes a secure TLS tunnel and only requires a digital certificate on the authentication server to validate the server's identity to the client. EAP-TLS is highly secure but requires certificates on both the server and all client devices, making it more complex to deploy. EAP-MD5 does not encrypt credentials within a TLS tunnel and is vulnerable. STAP is an invented protocol."
+  },
+  {
+    "section": "S16",
+    "question": "A security administrator is reviewing the rule set of a company's perimeter firewall. The administrator observes a rule at the end of the list that blocks all traffic that has not been explicitly allowed by previous rules. Which of the following security principles does this rule represent FIRST and most directly?",
+    "options": [
+      "Least Privilege",
+      "Absolute Packet Dropping (APD)",
+      "Implicit Deny",
+      "Defense in Depth"
+    ],
+    "answer": 2,
+    "explanation": "The modifier FIRST asks for the fundamental security principle represented by the block-by-default rule. 'Implicit Deny' is the policy stating that all traffic is blocked unless it is explicitly permitted. Least Privilege applies to user access permissions rather than network traffic flow. Defense in Depth is a multi-layered security approach, not a specific firewall rule configuration. APD is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A security engineer is deploying an Intrusion Prevention System (IPS). The engineer wants to ensure that the device actively blocks malicious traffic in real time as it flows through the network. Which deployment method is the BEST choice?",
+    "options": [
+      "Out-of-band passive tap placement",
+      "Inline active mode deployment",
+      "Port mirroring switch configuration",
+      "Asynchronous Packet Filtering (APF)"
+    ],
+    "answer": 1,
+    "explanation": "Inline active mode deployment places the IPS directly in the physical traffic path (inline), allowing it to inspect and drop malicious packets before they reach their destination. Out-of-band passive tap and port mirroring are passive deployment methods that can only detect and log traffic (functioning as an IDS) rather than block it actively. APF is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "An enterprise wants to shield its internal clients from directly connecting to external malicious websites and also cache web content to save bandwidth. Which network appliance should the administrator deploy perimetrically?",
+    "options": [
+      "Reverse Proxy",
+      "Forward Proxy",
+      "Web Application Firewall (WAF)",
+      "Endpoint Security Router (ESR)"
+    ],
+    "answer": 1,
+    "explanation": "A Forward Proxy intercepts and handles outbound client requests from the internal network to external servers, providing client anonymity, web filtering, and caching. A Reverse Proxy does the opposite: it protects external clients by routing inbound traffic to internal web servers. A WAF inspects inbound application layer traffic for web exploits. ESR is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A network architect is configuring a load balancer to distribute traffic across a pool of database servers. The architect wants to ensure that a client's transaction state is maintained by routing all sequential requests from the same IP address to the exact same server. Which algorithm should they select?",
+    "options": [
+      "Round Robin",
+      "Least Connections",
+      "Session Affinity / Persistence",
+      "Load Balancing State Synchronizer (LBSS)"
+    ],
+    "answer": 2,
+    "explanation": "Session Affinity (or Persistence) is a load balancing mechanism that binds a client's session to a specific server in the pool, ensuring stateful continuity. Round Robin distributes connections sequentially without considering client state. Least Connections routes traffic to the server with the fewest active sessions. LBSS is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "An administrator configures port security on an edge switch. They want to ensure that if an unauthorized MAC address is detected, the port immediately blocks all traffic, sends an SNMP trap alert, increments the violation counter, but does NOT shut down the physical interface. Which violation mode should they choose?",
+    "options": [
+      "Shutdown",
+      "Protect",
+      "Restrict",
+      "Disable"
+    ],
+    "answer": 2,
+    "explanation": "In port security, Restrict mode drops packets from unauthorized MAC addresses, increments the security violation counter, and generates an SNMP trap alert without physically shutting down the port. Shutdown mode disables the interface. Protect mode drops packets quietly without generating alerts or incrementing counters. Disable is not a standard Cisco/port-security mode."
+  },
+  {
+    "id": 829,
+    "section": "S16",
+    "question": "A security engineer is implementing Network Access Control (NAC) to enforce health compliance on endpoints. They want to ensure that any device lacking the latest antivirus definitions is redirected to a restricted segment where they can update their definitions. Where should these non-compliant devices be routed?",
+    "options": [
+      "Quarantine Network / Segment",
+      "Active Directory Domain Controller",
+      "Demilitarized Zone (DMZ)",
+      "Secure Sandbox Segment (SSS)"
+    ],
+    "answer": 0,
+    "explanation": "A Quarantine Network is a restricted segment designed to isolate non-compliant devices so they can undergo remediation (e.g., updating signatures) before gaining access to the main network. A DMZ is for public-facing servers. AD Domain Controllers handle directory authentication. SSS is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A network administrator needs to select an IPsec protocol configuration to secure host-to-host communication. They require a configuration that provides mutual authentication and data integrity, but does NOT encrypt the actual payload data. Which protocol should they use?",
+    "options": [
+      "Encapsulating Security Payload (ESP)",
+      "Authentication Header (AH)",
+      "Internet Key Exchange (IKE)",
+      "Payload Integrity Wrapper (PIW)"
+    ],
+    "answer": 1,
+    "explanation": "AH (Authentication Header) provides data integrity, origin authentication, and anti-replay protection, but it does NOT provide confidentiality (no encryption). ESP provides confidentiality in addition to integrity and authentication. IKE is used to negotiate security associations. PIW is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A security administrator is configuring a site-to-site VPN tunnel. They must ensure that the entire original IP packet (including the header and payload) is encrypted and encapsulated within a new outer IP header. Which IPsec mode must they implement?",
+    "options": [
+      "Transport Mode",
+      "Tunnel Mode",
+      "Secure Mode",
+      "Encapsulated Routing Protocol (ERP)"
+    ],
+    "answer": 1,
+    "explanation": "Tunnel Mode encrypts and encapsulates the entire original IP packet within a new IP header, which is standard for gateway-to-gateway (site-to-site) VPNs. Transport Mode only encrypts the payload, keeping the original IP header, and is typically used for client-to-client (host-to-host) setups. Secure Mode and ERP are invented/generic terms."
+  },
+  {
+    "section": "S16",
+    "question": "A company is configuring a remote access VPN for teleworkers. The IT director wants to minimize internet bandwidth utilization on the corporate network by ensuring that only corporate-bound traffic is routed through the VPN tunnel, while standard public internet web traffic goes directly through the user's home ISP. Which VPN feature should they enable?",
+    "options": [
+      "Full Tunneling",
+      "Split Tunneling",
+      "Asymmetric Encryption Routing (AER)",
+      "Bandwidth Throttling"
+    ],
+    "answer": 1,
+    "explanation": "Split Tunneling routes only corporate-targeted traffic through the secure VPN tunnel, while other internet traffic goes directly out of the user's local connection, saving corporate gateway bandwidth. Full Tunneling sends all traffic through the corporate VPN, which increases security posture but consumes heavy bandwidth. AER is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A network security administrator needs to upgrade the monitoring configurations of their enterprise routers. They require a protocol that supports secure cryptographic authentication and encryption of SNMP polling messages to protect network telemetry. Which version of SNMP must they select?",
+    "options": [
+      "SNMP v1",
+      "SNMP v2c",
+      "SNMP v3",
+      "SNMP v4"
+    ],
+    "answer": 2,
+    "explanation": "SNMP v3 is the only version that provides secure access by implementing cryptographic authentication (using MD5 or SHA) and data encryption (using DES or AES). SNMP v1 and v2c send community strings in cleartext. SNMP v4 does not exist."
+  },
+  {
+    "section": "S16",
+    "question": "A security architect wants to prevent DNS cache poisoning and spoofing attacks against the organization's public domain. They want to ensure that DNS queries can be cryptographically validated using digital signatures. Which protocol must they configure?",
+    "options": [
+      "Domain Name System Security Extensions (DNSSEC)",
+      "Secure DNS Lookup (SDL)",
+      "Domain Name System over TLS (DoT)",
+      "DNS Signature Wrapper (DSW)"
+    ],
+    "answer": 0,
+    "explanation": "DNSSEC uses public-key cryptography to digitally sign DNS records, ensuring that DNS query responses are authentic and have not been altered in transit. DoT encrypts the DNS query channel to protect privacy but doesn't sign records. SDL and DSW are invented terms."
+  },
+  {
+    "section": "S16",
+    "question": "An organization wants to inspect outbound web traffic from corporate endpoints to identify malware and data exfiltration. However, most web traffic is encrypted via HTTPS. What technology must the perimeter firewall implement to enable this visibility?",
+    "options": [
+      "WPA3 Enterprise Authentication",
+      "SSL/TLS Decryption / SSL Inspection",
+      "Asymmetric Tunneling",
+      "Session Border Controller (SBC)"
+    ],
+    "answer": 1,
+    "explanation": "SSL/TLS Decryption (also called SSL Inspection or HTTPS inspection) decrypts encrypted traffic at the firewall boundary to allow security engines to scan payloads before re-encrypting the data and sending it to its destination. WPA3 is a wireless security protocol. SBC is for VoIP networks. Asymmetric Tunneling is a misapplied routing concept."
+  },
+  {
+    "section": "S16",
+    "question": "An administrator is troubleshooting a mail delivery issue. The SMTP mail servers fail to send outgoing emails to external mail relays securely using TLS. Which port should the administrator ensure is open outbound on the firewall?",
+    "options": [
+      "TCP Port 25 / 587",
+      "UDP Port 53",
+      "TCP Port 110",
+      "TCP Port 143"
+    ],
+    "answer": 0,
+    "explanation": "SMTP uses TCP Port 25 (traditional mail relaying) or Port 587 (modern secure message submission). UDP 53 is DNS. TCP 110 is POP3. TCP 143 is IMAP."
+  },
+  {
+    "section": "S16",
+    "question": "A security engineer is comparing authentication protocols for network access. They want a protocol that uses TCP for reliable transport, encrypts the ENTIRE packet payload (not just the password), and separates authentication, authorization, and accounting functions. Which protocol should they choose?",
+    "options": [
+      "RADIUS",
+      "TACACS+",
+      "LDAP",
+      "Kerberos"
+    ],
+    "answer": 1,
+    "explanation": "TACACS+ uses TCP (port 49), encrypts the entire packet payload, and fully separates AAA services. RADIUS uses UDP, only encrypts the password field, and combines authentication and authorization. LDAP is a directory access protocol. Kerberos is a ticket-based authentication protocol."
+  },
+  {
+    "section": "S16",
+    "question": "A small company wants to buy a single network security appliance that provides a firewall, antivirus scanning, intrusion prevention, web content filtering, and VPN capabilities in a cost-effective manner. Which of the following is the BEST solution?",
+    "options": [
+      "Unified Threat Management (UTM)",
+      "Next-Generation Firewall (NGFW)",
+      "Secure Access Service Edge (SASE)",
+      "Perimeter Security Sentinel (PSS)"
+    ],
+    "answer": 0,
+    "explanation": "A Unified Threat Management (UTM) appliance combines multiple security features into a single, low-cost device, which is ideal for smaller offices. NGFWs also combine features but do so in a single, high-performance engine aimed at enterprise scale. PSS is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "An analyst is tuning a newly installed Intrusion Detection System (IDS). The IDS keeps generating alerts claiming that legitimate users accessing their corporate webmail are executing remote exploits, even though no malicious activity is occurring. What type of indicator is this?",
+    "options": [
+      "True Positive",
+      "False Positive",
+      "True Negative",
+      "False Negative"
+    ],
+    "answer": 1,
+    "explanation": "A False Positive occurs when an alert is generated for benign or legitimate activity. A False Negative is when a real attack goes undetected. True Positive is a correctly identified attack, and True Negative is correctly ignored benign activity."
+  },
+  {
+    "section": "S16",
+    "question": "A network security manager implements MAC filtering on the corporate wireless network. Which of the following represents the PRIMARY security weakness of this control?",
+    "options": [
+      "MAC addresses are encrypted and cannot be parsed by firewalls.",
+      "An attacker can sniff wireless traffic, capture valid MAC addresses, and spoof them.",
+      "MAC filtering degrades switch throughput significantly.",
+      "MAC addresses change dynamically every time a device connects to a different WAP."
+    ],
+    "answer": 1,
+    "explanation": "MAC addresses are sent in cleartext headers in 802.11 frames. An attacker can easily sniff wireless traffic, identify authorized MAC addresses, and configure their own device to spoof one of those addresses. MAC filtering does not degrade performance or use encryption. MAC addresses are burned into network interface cards and remain static unless spoofed."
+  },
+  {
+    "section": "S16",
+    "question": "A network engineer needs to replace a legacy WEP-encrypted wireless network. WEP is no longer considered secure. Which of the following describes the core cryptographic vulnerability of WEP?",
+    "options": [
+      "It uses weak asymmetric RSA key pairs.",
+      "It uses a short 24-bit Initialization Vector (IV) that leads to key reuse and collision attacks.",
+      "It lacks support for pre-shared keys.",
+      "It does not support AES-GCM encryption."
+    ],
+    "answer": 1,
+    "explanation": "WEP uses RC4 with a short 24-bit Initialization Vector (IV). Because the IV is small, an attacker can capture enough packets to identify duplicate IVs (collisions) and easily crack the encryption key. WEP uses RC4 symmetric encryption, not asymmetric RSA."
+  },
+  {
+    "section": "S16",
+    "question": "An enterprise is planning a Network Access Control (NAC) architecture. The security director wants to avoid installing software agents on every user endpoint, preferring to assess devices as they join the network using standard protocols. Which NAC architecture should they choose?",
+    "options": [
+      "Persistent agent NAC",
+      "Dissolvable agent NAC",
+      "Agentless NAC",
+      "Out-of-band active NAC"
+    ],
+    "answer": 2,
+    "explanation": "Agentless NAC inspects devices using built-in network scanning and standard protocols, eliminating the need to deploy and manage software agents on endpoints. Persistent agents are installed permanently. Dissolvable agents run temporarily and remove themselves but still execute code on the host."
+  },
+  {
+    "section": "S16",
+    "question": "A firewall administrator notices a sudden increase in blocked connections. They trace this to a stateful firewall rule. How does a stateful firewall determine if a packet is part of an active session?",
+    "options": [
+      "By looking up the packet's source IP address in a static global DNS server",
+      "By analyzing the packet's headers against an active connection state table",
+      "By decrypting the packet payload using symmetric keys",
+      "By executing the packet code in a sandboxed runtime environment"
+    ],
+    "answer": 1,
+    "explanation": "Stateful firewalls track the state of network connections (such as TCP handshakes) and store this information in a state table. Inbound packets are checked against this table to verify they belong to an established session. They do not decrypt payloads, query DNS, or run sandboxes."
+  },
+  {
+    "section": "S16",
+    "question": "An organization wants to configure 802.1X wireless security. The system administrator wants to use EAP-FAST. Which mechanism does EAP-FAST use to establish a secure tunnel instead of relying on digital certificates?",
+    "options": [
+      "Protected Access Credential (PAC)",
+      "Presigned Session Token (PST)",
+      "Asymmetric Key Exchange (AKE)",
+      "Synchronized One-Time Password (SOTP)"
+    ],
+    "answer": 0,
+    "explanation": "EAP-FAST (Flexible Authentication via Secure Tunneling) replaces the certificate requirement of EAP-TLS/PEAP by utilizing a Protected Access Credential (PAC) to establish a secure tunnel. PST, AKE, and SOTP are generic or invented terms."
+  },
+  {
+    "section": "S16",
+    "question": "An IT manager wants to secure remote access to the corporate network. Remote Desktop Protocol (RDP) on TCP port 3389 is currently exposed to the internet, resulting in brute-force attack attempts. Which of the following is the BEST FIRST step to mitigate this risk?",
+    "options": [
+      "Change the RDP port to a dynamic registered port.",
+      "Disable RDP exposure to the public internet and require connection through a VPN gateway.",
+      "Implement a reverse proxy to decrypt RDP traffic.",
+      "Switch the RDP client to use UDP transport instead of TCP."
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "The BEST FIRST step is to disable public internet exposure of RDP (port 3389) and place it behind a secure Virtual Private Network (VPN) gateway. Changing the port only provides security by obscurity and does not block determined scanners. RDP is not typically processed by HTTP reverse proxies. Changing transport does not mitigate access vulnerabilities."
+  },
+  {
+    "section": "S16",
+    "question": "A system administrator needs to secure directory queries between client computers and an Active Directory server. They want to encrypt LDAP traffic. Which port should they ensure is open and used for LDAPS?",
+    "options": [
+      "TCP Port 389",
+      "TCP Port 636",
+      "UDP Port 514",
+      "TCP Port 443"
+    ],
+    "answer": 1,
+    "explanation": "LDAPS (LDAP over SSL/TLS) uses TCP Port 636. Standard unencrypted LDAP uses TCP Port 389. UDP 514 is Syslog. TCP 443 is HTTPS."
+  },
+  {
+    "section": "S16",
+    "question": "An enterprise is centralizing its syslog collections. Due to compliance mandates, all syslog messages sent from remote routers to the central SIEM must be encrypted. Which configuration should they implement?",
+    "options": [
+      "Syslog over UDP on Port 514",
+      "Syslog over TLS on TCP Port 6514",
+      "Secure Syslog over Port 5140",
+      "Encrypted Log Protocol (ELP)"
+    ],
+    "answer": 1,
+    "explanation": "Secure Syslog (Syslog over TLS) uses TCP Port 6514. Traditional unencrypted syslog uses UDP Port 514. Port 5140 and ELP are invented or non-standard terms."
+  },
+  {
+    "section": "S16",
+    "question": "A network security engineer is analyzing a Kerberos implementation. They want to ensure that Kerberos tickets cannot be sniffed from the network and replayed by an attacker later. What security control does Kerberos use to prevent replay attacks?",
+    "options": [
+      "Symmetric data masking",
+      "Encrypted timestamps within authentication tickets",
+      "Physical token synchronization",
+      "Dynamic Route Wrapping (DRW)"
+    ],
+    "answer": 1,
+    "explanation": "Kerberos tickets include encrypted timestamps. If an attacker captures a ticket and attempts to replay it, the ticket will be rejected if the timestamp exceeds a specific time skew limit (typically 5 minutes). Masking, physical tokens, and DRW are not Kerberos mechanisms."
+  },
+  {
+    "section": "S16",
+    "question": "An administrator wants to secure remote terminal access to an enterprise router. Telnet is currently used. Which of the following is the BEST secure alternative protocol?",
+    "options": [
+      "TFTP (Port 69)",
+      "SSH (Port 22)",
+      "SFTP (Port 22)",
+      "Secure Console Link (SCL)"
+    ],
+    "answer": 1,
+    "explanation": "SSH (Secure Shell) on port 22 provides secure, encrypted terminal remote access, replacing unencrypted Telnet (port 23). TFTP is an unencrypted file transfer protocol. SFTP is for secure file transfers, not remote terminal command shells. SCL is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A security auditor recommends securing the file transfer process for corporate financial reports. The reports are currently sent via unencrypted FTP. Which of the following is the BEST secure protocol to implement?",
+    "options": [
+      "TFTP",
+      "SFTP / FTPS",
+      "HTTPS",
+      "Secure File Wrapper (SFW)"
+    ],
+    "answer": 1,
+    "explanation": "SFTP (SSH File Transfer Protocol) or FTPS (FTP over SSL/TLS) are secure file transfer protocols that encrypt commands and data, protecting reports in transit. TFTP is unencrypted and insecure. HTTPS is for web browsing, although files can be uploaded/downloaded, SFTP/FTPS are the dedicated file transfer standards. SFW is an invented term."
+  }
+]

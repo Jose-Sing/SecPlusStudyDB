@@ -1,0 +1,362 @@
+[
+  {
+    "section": "S18",
+    "question": "A security analyst discovers that users of an online discussion board can embed malicious JavaScript code into their forum posts. When other users view the posts, the script executes automatically in their local browsers, sending their session tokens to the attacker's server. What type of attack is occurring, and what is the MOST likely remediation?",
+    "options": [
+      "Cross-Site Request Forgery (XSRF); remediated by using unique cryptographic tokens per form.",
+      "Stored Cross-Site Scripting (XSS); remediated by implementing input validation and output encoding.",
+      "SQL Injection; remediated by using parameterized database queries.",
+      "Dynamic Script Hijacking (DSH); remediated by implementing DOM isolation."
+    ],
+    "answer": 1,
+    "explanation": "The attack described is Stored (or Persistent) Cross-Site Scripting (XSS) because the malicious JavaScript is stored in the database of the forum and executes in the browsers of visiting users. The MOST likely and effective remediation is to perform rigorous input validation and output encoding before rendering user-submitted content. XSRF tricks a user's browser into performing an unauthorized action but does not involve direct script injection. SQL Injection targets the backend database rather than browser execution. DSH is an invented term."
+  },
+  {
+    "section": "S18",
+    "question": "A developer writes a funds transfer application where the system verifies the account balance before completing a withdrawal. If two withdrawal requests are submitted almost simultaneously, the system executes both balance checks before updating the final balance, allowing the user to withdraw more money than they actually have. What type of vulnerability does this scenario describe?",
+    "options": [
+      "Buffer Overflow",
+      "Integer Overflow",
+      "Race Condition",
+      "Concurrent Memory Leak"
+    ],
+    "answer": 2,
+    "explanation": "A race condition occurs when the security or state of a system depends on the execution sequence or timing of concurrent processes (often known as Time-of-Check to Time-of-Use or TOCTOU). Here, the execution overlap between checking and withdrawing allows the exploit. A buffer overflow writes data past allocated memory boundaries. An integer overflow is an arithmetic error when a value exceeds storage capacity. Concurrent memory leak is an invented concept."
+  },
+  {
+    "section": "S18",
+    "question": "A power plant operates a critical turbine control system running on an unsupported version of Windows XP. The original hardware manufacturer went out of business years ago, and the proprietary software cannot be migrated to a modern OS without causing an unacceptable total service outage. Which of the following actions should the security administrator take FIRST to protect this system?",
+    "options": [
+      "Isolate the legacy system on a dedicated network segment with no internet access (air gap).",
+      "Enable automatic updates in the control panel of the legacy operating system.",
+      "Upgrade the system directly to Windows 11 using compatibility mode.",
+      "Implement a Hybrid Update Gateway (HUG)."
+    ],
+    "answer": 0,
+    "explanation": "For end-of-life (EOL) or unsupported legacy systems that cannot be patched or upgraded, the FIRST and most effective mitigation is to isolate the device using network segmentation or an air gap to prevent network-based attacks. Enabling updates on Windows XP is useless as no official security patches are released by Microsoft. Upgrading will break the proprietary turbine software. HUG is an invented term."
+  },
+  {
+    "section": "S18",
+    "question": "An attacker manipulates the input fields of a web login form by entering the string `' OR '1'='1`. The website authenticates the attacker and logs them in as the administrator without requiring a password. Which of the following is the root cause of this vulnerability?",
+    "options": [
+      "A directory traversal flaw that exposes local system files",
+      "A lack of anti-CSRF tokens in the authentication form",
+      "A stack overflow in the authentication rendering engine",
+      "A lack of input sanitization allowing SQL query injection"
+    ],
+    "answer": 3,
+    "explanation": "La vulnerabilidad es SQL Injection, que es causado por una falta de sanitización de entradas, permitiendo al motor de base de datos interpretar la cadena del atacante como código de consulta lógico (haciendo que la condición sea siempre verdadera y evadiendo la contraseña). Directory traversal accede a rutas locales de archivos (`../`). CSRF/XSRF explota la confianza del navegador de la sesión y no modifica la consulta. Un desbordamiento de pila intenta corromper la memoria, no la lógica de base de datos."
+  },
+  {
+    "section": "S18",
+    "question": "A user clicks a link in a phishing email that takes them to a trusted online banking site. However, the link includes a malicious URL parameter containing a script. The banking website reflects this parameter in the search results page, executing the script in the user's browser. What type of vulnerability is this?",
+    "options": [
+      "Stored XSS",
+      "Reflected XSS",
+      "DOM-based XSS",
+      "Cross-Site Request Forgery (CSRF)"
+    ],
+    "answer": 1,
+    "explanation": "Reflected XSS occurs when an application receives input in an HTTP request and includes that input within the immediate response in an unsafe way, reflecting it back to the user's browser where it executes as code."
+  },
+  {
+    "section": "S18",
+    "question": "An attacker sends an email containing an HTML link to an authenticated user of an online store. When clicked, the link forces the user's browser to submit a hidden form requesting to change the user's email address to the attacker's email, leveraging the user's active session cookie. What type of attack is this?",
+    "options": [
+      "Reflected XSS",
+      "Cross-Site Request Forgery (CSRF)",
+      "SQL Injection",
+      "Command Injection"
+    ],
+    "answer": 1,
+    "explanation": "CSRF (Cross-Site Request Forgery) tricks a victim's web browser into performing an unwanted action on a trusted site where the user is currently authenticated, using their active session cookie. It does not inject scripts like XSS does."
+  },
+  {
+    "section": "S18",
+    "question": "A security analyst reviews a client-side JavaScript script that reads a user's local URL parameter and directly writes it to the page using `document.write()`, without sending data to the server. What type of vulnerability is present?",
+    "options": [
+      "Stored XSS",
+      "DOM-based XSS",
+      "Reflected XSS",
+      "Command Injection"
+    ],
+    "answer": 1,
+    "explanation": "DOM-based XSS occurs when an application contains client-side JavaScript that processes data from an untrusted source (like the URL DOM) in an unsafe way, modifying the DOM directly in the browser without server roundtrips."
+  },
+  {
+    "section": "S18",
+    "question": "A web utility allows administrators to ping diagnostic hosts. A user inputs the string `127.0.0.1; cat /etc/passwd` into the host field. The server returns the ping output followed by the contents of the passwd file. What type of vulnerability is this?",
+    "options": [
+      "SQL Injection",
+      "Command Injection",
+      "Directory Traversal",
+      "Buffer Overflow"
+    ],
+    "answer": 1,
+    "explanation": "Command Injection occurs when an application passes unsanitized user input directly to a system shell execution, allowing the attacker to run arbitrary operating system commands."
+  },
+  {
+    "section": "S18",
+    "question": "A program expects a 10-character string input and copies it into a fixed-size memory stack buffer. If an attacker inputs a 500-character string, the program crashes, and registers show that the execution path has jumped to code embedded within the input. What type of vulnerability is this?",
+    "options": [
+      "Buffer Overflow",
+      "Integer Overflow",
+      "Memory Leak",
+      "Pointer Dereference"
+    ],
+    "answer": 0,
+    "explanation": "A Buffer Overflow occurs when a program writes more data to a buffer than it can hold, corrupting adjacent memory (such as the stack return address) and potentially allowing arbitrary code execution."
+  },
+  {
+    "section": "S18",
+    "question": "An application uses an 8-bit unsigned integer to track transaction counts. When the count reaches 255 and another transaction occurs, the count wraps around to 0, causing a validation check to pass incorrectly and allow access. What type of vulnerability is this?",
+    "options": [
+      "Buffer Overflow",
+      "Integer Overflow",
+      "Memory Leak",
+      "Race Condition"
+    ],
+    "answer": 1,
+    "explanation": "An Integer Overflow occurs when an arithmetic operation attempts to create a numeric value that is outside the range of values that can be represented with a given number of bits, causing it to wrap around to a small or negative number."
+  },
+  {
+    "section": "S18",
+    "question": "A monitoring server's RAM utilization increases slowly over several weeks until the system runs out of memory and crashes. Logs indicate that a specific background process allocates memory for logging metrics but fails to deallocate it after completion. What type of vulnerability is this?",
+    "options": [
+      "Resource Exhaustion",
+      "Memory Leak",
+      "Race Condition",
+      "Integer Overflow"
+    ],
+    "answer": 1,
+    "explanation": "A Memory Leak occurs when an application allocates memory but fails to release it back to the operating system when it is no longer needed. Over time, this leads to Resource Exhaustion and application crashes."
+  },
+  {
+    "section": "S18",
+    "question": "A database programmer wants to write secure code to prevent SQL injection attacks. Which of the following mechanisms represents the BEST option to achieve this?",
+    "options": [
+      "Implementing client-side validation using regular expressions",
+      "Using parameterized queries / prepared statements",
+      "Converting all inputs to Base64 format before query processing",
+      "Deploying a stateful packet firewall in front of the database"
+    ],
+    "answer": 1,
+    "explanation": "Parameterized queries (prepared statements) ensure that the database engine treats user input strictly as data parameters rather than executable SQL code commands, completely mitigating SQL injection. Client-side validation can be easily bypassed. Base64 encoding is not a security defense. Firewalls operate at lower network layers and do not sanitize query syntax."
+  },
+  {
+    "section": "S18",
+    "question": "An enterprise has a critical billing system that cannot be updated because the vendor is out of business and the source code is unavailable. The system has a known critical vulnerability. Which type of control should the security team implement to manage the risk?",
+    "options": [
+      "A corrective control",
+      "A compensating control",
+      "A deterrent control",
+      "An administrative control"
+    ],
+    "answer": 1,
+    "explanation": "A compensating control is an alternative security control implemented to mitigate the risk of a vulnerability when standard controls (like patching) are not possible or feasible."
+  },
+  {
+    "section": "S18",
+    "question": "An organization deploys smart building HVAC controllers that receive firmware updates over-the-air (OTA). To prevent an attacker from flashing malicious firmware to the controllers, which control is the MOST critical for the update process?",
+    "options": [
+      "Use of Type 2 hypervisors on controllers",
+      "Cryptographic signature validation on all received update files",
+      "Reducing the database backup frequency",
+      "Performing qualitative risk analysis ad-hoc"
+    ],
+    "answer": 1,
+    "explanation": "Cryptographic signature verification ensures that updates received remotely (OTA) are authentic and have not been tampered with by an attacker, preventing malicious firmware deployment."
+  },
+  {
+    "section": "S18",
+    "question": "A cloud security analyst reviews web logs and notices multiple requests containing the following path in the URI: `/downloads/getfile.php?name=../../../../windows/system.ini`. What type of vulnerability is the attacker attempting to exploit?",
+    "options": [
+      "SQL Injection",
+      "Directory Traversal",
+      "Reflected XSS",
+      "Buffer Overflow"
+    ],
+    "answer": 1,
+    "explanation": "Directory Traversal uses relative path sequences (such as `../`) to escape the web root directory and access arbitrary files on the local operating system filesystem."
+  },
+  {
+    "section": "S18",
+    "question": "An attacker targets a SCADA network controlling municipal water pumps. The SCADA servers run legacy firmware that cannot be updated. Which of the following is the BEST compensating control to protect this network from external remote attacks?",
+    "options": [
+      "Implementing strong password policies for standard users",
+      "Isolating the SCADA network from the corporate network and internet (air gapping)",
+      "Installing host-based intrusion detection software on the workstation",
+      "Switching all communication channels from TCP to UDP"
+    ],
+    "answer": 1,
+    "explanation": "Air gapping (physical and logical isolation from external networks) is the most effective compensating control to protect critical SCADA/ICS environments that cannot be updated from external network threats."
+  },
+  {
+    "section": "S18",
+    "question": "A developer wants to ensure that a web page correctly handles user-submitted comments containing characters like `<` and `>` without executing them. What technique should they use before rendering the text?",
+    "options": [
+      "Input Validation",
+      "Output Encoding / Sanitization",
+      "Hashing",
+      "Asymmetric Encryption"
+    ],
+    "answer": 1,
+    "explanation": "Output encoding converts special characters (like `<` to `&lt;`) into a safe, display-only format before rendering them in the browser, preventing the browser from interpreting them as executable code."
+  },
+  {
+    "section": "S18",
+    "question": "A developer wants to prevent Cross-Site Request Forgery (CSRF) attacks on a shopping cart application. Which of the following mechanisms is the MOST effective?",
+    "options": [
+      "Using HTTPS encryption for all pages",
+      "Implementing unique, unpredictable anti-CSRF tokens for state-changing requests",
+      "Requiring users to enter their password twice",
+      "Using client-side JavaScript validation"
+    ],
+    "answer": 1,
+    "explanation": "Anti-CSRF tokens (unique, unpredictable tokens validated on the server for each request) prevent CSRF because an external attacker cannot guess or steal this token to forge a valid request. HTTPS protects data in transit but does not prevent CSRF. Client validation can be bypassed."
+  },
+  {
+    "section": "S18",
+    "question": "During a routine scan, a security analyst discovers that a production web application displays detailed database error messages and stack traces to users when queries fail. What type of vulnerability does this represent?",
+    "options": [
+      "Improper Error Handling",
+      "Privilege Escalation",
+      "Stored Cross-Site Scripting",
+      "Memory Leakage"
+    ],
+    "answer": 0,
+    "explanation": "Improper Error Handling occurs when an application exposes sensitive system or debugging information (such as stack traces or SQL database schemas) in error messages, aiding attackers in reconnaissance."
+  },
+  {
+    "section": "S18",
+    "question": "A security auditor discovers that newly deployed smart security cameras are accessible over the local network using a username of 'admin' and a password of '12345'. Which vulnerability type does this represent?",
+    "options": [
+      "Improper input sanitization",
+      "Default Configuration / Weak Credentials",
+      "Supply Chain Vulnerability",
+      "Software API Drift"
+    ],
+    "answer": 1,
+    "explanation": "This represents a default configuration vulnerability where default credentials are left unchanged after deployment, allowing easy unauthorized access."
+  },
+  {
+    "section": "S18",
+    "question": "An enterprise software package utilizes a popular third-party logging library. A critical vulnerability is discovered in the library that allows remote code execution. How should this vulnerability type be classified?",
+    "options": [
+      "Zero-Day Vulnerability",
+      "Supply Chain / Third-Party Vulnerability",
+      "Default Configuration Vulnerability",
+      "Orphaned System Flaw"
+    ],
+    "answer": 1,
+    "explanation": "Vulnerabilities originating from third-party code libraries, dependencies, or components integrated into software products are classified as Supply Chain or Third-Party vulnerabilities."
+  },
+  {
+    "section": "S18",
+    "question": "A critical vulnerability is announced for a widely used network router. No patches or workarounds are currently available from the manufacturer, and exploitation code is actively circulating. What is this type of vulnerability called?",
+    "options": [
+      "Zero-Day Vulnerability",
+      "Legacy System Flaw",
+      "Default Configuration",
+      "Stack Overflow"
+    ],
+    "answer": 0,
+    "explanation": "A Zero-Day vulnerability is an active security flaw that is unknown to the vendor, or for which no official patch or fix has been developed yet."
+  },
+  {
+    "section": "S18",
+    "question": "An attacker exploits a target system by attaching to a running web browser process and forcing it to run a malicious .dll file containing exploit code. What type of attack is this?",
+    "options": [
+      "Buffer Overflow",
+      "DLL Injection",
+      "SQL Injection",
+      "Pointer Dereference"
+    ],
+    "answer": 1,
+    "explanation": "DLL Injection is a technique used to run arbitrary code in the address space of another running process by forcing it to load a dynamic-link library (DLL)."
+  },
+  {
+    "section": "S18",
+    "question": "A web application crashes frequently. The developer audits the source code and finds that when a database query returns empty, the program attempts to read data from a memory address that points to nothing (null). What programming error is this?",
+    "options": [
+      "Integer Overflow",
+      "Null Pointer Dereferencing",
+      "Buffer Overflow",
+      "Race Condition"
+    ],
+    "answer": 1,
+    "explanation": "Null Pointer Dereferencing occurs when an application attempts to read or write to a memory address pointing to null, which typically causes the application to crash or throw an exception."
+  },
+  {
+    "section": "S18",
+    "question": "A security scan reveals an orphaned server in a corporate network running Windows Server 2003. The system has no registered owner and has not received updates in over a decade. Which vulnerability category does this represent?",
+    "options": [
+      "Improper Asset Management",
+      "Zero-Day Vulnerability",
+      "Default Configuration",
+      "DLL Injection"
+    ],
+    "answer": 0,
+    "explanation": "Improper Asset Management is when systems are deployed without tracking, ownership, or regular audits, leading to legacy or forgotten (orphaned) systems remaining vulnerable on the network."
+  },
+  {
+    "section": "S18",
+    "question": "A security analyst attempts to access a web server. When navigating to `/images/`, the browser displays a list of all files stored in that directory instead of returning a 403 Forbidden error. What vulnerability category does this represent?",
+    "options": [
+      "Stored XSS",
+      "Security Misconfiguration",
+      "Directory Traversal",
+      "Privilege Escalation"
+    ],
+    "answer": 1,
+    "explanation": "Enabling directory listing (directory browsing) on a production web server is a Security Misconfiguration vulnerability that leaks the directory structure and file contents to potential attackers."
+  },
+  {
+    "section": "S18",
+    "question": "A banking website validates that transfer values are positive using client-side JavaScript. An attacker intercepting the request changes the transfer amount value to `-500` and submits it directly to the server. The server processes the negative amount, increasing the attacker's balance. What is the root cause of this vulnerability?",
+    "options": [
+      "Lack of server-side input validation",
+      "SQL Injection in the transaction table",
+      "Race condition in balance calculation",
+      "Improper session management"
+    ],
+    "answer": 0,
+    "explanation": "All inputs must be validated on the server-side. Relying solely on client-side validation (which can be easily bypassed using proxies or direct API requests) is a critical security vulnerability."
+  },
+  {
+    "section": "S18",
+    "question": "A developer configures an API backend and allows requests from any origin by configuring the header `Access-Control-Allow-Origin: *`. What vulnerability risk is introduced?",
+    "options": [
+      "Stored XSS vulnerability",
+      "CORS (Cross-Origin Resource Sharing) Misconfiguration",
+      "Directory Traversal",
+      "Command Injection"
+    ],
+    "answer": 1,
+    "explanation": "Using a wildcard (`*`) in CORS configurations allows any external website to make API requests on behalf of the client's browser, creating a significant CORS Misconfiguration vulnerability."
+  },
+  {
+    "section": "S18",
+    "question": "An auditor reviews a corporate web server's SSL/TLS settings and finds that it supports SSL v3 and TLS 1.0. What vulnerability is present?",
+    "options": [
+      "Improper input sanitization",
+      "Weak / Legacy Cipher Suites and Protocols",
+      "DLL Injection",
+      "Zero-Day vulnerability"
+    ],
+    "answer": 1,
+    "explanation": "Supporting legacy protocols like SSL v3 or TLS 1.0 is a vulnerability because these protocols contain known cryptographic flaws (like POODLE and BEAST) and are vulnerable to attack."
+  },
+  {
+    "section": "S18",
+    "question": "An administrator wants to secure a web server against automated scanning tools looking for legacy PHP vulnerabilities. Which action would BEST reduce the attack surface?",
+    "options": [
+      "Implement a strong account lockout policy for administrators.",
+      "Remove legacy PHP modules and configure the server to hide the PHP version header.",
+      "Change the server's public IP address daily.",
+      "Enable biometric authentication for SSH access."
+    ],
+    "answer": 1,
+    "explanation": "Removing unneeded legacy components and hiding version banners reduces the attack surface by eliminating entry points and limiting information disclosure to attackers."
+  }
+]

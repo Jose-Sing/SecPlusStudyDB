@@ -1,0 +1,362 @@
+[
+  {
+    "section": "S17",
+    "question": "A senior database administrator is terminated immediately due to a severe security policy violation. The security team must ensure that the former employee cannot connect to or modify critical production databases from external networks. Which IAM lifecycle process should the team execute FIRST?",
+    "options": [
+      "Identity Proofing",
+      "Deprovisioning",
+      "Role-Based Access Control (RBAC) modification",
+      "Account Reallocation"
+    ],
+    "answer": 1,
+    "explanation": "The modifier FIRST demands the immediate action to remove access. Deprovisioning is the process of revoking or deleting user accounts and access rights when a user leaves the organization, neutralizing potential insider threats. Identity Proofing occurs at the beginning of the identity lifecycle (prior to account creation). Modifying RBAC roles is slow and does not guarantee the account itself is completely disabled. Account Reallocation is an invented term."
+  },
+  {
+    "section": "S17",
+    "question": "A company wants to implement Single Sign-On (SSO) to allow users to authenticate across multiple mobile and single-page web applications. The security architect specifies a modern, REST API-based protocol that uses JSON Web Tokens (JWT) to verify user identity through an authorization server. Which of the following protocols is the BEST fit for this task?",
+    "options": [
+      "Security Assertion Markup Language (SAML 2.0)",
+      "OAuth 2.0",
+      "OpenID Connect (OIDC)",
+      "Federated Identity REST Protocol (FIRP)"
+    ],
+    "answer": 2,
+    "explanation": "The critical modifier BEST requires identity verification (authentication) using JSON Web Tokens and REST APIs. OpenID Connect (OIDC) is an identity layer built on top of OAuth 2.0 that uses JWTs to authenticate users. SAML 2.0 also enables SSO but relies on heavier XML and SOAP structures, making it less suitable for modern mobile and web clients. OAuth 2.0 is designed for access delegation (authorization), not directly for user identity verification. FIRP is an invented term."
+  },
+  {
+    "section": "S17",
+    "question": "To log into a secure workstation that processes credit card transactions, an employee must scan their physical smartcard, input a memorized 6-digit PIN, and provide a real-time voice sample. How many distinct authentication factors are used in this configuration?",
+    "options": [
+      "Three factors (something you know, something you have, and something you are)",
+      "Two factors (something you have and something you know)",
+      "One factor (three instances of something you know)",
+      "Three factors (something you know, something you do, and somewhere you are)"
+    ],
+    "answer": 0,
+    "explanation": "Three distinct authentication factors are used: (1) something you have (the physical smartcard), (2) something you know (the memorized PIN), and (3) something you are (the biometrics of the voice sample). Effective multi-factor authentication requires physically distinct categories of credentials. The other options miscalculate the count or define factors not present in the scenario."
+  },
+  {
+    "section": "S17",
+    "question": "A financial organization needs to tightly manage and monitor the activities of its system administrators. They want to ensure that superuser credentials are not persistently shared, that each login requires real-time approval, and that administrative console sessions are video-recorded for auditing. Which type of solution BEST meets this requirement?",
+    "options": [
+      "Single Sign-On (SSO)",
+      "Role-Based Access Control (RBAC)",
+      "Administrative Access Sentinel (AAS)",
+      "Privileged Access Management (PAM)"
+    ],
+    "answer": 3,
+    "explanation": "The critical modifier BEST points to the specific solution for high-privileged admin accounts. A Privileged Access Management (PAM) solution is designed to control, secure, monitor, and audit administrative (root/superuser) accounts, providing credential vaulting, temporary checked-out access, real-time approval workflows, and full session recording. SSO simplifies end-user logins but does not manage administrative infrastructure credentials. RBAC limits standard user permissions but does not provide dynamic session management or console recordings. AAS is an invented term."
+  },
+  {
+    "section": "S17",
+    "question": "An HR department is onboarding a new employee. Before creating their corporate email and domain account, the department requires the employee to present a government-issued photo ID and verifies their address details. What process is being described?",
+    "options": [
+      "Identity Proofing",
+      "User Authorization",
+      "Federation Tokenization",
+      "Access Provisioning"
+    ],
+    "answer": 0,
+    "explanation": "Identity Proofing is the process of verifying a user's real-world identity before creating their user account and credentials. Provisioning refers to creating the account itself. Authorization is granting access permissions. Federation Tokenization is an invented term."
+  },
+  {
+    "section": "S17",
+    "question": "A network security administrator wants to implement multi-factor authentication. Which of the following credentials represents 'something you are'?",
+    "options": [
+      "A software authenticator application generating a rolling PIN",
+      "A hardware key fob showing a token number",
+      "A retina scan pattern of the user's eye",
+      "A digital certificate installed on the user's laptop"
+    ],
+    "answer": 2,
+    "explanation": "A retina scan is a biometric identifier, representing the 'something you are' factor. Kobs, software authenticators, and certificates represent the 'something you have' factor."
+  },
+  {
+    "section": "S17",
+    "question": "An employee is configuring a new smart lock. The lock requires the user to swipe a pattern on a keypad, insert a physical key, and have their cell phone nearby via Bluetooth. Which of the following authentication factors is missing from this configuration?",
+    "options": [
+      "Something you have",
+      "Something you know",
+      "Something you are",
+      "Somewhere you are"
+    ],
+    "answer": 2,
+    "explanation": "The keypad pattern is 'something you know', the physical key and Bluetooth cell phone are 'something you have', and the geofencing/proximity could represent 'somewhere you are'. There is no biometric indicator ('something you are') in this configuration."
+  },
+  {
+    "section": "S17",
+    "question": "To secure access to an offshore database, a security analyst wants to implement a rule that only allows connections from devices located within the physical boundaries of the company's regional headquarters. Which authentication factor does this BEST represent?",
+    "options": [
+      "Something you have",
+      "Somewhere you are",
+      "Something you do",
+      "Something you are"
+    ],
+    "answer": 1,
+    "explanation": "Restricting access based on physical location (using IP addresses, GPS coordinates, or geofencing) represents the 'somewhere you are' factor. 'Something you do' refers to behavioral biometrics (like typing cadence). 'Something you are' refers to physical biometrics."
+  },
+  {
+    "section": "S17",
+    "question": "A research laboratory implements a biometric scanner that analyzes the speed, rhythm, and stroke pressure of a user's signature. Which authentication factor category does this represent?",
+    "options": [
+      "Something you are",
+      "Something you do",
+      "Something you have",
+      "Something you know"
+    ],
+    "answer": 1,
+    "explanation": "Behavioral biometrics (such as signature dynamics, typing cadence, and gait analysis) fall under the 'something you do' factor category, whereas physical biometrics (fingerprint, iris) fall under 'something you are'."
+  },
+  {
+    "section": "S17",
+    "question": "A web developer wants to allow third-party applications to access a user's calendar data without exposing the user's username and password. Which protocol is designed specifically to delegate authorization in this manner?",
+    "options": [
+      "SAML 2.0",
+      "OAuth 2.0",
+      "OpenID Connect",
+      "Kerberos v5"
+    ],
+    "answer": 1,
+    "explanation": "OAuth 2.0 is an authorization framework designed specifically to delegate access permissions to third-party applications using access tokens, without exposing credentials. SAML and OpenID Connect are primarily authentication/SSO protocols. Kerberos is for intranet authentication."
+  },
+  {
+    "section": "S17",
+    "question": "A security architect is configuring Single Sign-On (SSO) for a legacy enterprise application that communicates via XML-based tokens. Which federation protocol should the architect implement?",
+    "options": [
+      "OpenID Connect (OIDC)",
+      "Security Assertion Markup Language (SAML)",
+      "OAuth 2.0",
+      "JSON Web Token (JWT)"
+    ],
+    "answer": 1,
+    "explanation": "SAML (Security Assertion Markup Language) is an XML-based standard used to exchange authentication and authorization data between identity providers and service providers. OIDC and JWT use JSON. OAuth is for authorization delegation."
+  },
+  {
+    "section": "S17",
+    "question": "An organization wants to configure an identity provider so that employees can use their corporate Active Directory credentials to log into third-party cloud-based software tools seamlessly. What concept does this configuration represent?",
+    "options": [
+      "Identity Federation",
+      "Discretionary Access Control (DAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Secure Directory Wrapper (SDW)"
+    ],
+    "answer": 0,
+    "explanation": "Identity Federation allows identities to be shared across trust boundaries, enabling users to log into external systems using their corporate credentials. DAC, ABAC, and SDW are access control models or invented terms."
+  },
+  {
+    "section": "S17",
+    "question": "A security officer wants to evaluate the accuracy of two fingerprint scanners. Scanner A has a False Acceptance Rate (FAR) of 0.01% and a False Rejection Rate (FRR) of 1%. Scanner B has a FAR of 0.05% and a FRR of 0.8%. Which metric should the officer compare to determine the overall balance of scanner performance?",
+    "options": [
+      "Crossover Error Rate (CER)",
+      "Sensitivity Matrix (SM)",
+      "Biometric Calibration Score (BCS)",
+      "Resolution Coefficient (RC)"
+    ],
+    "answer": 0,
+    "explanation": "The Crossover Error Rate (CER) is the metric where FAR and FRR are equal. A lower CER indicates a more accurate and balanced biometric system. SM, BCS, and RC are invented terms."
+  },
+  {
+    "section": "S17",
+    "question": "A biometric iris scanner frequently blocks authorized research staff from entering the cleanroom, forcing them to manually contact security for manual overrides. How should this system error be classified?",
+    "options": [
+      "False Acceptance / Type II Error",
+      "False Rejection / Type I Error",
+      "True Negative / System Match",
+      "Sensor Calibration Drift (SCD)"
+    ],
+    "answer": 1,
+    "explanation": "A False Rejection (Type I Error) occurs when an authorized user is incorrectly rejected by a biometric system. A False Acceptance (Type II Error) occurs when an unauthorized intruder is incorrectly granted access. SCD is an invented term."
+  },
+  {
+    "section": "S17",
+    "question": "An IT department implements a system where files can only be accessed if the user is a manager, the file is classified as internal, the request is made during business hours, and the host device is company-owned. Which access control model does this policy represent?",
+    "options": [
+      "Role-Based Access Control (RBAC)",
+      "Discretionary Access Control (DAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Mandatory Access Control (MAC)"
+    ],
+    "answer": 2,
+    "explanation": "ABAC (Attribute-Based Access Control) evaluates attributes of the subject (manager), resource (internal classification), action, and environment (time, device ownership) to make access decisions. RBAC only looks at user roles. DAC depends on owner permissions. MAC depends on system clearance labels."
+  },
+  {
+    "section": "S17",
+    "question": "A system administrator allocates folders on a shared file server. The folders can only be accessed by members of the 'Finance' group, and users are automatically added to this group based on their job title. Which access control model does this represent?",
+    "options": [
+      "Role-Based Access Control (RBAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Mandatory Access Control (MAC)",
+      "Discretionary Access Control (DAC)"
+    ],
+    "answer": 0,
+    "explanation": "RBAC (Role-Based Access Control) determines access permissions based on roles or group memberships defined within the organization, which correspond to job functions. MAC uses security labels. DAC uses resource owner discretion. ABAC uses multiple attributes."
+  },
+  {
+    "section": "S17",
+    "question": "In a military database, files are assigned labels such as 'Secret' or 'Top Secret'. Users are assigned corresponding security clearance levels. Access is granted only if the user's clearance matches or exceeds the file's label, and is enforced directly by the operating system kernel. What access control model is this?",
+    "options": [
+      "Discretionary Access Control (DAC)",
+      "Mandatory Access Control (MAC)",
+      "Role-Based Access Control (RBAC)",
+      "Rule-Based Access Control"
+    ],
+    "answer": 1,
+    "explanation": "MAC (Mandatory Access Control) is a strict model where access is determined by comparing system-defined security labels and clearances, and cannot be changed by the users or owners. DAC allows owners to change permissions. RBAC uses roles. Rule-based uses rules like firewalls."
+  },
+  {
+    "section": "S17",
+    "question": "A content creator is hosting files on a personal web drive. The creator can grant read-only, write, or full-control permissions to specific users at their own discretion. Which access control model does this represent?",
+    "options": [
+      "Discretionary Access Control (DAC)",
+      "Mandatory Access Control (MAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Role-Based Access Control (RBAC)"
+    ],
+    "answer": 0,
+    "explanation": "DAC (Discretionary Access Control) allows the owner of a resource to determine who is granted access and what permissions they have. MAC is enforced by system security policy labels. RBAC uses role group memberships. ABAC uses attributes."
+  },
+  {
+    "section": "S17",
+    "question": "A security analyst is auditing an Active Directory implementation. They discover that a junior developer who transitioned from customer support still has access to support ticketing databases and customer databases. What is this security issue called, and how is it BEST resolved?",
+    "options": [
+      "Privilege Creep; resolved by conducting regular user access reviews.",
+      "Insider Threat; resolved by implementing biometrics.",
+      "Directory Traversal; resolved by sanitizing inputs.",
+      "Access Drift; resolved by implementing single sign-on."
+    ],
+    "answer": 0,
+    "explanation": "Privilege Creep occurs when users accumulate permissions over time as they change roles. The BEST resolution is conducting regular user access reviews to revoke unneeded privileges. Biometrics, input sanitization, and SSO do not resolve permission accumulation."
+  },
+  {
+    "section": "S17",
+    "question": "An administrator wants to defend the network from brute-force password guessing attacks. They configure a policy that temporarily disables a user's account if they enter an incorrect password five times within a 10-minute window. What policy did they implement?",
+    "options": [
+      "Account Lockout Policy",
+      "Password History Policy",
+      "Privilege Auditing Policy",
+      "Credential Masking Policy"
+    ],
+    "answer": 0,
+    "explanation": "An Account Lockout Policy disables an account after a specified number of failed authentication attempts, blocking brute-force attacks. Password history prevents reuse. Auditing and masking do not block guessing."
+  },
+  {
+    "section": "S17",
+    "question": "A user is logging into a portal. Instead of entering a static password, they use an authenticator app that generates a 6-digit code. The code changes every 30 seconds and is calculated using a shared secret key and the current Unix time. What type of token is this?",
+    "options": [
+      "HMAC-based One-Time Password (HOTP)",
+      "Time-based One-Time Password (TOTP)",
+      "Synchronous Session Token (SST)",
+      "Static PIN Token (SPT)"
+    ],
+    "answer": 1,
+    "explanation": "TOTP (Time-based One-Time Password) uses the current time as the moving factor to generate codes that expire after a short period (usually 30 seconds). HOTP uses a counter value instead of time. SST and SPT are invented terms."
+  },
+  {
+    "section": "S17",
+    "question": "A security policy requires that users can never reuse their previous ten passwords when changing their credentials. Which password policy setting must be configured to enforce this?",
+    "options": [
+      "Password Age",
+      "Password History",
+      "Password Complexity",
+      "Password Replay Prevention"
+    ],
+    "answer": 1,
+    "explanation": "Password History tracks previously used passwords and prevents users from reusing them for a specified number of changes. Password age sets expiration limits. Complexity requires numbers or symbols. Replay prevention is not a standard password setting."
+  },
+  {
+    "section": "S17",
+    "question": "A web administrator is configuring a single sign-on portal. They want to ensure that if a user's SSO session token is hijacked, the attacker cannot use it indefinitely. Which parameter should the administrator configure on the identity provider?",
+    "options": [
+      "SSO Session Timeout / Token Expiration",
+      "Multifactor Geofencing",
+      "Account Lockout Threshold",
+      "Password History Depth"
+    ],
+    "answer": 0,
+    "explanation": "Configuring a short session timeout or token expiration limits the window of opportunity for an attacker using a hijacked session token. Geofencing, lockouts, and password history do not address session token lifespan directly."
+  },
+  {
+    "section": "S17",
+    "question": "A security engineer is configuring LDAP directory queries. They want to ensure that directory lookups are encrypted to prevent eavesdropping on usernames and group memberships. What protocol and port should they implement?",
+    "options": [
+      "LDAP over Port 389",
+      "LDAPS over Port 636",
+      "SAML over Port 443",
+      "RADIUS over Port 1812"
+    ],
+    "answer": 1,
+    "explanation": "LDAPS (LDAP over SSL/TLS) encrypts directory queries and runs on TCP Port 636. Standard LDAP runs on Port 389 in cleartext. SAML is a federation protocol. RADIUS is for network access authentication."
+  },
+  {
+    "section": "S17",
+    "question": "A user logs into an external partner's website. The partner's site trusts the user's home identity provider to assert that the user is authenticated. What type of identity architecture is this?",
+    "options": [
+      "Mandatory Access Control (MAC)",
+      "Federation / Federated SSO",
+      "Discretionary Access Control (DAC)",
+      "LDAP Directory Mapping"
+    ],
+    "answer": 1,
+    "explanation": "Federated identity architecture enables users to authenticate with their home identity provider to access resources across different organization domains. MAC and DAC are local access control models. LDAP is a local directory access standard."
+  },
+  {
+    "section": "S17",
+    "question": "An administrator is configuring a biometric system and wants to ensure it is secure enough for a high-security research vault. The administrator wants to reduce the likelihood of unauthorized intruders being granted access. Which metric should they minimize?",
+    "options": [
+      "False Rejection Rate (FRR) / Type I Error",
+      "False Acceptance Rate (FAR) / Type II Error",
+      "Crossover Error Rate (CER)",
+      "Sensor Sensitivity Index (SSI)"
+    ],
+    "answer": 1,
+    "explanation": "The False Acceptance Rate (FAR / Type II Error) measures the probability that an unauthorized user is incorrectly granted access. To maximize security against intruders, FAR must be minimized. Minimizing FRR improves usability. CER measures overall balance. SSI is an invented term."
+  },
+  {
+    "section": "S17",
+    "question": "A security policy mandates that employees must use a password manager. Which of the following is the PRIMARY security benefit of using a password manager?",
+    "options": [
+      "It automatically changes passwords on websites every 30 days.",
+      "It allows employees to use long, complex, and unique passwords for every site without needing to memorize them.",
+      "It eliminates the need for multi-factor authentication.",
+      "It encrypts database tables natively."
+    ],
+    "answer": 1,
+    "explanation": "A password manager enables users to generate, store, and automatically fill unique, long, and complex passwords for each account, eliminating password reuse and memorization challenges. It does not replace MFA or natively encrypt target databases."
+  },
+  {
+    "section": "S17",
+    "question": "A military base requires a smartcard to be inserted into a workstation to enable login. The card contains a digital certificate mapped to the user's identity. Which category of authentication factor does this card represent?",
+    "options": [
+      "Something you know",
+      "Something you have",
+      "Something you are",
+      "Somewhere you are"
+    ],
+    "answer": 1,
+    "explanation": "A physical smartcard containing a digital certificate is a token that the user physically possesses, representing the 'something you have' factor. Keys/passwords represent 'something you know', and biometrics represent 'something you are'."
+  },
+  {
+    "section": "S17",
+    "question": "A security analyst is implementing geofencing. They want to ensure that a corporate mobile app can only authenticate when the user's GPS coordinates are within 500 meters of the office. What type of authentication factor does this represent?",
+    "options": [
+      "Something you have",
+      "Somewhere you are",
+      "Something you do",
+      "Something you know"
+    ],
+    "answer": 1,
+    "explanation": "Geofencing relies on physical location data (GPS/IP), representing the 'somewhere you are' factor. 'Something you have' refers to tokens. 'Something you do' is behavioral biometrics. 'Something you know' refers to passwords."
+  },
+  {
+    "section": "S17",
+    "question": "An IT department is auditing permissions and discovers that several former employees who left the company months ago still have active corporate email accounts. Which IAM process failed in this scenario?",
+    "options": [
+      "Identity Proofing",
+      "Deprovisioning",
+      "SSO Integration",
+      "Accounting / Auditing"
+    ],
+    "answer": 1,
+    "explanation": "Deprovisioning is the process of removing or disabling user accounts when they leave the organization. Failing to deprovision accounts leaves them active, creating severe security risks. Identity proofing is done prior to account creation. SSO integration relates to authentication. Auditing reports the issue but is not the process that disables accounts."
+  }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "section": "S22",
+    "question": "A security officer plans an internal vulnerability scan to audit the patch levels and configuration settings of several production databases. To minimize network overhead and ensure a low false-positive rate, which scanning approach should the officer select?",
+    "options": [
+      "A non-credentialed scan",
+      "A passive network capture scan",
+      "A credentialed scan",
+      "A black-box port sweep"
+    ],
+    "answer": 2,
+    "explanation": "A credentialed scan logs directly into target hosts using valid credentials, enabling precise checks of the registry, package configurations, and patch directories with minimal network traffic and a low false-positive rate. Non-credentialed scans inspect systems externally, causing more network traffic and higher false-positive rates. Passive capture cannot check local configuration details. Port sweeps only identify open ports, not vulnerability details."
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability report identifies a critical remote code execution vulnerability in a company's web-based ERP system. Because the ERP contains highly customized legacy code, the software vendor estimates it will take three months to deliver a safe patch. To reduce the likelihood of exploitation immediately without shutting down the service, the IT team implements restrictive firewall rules and deploys a WAF in front of the ERP. Which risk management strategy does this action represent?",
+    "options": [
+      "Risk Mitigation",
+      "Risk Avoidance",
+      "Risk Transference",
+      "Vulnerability Deflection"
+    ],
+    "answer": 0,
+    "explanation": "Risk Mitigation involves applying technical controls or compensating measures (like firewall rules and WAFs) to reduce the likelihood or impact of a threat when a vulnerability cannot be permanently fixed (patched) immediately. Risk avoidance would require decommissioning the ERP system. Risk transference shifts the liability to a third party (like insurance). Vulnerability deflection is an invented term."
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst reviews the following CVSS v3 vector string for a newly published vulnerability: `CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H`. What information does the metric `AV:N` convey about the vulnerability's exploitability?",
+    "options": [
+      "The attacker must possess network-level credentials before exploiting the vulnerability (Normal).",
+      "The vulnerability can only be exploited if the victim performs an interactive network action (Neighbor).",
+      "The attack can be executed remotely over a network connection without requiring physical or local access (Network).",
+      "The attack requires the target system to be located within an isolated private network (Null)."
+    ],
+    "answer": 2,
+    "explanation": "The AV (Attack Vector) metric in CVSS defines the logical or physical path required to exploit a vulnerability. The value `N` (Network) indicates the vulnerability is exploitable remotely over a network interface without local or physical console access. The other options describe incorrect parameter definitions or metrics."
+  },
+  {
+    "section": "S22",
+    "question": "An independent security researcher discovers a critical authentication bypass vulnerability in a router vendor's firmware. The researcher sends the technical details confidentially to the vendor, giving them 90 days to create and deploy a patch before public release. What ethical disclosure practice is this?",
+    "options": [
+      "Bug Bounty Program",
+      "Full Disclosure",
+      "Ethical Patching Alliance (EPA)",
+      "Responsible / Coordinated Disclosure"
+    ],
+    "answer": 3,
+    "explanation": "Responsible (or Coordinated) Disclosure is the practice of reporting software vulnerabilities privately to the vendor to give them time to address the issue before it is made public. Bug bounty programs are formal incentive structures, but the coordinated disclosure practice itself is called responsible disclosure. Full disclosure immediately publishes details without notifying the vendor first. EPA is an invented term."
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability scan report highlights a critical vulnerability with a CVSS v3 score of 9.2. How should this vulnerability severity be classified?",
+    "options": [
+      "Medium",
+      "High",
+      "Critical",
+      "Extreme"
+    ],
+    "answer": 2,
+    "explanation": "According to CVSS v3 severity ratings: scores between 0.1-3.9 are Low, 4.0-6.9 are Medium, 7.0-8.9 are High, and 9.0-10.0 are Critical. A score of 9.2 is Critical."
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability scanner flags a production server as vulnerable to an old exploit because the OS kernel version matches the vulnerable version range. However, the system administrator verifies that the security patch was backported by the OS distributor, rendering the exploit useless. What type of scan result is this?",
+    "options": [
+      "False Positive",
+      "True Positive",
+      "False Negative",
+      "True Negative"
+    ],
+    "answer": 0,
+    "explanation": "A False Positive occurs when a security scanner incorrectly reports a vulnerability that does not actually exist or is already mitigated. In this case, the backported patch makes the report a false positive."
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst wants to gather vulnerability telemetry across the network without generating probe traffic or risking application crashes on critical hosts. Which scanning method should the analyst select?",
+    "options": [
+      "Credentialed active scanning",
+      "Passive vulnerability scanning",
+      "Non-credentialed active scanning",
+      "Fuzz testing sweep"
+    ],
+    "answer": 1,
+    "explanation": "Passive vulnerability scanning monitors network traffic (headers, packet exchanges) to identify active services, operating systems, and potential vulnerabilities without actively probing or sending packets to the target hosts, avoiding impact risks. Active scanning sends probes."
+  },
+  {
+    "section": "S22",
+    "question": "An analyst is investigating a newly released vulnerability. They want to check details using a database that lists standardized identifiers, descriptions, and dictionary definitions of public vulnerabilities. Which database should they reference?",
+    "options": [
+      "National Vulnerability Database (NVD)",
+      "CVE (Common Vulnerabilities and Exposures)",
+      "CVSS Severity Feed",
+      "Security Information Exchange (SIE)"
+    ],
+    "answer": 1,
+    "explanation": "CVE (Common Vulnerabilities and Exposures) is a standardized dictionary of publicly known cybersecurity vulnerabilities, providing a unique ID (CVE-YYYY-XXXXX) and description for each flaw. NVD is built on CVE and provides scoring."
+  },
+  {
+    "section": "S22",
+    "question": "A company performs a risk assessment on a legacy database server. Remediation costs $50,000, while the maximum potential loss from exploitation is estimated at $2,000. Management decides to log the risk in the register and take no further security actions. Which risk strategy is this?",
+    "options": [
+      "Risk Mitigation",
+      "Risk Transference",
+      "Risk Acceptance",
+      "Risk Avoidance"
+    ],
+    "answer": 2,
+    "explanation": "Risk Acceptance is a risk strategy where management decides to acknowledge the risk and take no active steps to resolve it, typically because the cost of remediation exceeds the potential impact of the threat."
+  },
+  {
+    "section": "S22",
+    "question": "An organization wants to protect itself against the financial impact of a potential ransomware attack. They purchase a comprehensive cybersecurity insurance policy from an underwriting firm. Which risk management strategy does this represent?",
+    "options": [
+      "Risk Avoidance",
+      "Risk Transference",
+      "Risk Mitigation",
+      "Risk Acceptance"
+    ],
+    "answer": 1,
+    "explanation": "Risk Transference shifts the financial risk or liability associated with a threat to a third party (such as an insurance company or an outsourced service provider)."
+  },
+  {
+    "section": "S22",
+    "question": "A security auditor identifies a legacy file sharing protocol active on a company intranet. Because the protocol has multiple critical vulnerabilities that cannot be patched, management decides to shut down the server permanently. Which risk strategy does this represent?",
+    "options": [
+      "Risk Mitigation",
+      "Risk Acceptance",
+      "Risk Transference",
+      "Risk Avoidance"
+    ],
+    "answer": 3,
+    "explanation": "Risk Avoidance is a strategy where an organization completely eliminates the risk by removing the asset, disabling the vulnerable service, or shutting down the system entirely."
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst reviews a CVSS v3 score. The metric `AC:H` is present. What does this metric tell the analyst about the vulnerability's exploitability?",
+    "options": [
+      "The exploit requires the attacker to possess administrator privileges.",
+      "The attack complexity is high, requiring specialized conditions or timing to succeed.",
+      "The attacker must be physically near the target switch.",
+      "The attack can be automated using basic scripts."
+    ],
+    "answer": 1,
+    "explanation": "The AC (Attack Complexity) metric measures the level of control or specific conditions required to exploit the vulnerability. `AC:H` (High) indicates that successful exploitation requires specialized conditions that are not easily replicated (such as race conditions or timing windows)."
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability details page indicates that the CVSS v3 metric `PR:H` is required. What privilege requirement must an attacker satisfy to exploit this vulnerability?",
+    "options": [
+      "No authentication is required.",
+      "The attacker must possess low-privileged user access.",
+      "The attacker must possess high-privileged or administrative access.",
+      "The victim must interact with a malicious email link."
+    ],
+    "answer": 2,
+    "explanation": "The PR (Privileges Required) metric defines the level of privileges an attacker must possess before exploiting the vulnerability. `PR:H` (High) requires administrative or superuser access. `PR:L` requires standard user access. `PR:N` requires no privileges."
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability requires a user to open a malicious spreadsheet attachment in their local email client to trigger an execution exploit. How should the CVSS v3 User Interaction (UI) metric be classified?",
+    "options": [
+      "UI:N (None)",
+      "UI:R (Required)",
+      "UI:L (Low)",
+      "UI:A (Active)"
+    ],
+    "answer": 1,
+    "explanation": "The UI (User Interaction) metric indicates if a victim must perform some action to trigger the exploit. Because the user must actively open the spreadsheet file, the metric is `UI:R` (Required). `UI:N` (None) is for automated exploits."
+  },
+  {
+    "section": "S22",
+    "question": "An attacker exploits a vulnerability in a web browser's sandboxed layout engine to execute arbitrary operating system commands directly on the host host. In CVSS v3, how is this transition represented?",
+    "options": [
+      "Scope: Unchanged (S:U)",
+      "Scope: Changed (S:C)",
+      "Attack Vector: Local (AV:L)",
+      "Privileges Required: High (PR:H)"
+    ],
+    "answer": 1,
+    "explanation": "In CVSS v3, the Scope (S) metric measures if a vulnerability in one software component affects resources managed by other security authorities. Breaking out of a browser sandbox to the host OS represents a Scope Change (`S:C`)."
+  },
+  {
+    "section": "S22",
+    "question": "An enterprise SIEM automatically correlates audit logs from domain controllers against a real-time vulnerability feed. The feed updates the SIEM whenever a new CVE matching the active database software versions is published. What security capability is this?",
+    "options": [
+      "Vulnerability feed integration / Threat intelligence parsing",
+      "Dynamic application security testing (DAST)",
+      "Static code compilation scanning",
+      "Manual penetration testing"
+    ],
+    "answer": 0,
+    "explanation": "Integrating real-time vulnerability feeds (like CVE/NVD feeds) into a SIEM allows security teams to correlate asset catalogs and log telemetry automatically with newly disclosed threat definitions."
+  },
+  {
+    "section": "S22",
+    "question": "An IT department receives a monthly security patch update from their operating system vendor. To prevent the patches from causing operational disruptions, what should the patch management policy require?",
+    "options": [
+      "Deploying the patches immediately to all production servers during business hours.",
+      "Testing patches in a non-production staging environment before deploying to production.",
+      "Disabling automatic updates permanently on all servers.",
+      "Re-licensing the software under an open-source agreement."
+    ],
+    "answer": 1,
+    "explanation": "A robust patch management process mandates testing updates in a staging/testing environment first to verify they do not introduce stability issues or break applications, before executing production deployment."
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst is prioritizing patch deployments. They find a vulnerability in their web portal that has a CVSS v3 score of 7.5 (High), but it has no known public exploits. They find another vulnerability in an internal server with a CVSS v3 score of 5.5 (Medium), but threat intelligence indicates it is actively being exploited in the wild. Which patch should the analyst apply FIRST?",
+    "options": [
+      "The portal patch, because its CVSS v3 score is higher.",
+      "The internal server patch, because active exploitation in the wild increases real-world risk.",
+      "Neither, because both are below the critical threshold.",
+      "Apply both simultaneously without testing."
+    ],
+    "answer": 1,
+    "explanation": "Vulnerability prioritization should consider active exploitation in the wild (threat intelligence) in addition to base CVSS scores. An actively exploited vulnerability represents immediate risk, making it the priority for remediation."
+  },
+  {
+    "section": "S22",
+    "question": "A network security administrator schedules a comprehensive network vulnerability scan. To minimize operational impact, when should the administrator configure the scan to run?",
+    "options": [
+      "During peak business hours to capture full user traffic",
+      "During designated off-peak hours or maintenance windows",
+      "Immediately after database replication tasks start",
+      "At random times throughout the day"
+    ],
+    "answer": 1,
+    "explanation": "Active vulnerability scans generate probe traffic and CPU load. Scheduling scans during off-peak hours or maintenance windows minimizes the risk of network congestion or application outages affecting business operations."
+  },
+  {
+    "section": "S22",
+    "question": "A security team is classifying organization systems for a vulnerability remediation plan. Which asset should be assigned the highest criticality rating?",
+    "options": [
+      "A receptionist's local workstation",
+      "A customer-facing web portal database server holding PII",
+      "A development sandbox server running test applications",
+      "An offline training lab laptop"
+    ],
+    "answer": 1,
+    "explanation": "Systems holding sensitive data (like PII or financial data) or hosting public-facing services represent the highest business impact if compromised, and should receive the highest asset criticality ratings."
+  },
+  {
+    "section": "S22",
+    "question": "A software vendor establishes a program where external security researchers are legally permitted to discover vulnerabilities in the vendor's application and report them privately in exchange for financial rewards. What is this program called?",
+    "options": [
+      "Bug Bounty Program",
+      "Full Disclosure Campaign",
+      "Vulnerability Audit Registry",
+      "Responsible Sourcing Portal"
+    ],
+    "answer": 0,
+    "explanation": "A Bug Bounty Program is a structured program offering recognition and cash rewards (bounties) to security researchers who discover and report vulnerabilities privately to the organization."
+  },
+  {
+    "section": "S22",
+    "question": "A security researcher discovers a critical vulnerability in a web server software package. The researcher immediately publishes the exploit code and technical details on a public social media forum without notifying the vendor first. What disclosure model does this represent?",
+    "options": [
+      "Responsible Disclosure",
+      "Full Disclosure",
+      "Coordinated Disclosure",
+      "Private Bounty disclosure"
+    ],
+    "answer": 1,
+    "explanation": "Full Disclosure is the practice of publishing vulnerability details and exploit code to the public immediately, without giving the software vendor prior warning or time to release a patch."
+  },
+  {
+    "section": "S22",
+    "question": "A security administrator conducts a vulnerability scan and selects an anonymous, non-credentialed scan configuration. Which of the following represents the PRIMARY benefit of this scanning approach?",
+    "options": [
+      "It has a lower false-positive rate than a credentialed scan.",
+      "It shows the target systems exactly as an external, unauthenticated attacker would see them.",
+      "It provides full access to local server registry keys.",
+      "It does not generate any network traffic."
+    ],
+    "answer": 1,
+    "explanation": "Non-credentialed scans do not log into the host. They probe external ports and banners, providing an accurate representation of what an external, unauthenticated attacker can discover from the outside."
+  },
+  {
+    "section": "S22",
+    "question": "A corporate policy mandates that vulnerability scans must be conducted weekly. Which of the following is the PRIMARY reason for scheduling scans at this frequency?",
+    "options": [
+      "To ensure that new systems and newly published vulnerabilities (CVEs) are identified and audited quickly",
+      "To comply with local electrical grid guidelines",
+      "To delete temporary user logs automatically",
+      "To test switch hardware routing limits"
+    ],
+    "answer": 0,
+    "explanation": "Weekly scheduling ensures that newly deployed assets, system changes, and newly published vulnerabilities (which are released daily) are discovered and analyzed promptly to maintain a strong security posture."
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst wants to evaluate a web application for vulnerabilities while the application is compiled and running, simulating real attacks by sending malformed HTTP payloads to the web inputs. Which testing methodology should they use?",
+    "options": [
+      "Static Application Security Testing (SAST)",
+      "Dynamic Application Security Testing (DAST)",
+      "Component Architecture Review",
+      "Manual Code Auditing"
+    ],
+    "answer": 1,
+    "explanation": "DAST (Dynamic Application Security Testing) is a black-box analysis method that tests a running application externally to identify security vulnerabilities. SAST analyzes the static source code."
+  },
+  {
+    "section": "S22",
+    "question": "An administrator is setting up a new enterprise vulnerability scanner. Before running the first scan, which configuration step is the MOST critical to ensure the scanner can detect the latest threats?",
+    "options": [
+      "Upgrade the scanner's physical CPU.",
+      "Update the scanner's vulnerability plug-ins / signatures database.",
+      "Change the scanner's default MAC address.",
+      "Configure the scanner to run as a domain controller."
+    ],
+    "answer": 1,
+    "explanation": "Vulnerability scanners rely on signatures (plug-ins) to identify threats. Updating the plug-in/signature database before scanning ensures the scanner possesses the definitions needed to detect the latest vulnerabilities."
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst configures a vulnerability scanner to use a dedicated service account to log into local Unix systems. How should this service account be configured to align with security best practices?",
+    "options": [
+      "It should use a shared password known to all help desk technicians.",
+      "It should be granted the minimum privileges necessary to perform the scan checks, and its credentials should be stored securely in a vault.",
+      "It should be configured with a blank password to allow quick logins.",
+      "It should be configured to run with full domain administrator privileges globally."
+    ],
+    "answer": 1,
+    "explanation": "Workstation scanning service accounts should follow the principle of least privilege (only permissions needed to read configuration files/registries) and have their passwords managed securely in a vault."
+  },
+  {
+    "section": "S22",
+    "question": "A Linux distributor backports a security patch to an older kernel version. A simple version-checking vulnerability scanner flags the kernel as vulnerable because of the version number. What does this false positive illustrate?",
+    "options": [
+      "The weakness of passive scanning",
+      "The limitation of version-based / signature-only scanning without credentialed validation",
+      "The risk of a DLL injection attack on the scanner",
+      "The failure of the backporting update"
+    ],
+    "answer": 1,
+    "explanation": "Simple version-checking scanners (often non-credentialed) look only at banners. They flag systems as vulnerable if the version number is in the exploit range, failing to check if the security fix was backported, resulting in false positives."
+  },
+  {
+    "section": "S22",
+    "question": "A security architect is analyzing CVSS v3 metric groups. They want to adjust a vulnerability's score to reflect their specific organization's deployment characteristics and network compensating controls. Which CVSS metric group should they configure?",
+    "options": [
+      "Base Metric Group",
+      "Temporal Metric Group",
+      "Environmental Metric Group",
+      "Systemic Metric Group"
+    ],
+    "answer": 2,
+    "explanation": "The Environmental metric group in CVSS v3 represents characteristics of a vulnerability that are specific to a particular user's environment, such as compensating controls or asset distribution. Base represents static properties, and Temporal changes over time."
+  },
+  {
+    "section": "S22",
+    "question": "During a vulnerability scan, the IT director notices that a legacy web service crashed when the scanner probed a custom port. Which of the following should the director implement to verify vulnerabilities on this specific host safely in the future?",
+    "options": [
+      "Switch to credentialed, non-intrusive scanning and exclude the custom port from active probes.",
+      "Perform a full-scale automated fuzz testing sweep during peak hours.",
+      "Disable vulnerability scanning on the legacy host entirely.",
+      "Configure a script to reboot the legacy host every 5 minutes during scans."
+    ],
+    "answer": 0,
+    "explanation": "Switching to non-intrusive, credentialed checks allows the scanner to verify patches locally via registries and package managers without sending intrusive network probes that cause legacy services to crash. Disabling scanning leaves the asset unmonitored."
+  }
+]

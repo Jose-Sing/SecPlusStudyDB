@@ -1,0 +1,362 @@
+[
+  {
+    "section": "S19",
+    "question": "An attacker uses a wireless packet analyzer to capture network authentication traffic between an employee and a legacy server. The next day, the attacker retransmits the captured packets to the server to establish an unauthorized active session. What type of attack is this, and how is it BEST mitigated?",
+    "options": [
+      "On-Path (Man-in-the-Middle) attack; mitigated by implementing static ARP tables on local switches.",
+      "Replay attack; mitigated by using unique session timestamps and cryptographic nonces.",
+      "Session hijacking; mitigated by forcing user password rotation every 30 days.",
+      "Protocol Rejection Attack (PRA); mitigated by physical port blocking."
+    ],
+    "answer": 1,
+    "explanation": "A replay attack involves capturing valid authentication packets and retransmitting them later to gain unauthorized access. The BEST mitigation is implementing session tokens with timestamps or cryptographic nonces (number used once) so that the server rejects duplicate or delayed packets. An On-Path attack requires active routing interception rather than simple retransmission. Session hijacking steals an active session cookie in real time. Password rotation does not stop the replay of captured traffic. PRA is an invented term."
+  },
+  {
+    "section": "S19",
+    "question": "A corporate web server suddenly stops responding to incoming requests. The system administrator checks network logs and finds thousands of connections in a half-open state (SYN_RECEIVED). The attacker is sending connection requests with spoofed source IP addresses and never completes the handshake. What type of DoS attack is this, and which control should be implemented FIRST?",
+    "options": [
+      "Permanent Denial of Service (PDoS); reinstall the edge router's firmware.",
+      "SYN Flood DoS; implement flood guards and shorten session timeout thresholds.",
+      "Fork Bomb; configure process execution limits for the OS root user.",
+      "Packet Exhaustion Storm (PES); implement static routing on the WAN."
+    ],
+    "answer": 1,
+    "explanation": "The attack is a SYN Flood, which exhausts a server's connection tables by leaving connections in a 'half-open' state. The FIRST and most direct control is implementing flood guards or shortening the session timeout threshold to drop incomplete connections quickly. PDoS damages hardware by destroying firmware. A fork bomb is a local host exploit that spawns infinite processes. PES is an invented term."
+  },
+  {
+    "section": "S19",
+    "question": "An enterprise systems administrator discovers that a disgruntled programmer inserted code that will delete the company's entire customer database if the programmer's employee ID is removed from the active payroll directory. What type of malware does this represent?",
+    "options": [
+      "Logic Bomb",
+      "Trojan Horse",
+      "Ransomware",
+      "Spyware"
+    ],
+    "answer": 0,
+    "explanation": "A Logic Bomb is malicious code inserted into a program that lies dormant until triggered by a specific event or condition (such as a calendar date, time, or the absence/presence of a database record)."
+  },
+  {
+    "section": "S19",
+    "question": "A security analyst conducts memory forensics on a compromised server and finds malware that has modified the operating system kernel to intercept system calls. The malware is hiding its own processes and files from standard administrator diagnostic utilities. What class of malware is this?",
+    "options": [
+      "Rootkit",
+      "Adware",
+      "Worm",
+      "Ransomware"
+    ],
+    "answer": 0,
+    "explanation": "A Rootkit is a type of malware designed to gain administrative/root access to a computer and modify operating system binaries or kernel tables to hide its presence and bypass detection tools."
+  },
+  {
+    "section": "S19",
+    "question": "An accounting employee receives a pop-up window stating that all their spreadsheet and PDF files have been encrypted using an RSA-2048 key. The window displays a countdown timer and instructions to send $500 in cryptocurrency to obtain the decryption key. What type of malware has infected the computer?",
+    "options": [
+      "Spyware",
+      "Ransomware",
+      "Rootkit",
+      "Trojan"
+    ],
+    "answer": 1,
+    "explanation": "Ransomware is malware that encrypts files or restricts access to a system and demands payment (usually cryptocurrency) from the victim to restore access."
+  },
+  {
+    "section": "S19",
+    "question": "The Chief Financial Officer (CFO) of a multinational bank receives an email that appears to come from the bank's external auditing firm. The email addresses the CFO by name, references a recent secret acquisition project, and requests immediate verification of wire transfer credentials via an attached document. How should this social engineering attack be classified?",
+    "options": [
+      "Spam",
+      "Whaling",
+      "Pharming",
+      "Vishing"
+    ],
+    "answer": 1,
+    "explanation": "Whaling is a highly targeted phishing attack (spear phishing) aimed specifically at high-profile, high-value targets such as corporate executives (C-level officers, CFOs, CEOs)."
+  },
+  {
+    "section": "S19",
+    "question": "A customer support agent receives a phone call from an individual claiming to be a technician from the company's internal IT help desk. The caller requests the agent to disclose their domain password to help resolve a database latency issue. What type of social engineering attack is this?",
+    "options": [
+      "Vishing",
+      "Smishing",
+      "Shoulder Surfing",
+      "Tailgating"
+    ],
+    "answer": 0,
+    "explanation": "Vishing (voice phishing) is the practice of using telephone systems and voice calls to conduct social engineering attacks and trick victims into disclosing sensitive info."
+  },
+  {
+    "section": "S19",
+    "question": "An employee receives a text message on their personal smartphone claiming to be from their supervisor. The message states that their company credentials have been compromised and directs them to click a short link to reset them immediately. What type of attack is this?",
+    "options": [
+      "Phishing",
+      "Smishing",
+      "Vishing",
+      "Pretexting"
+    ],
+    "answer": 1,
+    "explanation": "Smishing (SMS phishing) is a social engineering attack conducted via text messaging (SMS) on mobile devices to lure victims into clicking links or disclosing credentials."
+  },
+  {
+    "section": "S19",
+    "question": "Several users report that when trying to visit the company's public intranet page, they are redirected to a lookalike website that requests their login credentials. The network team finds that the local DNS server's cache has been manipulated to resolve the intranet's domain name to the attacker's server IP address. What type of attack is this?",
+    "options": [
+      "Phishing",
+      "Pharming",
+      "Whaling",
+      "Spim"
+    ],
+    "answer": 1,
+    "explanation": "Pharming redirects users to malicious lookalike websites by exploiting vulnerabilities in DNS servers (DNS cache poisoning) or by modifying the hosts file on client machines."
+  },
+  {
+    "section": "S19",
+    "question": "A security guard observes an individual dressed as a delivery courier holding a box and walking quickly through the building's badge-access door immediately behind an employee who just scanned their access card. What physical social engineering technique is the courier using?",
+    "options": [
+      "Shoulder Surfing",
+      "Tailgating",
+      "Dumpster Diving",
+      "Pretexting"
+    ],
+    "answer": 1,
+    "explanation": "Tailgating (or piggybacking) is when an unauthorized person closely follows an authorized person through a secure entry point to bypass security controls without authenticating."
+  },
+  {
+    "section": "S19",
+    "question": "An attacker sits at a coffee shop and uses a smartphone camera to record users entering their device unlock PINs and corporate login passwords on their laptops. What type of social engineering technique is this?",
+    "options": [
+      "Dumpster Diving",
+      "Shoulder Surfing",
+      "Tailgating",
+      "Pretexting"
+    ],
+    "answer": 1,
+    "explanation": "Shoulder Surfing involves looking over someone's shoulder or using cameras to spy on users and capture sensitive information like passwords, PINs, or data."
+  },
+  {
+    "section": "S19",
+    "question": "An attacker targets a financial firm by collecting discarded documents from the trash bins behind the company's offices, looking for printouts containing network diagrams, account details, and employee names. What is this technique called?",
+    "options": [
+      "Tailgating",
+      "Dumpster Diving",
+      "Shoulder Surfing",
+      "Pretexting"
+    ],
+    "answer": 1,
+    "explanation": "Dumpster Diving is the practice of searching through trash or recycling containers to find discarded documents, hardware, or files that contain sensitive corporate information."
+  },
+  {
+    "section": "S19",
+    "question": "An attacker contacts the customer support line of an insurance company, posing as an elderly customer who has forgotten their account number. The attacker creates a elaborate story about being hospitalized to gain sympathy and convince the support agent to disclose the account details. What social engineering concept does this scenario represent?",
+    "options": [
+      "Phishing",
+      "Pretexting",
+      "Shoulder Surfing",
+      "Tailgating"
+    ],
+    "answer": 1,
+    "explanation": "Pretexting is the act of creating an invented scenario (a pretext) to persuade a targeted victim to release information or perform an action they would not otherwise do."
+  },
+  {
+    "section": "S19",
+    "question": "A security administrator detects a high volume of login failures across thousands of corporate user accounts. The attacker is attempting to log into each account using a single popular password like 'Summer2026!' before moving on to the next account. What type of password attack is this?",
+    "options": [
+      "Dictionary Attack",
+      "Password Spraying",
+      "Brute-Force Attack",
+      "Rainbow Table Attack"
+    ],
+    "answer": 1,
+    "explanation": "Password Spraying is a type of brute-force attack where an attacker attempts a single common password against many different accounts to avoid account lockout thresholds."
+  },
+  {
+    "section": "S19",
+    "question": "A security analyst recovers a file containing stolen database hashes. To decrypt the passwords quickly, the analyst runs a tool that compares the hashes against precomputed tables containing millions of plaintext words and their matching SHA-256 hashes. What tool or technique is being used?",
+    "options": [
+      "Dictionary Attack",
+      "Rainbow Tables",
+      "Brute-Force Attack",
+      "Password Spraying"
+    ],
+    "answer": 1,
+    "explanation": "Rainbow Tables are precomputed tables of hashed passwords used to reverse cryptographic hash functions and quickly crack password hashes without computing hashes dynamically."
+  },
+  {
+    "section": "S19",
+    "question": "An attacker gains access to a local network segment and begins sending unsolicited ARP messages to the local switch. The messages map the default gateway IP address to the MAC address of the attacker's computer, redirecting local client traffic. What type of attack is this?",
+    "options": [
+      "MAC Spoofing",
+      "ARP Poisoning / Spoofing",
+      "DNS Spoofing",
+      "DHCP Snooping"
+    ],
+    "answer": 1,
+    "explanation": "ARP Poisoning (or ARP Spoofing) involves sending forged Address Resolution Protocol (ARP) messages onto a local network to associate an attacker's MAC address with the IP address of a legitimate server or gateway."
+  },
+  {
+    "section": "S19",
+    "question": "An administrator discovers that thousands of company computers have been silently infected with malware. The infected systems are communicating with an external Command and Control (C2) server and are configured to participate in coordinated DDoS attacks against external targets. What security threat is this?",
+    "options": [
+      "Worm",
+      "Botnet",
+      "Rootkit",
+      "Logic Bomb"
+    ],
+    "answer": 1,
+    "explanation": "A Botnet is a network of compromised computers (bots or zombies) controlled remotely by an attacker (botmaster) to perform coordinated tasks such as DDoS attacks or spam campaigns."
+  },
+  {
+    "section": "S19",
+    "question": "A user downloads a free PDF viewer application from a third-party website. The PDF viewer works as expected, but a hidden background service installs spyware that logs and exfiltrates browser history. How should this malware be classified?",
+    "options": [
+      "Worm",
+      "Trojan Horse",
+      "Rootkit",
+      "Logic Bomb"
+    ],
+    "answer": 1,
+    "explanation": "A Trojan Horse is a type of malware that is disguised as a legitimate, useful utility program, but contains hidden malicious functionality that executes behind the scenes."
+  },
+  {
+    "section": "S19",
+    "question": "A network security administrator detects a massive infection spreading automatically from computer to computer across the enterprise LAN. The malware exploits a vulnerability in the Windows SMB protocol to replicate itself across network shares without any user interaction. What type of malware is this?",
+    "options": [
+      "Trojan",
+      "Worm",
+      "Rootkit",
+      "Keylogger"
+    ],
+    "answer": 1,
+    "explanation": "A Worm is self-replicating malware that spreads automatically across computer networks by exploiting software vulnerabilities, without requiring human execution or host file attachment."
+  },
+  {
+    "section": "S19",
+    "question": "A security analyst inspects a suspicious user workstation and discovers a small physical adapter plugged inline between the keyboard USB cable and the computer's rear port. What security threat does this device represent?",
+    "options": [
+      "Hardware Keylogger",
+      "Software Rootkit",
+      "Adware injector",
+      "USB Sanitizer"
+    ],
+    "answer": 0,
+    "explanation": "A hardware keylogger is a physical device plugged between a keyboard and a computer to record every keystroke entered by the user, capturing passwords and sensitive inputs."
+  },
+  {
+    "section": "S19",
+    "question": "An organization experiences a Denial of Service attack where the attacker sends spoofed ICMP Echo Request packets to a network's broadcast IP address. The packets contain the victim's source IP address, causing all hosts on the subnet to flood the victim with ICMP Echo Replies. What attack type is this?",
+    "options": [
+      "SYN Flood",
+      "Smurf Attack",
+      "Fork Bomb",
+      "Slowloris"
+    ],
+    "answer": 1,
+    "explanation": "A Smurf Attack is a legacy DDoS attack that spoofs the victim's IP address and sends ICMP echo requests to broadcast addresses, magnifying traffic as every device replies to the victim."
+  },
+  {
+    "section": "S19",
+    "question": "An attacker attempts to crack an administrative password by running a tool that tests every possible combination of letters, numbers, and symbols sequentially (`aaaa1`, `aaaa2`, etc.). What password cracking method is this?",
+    "options": [
+      "Dictionary Attack",
+      "Brute-Force Attack",
+      "Rainbow Table Attack",
+      "Password Spraying"
+    ],
+    "answer": 1,
+    "explanation": "A brute-force attack attempts to decrypt passwords by systematically testing all possible character combinations until the correct key is found."
+  },
+  {
+    "section": "S19",
+    "question": "A security engineer receives reports of users receiving massive amounts of advertising and links to fraudulent sites on their corporate instant messaging application. Which threat term describes this malicious activity?",
+    "options": [
+      "Spam",
+      "Spim",
+      "Pharming",
+      "Spear Phishing"
+    ],
+    "answer": 1,
+    "explanation": "Spim is spam sent over Instant Messaging (IM) networks rather than email (which is traditional spam)."
+  },
+  {
+    "section": "S19",
+    "question": "An employee receives an email warning that a new and dangerous virus called the 'Blue Screen Destroyer' is spreading rapidly, and that they must immediately delete a system file named `kernel32.dll` to prevent infection. What type of social engineering attack is this?",
+    "options": [
+      "Watering Hole",
+      "Hoax",
+      "Pretexting",
+      "Whaling"
+    ],
+    "answer": 1,
+    "explanation": "A Hoax is a social engineering attack that spreads false alarms or warnings about non-existent security threats, aiming to trick users into compromising their own systems (like deleting essential files)."
+  },
+  {
+    "section": "S19",
+    "question": "A receptionist receives a call from an individual claiming to be a fire inspector who needs immediate remote access to the facility's security console to audit emergency exits. The caller uses authority and urgency to pressure the receptionist. What social engineering concept does this represent?",
+    "options": [
+      "Pretexting / Impersonation",
+      "Shoulder Surfing",
+      "Watering Hole",
+      "Pharming"
+    ],
+    "answer": 0,
+    "explanation": "This is Impersonation combined with Pretexting, where the attacker assumes a fake identity (fire inspector) and creates a false scenario (exit audit) to manipulate the victim."
+  },
+  {
+    "section": "S19",
+    "question": "An attacker discovers that developers in a large software firm frequently visit a local catering website to order lunch. The attacker compromises the catering site and injects exploit code to target vulnerabilities in the developers' web browsers. What attack vector is this?",
+    "options": [
+      "Spear Phishing",
+      "Watering Hole Attack",
+      "Whaling",
+      "Pharming"
+    ],
+    "answer": 1,
+    "explanation": "A Watering Hole attack targets a specific group of users by compromising a third-party website that they are known to visit frequently, infecting them when they browse the site."
+  },
+  {
+    "section": "S19",
+    "question": "A security analyst detects a DDoS attack where the attacker sends small NTP requests containing a spoofed source IP pointing to the victim, causing the NTP server to send large responses back to the victim. What is this technique called?",
+    "options": [
+      "DNS Spoofing",
+      "Amplification Attack",
+      "Replay Attack",
+      "SYN Flood"
+    ],
+    "answer": 1,
+    "explanation": "An Amplification Attack is a type of DDoS attack that exploits open protocols (like NTP, DNS, or SNMP) to send small queries with spoofed source IPs that trigger much larger response payloads, flooding the victim."
+  },
+  {
+    "section": "S19",
+    "question": "An attacker positions a device between a corporate laptop and the wireless access point, intercepting, reading, and modifying all network packets passing between the laptop and the web server in real time. How is this attack classified?",
+    "options": [
+      "Replay Attack",
+      "On-Path (Man-in-the-Middle) Attack",
+      "SYN Flood",
+      "MAC Filtering Violation"
+    ],
+    "answer": 1,
+    "explanation": "An On-Path (formerly Man-in-the-Middle) attack occurs when an attacker intercepts and potentially alters communication between two nodes without their knowledge."
+  },
+  {
+    "section": "S19",
+    "question": "An enterprise employee falls victim to a social engineering attack. The attacker leverages the psychological principle of 'Scarcity' by sending an email stating that only the first 5 employees to verify their payroll credentials will receive a 20% holiday bonus. Which social engineering principle is described?",
+    "options": [
+      "Social Proof / Consensus",
+      "Scarcity",
+      "Authority",
+      "Intimidation"
+    ],
+    "answer": 1,
+    "explanation": "Scarcity is the social engineering principle that creates a sense of urgency based on limited resources or limited opportunities, tricking the victim into acting quickly before thinking."
+  },
+  {
+    "section": "S19",
+    "question": "An attacker runs a script that repeatedly queries a local DNS resolver with spoofed UDP packets containing false mapping entries for a popular corporate bank. What is this DNS attack called?",
+    "options": [
+      "DNS Cache Poisoning",
+      "DNSSEC validation",
+      "DNS Zone Transfer",
+      "Domain Hijacking"
+    ],
+    "answer": 0,
+    "explanation": "DNS Cache Poisoning (or DNS Spoofing) is the act of introducing false DNS records into a DNS resolver's cache, causing it to resolve domain queries to incorrect, malicious IP addresses."
+  }
+]

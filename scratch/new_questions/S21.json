@@ -1,0 +1,362 @@
+[
+  {
+    "section": "S21",
+    "question": "An organization is planning a wireless network deployment in its new administrative headquarters. To satisfy physical security requirements, the network architect wants to prevent the wireless signal from easily leaking into the exterior parking lot while maximizing coverage indoors. Which of the following is the BEST approach?",
+    "options": [
+      "Increase the transmission power of WAPs located near windows to block external connections.",
+      "Place WAPs in central locations and mount directional antennas facing inward on exterior walls.",
+      "Configure all office WAPs to operate exclusively on overlapping channels in the 2.4 GHz band.",
+      "Install a Radio Frequency Perimeter Isolator (RFPI) around the building facade."
+    ],
+    "answer": 1,
+    "explanation": "The critical modifier BEST balances internal performance with security. Central placement distances the signal source from external boundaries, while directional antennas on exterior walls focus signal propagation inward, reducing spillover. Increasing transmit power exacerbates signal leakage. Operating on overlapping channels degrades performance due to interference. RFPI is an invented term."
+  },
+  {
+    "section": "S21",
+    "question": "A security administrator receives reports that customers are receiving phishing emails that spoof the company's official domain name. The administrator wants to implement a DNS-based defense that lists the authorized mail servers allowed to send messages on behalf of the domain. Which DNS record should they configure FIRST?",
+    "options": [
+      "A Sender Policy Framework (SPF) record",
+      "A DomainKeys Identified Mail (DKIM) record",
+      "A Domain Name System Security Extensions (DNSSEC) record",
+      "A Mail Validation Token (MVT) record"
+    ],
+    "answer": 0,
+    "explanation": "The modifier FIRST points to the base DNS record that lists authorized sender IPs. An SPF record publishes the list of authorized outgoing mail servers. DKIM adds digital signatures to email headers but does not list IP addresses directly. DNSSEC validates DNS records against tampering but does not verify email sender origins. MVT is an invented term."
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst evaluates an endpoint protection solution to detect and mitigate zero-day ransomware attacks. The tool must analyze host behavior in real time, automatically isolate compromised devices from the network, and collect forensic telemetry. Which solution meets these requirements?",
+    "options": [
+      "Traditional signature-based antivirus",
+      "Network Access Control (NAC)",
+      "Host Endpoint Shield (HES)",
+      "Endpoint Detection and Response (EDR)"
+    ],
+    "answer": 3,
+    "explanation": "EDR (Endpoint Detection and Response) monitors host behavior in real time to detect anomalies and zero-day threats, provides automated isolation capability, and facilitates forensic analysis. Signature antivirus relies on known malware files. NAC controls network admission based on host compliance posture rather than continuous runtime process execution. HES is an invented term."
+  },
+  {
+    "section": "S21",
+    "question": "An enterprise updates its wireless access points to the WPA3 standard. The security architect explains that this upgrade will prevent attackers from performing offline dictionary attacks after capturing the initial handshake. Which cryptographic mechanism in WPA3 provides this protection?",
+    "options": [
+      "Temporal Key Integrity Protocol (TKIP)",
+      "Simultaneous Authentication of Equals (SAE)",
+      "Wired Equivalent Privacy (WEP)",
+      "Advanced Handshake Integrity Protocol (AHIP)"
+    ],
+    "answer": 1,
+    "explanation": "WPA3 replaces the vulnerable four-way handshake of WPA2 with Simultaneous Authentication of Equals (SAE) for key establishment. SAE uses an exchange that is resistant to passive interception, mitigating offline dictionary attacks and providing forward secrecy. TKIP and WEP are legacy protocols. AHIP is an invented term."
+  },
+  {
+    "section": "S21",
+    "question": "An organization wants to configure a DNS-based email policy that instructs receiving mail servers to reject emails that fail SPF or DKIM checks, and send XML reports containing verification details back to the domain owner. Which record must they configure?",
+    "options": [
+      "A DMARC TXT record with a policy of 'reject'",
+      "An SPF record with a '~all' parameter",
+      "A DKIM record containing the public key",
+      "A Mail Verification Conformance (MVC) record"
+    ],
+    "answer": 0,
+    "explanation": "DMARC (Domain-based Message Authentication, Reporting, and Conformance) coordinates SPF and DKIM, defines policies (none, quarantine, reject) for validation failures, and provides XML reporting. An SPF record with '~all' is a soft fail. DKIM contains public keys but does not define reporting. MVC is an invented term."
+  },
+  {
+    "section": "S21",
+    "question": "A security engineer is configuring a DNS-based email validation system. They want to enable a mechanism that adds a cryptographic digital signature to the headers of outgoing emails to verify that the message content has not been tampered with in transit. What should they configure?",
+    "options": [
+      "Sender Policy Framework (SPF)",
+      "DomainKeys Identified Mail (DKIM)",
+      "DMARC quarantine policy",
+      "Pretty Good Privacy (PGP)"
+    ],
+    "answer": 1,
+    "explanation": "DKIM (DomainKeys Identified Mail) uses public-key cryptography to add a digital signature to email headers, allowing receiving servers to verify email authenticity and integrity. SPF lists authorized sender IPs. DMARC defines policies. PGP is for end-to-end user encryption rather than domain-level DNS signatures."
+  },
+  {
+    "section": "S21",
+    "question": "A large enterprise security team wants to correlate telemetry across their endpoints, cloud workloads, email platforms, and network firewalls using a single, unified security platform. Which class of security solution should they deploy?",
+    "options": [
+      "Endpoint Detection and Response (EDR)",
+      "Extended Detection and Response (XDR)",
+      "Security Information Event Multiplier (SIEM)",
+      "Threat Intel Gateway (TIG)"
+    ],
+    "answer": 1,
+    "explanation": "XDR (Extended Detection and Response) extends endpoint detection (EDR) capabilities by integrating data across multiple security layers (endpoints, cloud, network, email) into a unified system. SIEM aggregates logs but does not natively provide active correlation and response platforms. TIG is an invented term."
+  },
+  {
+    "section": "S21",
+    "question": "A network technician discovers an unauthorized wireless access point plugged into a wall port in the corporate cafeteria. The device is broadcasting the corporate SSID to intercept client credentials. How should this threat be classified?",
+    "options": [
+      "Evil Twin",
+      "Rogue Access Point",
+      "Watering Hole",
+      "RF Jammer"
+    ],
+    "answer": 1,
+    "explanation": "A Rogue Access Point is any unauthorized access point connected directly to the corporate network interface. An Evil Twin is a rogue AP configured to mimic a legitimate wireless network SSID but might not be connected to the target network."
+  },
+  {
+    "section": "S21",
+    "question": "An attacker sets up a wireless access point near a corporate office, broadcasting the SSID 'Corporate_Wifi_Guest' (matching the company's guest network name) to trick employees into connecting to it. What type of attack is this?",
+    "options": [
+      "Rogue Access Point",
+      "Evil Twin",
+      "Bluejacking",
+      "IV Collision"
+    ],
+    "answer": 1,
+    "explanation": "An Evil Twin is an unauthorized wireless access point that mimics the SSID of a legitimate network to lure clients into connecting for eavesdropping or credential harvesting."
+  },
+  {
+    "section": "S21",
+    "question": "A network team wants to optimize the placement of WAPs in a new three-story office building. They want to map signal coverage, identify dead zones, and estimate RF leakage outside the building facade. Which tool should they use?",
+    "options": [
+      "Wi-Fi Heatmap utility / Site Survey tool",
+      "Protocol Analyzer",
+      "Spectrum Analyzer",
+      "RF Jammer"
+    ],
+    "answer": 0,
+    "explanation": "A Wi-Fi Heatmap utility or site survey tool maps wireless signal propagation, helping architects position WAPs, optimize coverage, and identify signal leakage. Protocol analyzers capture packets. Spectrum analyzers measure raw RF signals. Jammers block signals."
+  },
+  {
+    "section": "S21",
+    "question": "An administrator disables SSID broadcasting on all corporate wireless access points. Which statement describes the security value of this configuration?",
+    "options": [
+      "It encrypts the wireless beacon frames using AES.",
+      "It provides security by obscurity, but attackers can easily identify the SSID using passive wireless sniffing tools.",
+      "It completely prevents unauthorized devices from joining the network.",
+      "It restricts wireless coverage to the physical building boundary."
+    ],
+    "answer": 1,
+    "explanation": "Disabling SSID broadcasting stops WAPs from sending their name in beacon frames, providing basic security by obscurity. However, the SSID is still transmitted in cleartext association frames, and attackers can easily discover it using passive sniffers."
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst is investigating a wireless attack. An attacker captured wireless association frames and used offline tools to attempt to crack the pre-shared key by running a dictionary list against the WPA2 handshake. What vulnerability is the attacker exploiting?",
+    "options": [
+      "The 4-way handshake vulnerability of WPA2",
+      "RC4 Initialization Vector (IV) collisions",
+      "Lack of AES encryption in WPA2 Enterprise",
+      "SSO certificate trust flaws"
+    ],
+    "answer": 0,
+    "explanation": "WPA2 relies on a 4-way handshake for key exchange. An attacker can capture this handshake (via sniffing or deauthentication attacks) and perform offline dictionary attacks to crack the password. RC4 IV collisions affect legacy WEP, not WPA2."
+  },
+  {
+    "section": "S21",
+    "question": "A guest connects to a hotel wireless network. When they attempt to browse the internet, they are immediately redirected to a web page asking them to accept the terms of service and enter their email address before access is granted. What network technology is being used?",
+    "options": [
+      "Network Access Control (NAC)",
+      "Captive Portal",
+      "802.1X Authentication Server",
+      "WPA3 Enterprise Gateway"
+    ],
+    "answer": 1,
+    "explanation": "A Captive Portal is a web page that forces HTTP users on a network to authenticate, accept terms, or complete a registration before obtaining internet access."
+  },
+  {
+    "section": "S21",
+    "question": "A security architect is updating the wireless security policy. They specify that the encryption algorithm used must provide Authenticated Encryption with Associated Data (AEAD) to ensure both confidentiality and integrity of wireless frames. Which protocol and cipher combination should they require?",
+    "options": [
+      "WEP with RC4",
+      "WPA2 with TKIP",
+      "WPA3 with AES-GCM (Galois/Counter Mode)",
+      "WPA2 with WEP-Wrapper"
+    ],
+    "answer": 2,
+    "explanation": "WPA3 implements AES-GCM (Galois/Counter Mode) or GCMP, which is an AEAD cipher providing high-performance encryption and built-in integrity validation. WEP RC4 and WPA2 TKIP are insecure legacy ciphers."
+  },
+  {
+    "section": "S21",
+    "question": "A security administrator wants to implement a secure email gateway (SEG) to filter incoming traffic. Which of the following represents the PRIMARY function of a secure email gateway?",
+    "options": [
+      "Encrypting database tables locally",
+      "Filtering spam, phishing links, and malware attachments at the network boundary",
+      "Generating user certificates for S/MIME",
+      "Enforcing geofencing rules for remote workers"
+    ],
+    "answer": 1,
+    "explanation": "A Secure Email Gateway (SEG) is an email security solution that analyzes inbound and outbound emails to block spam, phishing attempts, malware attachments, and policy violations."
+  },
+  {
+    "section": "S21",
+    "question": "An executive wants to exchange sensitive emails with a business partner in a way that guarantees end-to-end confidentiality and non-repudiation of the sender. Both organizations possess an internal Public Key Infrastructure (PKI). Which standard should the executive use?",
+    "options": [
+      "Sender Policy Framework (SPF)",
+      "S/MIME (Secure/Multipurpose Internet Mail Extensions)",
+      "DomainKeys Identified Mail (DKIM)",
+      "TLS email relaying"
+    ],
+    "answer": 1,
+    "explanation": "S/MIME uses PKI certificates to digitally sign and encrypt email messages at the application layer, ensuring end-to-end confidentiality, authenticity, and non-repudiation. SPF and DKIM protect domains at the DNS level. TLS relays secure transport but does not provide end-to-end message-level signing."
+  },
+  {
+    "section": "S21",
+    "question": "A system administrator wants to secure outgoing email communications from corporate users. They want to sign all corporate messages digitally to prove they originate from the organization, but do NOT need to encrypt the body contents. Which standard is the BEST choice?",
+    "options": [
+      "S/MIME signing",
+      "PGP encryption",
+      "SPF record enforcement",
+      "IPsec Transport Mode"
+    ],
+    "answer": 0,
+    "explanation": "S/MIME supports digital signing without encryption. This signs the message using the sender's private key, proving authenticity and message integrity to the recipient. PGP is for peer-to-peer encryption. SPF validates domains, not individual messages."
+  },
+  {
+    "section": "S21",
+    "question": "An attacker targets a home wireless router. The router has Wi-Fi Protected Setup (WPS) enabled. How does the attacker exploit this setting to gain unauthorized access to the network?",
+    "options": [
+      "By capturing WPA3 SAE handshakes",
+      "By brute-forcing the 8-digit WPS PIN to retrieve the wireless WPA2 password",
+      "By performing a dictionary attack on the HTTP console",
+      "By spoofing the router's DNS server IP"
+    ],
+    "answer": 1,
+    "explanation": "WPS allows quick connection using an 8-digit PIN. Attackers can exploit WPS design flaws to brute-force this PIN in a few hours, retrieving the underlying WPA2 pre-shared password."
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst is investigating a wireless performance issue. They find that an attacker is flooding the local area with high-power RF noise in the 2.4 GHz band, preventing wireless devices from associating with any WAPs. What type of attack is occurring?",
+    "options": [
+      "Deauthentication Attack",
+      "RF Jamming / Denial of Service",
+      "Evil Twin attack",
+      "Man-in-the-Middle"
+    ],
+    "answer": 1,
+    "explanation": "RF Jamming is a physical-layer Denial of Service attack where the attacker floods the wireless frequencies with radio frequency noise, disrupting communications. Deauthentication is a protocol-layer attack."
+  },
+  {
+    "section": "S21",
+    "question": "An analyst wants to investigate a suspicious email. The email claims to be from a business partner but contains a SPF soft fail header and a failed DKIM signature validation. Which security component in the email gateway flagged this mismatch?",
+    "options": [
+      "S/MIME decryptor",
+      "DMARC verification engine",
+      "Anti-Spam reputation filter",
+      "WAF inspector"
+    ],
+    "answer": 1,
+    "explanation": "DMARC verifies that the sender domain matches the SPF and DKIM validations. When they fail or mismatch, DMARC flags the verification failure and applies the domain owner's reporting/policy settings."
+  },
+  {
+    "section": "S21",
+    "question": "An administrator wants to deploy an endpoint agent that is capable of automatically disconnecting a workstation from the local network if it detects ransomware process activity, preventing the ransomware from spreading to network shares. What solution should they implement?",
+    "options": [
+      "Host Intrusion Detection System (HIDS)",
+      "Endpoint Detection and Response (EDR)",
+      "Traditional Antivirus",
+      "Group Policy Object"
+    ],
+    "answer": 1,
+    "explanation": "EDR (Endpoint Detection and Response) agents monitor process behavior and contain active isolation/containment capabilities, enabling them to isolate compromised hosts from the network automatically when malicious behavior is detected."
+  },
+  {
+    "section": "S21",
+    "question": "A network security architect wants to configure 802.1X wireless authentication. The architect requires both the authentication server and the client endpoints to validate each other's identities using digital certificates. Which EAP protocol must they choose?",
+    "options": [
+      "PEAP",
+      "EAP-TLS",
+      "EAP-FAST",
+      "EAP-TTLS"
+    ],
+    "answer": 1,
+    "explanation": "EAP-TLS (EAP Transport Layer Security) is the standard that requires digital certificates on both the client endpoints and the authentication server for mutual cryptographic authentication. PEAP and EAP-TTLS only require server-side certificates."
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst reviews a DMARC policy record: `v=DMARC1; p=quarantine; pct=100; rua=mailto:dmarc@company.com`. What policy action does `p=quarantine` recommend to receiving mail servers?",
+    "options": [
+      "Accept all failed emails but send reports to the specified address.",
+      "Deliver emails that fail validation to the recipient's spam/junk folder.",
+      "Block and reject all failed emails at the gateway.",
+      "Decrypt the S/MIME signatures automatically."
+    ],
+    "answer": 1,
+    "explanation": "The DMARC policy `quarantine` directs receiving servers to flag emails that fail verification as suspicious (e.g., placing them in the spam/junk folder). The policy `reject` blocks them. The policy `none` allows delivery but gathers reports."
+  },
+  {
+    "section": "S21",
+    "question": "An attacker targets a corporate Wi-Fi client. The attacker sends spoofed management frames to the client device, pretending to be the access point, instructing the client to disconnect immediately. The attacker hopes to capture the handshake when the client reconnects. What type of attack is this?",
+    "options": [
+      "IV Collision Attack",
+      "Deauthentication Attack",
+      "WPS PIN brute-force",
+      "RF Jamming"
+    ],
+    "answer": 1,
+    "explanation": "A deauthentication attack is a protocol-level attack where the attacker sends spoofed deauth frames to force a client to disconnect from the access point, exposing them to handshake capture or evil twin attacks."
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst wants to verify who is sending emails using their corporate domain. They receive DMARC XML reports weekly. What information do these reports primarily contain?",
+    "options": [
+      "The plaintext body content of all outgoing corporate emails",
+      "The IP addresses of servers sending emails claiming to be from the domain, and their SPF/DKIM verification status",
+      "The passwords of users who sent failed emails",
+      "The network routing diagrams of the email relays"
+    ],
+    "answer": 1,
+    "explanation": "DMARC reports contain aggregate statistics about email traffic originating from the domain, detailing the sender IP addresses, email volumes, and whether the emails passed SPF and DKIM validation checks."
+  },
+  {
+    "section": "S21",
+    "question": "An organization wants to encrypt all email traffic between their offices and their business partners. Both organizations use cloud-based email services. Which protocol should they configure on their mail gateways to secure email transport?",
+    "options": [
+      "S/MIME",
+      "Opportunistic / Forced TLS (Transport Layer Security)",
+      "DKIM",
+      "Syslog Secure"
+    ],
+    "answer": 1,
+    "explanation": "Forced TLS (or SMTP over TLS) secures the communication channel (transport layer) between email servers, ensuring that all emails sent between the gateways are encrypted in transit. S/MIME is for message-level encryption."
+  },
+  {
+    "section": "S21",
+    "question": "A security administrator is configuring a corporate wireless network. To comply with security standards, the administrator wants to implement WPA3. Which encryption protocol does WPA3 use to protect data frames?",
+    "options": [
+      "RC4 with TKIP",
+      "AES-CCMP",
+      "AES-GCMP (Galois/Counter Mode Protocol)",
+      "WEP-AEAD"
+    ],
+    "answer": 2,
+    "explanation": "WPA3 uses AES-GCMP (Galois/Counter Mode Protocol) for data encryption, which is more secure and efficient than the AES-CCMP protocol used in WPA2. WEP and TKIP are legacy, insecure protocols."
+  },
+  {
+    "section": "S21",
+    "question": "A security engineer is deploying a Secure Email Gateway (SEG). The engineer wants to ensure that the SEG scans all incoming attachments in a secure virtual environment to detect zero-day malware before delivering the email. What feature is this?",
+    "options": [
+      "Email Hashing",
+      "Attachment Sandboxing",
+      "DKIM Signing",
+      "SMTP TLS forcing"
+    ],
+    "answer": 1,
+    "explanation": "Attachment sandboxing executes suspicious email attachments in an isolated virtual environment (sandbox) to observe their behavior, detecting zero-day threats that traditional signatures miss."
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst wants to implement a solution to monitor all corporate endpoints for indicators of compromise (IOCs). The solution must collect detailed process histories, network connection logs, and file changes, storing them in a central cloud console for threat hunting. Which solution is the BEST choice?",
+    "options": [
+      "Traditional Host-based Firewall",
+      "Endpoint Detection and Response (EDR)",
+      "Network Access Control (NAC) Agent",
+      "Basic Antivirus"
+    ],
+    "answer": 1,
+    "explanation": "EDR solutions provide continuous endpoint monitoring, collecting and storing granular telemetry (processes, files, network data) to aid in threat detection, investigation, and threat hunting."
+  },
+  {
+    "section": "S21",
+    "question": "A network architect is designing a wireless LAN deployment. To prevent unauthorized devices from accessing the corporate network, the architect wants to implement port-based authentication that blocks switch ports until client credentials are validated against a central RADIUS server. Which standard is this?",
+    "options": [
+      "802.11ac",
+      "802.1X",
+      "802.3af",
+      "WPA3-Personal"
+    ],
+    "answer": 1,
+    "explanation": "802.1X is an IEEE standard for port-based Network Access Control (PNAC), providing authentication for devices attempting to connect to a LAN or WLAN through switch ports or access points."
+  }
+]

@@ -10658,5 +10658,5937 @@ const EXAM_QUESTIONS = [
     ],
     "answer": 1,
     "explanation": "Cryptographic signature verification ensures that updates received remotely (OTA) are authentic and have not been tampered with by an attacker, preventing malicious firmware deployment."
+  },
+  {
+    "section": "S2",
+    "question": "A system administrator grants a database analyst read-only access to the customer tables, but blocks them from modifying any records. What security principle is being enforced?",
+    "options": [
+      "Implicit Allow",
+      "Least Privilege",
+      "Separation of Duties",
+      "Non-repudiation"
+    ],
+    "answer": 1,
+    "explanation": "Least Privilege ensures that users are granted only the minimum permissions necessary to complete their job tasks. Allowing read-only access but preventing modification satisfies this principle.",
+    "id": 821
+  },
+  {
+    "section": "S2",
+    "question": "An enterprise security architect designs a network utilizing physical guards at the perimeter, firewall filtering at the edge, and host-based antivirus software on all workstations. What concept does this BEST represent?",
+    "options": [
+      "Deperimeterization",
+      "Zero Trust Architecture",
+      "Defense in Depth",
+      "Single Point of Failure"
+    ],
+    "answer": 2,
+    "explanation": "Defense in Depth is the practice of layering multiple security controls (physical, technical, and administrative) so that if one control fails, others are in place to block the threat.",
+    "id": 822
+  },
+  {
+    "section": "S2",
+    "question": "During a routine audit, an administrator wants to trace which employee authorized a critical configuration change on a core switch at 3:00 AM. Which element of the AAA model does this track?",
+    "options": [
+      "Authentication",
+      "Authorization",
+      "Accounting",
+      "Association"
+    ],
+    "answer": 2,
+    "explanation": "Accounting involves tracking and logging user actions to provide accountability and a detailed audit trail of who performed what action and when.",
+    "id": 823
+  },
+  {
+    "section": "S2",
+    "question": "A web application requires developers to test new features using customer databases. The database team replaces customer credit card numbers with format-preserving random strings that do not map back to a vault. What is this technique called?",
+    "options": [
+      "Tokenization",
+      "Data Masking",
+      "Full Disk Encryption",
+      "Hashing"
+    ],
+    "answer": 1,
+    "explanation": "Data Masking (or obfuscation) replaces sensitive data with realistic but fake values for non-production environments like testing, without using a secure vault mapping (which would be Tokenization).",
+    "id": 824
+  },
+  {
+    "section": "S2",
+    "question": "An organization is transitioning to a Zero Trust architecture. When configuring the Policy Decision Point (PDP) and Policy Enforcement Point (PEP), which device functions as the PEP?",
+    "options": [
+      "The policy engine analyzing the threat telemetry",
+      "The database storing the access rules",
+      "The firewall or gateway that intercepts and blocks traffic",
+      "The identity provider validating user credentials"
+    ],
+    "answer": 2,
+    "explanation": "The Policy Enforcement Point (PEP) is the component (such as a firewall, gateway, or agent) that actually executes the allow/deny decision made by the Policy Decision Point (PDP).",
+    "id": 825
+  },
+  {
+    "section": "S2",
+    "question": "An administrator wants to ensure that if a power outage occurs in a facility, the electronic security locks on emergency exit doors automatically unlock to allow employees to evacuate safely. What lock configuration must be implemented?",
+    "options": [
+      "Fail-secure",
+      "Fail-safe",
+      "Biometric bypass",
+      "Implicit Deny"
+    ],
+    "answer": 1,
+    "explanation": "Fail-safe locks automatically unlock when power is lost to prioritize human life safety. Fail-secure locks remain locked during power loss to protect assets.",
+    "id": 826
+  },
+  {
+    "section": "S2",
+    "question": "A security analyst runs a script that compares the cryptographic hash digests of critical operating system binaries against a known good baseline every hour. What is this control verifying?",
+    "options": [
+      "Confidentiality of the binaries",
+      "Availability of the services",
+      "Integrity of the system files",
+      "Non-repudiation of updates"
+    ],
+    "answer": 2,
+    "explanation": "Hashing is the primary mechanism for verifying Integrity. Comparing current file hashes against a known baseline immediately reveals if the files have been tampered with or modified.",
+    "id": 827
+  },
+  {
+    "section": "S2",
+    "question": "A cybersecurity consultant is conducting a technical gap analysis for an organization. What is the PRIMARY output of this assessment?",
+    "options": [
+      "A standard operating procedure for incident response",
+      "A list of physical controls to install",
+      "A comparison of the current security state against a baseline/desired state",
+      "A quantitative risk registry with financial estimates"
+    ],
+    "answer": 2,
+    "explanation": "A Technical Gap Analysis evaluates the current security posture of an organization, compares it against a desired standard or baseline, and identifies the gaps that need remediation.",
+    "id": 828
+  },
+  {
+    "section": "S2",
+    "question": "An IT department is tracking their remediation progress for gaps identified during a recent security audit. Which document should they use to document tasks, assign resources, and track completion milestones?",
+    "options": [
+      "Acceptable Use Policy (AUP)",
+      "Plan of Action and Milestones (POA&M)",
+      "Master Services Agreement (MSA)",
+      "Key Risk Indicators (KRI)"
+    ],
+    "answer": 1,
+    "explanation": "A Plan of Action and Milestones (POA&M) is a structured document that lists vulnerabilities/gaps, planned corrective actions, required resources, and target completion dates.",
+    "id": 829
+  },
+  {
+    "section": "S2",
+    "question": "A security policy mandates that employees must complete cybersecurity awareness training annually. What category of security control is this?",
+    "options": [
+      "Physical control",
+      "Technical control",
+      "Managerial control",
+      "Operational control"
+    ],
+    "answer": 3,
+    "explanation": "Operational controls are security measures implemented and executed by people (rather than systems), such as daily operations, training, and configuration procedures.",
+    "id": 830
+  },
+  {
+    "section": "S3",
+    "question": "A military logistics network is compromised by an attacker who silently maintains access, monitors communication channels, and exfiltrates coordinates over several months without disrupting any services. What type of threat actor is this?",
+    "options": [
+      "Unskilled Attacker (Script Kiddie)",
+      "Hacktivist group",
+      "Advanced Persistent Threat (APT)",
+      "Shadow IT installation"
+    ],
+    "answer": 2,
+    "explanation": "Advanced Persistent Threats (APTs) are highly skilled, well-funded threat actors (often state-sponsored) characterized by their capability, stealth, and patience to maintain long-term access to a target.",
+    "id": 831
+  },
+  {
+    "section": "S3",
+    "question": "A group defaces a commercial retail website, replacing the shopping page with a banner protesting the company's labor policies. What is the primary motivation of this threat actor?",
+    "options": [
+      "Financial Gain",
+      "Corporate Espionage",
+      "Ideological / Political",
+      "Nuisance / Chaos"
+    ],
+    "answer": 2,
+    "explanation": "Defacing websites to protest political or ideological issues is a classic indicator of hacktivism, which is driven by political, environmental, or social motivations.",
+    "id": 832
+  },
+  {
+    "section": "S3",
+    "question": "A marketing employee installs an unapproved cloud-based file synchronization service on their corporate laptop to share files with external clients. What risk does this action introduce?",
+    "options": [
+      "Malicious Insider threat",
+      "Shadow IT vulnerability",
+      "Social engineering vector",
+      "Physical threat access"
+    ],
+    "answer": 1,
+    "explanation": "Shadow IT is the use of unauthorized systems, software, or hardware within an organization without approval from the IT or security department, bypassing standard controls.",
+    "id": 833
+  },
+  {
+    "section": "S3",
+    "question": "An IT manager wants to reduce the organization's attack surface. Which action would BEST achieve this?",
+    "options": [
+      "Disable all unnecessary services, close unused ports, and restrict remote access",
+      "Conduct a qualitative risk analysis on all legacy servers",
+      "Deploy more physical CCTV cameras around the data center",
+      "Increase the backup retention period to 10 years"
+    ],
+    "answer": 0,
+    "explanation": "Reducing the attack surface involves minimizing the sum of all potential entry points and vulnerabilities (closing ports, disabling unused software/protocols, restricting access).",
+    "id": 834
+  },
+  {
+    "section": "S3",
+    "question": "A security analyst gathers intelligence on a threat group by analyzing publicly available social media profiles, government filings, and public forums. What intelligence source is being used?",
+    "options": [
+      "Closed-Source Intelligence",
+      "Open-Source Intelligence (OSINT)",
+      "Dark Web Analytics",
+      "Proprietary Threat Feeds"
+    ],
+    "answer": 1,
+    "explanation": "Open-Source Intelligence (OSINT) is the collection, analysis, and dissemination of information compiled from publicly available data sources.",
+    "id": 835
+  },
+  {
+    "section": "S3",
+    "question": "A security team wants to ingest machine-readable threat intelligence feeds from industry partners automatically. Which standardized format and exchange protocol combination should they implement?",
+    "options": [
+      "JSON-LD over SAML",
+      "STIX format over TAXII protocol",
+      "YAML format over Syslog",
+      "XML format over WPA3"
+    ],
+    "answer": 1,
+    "explanation": "STIX (Structured Threat Information eXpression) defines the format for sharing threat intelligence, while TAXII (Trusted Automated eXchange of Intelligence Information) is the transport protocol.",
+    "id": 836
+  },
+  {
+    "section": "S3",
+    "question": "A cyber intelligence report indicates that an attack against a European defense contractor was designed to leave logs pointing to a known Chinese APT group, though forensic indicators suggest it was executed by an Eastern European syndicate. What type of operation is this?",
+    "options": [
+      "Watering Hole attack",
+      "False Flag Attack",
+      "Pretexting operation",
+      "Honeynet diversion"
+    ],
+    "answer": 1,
+    "explanation": "A False Flag Attack is deliberately designed to mislead investigators and attribute the incident to a different country or threat actor group.",
+    "id": 837
+  },
+  {
+    "section": "S3",
+    "question": "A security department proactively searches through process memory, endpoint events, and network connection logs to identify threat actors that have already bypassed existing perimeter firewalls. What is this activity called?",
+    "options": [
+      "Vulnerability Scanning",
+      "Penetration Testing",
+      "Threat Hunting",
+      "Risk Assessment"
+    ],
+    "answer": 2,
+    "explanation": "Threat Hunting is a proactive, analyst-led search for undetected threats or malware lurking within an organization's network that have bypassed automated security controls.",
+    "id": 838
+  },
+  {
+    "section": "S3",
+    "question": "An employee inadvertently plugs a malicious USB drive into a workstation after finding it in the lobby, launching malware that exposes the local network. How should the threat actor role of this employee be classified?",
+    "options": [
+      "Malicious Insider",
+      "Negligent Insider",
+      "Script Kiddie",
+      "External threat vector"
+    ],
+    "answer": 1,
+    "explanation": "A Negligent Insider is an employee who unintentionally causes a security incident or compromises security policies due to careless behavior, lack of awareness, or bypassing guidelines.",
+    "id": 839
+  },
+  {
+    "section": "S3",
+    "question": "An attacker targets a developer at an enterprise by compromising a popular online forum frequented by developers in that organization, injecting exploit scripts into the site's code. What attack vector is this?",
+    "options": [
+      "Spear Phishing",
+      "Watering Hole Attack",
+      "Supply Chain Attack",
+      "Typosquatting"
+    ],
+    "answer": 1,
+    "explanation": "A Watering Hole Attack involves compromising a third-party website known to be frequented by targets from a specific organization or industry, aiming to infect them when they visit.",
+    "id": 840
+  },
+  {
+    "section": "S4",
+    "question": "A data center manager wants to prevent tailgating and unauthorized access at the server room entrance. Which physical security control is the BEST choice?",
+    "options": [
+      "CCTV PTZ cameras",
+      "Bollards",
+      "Access Control Vestibule (Mantrap)",
+      "Faraday Cages"
+    ],
+    "answer": 2,
+    "explanation": "An Access Control Vestibule (or mantrap) uses a double-door system where the second door cannot open until the first door closes and authentication is validated, physically preventing tailgating.",
+    "id": 841
+  },
+  {
+    "section": "S4",
+    "question": "A security engineer wants to prevent wireless network signals from leaking outside the physical boundaries of a secure command facility to block external eavesdropping. What should be installed?",
+    "options": [
+      "An Access Control Vestibule",
+      "Faraday Cage shielding / materials",
+      "Passive Infrared sensors",
+      "Fail-safe magnetic door locks"
+    ],
+    "answer": 1,
+    "explanation": "A Faraday Cage (or electromagnetic shielding) blocks electromagnetic fields, preventing wireless signals from leaking out of the room or external interference from entering.",
+    "id": 842
+  },
+  {
+    "section": "S4",
+    "question": "A security manager is evaluating three biometric systems. System X has a CER of 0.4%, System Y has a CER of 1.5%, and System Z has a CER of 3.2%. Which system is the MOST accurate?",
+    "options": [
+      "System Z",
+      "System Y",
+      "System X",
+      "They are all equally secure"
+    ],
+    "answer": 2,
+    "explanation": "The Crossover Error Rate (CER) is the point where the False Acceptance Rate (FAR) equals the False Rejection Rate (FRR). A lower CER indicates a more accurate biometric system.",
+    "id": 843
+  },
+  {
+    "section": "S4",
+    "question": "An architect is designing the physical security of a bank headquarters. They want to prevent vehicles from ramming into the front glass doors of the lobby. What physical control should they install?",
+    "options": [
+      "Fences",
+      "Bollards",
+      "Security Lighting",
+      "Access Control Vestibule"
+    ],
+    "answer": 1,
+    "explanation": "Bollards are heavy concrete or steel posts designed to control or block vehicle access and absorb vehicle impacts, protecting buildings from ramming attacks.",
+    "id": 844
+  },
+  {
+    "section": "S4",
+    "question": "A facility manager wants to optimize the cooling and airflow of a large server room to prevent thermal damage to hardware. Which server rack design should they implement?",
+    "options": [
+      "Faraday containment configuration",
+      "Hot and cold aisles layout",
+      "Integrated mantrap zones",
+      "Seismic dampening isolation"
+    ],
+    "answer": 1,
+    "explanation": "Hot and cold aisles layouts separate the cold air intakes of servers from their hot exhaust flows, optimizing cooling efficiency and server reliability.",
+    "id": 845
+  },
+  {
+    "section": "S4",
+    "question": "A facility manager wants a physical security control that acts as a visual deterrent to potential intruders at night while ensuring that perimeter security cameras can capture clear footage. Which control should they implement?",
+    "options": [
+      "PTZ dome cameras",
+      "Security Lighting (Illumination)",
+      "Access control vestibule",
+      "Proximity sensors"
+    ],
+    "answer": 1,
+    "explanation": "Security lighting (illumination) acts as an active deterrent by making intruders visible, and provides the light needed for security cameras to capture high-quality recordings.",
+    "id": 846
+  },
+  {
+    "section": "S4",
+    "question": "A security guard monitors lobby activity. They want to replace a stationary camera with one that can be controlled remotely to follow individuals moving through the facility. What camera type should they request?",
+    "options": [
+      "Fixed Dome Camera",
+      "Pan-Tilt-Zoom (PTZ) Camera",
+      "Infrared Sensor",
+      "Lidar Scanner"
+    ],
+    "answer": 1,
+    "explanation": "A Pan-Tilt-Zoom (PTZ) camera allows security operators to remotely control the direction, angle, and zoom of the lens to follow targets.",
+    "id": 847
+  },
+  {
+    "section": "S4",
+    "question": "A data center needs a fire suppression system for its main server room. Using water-based sprinklers would destroy the electronic equipment. What system is the BEST choice?",
+    "options": [
+      "Class A Water Sprinklers",
+      "Gaseous / Clean Agent suppression system (e.g., FM-200)",
+      "Dry-pipe water sprinkler system",
+      "Chemical foam extinguishers"
+    ],
+    "answer": 1,
+    "explanation": "Gaseous or clean agent suppression systems (like FM-200 or carbon dioxide) extinguish fires by removing oxygen or heat, without leaving residue or water that would destroy server electronics.",
+    "id": 848
+  },
+  {
+    "section": "S4",
+    "question": "A bank vault needs a sensor that can detect if an intruder is attempting to drill through the concrete walls of the vault. Which sensor type is the BEST choice?",
+    "options": [
+      "Passive Infrared (PIR) sensor",
+      "Seismic / Vibration sensor",
+      "Photoelectric beam sensor",
+      "Ultrasonic motion detector"
+    ],
+    "answer": 1,
+    "explanation": "Seismic or vibration sensors detect low-frequency structural vibrations caused by drilling, hammering, or sawing, making them ideal for vault structural monitoring.",
+    "id": 849
+  },
+  {
+    "section": "S4",
+    "question": "An attacker uses a wireless scanning tool close to an employee's pocket in a coffee shop to copy the RFID credentials of their corporate ID badge. What physical security threat is this, and how can it be prevented?",
+    "options": [
+      "Access badge cloning; prevented using RFID-shielding sleeves",
+      "Shoulder surfing; prevented using privacy filters",
+      "Door lock shimming; prevented using deadbolts",
+      "Vishing vector; prevented using voice authentication"
+    ],
+    "answer": 0,
+    "explanation": "RFID credentials can be skimmed and cloned by attackers close to the card. Keeping cards in RFID-shielding sleeves blocks electromagnetic signals and prevents cloning.",
+    "id": 850
+  },
+  {
+    "section": "S5",
+    "question": "A CEO receives a highly customized email that includes their full name, job title, and details about a recent acquisition, urging them to click a link to resolve a tax discrepancy. What type of social engineering is this?",
+    "options": [
+      "Vishing",
+      "Whaling",
+      "Spamming",
+      "Tailgating"
+    ],
+    "answer": 1,
+    "explanation": "Whaling is a specific type of spear phishing that targets high-profile executives (such as CEOs, CFOs, or government officials) with highly customized, targeted messages.",
+    "id": 851
+  },
+  {
+    "section": "S5",
+    "question": "A security analyst receives a phone call from an individual claiming to be a technician from the IT support team, asking for the analyst's password to troubleshoot an account lock out. What type of attack is this?",
+    "options": [
+      "Phishing",
+      "Vishing",
+      "Pretexting",
+      "Shoulder Surfing"
+    ],
+    "answer": 1,
+    "explanation": "Vishing (Voice Phishing) is social engineering conducted over telephone calls or VoIP systems to solicit sensitive information or credentials.",
+    "id": 852
+  },
+  {
+    "section": "S5",
+    "question": "An unauthorized individual swiped their badge at the door, and then held the door open for another person who claimed to have forgotten their badge. What is this security breach called?",
+    "options": [
+      "Tailgating",
+      "Piggybacking",
+      "Pretexting",
+      "Shoulder Surfing"
+    ],
+    "answer": 1,
+    "explanation": "Piggybacking occurs when an authorized person knowingly allows an unauthorized person to follow them through a checkpoint. Tailgating is when it occurs without the employee's knowledge or consent.",
+    "id": 853
+  },
+  {
+    "section": "S5",
+    "question": "A user is working on a laptop at a local coffee shop. An individual at the next table is observing the user's keystrokes to learn their password. What threat does this represent, and what is the mitigation?",
+    "options": [
+      "Shoulder surfing; mitigated using privacy screens",
+      "Tailgating; mitigated using mantraps",
+      "Credential harvesting; mitigated using RFID sleeves",
+      "Watering hole; mitigated using firewalls"
+    ],
+    "answer": 0,
+    "explanation": "Shoulder surfing is visually observing a user's screen or keyboard to capture sensitive data. It is mitigated by using privacy filters (screens) that block side-angle viewing.",
+    "id": 854
+  },
+  {
+    "section": "S5",
+    "question": "An attacker searches through a company's external trash bins and finds discarded papers containing customer phone numbers and server IP addresses. What is this activity called, and what is the BEST control to prevent it?",
+    "options": [
+      "Dumpster diving; prevented using document shredding and locked shred bins",
+      "Shoulder surfing; prevented using privacy filters",
+      "Watering hole; prevented using web filters",
+      "Social engineering; prevented using MFA"
+    ],
+    "answer": 0,
+    "explanation": "Dumpster diving is searching through trash to find information. It is prevented by enforcing document shredding policies and discarding files in locked shred bins.",
+    "id": 855
+  },
+  {
+    "section": "S5",
+    "question": "An email arrives: 'IMMEDIATE ACTION REQUIRED: The CEO has ordered an audit of all accounts. Send your credentials in 10 minutes or face suspension.' The email exploits which motivational triggers?",
+    "options": [
+      "Consensus and Scarcity",
+      "Authority and Urgency",
+      "Likability and Social Proof",
+      "Familiarity and Trust"
+    ],
+    "answer": 1,
+    "explanation": "The email leverages 'Authority' (claiming to represent the CEO/audit) and 'Urgency' (10-minute limit and threat of suspension) to bypass the recipient's critical evaluation.",
+    "id": 856
+  },
+  {
+    "section": "S5",
+    "question": "An attacker calls a customer support representative and claims, 'Everyone in the finance department has already updated their portals, you are the only one left to do it.' Which motivational trigger is being exploited?",
+    "options": [
+      "Authority",
+      "Consensus / Social Proof",
+      "Scarcity",
+      "Urgency"
+    ],
+    "answer": 1,
+    "explanation": "Consensus (or Social Proof) is a trigger that exploits the human tendency to follow the crowd or conform to what others are doing ('Everyone else has done it').",
+    "id": 857
+  },
+  {
+    "section": "S5",
+    "question": "An attacker compromises a local restaurant's online ordering menu, which is frequently used by employees of a neighboring defense contractor, to deliver malware to the employees' browsers. What type of attack is this?",
+    "options": [
+      "Spear Phishing",
+      "Watering Hole Attack",
+      "Typosquatting",
+      "Vishing"
+    ],
+    "answer": 1,
+    "explanation": "A Watering Hole Attack targets specific organizations by compromising a website that the employees frequently visit, exploiting their trust in that site.",
+    "id": 858
+  },
+  {
+    "section": "S5",
+    "question": "An organization discovers that an attacker has registered the domain 'diontra1ning.com' (replacing the letter 'i' with the number '1') to host a cloned login portal. What technique is this?",
+    "options": [
+      "Typosquatting / URL hijacking",
+      "Pretexting",
+      "Spear Phishing",
+      "Watering Hole"
+    ],
+    "answer": 0,
+    "explanation": "Typosquatting (or URL hijacking) involves registering domain names that are common misspellings or visual similarities of legitimate sites to deceive users.",
+    "id": 859
+  },
+  {
+    "section": "S5",
+    "question": "An attacker creates a fake login page that matches the corporate single sign-on (SSO) portal and sends a phishing email to employees directing them to sign in. What is this attack called?",
+    "options": [
+      "Vishing",
+      "Credential Harvesting",
+      "Piggybacking",
+      "Shoulder Surfing"
+    ],
+    "answer": 1,
+    "explanation": "Credential Harvesting is the collection of user login credentials (usernames and passwords), typically achieved using cloned login pages and phishing emails.",
+    "id": 860
+  },
+  {
+    "section": "S6",
+    "question": "A user's workstation screen is locked with a message stating that their files are encrypted and will be deleted in 24 hours unless a payment of 0.5 Bitcoin is made. What type of malware is this?",
+    "options": [
+      "Spyware",
+      "Ransomware",
+      "Trojan",
+      "Logic Bomb"
+    ],
+    "answer": 1,
+    "explanation": "Ransomware is malware designed to encrypt a victim's files or lock their system, demanding a ransom payment in exchange for the decryption key.",
+    "id": 861
+  },
+  {
+    "section": "S6",
+    "question": "A user notices that their browser search engine has changed, and they are constantly redirected to advertisement pages. Forensic analysis reveals a process that logs all keystrokes and sends them to an external server. What malware type is this?",
+    "options": [
+      "Worm",
+      "Spyware / Keylogger",
+      "Rootkit",
+      "Logic Bomb"
+    ],
+    "answer": 1,
+    "explanation": "Spyware is designed to gather information about a user's activities (including logging keystrokes via a keylogger) without their consent and transmit it to external actors.",
+    "id": 862
+  },
+  {
+    "section": "S6",
+    "question": "A system administrator who was terminated last week is suspected of planting code that deleted the production databases at 9:00 AM on Monday, which was the first business hour after their access keys were revoked. What type of malware is this?",
+    "options": [
+      "Rootkit",
+      "Logic Bomb",
+      "Trojan",
+      "Worm"
+    ],
+    "answer": 1,
+    "explanation": "A Logic Bomb is malicious code inserted into a program that lies dormant until triggered by a specific event (such as a date, time, or administrative action like user deletion).",
+    "id": 863
+  },
+  {
+    "section": "S6",
+    "question": "A user downloads a free system optimization utility from an online forum. After running it, their computer performance degrades and an unauthorized remote desktop connection is established. What malware category does this represent?",
+    "options": [
+      "Worm",
+      "Trojan Horse",
+      "Rootkit",
+      "Spyware"
+    ],
+    "answer": 1,
+    "explanation": "A Trojan Horse is malware disguised as legitimate, useful software that executes hidden malicious actions behind the scenes.",
+    "id": 864
+  },
+  {
+    "section": "S6",
+    "question": "A security analyst is investigating a compromised server and notices that system utilities (like 'ls' or 'ps') have been replaced to hide specific running processes from the operating system's kernel. What type of malware is this?",
+    "options": [
+      "Trojan",
+      "Rootkit",
+      "Worm",
+      "Logic Bomb"
+    ],
+    "answer": 1,
+    "explanation": "A Rootkit is malware that modifies core operating system binaries or kernel components to hide its presence and secure privileged administrative access (root/system).",
+    "id": 865
+  },
+  {
+    "section": "S6",
+    "question": "An incident responder analyzes an active infection and finds that the malware runs entirely in the workstation's RAM, utilizing legitimate system utilities like PowerShell to execute commands. What type of malware is this?",
+    "options": [
+      "Boot sector virus",
+      "Fileless Malware",
+      "Worm",
+      "Trojan"
+    ],
+    "answer": 1,
+    "explanation": "Fileless Malware operates directly in the computer's volatile memory (RAM) and hijacks legitimate system tools (like PowerShell) to avoid writing files to the disk, escaping file-based antivirus scanners.",
+    "id": 866
+  },
+  {
+    "section": "S6",
+    "question": "A network security tool detects a program that is scanning the local subnet and automatically duplicating itself to exploit vulnerabilities on adjacent systems without any user interaction. What type of malware is this?",
+    "options": [
+      "Virus",
+      "Worm",
+      "Trojan",
+      "Spyware"
+    ],
+    "answer": 1,
+    "explanation": "A Worm is self-replicating malware that spreads across networks automatically by exploiting system vulnerabilities, without requiring human interaction or file execution.",
+    "id": 867
+  },
+  {
+    "section": "S6",
+    "question": "A security analyst observes thousands of compromised computers worldwide attacking a single web server simultaneously, directed by a central command server. What resource is being used?",
+    "options": [
+      "A honeynet",
+      "A botnet",
+      "Shadow IT",
+      "A logic bomb"
+    ],
+    "answer": 1,
+    "explanation": "A Botnet is a network of compromised, internet-connected devices (bots) controlled by a central Command and Control (C2) server to execute distributed attacks like DDoS.",
+    "id": 868
+  },
+  {
+    "section": "S6",
+    "question": "A virus compromises a workstation by modifying the Master Boot Record (MBR) on the hard drive, ensuring it runs before the operating system loaded. What is this type of virus?",
+    "options": [
+      "Fileless malware",
+      "Boot Sector Virus",
+      "Trojan",
+      "Spyware"
+    ],
+    "answer": 1,
+    "explanation": "A Boot Sector Virus infects the system's Master Boot Record (MBR) or partition table, executing during the boot process before the OS and security software start.",
+    "id": 869
+  },
+  {
+    "section": "S6",
+    "question": "Which of the following describes the PRIMARY difference between a Virus and a Worm?",
+    "options": [
+      "A virus requires human execution to propagate; a worm propagates automatically across networks.",
+      "A virus is a technical control; a worm is an administrative control.",
+      "A virus is always fileless; a worm always writes to disk.",
+      "A virus targets endpoints; a worm only targets routers."
+    ],
+    "answer": 0,
+    "explanation": "A virus requires a host file and human action (executing a program, opening a file) to run and replicate. A worm is autonomous and spreads over networks automatically without human interaction.",
+    "id": 870
+  },
+  {
+    "section": "S7",
+    "question": "An employee tries to copy a database file containing customer Social Security Numbers to an external USB drive. The transfer is blocked, and the security team receives a high-severity alert. What system intercepted the transfer?",
+    "options": [
+      "File Integrity Monitor (FIM)",
+      "Data Loss Prevention (DLP)",
+      "Full Disk Encryption (FDE)",
+      "Intrusion Detection System (IDS)"
+    ],
+    "answer": 1,
+    "explanation": "Data Loss Prevention (DLP) systems monitor, detect, and block unauthorized transfers of sensitive data (like PII) in transit, in use, or at rest.",
+    "id": 871
+  },
+  {
+    "section": "S7",
+    "question": "A corporate laptop is stolen from an employee's car. The laptop has BitLocker enabled on the primary drive. What security goal is met, and what data state is protected?",
+    "options": [
+      "Confidentiality; Data in Transit",
+      "Confidentiality; Data at Rest",
+      "Integrity; Data in Use",
+      "Availability; Data at Rest"
+    ],
+    "answer": 1,
+    "explanation": "Full Disk Encryption (FDE) like BitLocker enforces Confidentiality for Data at Rest (stored on the physical drive) by rendering it unreadable if the device is stolen.",
+    "id": 872
+  },
+  {
+    "section": "S7",
+    "question": "An e-commerce site replaces customer credit card numbers with random alphanumeric keys that map back to the real numbers in a highly secure database vault. What is this technique?",
+    "options": [
+      "Data Masking",
+      "Tokenization",
+      "Hashing",
+      "Homomorphic Encryption"
+    ],
+    "answer": 1,
+    "explanation": "Tokenization replaces sensitive data elements with non-sensitive equivalents (tokens) that refer back to the real data stored in a secure database vault.",
+    "id": 873
+  },
+  {
+    "section": "S7",
+    "question": "A security analyst is configuring database auditing. They categorize data as: (1) active customer query records in RAM, (2) database backup files on tape, and (3) HTTPS session packets crossing the firewall. What are these data states?",
+    "options": [
+      "In use, at rest, in transit",
+      "In transit, in use, at rest",
+      "At rest, in transit, in use",
+      "In use, in transit, at rest"
+    ],
+    "answer": 0,
+    "explanation": "Data in use is in RAM/CPU cache; data at rest is stored on storage media (tapes/hard drives); data in transit is moving across a network.",
+    "id": 874
+  },
+  {
+    "section": "S7",
+    "question": "A healthcare provider must comply with regulations protecting patient medical histories. What category of data does this represent, and which US law governs it?",
+    "options": [
+      "PII; GDPR",
+      "PHI; HIPAA",
+      "PCI DSS; GLBA",
+      "IP; Sarbanes-Oxley"
+    ],
+    "answer": 1,
+    "explanation": "Protected Health Information (PHI) is health status, care provision, or payment details linked to an individual, governed by the Health Insurance Portability and Accountability Act (HIPAA).",
+    "id": 875
+  },
+  {
+    "section": "S7",
+    "question": "An organization wants to restrict a sensitive PDF file so that recipients can read it but cannot copy text, print the document, or forward it to external email addresses. What technology should they implement?",
+    "options": [
+      "Data Loss Prevention (DLP)",
+      "Digital Rights Management (DRM) / Information Rights Management (IRM)",
+      "Secure Sockets Layer (SSL) encryption",
+      "File Integrity Monitoring (FIM)"
+    ],
+    "answer": 1,
+    "explanation": "Digital Rights Management (DRM) or IRM controls file usage permissions (preventing copying, printing, or forwarding) even after the file is delivered to the recipient.",
+    "id": 876
+  },
+  {
+    "section": "S7",
+    "question": "A company wants to buy hard drives that automatically encrypt all written data at the controller level, requiring no software-based configuration on the host operating system. What should they request?",
+    "options": [
+      "RAID 5 Arrays",
+      "Self-Encrypting Drives (SED)",
+      "Trusted Platform Modules (TPM)",
+      "Secure Enclaves"
+    ],
+    "answer": 1,
+    "explanation": "Self-Encrypting Drives (SEDs) utilize a hardware cryptographic controller embedded in the drive to automatically encrypt all data written to the media.",
+    "id": 877
+  },
+  {
+    "section": "S7",
+    "question": "An enterprise categorizes its document directories into 'Public', 'Proprietary', and 'Confidential'. What process is being executed?",
+    "options": [
+      "Data Sanitization",
+      "Data Classification",
+      "Data Minimization",
+      "Data Sovereignty"
+    ],
+    "answer": 1,
+    "explanation": "Data Classification is the process of organizing data into categories based on sensitivity levels to determine appropriate security controls.",
+    "id": 878
+  },
+  {
+    "section": "S7",
+    "question": "A security policy states that the server logs must be deleted after 30 days unless a legal hold is active, ensuring that the organization does not store unnecessary data. What principle does this support?",
+    "options": [
+      "Data Sovereignty",
+      "Data Minimization",
+      "Data Transference",
+      "Data Integrity"
+    ],
+    "answer": 1,
+    "explanation": "Data Minimization involves collecting and retaining only the minimum data necessary for business operations, reducing the blast radius of a breach.",
+    "id": 879
+  },
+  {
+    "section": "S7",
+    "question": "A security technician is preparing old servers for disposal. They want to ensure that no data can be recovered from the drives, but they want to reuse the hard drives in a test lab. Which sanitization method should they use?",
+    "options": [
+      "Physical Shredding",
+      "Degaussing",
+      "Data Wiping / Purging",
+      "Sanitization Certification"
+    ],
+    "answer": 2,
+    "explanation": "Data Wiping (Purging/Overwriting) uses software to overwrite sectors with random patterns, sanitizing the drive while leaving the hardware functional. Shredding destroys the drive; degaussing demagnetizes it, rendering it unusable.",
+    "id": 880
+  },
+  {
+    "section": "S8",
+    "question": "A backup server needs to encrypt 10 Terabytes of database files every night. The administrator wants the fastest possible encryption speed and low CPU utilization. What encryption type is the BEST choice?",
+    "options": [
+      "Asymmetric Encryption (RSA)",
+      "Symmetric Encryption (AES)",
+      "Diffie-Hellman Key Exchange",
+      "Hashing (SHA-512)"
+    ],
+    "answer": 1,
+    "explanation": "Symmetric encryption (such as AES) is 100 to 1,000 times faster than asymmetric encryption and requires significantly less computational power, making it ideal for bulk data encryption.",
+    "id": 881
+  },
+  {
+    "section": "S8",
+    "question": "A client browser wants to establish a secure HTTPS connection with a web server. The browser uses asymmetric encryption to send a key, and then both parties use symmetric encryption for bulk traffic. What is this approach called?",
+    "options": [
+      "Symmetric streaming",
+      "Hybrid Encryption",
+      "Hash-Message Authentication",
+      "Key stretches"
+    ],
+    "answer": 1,
+    "explanation": "Hybrid encryption combines the key-distribution benefits of asymmetric cryptography (to share a session key) with the speed of symmetric cryptography (to encrypt bulk data).",
+    "id": 882
+  },
+  {
+    "section": "S8",
+    "question": "A smart watch developer is selecting a cryptographic algorithm to secure data-at-rest. The device has very limited battery capacity and processing power. What asymmetric algorithm provides the best security per key bit?",
+    "options": [
+      "RSA",
+      "Elliptic Curve Cryptography (ECC)",
+      "Diffie-Hellman",
+      "AES-GCM"
+    ],
+    "answer": 1,
+    "explanation": "Elliptic Curve Cryptography (ECC) offers equivalent cryptographic strength to RSA but with much smaller key sizes (e.g., 256-bit ECC ≈ 3072-bit RSA), saving CPU and battery power.",
+    "id": 883
+  },
+  {
+    "section": "S8",
+    "question": "Two systems need to establish a shared secret key over an unsecure network connection without transmitting the key itself. Which cryptographic algorithm should they use?",
+    "options": [
+      "RSA",
+      "Diffie-Hellman (DH)",
+      "AES",
+      "MD5"
+    ],
+    "answer": 1,
+    "explanation": "The Diffie-Hellman (DH) algorithm is specifically designed for secure key exchange, allowing two parties to establish a shared secret key over an insecure channel.",
+    "id": 884
+  },
+  {
+    "section": "S8",
+    "question": "An administrator discovers that a legacy hashing algorithm has allowed two different input files to generate the same hash digest. What is this vulnerability called, and which algorithm is vulnerable?",
+    "options": [
+      "Pass-the-Hash; SHA-256",
+      "Collision; MD5",
+      "Downgrade; AES",
+      "Rainbow; RIPEMD"
+    ],
+    "answer": 1,
+    "explanation": "A collision occurs when two different inputs produce the same hash digest. MD5 is highly vulnerable to collision attacks and is obsolete for security purposes.",
+    "id": 885
+  },
+  {
+    "section": "S8",
+    "question": "A security administrator is storing user passwords in a database. They want to prevent attackers from using precomputed hashes (Rainbow Tables) to crack the passwords. What technique should they use?",
+    "options": [
+      "Symmetric AES encryption",
+      "Salting the passwords before hashing",
+      "Digital Signatures",
+      "Key Escrow"
+    ],
+    "answer": 1,
+    "explanation": "Salting adds a random value to the plaintext password before hashing. This makes each hash unique (even if passwords are the same) and completely defeats precomputed Rainbow Tables.",
+    "id": 886
+  },
+  {
+    "section": "S8",
+    "question": "A company hosts several services under subdomains: `mail.dion.com`, `vpn.dion.com`, and `portal.dion.com`. They want to secure all of them using a single digital certificate. What certificate type should they request?",
+    "options": [
+      "Standard X.509 Certificate",
+      "Wildcard Certificate (*.dion.com)",
+      "Subject Alternative Name (SAN) Certificate",
+      "Self-signed Certificate"
+    ],
+    "answer": 1,
+    "explanation": "A Wildcard Certificate secures a domain and an unlimited number of its first-level subdomains using a single wildcard character (*.domain.com).",
+    "id": 887
+  },
+  {
+    "section": "S8",
+    "question": "A security analyst is configuring a web server and wants to eliminate the latency caused when client browsers query the Certificate Authority's revocation list (CRL) during the TLS handshake. What should they enable?",
+    "options": [
+      "OCSP Stapling",
+      "Public Key Pinning",
+      "Key Escrow recovery",
+      "Root CA hierarchy"
+    ],
+    "answer": 0,
+    "explanation": "OCSP Stapling allows the web server to periodically query the CA and 'staple' a time-stamped OCSP revocation status response to the TLS handshake, saving the client from making a separate query.",
+    "id": 888
+  },
+  {
+    "section": "S8",
+    "question": "An attacker intercepts a client's TLS handshake and forces the negotiation down to SSL 3.0, allowing them to exploit known vulnerabilities in the older protocol. What is this attack?",
+    "options": [
+      "Collision Attack",
+      "Downgrade Attack",
+      "Replay Attack",
+      "Birthday Attack"
+    ],
+    "answer": 1,
+    "explanation": "A Downgrade Attack forces a connection to fall back to an older, weaker, or deprecated protocol version to exploit known flaws in that older version.",
+    "id": 889
+  },
+  {
+    "section": "S8",
+    "question": "A logistics firm wants to implement an immutable transaction ledger to trace items across multiple independent suppliers without relying on a central authority. What technology fits this requirement?",
+    "options": [
+      "Centralized database",
+      "Blockchain / Distributed Ledger Technology",
+      "Public Key Infrastructure (PKI)",
+      "Key Management System (KMS)"
+    ],
+    "answer": 1,
+    "explanation": "Blockchain uses a decentralized, peer-to-peer ledger network where transactions are cryptographically linked and immutable, eliminating the need for a central clearinghouse.",
+    "id": 890
+  },
+  {
+    "section": "S9",
+    "question": "A company has an asset valued at $100,000. An earthquake is estimated to cause a 30% loss of the asset once every 10 years. What is the ALE for this risk?",
+    "options": [
+      "$3,000",
+      "$30,000",
+      "$10,000",
+      "$333"
+    ],
+    "answer": 0,
+    "explanation": "SLE = Asset Value ($100,000) * EF (0.3) = $30,000. ARO = 1 / 10 years = 0.1. ALE = SLE ($30,000) * ARO (0.1) = $3,000 per year.",
+    "id": 891
+  },
+  {
+    "section": "S9",
+    "question": "An organization determines that the financial risk of a potential data breach is too high to absorb. They purchase a cybersecurity insurance policy from a third-party broker. What risk strategy is this?",
+    "options": [
+      "Avoidance",
+      "Transference",
+      "Mitigation",
+      "Acceptance"
+    ],
+    "answer": 1,
+    "explanation": "Risk Transference (or sharing) shifts the financial consequences of a risk to a third party (such as an insurance company or outsourcer) without necessarily eliminating the threat itself.",
+    "id": 892
+  },
+  {
+    "section": "S9",
+    "question": "A company discovers that a legacy operating system contains critical zero-day vulnerabilities. Because the vendor has stopped issuing updates, the company decides to shut down and retire the system entirely. What risk response is this?",
+    "options": [
+      "Transference",
+      "Mitigation",
+      "Avoidance",
+      "Acceptance"
+    ],
+    "answer": 2,
+    "explanation": "Risk Avoidance is the strategy of eliminating a risk by discontinuing the activity, service, or system that introduces the risk.",
+    "id": 893
+  },
+  {
+    "section": "S9",
+    "question": "A security audit finds a minor compliance issue on a non-critical server. The cost of fixing it ($5,000) is greater than the maximum potential fine ($500). The CISO signs a documented exception acknowledging the risk without implementing controls. What is this?",
+    "options": [
+      "Risk Avoidance",
+      "Risk Transference",
+      "Risk Acceptance",
+      "Risk Mitigation"
+    ],
+    "answer": 2,
+    "explanation": "Risk Acceptance is the strategy of identifying a risk and deliberately taking no corrective action, typically chosen when the cost of mitigation outweighs the potential loss.",
+    "id": 894
+  },
+  {
+    "section": "S9",
+    "question": "A security analyst is conducting a risk assessment. They rate risks on a scale of 'Low', 'Medium', and 'High' based on surveys and discussions with system owners. What type of risk analysis is this?",
+    "options": [
+      "Quantitative Risk Analysis",
+      "Qualitative Risk Analysis",
+      "Gap Analysis",
+      "Business Impact Analysis"
+    ],
+    "answer": 1,
+    "explanation": "Qualitative risk analysis uses descriptive, categorical scales (such as Low, Medium, High) and expert opinion to prioritize risks rather than numerical, financial calculations.",
+    "id": 895
+  },
+  {
+    "section": "S9",
+    "question": "During a BIA workshop, the database team states that the ERP system cannot lose more than 2 hours of transaction data without causing severe financial damage. What metric is being defined?",
+    "options": [
+      "Recovery Time Objective (RTO)",
+      "Recovery Point Objective (RPO)",
+      "Mean Time to Repair (MTTR)",
+      "Mean Time Between Failures (MTBF)"
+    ],
+    "answer": 1,
+    "explanation": "Recovery Point Objective (RPO) is the maximum acceptable amount of data loss measured in time (i.e. the age of files that must be recovered from backup).",
+    "id": 896
+  },
+  {
+    "section": "S9",
+    "question": "An industrial machine fails 4 times over a year, and it takes an average of 3 hours for the maintenance team to restore it to service. How should these metrics be labeled?",
+    "options": [
+      "MTBF = 90 days; MTTR = 3 hours",
+      "MTTR = 90 days; MTBF = 3 hours",
+      "RTO = 3 hours; RPO = 90 days",
+      "MTBF = 4; MTTR = 3"
+    ],
+    "answer": 0,
+    "explanation": "MTBF is the average time between system failures (365 days / 4 failures = ~91.25 days). MTTR is the average time required to repair a failed system (3 hours).",
+    "id": 897
+  },
+  {
+    "section": "S9",
+    "question": "A financial firm monitors the daily count of failed database logins. A spike in this metric serves as an early warning sign of a potential brute-force attack. What is this metric?",
+    "options": [
+      "Plan of Action and Milestones (POA&M)",
+      "Key Risk Indicator (KRI)",
+      "Single Loss Expectancy (SLE)",
+      "Annualized Rate of Occurrence (ARO)"
+    ],
+    "answer": 1,
+    "explanation": "Key Risk Indicators (KRIs) are forward-looking metrics used to monitor risk exposure changes and provide early warning signals before a risk escalates into an incident.",
+    "id": 898
+  },
+  {
+    "section": "S9",
+    "question": "A company policy states that the board is willing to accept up to $50,000 in operational losses annually from new ventures, but must halt operations if losses reach $100,000. What are these thresholds?",
+    "options": [
+      "Risk Appetite is $50,000; Risk Tolerance is $100,000",
+      "Risk Tolerance is $50,000; Risk Appetite is $100,000",
+      "Risk Mitigation is $50,000; Risk Avoidance is $100,000",
+      "ALE is $50,000; SLE is $100,000"
+    ],
+    "answer": 0,
+    "explanation": "Risk Appetite is the broad amount of risk an organization is willing to pursue ($50,000). Risk Tolerance is the maximum acceptable risk level before action is required ($100,000).",
+    "id": 899
+  },
+  {
+    "section": "S9",
+    "question": "An administrator applies security updates to a firewall. However, because new exploits are developed, the firewall's protection becomes less effective over time. What type of risk is being monitored?",
+    "options": [
+      "Inherent Risk",
+      "Residual Risk",
+      "Control Risk",
+      "Quantitative Risk"
+    ],
+    "answer": 2,
+    "explanation": "Control Risk is the risk that a security control will fail to prevent, detect, or mitigate a threat, often because the control degrades or becomes less effective over time.",
+    "id": 900
+  },
+  {
+    "section": "S10",
+    "question": "An attacker compromises a third-party software library used by an application, allowing them to execute code on thousands of client systems that update the application. What type of attack is this?",
+    "options": [
+      "Spear Phishing",
+      "Supply Chain Attack",
+      "Watering Hole Attack",
+      "Man-in-the-Middle"
+    ],
+    "answer": 1,
+    "explanation": "A Supply Chain Attack compromises a weaker upstream component (such as software libraries, updates, or third-party contractors) to target down-stream customers.",
+    "id": 901
+  },
+  {
+    "section": "S10",
+    "question": "An organization wants to evaluate the security controls of a potential cloud service provider. Which document should they request to review the provider's independent audit report on security, availability, and confidentiality?",
+    "options": [
+      "Service Level Agreement (SLA)",
+      "SOC 2 Type II Report",
+      "Master Services Agreement (MSA)",
+      "Non-Disclosure Agreement (NDA)"
+    ],
+    "answer": 1,
+    "explanation": "A SOC 2 Type II report is an independent audit evaluating a service organization's controls over security, availability, processing integrity, confidentiality, and privacy over a period of time.",
+    "id": 902
+  },
+  {
+    "section": "S10",
+    "question": "A legal team is drafting a contract that establishes the general terms, payment conditions, and overall framework for all future projects with a specific consulting firm. What document is this?",
+    "options": [
+      "Service Level Agreement (SLA)",
+      "Master Services Agreement (MSA)",
+      "Request for Proposal (RFP)",
+      "Non-Disclosure Agreement (NDA)"
+    ],
+    "answer": 1,
+    "explanation": "A Master Services Agreement (MSA) is a contract that defines the governing framework, terms, and conditions for all ongoing and future transactions between two parties.",
+    "id": 903
+  },
+  {
+    "section": "S10",
+    "question": "An enterprise contracts a web host. The agreement states that the host must maintain 99.99% uptime for the website, and must pay financial penalties if downtime exceeds 4.3 minutes per month. What document is this?",
+    "options": [
+      "Master Services Agreement (MSA)",
+      "Service Level Agreement (SLA)",
+      "Request for Quote (RFQ)",
+      "Statement of Work (SOW)"
+    ],
+    "answer": 1,
+    "explanation": "A Service Level Agreement (SLA) is a contract component that defines specific, measurable performance metrics (like uptime/response time) and penalties for service failures.",
+    "id": 904
+  },
+  {
+    "section": "S10",
+    "question": "An organization allows a marketing vendor to access their cloud environment. The vendor accidentally leaves their API key in a public code repository, exposing the company's databases. What vendor risk does this represent?",
+    "options": [
+      "Supply chain physical risk",
+      "Third-party integration and credential risk",
+      "Non-disclosure violation",
+      "Onboarding verification failure"
+    ],
+    "answer": 1,
+    "explanation": "Third-party integration risk occurs when external entities are granted system access, making the organization vulnerable to the vendor's credential handling and key management practices.",
+    "id": 905
+  },
+  {
+    "section": "S10",
+    "question": "A company is sharing proprietary source code with a third-party developer for review. Which legal document must be signed to prevent the developer from sharing this information with competitors?",
+    "options": [
+      "Service Level Agreement (SLA)",
+      "Non-Disclosure Agreement (NDA)",
+      "Master Services Agreement (MSA)",
+      "Request for Quote (RFQ)"
+    ],
+    "answer": 1,
+    "explanation": "A Non-Disclosure Agreement (NDA) is a legally binding contract that prevents parties from sharing confidential information, trade secrets, or proprietary data.",
+    "id": 906
+  },
+  {
+    "section": "S10",
+    "question": "Which of the following processes should a security manager enforce FIRST during vendor onboarding to assess risk?",
+    "options": [
+      "Perform a security assessment of the vendor's network controls",
+      "Revoke the vendor's admin credentials",
+      "Decommission the vendor's backup systems",
+      "Purchase cybersecurity insurance for the vendor"
+    ],
+    "answer": 0,
+    "explanation": "During vendor onboarding, conducting a vendor assessment (security questionnaire, control review, SOC audit) is the FIRST step to evaluate the risk of the partnership.",
+    "id": 907
+  },
+  {
+    "section": "S10",
+    "question": "A consulting contract is terminated. Which step is the MOST critical to execute during the vendor offboarding process?",
+    "options": [
+      "Archive the vendor's marketing brochures",
+      "Revoke all physical access badges and digital accounts assigned to the vendor",
+      "Update the SLA performance metrics",
+      "Update the vendor's profile in the CMDB"
+    ],
+    "answer": 1,
+    "explanation": "To prevent unauthorized persistent access and backdoors, revoking all accounts, credentials, and physical access badges is the most critical step in vendor offboarding.",
+    "id": 908
+  },
+  {
+    "section": "S10",
+    "question": "A motherboard manufacturer puts tamper-evident stickers and unique serial barcodes on all component packaging to ensure items are not altered in transit. What is this protecting?",
+    "options": [
+      "Software bill of materials (SBOM)",
+      "Hardware supply chain integrity",
+      "Virtualization escape",
+      "Data sovereignty"
+    ],
+    "answer": 1,
+    "explanation": "Hardware supply chain integrity controls protect physical items from modification, counterfeiting, or interception during shipping and distribution.",
+    "id": 909
+  },
+  {
+    "section": "S10",
+    "question": "An organization wants to catalog all software dependencies, libraries, and open-source packages integrated into their core application to check for vulnerabilities. What should they produce?",
+    "options": [
+      "Master Services Agreement (MSA)",
+      "Software Bill of Materials (SBOM)",
+      "Service Level Agreement (SLA)",
+      "Risk Register"
+    ],
+    "answer": 1,
+    "explanation": "A Software Bill of Materials (SBOM) is a comprehensive nested inventory of all software components, libraries, and dependencies used to build an application.",
+    "id": 910
+  },
+  {
+    "section": "S11",
+    "question": "A European regulator fines an international firm 4% of their global annual revenue for failing to protect customer data privacy. What type of compliance penalty is this?",
+    "options": [
+      "Contractual penalty",
+      "Regulatory / Legal fine under GDPR",
+      "SLA violation penalty",
+      "Operational control audit"
+    ],
+    "answer": 1,
+    "explanation": "GDPR (General Data Protection Regulation) is a regulatory framework in the EU that imposes severe financial penalties (up to 4% of global turnover) for data protection non-compliance.",
+    "id": 911
+  },
+  {
+    "section": "S11",
+    "question": "A retail merchant must implement firewall security and encrypt cardholder data during transmission to comply with credit card industry rules. What standard must they follow?",
+    "options": [
+      "ISO 27001",
+      "PCI DSS",
+      "HIPAA",
+      "GDPR"
+    ],
+    "answer": 1,
+    "explanation": "PCI DSS (Payment Card Industry Data Security Standard) is a mandatory security standard for any organization that stores, processes, or transmits credit card data.",
+    "id": 912
+  },
+  {
+    "section": "S11",
+    "question": "A security officer is drafting two documents: one defines the high-level security objectives of the company (the 'why'), and the other defines step-by-step technical instructions for firewalls (the 'how'). How are these classified?",
+    "options": [
+      "Policy; Procedure",
+      "Standard; Policy",
+      "Procedure; Standard",
+      "Guideline; Policy"
+    ],
+    "answer": 0,
+    "explanation": "A Policy defines the high-level security goals and commitments (the 'what' and 'why'). A Procedure provides step-by-step tactical instructions (the 'how') to execute it.",
+    "id": 913
+  },
+  {
+    "section": "S11",
+    "question": "An employee uses a corporate computer to download copyrighted music files, violating the policy defining acceptable use of company assets. What document was violated?",
+    "options": [
+      "Non-Disclosure Agreement (NDA)",
+      "Acceptable Use Policy (AUP)",
+      "Statement of Work (SOW)",
+      "Master Services Agreement (MSA)"
+    ],
+    "answer": 1,
+    "explanation": "An Acceptable Use Policy (AUP) defines the rules, behavior, and constraints that employees must follow when using corporate networks, hardware, and assets.",
+    "id": 914
+  },
+  {
+    "section": "S11",
+    "question": "To prevent fraud, a bank mandates that the employee who creates a new vendor account cannot be the same employee who approves payments to that account. What security principle is this?",
+    "options": [
+      "Least Privilege",
+      "Separation of Duties",
+      "Implicit Deny",
+      "Job Rotation"
+    ],
+    "answer": 1,
+    "explanation": "Separation of Duties splits a critical process into multiple steps executed by different people to prevent collusion, fraud, or single-user compromise.",
+    "id": 915
+  },
+  {
+    "section": "S11",
+    "question": "A company requires all accounting employees to take a consecutive five-day leave every year, during which another employee assumes their responsibilities. What is the PRIMARY security objective of this policy?",
+    "options": [
+      "Increase employee satisfaction",
+      "Detect and uncover fraudulent activities or accounting discrepancies",
+      "Reduce licensing costs",
+      "Enforce least privilege"
+    ],
+    "answer": 1,
+    "explanation": "Mandatory Vacations are designed to detect internal fraud, as unauthorized transactions or discrepancies are likely to be uncovered when another employee takes over their duties.",
+    "id": 916
+  },
+  {
+    "section": "S11",
+    "question": "A security analyst is rotated from network monitoring to firewall configuration for six months, while a colleague moves to audit logs. What is the PRIMARY benefit of this practice?",
+    "options": [
+      "Decreases employee training costs",
+      "Reduces single points of failure and prevents collusion / fraud",
+      "Eliminates the need for MFA",
+      "Reduces the attack surface of firewalls"
+    ],
+    "answer": 1,
+    "explanation": "Job Rotation increases redundancy (cross-training employees to eliminate single points of failure) and acts as an administrative control to detect collusion or fraud.",
+    "id": 917
+  },
+  {
+    "section": "S11",
+    "question": "A security incident occurs. The responder opens a document that outlines the pre-planned, step-by-step playbook to block a specific malware variant. What type of document is this?",
+    "options": [
+      "Policy",
+      "Procedure / Playbook",
+      "Standard",
+      "Guideline"
+    ],
+    "answer": 1,
+    "explanation": "A playbook or incident response procedure is a checklist of tactical, step-by-step actions designed to handle a specific security scenario consistently and rapidly.",
+    "id": 918
+  },
+  {
+    "section": "S11",
+    "question": "A security analyst is preparing a summary report on recent compliance gaps. Which document contains the prioritized list of tasks, assigned risk owners, and target completion dates?",
+    "options": [
+      "Risk Register",
+      "Plan of Action and Milestones (POA&M)",
+      "Acceptable Use Policy (AUP)",
+      "Standard Operating Procedure (SOP)"
+    ],
+    "answer": 1,
+    "explanation": "The POA&M (Plan of Action and Milestones) tracks the remediation of identified security gaps and compliance issues, defining tasks, risk owners, and deadlines.",
+    "id": 919
+  },
+  {
+    "section": "S11",
+    "question": "An external audit team reviews the company's firewall policies and identifies several outdated rules. The company registers these findings to track the remediation process. What is this phase called?",
+    "options": [
+      "Audit planning",
+      "Audit remediation and tracking",
+      "Risk acceptance",
+      "Vulnerability scanning"
+    ],
+    "answer": 1,
+    "explanation": "Audit remediation and tracking is the post-audit phase where organizations implement changes to fix identified audit findings and track progress.",
+    "id": 920
+  },
+  {
+    "section": "S12",
+    "question": "A security engineer is updating the configuration item (CI) records in a central database to track server software versions and hardware connections. What database is this?",
+    "options": [
+      "Risk Register",
+      "Configuration Management Database (CMDB)",
+      "POA&M",
+      "Software Bill of Materials (SBOM)"
+    ],
+    "answer": 1,
+    "explanation": "A Configuration Management Database (CMDB) stores configuration records for all hardware and software assets (Configuration Items) and defines their relationships.",
+    "id": 921
+  },
+  {
+    "section": "S12",
+    "question": "A network engineer wants to modify a core switch configuration. Which group must review the proposed change, evaluate its technical impact, and authorize the execution?",
+    "options": [
+      "Risk Management Committee",
+      "Change Advisory Board (CAB)",
+      "Audit Committee",
+      "Red Team"
+    ],
+    "answer": 1,
+    "explanation": "The Change Advisory Board (CAB) is the committee responsible for evaluating, prioritizing, scheduling, and approving or rejecting proposed changes to minimize risk.",
+    "id": 922
+  },
+  {
+    "section": "S12",
+    "question": "A change is executed on a web server. However, users immediately report database connection errors. The administrator executes a pre-planned script to restore the server back to its original state. What is this plan called?",
+    "options": [
+      "Request for Change",
+      "Backout Plan / Rollback Plan",
+      "Post-change verification",
+      "Sanitization Plan"
+    ],
+    "answer": 1,
+    "explanation": "A Backout (or Rollback) Plan is a detailed set of instructions that describes how to undo a change and restore systems to their original state if a change fails.",
+    "id": 923
+  },
+  {
+    "section": "S12",
+    "question": "An enterprise provides employees with corporate-owned smartphones. Employees are permitted to use the phones for personal calls, but the company retains full management control via MDM. What deployment model is this?",
+    "options": [
+      "BYOD",
+      "COPE (Corporate Owned, Personally Enabled)",
+      "CYOD",
+      "COBO"
+    ],
+    "answer": 1,
+    "explanation": "COPE (Corporate Owned, Personally Enabled) is a model where the organization purchases and owns the device, but allows the employee to use it for personal tasks.",
+    "id": 924
+  },
+  {
+    "section": "S12",
+    "question": "An organization is disposing of 50 decommissioned hard drives. They receive a document from a third-party contractor confirming that all data was overwritten and verified under cryptographic standards. What is this document?",
+    "options": [
+      "Non-Disclosure Agreement (NDA)",
+      "Sanitization Certificate / Certificate of Destruction",
+      "Service Level Agreement (SLA)",
+      "Software Bill of Materials (SBOM)"
+    ],
+    "answer": 1,
+    "explanation": "A Sanitization Certificate (or Certificate of Destruction) is a formal document proving that data or storage media has been securely wiped or destroyed, providing audit trails.",
+    "id": 925
+  },
+  {
+    "section": "S12",
+    "question": "A security policy mandates that customer transaction histories must be stored for exactly 7 years to meet tax laws, and then securely shredded. What policy is this?",
+    "options": [
+      "Acceptable Use Policy",
+      "Data Retention Policy",
+      "SLA Agreement",
+      "Sanitization Certificate"
+    ],
+    "answer": 1,
+    "explanation": "A Data Retention Policy defines how long different data types must be retained for business or compliance reasons, and specifies disposal requirements.",
+    "id": 926
+  },
+  {
+    "section": "S12",
+    "question": "An administrator wants to remotely wipe a lost company smartphone to prevent data exposure. Which platform allows the administrator to execute this command?",
+    "options": [
+      "Software Bill of Materials (SBOM)",
+      "Mobile Device Management (MDM)",
+      "Configuration Management Database (CMDB)",
+      "Plan of Action and Milestones (POA&M)"
+    ],
+    "answer": 1,
+    "explanation": "Mobile Device Management (MDM) is a centralized software platform used to secure, monitor, manage, and remotely control (e.g. wipe) mobile assets.",
+    "id": 927
+  },
+  {
+    "section": "S12",
+    "question": "A developer wants to revert a code modification on a production web app because it introduced a vulnerability. Which control enables them to review previous code versions and execute a clean rollback?",
+    "options": [
+      "Configuration Management Database (CMDB)",
+      "Version Control System (e.g., Git)",
+      "Software Bill of Materials (SBOM)",
+      "Service Level Agreement (SLA)"
+    ],
+    "answer": 1,
+    "explanation": "Version Control Systems (like Git) track incremental changes to code files, allowing developers to review history, audit changes, and roll back to previous stable versions.",
+    "id": 928
+  },
+  {
+    "section": "S12",
+    "question": "An IT technician is auditing a storage room and scans physical barcodes attached to server racks to compare them against the asset registry. What is this audit verifying?",
+    "options": [
+      "Technical configurations",
+      "Asset Tagging and Inventory tracking",
+      "Data sanitization compliance",
+      "SLA performance"
+    ],
+    "answer": 1,
+    "explanation": "Asset Tagging involves attaching physical markers (like barcodes or RFID tags) to hardware to facilitate tracking, location audits, and inventory management.",
+    "id": 929
+  },
+  {
+    "section": "S12",
+    "question": "During a change management audit, which phase is executed immediately AFTER the change is applied to confirm system stability?",
+    "options": [
+      "Request for Change",
+      "Post-Implementation Verification / Verification Testing",
+      "Backout planning",
+      "CAB review"
+    ],
+    "answer": 1,
+    "explanation": "Post-Implementation Verification involves running test procedures immediately after a change is applied to verify the systems are functional and stable.",
+    "id": 930
+  },
+  {
+    "id": 931,
+    "section": "S13",
+    "question": "A financial company is preparing for an annual review by a regulatory agency to verify compliance with national financial protection laws. The firm hires an independent accounting and advisory firm to evaluate their security controls. What is this evaluation called?",
+    "options": [
+      "Internal Audit",
+      "External Audit",
+      "Vulnerability Scan",
+      "Self-Assessment"
+    ],
+    "answer": 1,
+    "explanation": "An External Audit is a systematic evaluation of security controls conducted by an independent, third-party entity to verify compliance, accuracy, and effectiveness."
+  },
+  {
+    "id": 932,
+    "section": "S13",
+    "question": "A security analyst is performing a periodic review of database access permissions internally to verify that only authorized employees have access to HR files. What type of activity is this?",
+    "options": [
+      "External Audit",
+      "Internal Assessment / Audit",
+      "Penetration Test",
+      "Regulatory Examination"
+    ],
+    "answer": 1,
+    "explanation": "Internal assessments or audits are evaluations conducted by an organization's own staff to verify compliance with internal policies, standards, or controls."
+  },
+  {
+    "id": 933,
+    "section": "S13",
+    "question": "An organization's board of directors wants to appoint a governing body to oversee all compliance initiatives, internal audit activities, and coordinate with external auditors. What should they establish?",
+    "options": [
+      "Change Advisory Board (CAB)",
+      "Audit Committee",
+      "Policy Enforcement Point (PEP)",
+      "Risk Management Committee"
+    ],
+    "answer": 1,
+    "explanation": "An Audit Committee is a subgroup of the board of directors responsible for overseeing the financial reporting process, internal controls, and audit activities."
+  },
+  {
+    "id": 934,
+    "section": "S13",
+    "question": "A compliance team conducts a simulated questionnaire review internally to prepare for a formal HIPAA audit, assigning scorecards based on documentation findings. What is this process called?",
+    "options": [
+      "External Examination",
+      "Self-Assessment",
+      "Penetration Testing",
+      "Vulnerability Scanning"
+    ],
+    "answer": 1,
+    "explanation": "A self-assessment is an internal evaluation conducted by the organization itself to assess compliance posture, prepare for external audits, and identify gaps."
+  },
+  {
+    "id": 935,
+    "section": "S13",
+    "question": "A security technician uses the Metasploit framework to simulate an active threat actor, attempting to compromise a local database and pivot to adjacent servers. What is this type of assessment?",
+    "options": [
+      "Vulnerability Scan",
+      "Penetration Test",
+      "Internal Audit",
+      "Static Code Analysis"
+    ],
+    "answer": 1,
+    "explanation": "A Penetration Test is a simulated active attack designed to exploit vulnerabilities and verify security posture by attempting to bypass controls."
+  },
+  {
+    "id": 936,
+    "section": "S13",
+    "question": "During a penetration test, the tester attempts to bypass physical lobby badge gates by closely walking behind an employee who swiped their credential. What type of penetration test is this?",
+    "options": [
+      "Technical penetration test",
+      "Physical Penetration Test",
+      "Logical penetration test",
+      "Administrative audit"
+    ],
+    "answer": 1,
+    "explanation": "Physical Penetration Testing evaluates the physical security barriers and controls (locks, mantraps, gates, guards) of a facility."
+  },
+  {
+    "id": 937,
+    "section": "S13",
+    "question": "A penetration testing team is hired to act as the active adversary, attempting to compromise systems using realistic hacking tactics. What team role are they playing?",
+    "options": [
+      "Blue Team",
+      "Red Team",
+      "White Team",
+      "Purple Team"
+    ],
+    "answer": 1,
+    "explanation": "The Red Team represents the active adversary in a security simulation, using offensive tactics to test defensive controls."
+  },
+  {
+    "id": 938,
+    "section": "S13",
+    "question": "An internal security operations team monitors network traffic, blocks firewall alerts, and mitigates active compromises during a simulation. What team role is this?",
+    "options": [
+      "Red Team",
+      "Blue Team",
+      "White Team",
+      "Purple Team"
+    ],
+    "answer": 1,
+    "explanation": "The Blue Team is the defensive security team responsible for protecting assets, detecting threats, and executing incident response."
+  },
+  {
+    "id": 939,
+    "section": "S13",
+    "question": "A consulting firm conducts a cooperative engagement where the offensive team shares exploit methods in real time with the defensive team to help them configure better detection rules. What is this approach called?",
+    "options": [
+      "Double-blind engagement",
+      "Purple Teaming",
+      "Black box pentesting",
+      "External auditing"
+    ],
+    "answer": 1,
+    "explanation": "Purple Teaming is a collaborative security model where red (offensive) and blue (defensive) teams work together to share feedback and improve overall detection capabilities."
+  },
+  {
+    "id": 940,
+    "section": "S13",
+    "question": "A penetration tester searches WHOIS records, public IP registries, and DNS zone files to identify target IP ranges without sending packets to the target network. What type of reconnaissance is this?",
+    "options": [
+      "Active Reconnaissance",
+      "Passive Reconnaissance",
+      "Physical Reconnaissance",
+      "Post-Exploitation analysis"
+    ],
+    "answer": 1,
+    "explanation": "Passive Reconnaissance gathers information on a target using publicly available resources (OSINT, DNS, WHOIS) without directly interacting with the target's systems."
+  },
+  {
+    "id": 941,
+    "section": "S13",
+    "question": "A pentester runs a port scanner (Nmap) directly against the target organization's external IP addresses. How should this activity be classified?",
+    "options": [
+      "Passive Reconnaissance",
+      "Active Reconnaissance",
+      "Social Engineering",
+      "Physical Testing"
+    ],
+    "answer": 1,
+    "explanation": "Active Reconnaissance involves directly interacting with the target system (e.g., port scanning, ping sweeps) to gather intelligence, which carries a higher risk of detection."
+  },
+  {
+    "id": 942,
+    "section": "S13",
+    "question": "A penetration testing firm completes an engagement and provides the client's board of directors with a formal document signed by the lead assessor confirming the test was executed. What is this document?",
+    "options": [
+      "Non-Disclosure Agreement (NDA)",
+      "Attestation of Findings / Letter of Attestation",
+      "Plan of Action and Milestones (POA&M)",
+      "Master Services Agreement (MSA)"
+    ],
+    "answer": 1,
+    "explanation": "An Attestation of Findings (or Letter of Attestation) is an official document signed by assessors validating that an assessment occurred and verifying its outcomes."
+  },
+  {
+    "id": 943,
+    "section": "S13",
+    "question": "An auditor wants to verify that the organization has implemented the security standards outlined in the NIST Cybersecurity Framework. What is the auditor assessing?",
+    "options": [
+      "Regulatory compliance",
+      "Framework Compliance",
+      "Contractual compliance",
+      "Physical compliance"
+    ],
+    "answer": 1,
+    "explanation": "Framework Compliance is the alignment of an organization's security practices with a structured, non-regulatory security framework or standard (like NIST CSF or ISO 27001)."
+  },
+  {
+    "id": 944,
+    "section": "S13",
+    "question": "A penetration tester uses Metasploit to exploit a vulnerability on a target web server. Once completed, they want to establish a persistent command shell to continue their analysis. What is this active connection called?",
+    "options": [
+      "A wrapper",
+      "A Session",
+      "An enclave",
+      "A cookie"
+    ],
+    "answer": 1,
+    "explanation": "In Metasploit and penetration testing, a Session is an active, established communication channel between the attacker's framework and the compromised host."
+  },
+  {
+    "id": 945,
+    "section": "S13",
+    "question": "Which of the following describes the primary purpose of a HIPAA compliance checklist during an external audit?",
+    "options": [
+      "To choose which symmetric algorithms to deploy",
+      "To validate that the organization meets specific health information privacy regulations with documented evidence",
+      "To run automated exploits using Metasploit",
+      "To schedule vulnerability scans on a continuous basis"
+    ],
+    "answer": 1,
+    "explanation": "Regulatory compliance checklists (like a HIPAA checklist) are used to systematically evaluate and document evidence that an organization meets specific regulatory requirements."
+  },
+  {
+    "id": 946,
+    "section": "S13",
+    "question": "A penetration tester discovers a database vulnerability and executes a script to dump user records, then copies them to a local folder. What phase of the penetration test is this?",
+    "options": [
+      "Reconnaissance",
+      "Exploitation",
+      "Audit Remediation",
+      "Attestation"
+    ],
+    "answer": 1,
+    "explanation": "Exploitation involves executing code or commands against an identified vulnerability to bypass security controls and gain unauthorized access to target assets."
+  },
+  {
+    "id": 947,
+    "section": "S13",
+    "question": "An auditor wants to verify that all accounting staff are following password rotation rules. They request a random sample of login event logs from the SIEM. What audit method is this?",
+    "options": [
+      "Active Reconnaissance",
+      "Evidence Gathering / Audit Verification",
+      "Penetration Testing",
+      "Tabletop Exercise"
+    ],
+    "answer": 1,
+    "explanation": "Evidence Gathering involves collecting logs, screenshots, and configuration records to verify that a security control is operating as designed."
+  },
+  {
+    "id": 948,
+    "section": "S13",
+    "question": "An organization is undergoing a federal financial examination. The regulators require access to all internal risk assessments. What must the organization provide to demonstrate compliance?",
+    "options": [
+      "The software bill of materials (SBOM)",
+      "The completed risk registers and assessment logs",
+      "The Metasploit payload code",
+      "The network routing tables"
+    ],
+    "answer": 1,
+    "explanation": "Providing documented risk registers and risk assessments is standard evidence required to satisfy regulatory audit examinations."
+  },
+  {
+    "id": 949,
+    "section": "S13",
+    "question": "A security operations manager wants to configure rules to detect when a penetration tester is running active Nmap scans against the subnet. What tool should they use?",
+    "options": [
+      "Intrusion Detection System (IDS)",
+      "Software Bill of Materials (SBOM)",
+      "Configuration Management Database (CMDB)",
+      "Trusted Platform Module (TPM)"
+    ],
+    "answer": 0,
+    "explanation": "An Intrusion Detection System (IDS) analyzes network traffic and matches signatures to detect scans, exploit attempts, and other anomalous behavior."
+  },
+  {
+    "id": 950,
+    "section": "S13",
+    "question": "A company completes a penetration test and receives a report showing 15 critical vulnerabilities. What should the security team do NEXT?",
+    "options": [
+      "Sign a letter of attestation ignoring the findings",
+      "Formulate a Plan of Action and Milestones (POA&M) to prioritize and remediate the findings",
+      "Run an active Nmap scan against the testing firm's servers",
+      "Decommission the firewall controls"
+    ],
+    "answer": 1,
+    "explanation": "Once vulnerabilities are identified, the next step is to log them in a remediation plan (POA&M) to track tasks, resources, and deadlines for correction."
+  },
+  {
+    "id": 951,
+    "section": "S13",
+    "question": "What is the key difference between a Vulnerability Assessment and a Penetration Test?",
+    "options": [
+      "Vulnerability assessments only identify potential weaknesses; penetration tests actively exploit those weaknesses to confirm impact.",
+      "Vulnerability assessments are done by the Red Team; penetration tests are done by the Blue Team.",
+      "Vulnerability assessments are qualitative; penetration tests are quantitative.",
+      "Vulnerability assessments require a physical site visit; penetration tests are always remote."
+    ],
+    "answer": 0,
+    "explanation": "A vulnerability assessment scans and lists potential vulnerabilities, whereas a penetration test goes a step further by actively attempting to exploit them to verify their existence and severity."
+  },
+  {
+    "id": 952,
+    "section": "S13",
+    "question": "A pentester wants to extract hash credentials from memory on a compromised Windows workstation. Which tool is commonly used for post-exploitation credential extraction?",
+    "options": [
+      "Nmap",
+      "Mimikatz",
+      "Wireshark",
+      "BitLocker"
+    ],
+    "answer": 1,
+    "explanation": "Mimikatz is a popular post-exploitation tool used to extract plain-text passwords, hashes, PINs, and Kerberos tickets from the memory of a Windows system."
+  },
+  {
+    "id": 953,
+    "section": "S13",
+    "question": "A security operations team uses a honeypot to attract and study hackers. What category of control does this represent?",
+    "options": [
+      "Technical, preventative control",
+      "Technical, detective control",
+      "Managerial, corrective control",
+      "Physical, deterrent control"
+    ],
+    "answer": 1,
+    "explanation": "A honeypot is a decoy server configured to attract hackers, acting as a technical, detective control that alerts administrators to unauthorized activity."
+  },
+  {
+    "id": 954,
+    "section": "S13",
+    "question": "An auditor is evaluating the organization's physical access controls. Which of the following provides the BEST detective evidence of entry?",
+    "options": [
+      "The visitor sign-in sheet at the front desk",
+      "Electronic badge access logs integrated with timestamped CCTV footage",
+      "A locked mantrap door at the lobby",
+      "An administrative password policy"
+    ],
+    "answer": 1,
+    "explanation": "Correlating electronic badge swiping logs with CCTV video recordings provides definitive visual and electronic evidence verifying who entered a secure zone."
+  },
+  {
+    "id": 955,
+    "section": "S13",
+    "question": "A tester performs a black-box penetration test. What information does the tester have about the target system before beginning?",
+    "options": [
+      "Full source code and network diagrams",
+      "No prior knowledge or documentation of the architecture",
+      "Only IP addresses and host operating system versions",
+      "Admin credentials for the primary active directory server"
+    ],
+    "answer": 1,
+    "explanation": "In a black-box penetration test, the tester is given no prior information about the target system's architecture, configurations, or source code, mimicking an external attacker."
+  },
+  {
+    "id": 956,
+    "section": "S13",
+    "question": "A tester performs a white-box penetration test. What is the primary characteristic of this engagement?",
+    "options": [
+      "The tester has complete access to source code, configurations, and internal documentation",
+      "The tester has no information and must perform extensive passive reconnaissance",
+      "The tester only targets wireless interfaces and IoT hubs",
+      "The tester is guided by the Blue Team in real time"
+    ],
+    "answer": 0,
+    "explanation": "In a white-box test (or crystal-box test), the tester is provided with full documentation, source code, and network diagrams, allowing for comprehensive internal analysis."
+  },
+  {
+    "id": 957,
+    "section": "S13",
+    "question": "An auditor wants to ensure that a security patch has been applied to all company laptops. What should they perform to verify compliance?",
+    "options": [
+      "A penetration test using Metasploit",
+      "A vulnerability scan or configuration audit on the endpoints",
+      "A tabletop incident response exercise",
+      "A physical sweep of the laptop storage room"
+    ],
+    "answer": 1,
+    "explanation": "A configuration audit or vulnerability scan query is the most efficient and compliant way to verify that a software patch is present on all assets."
+  },
+  {
+    "id": 958,
+    "section": "S13",
+    "question": "An organization is undergoing a PCI DSS audit. The auditor demands proof that external vulnerability scans are conducted quarterly. What evidence should the organization present?",
+    "options": [
+      "A master services agreement signed by a scanning vendor",
+      "The actual dated scan reports from the last four quarters signed by an Approved Scanning Vendor (ASV)",
+      "The source code of the vulnerability scanner",
+      "A backup file of the database containing the scan records"
+    ],
+    "answer": 1,
+    "explanation": "Showing signed, quarterly reports from an ASV is the specific compliance evidence required to satisfy PCI DSS quarterly scanning requirements."
+  },
+  {
+    "id": 959,
+    "section": "S13",
+    "question": "During an audit, which of the following represents a 'non-conformity' or audit finding?",
+    "options": [
+      "A control operates exactly as designed in the policy",
+      "A critical server lacks the required patch, violating the security standard",
+      "The team has updated the risk register with new threats",
+      "The CAB has approved a network change scheduled for Sunday"
+    ],
+    "answer": 1,
+    "explanation": "An audit finding or non-conformity represents a failure to meet a standard, policy requirement, or regulatory rule."
+  },
+  {
+    "id": 960,
+    "section": "S13",
+    "question": "An organization wants to hire an external firm to assess if their financial transaction processing system is secure, but does not want a full exploit phase. What should they contract?",
+    "options": [
+      "A double-blind penetration test",
+      "A security assessment / audit",
+      "A Red Team engagement",
+      "A Metasploit session"
+    ],
+    "answer": 1,
+    "explanation": "A security assessment or audit evaluates controls using checklists, policies, and configuration checks without executing exploits, making it less disruptive than penetration testing."
+  },
+  {
+    "id": 961,
+    "section": "S14",
+    "question": "A network architect wants to ensure that a web service remains continuously available even during a hardware server crash. What should they implement?",
+    "options": [
+      "Full Disk Encryption (FDE)",
+      "High Availability (HA) cluster with load balancing",
+      "Point-in-time snapshots",
+      "Fail-secure electronic door locks"
+    ],
+    "answer": 1,
+    "explanation": "High Availability (HA) utilizes redundant systems, clustering, and load balancing to eliminate single points of failure, ensuring services remain operational during hardware crashes."
+  },
+  {
+    "id": 962,
+    "section": "S14",
+    "question": "An online store experiences a massive traffic spike during a sales event. A device automatically distributes incoming HTTP requests across a pool of ten web servers to optimize performance. What is this device?",
+    "options": [
+      "A firewall gateway",
+      "A Load Balancer",
+      "A hypervisor",
+      "A TPM chip"
+    ],
+    "answer": 1,
+    "explanation": "A Load Balancer distributes network traffic or workloads across a pool of servers to optimize resource utilization, prevent overloads, and increase availability."
+  },
+  {
+    "id": 963,
+    "section": "S14",
+    "question": "A database system uses three servers grouped together. If the primary active server crashes, one of the passive servers automatically assumes the workload without user intervention. What is this architecture?",
+    "options": [
+      "A screened subnet",
+      "A Server Cluster (Failover Cluster)",
+      "A Faraday cage",
+      "An air-gapped network"
+    ],
+    "answer": 1,
+    "explanation": "A failover cluster groups multiple servers (nodes) together, allowing secondary nodes to automatically take over operations (failover) if the primary node fails."
+  },
+  {
+    "id": 964,
+    "section": "S14",
+    "question": "An organization hosts their critical application across AWS, Azure, and a local private cloud environment to ensure that if one cloud provider suffers an outage, the system remains operational. What is this model?",
+    "options": [
+      "On-premise deployment",
+      "Multi-Cloud redundancy",
+      "Centralized architecture",
+      "Software-Defined Networking"
+    ],
+    "answer": 1,
+    "explanation": "Multi-cloud architectures distribute services across multiple different cloud provider platforms to avoid vendor lock-in and increase resilience against provider-level outages."
+  },
+  {
+    "id": 965,
+    "section": "S14",
+    "question": "A storage array writes data across two hard drives in a striped configuration to optimize read/write performance. What RAID level is this, and what fault tolerance does it provide?",
+    "options": [
+      "RAID 1; can survive one drive failure",
+      "RAID 0; provides zero fault tolerance",
+      "RAID 5; can survive one drive failure",
+      "RAID 6; can survive two drive failures"
+    ],
+    "answer": 1,
+    "explanation": "RAID 0 (striping) splits data across disks for speed, but provides no data redundancy. If any single drive in a RAID 0 array fails, all data is lost."
+  },
+  {
+    "id": 966,
+    "section": "S14",
+    "question": "An administrator wants to secure a critical database server against a single hard drive failure. They write identical data to two mirrored drives simultaneously. What RAID level is this?",
+    "options": [
+      "RAID 0",
+      "RAID 1",
+      "RAID 5",
+      "RAID 10"
+    ],
+    "answer": 1,
+    "explanation": "RAID 1 (mirroring) writes duplicate copies of data to two or more drives, providing fault tolerance since the system can continue operating if one drive fails."
+  },
+  {
+    "id": 967,
+    "section": "S14",
+    "question": "A database administrator configures a RAID array using 3 disks. Data is striped across the disks along with parity information. What RAID level is this?",
+    "options": [
+      "RAID 1",
+      "RAID 5",
+      "RAID 6",
+      "RAID 10"
+    ],
+    "answer": 1,
+    "explanation": "RAID 5 (striping with parity) stripes data and parity across a minimum of 3 disks, providing fault tolerance for a single drive failure and optimized capacity."
+  },
+  {
+    "id": 968,
+    "section": "S14",
+    "question": "A storage engineer wants a RAID configuration that can survive the simultaneous failure of two hard drives. What RAID level should they implement?",
+    "options": [
+      "RAID 1",
+      "RAID 5",
+      "RAID 6",
+      "RAID 0"
+    ],
+    "answer": 2,
+    "explanation": "RAID 6 (striping with double parity) writes two separate parity blocks across the array, requiring a minimum of 4 disks and allowing the system to survive up to two simultaneous drive failures."
+  },
+  {
+    "id": 969,
+    "section": "S14",
+    "question": "A database system requires high read/write performance and complete fault tolerance. The administrator configures a striped array of mirrored arrays using 4 disks. What is this RAID level?",
+    "options": [
+      "RAID 0",
+      "RAID 5",
+      "RAID 6",
+      "RAID 10 (RAID 1+0)"
+    ],
+    "answer": 3,
+    "explanation": "RAID 10 combines RAID 1 (mirroring) and RAID 0 (striping) to provide both high performance and robust fault tolerance, requiring a minimum of 4 disks."
+  },
+  {
+    "id": 970,
+    "section": "S14",
+    "question": "An IT department is auditing their capacity constraints. They forecast future CPU, memory, and storage utilization trends to determine when new hardware purchases are required. What planning process is this?",
+    "options": [
+      "Business Impact Analysis (BIA)",
+      "Capacity Planning",
+      "Disaster Recovery Planning",
+      "Incident Response Planning"
+    ],
+    "answer": 1,
+    "explanation": "Capacity Planning is the strategic process of forecasting and managing the resources (CPU, storage, memory, infrastructure) needed to support future business operations."
+  },
+  {
+    "id": 971,
+    "section": "S14",
+    "question": "A data center experiences minor voltage fluctuations and sags from the municipal power grid. Which device should they install to smooth out the power signal before it reaches server racks?",
+    "options": [
+      "Diesel Generator",
+      "Line Conditioner",
+      "Mantraps",
+      "Bollards"
+    ],
+    "answer": 1,
+    "explanation": "A line conditioner (or power conditioner) adjusts voltage fluctuations, spikes, and sags, delivering clean and stable electrical signals to sensitive hardware."
+  },
+  {
+    "id": 972,
+    "section": "S14",
+    "question": "During a sudden power grid failure, a device instantly transitions server racks to battery backup power, keeping systems running without interruption. What is this device?",
+    "options": [
+      "Diesel Generator",
+      "Uninterruptible Power Supply (UPS)",
+      "Line Conditioner",
+      "Fail-safe lock"
+    ],
+    "answer": 1,
+    "explanation": "An Uninterruptible Power Supply (UPS) provides near-instantaneous battery power during a blackout, protecting systems from sudden shutdowns and data corruption."
+  },
+  {
+    "id": 973,
+    "section": "S14",
+    "question": "A data center suffers a major blackout that is expected to last for three days. Which device is responsible for providing long-term backup electrical power to keep the cooling and servers running?",
+    "options": [
+      "UPS battery pack",
+      "Diesel Generator",
+      "Line Conditioner",
+      "Power Distribution Center"
+    ],
+    "answer": 1,
+    "explanation": "Generators convert mechanical energy (fuel-powered) to electricity, providing long-term backup power during extended blackouts after the UPS batteries are depleted."
+  },
+  {
+    "id": 974,
+    "section": "S14",
+    "question": "A system administrator is designing a backup strategy. They configure the backups to run daily at midnight, saving only the blocks that have changed since the previous night's backup. What backup type is this?",
+    "options": [
+      "Full Backup",
+      "Incremental Backup",
+      "Differential Backup",
+      "Snapshot"
+    ],
+    "answer": 1,
+    "explanation": "An Incremental Backup saves only the data that has modified since the last backup (of any type), resulting in fast backup speeds and minimal storage consumption."
+  },
+  {
+    "id": 975,
+    "section": "S14",
+    "question": "A virtualization administrator wants to capture a consistent, point-in-time state of a virtual machine before applying a software update, allowing a rapid rollback if the patch fails. What should they capture?",
+    "options": [
+      "Full backup tape",
+      "Snapshot",
+      "RAID 0 array",
+      "Line conditioner log"
+    ],
+    "answer": 1,
+    "explanation": "Snapshots capture the exact state and configuration of a virtual machine at a specific point in time, enabling rapid restoration to that state."
+  },
+  {
+    "id": 976,
+    "section": "S14",
+    "question": "An organization wants to mirror all data updates in real time to a secondary database hosted in a different region, ensuring that both databases are always identical. What process is this?",
+    "options": [
+      "Incremental Backup",
+      "Data Replication",
+      "Data sanitization",
+      "Snapshot archiving"
+    ],
+    "answer": 1,
+    "explanation": "Data Replication is the process of copying data in real time or near-real time to a secondary location to maintain synchronization between two storage nodes."
+  },
+  {
+    "id": 977,
+    "section": "S14",
+    "question": "A database system maintains a running log of all database transactions to disk before writing them to the actual table structure. What is this mechanism called?",
+    "options": [
+      "Replication",
+      "Journaling / Change Tracking",
+      "Incremental backup",
+      "Degaussing"
+    ],
+    "answer": 1,
+    "explanation": "Journaling (or transaction logging) keeps a sequential log of all database changes, allowing the system to recover gracefully to a consistent state after a crash."
+  },
+  {
+    "id": 978,
+    "section": "S14",
+    "question": "An IT department is drafting a plan that outlines how key business processes and personnel will relocate to a temporary facility and resume operations if a fire destroys the corporate headquarters. What plan is this?",
+    "options": [
+      "Disaster Recovery Plan (DRP)",
+      "Continuity of Operations Plan (COOP) / Business Continuity Plan (BCP)",
+      "Incident Response Plan (IRP)",
+      "Acceptable Use Policy (AUP)"
+    ],
+    "answer": 1,
+    "explanation": "The BCP/COOP focuses on keeping critical business operations running during a disruption or disaster, outlining non-technical relocation and business survival workflows."
+  },
+  {
+    "id": 979,
+    "section": "S14",
+    "question": "A server room is flooded. The IT team retrieves the backup tapes and begins configuring new server hardware at a secondary location to restore database access. What plan are they executing?",
+    "options": [
+      "Business Continuity Plan (BCP)",
+      "Disaster Recovery Plan (DRP)",
+      "Acceptable Use Policy (AUP)",
+      "Security standard"
+    ],
+    "answer": 1,
+    "explanation": "The Disaster Recovery Plan (DRP) is a technical subset of the BCP that focuses on the step-by-step restoration of IT systems, networks, and data after a disaster."
+  },
+  {
+    "id": 980,
+    "section": "S14",
+    "question": "A financial firm maintains a secondary facility that has active, mirrored databases, identical server hardware running continuously, and network connections established. In a disaster, operations switch to this facility instantly. What redundant site is this?",
+    "options": [
+      "Hot Site",
+      "Warm Site",
+      "Cold Site",
+      "Mobile Site"
+    ],
+    "answer": 0,
+    "explanation": "A Hot Site is a fully operational, mirrored recovery facility ready for immediate failover during an emergency, minimizing downtime and data loss."
+  },
+  {
+    "id": 981,
+    "section": "S14",
+    "question": "An organization rents a disaster recovery room that has power, air conditioning, and network cabling, but contains no servers or workstations. Bringing this site online will take several weeks. What redundant site is this?",
+    "options": [
+      "Hot Site",
+      "Warm Site",
+      "Cold Site",
+      "Mobile Site"
+    ],
+    "answer": 2,
+    "explanation": "A Cold Site provides physical space, power, and utilities, but has no pre-configured hardware, software, or network lines, requiring weeks to set up during a disaster."
+  },
+  {
+    "id": 982,
+    "section": "S14",
+    "question": "To secure their network against a single software flaw compromising all systems, a company uses Windows servers for active directory, Linux servers for database hosting, and Cisco switches for routing. What design concept does this represent?",
+    "options": [
+      "High Availability",
+      "Platform Diversity",
+      "Geographic Dispersion",
+      "Zero Trust"
+    ],
+    "answer": 1,
+    "explanation": "Platform Diversity is the use of different operating systems, hardware platforms, and software vendors across the network to prevent a single exploit from compromising the entire infrastructure."
+  },
+  {
+    "id": 983,
+    "section": "S14",
+    "question": "A company distributes its data centers across three separate seismic zones in the United States to ensure that a localized natural disaster (like an earthquake or hurricane) cannot disrupt all sites. What is this design called?",
+    "options": [
+      "Platform Diversity",
+      "Geographic Dispersion",
+      "Clustering",
+      "Load Balancing"
+    ],
+    "answer": 1,
+    "explanation": "Geographic Dispersion distributes critical systems and data centers across different physical locations to mitigate the risk of localized disasters causing total system failures."
+  },
+  {
+    "id": 984,
+    "section": "S14",
+    "question": "A security manager gathers department heads in a conference room to walk through a hypothetical ransomware scenario, evaluating each stakeholder's response and checking communication lists without affecting live systems. What testing method is this?",
+    "options": [
+      "Failover Test",
+      "Tabletop Exercise",
+      "Parallel Processing",
+      "Simulation"
+    ],
+    "answer": 1,
+    "explanation": "A Tabletop Exercise is a discussion-based simulation where key personnel meet to walk through an emergency scenario, validating roles and plans in a low-risk environment."
+  },
+  {
+    "id": 985,
+    "section": "S14",
+    "question": "An IT department validates their DRP by cutting off the power supply to the primary database server during scheduled maintenance, verifying that the failover cluster automatically redirects users to the secondary server. What test is this?",
+    "options": [
+      "Tabletop Exercise",
+      "Failover Test",
+      "Parallel Processing",
+      "Simulation"
+    ],
+    "answer": 1,
+    "explanation": "A Failover Test actively triggers a system failure under controlled conditions to verify that secondary systems successfully assume the workload as designed."
+  },
+  {
+    "id": 986,
+    "section": "S14",
+    "question": "During a disaster recovery test, an organization runs the restored database alongside the active production database, checking that both systems process the same transactions and yield matching results. What test is this?",
+    "options": [
+      "Tabletop Exercise",
+      "Parallel Processing / Parallel Testing",
+      "Failover Test",
+      "Vulnerability Scan"
+    ],
+    "answer": 1,
+    "explanation": "Parallel Processing (or parallel testing) involves running a secondary system simultaneously with the primary system to compare outputs and verify stability before a formal cutover."
+  },
+  {
+    "id": 987,
+    "section": "S14",
+    "question": "An administrator is setting up daily backups. They want a backup type that saves all blocks that have modified since the last FULL backup, which speeds up restoration since only the full backup and one incremental/differential tape are needed. What backup type is this?",
+    "options": [
+      "Incremental Backup",
+      "Differential Backup",
+      "Snapshot",
+      "Journaling"
+    ],
+    "answer": 1,
+    "explanation": "A Differential Backup saves all data that has changed since the last full backup. Restoration requires only the last full backup and the latest differential backup."
+  },
+  {
+    "id": 988,
+    "section": "S14",
+    "question": "A data center designer wants to protect server racks from sudden voltage surges caused by lightning strikes. Which power control is the BEST choice?",
+    "options": [
+      "UPS battery",
+      "Line Conditioner / Surge Protector",
+      "Diesel Generator",
+      "Power Distribution Center"
+    ],
+    "answer": 1,
+    "explanation": "Line conditioners and surge protectors suppress voltage spikes and surges, protecting electronic equipment from damage."
+  },
+  {
+    "id": 989,
+    "section": "S14",
+    "question": "Which BIA metric is directly used by a backup administrator to determine how often backups must be scheduled?",
+    "options": [
+      "Recovery Time Objective (RTO)",
+      "Recovery Point Objective (RPO)",
+      "Mean Time to Repair (MTTR)",
+      "Mean Time Between Failures (MTBF)"
+    ],
+    "answer": 1,
+    "explanation": "The Recovery Point Objective (RPO) defines the maximum tolerable data loss window, which directly determines the required backup frequency (e.g. 4-hour RPO requires backups at least every 4 hours)."
+  },
+  {
+    "id": 990,
+    "section": "S14",
+    "question": "A company wants to deliver a temporary recovery workspace to a remote disaster area quickly. They contract a service that provides a trailer equipped with generators, workstations, and satellite links. What redundant site type is this?",
+    "options": [
+      "Hot Site",
+      "Cold Site",
+      "Mobile Site",
+      "Virtual Site"
+    ],
+    "answer": 2,
+    "explanation": "A Mobile Site is a self-contained, portable recovery workspace housed in a trailer or container that can be towed to a disaster area to resume operations."
+  },
+  {
+    "id": 991,
+    "section": "S15",
+    "question": "An IT department keeps its primary database servers in local server racks, but hosts their email and customer CRM portals in public cloud environments. What deployment model is this?",
+    "options": [
+      "On-premise deployment",
+      "Public Cloud deployment",
+      "Hybrid Solutions",
+      "Decentralized Architecture"
+    ],
+    "answer": 2,
+    "explanation": "Hybrid solutions combine on-premise infrastructure (or private cloud) with public cloud services, allowing organizations to keep sensitive workloads local while leveraging cloud scale for others."
+  },
+  {
+    "id": 992,
+    "section": "S15",
+    "question": "An organization is migrating a system to a PaaS cloud model. According to the Shared Responsibility Matrix, who is responsible for patching the physical host server operating system?",
+    "options": [
+      "The customer's security team",
+      "The cloud service provider (CSP)",
+      "Both the customer and the CSP",
+      "Neither, as PaaS does not use physical hosts"
+    ],
+    "answer": 1,
+    "explanation": "In Platform as a Service (PaaS), the cloud service provider manages and patches the physical infrastructure, hypervisors, and host operating systems, while the customer manages applications."
+  },
+  {
+    "id": 993,
+    "section": "S15",
+    "question": "A security architect wants to host multiple virtual servers on a single physical host. Which software component is responsible for isolating and allocating the hardware resources to each virtual machine?",
+    "options": [
+      "The container engine",
+      "The Hypervisor",
+      "The policy enforcement point",
+      "The load balancer"
+    ],
+    "answer": 1,
+    "explanation": "A Hypervisor (Type 1 or Type 2) is the software layer that manages and distributes physical server resources (CPU, RAM, storage) among virtual machines, maintaining isolation."
+  },
+  {
+    "id": 994,
+    "section": "S15",
+    "question": "An attacker compromises a virtual machine and executes an exploit that allows them to bypass VM boundary controls and interact directly with the host hypervisor. What vulnerability was exploited?",
+    "options": [
+      "VM Sprawl",
+      "VM Escape",
+      "Resource Reuse",
+      "Live Migration vulnerability"
+    ],
+    "answer": 1,
+    "explanation": "VM Escape is a critical vulnerability where an attacker breaks out of the guest VM's isolated environment to execute code directly on the host hypervisor or other guest VMs."
+  },
+  {
+    "id": 995,
+    "section": "S15",
+    "question": "A security administrator discovers that developers are launching virtual machines in the cloud test environment without registering them or applying patches, creating an unmonitored security risk. What is this concern?",
+    "options": [
+      "VM Escape",
+      "VM Sprawl",
+      "Resource reuse",
+      "Decentralization"
+    ],
+    "answer": 1,
+    "explanation": "VM Sprawl occurs when virtual machines are created and deployed without proper oversight, change control, or lifecycle tracking, leading to unpatched and orphaned assets."
+  },
+  {
+    "id": 996,
+    "section": "S15",
+    "question": "A software team packages an application along with all of its dependencies and libraries into an isolated user-space engine that shares the host system's OS kernel. What technology is being used?",
+    "options": [
+      "Type 1 Hypervisor virtualization",
+      "Containerization",
+      "Serverless Computing",
+      "Microservices"
+    ],
+    "answer": 1,
+    "explanation": "Containerization isolates applications in containers that share the host's operating system kernel, making them lightweight and highly portable compared to full virtual machines."
+  },
+  {
+    "id": 997,
+    "section": "S15",
+    "question": "A developer deploys a series of single-purpose code functions that are triggered by event API calls. The cloud provider dynamically manages all server allocations, and the developer is charged only for CPU cycles used. What model is this?",
+    "options": [
+      "SaaS model",
+      "Serverless Computing / FaaS",
+      "Microservices",
+      "SDN Control Plane"
+    ],
+    "answer": 1,
+    "explanation": "Serverless Computing (Function as a Service) is an execution model where the cloud provider manages server provisioning, dynamically scaling compute resources to execute code blocks on-demand."
+  },
+  {
+    "id": 998,
+    "section": "S15",
+    "question": "An application is redesigned from a single large monolithic code block into a collection of twenty small, autonomous services that communicate over APIs. What is this architecture?",
+    "options": [
+      "Centralized architecture",
+      "Microservices Architecture",
+      "Serverless execution",
+      "SDN architecture"
+    ],
+    "answer": 1,
+    "explanation": "Microservices structure applications as a collection of small, independent, loosely-coupled services organized around specific business capabilities."
+  },
+  {
+    "id": 999,
+    "section": "S15",
+    "question": "To protect a highly secure database containing weapon designs, the military disconnects all physical and wireless network cables from the database server, completely isolating it from the network. What is this control?",
+    "options": [
+      "Logical Separation",
+      "Physical Separation / Air Gapping",
+      "Network Segmentation",
+      "Software-Defined Networking"
+    ],
+    "answer": 1,
+    "explanation": "Air Gapping (physical separation) isolates a system or network from other networks (including the internet), preventing remote cyberattacks."
+  },
+  {
+    "id": 1000,
+    "section": "S15",
+    "question": "A network administrator configures VLANs on a core switch to segregate finance traffic from guest traffic crossing the same physical network interfaces. What security control is this?",
+    "options": [
+      "Physical Separation",
+      "Logical Separation",
+      "Air Gapping",
+      "IaC deployment"
+    ],
+    "answer": 1,
+    "explanation": "Logical Separation uses software-based configurations, firewalls, and VLANs to segment traffic and restrict access within shared physical network devices."
+  },
+  {
+    "id": 1001,
+    "section": "S15",
+    "question": "A network architect wants to programmatically reconfigure network routing rules across one hundred routers from a single centralized software panel. What technology should they implement?",
+    "options": [
+      "Infrastructure as Code (IaC)",
+      "Software-Defined Networking (SDN)",
+      "Virtualization",
+      "Microservices"
+    ],
+    "answer": 1,
+    "explanation": "Software-Defined Networking (SDN) decouples the network control plane (routing logic) from the data plane (forwarding hardware), enabling centralized, programmatic management."
+  },
+  {
+    "id": 1002,
+    "section": "S15",
+    "question": "An engineer uses an SDN controller to configure the paths that packets will take across the network. Which plane of the SDN is the engineer interacting with?",
+    "options": [
+      "Data Plane",
+      "Control Plane",
+      "Forwarding Plane",
+      "Physical Plane"
+    ],
+    "answer": 1,
+    "explanation": "The Control Plane in SDN is the centralized decision-making engine that determines routing paths and traffic rules across the network infrastructure."
+  },
+  {
+    "id": 1003,
+    "section": "S15",
+    "question": "A developer writes a Terraform script (HCL format) that defines three virtual servers, a firewall rule, and a subnet, automatically launching them in the cloud when run. What is this technique?",
+    "options": [
+      "Serverless provisioning",
+      "Infrastructure as Code (IaC)",
+      "Microservice architecture",
+      "Virtualization escape"
+    ],
+    "answer": 1,
+    "explanation": "Infrastructure as Code (IaC) involves managing and provisioning IT infrastructure (servers, networks, firewalls) using machine-readable configuration files and automation scripts."
+  },
+  {
+    "id": 1004,
+    "section": "S15",
+    "question": "An IaC deployment script is designed so that running it multiple times always results in the exact same infrastructure configuration, regardless of the system's starting state. What is this property called?",
+    "options": [
+      "Snowflake prevention",
+      "Idempotence",
+      "Virtualization",
+      "Orchestration"
+    ],
+    "answer": 1,
+    "explanation": "Idempotence is the property of an operation producing the same outcome every time it is run, which is critical for consistent IaC configuration baselines."
+  },
+  {
+    "id": 1005,
+    "section": "S15",
+    "question": "An audit team discovers that several servers have unique, manual configurations that were applied ad-hoc by administrators over time, making them inconsistent with corporate templates. What are these systems called?",
+    "options": [
+      "Idempotent systems",
+      "Snowflake Systems",
+      "Microservices",
+      "Air-gapped systems"
+    ],
+    "answer": 1,
+    "explanation": "Snowflake Systems are servers or configurations that are uniquely configured and maintained manually, making them inconsistent, difficult to replicate, and prone to security drift."
+  },
+  {
+    "id": 1006,
+    "section": "S15",
+    "question": "An organization relies on smart thermometers, connected cameras, and wireless light switches throughout its facility. What network category do these devices represent?",
+    "options": [
+      "ICS/SCADA",
+      "Internet of Things (IoT)",
+      "Microservices",
+      "SDN"
+    ],
+    "answer": 1,
+    "explanation": "The Internet of Things (IoT) is a network of physical devices embedded with sensors, software, and connectivity that collect and exchange data."
+  },
+  {
+    "id": 1007,
+    "section": "S15",
+    "question": "A security engineer is configuring a network to protect the corporate intranet from compromised smart appliances. What mitigation should they implement?",
+    "options": [
+      "Disable encryption on all IoT devices",
+      "Isolate all IoT devices on a separate, segmented network / VLAN",
+      "Use Type 2 hypervisors on all IoT hubs",
+      "Register all IoT devices in the CMDB"
+    ],
+    "answer": 1,
+    "explanation": "IoT devices often have weak security controls. Placing them on a separate, segmented network (VLAN) prevents a compromised device from pivoting to corporate assets."
+  },
+  {
+    "id": 1008,
+    "section": "S15",
+    "question": "An engineer monitors electrical generation turbines and water valves across ten cities from a centralized, geographically dispersed control center. What category of system is this?",
+    "options": [
+      "Local DCS",
+      "SCADA (Supervisory Control and Data Acquisition)",
+      "IoT Hub",
+      "Hypervisor cluster"
+    ],
+    "answer": 1,
+    "explanation": "SCADA is a subset of Industrial Control Systems (ICS) used to monitor and control geographically dispersed industrial processes (like power grids or pipelines)."
+  },
+  {
+    "id": 1009,
+    "section": "S15",
+    "question": "A medical device manufacturer designs a pacemaker with an embedded processor running a specialized OS that must process biometric telemetry instantly with zero delay or buffering. What operating system type is this?",
+    "options": [
+      "Standard server OS",
+      "Real-Time Operating System (RTOS)",
+      "Type 2 Hypervisor",
+      "Serverless runtime"
+    ],
+    "answer": 1,
+    "explanation": "A Real-Time Operating System (RTOS) is designed to process data as it arrives without buffering delays, providing highly predictable and timely execution for critical applications."
+  },
+  {
+    "id": 1010,
+    "section": "S15",
+    "question": "A security engineer wraps legacy embedded device traffic inside an IPsec tunnel because the device hardware lacks the ability to encrypt data natively. What is this security mechanism?",
+    "options": [
+      "Network segmentation",
+      "A Wrapper",
+      "Firmware code control",
+      "An air gap"
+    ],
+    "answer": 1,
+    "explanation": "Wrappers are protective protocols (like IPsec or SSL/TLS) used to encapsulate and encrypt data in transit for systems (like legacy embedded systems) that cannot secure their traffic natively."
+  },
+  {
+    "id": 1011,
+    "section": "S15",
+    "question": "Which of the following represents a primary security risk associated with embedded systems in industrial settings?",
+    "options": [
+      "High virtualization escape rate",
+      "Inability to patch or update due to hard-to-reach physical locations or downtime constraints",
+      "Excessive use of serverless architectures",
+      "Lack of physical cables"
+    ],
+    "answer": 1,
+    "explanation": "Embedded systems are often difficult or impossible to patch due to long operational lifespans, physical isolation, or the risk of introducing downtime in critical environments."
+  },
+  {
+    "id": 1012,
+    "section": "S15",
+    "question": "A security manager wants to ensure that only cryptographically signed updates can be installed on the corporate smart locks. What control should they enforce?",
+    "options": [
+      "Network segmentation",
+      "Firmware Code Control / Secure Boot",
+      "Qualitative risk analysis",
+      "Air gapping"
+    ],
+    "answer": 1,
+    "explanation": "Firmware code control and secure boot mechanisms verify the cryptographic signature of updates and bootloaders before execution, ensuring only authorized code runs."
+  },
+  {
+    "id": 1013,
+    "section": "S15",
+    "question": "An architect is selecting a hypervisor to run enterprise databases. They want a bare-metal hypervisor that runs directly on the server's physical hardware for maximum performance. What should they choose?",
+    "options": [
+      "Type 2 Hypervisor",
+      "Type 1 Hypervisor",
+      "Docker Container",
+      "Serverless function"
+    ],
+    "answer": 1,
+    "explanation": "Type 1 hypervisors (bare-metal) run directly on the physical host hardware, providing high performance, efficiency, and security for enterprise virtualization."
+  },
+  {
+    "id": 1014,
+    "section": "S15",
+    "question": "Which cloud computing security threat is characterized by residual data remaining on storage media after deletion, potentially exposing it to another tenant sharing the same hardware?",
+    "options": [
+      "VM Escape",
+      "Data Remnants",
+      "Typosquatting",
+      "Downgrade attack"
+    ],
+    "answer": 1,
+    "explanation": "Data remnants are the residual physical representations of data that remain on storage drives even after deletion, creating data disclosure risks in shared, multi-tenant cloud systems."
+  },
+  {
+    "id": 1015,
+    "section": "S15",
+    "question": "An application is composed of small, independent services. One service handles payment, one handles user signup, and one handles catalogs. If the catalog service fails, payments continue working. What benefit of microservices does this show?",
+    "options": [
+      "Scalability",
+      "Resilience",
+      "Flexibility",
+      "Idempotence"
+    ],
+    "answer": 1,
+    "explanation": "Microservices enhance resilience because services run autonomously. The failure of one non-critical service does not result in a total system outage."
+  },
+  {
+    "id": 1016,
+    "section": "S15",
+    "question": "An organization is migrating from a traditional server room to a public cloud PaaS model. Which task is the CSP responsible for under this model?",
+    "options": [
+      "Managing customer database user credentials",
+      "Managing and securing the physical data center facility",
+      "Configuring application input validation rules",
+      "Classifying data sensitivity"
+    ],
+    "answer": 1,
+    "explanation": "In all public cloud service models (IaaS, PaaS, SaaS), the Cloud Service Provider (CSP) is fully responsible for the physical security of the host facilities and data centers."
+  },
+  {
+    "id": 1017,
+    "section": "S15",
+    "question": "Which plane of a Software-Defined Network (SDN) is responsible for physically routing and forwarding packets based on rules received from the controller?",
+    "options": [
+      "Control Plane",
+      "Data Plane / Forwarding Plane",
+      "Application Plane",
+      "Management Plane"
+    ],
+    "answer": 1,
+    "explanation": "The Data Plane (or forwarding plane) is the hardware and software layer that actually moves packets across the network based on the instructions of the Control Plane."
+  },
+  {
+    "id": 1018,
+    "section": "S15",
+    "question": "A system administrator manually installs software patches on one server, but forgets to do it on five other identical servers. What issue does this introduce?",
+    "options": [
+      "VM Escape",
+      "System configuration drift / Snowflake Systems",
+      "Downgrade attack",
+      "Inherent risk escalation"
+    ],
+    "answer": 1,
+    "explanation": "Manual, inconsistent changes cause configuration drift, creating unique 'snowflake' systems that introduce risks due to their lack of standardization."
+  },
+  {
+    "id": 1019,
+    "section": "S15",
+    "question": "What is the primary security concern associated with using a Type 2 hypervisor in an enterprise environment?",
+    "options": [
+      "It runs directly on bare-metal hardware.",
+      "It runs within a standard host operating system, making its security dependent on the host OS security.",
+      "It cannot host virtual machines.",
+      "It does not support network bridging."
+    ],
+    "answer": 1,
+    "explanation": "Type 2 hypervisors run on top of a host operating system. If the host OS is compromised, all guest virtual machines running on the hypervisor are compromised as well."
+  },
+  {
+    "id": 1020,
+    "section": "S15",
+    "question": "An organization implements over-the-air (OTA) updates for their smart building HVAC controllers. Which of the following is the MOST critical security control for this process?",
+    "options": [
+      "Use of Type 2 hypervisors on controllers",
+      "Cryptographic signature validation on all received update files",
+      "Reducing the database backup frequency",
+      "Performing qualitative risk analysis ad-hoc"
+    ],
+    "answer": 1,
+    "explanation": "Cryptographic signature verification ensures that updates received remotely (OTA) are authentic and have not been tampered with by an attacker, preventing malicious firmware deployment."
+  },
+  {
+    "id": 821,
+    "section": "S16",
+    "question": "A security administrator detects persistent SQL injection attack attempts targeting the database of a public-facing web server. The server is already behind a packet filtering firewall. Which of the following solutions is the BEST choice to mitigate this specific type of application-layer attack?",
+    "options": [
+      "A stateful packet inspection firewall",
+      "A Web Application Firewall (WAF)",
+      "A Next-Generation Firewall (NGFW) configured with IDS",
+      "A Protocol Packet Wrapper (PPW)"
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "The critical modifier BEST points to the most specific and effective solution for the application layer (L7). A Web Application Firewall (WAF) is specifically designed to inspect HTTP/HTTPS traffic and prevent web-based attacks such as SQL Injection and Cross-Site Scripting (XSS). Stateful packet inspection firewalls operate at lower layers (L4) and do not analyze the request payload content. An NGFW provides broad perimeter defense, but a WAF is the specialized control for web application protection. PPW is an invented term."
+  },
+  {
+    "id": 822,
+    "section": "S16",
+    "question": "A growing organization wants to securely interconnect multiple physical branch offices and remote workers directly to their cloud resources. Management requires a solution that unifies intelligent network routing with integrated security services (such as CASB and Zero Trust) managed centrally from the cloud. Which of the following represents the BEST solution to meet this requirement?",
+    "options": [
+      "Software-Defined Wide Area Network (SD-WAN)",
+      "Virtual Private Network (VPN) with traditional IPsec tunnels",
+      "Cloud Edge Security Multiplexer (CESM)",
+      "Secure Access Service Edge (SASE)"
+    ],
+    "answer": 3,
+    "correctAnswer": 3,
+    "explanation": "The critical modifier BEST demands an integrated solution that combines network routing with cloud-native security services. SASE unifies SD-WAN with advanced security functions in a single cloud-delivered framework. SD-WAN provides network connectivity and intelligent routing but does not natively include the full cloud security suite of SASE. A traditional IPsec VPN lacks the enrutamiento optimization and centralized cloud management of SASE. CESM is an invented term."
+  },
+  {
+    "id": 823,
+    "section": "S16",
+    "question": "A network engineer is designing the wireless authentication process for an 802.1X corporate network. They want to implement an extensible protocol that encapsulates credentials inside a secure TLS tunnel, but requires ONLY a digital certificate on the authentication server to simplify deployment on user endpoints. Which EAP protocol should they select?",
+    "options": [
+      "Protected Extensible Authentication Protocol (PEAP)",
+      "EAP-TLS (EAP Transport Layer Security)",
+      "EAP-MD5 (Message Digest 5)",
+      "Secure Tunneling Authentication Protocol (STAP)"
+    ],
+    "answer": 0,
+    "correctAnswer": 0,
+    "explanation": "The critical modifier requires a protocol that uses a TLS tunnel but only requires a server-side certificate. PEAP establishes a secure TLS tunnel and only requires a digital certificate on the authentication server to validate the server's identity to the client. EAP-TLS is highly secure but requires certificates on both the server and all client devices, making it more complex to deploy. EAP-MD5 does not encrypt credentials within a TLS tunnel and is vulnerable. STAP is an invented protocol."
+  },
+  {
+    "id": 824,
+    "section": "S16",
+    "question": "A security administrator is reviewing the rule set of a company's perimeter firewall. The administrator observes a rule at the end of the list that blocks all traffic that has not been explicitly allowed by previous rules. Which of the following security principles does this rule represent FIRST and most directly?",
+    "options": [
+      "Least Privilege",
+      "Absolute Packet Dropping (APD)",
+      "Implicit Deny",
+      "Defense in Depth"
+    ],
+    "answer": 2,
+    "correctAnswer": 2,
+    "explanation": "The modifier FIRST asks for the fundamental security principle represented by the block-by-default rule. 'Implicit Deny' is the policy stating that all traffic is blocked unless it is explicitly permitted. Least Privilege applies to user access permissions rather than network traffic flow. Defense in Depth is a multi-layered security approach, not a specific firewall rule configuration. APD is an invented term."
+  },
+  {
+    "id": 825,
+    "section": "S17",
+    "question": "A senior database administrator is terminated immediately due to a severe security policy violation. The security team must ensure that the former employee cannot connect to or modify critical production databases from external networks. Which IAM lifecycle process should the team execute FIRST?",
+    "options": [
+      "Identity Proofing",
+      "Deprovisioning",
+      "Role-Based Access Control (RBAC) modification",
+      "Account Reallocation"
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "The modifier FIRST demands the immediate action to remove access. Deprovisioning is the process of revoking or deleting user accounts and access rights when a user leaves the organization, neutralizing potential insider threats. Identity Proofing occurs at the beginning of the identity lifecycle (prior to account creation). Modifying RBAC roles is slow and does not guarantee the account itself is completely disabled. Account Reallocation is an invented term."
+  },
+  {
+    "id": 826,
+    "section": "S17",
+    "question": "A company wants to implement Single Sign-On (SSO) to allow users to authenticate across multiple mobile and single-page web applications. The security architect specifies a modern, REST API-based protocol that uses JSON Web Tokens (JWT) to verify user identity through an authorization server. Which of the following protocols is the BEST fit for this task?",
+    "options": [
+      "Security Assertion Markup Language (SAML 2.0)",
+      "OAuth 2.0",
+      "OpenID Connect (OIDC)",
+      "Federated Identity REST Protocol (FIRP)"
+    ],
+    "answer": 2,
+    "correctAnswer": 2,
+    "explanation": "The critical modifier BEST requires identity verification (authentication) using JSON Web Tokens and REST APIs. OpenID Connect (OIDC) is an identity layer built on top of OAuth 2.0 that uses JWTs to authenticate users. SAML 2.0 also enables SSO but relies on heavier XML and SOAP structures, making it less suitable for modern mobile and web clients. OAuth 2.0 is designed for access delegation (authorization), not directly for user identity verification. FIRP is an invented term."
+  },
+  {
+    "id": 827,
+    "section": "S17",
+    "question": "To log into a secure workstation that processes credit card transactions, an employee must scan their physical smartcard, input a memorized 6-digit PIN, and provide a real-time voice sample. How many distinct authentication factors are used in this configuration?",
+    "options": [
+      "Three factors (something you know, something you have, and something you are)",
+      "Two factors (something you have and something you know)",
+      "One factor (three instances of something you know)",
+      "Three factors (something you know, something you do, and somewhere you are)"
+    ],
+    "answer": 0,
+    "correctAnswer": 0,
+    "explanation": "Three distinct authentication factors are used: (1) something you have (the physical smartcard), (2) something you know (the memorized PIN), and (3) something you are (the biometrics of the voice sample). Effective multi-factor authentication requires physically distinct categories of credentials. The other options miscalculate the count or define factors not present in the scenario."
+  },
+  {
+    "id": 828,
+    "section": "S17",
+    "question": "A financial organization needs to tightly manage and monitor the activities of its system administrators. They want to ensure that superuser credentials are not persistently shared, that each login requires real-time approval, and that administrative console sessions are video-recorded for auditing. Which type of solution BEST meets this requirement?",
+    "options": [
+      "Single Sign-On (SSO)",
+      "Role-Based Access Control (RBAC)",
+      "Administrative Access Sentinel (AAS)",
+      "Privileged Access Management (PAM)"
+    ],
+    "answer": 3,
+    "correctAnswer": 3,
+    "explanation": "The critical modifier BEST points to the specific solution for high-privileged admin accounts. A Privileged Access Management (PAM) solution is designed to control, secure, monitor, and audit administrative (root/superuser) accounts, providing credential vaulting, temporary checked-out access, real-time approval workflows, and full session recording. SSO simplifies end-user logins but does not manage administrative infrastructure credentials. RBAC limits standard user permissions but does not provide dynamic session management or console recordings. AAS is an invented term."
+  },
+  {
+    "id": 829,
+    "section": "S18",
+    "question": "A security analyst discovers that users of an online discussion board can embed malicious JavaScript code into their forum posts. When other users view the posts, the script executes automatically in their local browsers, sending their session tokens to the attacker's server. What type of attack is occurring, and what is the MOST likely remediation?",
+    "options": [
+      "Cross-Site Request Forgery (XSRF); remediated by using unique cryptographic tokens per form.",
+      "Stored Cross-Site Scripting (XSS); remediated by implementing input validation and output encoding.",
+      "SQL Injection; remediated by using parameterized database queries.",
+      "Dynamic Script Hijacking (DSH); remediated by implementing DOM isolation."
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "The attack described is Stored (or Persistent) Cross-Site Scripting (XSS) because the malicious JavaScript is stored in the database of the forum and executes in the browsers of visiting users. The MOST likely and effective remediation is to perform rigorous input validation and output encoding before rendering user-submitted content. XSRF tricks a user's browser into performing an unauthorized action but does not involve direct script injection. SQL Injection targets the backend database rather than browser execution. DSH is an invented term."
+  },
+  {
+    "id": 830,
+    "section": "S18",
+    "question": "A developer writes a funds transfer application where the system verifies the account balance before completing a withdrawal. If two withdrawal requests are submitted almost simultaneously, the system executes both balance checks before updating the final balance, allowing the user to withdraw more money than they actually have. What type of vulnerability does this scenario describe?",
+    "options": [
+      "Buffer Overflow",
+      "Integer Overflow",
+      "Race Condition",
+      "Concurrent Memory Leak"
+    ],
+    "answer": 2,
+    "correctAnswer": 2,
+    "explanation": "A race condition occurs when the security or state of a system depends on the execution sequence or timing of concurrent processes (often known as Time-of-Check to Time-of-Use or TOCTOU). Here, the execution overlap between checking and withdrawing allows the exploit. A buffer overflow writes data past allocated memory boundaries. An integer overflow is an arithmetic error when a value exceeds storage capacity. Concurrent memory leak is an invented concept."
+  },
+  {
+    "id": 831,
+    "section": "S18",
+    "question": "A power plant operates a critical turbine control system running on an unsupported version of Windows XP. The original hardware manufacturer went out of business years ago, and the proprietary software cannot be migrated to a modern OS without causing an unacceptable total service outage. Which of the following actions should the security administrator take FIRST to protect this system?",
+    "options": [
+      "Isolate the legacy system on a dedicated network segment with no internet access (air gap).",
+      "Enable automatic updates in the control panel of the legacy operating system.",
+      "Upgrade the system directly to Windows 11 using compatibility mode.",
+      "Implement a Hybrid Update Gateway (HUG)."
+    ],
+    "answer": 0,
+    "correctAnswer": 0,
+    "explanation": "For end-of-life (EOL) or unsupported legacy systems that cannot be patched or upgraded, the FIRST and most effective mitigation is to isolate the device using network segmentation or an air gap to prevent network-based attacks. Enabling updates on Windows XP is useless as no official security patches are released by Microsoft. Upgrading will break the proprietary turbine software. HUG is an invented term."
+  },
+  {
+    "id": 832,
+    "section": "S18",
+    "question": "An attacker manipulates the input fields of a web login form by entering the string `' OR '1'='1`. The website authenticates the attacker and logs them in as the administrator without requiring a password. Which of the following is the root cause of this vulnerability?",
+    "options": [
+      "A directory traversal flaw that exposes local system files",
+      "A lack of anti-CSRF tokens in the authentication form",
+      "A stack overflow in the authentication rendering engine",
+      "A lack of input sanitization allowing SQL query injection"
+    ],
+    "answer": 3,
+    "correctAnswer": 3,
+    "explanation": "The vulnerability is SQL Injection, which is caused by a lack of input sanitization, allowing the database engine to interpret the input string as logical query code (making the OR condition always true and bypassing password verification). Directory traversal accesses local file paths (`../`). CSRF/XSRF exploits browser session trust and does not modify query logic. A stack overflow attempts to corrupt memory execution, not database logic."
+  },
+  {
+    "id": 833,
+    "section": "S19",
+    "question": "An attacker uses a wireless packet analyzer to capture network authentication traffic between an employee and a legacy server. The next day, the attacker retransmits the captured packets to the server to establish an unauthorized active session. What type of attack is this, and how is it BEST mitigated?",
+    "options": [
+      "On-Path (Man-in-the-Middle) attack; mitigated by implementing static ARP tables on local switches.",
+      "Replay attack; mitigated by using unique session timestamps and cryptographic nonces.",
+      "Session hijacking; mitigated by forcing user password rotation every 30 days.",
+      "Protocol Rejection Attack (PRA); mitigated by physical port blocking."
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "A replay attack involves capturing valid authentication packets and retransmitting them later to gain unauthorized access. The BEST mitigation is implementing session tokens with timestamps or cryptographic nonces (number used once) so that the server rejects duplicate or delayed packets. An On-Path attack requires active routing interception rather than simple retransmission. Session hijacking steals an active session cookie in real time. Password rotation does not stop the replay of captured traffic. PRA is an invented term."
+  },
+  {
+    "id": 834,
+    "section": "S19",
+    "question": "A corporate web server suddenly stops responding to incoming requests. The system administrator checks network logs and finds thousands of connections in a half-open state (SYN_RECEIVED). The attacker is sending connection requests with spoofed source IP addresses and never completes the handshake. What type of DoS attack is this, and which control should be implemented FIRST?",
+    "options": [
+      "Permanent Denial of Service (PDoS); reinstall the edge router's firmware.",
+      "SYN Flood DoS; implement flood guards and shorten session timeout thresholds.",
+      "Fork Bomb; configure process execution limits for the OS root user.",
+      "Packet Exhaustion Storm (PES); implement static routing on the WAN."
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "The attack is a SYN Flood, which exhausts a server's connection tables by leaving connections in a 'half-open' state. The FIRST and most direct control is implementing flood guards or shortening the session timeout threshold to drop incomplete connections quickly. PDoS damages hardware by destroying firmware. A fork bomb is a local host exploit that spawns infinite processes. PES is an invented term."
+  },
+  {
+    "id": 835,
+    "section": "S19",
+    "question": "A cloud security analyst reviews the HTTP access logs of a storage server and notices multiple requests containing the following string in the URI: `GET /files/download.php?file=../../../../etc/passwd`. What specific malicious activity is the attacker attempting?",
+    "options": [
+      "Directory Traversal",
+      "Privilege Escalation",
+      "SQL Injection",
+      "Segmental Access Traversal (SAT)"
+    ],
+    "answer": 0,
+    "correctAnswer": 0,
+    "explanation": "The presence of the relative path symbols (`../`) indicates a Directory Traversal attack, which attempts to escape the web server root directory to read arbitrary files (like `/etc/passwd`) from the host operating system. Privilege escalation may be the ultimate goal, but the file path manipulation shown is directory traversal. SQL injection targets databases. SAT is an invented term."
+  },
+  {
+    "id": 836,
+    "section": "S19",
+    "question": "An attacker successfully compromises a low-privileged user account via a phishing campaign. Once inside the local machine, the attacker runs an exploit that targets a known vulnerability in the OS kernel to obtain full root/administrator privileges. How is this specific malicious activity classified?",
+    "options": [
+      "Session Hijacking",
+      "Replay Attack",
+      "Privilege Escalation",
+      "Protocol Impersonation Exploit (PIE)"
+    ],
+    "answer": 2,
+    "correctAnswer": 2,
+    "explanation": "Privilege Escalation is the process where an attacker leverages software bugs or configuration flaws to gain higher access levels (such as root, admin, or system permissions) than initially assigned. Session hijacking steals active connection cookies. Replay attacks reuse captured authentication data. PIE is an invented term."
+  },
+  {
+    "id": 837,
+    "section": "S20",
+    "question": "A system administrator wants to harden several critical Linux database servers. They need to ensure that, even if an administrative process like Apache is compromised by an attacker, the process is strictly blocked from accessing files outside its designated domain. Which of the following technologies represents the BEST option?",
+    "options": [
+      "Security-Enhanced Linux (SELinux)",
+      "Group Policy Objects (GPO)",
+      "Active Directory Role-Based Access Control",
+      "Kernel Shield Module (KSM)"
+    ],
+    "answer": 0,
+    "correctAnswer": 0,
+    "explanation": "SELinux implements Mandatory Access Control (MAC) in the Linux kernel, restricting processes strictly to their defined security domains. This containment prevents a compromised process from accessing unauthorized files even if run with root privileges. GPO is a Windows administrative tool. AD RBAC maps user access but does not enforce process containment at the OS kernel level. KSM is an invented term."
+  },
+  {
+    "id": 838,
+    "section": "S20",
+    "question": "A cybersecurity engineer audits the default configurations of newly installed network switches. The engineer disables Telnet (port 23) and the HTTP server (port 80) due to their lack of encryption. Which secure protocol should be enabled FIRST for console-based remote management?",
+    "options": [
+      "SMTPS (Port 587)",
+      "SSH (Port 22)",
+      "SNMP (Port 161)",
+      "Secure Remote Connection (SRC - Port 8022)"
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "SSH (Secure Shell) on port 22 encrypts administrative console sessions, serving as the direct secure replacement for Telnet. SMTPS is for secure email delivery. SNMP on port 161 is for monitoring and lacks encryption unless version 3 is used. SRC is an invented term."
+  },
+  {
+    "id": 839,
+    "section": "S20",
+    "question": "A large corporation wants to standardize the security posture of thousands of Windows workstations prior to deployment. The security team defines a configuration template that contains disabled services, registry settings, and strict password policies. Which concept does this template represent?",
+    "options": [
+      "Risk Tolerance Matrix",
+      "Change Management Log",
+      "Secure Baseline",
+      "Integrity Validation Script (IVS)"
+    ],
+    "answer": 2,
+    "correctAnswer": 2,
+    "explanation": "A Secure Baseline is a documented set of minimum security settings and configurations that system platforms must conform to before deployment. A risk tolerance matrix evaluates organizational risk appetite. A change management log records changes made to systems over time. IVS is an invented term."
+  },
+  {
+    "id": 840,
+    "section": "S20",
+    "question": "A system administrator notices that production servers frequently experience configuration drift because support technicians make manual configuration changes to resolve help desk tickets. Which of the following is the BEST method to automate hardening and ensure policy consistency across the fleet?",
+    "options": [
+      "Implement Full Disk Encryption (FDE) on all servers.",
+      "Perform weekly manual audits using paper-based checklists.",
+      "Use Group Policy Objects (GPO) or Infrastructure as Code (IaC) tools.",
+      "Configure persistent IPsec tunnels between the servers."
+    ],
+    "answer": 2,
+    "correctAnswer": 2,
+    "explanation": "The critical modifier BEST asks for automation and configuration drift prevention. GPOs (in Windows) and Infrastructure as Code (IaC, like Ansible or Terraform) define hardening templates that are automatically enforced across all servers, ensuring consistency. FDE protects data at rest but does not prevent configuration changes. Manual audits are slow and error-prone. IPsec secures network traffic in transit."
+  },
+  {
+    "id": 841,
+    "section": "S21",
+    "question": "An organization is planning a wireless network deployment in its new administrative headquarters. To satisfy physical security requirements, the network architect wants to prevent the wireless signal from easily leaking into the exterior parking lot while maximizing coverage indoors. Which of the following is the BEST approach?",
+    "options": [
+      "Increase the transmission power of WAPs located near windows to block external connections.",
+      "Place WAPs in central locations and mount directional antennas facing inward on exterior walls.",
+      "Configure all office WAPs to operate exclusively on overlapping channels in the 2.4 GHz band.",
+      "Install a Radio Frequency Perimeter Isolator (RFPI) around the building facade."
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "The critical modifier BEST balances internal performance with security. Central placement distances the signal source from external boundaries, while directional antennas on exterior walls focus signal propagation inward, reducing spillover. Increasing transmit power exacerbates signal leakage. Operating on overlapping channels degrades performance due to interference. RFPI is an invented term."
+  },
+  {
+    "id": 842,
+    "section": "S21",
+    "question": "A security administrator receives reports that customers are receiving phishing emails that spoof the company's official domain name. The administrator wants to implement a DNS-based defense that lists the authorized mail servers allowed to send messages on behalf of the domain. Which DNS record should they configure FIRST?",
+    "options": [
+      "A Sender Policy Framework (SPF) record",
+      "A DomainKeys Identified Mail (DKIM) record",
+      "A Domain Name System Security Extensions (DNSSEC) record",
+      "A Mail Validation Token (MVT) record"
+    ],
+    "answer": 0,
+    "correctAnswer": 0,
+    "explanation": "The modifier FIRST points to the base DNS record that lists authorized sender IPs. An SPF record publishes the list of authorized outgoing mail servers. DKIM adds digital signatures to email headers but does not list IP addresses directly. DNSSEC validates DNS records against tampering but does not verify email sender origins. MVT is an invented term."
+  },
+  {
+    "id": 843,
+    "section": "S21",
+    "question": "A security analyst evaluates an endpoint protection solution to detect and mitigate zero-day ransomware attacks. The tool must analyze host behavior in real time, automatically isolate compromised devices from the network, and collect forensic telemetry. Which solution meets these requirements?",
+    "options": [
+      "Traditional signature-based antivirus",
+      "Network Access Control (NAC)",
+      "Host Endpoint Shield (HES)",
+      "Endpoint Detection and Response (EDR)"
+    ],
+    "answer": 3,
+    "correctAnswer": 3,
+    "explanation": "EDR (Endpoint Detection and Response) monitors host behavior in real time to detect anomalies and zero-day threats, provides automated isolation capability, and facilitates forensic analysis. Signature antivirus relies on known malware files. NAC controls network admission based on host compliance posture rather than continuous runtime process execution. HES is an invented term."
+  },
+  {
+    "id": 844,
+    "section": "S21",
+    "question": "An enterprise updates its wireless access points to the WPA3 standard. The security architect explains that this upgrade will prevent attackers from performing offline dictionary attacks after capturing the initial handshake. Which cryptographic mechanism in WPA3 provides this protection?",
+    "options": [
+      "Temporal Key Integrity Protocol (TKIP)",
+      "Simultaneous Authentication of Equals (SAE)",
+      "Wired Equivalent Privacy (WEP)",
+      "Advanced Handshake Integrity Protocol (AHIP)"
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "WPA3 replaces the vulnerable four-way handshake of WPA2 with Simultaneous Authentication of Equals (SAE) for key establishment. SAE uses an exchange that is resistant to passive interception, mitigating offline dictionary attacks and providing forward secrecy. TKIP and WEP are legacy protocols. AHIP is an invented term."
+  },
+  {
+    "id": 845,
+    "section": "S22",
+    "question": "A security officer plans an internal vulnerability scan to audit the patch levels and configuration settings of several production databases. To minimize network overhead and ensure a low false-positive rate, which scanning approach should the officer select?",
+    "options": [
+      "A non-credentialed scan",
+      "A passive network capture scan",
+      "A credentialed scan",
+      "A black-box port sweep"
+    ],
+    "answer": 2,
+    "correctAnswer": 2,
+    "explanation": "A credentialed scan logs directly into target hosts using valid credentials, enabling precise checks of the registry, package configurations, and patch directories with minimal network traffic and a low false-positive rate. Non-credentialed scans inspect systems externally, causing more network traffic and higher false-positive rates. Passive capture cannot check local configuration details. Port sweeps only identify open ports, not vulnerability details."
+  },
+  {
+    "id": 846,
+    "section": "S22",
+    "question": "A vulnerability report identifies a critical remote code execution vulnerability in a company's web-based ERP system. Because the ERP contains highly customized legacy code, the software vendor estimates it will take three months to deliver a safe patch. To reduce the likelihood of exploitation immediately without shutting down the service, the IT team implements restrictive firewall rules and deploys a WAF in front of the ERP. Which risk management strategy does this action represent?",
+    "options": [
+      "Risk Mitigation",
+      "Risk Avoidance",
+      "Risk Transference",
+      "Vulnerability Deflection"
+    ],
+    "answer": 0,
+    "correctAnswer": 0,
+    "explanation": "Risk Mitigation involves applying technical controls or compensating measures (like firewall rules and WAFs) to reduce the likelihood or impact of a threat when a vulnerability cannot be permanently fixed (patched) immediately. Risk avoidance would require decommissioning the ERP system. Risk transference shifts the liability to a third party (like insurance). Vulnerability deflection is an invented term."
+  },
+  {
+    "id": 847,
+    "section": "S22",
+    "question": "A security analyst reviews the following CVSS v3 vector string for a newly published vulnerability: `CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H`. What information does the metric `AV:N` convey about the vulnerability's exploitability?",
+    "options": [
+      "The attacker must possess network-level credentials before exploiting the vulnerability (Normal).",
+      "The vulnerability can only be exploited if the victim performs an interactive network action (Neighbor).",
+      "The attack can be executed remotely over a network connection without requiring physical or local access (Network).",
+      "The attack requires the target system to be located within an isolated private network (Null)."
+    ],
+    "answer": 2,
+    "correctAnswer": 2,
+    "explanation": "The AV (Attack Vector) metric in CVSS defines the logical or physical path required to exploit a vulnerability. The value `N` (Network) indicates the vulnerability is exploitable remotely over a network interface without local or physical console access. The other options describe incorrect parameter definitions or metrics."
+  },
+  {
+    "id": 848,
+    "section": "S22",
+    "question": "An independent security researcher discovers a critical authentication bypass vulnerability in a router vendor's firmware. The researcher sends the technical details confidentially to the vendor, giving them 90 days to create and deploy a patch before public release. What ethical disclosure practice is this?",
+    "options": [
+      "Bug Bounty Program",
+      "Full Disclosure",
+      "Ethical Patching Alliance (EPA)",
+      "Responsible / Coordinated Disclosure"
+    ],
+    "answer": 3,
+    "correctAnswer": 3,
+    "explanation": "Responsible (or Coordinated) Disclosure is the practice of reporting software vulnerabilities privately to the vendor to give them time to address the issue before it is made public. Bug bounty programs are formal incentive structures, but the coordinated disclosure practice itself is called responsible disclosure. Full disclosure immediately publishes details without notifying the vendor first. EPA is an invented term."
+  },
+  {
+    "section": "S16",
+    "question": "A security administrator detects persistent SQL injection attack attempts targeting the database of a public-facing web server. The server is already behind a packet filtering firewall. Which of the following solutions is the BEST choice to mitigate this specific type of application-layer attack?",
+    "options": [
+      "A stateful packet inspection firewall",
+      "A Web Application Firewall (WAF)",
+      "A Next-Generation Firewall (NGFW) configured with IDS",
+      "A Protocol Packet Wrapper (PPW)"
+    ],
+    "answer": 1,
+    "explanation": "The critical modifier BEST points to the most specific and effective solution for the application layer (L7). A Web Application Firewall (WAF) is specifically designed to inspect HTTP/HTTPS traffic and prevent web-based attacks such as SQL Injection and Cross-Site Scripting (XSS). Stateful packet inspection firewalls operate at lower layers (L4) and do not analyze the request payload content. An NGFW provides broad perimeter defense, but a WAF is the specialized control for web application protection. PPW is an invented term.",
+    "id": 1021,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A growing organization wants to securely interconnect multiple physical branch offices and remote workers directly to their cloud resources. Management requires a solution that unifies intelligent network routing with integrated security services (such as CASB and Zero Trust) managed centrally from the cloud. Which of the following represents the BEST solution to meet this requirement?",
+    "options": [
+      "Software-Defined Wide Area Network (SD-WAN)",
+      "Virtual Private Network (VPN) with traditional IPsec tunnels",
+      "Cloud Edge Security Multiplexer (CESM)",
+      "Secure Access Service Edge (SASE)"
+    ],
+    "answer": 3,
+    "explanation": "The critical modifier BEST demands an integrated solution that combines network routing with cloud-native security services. SASE unifies SD-WAN with advanced security functions in a single cloud-delivered framework. SD-WAN provides network connectivity and intelligent routing but does not natively include the full cloud security suite of SASE. A traditional IPsec VPN lacks the dynamic routing optimization and centralized cloud management of SASE. CESM is an invented term.",
+    "id": 1022,
+    "correctAnswer": 3
+  },
+  {
+    "section": "S16",
+    "question": "A network engineer is designing the wireless authentication process for an 802.1X corporate network. They want to implement an extensible protocol that encapsulates credentials inside a secure TLS tunnel, but requires ONLY a digital certificate on the authentication server to simplify deployment on user endpoints. Which EAP protocol should they select?",
+    "options": [
+      "Protected Extensible Authentication Protocol (PEAP)",
+      "EAP-TLS (EAP Transport Layer Security)",
+      "EAP-MD5 (Message Digest 5)",
+      "Secure Tunneling Authentication Protocol (STAP)"
+    ],
+    "answer": 0,
+    "explanation": "The critical modifier requires a protocol that uses a TLS tunnel but only requires a server-side certificate. PEAP establishes a secure TLS tunnel and only requires a digital certificate on the authentication server to validate the server's identity to the client. EAP-TLS is highly secure but requires certificates on both the server and all client devices, making it more complex to deploy. EAP-MD5 does not encrypt credentials within a TLS tunnel and is vulnerable. STAP is an invented protocol.",
+    "id": 1023,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S16",
+    "question": "A security administrator is reviewing the rule set of a company's perimeter firewall. The administrator observes a rule at the end of the list that blocks all traffic that has not been explicitly allowed by previous rules. Which of the following security principles does this rule represent FIRST and most directly?",
+    "options": [
+      "Least Privilege",
+      "Absolute Packet Dropping (APD)",
+      "Implicit Deny",
+      "Defense in Depth"
+    ],
+    "answer": 2,
+    "explanation": "The modifier FIRST asks for the fundamental security principle represented by the block-by-default rule. 'Implicit Deny' is the policy stating that all traffic is blocked unless it is explicitly permitted. Least Privilege applies to user access permissions rather than network traffic flow. Defense in Depth is a multi-layered security approach, not a specific firewall rule configuration. APD is an invented term.",
+    "id": 1024,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S16",
+    "question": "A security engineer is deploying an Intrusion Prevention System (IPS). The engineer wants to ensure that the device actively blocks malicious traffic in real time as it flows through the network. Which deployment method is the BEST choice?",
+    "options": [
+      "Out-of-band passive tap placement",
+      "Inline active mode deployment",
+      "Port mirroring switch configuration",
+      "Asynchronous Packet Filtering (APF)"
+    ],
+    "answer": 1,
+    "explanation": "Inline active mode deployment places the IPS directly in the physical traffic path (inline), allowing it to inspect and drop malicious packets before they reach their destination. Out-of-band passive tap and port mirroring are passive deployment methods that can only detect and log traffic (functioning as an IDS) rather than block it actively. APF is an invented term.",
+    "id": 1025,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "An enterprise wants to shield its internal clients from directly connecting to external malicious websites and also cache web content to save bandwidth. Which network appliance should the administrator deploy perimetrically?",
+    "options": [
+      "Reverse Proxy",
+      "Forward Proxy",
+      "Web Application Firewall (WAF)",
+      "Endpoint Security Router (ESR)"
+    ],
+    "answer": 1,
+    "explanation": "A Forward Proxy intercepts and handles outbound client requests from the internal network to external servers, providing client anonymity, web filtering, and caching. A Reverse Proxy does the opposite: it protects external clients by routing inbound traffic to internal web servers. A WAF inspects inbound application layer traffic for web exploits. ESR is an invented term.",
+    "id": 1026,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A network architect is configuring a load balancer to distribute traffic across a pool of database servers. The architect wants to ensure that a client's transaction state is maintained by routing all sequential requests from the same IP address to the exact same server. Which algorithm should they select?",
+    "options": [
+      "Round Robin",
+      "Least Connections",
+      "Session Affinity / Persistence",
+      "Load Balancing State Synchronizer (LBSS)"
+    ],
+    "answer": 2,
+    "explanation": "Session Affinity (or Persistence) is a load balancing mechanism that binds a client's session to a specific server in the pool, ensuring stateful continuity. Round Robin distributes connections sequentially without considering client state. Least Connections routes traffic to the server with the fewest active sessions. LBSS is an invented term.",
+    "id": 1027,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S16",
+    "question": "An administrator configures port security on an edge switch. They want to ensure that if an unauthorized MAC address is detected, the port immediately blocks all traffic, sends an SNMP trap alert, increments the violation counter, but does NOT shut down the physical interface. Which violation mode should they choose?",
+    "options": [
+      "Shutdown",
+      "Protect",
+      "Restrict",
+      "Disable"
+    ],
+    "answer": 2,
+    "explanation": "In port security, Restrict mode drops packets from unauthorized MAC addresses, increments the security violation counter, and generates an SNMP trap alert without physically shutting down the port. Shutdown mode disables the interface. Protect mode drops packets quietly without generating alerts or incrementing counters. Disable is not a standard Cisco/port-security mode.",
+    "id": 1028,
+    "correctAnswer": 2
+  },
+  {
+    "id": 1029,
+    "section": "S16",
+    "question": "A security engineer is implementing Network Access Control (NAC) to enforce health compliance on endpoints. They want to ensure that any device lacking the latest antivirus definitions is redirected to a restricted segment where they can update their definitions. Where should these non-compliant devices be routed?",
+    "options": [
+      "Quarantine Network / Segment",
+      "Active Directory Domain Controller",
+      "Demilitarized Zone (DMZ)",
+      "Secure Sandbox Segment (SSS)"
+    ],
+    "answer": 0,
+    "explanation": "A Quarantine Network is a restricted segment designed to isolate non-compliant devices so they can undergo remediation (e.g., updating signatures) before gaining access to the main network. A DMZ is for public-facing servers. AD Domain Controllers handle directory authentication. SSS is an invented term.",
+    "correctAnswer": 0
+  },
+  {
+    "section": "S16",
+    "question": "A network administrator needs to select an IPsec protocol configuration to secure host-to-host communication. They require a configuration that provides mutual authentication and data integrity, but does NOT encrypt the actual payload data. Which protocol should they use?",
+    "options": [
+      "Encapsulating Security Payload (ESP)",
+      "Authentication Header (AH)",
+      "Internet Key Exchange (IKE)",
+      "Payload Integrity Wrapper (PIW)"
+    ],
+    "answer": 1,
+    "explanation": "AH (Authentication Header) provides data integrity, origin authentication, and anti-replay protection, but it does NOT provide confidentiality (no encryption). ESP provides confidentiality in addition to integrity and authentication. IKE is used to negotiate security associations. PIW is an invented term.",
+    "id": 1030,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A security administrator is configuring a site-to-site VPN tunnel. They must ensure that the entire original IP packet (including the header and payload) is encrypted and encapsulated within a new outer IP header. Which IPsec mode must they implement?",
+    "options": [
+      "Transport Mode",
+      "Tunnel Mode",
+      "Secure Mode",
+      "Encapsulated Routing Protocol (ERP)"
+    ],
+    "answer": 1,
+    "explanation": "Tunnel Mode encrypts and encapsulates the entire original IP packet within a new IP header, which is standard for gateway-to-gateway (site-to-site) VPNs. Transport Mode only encrypts the payload, keeping the original IP header, and is typically used for client-to-client (host-to-host) setups. Secure Mode and ERP are invented/generic terms.",
+    "id": 1031,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A company is configuring a remote access VPN for teleworkers. The IT director wants to minimize internet bandwidth utilization on the corporate network by ensuring that only corporate-bound traffic is routed through the VPN tunnel, while standard public internet web traffic goes directly through the user's home ISP. Which VPN feature should they enable?",
+    "options": [
+      "Full Tunneling",
+      "Split Tunneling",
+      "Asymmetric Encryption Routing (AER)",
+      "Bandwidth Throttling"
+    ],
+    "answer": 1,
+    "explanation": "Split Tunneling routes only corporate-targeted traffic through the secure VPN tunnel, while other internet traffic goes directly out of the user's local connection, saving corporate gateway bandwidth. Full Tunneling sends all traffic through the corporate VPN, which increases security posture but consumes heavy bandwidth. AER is an invented term.",
+    "id": 1032,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A network security administrator needs to upgrade the monitoring configurations of their enterprise routers. They require a protocol that supports secure cryptographic authentication and encryption of SNMP polling messages to protect network telemetry. Which version of SNMP must they select?",
+    "options": [
+      "SNMP v1",
+      "SNMP v2c",
+      "SNMP v3",
+      "SNMP v4"
+    ],
+    "answer": 2,
+    "explanation": "SNMP v3 is the only version that provides secure access by implementing cryptographic authentication (using MD5 or SHA) and data encryption (using DES or AES). SNMP v1 and v2c send community strings in cleartext. SNMP v4 does not exist.",
+    "id": 1033,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S16",
+    "question": "A security architect wants to prevent DNS cache poisoning and spoofing attacks against the organization's public domain. They want to ensure that DNS queries can be cryptographically validated using digital signatures. Which protocol must they configure?",
+    "options": [
+      "Domain Name System Security Extensions (DNSSEC)",
+      "Secure DNS Lookup (SDL)",
+      "Domain Name System over TLS (DoT)",
+      "DNS Signature Wrapper (DSW)"
+    ],
+    "answer": 0,
+    "explanation": "DNSSEC uses public-key cryptography to digitally sign DNS records, ensuring that DNS query responses are authentic and have not been altered in transit. DoT encrypts the DNS query channel to protect privacy but doesn't sign records. SDL and DSW are invented terms.",
+    "id": 1034,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S16",
+    "question": "An organization wants to inspect outbound web traffic from corporate endpoints to identify malware and data exfiltration. However, most web traffic is encrypted via HTTPS. What technology must the perimeter firewall implement to enable this visibility?",
+    "options": [
+      "WPA3 Enterprise Authentication",
+      "SSL/TLS Decryption / SSL Inspection",
+      "Asymmetric Tunneling",
+      "Session Border Controller (SBC)"
+    ],
+    "answer": 1,
+    "explanation": "SSL/TLS Decryption (also called SSL Inspection or HTTPS inspection) decrypts encrypted traffic at the firewall boundary to allow security engines to scan payloads before re-encrypting the data and sending it to its destination. WPA3 is a wireless security protocol. SBC is for VoIP networks. Asymmetric Tunneling is a misapplied routing concept.",
+    "id": 1035,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "An administrator is troubleshooting a mail delivery issue. The SMTP mail servers fail to send outgoing emails to external mail relays securely using TLS. Which port should the administrator ensure is open outbound on the firewall?",
+    "options": [
+      "TCP Port 25 / 587",
+      "UDP Port 53",
+      "TCP Port 110",
+      "TCP Port 143"
+    ],
+    "answer": 0,
+    "explanation": "SMTP uses TCP Port 25 (traditional mail relaying) or Port 587 (modern secure message submission). UDP 53 is DNS. TCP 110 is POP3. TCP 143 is IMAP.",
+    "id": 1036,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S16",
+    "question": "A security engineer is comparing authentication protocols for network access. They want a protocol that uses TCP for reliable transport, encrypts the ENTIRE packet payload (not just the password), and separates authentication, authorization, and accounting functions. Which protocol should they choose?",
+    "options": [
+      "RADIUS",
+      "TACACS+",
+      "LDAP",
+      "Kerberos"
+    ],
+    "answer": 1,
+    "explanation": "TACACS+ uses TCP (port 49), encrypts the entire packet payload, and fully separates AAA services. RADIUS uses UDP, only encrypts the password field, and combines authentication and authorization. LDAP is a directory access protocol. Kerberos is a ticket-based authentication protocol.",
+    "id": 1037,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A small company wants to buy a single network security appliance that provides a firewall, antivirus scanning, intrusion prevention, web content filtering, and VPN capabilities in a cost-effective manner. Which of the following is the BEST solution?",
+    "options": [
+      "Unified Threat Management (UTM)",
+      "Next-Generation Firewall (NGFW)",
+      "Secure Access Service Edge (SASE)",
+      "Perimeter Security Sentinel (PSS)"
+    ],
+    "answer": 0,
+    "explanation": "A Unified Threat Management (UTM) appliance combines multiple security features into a single, low-cost device, which is ideal for smaller offices. NGFWs also combine features but do so in a single, high-performance engine aimed at enterprise scale. PSS is an invented term.",
+    "id": 1038,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S16",
+    "question": "An analyst is tuning a newly installed Intrusion Detection System (IDS). The IDS keeps generating alerts claiming that legitimate users accessing their corporate webmail are executing remote exploits, even though no malicious activity is occurring. What type of indicator is this?",
+    "options": [
+      "True Positive",
+      "False Positive",
+      "True Negative",
+      "False Negative"
+    ],
+    "answer": 1,
+    "explanation": "A False Positive occurs when an alert is generated for benign or legitimate activity. A False Negative is when a real attack goes undetected. True Positive is a correctly identified attack, and True Negative is correctly ignored benign activity.",
+    "id": 1039,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A network security manager implements MAC filtering on the corporate wireless network. Which of the following represents the PRIMARY security weakness of this control?",
+    "options": [
+      "MAC addresses are encrypted and cannot be parsed by firewalls.",
+      "An attacker can sniff wireless traffic, capture valid MAC addresses, and spoof them.",
+      "MAC filtering degrades switch throughput significantly.",
+      "MAC addresses change dynamically every time a device connects to a different WAP."
+    ],
+    "answer": 1,
+    "explanation": "MAC addresses are sent in cleartext headers in 802.11 frames. An attacker can easily sniff wireless traffic, identify authorized MAC addresses, and configure their own device to spoof one of those addresses. MAC filtering does not degrade performance or use encryption. MAC addresses are burned into network interface cards and remain static unless spoofed.",
+    "id": 1040,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A network engineer needs to replace a legacy WEP-encrypted wireless network. WEP is no longer considered secure. Which of the following describes the core cryptographic vulnerability of WEP?",
+    "options": [
+      "It uses weak asymmetric RSA key pairs.",
+      "It uses a short 24-bit Initialization Vector (IV) that leads to key reuse and collision attacks.",
+      "It lacks support for pre-shared keys.",
+      "It does not support AES-GCM encryption."
+    ],
+    "answer": 1,
+    "explanation": "WEP uses RC4 with a short 24-bit Initialization Vector (IV). Because the IV is small, an attacker can capture enough packets to identify duplicate IVs (collisions) and easily crack the encryption key. WEP uses RC4 symmetric encryption, not asymmetric RSA.",
+    "id": 1041,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "An enterprise is planning a Network Access Control (NAC) architecture. The security director wants to avoid installing software agents on every user endpoint, preferring to assess devices as they join the network using standard protocols. Which NAC architecture should they choose?",
+    "options": [
+      "Persistent agent NAC",
+      "Dissolvable agent NAC",
+      "Agentless NAC",
+      "Out-of-band active NAC"
+    ],
+    "answer": 2,
+    "explanation": "Agentless NAC inspects devices using built-in network scanning and standard protocols, eliminating the need to deploy and manage software agents on endpoints. Persistent agents are installed permanently. Dissolvable agents run temporarily and remove themselves but still execute code on the host.",
+    "id": 1042,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S16",
+    "question": "A firewall administrator notices a sudden increase in blocked connections. They trace this to a stateful firewall rule. How does a stateful firewall determine if a packet is part of an active session?",
+    "options": [
+      "By looking up the packet's source IP address in a static global DNS server",
+      "By analyzing the packet's headers against an active connection state table",
+      "By decrypting the packet payload using symmetric keys",
+      "By executing the packet code in a sandboxed runtime environment"
+    ],
+    "answer": 1,
+    "explanation": "Stateful firewalls track the state of network connections (such as TCP handshakes) and store this information in a state table. Inbound packets are checked against this table to verify they belong to an established session. They do not decrypt payloads, query DNS, or run sandboxes.",
+    "id": 1043,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "An organization wants to configure 802.1X wireless security. The system administrator wants to use EAP-FAST. Which mechanism does EAP-FAST use to establish a secure tunnel instead of relying on digital certificates?",
+    "options": [
+      "Protected Access Credential (PAC)",
+      "Presigned Session Token (PST)",
+      "Asymmetric Key Exchange (AKE)",
+      "Synchronized One-Time Password (SOTP)"
+    ],
+    "answer": 0,
+    "explanation": "EAP-FAST (Flexible Authentication via Secure Tunneling) replaces the certificate requirement of EAP-TLS/PEAP by utilizing a Protected Access Credential (PAC) to establish a secure tunnel. PST, AKE, and SOTP are generic or invented terms.",
+    "id": 1044,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S16",
+    "question": "An IT manager wants to secure remote access to the corporate network. Remote Desktop Protocol (RDP) on TCP port 3389 is currently exposed to the internet, resulting in brute-force attack attempts. Which of the following is the BEST FIRST step to mitigate this risk?",
+    "options": [
+      "Change the RDP port to a dynamic registered port.",
+      "Disable RDP exposure to the public internet and require connection through a VPN gateway.",
+      "Implement a reverse proxy to decrypt RDP traffic.",
+      "Switch the RDP client to use UDP transport instead of TCP."
+    ],
+    "answer": 1,
+    "correctAnswer": 1,
+    "explanation": "The BEST FIRST step is to disable public internet exposure of RDP (port 3389) and place it behind a secure Virtual Private Network (VPN) gateway. Changing the port only provides security by obscurity and does not block determined scanners. RDP is not typically processed by HTTP reverse proxies. Changing transport does not mitigate access vulnerabilities.",
+    "id": 1045
+  },
+  {
+    "section": "S16",
+    "question": "A system administrator needs to secure directory queries between client computers and an Active Directory server. They want to encrypt LDAP traffic. Which port should they ensure is open and used for LDAPS?",
+    "options": [
+      "TCP Port 389",
+      "TCP Port 636",
+      "UDP Port 514",
+      "TCP Port 443"
+    ],
+    "answer": 1,
+    "explanation": "LDAPS (LDAP over SSL/TLS) uses TCP Port 636. Standard unencrypted LDAP uses TCP Port 389. UDP 514 is Syslog. TCP 443 is HTTPS.",
+    "id": 1046,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "An enterprise is centralizing its syslog collections. Due to compliance mandates, all syslog messages sent from remote routers to the central SIEM must be encrypted. Which configuration should they implement?",
+    "options": [
+      "Syslog over UDP on Port 514",
+      "Syslog over TLS on TCP Port 6514",
+      "Secure Syslog over Port 5140",
+      "Encrypted Log Protocol (ELP)"
+    ],
+    "answer": 1,
+    "explanation": "Secure Syslog (Syslog over TLS) uses TCP Port 6514. Traditional unencrypted syslog uses UDP Port 514. Port 5140 and ELP are invented or non-standard terms.",
+    "id": 1047,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A network security engineer is analyzing a Kerberos implementation. They want to ensure that Kerberos tickets cannot be sniffed from the network and replayed by an attacker later. What security control does Kerberos use to prevent replay attacks?",
+    "options": [
+      "Symmetric data masking",
+      "Encrypted timestamps within authentication tickets",
+      "Physical token synchronization",
+      "Dynamic Route Wrapping (DRW)"
+    ],
+    "answer": 1,
+    "explanation": "Kerberos tickets include encrypted timestamps. If an attacker captures a ticket and attempts to replay it, the ticket will be rejected if the timestamp exceeds a specific time skew limit (typically 5 minutes). Masking, physical tokens, and DRW are not Kerberos mechanisms.",
+    "id": 1048,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "An administrator wants to secure remote terminal access to an enterprise router. Telnet is currently used. Which of the following is the BEST secure alternative protocol?",
+    "options": [
+      "TFTP (Port 69)",
+      "SSH (Port 22)",
+      "SFTP (Port 22)",
+      "Secure Console Link (SCL)"
+    ],
+    "answer": 1,
+    "explanation": "SSH (Secure Shell) on port 22 provides secure, encrypted terminal remote access, replacing unencrypted Telnet (port 23). TFTP is an unencrypted file transfer protocol. SFTP is for secure file transfers, not remote terminal command shells. SCL is an invented term.",
+    "id": 1049,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S16",
+    "question": "A security auditor recommends securing the file transfer process for corporate financial reports. The reports are currently sent via unencrypted FTP. Which of the following is the BEST secure protocol to implement?",
+    "options": [
+      "TFTP",
+      "SFTP / FTPS",
+      "HTTPS",
+      "Secure File Wrapper (SFW)"
+    ],
+    "answer": 1,
+    "explanation": "SFTP (SSH File Transfer Protocol) or FTPS (FTP over SSL/TLS) are secure file transfer protocols that encrypt commands and data, protecting reports in transit. TFTP is unencrypted and insecure. HTTPS is for web browsing, although files can be uploaded/downloaded, SFTP/FTPS are the dedicated file transfer standards. SFW is an invented term.",
+    "id": 1050,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A senior database administrator is terminated immediately due to a severe security policy violation. The security team must ensure that the former employee cannot connect to or modify critical production databases from external networks. Which IAM lifecycle process should the team execute FIRST?",
+    "options": [
+      "Identity Proofing",
+      "Deprovisioning",
+      "Role-Based Access Control (RBAC) modification",
+      "Account Reallocation"
+    ],
+    "answer": 1,
+    "explanation": "The modifier FIRST demands the immediate action to remove access. Deprovisioning is the process of revoking or deleting user accounts and access rights when a user leaves the organization, neutralizing potential insider threats. Identity Proofing occurs at the beginning of the identity lifecycle (prior to account creation). Modifying RBAC roles is slow and does not guarantee the account itself is completely disabled. Account Reallocation is an invented term.",
+    "id": 1051,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A company wants to implement Single Sign-On (SSO) to allow users to authenticate across multiple mobile and single-page web applications. The security architect specifies a modern, REST API-based protocol that uses JSON Web Tokens (JWT) to verify user identity through an authorization server. Which of the following protocols is the BEST fit for this task?",
+    "options": [
+      "Security Assertion Markup Language (SAML 2.0)",
+      "OAuth 2.0",
+      "OpenID Connect (OIDC)",
+      "Federated Identity REST Protocol (FIRP)"
+    ],
+    "answer": 2,
+    "explanation": "The critical modifier BEST requires identity verification (authentication) using JSON Web Tokens and REST APIs. OpenID Connect (OIDC) is an identity layer built on top of OAuth 2.0 that uses JWTs to authenticate users. SAML 2.0 also enables SSO but relies on heavier XML and SOAP structures, making it less suitable for modern mobile and web clients. OAuth 2.0 is designed for access delegation (authorization), not directly for user identity verification. FIRP is an invented term.",
+    "id": 1052,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S17",
+    "question": "To log into a secure workstation that processes credit card transactions, an employee must scan their physical smartcard, input a memorized 6-digit PIN, and provide a real-time voice sample. How many distinct authentication factors are used in this configuration?",
+    "options": [
+      "Three factors (something you know, something you have, and something you are)",
+      "Two factors (something you have and something you know)",
+      "One factor (three instances of something you know)",
+      "Three factors (something you know, something you do, and somewhere you are)"
+    ],
+    "answer": 0,
+    "explanation": "Three distinct authentication factors are used: (1) something you have (the physical smartcard), (2) something you know (the memorized PIN), and (3) something you are (the biometrics of the voice sample). Effective multi-factor authentication requires physically distinct categories of credentials. The other options miscalculate the count or define factors not present in the scenario.",
+    "id": 1053,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "A financial organization needs to tightly manage and monitor the activities of its system administrators. They want to ensure that superuser credentials are not persistently shared, that each login requires real-time approval, and that administrative console sessions are video-recorded for auditing. Which type of solution BEST meets this requirement?",
+    "options": [
+      "Single Sign-On (SSO)",
+      "Role-Based Access Control (RBAC)",
+      "Administrative Access Sentinel (AAS)",
+      "Privileged Access Management (PAM)"
+    ],
+    "answer": 3,
+    "explanation": "The critical modifier BEST points to the specific solution for high-privileged admin accounts. A Privileged Access Management (PAM) solution is designed to control, secure, monitor, and audit administrative (root/superuser) accounts, providing credential vaulting, temporary checked-out access, real-time approval workflows, and full session recording. SSO simplifies end-user logins but does not manage administrative infrastructure credentials. RBAC limits standard user permissions but does not provide dynamic session management or console recordings. AAS is an invented term.",
+    "id": 1054,
+    "correctAnswer": 3
+  },
+  {
+    "section": "S17",
+    "question": "An HR department is onboarding a new employee. Before creating their corporate email and domain account, the department requires the employee to present a government-issued photo ID and verifies their address details. What process is being described?",
+    "options": [
+      "Identity Proofing",
+      "User Authorization",
+      "Federation Tokenization",
+      "Access Provisioning"
+    ],
+    "answer": 0,
+    "explanation": "Identity Proofing is the process of verifying a user's real-world identity before creating their user account and credentials. Provisioning refers to creating the account itself. Authorization is granting access permissions. Federation Tokenization is an invented term.",
+    "id": 1055,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "A network security administrator wants to implement multi-factor authentication. Which of the following credentials represents 'something you are'?",
+    "options": [
+      "A software authenticator application generating a rolling PIN",
+      "A hardware key fob showing a token number",
+      "A retina scan pattern of the user's eye",
+      "A digital certificate installed on the user's laptop"
+    ],
+    "answer": 2,
+    "explanation": "A retina scan is a biometric identifier, representing the 'something you are' factor. Kobs, software authenticators, and certificates represent the 'something you have' factor.",
+    "id": 1056,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S17",
+    "question": "An employee is configuring a new smart lock. The lock requires the user to swipe a pattern on a keypad, insert a physical key, and have their cell phone nearby via Bluetooth. Which of the following authentication factors is missing from this configuration?",
+    "options": [
+      "Something you have",
+      "Something you know",
+      "Something you are",
+      "Somewhere you are"
+    ],
+    "answer": 2,
+    "explanation": "The keypad pattern is 'something you know', the physical key and Bluetooth cell phone are 'something you have', and the geofencing/proximity could represent 'somewhere you are'. There is no biometric indicator ('something you are') in this configuration.",
+    "id": 1057,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S17",
+    "question": "To secure access to an offshore database, a security analyst wants to implement a rule that only allows connections from devices located within the physical boundaries of the company's regional headquarters. Which authentication factor does this BEST represent?",
+    "options": [
+      "Something you have",
+      "Somewhere you are",
+      "Something you do",
+      "Something you are"
+    ],
+    "answer": 1,
+    "explanation": "Restricting access based on physical location (using IP addresses, GPS coordinates, or geofencing) represents the 'somewhere you are' factor. 'Something you do' refers to behavioral biometrics (like typing cadence). 'Something you are' refers to physical biometrics.",
+    "id": 1058,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A research laboratory implements a biometric scanner that analyzes the speed, rhythm, and stroke pressure of a user's signature. Which authentication factor category does this represent?",
+    "options": [
+      "Something you are",
+      "Something you do",
+      "Something you have",
+      "Something you know"
+    ],
+    "answer": 1,
+    "explanation": "Behavioral biometrics (such as signature dynamics, typing cadence, and gait analysis) fall under the 'something you do' factor category, whereas physical biometrics (fingerprint, iris) fall under 'something you are'.",
+    "id": 1059,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A web developer wants to allow third-party applications to access a user's calendar data without exposing the user's username and password. Which protocol is designed specifically to delegate authorization in this manner?",
+    "options": [
+      "SAML 2.0",
+      "OAuth 2.0",
+      "OpenID Connect",
+      "Kerberos v5"
+    ],
+    "answer": 1,
+    "explanation": "OAuth 2.0 is an authorization framework designed specifically to delegate access permissions to third-party applications using access tokens, without exposing credentials. SAML and OpenID Connect are primarily authentication/SSO protocols. Kerberos is for intranet authentication.",
+    "id": 1060,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A security architect is configuring Single Sign-On (SSO) for a legacy enterprise application that communicates via XML-based tokens. Which federation protocol should the architect implement?",
+    "options": [
+      "OpenID Connect (OIDC)",
+      "Security Assertion Markup Language (SAML)",
+      "OAuth 2.0",
+      "JSON Web Token (JWT)"
+    ],
+    "answer": 1,
+    "explanation": "SAML (Security Assertion Markup Language) is an XML-based standard used to exchange authentication and authorization data between identity providers and service providers. OIDC and JWT use JSON. OAuth is for authorization delegation.",
+    "id": 1061,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "An organization wants to configure an identity provider so that employees can use their corporate Active Directory credentials to log into third-party cloud-based software tools seamlessly. What concept does this configuration represent?",
+    "options": [
+      "Identity Federation",
+      "Discretionary Access Control (DAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Secure Directory Wrapper (SDW)"
+    ],
+    "answer": 0,
+    "explanation": "Identity Federation allows identities to be shared across trust boundaries, enabling users to log into external systems using their corporate credentials. DAC, ABAC, and SDW are access control models or invented terms.",
+    "id": 1062,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "A security officer wants to evaluate the accuracy of two fingerprint scanners. Scanner A has a False Acceptance Rate (FAR) of 0.01% and a False Rejection Rate (FRR) of 1%. Scanner B has a FAR of 0.05% and a FRR of 0.8%. Which metric should the officer compare to determine the overall balance of scanner performance?",
+    "options": [
+      "Crossover Error Rate (CER)",
+      "Sensitivity Matrix (SM)",
+      "Biometric Calibration Score (BCS)",
+      "Resolution Coefficient (RC)"
+    ],
+    "answer": 0,
+    "explanation": "The Crossover Error Rate (CER) is the metric where FAR and FRR are equal. A lower CER indicates a more accurate and balanced biometric system. SM, BCS, and RC are invented terms.",
+    "id": 1063,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "A biometric iris scanner frequently blocks authorized research staff from entering the cleanroom, forcing them to manually contact security for manual overrides. How should this system error be classified?",
+    "options": [
+      "False Acceptance / Type II Error",
+      "False Rejection / Type I Error",
+      "True Negative / System Match",
+      "Sensor Calibration Drift (SCD)"
+    ],
+    "answer": 1,
+    "explanation": "A False Rejection (Type I Error) occurs when an authorized user is incorrectly rejected by a biometric system. A False Acceptance (Type II Error) occurs when an unauthorized intruder is incorrectly granted access. SCD is an invented term.",
+    "id": 1064,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "An IT department implements a system where files can only be accessed if the user is a manager, the file is classified as internal, the request is made during business hours, and the host device is company-owned. Which access control model does this policy represent?",
+    "options": [
+      "Role-Based Access Control (RBAC)",
+      "Discretionary Access Control (DAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Mandatory Access Control (MAC)"
+    ],
+    "answer": 2,
+    "explanation": "ABAC (Attribute-Based Access Control) evaluates attributes of the subject (manager), resource (internal classification), action, and environment (time, device ownership) to make access decisions. RBAC only looks at user roles. DAC depends on owner permissions. MAC depends on system clearance labels.",
+    "id": 1065,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S17",
+    "question": "A system administrator allocates folders on a shared file server. The folders can only be accessed by members of the 'Finance' group, and users are automatically added to this group based on their job title. Which access control model does this represent?",
+    "options": [
+      "Role-Based Access Control (RBAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Mandatory Access Control (MAC)",
+      "Discretionary Access Control (DAC)"
+    ],
+    "answer": 0,
+    "explanation": "RBAC (Role-Based Access Control) determines access permissions based on roles or group memberships defined within the organization, which correspond to job functions. MAC uses security labels. DAC uses resource owner discretion. ABAC uses multiple attributes.",
+    "id": 1066,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "In a military database, files are assigned labels such as 'Secret' or 'Top Secret'. Users are assigned corresponding security clearance levels. Access is granted only if the user's clearance matches or exceeds the file's label, and is enforced directly by the operating system kernel. What access control model is this?",
+    "options": [
+      "Discretionary Access Control (DAC)",
+      "Mandatory Access Control (MAC)",
+      "Role-Based Access Control (RBAC)",
+      "Rule-Based Access Control"
+    ],
+    "answer": 1,
+    "explanation": "MAC (Mandatory Access Control) is a strict model where access is determined by comparing system-defined security labels and clearances, and cannot be changed by the users or owners. DAC allows owners to change permissions. RBAC uses roles. Rule-based uses rules like firewalls.",
+    "id": 1067,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A content creator is hosting files on a personal web drive. The creator can grant read-only, write, or full-control permissions to specific users at their own discretion. Which access control model does this represent?",
+    "options": [
+      "Discretionary Access Control (DAC)",
+      "Mandatory Access Control (MAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Role-Based Access Control (RBAC)"
+    ],
+    "answer": 0,
+    "explanation": "DAC (Discretionary Access Control) allows the owner of a resource to determine who is granted access and what permissions they have. MAC is enforced by system security policy labels. RBAC uses role group memberships. ABAC uses attributes.",
+    "id": 1068,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "A security analyst is auditing an Active Directory implementation. They discover that a junior developer who transitioned from customer support still has access to support ticketing databases and customer databases. What is this security issue called, and how is it BEST resolved?",
+    "options": [
+      "Privilege Creep; resolved by conducting regular user access reviews.",
+      "Insider Threat; resolved by implementing biometrics.",
+      "Directory Traversal; resolved by sanitizing inputs.",
+      "Access Drift; resolved by implementing single sign-on."
+    ],
+    "answer": 0,
+    "explanation": "Privilege Creep occurs when users accumulate permissions over time as they change roles. The BEST resolution is conducting regular user access reviews to revoke unneeded privileges. Biometrics, input sanitization, and SSO do not resolve permission accumulation.",
+    "id": 1069,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "An administrator wants to defend the network from brute-force password guessing attacks. They configure a policy that temporarily disables a user's account if they enter an incorrect password five times within a 10-minute window. What policy did they implement?",
+    "options": [
+      "Account Lockout Policy",
+      "Password History Policy",
+      "Privilege Auditing Policy",
+      "Credential Masking Policy"
+    ],
+    "answer": 0,
+    "explanation": "An Account Lockout Policy disables an account after a specified number of failed authentication attempts, blocking brute-force attacks. Password history prevents reuse. Auditing and masking do not block guessing.",
+    "id": 1070,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "A user is logging into a portal. Instead of entering a static password, they use an authenticator app that generates a 6-digit code. The code changes every 30 seconds and is calculated using a shared secret key and the current Unix time. What type of token is this?",
+    "options": [
+      "HMAC-based One-Time Password (HOTP)",
+      "Time-based One-Time Password (TOTP)",
+      "Synchronous Session Token (SST)",
+      "Static PIN Token (SPT)"
+    ],
+    "answer": 1,
+    "explanation": "TOTP (Time-based One-Time Password) uses the current time as the moving factor to generate codes that expire after a short period (usually 30 seconds). HOTP uses a counter value instead of time. SST and SPT are invented terms.",
+    "id": 1071,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A security policy requires that users can never reuse their previous ten passwords when changing their credentials. Which password policy setting must be configured to enforce this?",
+    "options": [
+      "Password Age",
+      "Password History",
+      "Password Complexity",
+      "Password Replay Prevention"
+    ],
+    "answer": 1,
+    "explanation": "Password History tracks previously used passwords and prevents users from reusing them for a specified number of changes. Password age sets expiration limits. Complexity requires numbers or symbols. Replay prevention is not a standard password setting.",
+    "id": 1072,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A web administrator is configuring a single sign-on portal. They want to ensure that if a user's SSO session token is hijacked, the attacker cannot use it indefinitely. Which parameter should the administrator configure on the identity provider?",
+    "options": [
+      "SSO Session Timeout / Token Expiration",
+      "Multifactor Geofencing",
+      "Account Lockout Threshold",
+      "Password History Depth"
+    ],
+    "answer": 0,
+    "explanation": "Configuring a short session timeout or token expiration limits the window of opportunity for an attacker using a hijacked session token. Geofencing, lockouts, and password history do not address session token lifespan directly.",
+    "id": 1073,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S17",
+    "question": "A security engineer is configuring LDAP directory queries. They want to ensure that directory lookups are encrypted to prevent eavesdropping on usernames and group memberships. What protocol and port should they implement?",
+    "options": [
+      "LDAP over Port 389",
+      "LDAPS over Port 636",
+      "SAML over Port 443",
+      "RADIUS over Port 1812"
+    ],
+    "answer": 1,
+    "explanation": "LDAPS (LDAP over SSL/TLS) encrypts directory queries and runs on TCP Port 636. Standard LDAP runs on Port 389 in cleartext. SAML is a federation protocol. RADIUS is for network access authentication.",
+    "id": 1074,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A user logs into an external partner's website. The partner's site trusts the user's home identity provider to assert that the user is authenticated. What type of identity architecture is this?",
+    "options": [
+      "Mandatory Access Control (MAC)",
+      "Federation / Federated SSO",
+      "Discretionary Access Control (DAC)",
+      "LDAP Directory Mapping"
+    ],
+    "answer": 1,
+    "explanation": "Federated identity architecture enables users to authenticate with their home identity provider to access resources across different organization domains. MAC and DAC are local access control models. LDAP is a local directory access standard.",
+    "id": 1075,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "An administrator is configuring a biometric system and wants to ensure it is secure enough for a high-security research vault. The administrator wants to reduce the likelihood of unauthorized intruders being granted access. Which metric should they minimize?",
+    "options": [
+      "False Rejection Rate (FRR) / Type I Error",
+      "False Acceptance Rate (FAR) / Type II Error",
+      "Crossover Error Rate (CER)",
+      "Sensor Sensitivity Index (SSI)"
+    ],
+    "answer": 1,
+    "explanation": "The False Acceptance Rate (FAR / Type II Error) measures the probability that an unauthorized user is incorrectly granted access. To maximize security against intruders, FAR must be minimized. Minimizing FRR improves usability. CER measures overall balance. SSI is an invented term.",
+    "id": 1076,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A security policy mandates that employees must use a password manager. Which of the following is the PRIMARY security benefit of using a password manager?",
+    "options": [
+      "It automatically changes passwords on websites every 30 days.",
+      "It allows employees to use long, complex, and unique passwords for every site without needing to memorize them.",
+      "It eliminates the need for multi-factor authentication.",
+      "It encrypts database tables natively."
+    ],
+    "answer": 1,
+    "explanation": "A password manager enables users to generate, store, and automatically fill unique, long, and complex passwords for each account, eliminating password reuse and memorization challenges. It does not replace MFA or natively encrypt target databases.",
+    "id": 1077,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A military base requires a smartcard to be inserted into a workstation to enable login. The card contains a digital certificate mapped to the user's identity. Which category of authentication factor does this card represent?",
+    "options": [
+      "Something you know",
+      "Something you have",
+      "Something you are",
+      "Somewhere you are"
+    ],
+    "answer": 1,
+    "explanation": "A physical smartcard containing a digital certificate is a token that the user physically possesses, representing the 'something you have' factor. Keys/passwords represent 'something you know', and biometrics represent 'something you are'.",
+    "id": 1078,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "A security analyst is implementing geofencing. They want to ensure that a corporate mobile app can only authenticate when the user's GPS coordinates are within 500 meters of the office. What type of authentication factor does this represent?",
+    "options": [
+      "Something you have",
+      "Somewhere you are",
+      "Something you do",
+      "Something you know"
+    ],
+    "answer": 1,
+    "explanation": "Geofencing relies on physical location data (GPS/IP), representing the 'somewhere you are' factor. 'Something you have' refers to tokens. 'Something you do' is behavioral biometrics. 'Something you know' refers to passwords.",
+    "id": 1079,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S17",
+    "question": "An IT department is auditing permissions and discovers that several former employees who left the company months ago still have active corporate email accounts. Which IAM process failed in this scenario?",
+    "options": [
+      "Identity Proofing",
+      "Deprovisioning",
+      "SSO Integration",
+      "Accounting / Auditing"
+    ],
+    "answer": 1,
+    "explanation": "Deprovisioning is the process of removing or disabling user accounts when they leave the organization. Failing to deprovision accounts leaves them active, creating severe security risks. Identity proofing is done prior to account creation. SSO integration relates to authentication. Auditing reports the issue but is not the process that disables accounts.",
+    "id": 1080,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A security analyst discovers that users of an online discussion board can embed malicious JavaScript code into their forum posts. When other users view the posts, the script executes automatically in their local browsers, sending their session tokens to the attacker's server. What type of attack is occurring, and what is the MOST likely remediation?",
+    "options": [
+      "Cross-Site Request Forgery (XSRF); remediated by using unique cryptographic tokens per form.",
+      "Stored Cross-Site Scripting (XSS); remediated by implementing input validation and output encoding.",
+      "SQL Injection; remediated by using parameterized database queries.",
+      "Dynamic Script Hijacking (DSH); remediated by implementing DOM isolation."
+    ],
+    "answer": 1,
+    "explanation": "The attack described is Stored (or Persistent) Cross-Site Scripting (XSS) because the malicious JavaScript is stored in the database of the forum and executes in the browsers of visiting users. The MOST likely and effective remediation is to perform rigorous input validation and output encoding before rendering user-submitted content. XSRF tricks a user's browser into performing an unauthorized action but does not involve direct script injection. SQL Injection targets the backend database rather than browser execution. DSH is an invented term.",
+    "id": 1081,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A developer writes a funds transfer application where the system verifies the account balance before completing a withdrawal. If two withdrawal requests are submitted almost simultaneously, the system executes both balance checks before updating the final balance, allowing the user to withdraw more money than they actually have. What type of vulnerability does this scenario describe?",
+    "options": [
+      "Buffer Overflow",
+      "Integer Overflow",
+      "Race Condition",
+      "Concurrent Memory Leak"
+    ],
+    "answer": 2,
+    "explanation": "A race condition occurs when the security or state of a system depends on the execution sequence or timing of concurrent processes (often known as Time-of-Check to Time-of-Use or TOCTOU). Here, the execution overlap between checking and withdrawing allows the exploit. A buffer overflow writes data past allocated memory boundaries. An integer overflow is an arithmetic error when a value exceeds storage capacity. Concurrent memory leak is an invented concept.",
+    "id": 1082,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S18",
+    "question": "A power plant operates a critical turbine control system running on an unsupported version of Windows XP. The original hardware manufacturer went out of business years ago, and the proprietary software cannot be migrated to a modern OS without causing an unacceptable total service outage. Which of the following actions should the security administrator take FIRST to protect this system?",
+    "options": [
+      "Isolate the legacy system on a dedicated network segment with no internet access (air gap).",
+      "Enable automatic updates in the control panel of the legacy operating system.",
+      "Upgrade the system directly to Windows 11 using compatibility mode.",
+      "Implement a Hybrid Update Gateway (HUG)."
+    ],
+    "answer": 0,
+    "explanation": "For end-of-life (EOL) or unsupported legacy systems that cannot be patched or upgraded, the FIRST and most effective mitigation is to isolate the device using network segmentation or an air gap to prevent network-based attacks. Enabling updates on Windows XP is useless as no official security patches are released by Microsoft. Upgrading will break the proprietary turbine software. HUG is an invented term.",
+    "id": 1083,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S18",
+    "question": "An attacker manipulates the input fields of a web login form by entering the string `' OR '1'='1`. The website authenticates the attacker and logs them in as the administrator without requiring a password. Which of the following is the root cause of this vulnerability?",
+    "options": [
+      "A directory traversal flaw that exposes local system files",
+      "A lack of anti-CSRF tokens in the authentication form",
+      "A stack overflow in the authentication rendering engine",
+      "A lack of input sanitization allowing SQL query injection"
+    ],
+    "answer": 3,
+    "explanation": "La vulnerabilidad es SQL Injection, que es causado por una falta de sanitización de entradas, permitiendo al motor de base de datos interpretar la cadena del atacante como código de consulta lógico (haciendo que la condición sea siempre verdadera y evadiendo la contraseña). Directory traversal accede a rutas locales de archivos (`../`). CSRF/XSRF explota la confianza del navegador de la sesión y no modifica la consulta. Un desbordamiento de pila intenta corromper la memoria, no la lógica de base de datos.",
+    "id": 1084,
+    "correctAnswer": 3
+  },
+  {
+    "section": "S18",
+    "question": "A user clicks a link in a phishing email that takes them to a trusted online banking site. However, the link includes a malicious URL parameter containing a script. The banking website reflects this parameter in the search results page, executing the script in the user's browser. What type of vulnerability is this?",
+    "options": [
+      "Stored XSS",
+      "Reflected XSS",
+      "DOM-based XSS",
+      "Cross-Site Request Forgery (CSRF)"
+    ],
+    "answer": 1,
+    "explanation": "Reflected XSS occurs when an application receives input in an HTTP request and includes that input within the immediate response in an unsafe way, reflecting it back to the user's browser where it executes as code.",
+    "id": 1085,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "An attacker sends an email containing an HTML link to an authenticated user of an online store. When clicked, the link forces the user's browser to submit a hidden form requesting to change the user's email address to the attacker's email, leveraging the user's active session cookie. What type of attack is this?",
+    "options": [
+      "Reflected XSS",
+      "Cross-Site Request Forgery (CSRF)",
+      "SQL Injection",
+      "Command Injection"
+    ],
+    "answer": 1,
+    "explanation": "CSRF (Cross-Site Request Forgery) tricks a victim's web browser into performing an unwanted action on a trusted site where the user is currently authenticated, using their active session cookie. It does not inject scripts like XSS does.",
+    "id": 1086,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A security analyst reviews a client-side JavaScript script that reads a user's local URL parameter and directly writes it to the page using `document.write()`, without sending data to the server. What type of vulnerability is present?",
+    "options": [
+      "Stored XSS",
+      "DOM-based XSS",
+      "Reflected XSS",
+      "Command Injection"
+    ],
+    "answer": 1,
+    "explanation": "DOM-based XSS occurs when an application contains client-side JavaScript that processes data from an untrusted source (like the URL DOM) in an unsafe way, modifying the DOM directly in the browser without server roundtrips.",
+    "id": 1087,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A web utility allows administrators to ping diagnostic hosts. A user inputs the string `127.0.0.1; cat /etc/passwd` into the host field. The server returns the ping output followed by the contents of the passwd file. What type of vulnerability is this?",
+    "options": [
+      "SQL Injection",
+      "Command Injection",
+      "Directory Traversal",
+      "Buffer Overflow"
+    ],
+    "answer": 1,
+    "explanation": "Command Injection occurs when an application passes unsanitized user input directly to a system shell execution, allowing the attacker to run arbitrary operating system commands.",
+    "id": 1088,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A program expects a 10-character string input and copies it into a fixed-size memory stack buffer. If an attacker inputs a 500-character string, the program crashes, and registers show that the execution path has jumped to code embedded within the input. What type of vulnerability is this?",
+    "options": [
+      "Buffer Overflow",
+      "Integer Overflow",
+      "Memory Leak",
+      "Pointer Dereference"
+    ],
+    "answer": 0,
+    "explanation": "A Buffer Overflow occurs when a program writes more data to a buffer than it can hold, corrupting adjacent memory (such as the stack return address) and potentially allowing arbitrary code execution.",
+    "id": 1089,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S18",
+    "question": "An application uses an 8-bit unsigned integer to track transaction counts. When the count reaches 255 and another transaction occurs, the count wraps around to 0, causing a validation check to pass incorrectly and allow access. What type of vulnerability is this?",
+    "options": [
+      "Buffer Overflow",
+      "Integer Overflow",
+      "Memory Leak",
+      "Race Condition"
+    ],
+    "answer": 1,
+    "explanation": "An Integer Overflow occurs when an arithmetic operation attempts to create a numeric value that is outside the range of values that can be represented with a given number of bits, causing it to wrap around to a small or negative number.",
+    "id": 1090,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A monitoring server's RAM utilization increases slowly over several weeks until the system runs out of memory and crashes. Logs indicate that a specific background process allocates memory for logging metrics but fails to deallocate it after completion. What type of vulnerability is this?",
+    "options": [
+      "Resource Exhaustion",
+      "Memory Leak",
+      "Race Condition",
+      "Integer Overflow"
+    ],
+    "answer": 1,
+    "explanation": "A Memory Leak occurs when an application allocates memory but fails to release it back to the operating system when it is no longer needed. Over time, this leads to Resource Exhaustion and application crashes.",
+    "id": 1091,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A database programmer wants to write secure code to prevent SQL injection attacks. Which of the following mechanisms represents the BEST option to achieve this?",
+    "options": [
+      "Implementing client-side validation using regular expressions",
+      "Using parameterized queries / prepared statements",
+      "Converting all inputs to Base64 format before query processing",
+      "Deploying a stateful packet firewall in front of the database"
+    ],
+    "answer": 1,
+    "explanation": "Parameterized queries (prepared statements) ensure that the database engine treats user input strictly as data parameters rather than executable SQL code commands, completely mitigating SQL injection. Client-side validation can be easily bypassed. Base64 encoding is not a security defense. Firewalls operate at lower network layers and do not sanitize query syntax.",
+    "id": 1092,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "An enterprise has a critical billing system that cannot be updated because the vendor is out of business and the source code is unavailable. The system has a known critical vulnerability. Which type of control should the security team implement to manage the risk?",
+    "options": [
+      "A corrective control",
+      "A compensating control",
+      "A deterrent control",
+      "An administrative control"
+    ],
+    "answer": 1,
+    "explanation": "A compensating control is an alternative security control implemented to mitigate the risk of a vulnerability when standard controls (like patching) are not possible or feasible.",
+    "id": 1093,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "An organization deploys smart building HVAC controllers that receive firmware updates over-the-air (OTA). To prevent an attacker from flashing malicious firmware to the controllers, which control is the MOST critical for the update process?",
+    "options": [
+      "Use of Type 2 hypervisors on controllers",
+      "Cryptographic signature validation on all received update files",
+      "Reducing the database backup frequency",
+      "Performing qualitative risk analysis ad-hoc"
+    ],
+    "answer": 1,
+    "explanation": "Cryptographic signature verification ensures that updates received remotely (OTA) are authentic and have not been tampered with by an attacker, preventing malicious firmware deployment.",
+    "id": 1094,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A cloud security analyst reviews web logs and notices multiple requests containing the following path in the URI: `/downloads/getfile.php?name=../../../../windows/system.ini`. What type of vulnerability is the attacker attempting to exploit?",
+    "options": [
+      "SQL Injection",
+      "Directory Traversal",
+      "Reflected XSS",
+      "Buffer Overflow"
+    ],
+    "answer": 1,
+    "explanation": "Directory Traversal uses relative path sequences (such as `../`) to escape the web root directory and access arbitrary files on the local operating system filesystem.",
+    "id": 1095,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "An attacker targets a SCADA network controlling municipal water pumps. The SCADA servers run legacy firmware that cannot be updated. Which of the following is the BEST compensating control to protect this network from external remote attacks?",
+    "options": [
+      "Implementing strong password policies for standard users",
+      "Isolating the SCADA network from the corporate network and internet (air gapping)",
+      "Installing host-based intrusion detection software on the workstation",
+      "Switching all communication channels from TCP to UDP"
+    ],
+    "answer": 1,
+    "explanation": "Air gapping (physical and logical isolation from external networks) is the most effective compensating control to protect critical SCADA/ICS environments that cannot be updated from external network threats.",
+    "id": 1096,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A developer wants to ensure that a web page correctly handles user-submitted comments containing characters like `<` and `>` without executing them. What technique should they use before rendering the text?",
+    "options": [
+      "Input Validation",
+      "Output Encoding / Sanitization",
+      "Hashing",
+      "Asymmetric Encryption"
+    ],
+    "answer": 1,
+    "explanation": "Output encoding converts special characters (like `<` to `&lt;`) into a safe, display-only format before rendering them in the browser, preventing the browser from interpreting them as executable code.",
+    "id": 1097,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A developer wants to prevent Cross-Site Request Forgery (CSRF) attacks on a shopping cart application. Which of the following mechanisms is the MOST effective?",
+    "options": [
+      "Using HTTPS encryption for all pages",
+      "Implementing unique, unpredictable anti-CSRF tokens for state-changing requests",
+      "Requiring users to enter their password twice",
+      "Using client-side JavaScript validation"
+    ],
+    "answer": 1,
+    "explanation": "Anti-CSRF tokens (unique, unpredictable tokens validated on the server for each request) prevent CSRF because an external attacker cannot guess or steal this token to forge a valid request. HTTPS protects data in transit but does not prevent CSRF. Client validation can be bypassed.",
+    "id": 1098,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "During a routine scan, a security analyst discovers that a production web application displays detailed database error messages and stack traces to users when queries fail. What type of vulnerability does this represent?",
+    "options": [
+      "Improper Error Handling",
+      "Privilege Escalation",
+      "Stored Cross-Site Scripting",
+      "Memory Leakage"
+    ],
+    "answer": 0,
+    "explanation": "Improper Error Handling occurs when an application exposes sensitive system or debugging information (such as stack traces or SQL database schemas) in error messages, aiding attackers in reconnaissance.",
+    "id": 1099,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S18",
+    "question": "A security auditor discovers that newly deployed smart security cameras are accessible over the local network using a username of 'admin' and a password of '12345'. Which vulnerability type does this represent?",
+    "options": [
+      "Improper input sanitization",
+      "Default Configuration / Weak Credentials",
+      "Supply Chain Vulnerability",
+      "Software API Drift"
+    ],
+    "answer": 1,
+    "explanation": "This represents a default configuration vulnerability where default credentials are left unchanged after deployment, allowing easy unauthorized access.",
+    "id": 1100,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "An enterprise software package utilizes a popular third-party logging library. A critical vulnerability is discovered in the library that allows remote code execution. How should this vulnerability type be classified?",
+    "options": [
+      "Zero-Day Vulnerability",
+      "Supply Chain / Third-Party Vulnerability",
+      "Default Configuration Vulnerability",
+      "Orphaned System Flaw"
+    ],
+    "answer": 1,
+    "explanation": "Vulnerabilities originating from third-party code libraries, dependencies, or components integrated into software products are classified as Supply Chain or Third-Party vulnerabilities.",
+    "id": 1101,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A critical vulnerability is announced for a widely used network router. No patches or workarounds are currently available from the manufacturer, and exploitation code is actively circulating. What is this type of vulnerability called?",
+    "options": [
+      "Zero-Day Vulnerability",
+      "Legacy System Flaw",
+      "Default Configuration",
+      "Stack Overflow"
+    ],
+    "answer": 0,
+    "explanation": "A Zero-Day vulnerability is an active security flaw that is unknown to the vendor, or for which no official patch or fix has been developed yet.",
+    "id": 1102,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S18",
+    "question": "An attacker exploits a target system by attaching to a running web browser process and forcing it to run a malicious .dll file containing exploit code. What type of attack is this?",
+    "options": [
+      "Buffer Overflow",
+      "DLL Injection",
+      "SQL Injection",
+      "Pointer Dereference"
+    ],
+    "answer": 1,
+    "explanation": "DLL Injection is a technique used to run arbitrary code in the address space of another running process by forcing it to load a dynamic-link library (DLL).",
+    "id": 1103,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A web application crashes frequently. The developer audits the source code and finds that when a database query returns empty, the program attempts to read data from a memory address that points to nothing (null). What programming error is this?",
+    "options": [
+      "Integer Overflow",
+      "Null Pointer Dereferencing",
+      "Buffer Overflow",
+      "Race Condition"
+    ],
+    "answer": 1,
+    "explanation": "Null Pointer Dereferencing occurs when an application attempts to read or write to a memory address pointing to null, which typically causes the application to crash or throw an exception.",
+    "id": 1104,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A security scan reveals an orphaned server in a corporate network running Windows Server 2003. The system has no registered owner and has not received updates in over a decade. Which vulnerability category does this represent?",
+    "options": [
+      "Improper Asset Management",
+      "Zero-Day Vulnerability",
+      "Default Configuration",
+      "DLL Injection"
+    ],
+    "answer": 0,
+    "explanation": "Improper Asset Management is when systems are deployed without tracking, ownership, or regular audits, leading to legacy or forgotten (orphaned) systems remaining vulnerable on the network.",
+    "id": 1105,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S18",
+    "question": "A security analyst attempts to access a web server. When navigating to `/images/`, the browser displays a list of all files stored in that directory instead of returning a 403 Forbidden error. What vulnerability category does this represent?",
+    "options": [
+      "Stored XSS",
+      "Security Misconfiguration",
+      "Directory Traversal",
+      "Privilege Escalation"
+    ],
+    "answer": 1,
+    "explanation": "Enabling directory listing (directory browsing) on a production web server is a Security Misconfiguration vulnerability that leaks the directory structure and file contents to potential attackers.",
+    "id": 1106,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "A banking website validates that transfer values are positive using client-side JavaScript. An attacker intercepting the request changes the transfer amount value to `-500` and submits it directly to the server. The server processes the negative amount, increasing the attacker's balance. What is the root cause of this vulnerability?",
+    "options": [
+      "Lack of server-side input validation",
+      "SQL Injection in the transaction table",
+      "Race condition in balance calculation",
+      "Improper session management"
+    ],
+    "answer": 0,
+    "explanation": "All inputs must be validated on the server-side. Relying solely on client-side validation (which can be easily bypassed using proxies or direct API requests) is a critical security vulnerability.",
+    "id": 1107,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S18",
+    "question": "A developer configures an API backend and allows requests from any origin by configuring the header `Access-Control-Allow-Origin: *`. What vulnerability risk is introduced?",
+    "options": [
+      "Stored XSS vulnerability",
+      "CORS (Cross-Origin Resource Sharing) Misconfiguration",
+      "Directory Traversal",
+      "Command Injection"
+    ],
+    "answer": 1,
+    "explanation": "Using a wildcard (`*`) in CORS configurations allows any external website to make API requests on behalf of the client's browser, creating a significant CORS Misconfiguration vulnerability.",
+    "id": 1108,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "An auditor reviews a corporate web server's SSL/TLS settings and finds that it supports SSL v3 and TLS 1.0. What vulnerability is present?",
+    "options": [
+      "Improper input sanitization",
+      "Weak / Legacy Cipher Suites and Protocols",
+      "DLL Injection",
+      "Zero-Day vulnerability"
+    ],
+    "answer": 1,
+    "explanation": "Supporting legacy protocols like SSL v3 or TLS 1.0 is a vulnerability because these protocols contain known cryptographic flaws (like POODLE and BEAST) and are vulnerable to attack.",
+    "id": 1109,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S18",
+    "question": "An administrator wants to secure a web server against automated scanning tools looking for legacy PHP vulnerabilities. Which action would BEST reduce the attack surface?",
+    "options": [
+      "Implement a strong account lockout policy for administrators.",
+      "Remove legacy PHP modules and configure the server to hide the PHP version header.",
+      "Change the server's public IP address daily.",
+      "Enable biometric authentication for SSH access."
+    ],
+    "answer": 1,
+    "explanation": "Removing unneeded legacy components and hiding version banners reduces the attack surface by eliminating entry points and limiting information disclosure to attackers.",
+    "id": 1110,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An attacker uses a wireless packet analyzer to capture network authentication traffic between an employee and a legacy server. The next day, the attacker retransmits the captured packets to the server to establish an unauthorized active session. What type of attack is this, and how is it BEST mitigated?",
+    "options": [
+      "On-Path (Man-in-the-Middle) attack; mitigated by implementing static ARP tables on local switches.",
+      "Replay attack; mitigated by using unique session timestamps and cryptographic nonces.",
+      "Session hijacking; mitigated by forcing user password rotation every 30 days.",
+      "Protocol Rejection Attack (PRA); mitigated by physical port blocking."
+    ],
+    "answer": 1,
+    "explanation": "A replay attack involves capturing valid authentication packets and retransmitting them later to gain unauthorized access. The BEST mitigation is implementing session tokens with timestamps or cryptographic nonces (number used once) so that the server rejects duplicate or delayed packets. An On-Path attack requires active routing interception rather than simple retransmission. Session hijacking steals an active session cookie in real time. Password rotation does not stop the replay of captured traffic. PRA is an invented term.",
+    "id": 1111,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A corporate web server suddenly stops responding to incoming requests. The system administrator checks network logs and finds thousands of connections in a half-open state (SYN_RECEIVED). The attacker is sending connection requests with spoofed source IP addresses and never completes the handshake. What type of DoS attack is this, and which control should be implemented FIRST?",
+    "options": [
+      "Permanent Denial of Service (PDoS); reinstall the edge router's firmware.",
+      "SYN Flood DoS; implement flood guards and shorten session timeout thresholds.",
+      "Fork Bomb; configure process execution limits for the OS root user.",
+      "Packet Exhaustion Storm (PES); implement static routing on the WAN."
+    ],
+    "answer": 1,
+    "explanation": "The attack is a SYN Flood, which exhausts a server's connection tables by leaving connections in a 'half-open' state. The FIRST and most direct control is implementing flood guards or shortening the session timeout threshold to drop incomplete connections quickly. PDoS damages hardware by destroying firmware. A fork bomb is a local host exploit that spawns infinite processes. PES is an invented term.",
+    "id": 1112,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An enterprise systems administrator discovers that a disgruntled programmer inserted code that will delete the company's entire customer database if the programmer's employee ID is removed from the active payroll directory. What type of malware does this represent?",
+    "options": [
+      "Logic Bomb",
+      "Trojan Horse",
+      "Ransomware",
+      "Spyware"
+    ],
+    "answer": 0,
+    "explanation": "A Logic Bomb is malicious code inserted into a program that lies dormant until triggered by a specific event or condition (such as a calendar date, time, or the absence/presence of a database record).",
+    "id": 1113,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S19",
+    "question": "A security analyst conducts memory forensics on a compromised server and finds malware that has modified the operating system kernel to intercept system calls. The malware is hiding its own processes and files from standard administrator diagnostic utilities. What class of malware is this?",
+    "options": [
+      "Rootkit",
+      "Adware",
+      "Worm",
+      "Ransomware"
+    ],
+    "answer": 0,
+    "explanation": "A Rootkit is a type of malware designed to gain administrative/root access to a computer and modify operating system binaries or kernel tables to hide its presence and bypass detection tools.",
+    "id": 1114,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S19",
+    "question": "An accounting employee receives a pop-up window stating that all their spreadsheet and PDF files have been encrypted using an RSA-2048 key. The window displays a countdown timer and instructions to send $500 in cryptocurrency to obtain the decryption key. What type of malware has infected the computer?",
+    "options": [
+      "Spyware",
+      "Ransomware",
+      "Rootkit",
+      "Trojan"
+    ],
+    "answer": 1,
+    "explanation": "Ransomware is malware that encrypts files or restricts access to a system and demands payment (usually cryptocurrency) from the victim to restore access.",
+    "id": 1115,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "The Chief Financial Officer (CFO) of a multinational bank receives an email that appears to come from the bank's external auditing firm. The email addresses the CFO by name, references a recent secret acquisition project, and requests immediate verification of wire transfer credentials via an attached document. How should this social engineering attack be classified?",
+    "options": [
+      "Spam",
+      "Whaling",
+      "Pharming",
+      "Vishing"
+    ],
+    "answer": 1,
+    "explanation": "Whaling is a highly targeted phishing attack (spear phishing) aimed specifically at high-profile, high-value targets such as corporate executives (C-level officers, CFOs, CEOs).",
+    "id": 1116,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A customer support agent receives a phone call from an individual claiming to be a technician from the company's internal IT help desk. The caller requests the agent to disclose their domain password to help resolve a database latency issue. What type of social engineering attack is this?",
+    "options": [
+      "Vishing",
+      "Smishing",
+      "Shoulder Surfing",
+      "Tailgating"
+    ],
+    "answer": 0,
+    "explanation": "Vishing (voice phishing) is the practice of using telephone systems and voice calls to conduct social engineering attacks and trick victims into disclosing sensitive info.",
+    "id": 1117,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S19",
+    "question": "An employee receives a text message on their personal smartphone claiming to be from their supervisor. The message states that their company credentials have been compromised and directs them to click a short link to reset them immediately. What type of attack is this?",
+    "options": [
+      "Phishing",
+      "Smishing",
+      "Vishing",
+      "Pretexting"
+    ],
+    "answer": 1,
+    "explanation": "Smishing (SMS phishing) is a social engineering attack conducted via text messaging (SMS) on mobile devices to lure victims into clicking links or disclosing credentials.",
+    "id": 1118,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "Several users report that when trying to visit the company's public intranet page, they are redirected to a lookalike website that requests their login credentials. The network team finds that the local DNS server's cache has been manipulated to resolve the intranet's domain name to the attacker's server IP address. What type of attack is this?",
+    "options": [
+      "Phishing",
+      "Pharming",
+      "Whaling",
+      "Spim"
+    ],
+    "answer": 1,
+    "explanation": "Pharming redirects users to malicious lookalike websites by exploiting vulnerabilities in DNS servers (DNS cache poisoning) or by modifying the hosts file on client machines.",
+    "id": 1119,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A security guard observes an individual dressed as a delivery courier holding a box and walking quickly through the building's badge-access door immediately behind an employee who just scanned their access card. What physical social engineering technique is the courier using?",
+    "options": [
+      "Shoulder Surfing",
+      "Tailgating",
+      "Dumpster Diving",
+      "Pretexting"
+    ],
+    "answer": 1,
+    "explanation": "Tailgating (or piggybacking) is when an unauthorized person closely follows an authorized person through a secure entry point to bypass security controls without authenticating.",
+    "id": 1120,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An attacker sits at a coffee shop and uses a smartphone camera to record users entering their device unlock PINs and corporate login passwords on their laptops. What type of social engineering technique is this?",
+    "options": [
+      "Dumpster Diving",
+      "Shoulder Surfing",
+      "Tailgating",
+      "Pretexting"
+    ],
+    "answer": 1,
+    "explanation": "Shoulder Surfing involves looking over someone's shoulder or using cameras to spy on users and capture sensitive information like passwords, PINs, or data.",
+    "id": 1121,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An attacker targets a financial firm by collecting discarded documents from the trash bins behind the company's offices, looking for printouts containing network diagrams, account details, and employee names. What is this technique called?",
+    "options": [
+      "Tailgating",
+      "Dumpster Diving",
+      "Shoulder Surfing",
+      "Pretexting"
+    ],
+    "answer": 1,
+    "explanation": "Dumpster Diving is the practice of searching through trash or recycling containers to find discarded documents, hardware, or files that contain sensitive corporate information.",
+    "id": 1122,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An attacker contacts the customer support line of an insurance company, posing as an elderly customer who has forgotten their account number. The attacker creates a elaborate story about being hospitalized to gain sympathy and convince the support agent to disclose the account details. What social engineering concept does this scenario represent?",
+    "options": [
+      "Phishing",
+      "Pretexting",
+      "Shoulder Surfing",
+      "Tailgating"
+    ],
+    "answer": 1,
+    "explanation": "Pretexting is the act of creating an invented scenario (a pretext) to persuade a targeted victim to release information or perform an action they would not otherwise do.",
+    "id": 1123,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A security administrator detects a high volume of login failures across thousands of corporate user accounts. The attacker is attempting to log into each account using a single popular password like 'Summer2026!' before moving on to the next account. What type of password attack is this?",
+    "options": [
+      "Dictionary Attack",
+      "Password Spraying",
+      "Brute-Force Attack",
+      "Rainbow Table Attack"
+    ],
+    "answer": 1,
+    "explanation": "Password Spraying is a type of brute-force attack where an attacker attempts a single common password against many different accounts to avoid account lockout thresholds.",
+    "id": 1124,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A security analyst recovers a file containing stolen database hashes. To decrypt the passwords quickly, the analyst runs a tool that compares the hashes against precomputed tables containing millions of plaintext words and their matching SHA-256 hashes. What tool or technique is being used?",
+    "options": [
+      "Dictionary Attack",
+      "Rainbow Tables",
+      "Brute-Force Attack",
+      "Password Spraying"
+    ],
+    "answer": 1,
+    "explanation": "Rainbow Tables are precomputed tables of hashed passwords used to reverse cryptographic hash functions and quickly crack password hashes without computing hashes dynamically.",
+    "id": 1125,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An attacker gains access to a local network segment and begins sending unsolicited ARP messages to the local switch. The messages map the default gateway IP address to the MAC address of the attacker's computer, redirecting local client traffic. What type of attack is this?",
+    "options": [
+      "MAC Spoofing",
+      "ARP Poisoning / Spoofing",
+      "DNS Spoofing",
+      "DHCP Snooping"
+    ],
+    "answer": 1,
+    "explanation": "ARP Poisoning (or ARP Spoofing) involves sending forged Address Resolution Protocol (ARP) messages onto a local network to associate an attacker's MAC address with the IP address of a legitimate server or gateway.",
+    "id": 1126,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An administrator discovers that thousands of company computers have been silently infected with malware. The infected systems are communicating with an external Command and Control (C2) server and are configured to participate in coordinated DDoS attacks against external targets. What security threat is this?",
+    "options": [
+      "Worm",
+      "Botnet",
+      "Rootkit",
+      "Logic Bomb"
+    ],
+    "answer": 1,
+    "explanation": "A Botnet is a network of compromised computers (bots or zombies) controlled remotely by an attacker (botmaster) to perform coordinated tasks such as DDoS attacks or spam campaigns.",
+    "id": 1127,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A user downloads a free PDF viewer application from a third-party website. The PDF viewer works as expected, but a hidden background service installs spyware that logs and exfiltrates browser history. How should this malware be classified?",
+    "options": [
+      "Worm",
+      "Trojan Horse",
+      "Rootkit",
+      "Logic Bomb"
+    ],
+    "answer": 1,
+    "explanation": "A Trojan Horse is a type of malware that is disguised as a legitimate, useful utility program, but contains hidden malicious functionality that executes behind the scenes.",
+    "id": 1128,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A network security administrator detects a massive infection spreading automatically from computer to computer across the enterprise LAN. The malware exploits a vulnerability in the Windows SMB protocol to replicate itself across network shares without any user interaction. What type of malware is this?",
+    "options": [
+      "Trojan",
+      "Worm",
+      "Rootkit",
+      "Keylogger"
+    ],
+    "answer": 1,
+    "explanation": "A Worm is self-replicating malware that spreads automatically across computer networks by exploiting software vulnerabilities, without requiring human execution or host file attachment.",
+    "id": 1129,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A security analyst inspects a suspicious user workstation and discovers a small physical adapter plugged inline between the keyboard USB cable and the computer's rear port. What security threat does this device represent?",
+    "options": [
+      "Hardware Keylogger",
+      "Software Rootkit",
+      "Adware injector",
+      "USB Sanitizer"
+    ],
+    "answer": 0,
+    "explanation": "A hardware keylogger is a physical device plugged between a keyboard and a computer to record every keystroke entered by the user, capturing passwords and sensitive inputs.",
+    "id": 1130,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S19",
+    "question": "An organization experiences a Denial of Service attack where the attacker sends spoofed ICMP Echo Request packets to a network's broadcast IP address. The packets contain the victim's source IP address, causing all hosts on the subnet to flood the victim with ICMP Echo Replies. What attack type is this?",
+    "options": [
+      "SYN Flood",
+      "Smurf Attack",
+      "Fork Bomb",
+      "Slowloris"
+    ],
+    "answer": 1,
+    "explanation": "A Smurf Attack is a legacy DDoS attack that spoofs the victim's IP address and sends ICMP echo requests to broadcast addresses, magnifying traffic as every device replies to the victim.",
+    "id": 1131,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An attacker attempts to crack an administrative password by running a tool that tests every possible combination of letters, numbers, and symbols sequentially (`aaaa1`, `aaaa2`, etc.). What password cracking method is this?",
+    "options": [
+      "Dictionary Attack",
+      "Brute-Force Attack",
+      "Rainbow Table Attack",
+      "Password Spraying"
+    ],
+    "answer": 1,
+    "explanation": "A brute-force attack attempts to decrypt passwords by systematically testing all possible character combinations until the correct key is found.",
+    "id": 1132,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A security engineer receives reports of users receiving massive amounts of advertising and links to fraudulent sites on their corporate instant messaging application. Which threat term describes this malicious activity?",
+    "options": [
+      "Spam",
+      "Spim",
+      "Pharming",
+      "Spear Phishing"
+    ],
+    "answer": 1,
+    "explanation": "Spim is spam sent over Instant Messaging (IM) networks rather than email (which is traditional spam).",
+    "id": 1133,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An employee receives an email warning that a new and dangerous virus called the 'Blue Screen Destroyer' is spreading rapidly, and that they must immediately delete a system file named `kernel32.dll` to prevent infection. What type of social engineering attack is this?",
+    "options": [
+      "Watering Hole",
+      "Hoax",
+      "Pretexting",
+      "Whaling"
+    ],
+    "answer": 1,
+    "explanation": "A Hoax is a social engineering attack that spreads false alarms or warnings about non-existent security threats, aiming to trick users into compromising their own systems (like deleting essential files).",
+    "id": 1134,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A receptionist receives a call from an individual claiming to be a fire inspector who needs immediate remote access to the facility's security console to audit emergency exits. The caller uses authority and urgency to pressure the receptionist. What social engineering concept does this represent?",
+    "options": [
+      "Pretexting / Impersonation",
+      "Shoulder Surfing",
+      "Watering Hole",
+      "Pharming"
+    ],
+    "answer": 0,
+    "explanation": "This is Impersonation combined with Pretexting, where the attacker assumes a fake identity (fire inspector) and creates a false scenario (exit audit) to manipulate the victim.",
+    "id": 1135,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S19",
+    "question": "An attacker discovers that developers in a large software firm frequently visit a local catering website to order lunch. The attacker compromises the catering site and injects exploit code to target vulnerabilities in the developers' web browsers. What attack vector is this?",
+    "options": [
+      "Spear Phishing",
+      "Watering Hole Attack",
+      "Whaling",
+      "Pharming"
+    ],
+    "answer": 1,
+    "explanation": "A Watering Hole attack targets a specific group of users by compromising a third-party website that they are known to visit frequently, infecting them when they browse the site.",
+    "id": 1136,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "A security analyst detects a DDoS attack where the attacker sends small NTP requests containing a spoofed source IP pointing to the victim, causing the NTP server to send large responses back to the victim. What is this technique called?",
+    "options": [
+      "DNS Spoofing",
+      "Amplification Attack",
+      "Replay Attack",
+      "SYN Flood"
+    ],
+    "answer": 1,
+    "explanation": "An Amplification Attack is a type of DDoS attack that exploits open protocols (like NTP, DNS, or SNMP) to send small queries with spoofed source IPs that trigger much larger response payloads, flooding the victim.",
+    "id": 1137,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An attacker positions a device between a corporate laptop and the wireless access point, intercepting, reading, and modifying all network packets passing between the laptop and the web server in real time. How is this attack classified?",
+    "options": [
+      "Replay Attack",
+      "On-Path (Man-in-the-Middle) Attack",
+      "SYN Flood",
+      "MAC Filtering Violation"
+    ],
+    "answer": 1,
+    "explanation": "An On-Path (formerly Man-in-the-Middle) attack occurs when an attacker intercepts and potentially alters communication between two nodes without their knowledge.",
+    "id": 1138,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An enterprise employee falls victim to a social engineering attack. The attacker leverages the psychological principle of 'Scarcity' by sending an email stating that only the first 5 employees to verify their payroll credentials will receive a 20% holiday bonus. Which social engineering principle is described?",
+    "options": [
+      "Social Proof / Consensus",
+      "Scarcity",
+      "Authority",
+      "Intimidation"
+    ],
+    "answer": 1,
+    "explanation": "Scarcity is the social engineering principle that creates a sense of urgency based on limited resources or limited opportunities, tricking the victim into acting quickly before thinking.",
+    "id": 1139,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S19",
+    "question": "An attacker runs a script that repeatedly queries a local DNS resolver with spoofed UDP packets containing false mapping entries for a popular corporate bank. What is this DNS attack called?",
+    "options": [
+      "DNS Cache Poisoning",
+      "DNSSEC validation",
+      "DNS Zone Transfer",
+      "Domain Hijacking"
+    ],
+    "answer": 0,
+    "explanation": "DNS Cache Poisoning (or DNS Spoofing) is the act of introducing false DNS records into a DNS resolver's cache, causing it to resolve domain queries to incorrect, malicious IP addresses.",
+    "id": 1140,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S20",
+    "question": "A cybersecurity engineer audits the default configurations of newly installed network switches. The engineer disables Telnet (port 23) and the HTTP server (port 80) due to their lack of encryption. Which secure protocol should be enabled FIRST for console-based remote management?",
+    "options": [
+      "SMTPS (Port 587)",
+      "SSH (Port 22)",
+      "SNMP (Port 161)",
+      "Secure Remote Connection (SRC - Port 8022)"
+    ],
+    "answer": 1,
+    "explanation": "SSH (Secure Shell) on port 22 encrypts administrative console sessions, serving as the direct secure replacement for Telnet. SMTPS is for secure email delivery. SNMP on port 161 is for monitoring and lacks encryption unless version 3 is used. SRC is an invented term.",
+    "id": 1141,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A large corporation wants to standardize the security posture of thousands of Windows workstations prior to deployment. The security team defines a configuration template that contains disabled services, registry settings, and strict password policies. Which concept does this template represent?",
+    "options": [
+      "Risk Tolerance Matrix",
+      "Change Management Log",
+      "Secure Baseline",
+      "Integrity Validation Script (IVS)"
+    ],
+    "answer": 2,
+    "explanation": "A Secure Baseline is a documented set of minimum security settings and configurations that system platforms must conform to before deployment. A risk tolerance matrix evaluates organizational risk appetite. A change management log records changes made to systems over time. IVS is an invented term.",
+    "id": 1142,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S20",
+    "question": "A system administrator notices that production servers frequently experience configuration drift because support technicians make manual configuration changes to resolve help desk tickets. Which of the following is the BEST method to automate hardening and ensure policy consistency across the fleet?",
+    "options": [
+      "Implement Full Disk Encryption (FDE) on all servers.",
+      "Perform weekly manual audits using paper-based checklists.",
+      "Use Group Policy Objects (GPO) or Infrastructure as Code (IaC) tools.",
+      "Configure persistent IPsec tunnels between the servers."
+    ],
+    "answer": 2,
+    "explanation": "The critical modifier BEST asks for automation and configuration drift prevention. GPOs (in Windows) and Infrastructure as Code (IaC, like Ansible or Terraform) define hardening templates that are automatically enforced across all servers, ensuring consistency. FDE protects data at rest but does not prevent configuration changes. Manual audits are slow and error-prone. IPsec secures network traffic in transit.",
+    "id": 1143,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S20",
+    "question": "A system administrator wants to harden several critical Linux database servers. They need to ensure that, even if an administrative process like Apache is compromised by an attacker, the process is strictly blocked from accessing files outside its designated domain. Which of the following technologies represents the BEST option?",
+    "options": [
+      "Security-Enhanced Linux (SELinux)",
+      "Group Policy Objects (GPO)",
+      "Active Directory Role-Based Access Control",
+      "Kernel Shield Module (KSM)"
+    ],
+    "answer": 0,
+    "explanation": "SELinux implements Mandatory Access Control (MAC) in the Linux kernel, restricting processes strictly to their defined security domains. This containment prevents a compromised process from accessing unauthorized files even if run with root privileges. GPO is a Windows administrative tool. AD RBAC maps user access but does not enforce process containment at the OS kernel level. KSM is an invented term.",
+    "id": 1144,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S20",
+    "question": "A web administrator is hardening a web server. When navigating to `/downloads/` without a default index file, the server displays a listing of all files. Which action should the administrator take to resolve this?",
+    "options": [
+      "Enable SSL/TLS inspection.",
+      "Disable directory browsing / directory listing in the server configuration.",
+      "Configure a stateful packet filter on Port 80.",
+      "Implement a reverse proxy."
+    ],
+    "answer": 1,
+    "explanation": "Disabling directory browsing (or directory listing) prevents the web server from displaying directory indexes when a default file (like `index.html`) is missing, hiding sensitive file listings from attackers.",
+    "id": 1145,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A security analyst is hardening a production database server. They notice that the database's default administrator account ('sa' or 'root') is active and uses a weak default password. Which action should they take FIRST?",
+    "options": [
+      "Enable full database field-level encryption.",
+      "Change the default account's password to a strong value or disable the account in favor of custom admin accounts.",
+      "Configure weekly database backups to an offline storage server.",
+      "Install a web application firewall in front of the database port."
+    ],
+    "answer": 1,
+    "explanation": "The FIRST step in hardening default accounts is changing their default passwords to strong, unique values, or disabling default accounts entirely in favor of named, individual administrative accounts.",
+    "id": 1146,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "An IT department is hardening enterprise Windows workstations. The security policy mandates that any guest or default local administrator accounts must be neutralized. Which action is the BEST choice?",
+    "options": [
+      "Delete the local administrator accounts completely.",
+      "Disable the local Guest account and rename/disable the default Administrator account.",
+      "Configure the Guest account with a 3-character PIN.",
+      "Establish a GPO to wipe workstation hard drives weekly."
+    ],
+    "answer": 1,
+    "explanation": "Default local accounts (like Guest and Administrator) are well-known targets. Disabling Guest and renaming/disabling default Administrator accounts reduces the attack surface. Default system accounts often cannot be deleted entirely by design.",
+    "id": 1147,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A security analyst wants to prevent malware from automatically executing on Windows workstations when users insert external USB flash drives. Which registry hardening configuration should the analyst enforce?",
+    "options": [
+      "Enable User Account Control (UAC) prompts.",
+      "Disable Autorun / Autoplay features.",
+      "Configure Full Disk Encryption.",
+      "Disable Windows Defender dynamic signatures."
+    ],
+    "answer": 1,
+    "explanation": "Disabling Autorun/Autoplay features blocks the operating system from automatically launching executable files (like `autorun.inf`) when removable media (USB drives, CDs) are connected, mitigating malware propagation.",
+    "id": 1148,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A cloud administrator is auditing virtual machine security. They want to prevent a compromised virtual machine from exploiting vulnerabilities in the hypervisor to execute code directly on the physical host machine. What specific security threat are they attempting to mitigate?",
+    "options": [
+      "Virtual Machine Escape",
+      "Type 2 Hypervisor Overhead",
+      "Virtualization Desynchronization",
+      "Dynamic Port Hijacking"
+    ],
+    "answer": 0,
+    "explanation": "VM Escape is an exploit where an attacker on a guest virtual machine breaks out of the guest environment and executes commands directly on the host hypervisor or host OS.",
+    "id": 1149,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S20",
+    "question": "A security analyst performs a banner grabbing audit on a public-facing corporate web server. The scan returns the header: `Server: Apache/2.4.41 (Ubuntu) PHP/7.4.3`. What action should the analyst take to harden the server?",
+    "options": [
+      "Disable directory browsing.",
+      "Configure the server to hide version information in HTTP response headers.",
+      "Reinstall the Apache server in a virtual machine.",
+      "Upgrade the server to use IIS."
+    ],
+    "answer": 1,
+    "explanation": "Hiding software version banners in HTTP response headers prevents banner grabbing, reducing the amount of reconnaissance information (such as exact software version numbers) available to potential attackers.",
+    "id": 1150,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A web security administrator is configuring SSL/TLS settings on an enterprise web server. They want to block attacks like BEAST and POODLE by disabling outdated cryptographic protocols and ciphers. Which of the following should they disable?",
+    "options": [
+      "TLS 1.3 and AES-GCM",
+      "SSL v3, TLS 1.0, and RC4 ciphers",
+      "Perfect Forward Secrecy (PFS)",
+      "SHA-256 hashing algorithms"
+    ],
+    "answer": 1,
+    "explanation": "Disabling legacy protocols (SSL v3, TLS 1.0) and weak ciphers (RC4, 3DES) is critical for hardening, as they have known cryptographic vulnerabilities. TLS 1.3, AES-GCM, PFS, and SHA-256 are modern, secure standards.",
+    "id": 1151,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A database administrator wants to prevent database servers from executing operating system commands if a SQL injection vulnerability is exploited. Which database hardening measure is the BEST choice on Microsoft SQL Server?",
+    "options": [
+      "Enabling database field-level encryption",
+      "Disabling the xp_cmdshell extended stored procedure",
+      "Changing the SQL default port from 1433 to 1434",
+      "Configuring transaction log replication"
+    ],
+    "answer": 1,
+    "explanation": "The stored procedure `xp_cmdshell` in MSSQL allows database commands to execute OS commands in the Windows shell. Disabling it blocks attackers from running host commands if they exploit SQL injection.",
+    "id": 1152,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A Linux administrator is comparing security mechanisms. They want to enforce program-specific restriction profiles on a per-executable basis, rather than using system-wide security labeling domains. Which technology should they implement?",
+    "options": [
+      "SELinux",
+      "AppArmor",
+      "TCP Wrappers",
+      "iptables"
+    ],
+    "answer": 1,
+    "explanation": "AppArmor is a Linux kernel security module that uses path-based profiles to restrict capabilities of specific programs (per-executable). SELinux is policy-based and uses security labels across domains. TCP Wrappers filter network traffic. iptables is a firewall.",
+    "id": 1153,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A mobile security administrator wants to enforce mobile device hardening. They require a solution that separates personal apps and data from corporate apps and data on employee-owned devices (BYOD). Which mechanism should they implement?",
+    "options": [
+      "Full Disk Encryption (FDE)",
+      "Containerization / Workspace Isolation",
+      "Remote Wipe capability",
+      "Rooting protection"
+    ],
+    "answer": 1,
+    "explanation": "Containerization creates a secure, encrypted sandbox (container) on the mobile device that isolates corporate applications and data from the user's personal applications, protecting corporate assets on BYOD devices.",
+    "id": 1154,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "An enterprise vendor releases a single, urgent software update designed to fix a newly discovered, critical security vulnerability in their web service. How should this specific update be classified?",
+    "options": [
+      "Service Pack",
+      "Hotfix / Patch",
+      "Rollup Update",
+      "Version Release"
+    ],
+    "answer": 1,
+    "explanation": "A hotfix (or security patch) is a single, targeted update released quickly to resolve a specific software bug or vulnerability. A service pack is a large, cumulative collection of updates and fixes.",
+    "id": 1155,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A system architect wants to protect the boot process of corporate laptops. They want to ensure that the UEFI firmware validates that only trusted, cryptographically signed bootloaders can execute when the machine turns on. Which technology must be enabled?",
+    "options": [
+      "Secure Boot",
+      "BitLocker",
+      "TPM chip",
+      "UEFI Admin Password"
+    ],
+    "answer": 0,
+    "explanation": "Secure Boot is a UEFI feature that validates the digital signature of the bootloader, kernel, and driver files against a database of trusted keys in the firmware before allowing them to run, preventing bootkit malware.",
+    "id": 1156,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S20",
+    "question": "A security engineer is hardening an Apache web server. They want to reduce the server's attack surface by removing legacy capabilities. Which of the following actions should they take?",
+    "options": [
+      "Enable directory listing globally.",
+      "Remove unneeded modules such as mod_dav or mod_cgi.",
+      "Disable HTTPS and rely entirely on HTTP.",
+      "Configure Apache to run as the root user."
+    ],
+    "answer": 1,
+    "explanation": "Removing unused modules (like WebDAV or CGI) reduces the attack surface of the web server by eliminating legacy components that could contain vulnerabilities. Running Apache as root or disabling HTTPS decreases security.",
+    "id": 1157,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A security analyst wants to test an untrusted software utility without risking infection to the local operating system or network. Where should the analyst run this utility?",
+    "options": [
+      "On a public web server",
+      "In a Sandbox / Virtual Machine isolated from the network",
+      "In the system32 directory of a production workstation",
+      "On a backup domain controller"
+    ],
+    "answer": 1,
+    "explanation": "A sandbox (or isolated virtual machine) provides a safe, contained environment to execute untrusted code without allowing it to access or compromise the host system or network.",
+    "id": 1158,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A security auditor recommends upgrading legacy Windows file systems from FAT32 to NTFS. Which of the following is the PRIMARY security benefit of NTFS over FAT32?",
+    "options": [
+      "NTFS supports full disk encryption natively without TPM.",
+      "NTFS supports file and folder-level permissions (ACLs) to restrict access.",
+      "NTFS automatically deletes duplicate files.",
+      "NTFS does not allow remote network connections."
+    ],
+    "answer": 1,
+    "explanation": "The primary security advantage of NTFS is its support for file and folder-level access control lists (ACLs) and security permissions, which are not supported by FAT32.",
+    "id": 1159,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A network security administrator wants to block Responder-style credential harvesting attacks on a local subnet. Which legacy Windows name resolution protocols should the administrator disable?",
+    "options": [
+      "DNS and DHCP",
+      "NetBIOS and LLMNR",
+      "Kerberos and LDAP",
+      "WINS and NTP"
+    ],
+    "answer": 1,
+    "explanation": "Responder attacks exploit legacy broadcast name resolution protocols like NetBIOS and LLMNR (Link-Local Multicast Name Resolution) to spoof hosts and capture credential hashes. Disabling these protocols mitigates this risk.",
+    "id": 1160,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A security engineer configures host-based firewalls on all corporate workstations. The firewalls are configured to block all inbound connections from other workstations on the same LAN segment. What threat is this control designed to prevent?",
+    "options": [
+      "Outbound data exfiltration to the internet",
+      "Horizontal / Lateral movement of attackers within the subnet",
+      "Unauthorized physical access to the local console",
+      "DNS cache poisoning on the router"
+    ],
+    "answer": 1,
+    "explanation": "Host-based firewalls blocking lateral traffic prevent attackers who compromise one workstation from scanning and moving laterally to other workstations on the same local subnet.",
+    "id": 1161,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A compliance auditor requires that all successful and failed user logon attempts must be recorded. Which hardening control should the administrator configure?",
+    "options": [
+      "Log Rotation Depth",
+      "Audit Logging / Logon Auditing Policies",
+      "Account Lockout Thresholds",
+      "Password History Depth"
+    ],
+    "answer": 1,
+    "explanation": "Logon Auditing (or Audit Logging) policies tell the operating system to log events in the security log when logon attempts succeed or fail, providing an audit trail for compliance and analysis.",
+    "id": 1162,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A company wants to secure corporate laptops in case they are physically lost or stolen. The security policy mandates that all data on the hard drive must be unreadable to anyone who removes the drive or tries to boot the laptop without credentials. Which control should be implemented?",
+    "options": [
+      "Access Control Lists (ACLs)",
+      "Full Disk Encryption (FDE)",
+      "Data Masking",
+      "Biometric Login"
+    ],
+    "answer": 1,
+    "explanation": "Full Disk Encryption (FDE, like BitLocker) encrypts the entire hard drive, protecting data at rest if the device is lost, stolen, or the hard drive is extracted.",
+    "id": 1163,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A system administrator is hardening a network printer. The printer has SNMP enabled. Which action should the administrator take FIRST to secure SNMP access?",
+    "options": [
+      "Disable the printer's print queue.",
+      "Change the default SNMP community strings (e.g., 'public', 'private').",
+      "Change the printer's MAC address.",
+      "Enable SSL inspection on the printer's console."
+    ],
+    "answer": 1,
+    "explanation": "The FIRST step to secure SNMP is changing the default community strings (such as 'public' and 'private'), which are well-known defaults that allow attackers to query configuration telemetry.",
+    "id": 1164,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A software company wants to test their web application for hidden buffer overflow vulnerabilities before releasing it. They write a script that sends random, malformed, and extremely large inputs to the application's API endpoints to see if it crashes. What testing technique is this?",
+    "options": [
+      "Static code analysis",
+      "Fuzzing / Fuzz Testing",
+      "Regression Testing",
+      "Vulnerability Scanning"
+    ],
+    "answer": 1,
+    "explanation": "Fuzzing (or fuzz testing) is a dynamic testing technique that feeds random, unexpected, or malformed inputs to an application to identify crashes, memory leaks, and other vulnerabilities.",
+    "id": 1165,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A security engineer is hardening a containerized environment using Docker. They want to minimize the risk of a container breakout compromise affecting the host Linux kernel. Which configuration represents the BEST hardening practice?",
+    "options": [
+      "Run the container processes with root privileges.",
+      "Run container processes as a non-root user and keep the host OS patched.",
+      "Disable Docker log collection.",
+      "Expose the Docker socket (`/var/run/docker.sock`) directly to all containers."
+    ],
+    "answer": 1,
+    "explanation": "Running containers as non-root users limits their capabilities if compromised, and keeping the host kernel patched mitigates container breakout exploits. Exposing the Docker socket grants full control over the host.",
+    "id": 1166,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A security manager is hardening a server room. They want to monitor changes to system binaries on critical servers in real time. They deploy an agent on each server that monitors file integrity hashes. What type of solution did they implement?",
+    "options": [
+      "Network IDS (NIDS)",
+      "Host-based IDS (HIDS)",
+      "Unified Threat Management (UTM)",
+      "Stateful Firewall"
+    ],
+    "answer": 1,
+    "explanation": "A Host-based IDS (HIDS) runs on individual systems to monitor host activity, local log files, and system file integrity (often via file integrity monitoring or FIM).",
+    "id": 1167,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "An IT policy requires that employees must not be allowed to copy corporate files to personal USB flash drives. Which hardening control should be configured via Active Directory?",
+    "options": [
+      "Full Disk Encryption policies",
+      "USB Write Block / Removable Storage Access Restrictions GPO",
+      "User Account Control (UAC) GPO",
+      "Account Lockout GPO"
+    ],
+    "answer": 1,
+    "explanation": "A Group Policy Object (GPO) restricting removable storage access can block write access to USB drives across all domain-joined computers, preventing data loss.",
+    "id": 1168,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A secure bootloader verifies the digital signature of the OS kernel against a public key stored in the UEFI firmware's Secure Boot database. Which security goal does this process achieve?",
+    "options": [
+      "Confidentiality of the OS kernel files",
+      "Integrity and authenticity of the boot sequence",
+      "High availability of the boot partition",
+      "Non-repudiation of user logins"
+    ],
+    "answer": 1,
+    "explanation": "Verifying digital signatures against a trusted key database checks the Integrity and Authenticity of the kernel files to ensure they have not been tampered with or replaced by malware.",
+    "id": 1169,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S20",
+    "question": "A security analyst is auditing an organization's system configurations. They find that support technicians frequently configure temporary web applications on production servers but forget to delete them. What is this security risk called?",
+    "options": [
+      "Configuration Drift",
+      "Directory Traversal",
+      "Privilege Creep",
+      "DLL Injection"
+    ],
+    "answer": 0,
+    "explanation": "Configuration Drift is the phenomenon where systems deviate from their original secure baseline configurations over time due to ad-hoc, undocumented manual changes.",
+    "id": 1170,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S21",
+    "question": "An organization is planning a wireless network deployment in its new administrative headquarters. To satisfy physical security requirements, the network architect wants to prevent the wireless signal from easily leaking into the exterior parking lot while maximizing coverage indoors. Which of the following is the BEST approach?",
+    "options": [
+      "Increase the transmission power of WAPs located near windows to block external connections.",
+      "Place WAPs in central locations and mount directional antennas facing inward on exterior walls.",
+      "Configure all office WAPs to operate exclusively on overlapping channels in the 2.4 GHz band.",
+      "Install a Radio Frequency Perimeter Isolator (RFPI) around the building facade."
+    ],
+    "answer": 1,
+    "explanation": "The critical modifier BEST balances internal performance with security. Central placement distances the signal source from external boundaries, while directional antennas on exterior walls focus signal propagation inward, reducing spillover. Increasing transmit power exacerbates signal leakage. Operating on overlapping channels degrades performance due to interference. RFPI is an invented term.",
+    "id": 1171,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A security administrator receives reports that customers are receiving phishing emails that spoof the company's official domain name. The administrator wants to implement a DNS-based defense that lists the authorized mail servers allowed to send messages on behalf of the domain. Which DNS record should they configure FIRST?",
+    "options": [
+      "A Sender Policy Framework (SPF) record",
+      "A DomainKeys Identified Mail (DKIM) record",
+      "A Domain Name System Security Extensions (DNSSEC) record",
+      "A Mail Validation Token (MVT) record"
+    ],
+    "answer": 0,
+    "explanation": "The modifier FIRST points to the base DNS record that lists authorized sender IPs. An SPF record publishes the list of authorized outgoing mail servers. DKIM adds digital signatures to email headers but does not list IP addresses directly. DNSSEC validates DNS records against tampering but does not verify email sender origins. MVT is an invented term.",
+    "id": 1172,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst evaluates an endpoint protection solution to detect and mitigate zero-day ransomware attacks. The tool must analyze host behavior in real time, automatically isolate compromised devices from the network, and collect forensic telemetry. Which solution meets these requirements?",
+    "options": [
+      "Traditional signature-based antivirus",
+      "Network Access Control (NAC)",
+      "Host Endpoint Shield (HES)",
+      "Endpoint Detection and Response (EDR)"
+    ],
+    "answer": 3,
+    "explanation": "EDR (Endpoint Detection and Response) monitors host behavior in real time to detect anomalies and zero-day threats, provides automated isolation capability, and facilitates forensic analysis. Signature antivirus relies on known malware files. NAC controls network admission based on host compliance posture rather than continuous runtime process execution. HES is an invented term.",
+    "id": 1173,
+    "correctAnswer": 3
+  },
+  {
+    "section": "S21",
+    "question": "An enterprise updates its wireless access points to the WPA3 standard. The security architect explains that this upgrade will prevent attackers from performing offline dictionary attacks after capturing the initial handshake. Which cryptographic mechanism in WPA3 provides this protection?",
+    "options": [
+      "Temporal Key Integrity Protocol (TKIP)",
+      "Simultaneous Authentication of Equals (SAE)",
+      "Wired Equivalent Privacy (WEP)",
+      "Advanced Handshake Integrity Protocol (AHIP)"
+    ],
+    "answer": 1,
+    "explanation": "WPA3 replaces the vulnerable four-way handshake of WPA2 with Simultaneous Authentication of Equals (SAE) for key establishment. SAE uses an exchange that is resistant to passive interception, mitigating offline dictionary attacks and providing forward secrecy. TKIP and WEP are legacy protocols. AHIP is an invented term.",
+    "id": 1174,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "An organization wants to configure a DNS-based email policy that instructs receiving mail servers to reject emails that fail SPF or DKIM checks, and send XML reports containing verification details back to the domain owner. Which record must they configure?",
+    "options": [
+      "A DMARC TXT record with a policy of 'reject'",
+      "An SPF record with a '~all' parameter",
+      "A DKIM record containing the public key",
+      "A Mail Verification Conformance (MVC) record"
+    ],
+    "answer": 0,
+    "explanation": "DMARC (Domain-based Message Authentication, Reporting, and Conformance) coordinates SPF and DKIM, defines policies (none, quarantine, reject) for validation failures, and provides XML reporting. An SPF record with '~all' is a soft fail. DKIM contains public keys but does not define reporting. MVC is an invented term.",
+    "id": 1175,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S21",
+    "question": "A security engineer is configuring a DNS-based email validation system. They want to enable a mechanism that adds a cryptographic digital signature to the headers of outgoing emails to verify that the message content has not been tampered with in transit. What should they configure?",
+    "options": [
+      "Sender Policy Framework (SPF)",
+      "DomainKeys Identified Mail (DKIM)",
+      "DMARC quarantine policy",
+      "Pretty Good Privacy (PGP)"
+    ],
+    "answer": 1,
+    "explanation": "DKIM (DomainKeys Identified Mail) uses public-key cryptography to add a digital signature to email headers, allowing receiving servers to verify email authenticity and integrity. SPF lists authorized sender IPs. DMARC defines policies. PGP is for end-to-end user encryption rather than domain-level DNS signatures.",
+    "id": 1176,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A large enterprise security team wants to correlate telemetry across their endpoints, cloud workloads, email platforms, and network firewalls using a single, unified security platform. Which class of security solution should they deploy?",
+    "options": [
+      "Endpoint Detection and Response (EDR)",
+      "Extended Detection and Response (XDR)",
+      "Security Information Event Multiplier (SIEM)",
+      "Threat Intel Gateway (TIG)"
+    ],
+    "answer": 1,
+    "explanation": "XDR (Extended Detection and Response) extends endpoint detection (EDR) capabilities by integrating data across multiple security layers (endpoints, cloud, network, email) into a unified system. SIEM aggregates logs but does not natively provide active correlation and response platforms. TIG is an invented term.",
+    "id": 1177,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A network technician discovers an unauthorized wireless access point plugged into a wall port in the corporate cafeteria. The device is broadcasting the corporate SSID to intercept client credentials. How should this threat be classified?",
+    "options": [
+      "Evil Twin",
+      "Rogue Access Point",
+      "Watering Hole",
+      "RF Jammer"
+    ],
+    "answer": 1,
+    "explanation": "A Rogue Access Point is any unauthorized access point connected directly to the corporate network interface. An Evil Twin is a rogue AP configured to mimic a legitimate wireless network SSID but might not be connected to the target network.",
+    "id": 1178,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "An attacker sets up a wireless access point near a corporate office, broadcasting the SSID 'Corporate_Wifi_Guest' (matching the company's guest network name) to trick employees into connecting to it. What type of attack is this?",
+    "options": [
+      "Rogue Access Point",
+      "Evil Twin",
+      "Bluejacking",
+      "IV Collision"
+    ],
+    "answer": 1,
+    "explanation": "An Evil Twin is an unauthorized wireless access point that mimics the SSID of a legitimate network to lure clients into connecting for eavesdropping or credential harvesting.",
+    "id": 1179,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A network team wants to optimize the placement of WAPs in a new three-story office building. They want to map signal coverage, identify dead zones, and estimate RF leakage outside the building facade. Which tool should they use?",
+    "options": [
+      "Wi-Fi Heatmap utility / Site Survey tool",
+      "Protocol Analyzer",
+      "Spectrum Analyzer",
+      "RF Jammer"
+    ],
+    "answer": 0,
+    "explanation": "A Wi-Fi Heatmap utility or site survey tool maps wireless signal propagation, helping architects position WAPs, optimize coverage, and identify signal leakage. Protocol analyzers capture packets. Spectrum analyzers measure raw RF signals. Jammers block signals.",
+    "id": 1180,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S21",
+    "question": "An administrator disables SSID broadcasting on all corporate wireless access points. Which statement describes the security value of this configuration?",
+    "options": [
+      "It encrypts the wireless beacon frames using AES.",
+      "It provides security by obscurity, but attackers can easily identify the SSID using passive wireless sniffing tools.",
+      "It completely prevents unauthorized devices from joining the network.",
+      "It restricts wireless coverage to the physical building boundary."
+    ],
+    "answer": 1,
+    "explanation": "Disabling SSID broadcasting stops WAPs from sending their name in beacon frames, providing basic security by obscurity. However, the SSID is still transmitted in cleartext association frames, and attackers can easily discover it using passive sniffers.",
+    "id": 1181,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst is investigating a wireless attack. An attacker captured wireless association frames and used offline tools to attempt to crack the pre-shared key by running a dictionary list against the WPA2 handshake. What vulnerability is the attacker exploiting?",
+    "options": [
+      "The 4-way handshake vulnerability of WPA2",
+      "RC4 Initialization Vector (IV) collisions",
+      "Lack of AES encryption in WPA2 Enterprise",
+      "SSO certificate trust flaws"
+    ],
+    "answer": 0,
+    "explanation": "WPA2 relies on a 4-way handshake for key exchange. An attacker can capture this handshake (via sniffing or deauthentication attacks) and perform offline dictionary attacks to crack the password. RC4 IV collisions affect legacy WEP, not WPA2.",
+    "id": 1182,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S21",
+    "question": "A guest connects to a hotel wireless network. When they attempt to browse the internet, they are immediately redirected to a web page asking them to accept the terms of service and enter their email address before access is granted. What network technology is being used?",
+    "options": [
+      "Network Access Control (NAC)",
+      "Captive Portal",
+      "802.1X Authentication Server",
+      "WPA3 Enterprise Gateway"
+    ],
+    "answer": 1,
+    "explanation": "A Captive Portal is a web page that forces HTTP users on a network to authenticate, accept terms, or complete a registration before obtaining internet access.",
+    "id": 1183,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A security architect is updating the wireless security policy. They specify that the encryption algorithm used must provide Authenticated Encryption with Associated Data (AEAD) to ensure both confidentiality and integrity of wireless frames. Which protocol and cipher combination should they require?",
+    "options": [
+      "WEP with RC4",
+      "WPA2 with TKIP",
+      "WPA3 with AES-GCM (Galois/Counter Mode)",
+      "WPA2 with WEP-Wrapper"
+    ],
+    "answer": 2,
+    "explanation": "WPA3 implements AES-GCM (Galois/Counter Mode) or GCMP, which is an AEAD cipher providing high-performance encryption and built-in integrity validation. WEP RC4 and WPA2 TKIP are insecure legacy ciphers.",
+    "id": 1184,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S21",
+    "question": "A security administrator wants to implement a secure email gateway (SEG) to filter incoming traffic. Which of the following represents the PRIMARY function of a secure email gateway?",
+    "options": [
+      "Encrypting database tables locally",
+      "Filtering spam, phishing links, and malware attachments at the network boundary",
+      "Generating user certificates for S/MIME",
+      "Enforcing geofencing rules for remote workers"
+    ],
+    "answer": 1,
+    "explanation": "A Secure Email Gateway (SEG) is an email security solution that analyzes inbound and outbound emails to block spam, phishing attempts, malware attachments, and policy violations.",
+    "id": 1185,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "An executive wants to exchange sensitive emails with a business partner in a way that guarantees end-to-end confidentiality and non-repudiation of the sender. Both organizations possess an internal Public Key Infrastructure (PKI). Which standard should the executive use?",
+    "options": [
+      "Sender Policy Framework (SPF)",
+      "S/MIME (Secure/Multipurpose Internet Mail Extensions)",
+      "DomainKeys Identified Mail (DKIM)",
+      "TLS email relaying"
+    ],
+    "answer": 1,
+    "explanation": "S/MIME uses PKI certificates to digitally sign and encrypt email messages at the application layer, ensuring end-to-end confidentiality, authenticity, and non-repudiation. SPF and DKIM protect domains at the DNS level. TLS relays secure transport but does not provide end-to-end message-level signing.",
+    "id": 1186,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A system administrator wants to secure outgoing email communications from corporate users. They want to sign all corporate messages digitally to prove they originate from the organization, but do NOT need to encrypt the body contents. Which standard is the BEST choice?",
+    "options": [
+      "S/MIME signing",
+      "PGP encryption",
+      "SPF record enforcement",
+      "IPsec Transport Mode"
+    ],
+    "answer": 0,
+    "explanation": "S/MIME supports digital signing without encryption. This signs the message using the sender's private key, proving authenticity and message integrity to the recipient. PGP is for peer-to-peer encryption. SPF validates domains, not individual messages.",
+    "id": 1187,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S21",
+    "question": "An attacker targets a home wireless router. The router has Wi-Fi Protected Setup (WPS) enabled. How does the attacker exploit this setting to gain unauthorized access to the network?",
+    "options": [
+      "By capturing WPA3 SAE handshakes",
+      "By brute-forcing the 8-digit WPS PIN to retrieve the wireless WPA2 password",
+      "By performing a dictionary attack on the HTTP console",
+      "By spoofing the router's DNS server IP"
+    ],
+    "answer": 1,
+    "explanation": "WPS allows quick connection using an 8-digit PIN. Attackers can exploit WPS design flaws to brute-force this PIN in a few hours, retrieving the underlying WPA2 pre-shared password.",
+    "id": 1188,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst is investigating a wireless performance issue. They find that an attacker is flooding the local area with high-power RF noise in the 2.4 GHz band, preventing wireless devices from associating with any WAPs. What type of attack is occurring?",
+    "options": [
+      "Deauthentication Attack",
+      "RF Jamming / Denial of Service",
+      "Evil Twin attack",
+      "Man-in-the-Middle"
+    ],
+    "answer": 1,
+    "explanation": "RF Jamming is a physical-layer Denial of Service attack where the attacker floods the wireless frequencies with radio frequency noise, disrupting communications. Deauthentication is a protocol-layer attack.",
+    "id": 1189,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "An analyst wants to investigate a suspicious email. The email claims to be from a business partner but contains a SPF soft fail header and a failed DKIM signature validation. Which security component in the email gateway flagged this mismatch?",
+    "options": [
+      "S/MIME decryptor",
+      "DMARC verification engine",
+      "Anti-Spam reputation filter",
+      "WAF inspector"
+    ],
+    "answer": 1,
+    "explanation": "DMARC verifies that the sender domain matches the SPF and DKIM validations. When they fail or mismatch, DMARC flags the verification failure and applies the domain owner's reporting/policy settings.",
+    "id": 1190,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "An administrator wants to deploy an endpoint agent that is capable of automatically disconnecting a workstation from the local network if it detects ransomware process activity, preventing the ransomware from spreading to network shares. What solution should they implement?",
+    "options": [
+      "Host Intrusion Detection System (HIDS)",
+      "Endpoint Detection and Response (EDR)",
+      "Traditional Antivirus",
+      "Group Policy Object"
+    ],
+    "answer": 1,
+    "explanation": "EDR (Endpoint Detection and Response) agents monitor process behavior and contain active isolation/containment capabilities, enabling them to isolate compromised hosts from the network automatically when malicious behavior is detected.",
+    "id": 1191,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A network security architect wants to configure 802.1X wireless authentication. The architect requires both the authentication server and the client endpoints to validate each other's identities using digital certificates. Which EAP protocol must they choose?",
+    "options": [
+      "PEAP",
+      "EAP-TLS",
+      "EAP-FAST",
+      "EAP-TTLS"
+    ],
+    "answer": 1,
+    "explanation": "EAP-TLS (EAP Transport Layer Security) is the standard that requires digital certificates on both the client endpoints and the authentication server for mutual cryptographic authentication. PEAP and EAP-TTLS only require server-side certificates.",
+    "id": 1192,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst reviews a DMARC policy record: `v=DMARC1; p=quarantine; pct=100; rua=mailto:dmarc@company.com`. What policy action does `p=quarantine` recommend to receiving mail servers?",
+    "options": [
+      "Accept all failed emails but send reports to the specified address.",
+      "Deliver emails that fail validation to the recipient's spam/junk folder.",
+      "Block and reject all failed emails at the gateway.",
+      "Decrypt the S/MIME signatures automatically."
+    ],
+    "answer": 1,
+    "explanation": "The DMARC policy `quarantine` directs receiving servers to flag emails that fail verification as suspicious (e.g., placing them in the spam/junk folder). The policy `reject` blocks them. The policy `none` allows delivery but gathers reports.",
+    "id": 1193,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "An attacker targets a corporate Wi-Fi client. The attacker sends spoofed management frames to the client device, pretending to be the access point, instructing the client to disconnect immediately. The attacker hopes to capture the handshake when the client reconnects. What type of attack is this?",
+    "options": [
+      "IV Collision Attack",
+      "Deauthentication Attack",
+      "WPS PIN brute-force",
+      "RF Jamming"
+    ],
+    "answer": 1,
+    "explanation": "A deauthentication attack is a protocol-level attack where the attacker sends spoofed deauth frames to force a client to disconnect from the access point, exposing them to handshake capture or evil twin attacks.",
+    "id": 1194,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst wants to verify who is sending emails using their corporate domain. They receive DMARC XML reports weekly. What information do these reports primarily contain?",
+    "options": [
+      "The plaintext body content of all outgoing corporate emails",
+      "The IP addresses of servers sending emails claiming to be from the domain, and their SPF/DKIM verification status",
+      "The passwords of users who sent failed emails",
+      "The network routing diagrams of the email relays"
+    ],
+    "answer": 1,
+    "explanation": "DMARC reports contain aggregate statistics about email traffic originating from the domain, detailing the sender IP addresses, email volumes, and whether the emails passed SPF and DKIM validation checks.",
+    "id": 1195,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "An organization wants to encrypt all email traffic between their offices and their business partners. Both organizations use cloud-based email services. Which protocol should they configure on their mail gateways to secure email transport?",
+    "options": [
+      "S/MIME",
+      "Opportunistic / Forced TLS (Transport Layer Security)",
+      "DKIM",
+      "Syslog Secure"
+    ],
+    "answer": 1,
+    "explanation": "Forced TLS (or SMTP over TLS) secures the communication channel (transport layer) between email servers, ensuring that all emails sent between the gateways are encrypted in transit. S/MIME is for message-level encryption.",
+    "id": 1196,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A security administrator is configuring a corporate wireless network. To comply with security standards, the administrator wants to implement WPA3. Which encryption protocol does WPA3 use to protect data frames?",
+    "options": [
+      "RC4 with TKIP",
+      "AES-CCMP",
+      "AES-GCMP (Galois/Counter Mode Protocol)",
+      "WEP-AEAD"
+    ],
+    "answer": 2,
+    "explanation": "WPA3 uses AES-GCMP (Galois/Counter Mode Protocol) for data encryption, which is more secure and efficient than the AES-CCMP protocol used in WPA2. WEP and TKIP are legacy, insecure protocols.",
+    "id": 1197,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S21",
+    "question": "A security engineer is deploying a Secure Email Gateway (SEG). The engineer wants to ensure that the SEG scans all incoming attachments in a secure virtual environment to detect zero-day malware before delivering the email. What feature is this?",
+    "options": [
+      "Email Hashing",
+      "Attachment Sandboxing",
+      "DKIM Signing",
+      "SMTP TLS forcing"
+    ],
+    "answer": 1,
+    "explanation": "Attachment sandboxing executes suspicious email attachments in an isolated virtual environment (sandbox) to observe their behavior, detecting zero-day threats that traditional signatures miss.",
+    "id": 1198,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A security analyst wants to implement a solution to monitor all corporate endpoints for indicators of compromise (IOCs). The solution must collect detailed process histories, network connection logs, and file changes, storing them in a central cloud console for threat hunting. Which solution is the BEST choice?",
+    "options": [
+      "Traditional Host-based Firewall",
+      "Endpoint Detection and Response (EDR)",
+      "Network Access Control (NAC) Agent",
+      "Basic Antivirus"
+    ],
+    "answer": 1,
+    "explanation": "EDR solutions provide continuous endpoint monitoring, collecting and storing granular telemetry (processes, files, network data) to aid in threat detection, investigation, and threat hunting.",
+    "id": 1199,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S21",
+    "question": "A network architect is designing a wireless LAN deployment. To prevent unauthorized devices from accessing the corporate network, the architect wants to implement port-based authentication that blocks switch ports until client credentials are validated against a central RADIUS server. Which standard is this?",
+    "options": [
+      "802.11ac",
+      "802.1X",
+      "802.3af",
+      "WPA3-Personal"
+    ],
+    "answer": 1,
+    "explanation": "802.1X is an IEEE standard for port-based Network Access Control (PNAC), providing authentication for devices attempting to connect to a LAN or WLAN through switch ports or access points.",
+    "id": 1200,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A security officer plans an internal vulnerability scan to audit the patch levels and configuration settings of several production databases. To minimize network overhead and ensure a low false-positive rate, which scanning approach should the officer select?",
+    "options": [
+      "A non-credentialed scan",
+      "A passive network capture scan",
+      "A credentialed scan",
+      "A black-box port sweep"
+    ],
+    "answer": 2,
+    "explanation": "A credentialed scan logs directly into target hosts using valid credentials, enabling precise checks of the registry, package configurations, and patch directories with minimal network traffic and a low false-positive rate. Non-credentialed scans inspect systems externally, causing more network traffic and higher false-positive rates. Passive capture cannot check local configuration details. Port sweeps only identify open ports, not vulnerability details.",
+    "id": 1201,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability report identifies a critical remote code execution vulnerability in a company's web-based ERP system. Because the ERP contains highly customized legacy code, the software vendor estimates it will take three months to deliver a safe patch. To reduce the likelihood of exploitation immediately without shutting down the service, the IT team implements restrictive firewall rules and deploys a WAF in front of the ERP. Which risk management strategy does this action represent?",
+    "options": [
+      "Risk Mitigation",
+      "Risk Avoidance",
+      "Risk Transference",
+      "Vulnerability Deflection"
+    ],
+    "answer": 0,
+    "explanation": "Risk Mitigation involves applying technical controls or compensating measures (like firewall rules and WAFs) to reduce the likelihood or impact of a threat when a vulnerability cannot be permanently fixed (patched) immediately. Risk avoidance would require decommissioning the ERP system. Risk transference shifts the liability to a third party (like insurance). Vulnerability deflection is an invented term.",
+    "id": 1202,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst reviews the following CVSS v3 vector string for a newly published vulnerability: `CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H`. What information does the metric `AV:N` convey about the vulnerability's exploitability?",
+    "options": [
+      "The attacker must possess network-level credentials before exploiting the vulnerability (Normal).",
+      "The vulnerability can only be exploited if the victim performs an interactive network action (Neighbor).",
+      "The attack can be executed remotely over a network connection without requiring physical or local access (Network).",
+      "The attack requires the target system to be located within an isolated private network (Null)."
+    ],
+    "answer": 2,
+    "explanation": "The AV (Attack Vector) metric in CVSS defines the logical or physical path required to exploit a vulnerability. The value `N` (Network) indicates the vulnerability is exploitable remotely over a network interface without local or physical console access. The other options describe incorrect parameter definitions or metrics.",
+    "id": 1203,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S22",
+    "question": "An independent security researcher discovers a critical authentication bypass vulnerability in a router vendor's firmware. The researcher sends the technical details confidentially to the vendor, giving them 90 days to create and deploy a patch before public release. What ethical disclosure practice is this?",
+    "options": [
+      "Bug Bounty Program",
+      "Full Disclosure",
+      "Ethical Patching Alliance (EPA)",
+      "Responsible / Coordinated Disclosure"
+    ],
+    "answer": 3,
+    "explanation": "Responsible (or Coordinated) Disclosure is the practice of reporting software vulnerabilities privately to the vendor to give them time to address the issue before it is made public. Bug bounty programs are formal incentive structures, but the coordinated disclosure practice itself is called responsible disclosure. Full disclosure immediately publishes details without notifying the vendor first. EPA is an invented term.",
+    "id": 1204,
+    "correctAnswer": 3
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability scan report highlights a critical vulnerability with a CVSS v3 score of 9.2. How should this vulnerability severity be classified?",
+    "options": [
+      "Medium",
+      "High",
+      "Critical",
+      "Extreme"
+    ],
+    "answer": 2,
+    "explanation": "According to CVSS v3 severity ratings: scores between 0.1-3.9 are Low, 4.0-6.9 are Medium, 7.0-8.9 are High, and 9.0-10.0 are Critical. A score of 9.2 is Critical.",
+    "id": 1205,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability scanner flags a production server as vulnerable to an old exploit because the OS kernel version matches the vulnerable version range. However, the system administrator verifies that the security patch was backported by the OS distributor, rendering the exploit useless. What type of scan result is this?",
+    "options": [
+      "False Positive",
+      "True Positive",
+      "False Negative",
+      "True Negative"
+    ],
+    "answer": 0,
+    "explanation": "A False Positive occurs when a security scanner incorrectly reports a vulnerability that does not actually exist or is already mitigated. In this case, the backported patch makes the report a false positive.",
+    "id": 1206,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst wants to gather vulnerability telemetry across the network without generating probe traffic or risking application crashes on critical hosts. Which scanning method should the analyst select?",
+    "options": [
+      "Credentialed active scanning",
+      "Passive vulnerability scanning",
+      "Non-credentialed active scanning",
+      "Fuzz testing sweep"
+    ],
+    "answer": 1,
+    "explanation": "Passive vulnerability scanning monitors network traffic (headers, packet exchanges) to identify active services, operating systems, and potential vulnerabilities without actively probing or sending packets to the target hosts, avoiding impact risks. Active scanning sends probes.",
+    "id": 1207,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "An analyst is investigating a newly released vulnerability. They want to check details using a database that lists standardized identifiers, descriptions, and dictionary definitions of public vulnerabilities. Which database should they reference?",
+    "options": [
+      "National Vulnerability Database (NVD)",
+      "CVE (Common Vulnerabilities and Exposures)",
+      "CVSS Severity Feed",
+      "Security Information Exchange (SIE)"
+    ],
+    "answer": 1,
+    "explanation": "CVE (Common Vulnerabilities and Exposures) is a standardized dictionary of publicly known cybersecurity vulnerabilities, providing a unique ID (CVE-YYYY-XXXXX) and description for each flaw. NVD is built on CVE and provides scoring.",
+    "id": 1208,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A company performs a risk assessment on a legacy database server. Remediation costs $50,000, while the maximum potential loss from exploitation is estimated at $2,000. Management decides to log the risk in the register and take no further security actions. Which risk strategy is this?",
+    "options": [
+      "Risk Mitigation",
+      "Risk Transference",
+      "Risk Acceptance",
+      "Risk Avoidance"
+    ],
+    "answer": 2,
+    "explanation": "Risk Acceptance is a risk strategy where management decides to acknowledge the risk and take no active steps to resolve it, typically because the cost of remediation exceeds the potential impact of the threat.",
+    "id": 1209,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S22",
+    "question": "An organization wants to protect itself against the financial impact of a potential ransomware attack. They purchase a comprehensive cybersecurity insurance policy from an underwriting firm. Which risk management strategy does this represent?",
+    "options": [
+      "Risk Avoidance",
+      "Risk Transference",
+      "Risk Mitigation",
+      "Risk Acceptance"
+    ],
+    "answer": 1,
+    "explanation": "Risk Transference shifts the financial risk or liability associated with a threat to a third party (such as an insurance company or an outsourced service provider).",
+    "id": 1210,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A security auditor identifies a legacy file sharing protocol active on a company intranet. Because the protocol has multiple critical vulnerabilities that cannot be patched, management decides to shut down the server permanently. Which risk strategy does this represent?",
+    "options": [
+      "Risk Mitigation",
+      "Risk Acceptance",
+      "Risk Transference",
+      "Risk Avoidance"
+    ],
+    "answer": 3,
+    "explanation": "Risk Avoidance is a strategy where an organization completely eliminates the risk by removing the asset, disabling the vulnerable service, or shutting down the system entirely.",
+    "id": 1211,
+    "correctAnswer": 3
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst reviews a CVSS v3 score. The metric `AC:H` is present. What does this metric tell the analyst about the vulnerability's exploitability?",
+    "options": [
+      "The exploit requires the attacker to possess administrator privileges.",
+      "The attack complexity is high, requiring specialized conditions or timing to succeed.",
+      "The attacker must be physically near the target switch.",
+      "The attack can be automated using basic scripts."
+    ],
+    "answer": 1,
+    "explanation": "The AC (Attack Complexity) metric measures the level of control or specific conditions required to exploit the vulnerability. `AC:H` (High) indicates that successful exploitation requires specialized conditions that are not easily replicated (such as race conditions or timing windows).",
+    "id": 1212,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability details page indicates that the CVSS v3 metric `PR:H` is required. What privilege requirement must an attacker satisfy to exploit this vulnerability?",
+    "options": [
+      "No authentication is required.",
+      "The attacker must possess low-privileged user access.",
+      "The attacker must possess high-privileged or administrative access.",
+      "The victim must interact with a malicious email link."
+    ],
+    "answer": 2,
+    "explanation": "The PR (Privileges Required) metric defines the level of privileges an attacker must possess before exploiting the vulnerability. `PR:H` (High) requires administrative or superuser access. `PR:L` requires standard user access. `PR:N` requires no privileges.",
+    "id": 1213,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S22",
+    "question": "A vulnerability requires a user to open a malicious spreadsheet attachment in their local email client to trigger an execution exploit. How should the CVSS v3 User Interaction (UI) metric be classified?",
+    "options": [
+      "UI:N (None)",
+      "UI:R (Required)",
+      "UI:L (Low)",
+      "UI:A (Active)"
+    ],
+    "answer": 1,
+    "explanation": "The UI (User Interaction) metric indicates if a victim must perform some action to trigger the exploit. Because the user must actively open the spreadsheet file, the metric is `UI:R` (Required). `UI:N` (None) is for automated exploits.",
+    "id": 1214,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "An attacker exploits a vulnerability in a web browser's sandboxed layout engine to execute arbitrary operating system commands directly on the host host. In CVSS v3, how is this transition represented?",
+    "options": [
+      "Scope: Unchanged (S:U)",
+      "Scope: Changed (S:C)",
+      "Attack Vector: Local (AV:L)",
+      "Privileges Required: High (PR:H)"
+    ],
+    "answer": 1,
+    "explanation": "In CVSS v3, the Scope (S) metric measures if a vulnerability in one software component affects resources managed by other security authorities. Breaking out of a browser sandbox to the host OS represents a Scope Change (`S:C`).",
+    "id": 1215,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "An enterprise SIEM automatically correlates audit logs from domain controllers against a real-time vulnerability feed. The feed updates the SIEM whenever a new CVE matching the active database software versions is published. What security capability is this?",
+    "options": [
+      "Vulnerability feed integration / Threat intelligence parsing",
+      "Dynamic application security testing (DAST)",
+      "Static code compilation scanning",
+      "Manual penetration testing"
+    ],
+    "answer": 0,
+    "explanation": "Integrating real-time vulnerability feeds (like CVE/NVD feeds) into a SIEM allows security teams to correlate asset catalogs and log telemetry automatically with newly disclosed threat definitions.",
+    "id": 1216,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S22",
+    "question": "An IT department receives a monthly security patch update from their operating system vendor. To prevent the patches from causing operational disruptions, what should the patch management policy require?",
+    "options": [
+      "Deploying the patches immediately to all production servers during business hours.",
+      "Testing patches in a non-production staging environment before deploying to production.",
+      "Disabling automatic updates permanently on all servers.",
+      "Re-licensing the software under an open-source agreement."
+    ],
+    "answer": 1,
+    "explanation": "A robust patch management process mandates testing updates in a staging/testing environment first to verify they do not introduce stability issues or break applications, before executing production deployment.",
+    "id": 1217,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst is prioritizing patch deployments. They find a vulnerability in their web portal that has a CVSS v3 score of 7.5 (High), but it has no known public exploits. They find another vulnerability in an internal server with a CVSS v3 score of 5.5 (Medium), but threat intelligence indicates it is actively being exploited in the wild. Which patch should the analyst apply FIRST?",
+    "options": [
+      "The portal patch, because its CVSS v3 score is higher.",
+      "The internal server patch, because active exploitation in the wild increases real-world risk.",
+      "Neither, because both are below the critical threshold.",
+      "Apply both simultaneously without testing."
+    ],
+    "answer": 1,
+    "explanation": "Vulnerability prioritization should consider active exploitation in the wild (threat intelligence) in addition to base CVSS scores. An actively exploited vulnerability represents immediate risk, making it the priority for remediation.",
+    "id": 1218,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A network security administrator schedules a comprehensive network vulnerability scan. To minimize operational impact, when should the administrator configure the scan to run?",
+    "options": [
+      "During peak business hours to capture full user traffic",
+      "During designated off-peak hours or maintenance windows",
+      "Immediately after database replication tasks start",
+      "At random times throughout the day"
+    ],
+    "answer": 1,
+    "explanation": "Active vulnerability scans generate probe traffic and CPU load. Scheduling scans during off-peak hours or maintenance windows minimizes the risk of network congestion or application outages affecting business operations.",
+    "id": 1219,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A security team is classifying organization systems for a vulnerability remediation plan. Which asset should be assigned the highest criticality rating?",
+    "options": [
+      "A receptionist's local workstation",
+      "A customer-facing web portal database server holding PII",
+      "A development sandbox server running test applications",
+      "An offline training lab laptop"
+    ],
+    "answer": 1,
+    "explanation": "Systems holding sensitive data (like PII or financial data) or hosting public-facing services represent the highest business impact if compromised, and should receive the highest asset criticality ratings.",
+    "id": 1220,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A software vendor establishes a program where external security researchers are legally permitted to discover vulnerabilities in the vendor's application and report them privately in exchange for financial rewards. What is this program called?",
+    "options": [
+      "Bug Bounty Program",
+      "Full Disclosure Campaign",
+      "Vulnerability Audit Registry",
+      "Responsible Sourcing Portal"
+    ],
+    "answer": 0,
+    "explanation": "A Bug Bounty Program is a structured program offering recognition and cash rewards (bounties) to security researchers who discover and report vulnerabilities privately to the organization.",
+    "id": 1221,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S22",
+    "question": "A security researcher discovers a critical vulnerability in a web server software package. The researcher immediately publishes the exploit code and technical details on a public social media forum without notifying the vendor first. What disclosure model does this represent?",
+    "options": [
+      "Responsible Disclosure",
+      "Full Disclosure",
+      "Coordinated Disclosure",
+      "Private Bounty disclosure"
+    ],
+    "answer": 1,
+    "explanation": "Full Disclosure is the practice of publishing vulnerability details and exploit code to the public immediately, without giving the software vendor prior warning or time to release a patch.",
+    "id": 1222,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A security administrator conducts a vulnerability scan and selects an anonymous, non-credentialed scan configuration. Which of the following represents the PRIMARY benefit of this scanning approach?",
+    "options": [
+      "It has a lower false-positive rate than a credentialed scan.",
+      "It shows the target systems exactly as an external, unauthenticated attacker would see them.",
+      "It provides full access to local server registry keys.",
+      "It does not generate any network traffic."
+    ],
+    "answer": 1,
+    "explanation": "Non-credentialed scans do not log into the host. They probe external ports and banners, providing an accurate representation of what an external, unauthenticated attacker can discover from the outside.",
+    "id": 1223,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A corporate policy mandates that vulnerability scans must be conducted weekly. Which of the following is the PRIMARY reason for scheduling scans at this frequency?",
+    "options": [
+      "To ensure that new systems and newly published vulnerabilities (CVEs) are identified and audited quickly",
+      "To comply with local electrical grid guidelines",
+      "To delete temporary user logs automatically",
+      "To test switch hardware routing limits"
+    ],
+    "answer": 0,
+    "explanation": "Weekly scheduling ensures that newly deployed assets, system changes, and newly published vulnerabilities (which are released daily) are discovered and analyzed promptly to maintain a strong security posture.",
+    "id": 1224,
+    "correctAnswer": 0
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst wants to evaluate a web application for vulnerabilities while the application is compiled and running, simulating real attacks by sending malformed HTTP payloads to the web inputs. Which testing methodology should they use?",
+    "options": [
+      "Static Application Security Testing (SAST)",
+      "Dynamic Application Security Testing (DAST)",
+      "Component Architecture Review",
+      "Manual Code Auditing"
+    ],
+    "answer": 1,
+    "explanation": "DAST (Dynamic Application Security Testing) is a black-box analysis method that tests a running application externally to identify security vulnerabilities. SAST analyzes the static source code.",
+    "id": 1225,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "An administrator is setting up a new enterprise vulnerability scanner. Before running the first scan, which configuration step is the MOST critical to ensure the scanner can detect the latest threats?",
+    "options": [
+      "Upgrade the scanner's physical CPU.",
+      "Update the scanner's vulnerability plug-ins / signatures database.",
+      "Change the scanner's default MAC address.",
+      "Configure the scanner to run as a domain controller."
+    ],
+    "answer": 1,
+    "explanation": "Vulnerability scanners rely on signatures (plug-ins) to identify threats. Updating the plug-in/signature database before scanning ensures the scanner possesses the definitions needed to detect the latest vulnerabilities.",
+    "id": 1226,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A security analyst configures a vulnerability scanner to use a dedicated service account to log into local Unix systems. How should this service account be configured to align with security best practices?",
+    "options": [
+      "It should use a shared password known to all help desk technicians.",
+      "It should be granted the minimum privileges necessary to perform the scan checks, and its credentials should be stored securely in a vault.",
+      "It should be configured with a blank password to allow quick logins.",
+      "It should be configured to run with full domain administrator privileges globally."
+    ],
+    "answer": 1,
+    "explanation": "Workstation scanning service accounts should follow the principle of least privilege (only permissions needed to read configuration files/registries) and have their passwords managed securely in a vault.",
+    "id": 1227,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A Linux distributor backports a security patch to an older kernel version. A simple version-checking vulnerability scanner flags the kernel as vulnerable because of the version number. What does this false positive illustrate?",
+    "options": [
+      "The weakness of passive scanning",
+      "The limitation of version-based / signature-only scanning without credentialed validation",
+      "The risk of a DLL injection attack on the scanner",
+      "The failure of the backporting update"
+    ],
+    "answer": 1,
+    "explanation": "Simple version-checking scanners (often non-credentialed) look only at banners. They flag systems as vulnerable if the version number is in the exploit range, failing to check if the security fix was backported, resulting in false positives.",
+    "id": 1228,
+    "correctAnswer": 1
+  },
+  {
+    "section": "S22",
+    "question": "A security architect is analyzing CVSS v3 metric groups. They want to adjust a vulnerability's score to reflect their specific organization's deployment characteristics and network compensating controls. Which CVSS metric group should they configure?",
+    "options": [
+      "Base Metric Group",
+      "Temporal Metric Group",
+      "Environmental Metric Group",
+      "Systemic Metric Group"
+    ],
+    "answer": 2,
+    "explanation": "The Environmental metric group in CVSS v3 represents characteristics of a vulnerability that are specific to a particular user's environment, such as compensating controls or asset distribution. Base represents static properties, and Temporal changes over time.",
+    "id": 1229,
+    "correctAnswer": 2
+  },
+  {
+    "section": "S22",
+    "question": "During a vulnerability scan, the IT director notices that a legacy web service crashed when the scanner probed a custom port. Which of the following should the director implement to verify vulnerabilities on this specific host safely in the future?",
+    "options": [
+      "Switch to credentialed, non-intrusive scanning and exclude the custom port from active probes.",
+      "Perform a full-scale automated fuzz testing sweep during peak hours.",
+      "Disable vulnerability scanning on the legacy host entirely.",
+      "Configure a script to reboot the legacy host every 5 minutes during scans."
+    ],
+    "answer": 0,
+    "explanation": "Switching to non-intrusive, credentialed checks allows the scanner to verify patches locally via registries and package managers without sending intrusive network probes that cause legacy services to crash. Disabling scanning leaves the asset unmonitored.",
+    "id": 1230,
+    "correctAnswer": 0
   }
 ];
