@@ -8,7 +8,7 @@
 
 ## 1. Monitoring Resources
 
-* **Definition:** The objective domain (4.4) covering the observation of systems, applications, and infrastructure to ensure optimal performance, security, and reliability across an organization's network.
+* **Definition:** The objective domain (4.4) covering the observation of systems, applications, and infrastructure to ensure **optimal performance**, **security**, and **reliability** across an organization's network and **user satisfaction**.
 
 Monitoring resources effectively is crucial for the smooth operation of any organizational network. This objective breaks monitoring into three distinct areas: **system monitoring**, **application monitoring**, and **infrastructure monitoring**, each covered as its own concept below.
 
@@ -58,9 +58,9 @@ These six activities work together as a continuous cycle: collect data, notify o
 
 ### Alerting and Monitoring Activities: Log Aggregation
 
-* **Definition:** The process of collecting and consolidating log data from various sources into a centralized location to support troubleshooting, performance monitoring, security analysis, and compliance.
+* **Definition:** The process of collecting and consolidating log data from various sources into a centralized location to support troubleshooting, performance monitoring, security analysis, Investigate breaches, gather evidence and compliance.
 
-Aggregated logs provide a holistic view across systems, making it easier to correlate events and pinpoint root causes. Regulations like **GDPR** and **HIPAA** require maintaining comprehensive logs, which centralized aggregation helps satisfy for audits.
+Aggregated logs provide a holistic view across systems, making it easier to correlate events, pinpoint root causes monitor performace, indentify bottlenecks and make informed decisions. Regulations like **GDPR** and **HIPAA** require maintaining comprehensive logs, which centralized aggregation helps satisfy for audits.
 
 > *Como juntar todos los testimonios de testigos de un accidente en un solo expediente, en lugar de tenerlos dispersos en distintas libretas.*
 
@@ -90,7 +90,7 @@ Tools like **Nessus** or **OpenVAS** identify unpatched software, misconfigured 
 
 #### Scanning: Configuration Scan
 
-* **Definition:** A scan that checks a system's configuration against best-practice guidelines or compliance standards to detect misconfigurations that could impact performance or security.
+* **Definition:** A scan that checks a system's configuration against best-practice guidelines or compliance standards to **detect misconfigurations** that could impact performance or security.
 
 Tools like **CIS-CAT** evaluate configurations against benchmarks such as the **CIS Controls** or **PCI DSS**. Discrepancies — open ports, weak access controls, non-compliant settings — are flagged for remediation.
 
@@ -98,7 +98,7 @@ Tools like **CIS-CAT** evaluate configurations against benchmarks such as the **
 
 #### Scanning: Code Scan
 
-* **Definition:** A scan that checks an application's source code for security vulnerabilities or coding errors, using static or dynamic code analysis techniques.
+* **Definition:** A scan that checks an application's source code for **security vulnerabilities** or **coding errors**, using static or dynamic code analysis techniques.
 
 Static tools like **Fortify** or **SonarQube** catch issues like SQL injection points, XSS vulnerabilities, or unsanitized variables during development. Dynamic techniques, such as penetration testing, complement static analysis by evaluating the application's behavior while running.
 
@@ -122,7 +122,7 @@ Tools like **Amazon S3** or **Google Cloud Storage** are used for long-term arch
 
 ### Alerting and Monitoring Activities: Alert Response and Remediation/Validation
 
-* **Definition:** The process of taking appropriate action in response to a received alert (investigation, escalation, or predefined procedure), resolving the identified issue (remediation), and confirming the fix was effective (validation).
+* **Definition:** The process of taking appropriate action in response to a received alert (**investigation, escalation, or predefined procedure**), resolving the identified issue (**remediation**), and confirming the fix was effective (**validation**).
 
 Remediation might involve patching software, reconfiguring services, or modifying code. Validation involves re-scanning or re-testing to confirm the vulnerability was fully eliminated — not just assumed fixed.
 
@@ -138,7 +138,7 @@ For example, a workstation suspected of malware infection is logically isolated 
 
 #### Remediation: Alert Tuning
 
-* **Definition:** A remediation step that adjusts alert parameters — thresholds, trigger conditions, or delivery methods — to reduce false positives and improve the relevance of generated alerts.
+* **Definition:** A remediation step that (**adjusts**, **changing**, **modify**)  alert parameters — thresholds, trigger conditions, or delivery methods — to reduce false positives and improve the relevance of generated alerts.
 
 For example, retuning a CPU alert to only trigger when utilization stays high for 30–60+ seconds reduces noise from brief, harmless spikes, helping prevent **alert fatigue**.
 
@@ -164,9 +164,20 @@ SNMP architecture consists of **managers** and **agents** communicating through 
 
 * **Definition:** The three message types used by SNMP managers and agents to exchange data: SET (manager-to-agent, changes a variable's value), GET (manager-to-agent, retrieves a variable's value), and TRAP (agent-to-manager, an unsolicited, asynchronous notification of a significant event).
 
-Trap messages differ from SET/GET because the agent sends them without being asked, notifying the manager of events like uptime changes, configuration changes, or unexpected link downtime in near real time.
+Trap messages differ from SET/GET because the agent sends them without being asked, notifying the manager of events like uptime changes, configuration changes, or unexpected link downtime in near real time. (**TRAP messages can be Granular o Verbose**)
 
 > *SET y GET son como llamar a un empleado para pedirle un cambio o un reporte; TRAP es como cuando el empleado te llama por su cuenta para avisarte de una emergencia sin que se lo pidieras.*
+
+### SNMP: Granular vs Verbose Traps
+
+* **Definition:** Two methods of encoding SNMP trap data: 1. **granular traps** send only a unique OID representing the changed value (bandwidth-efficient), while 2. **verbose** traps send the full payload of information about the alert or event (resource-intensive).
+
+| Trap Type | Data Sent | Bandwidth Impact |
+| --------- | --------- | ----------------- |
+| **Granular** | Only the changed OID | Low — conserves resources |
+| **Verbose** | Full payload/context of the event | High — more resource use |
+
+> *Granular es como enviar un mensaje de texto corto avisando "cambio de estado"; verbose es como enviar un video completo explicando cada detalle del cambio.*
 
 ### SNMP: OID and MIB
 
@@ -183,17 +194,6 @@ Because the MIB already contains full details about each OID, SNMP trap messages
 Example variable bindings: `SiteName: PR-Branch`, `Criticality: High`, `Severity: Low`, `Alarm Description: High temperature`.
 
 > *Como una ficha médica donde cada dato viene etiquetado: Nombre: Juan, Edad: 30, Presión: Alta — cada etiqueta va pegada a su valor correspondiente.*
-
-### SNMP: Granular vs Verbose Traps
-
-* **Definition:** Two methods of encoding SNMP trap data — granular traps send only a unique OID representing the changed value (bandwidth-efficient), while verbose traps send the full payload of information about the alert or event (resource-intensive).
-
-| Trap Type | Data Sent | Bandwidth Impact |
-| --------- | --------- | ----------------- |
-| **Granular** | Only the changed OID | Low — conserves resources |
-| **Verbose** | Full payload/context of the event | High — more resource use |
-
-> *Granular es como enviar un mensaje de texto corto avisando "cambio de estado"; verbose es como enviar un video completo explicando cada detalle del cambio.*
 
 ### SNMP: Versions and Security
 
@@ -232,7 +232,7 @@ A SIEM's core value is **correlation**: connecting disparate log sources (e.g., 
 
 1. Log all relevant events; filter out irrelevant data.
 2. Establish and document the scope of monitored events.
-3. Develop use cases to define what constitutes a threat.
+3. Develop use cases to define what constitutes a threat or event.
 4. Plan pre-defined incident response actions for given threats.
 5. Establish a ticketing process to track flagged events.
 6. Schedule regular threat hunting to catch what alerts missed.
@@ -247,7 +247,7 @@ A SIEM's core value is **correlation**: connecting disparate log sources (e.g., 
 | Solution | Vendor/Type | Key Characteristic |
 | -------- | ----------- | ------------------- |
 | **Splunk** | Commercial | Market-leading; connectors for most OS/app formats; Search Processing Language; local or cloud |
-| **ELK / Elastic Stack** | Open-source | Four components: Elasticsearch (query/analytics), Logstash (log collection/normalization), Kibana (visualization), Beats (endpoint collection agents) |
+| **ELK / Elastic Stack** | Open-source | Four components: Elasticsearch (query/analytics), Logstash (log collection/normalization), Kibana (visualization), Beats (endpoint collection agents), ELK is the cloud solution |
 | **ArcSight** | Commercial | SIEM log management/analytics; compliance reporting (HIPAA, SOX, PCI DSS) |
 | **QRadar** | Commercial (IBM) | SIEM log management, analytics, and compliance reporting platform |
 
@@ -308,18 +308,23 @@ Feeding this data into a SIEM allows organizations to prioritize remediation by 
 ## 6. Security Content Automation Protocol (SCAP)
 
 * **Definition:** A suite of open standards, developed by NIST, that enhances the automation of vulnerability management, security measurement, and policy compliance evaluation across an organization's deployed systems.
+The purpuse is to perform the following tasks:
+* Vulnerability Scanning
+* Configuration Checking
+* Software inventory
 
 SCAP standardizes the "language" that scanning tools use, so tools from different vendors can exchange results seamlessly. It relies on three core languages (OVAL, XCCDF, ARF) and three enumeration schemes (CCE, CPE, CVE), plus the CVSS scoring system and configuration benchmarks.
 
 > *Como un tratado internacional que obliga a todos los países a usar el mismo sistema de medidas (metros, kilos): así cualquier herramienta puede "hablar" con cualquier otra sin traducción.*
 
-### SCAP: OVAL
+### SCAP languages:
+#### SCAP: OVAL
 
 * **Definition:** The Open Vulnerability and Assessment Language — an XML schema for describing system security states, machine configurations, and querying vulnerability reports in a consistent, interoperable way regardless of the scanning tool used.
 
 > *Como un formulario estándar de reporte médico: sin importar el hospital, todos los doctores llenan los mismos campos y todos se entienden.*
 
-### SCAP: XCCDF
+#### SCAP: XCCDF
 
 * **Definition:** The Extensible Configuration Checklist Description Format — an XML schema used for developing and auditing best-practice configuration checklists and rules in a machine-readable format.
 
@@ -327,7 +332,7 @@ Before XCCDF, best-practice guides were long documents (30–50+ pages) manually
 
 > *Como convertir un manual de instrucciones en papel de 50 páginas en una lista de chequeo digital que una máquina puede marcar automáticamente.*
 
-### SCAP: ARF
+#### SCAP: ARF
 
 * **Definition:** The Asset Reporting Format — an XML schema used to express information about assets and the relationships between assets and reports, facilitating reporting and correlation of asset data across organizations.
 
@@ -335,13 +340,15 @@ ARF is vendor- and technology-neutral, making it flexible and well-suited to a w
 
 > *Como una etiqueta universal de inventario que cualquier tienda, sin importar la marca de su sistema, puede leer y entender de la misma manera.*
 
-### SCAP: CCE
+
+### SCAP Methods
+#### SCAP: CCE
 
 * **Definition:** The Common Configuration Enumeration — a scheme providing unique identifiers for secure configuration best-practice statements, enabling automated verification and correlation of configuration data across multiple sources and tools.
 
 > *Como un código de barras único para cada regla de configuración recomendada, para que distintos sistemas puedan referirse exactamente a la misma regla.*
 
-### SCAP: CPE
+#### SCAP: CPE
 
 * **Definition:** The Common Platform Enumeration — a machine-readable scheme for identifying hardware devices, operating systems, and applications, formatted as `cpe:/part:vendor:product:version:update:edition:language`.
 
@@ -349,7 +356,7 @@ The `part` field indicates whether the platform is an Operating System (O), an A
 
 > *Como una matrícula de vehículo estandarizada: con un solo vistazo al formato, sabes exactamente qué tipo de vehículo es, quién lo fabricó y qué versión es.*
 
-### SCAP: CVE
+#### SCAP: CVE
 
 * **Definition:** The Common Vulnerabilities and Exposures — a list of records, maintained by MITRE, where each entry has a unique identifier (`CVE-YEAR-NUMBER`) describing a publicly known vulnerability.
 
@@ -439,6 +446,7 @@ A single pane of glass simplifies security operations management, improves threa
 
 > *Como el tablero de control de un piloto de avión: en lugar de revisar veinte pantallas separadas en distintas cabinas, todo lo esencial está visible en un solo panel frente a él.*
 
+Single Pane of Glass (SPOG): can be implemented as a **software** or **hardware** being software the best solution cuz how flexible can be integrated into the system than a hardware.
 ### SPOG: Implementation Steps
 
 * **Definition:** The five sequential steps used to implement a single pane of glass in a Security Operations Center: defining requirements, identifying/integrating data sources, customizing the interface, developing SOPs and documentation, and continuously monitoring/maintaining the solution.
