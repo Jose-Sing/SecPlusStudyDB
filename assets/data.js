@@ -15059,5 +15059,2310 @@ const STUDY_DATA = [
         "raw_content": "* **Definition:** The five sequential steps used to implement a single pane of glass in a Security Operations Center: defining requirements, identifying/integrating data sources, customizing the interface, developing SOPs and documentation, and continuously monitoring/maintaining the solution.\n\n1. **Define the requirements:** Identify what information, tools, and systems the security team needs.\n2. **Identify and integrate data sources:** Connect log servers, IDS, and other sources via APIs, webhooks, plugins, or connectors.\n3. **Customize the interface:** Design a clear, organized layout that supports fast, informed decisions.\n4. **Develop SOPs and documentation:** Ensure consistency and repeatability in how the team uses the tool.\n5. **Continuously monitor and maintain:** Regularly review data, adjust configuration, and secure the platform against unauthorized access, since it houses all critical security data.\n\n> *Como abrir un nuevo centro de control de tráfico aéreo: primero decides qué necesitas ver, luego conectas los radares, diseñas la pantalla, entrenas al personal con manuales, y por último mantienes todo actualizado y protegido.*\n\n---"
       }
     ]
+  },
+  {
+    "sectionId": "S24",
+    "sectionTitle": "Section 24: Incident Response",
+    "concepts": [
+      {
+        "name": "Incident Response Overview",
+        "definition": "The critical cybersecurity process that outlines a systematic approach an organization takes to manage and mitigate security incidents, minimizing their impact and facilitating a swift return to normal operations. (Objective 4.8)",
+        "analogy": "*Es como el protocolo de emergencias de un hospital: sin importar qué tipo de accidente llegue, existe un proceso estructurado — triage, estabilización, tratamiento, alta — que se sigue siempre para minimizar el daño y regresar al paciente a la normalidad.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The critical cybersecurity process that outlines a systematic approach an organization takes to manage and mitigate security incidents, minimizing their impact and facilitating a swift return to normal operations. (Objective 4.8)\n\nAn **incident** is an act of violating an explicit or implied security policy — for example, stealing someone's password to log into their account, or an attacker installing malware on a system. Both break the organization's expectation that only authorized people and code interact with its systems.\n\nThe primary goals of incident response are to **minimize the impact** of a breach, **reduce the time** it takes to identify and contain threats, and **facilitate a swift recovery** to normal operations. This requires detection and classification, containment and eradication, evidence preservation, communication and reporting, and lessons learned for future prevention.\n\n> *Es como el protocolo de emergencias de un hospital: sin importar qué tipo de accidente llegue, existe un proceso estructurado — triage, estabilización, tratamiento, alta — que se sigue siempre para minimizar el daño y regresar al paciente a la normalidad.*\n\n---"
+      },
+      {
+        "name": "The Incident Response Process: NIST vs. CompTIA Models",
+        "definition": "The structured sequence of phases an organization follows when responding to a security incident; NIST defines a four-phase model, while CompTIA expands it into a seven-phase model for exam purposes.",
+        "analogy": "*Como comparar un mapa de carreteras simplificado (NIST, 4 paradas grandes) con uno detallado que muestra cada salida (CompTIA, 7 paradas): ambos te llevan al mismo destino, pero uno da más detalle para el examen.*",
+        "tables": [
+          {
+            "headers": [
+              "Model",
+              "Phases"
+            ],
+            "rows": [
+              [
+                "**NIST (4 phases)**",
+                "Preparation → Detection and Analysis → Containment, Eradication, and Recovery → Post-Incident Activity"
+              ],
+              [
+                "**CompTIA (7 phases)**",
+                "Preparation → Detection → Analysis → Containment → Eradication → Recovery → Post-Incident Activity (Lessons Learned)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The structured sequence of phases an organization follows when responding to a security incident; NIST defines a four-phase model, while CompTIA expands it into a seven-phase model for exam purposes.\n\nNIST's *Computer Security Incident Handling Guide* (Special Publication 800-61) defines **four phases**: preparation, detection and analysis, containment/eradication/recovery, and post-incident activity. CompTIA splits \"detection and analysis\" into two separate phases, and \"containment, eradication, and recovery\" into three separate phases, producing a **seven-phase model**. On the exam, always use the CompTIA seven-phase model.\n\nThe process is often **non-linear** — while responding, a team commonly loops backward from containment into detection and analysis again when new suspicious activity is found.\n\n| Model                  | Phases                                                                                                               |\n| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |\n| **NIST (4 phases)**    | Preparation → Detection and Analysis → Containment, Eradication, and Recovery → Post-Incident Activity               |\n| **CompTIA (7 phases)** | Preparation → Detection → Analysis → Containment → Eradication → Recovery → Post-Incident Activity (Lessons Learned) |\n\n> *Como comparar un mapa de carreteras simplificado (NIST, 4 paradas grandes) con uno detallado que muestra cada salida (CompTIA, 7 paradas): ambos te llevan al mismo destino, pero uno da más detalle para el examen.*\n\n### Incident Response Process: Preparation\n\n* **Definition:** The phase in which cybersecurity practitioners make systems resilient to attack by hardening infrastructure, writing policies and procedures, and establishing communication plans, before any incident occurs.\n\nThis phase also includes **training**, **testing**, and **exercising** staff with simulated incidents, and creating incident response kits — everything needed to be ready before something bad happens, including setting up encrypted out-of-band communication paths.\n\n> *Como el entrenamiento de bomberos antes de que ocurra un incendio: revisan el equipo, practican rutas de escape y lo preparan todo antes de la emergencia real.*\n\n### Incident Response Process: Detection\n\n* **Definition:** The phase focused on determining whether a security incident has actually occurred, with cybersecurity and triage analysts categorizing and assessing its potential severity.\n\n> *Como un detector de humo: su único trabajo es avisar que \"algo está pasando\", sin todavía saber qué tan grave es el incendio.*\n\n### Incident Response Process: Analysis\n\n* **Definition:** The phase in which an incident is thoroughly examined and evaluated to **understand its scope and impact**, after which stakeholders are notified and containment is initiated.\n\nAnalysts work to understand the nature and potential consequences of the incident, providing insights that guide the initial response actions.\n\n> *Como un médico de emergencias que, tras la alarma inicial, examina al paciente para entender qué tan grave es la lesión antes de decidir el tratamiento.*\n\n### Incident Response Process: Containment\n\n* **Definition:** The phase used to **limit the scope and magnitude of an incident** by **securing data and minimizing impact** on business operations, customers, and partners.\n\nFor example, if malware is detected on a system, the goal is to prevent it from spreading — such as by disconnecting the infected client from the network and locking out the affected user.\n\n> *Como cerrar las compuertas de un barco que se está inundando: todavía no arreglas el agujero, pero evitas que el agua (o el malware) se extienda al resto del barco.*\n\n### Incident Response Process: Eradication\n\n* **Definition:** The phase, beginning once an incident is contained, focused on completely **removing the malicious activity from the affected system or network**.\n\nContinuing the malware example, once spread is stopped, the malware is removed or the system is reimaged from a known-good image.\n\n> *Como fumigar una casa después de aislar la habitación infestada: ahora eliminas por completo la plaga.*\n\n### Incident Response Process: Recovery\n\n* **Definition:** The phase focused on restoring affected systems and services to their normal, secured state — often via restoring from a **known-good backup**, **installing patches**, or **updating configurations**.\n\nRecovery may also include monitoring systems for lingering threats to ensure a smooth return to normal operations and increased resilience against future attacks.\n\n> *Como la rehabilitación después de una cirugía: no basta con quitar el problema, hay que devolver el cuerpo al funcionamiento normal y vigilarlo durante la recuperación.*\n\n### Incident Response Process: Post-Incident Activity (Lessons Learned)\n\n* **Definition:** The final phase, occurring after containment, eradication, and recovery are complete, in which the team analyzes the incident and the response itself to identify what worked and what could be improved.\n\nThree major actions occur during this phase: the **root cause analysis**, the **lessons learned process**, and the **after-action report** (see Sections 5, and the sub-concepts below).\n\n> *Como la reunión que hace un equipo deportivo después del partido para ver la repetición del juego: no importa si ganaron o perdieron, analizan qué funcionó y qué no.*\n\n#### 4 Steps process for the root cause analysis:\n\n1. Define/scope the incident.\n2. Determine the causal relationship that led to the incident.\n3. Identify an effective solution.\n4. Implement and track the solutions to ensure that the incident is ful ly resolved.\n\n#### Post-Incident Activity: Lessons Learned Process\n\n* **Definition:** A formalized method for documenting **what went right**, **what went wrong**, and **what could be done better** during an incident response, feeding directly into organizational process improvements.\n\nFor example, if a change management board was too slow to approve a needed security fix, a lesson learned might be to decrease approval times for emergent change requests during an incident.\n\n> *Como un diario de errores de cocina: no rediseñas la receta completa cada vez, solo anotas qué salió mal para no repetirlo.*\n\n#### Post-Incident Activity: After-Action Report\n\n* **Definition:** A formalized report that documents what happened during an incident, including the root cause analysis and the recommendations produced by the lessons learned process.\n\nDepending on the organization, this report may be highly detailed and technical, or written as an executive summary.\n\n> *Como el reporte policial de un accidente de tránsito: documenta oficialmente los hechos para que quede constancia y se pueda actuar después.*\n\n---"
+      },
+      {
+        "name": "The Incident Response Team",
+        "definition": "The group of professionals responsible for executing an incident response, composed of a core team of experienced cybersecurity practitioners supplemented by temporary members brought in for a specific incident.",
+        "analogy": "*Como el equipo de respuesta de un hospital durante una emergencia masiva: hay un líder de trauma, especialistas que se convocan según se necesiten, y administración que gestiona recursos y la comunicación con la prensa.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The group of professionals responsible for executing an incident response, composed of a core team of experienced cybersecurity practitioners supplemented by temporary members brought in for a specific incident.\n\nThe team includes a **leader** (a skilled incident responder), **subject-matter experts**, **IT support staff**, **legal counsel**, and **human resources/public relations**. Large organizations often maintain dedicated, full-time IR teams, while smaller organizations assemble temporary teams as an additional duty for existing employees (e.g., deputizing a database administrator when a database is involved). Organizational leadership must ensure the team has funding, resources, and expertise, and must make the critical business decisions and communications with stakeholders or media.\n\n> *Como el equipo de respuesta de un hospital durante una emergencia masiva: hay un líder de trauma, especialistas que se convocan según se necesiten, y administración que gestiona recursos y la comunicación con la prensa.*\n\n### Incident Response Team: Outsourced IR Teams\n\n* **Definition:** Third-party specialized teams hired by an organization to perform incident response on its behalf, offering deep specialization but at high cost and with less familiarity with the organization's specific network.\n\nBecause these teams don't know the enterprise environment in advance, they need time to learn the network before they can respond effectively — a tradeoff against their day-to-day specialization advantage.\n\n> *Como contratar bomberos externos que nunca han visto el plano de tu edificio: son expertos, pero tardan más en orientarse que el equipo interno.*\n\n---"
+      },
+      {
+        "name": "Threat Hunting",
+        "definition": "A proactive cybersecurity technique focused on continuously searching for existing or emerging threats within an organization's network that have not been discovered by normal security monitoring. Essentially, threat hunting is the act of being proactive in your defense as opposed to being reactive like you are with incident response.",
+        "analogy": "*Como un guardia de seguridad que, en lugar de esperar a que suene la alarma, camina activamente por el edificio buscando puertas que alguien pudo haber forzado sin activarla.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A proactive cybersecurity technique focused on continuously searching for existing or emerging threats within an organization's network that have not been discovered by normal security monitoring. Essentially, threat hunting is the act of being proactive in your defense as opposed to being reactive like you are with incident response.\n\nThreat hunting begins with the assumption that **existing detection rules have already failed** to alert on something malicious — it looks for what has bypassed the rules, unlike routine monitoring, which relies on known signatures for well-documented TTPs. Because threat actors modify their tactics once they become well-known, threat hunters look for new TTPs and create new indicators of compromise (IoCs).\n\n> *Como un guardia de seguridad que, en lugar de esperar a que suene la alarma, camina activamente por el edificio buscando puertas que alguien pudo haber forzado sin activarla.*\n\n### Threat Hunting: Threat Modeling and Hypothesis\n\n* **Definition:** The initial step of threat hunting, in which analysts establish a hypothesis by identifying which potential attack events have the highest likelihood and highest impact, combining threat modeling with threat intelligence.\n\nThis step starts by asking **who might want to harm us?**,  **Who might want to break into our networks?** and **how might they be able to do that?**.\n\n> *Como un detective que, antes de investigar, se pregunta \"¿quién tendría motivo para hacer esto y cómo lo haría?\" antes de buscar pistas.*\n\n### Threat Hunting: Profiling Threat Actors and Activities\n\n* **Definition:** The step of creating scenarios that illustrate how a prospective attacker might attempt an intrusion, including their likely TTPs and category (insider threat, hacktivist, criminal organization, or nation-state APT).\n\nThis profiling determines the attacker's probable objectives and which systems they might target.\n\n> *Como perfilar a un ladrón antes de un robo: ¿usará una ganzúa o romperá una ventana? Saber esto ayuda a anticipar sus movimientos.*\n\n### Threat Hunting: Advisories and Bulletins\n\n* **Definition:** Publications released by vendors and security researchers when new TTPs or vulnerabilities are discovered, often before any signature exists in an organization's protection suite.\n\nThreat hunters use these bulletins to determine whether their own network is at risk, even without an existing detection signature.\n\n> *Como un boletín de salud pública que anuncia un nuevo virus antes de que exista la vacuna: te avisa para que tomes precauciones mientras se desarrolla la cura.*\n\n### Threat Hunting: Intelligence Fusion and Threat Data\n\n* **Definition:** The practice of using a SIEM and threat analysis platforms together with external TTP/IoC threat data feeds to efficiently identify items of concern within an organization's own logs.\n\nCombining internal log data with real-world threat intelligence produces actionable intelligence — for example, correlating outbound traffic to a suspicious domain (found via threat research) with a list of internal hosts that need further investigation.\n\n> *Como cruzar el reporte del clima de varias fuentes con lo que ves por tu ventana: combinar datos externos e internos da una imagen más completa de la amenaza real.*\n\n---"
+      },
+      {
+        "name": "Root Cause Analysis",
+        "definition": "A systematic four-step process used to identify the initial source of a security incident and to prevent it from recurring: **(1) define/scope the incident**, **(2) determine the causal relationships that led to it**, **(3) identify an effective solution**, and **(4) implement and track that solution**.",
+        "analogy": "*Como la investigación de un accidente aéreo por la NTSB: no busca culpar al piloto, busca entender qué falló en todo el sistema para que nunca vuelva a pasar.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A systematic four-step process used to identify the initial source of a security incident and to prevent it from recurring: **(1) define/scope the incident**, **(2) determine the causal relationships that led to it**, **(3) identify an effective solution**, and **(4) implement and track that solution**.\n\nUsing a malware infection as an example: the initial vector might be a user plugging in an infected USB thumb drive. Prevention measures could include updating antivirus signatures across all workstations, blocking USB mass-storage data transfer, and patching the specific vulnerability the malware exploited.\n\nRoot cause analysis must always use a **no-blame approach** — its purpose is not to assign fault to an individual or team, but to identify systemic weaknesses and develop effective preventative measures, encouraging open and honest reporting. The NTSB's independent, no-blame investigation of the 2018–2019 Boeing 737 MAX crashes — which identified a defective sensor and flawed flight-control software, rather than pilot error, as the root cause — illustrates this principle at scale.\n\n⚠️ **Exam Tip:** Root cause analysis is a **no-blame process** — its goal is prevention, not punishment.\n\n> *Como la investigación de un accidente aéreo por la NTSB: no busca culpar al piloto, busca entender qué falló en todo el sistema para que nunca vuelva a pasar.*\n\n---"
+      },
+      {
+        "name": "Incident Response Training and Testing",
+        "definition": "The objective domain covering the preparation of personnel and systems to respond effectively to security incidents, through **training** (education) and **testing** (practical exercises).",
+        "analogy": "*Como aprender a nadar: la clase teórica en el salón es el \"training\", y meterte a la alberca a nadar de verdad es el \"testing\".*",
+        "tables": [],
+        "list_items": [
+          "identifying gaps in your incident response plan.",
+          "improving coordination between teams",
+          "ensuring that everyone understands their roles during a real incident."
+        ],
+        "raw_content": "* **Definition:** The objective domain covering the preparation of personnel and systems to respond effectively to security incidents, through **training** (education) and **testing** (practical exercises).\n\n### Incident Response Training and Testing: Training\n\n**Definition:**  It is the education to ensure employees and staff understand your processes, procedures, and priorities during an incident response to make sure that your people are ready to respond when something bad happens.\n\nTraining should be tailored to the audience: **technical first responders** need procedural training (how to re-image a machine, remove malware, change configurations), **managers/executives** need training on risk-versus-reward decision-making and internal or external communication, and **end users** need training on how to recognize and report suspected incidents (e.g., a phishing email). Training should always incorporate lessons learned from previous incidents, as well as soft skills and relationship building across the team.\n\n> *Como aprender a nadar: la clase teórica en el salón es el \"training\", y meterte a la alberca a nadar de verdad es el \"testing\".*\n\n### Incident Response Training and Testing: Testing\n\n* **Definition:** The practical exercise of incident response procedures, verifying that personnel can actually execute what they were taught in training, as opposed to merely knowing what to do.\n\nTesting can range from a low-cost, discussion-based tabletop exercise up to a full-scale, multi-site simulation costing hundreds of thousands of dollars — each with different tradeoffs between realism and cost. The three major testing formats are the **tabletop exercise**, the **penetration test**, and the **full-scale simulation**, each detailed below.\n\n> *Como la diferencia entre practicar un discurso frente al espejo y darlo de verdad frente a una audiencia: solo la segunda prueba si realmente estás listo.*\n\n#### Testing: Tabletop Exercise (TTX)\n\n* **Definition:** A discussion-based exercise that runs an incident response scenario against a framework of controls or a red team, conducted verbally \"around a table\" rather than performed physically on a live network.\n\nA facilitator presents a scenario (e.g., \"you have an indication of a data breach on this server — what would you do?\") and participants describe their responses in turn. A common variant splits participants into a **red team** (attackers) and a **blue team** (defenders), who alternate describing attack and defense actions across several rounds. TTXs are far less expensive than full exercises, but provide no hands-on, on-keyboard experience.\n\n> *Como un ensayo de obra de teatro sentados alrededor de una mesa, leyendo el guion en voz alta sin actuar físicamente las escenas.*\n\n#### Testing: Penetration Test\n\n* **Definition:** An exercise in which a red team attempts to conduct an actual intrusion into the network using a specific scenario based on threat modeling, governed by an agreed-upon methodology and rules of engagement.\n\nA penetration test is goal-directed — for example, targeting a database — rather than an unconstrained attack (a denial-of-service attack would typically fall outside the rules of engagement unless explicitly permitted). Seeing tools or operating systems such as **Metasploit, Cobalt Strike, Kali Linux, ParrotOS, or Commando OS** on a network should prompt a defender to consider whether this reflects an authorized pentest or, worse, an actual attacker — since these are open-source tools available to anyone.\n\n> *Como un simulacro de robo autorizado por el dueño del banco: los \"ladrones\" tienen permiso y reglas claras sobre qué pueden y no pueden hacer.*\n\n#### Testing: Simulation Exercise\n\n* **Definition:** A realistic, hands-on exercise that goes beyond theoretical tabletop discussion to mimic actual incidents — such as simulated phishing attacks, ransomware infections, or complex multi-stage breaches involving external parties like law enforcement or PR — in a controlled but authentic environment.\n\nThese exercises are invaluablefor: \n\n* identifying gaps in your incident response plan.\n* improving coordination between teams\n* ensuring that everyone understands their roles during a real incident.\n\nSimulations assess not only technical skill but also decision-making under pressure and internal/external communication. They should align with the organization's threat landscape and risk profile, and are invaluable for identifying gaps in the IR plan and improving team coordination.\n\n> *Como un simulacro de incendio real con humo artificial y bomberos actuando en tiempo real, en lugar de solo hablar sobre qué harían.*\n\n---"
+      },
+      {
+        "name": "Digital Forensic Procedures",
+        "definition": "The systematic techniques and methodologies used to gather, analyze, and preserve digital evidence for investigations into cybercrimes or security incidents, following organizational written procedures at all times to ensure evidence is handled correctly and remains admissible.",
+        "analogy": "*Como el trabajo de un investigador de la escena del crimen (CSI), pero aplicado a discos duros y teléfonos en lugar de huellas dactilares.*",
+        "tables": [
+          {
+            "headers": [
+              "Step",
+              "Data Source"
+            ],
+            "rows": [
+              [
+                "1",
+                "System memory, including processor cache and RAM"
+              ],
+              [
+                "2",
+                "System state — network configuration, active user sessions, non-altering data"
+              ],
+              [
+                "3",
+                "Storage devices — hard drives, solid-state devices, non-volatile storage"
+              ],
+              [
+                "4",
+                "Network traffic and logs"
+              ],
+              [
+                "5",
+                "Remotely stored archive data — backups, cloud storage, external devices, printouts"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The systematic techniques and methodologies used to gather, analyze, and preserve digital evidence for investigations into cybercrimes or security incidents, following organizational written procedures at all times to ensure evidence is handled correctly and remains admissible.\n\nDigital forensic procedures are broken into four main phases: **identification, collection, analysis,** and **reporting**, detailed below.\n\n> *Como el trabajo de un investigador de la escena del crimen (CSI), pero aplicado a discos duros y teléfonos en lugar de huellas dactilares.*\n\n### Digital Forensic Procedures: Identification Phase\n\n* **Definition:** The phase focused on ensuring the safety of the scene, securing it to prevent evidence contamination, and determining the scope of evidence that needs to be collected.\n\nThis includes documenting the scene with video or photographs before anything is touched, and identifying where relevant data might be stored (tablet, smartphone, smart TV, server) based on the scope defined in a warrant or authorization.\n\n> *Como acordonar la escena de un crimen con cinta amarilla antes de que alguien contamine las pruebas.*\n\n### Digital Forensic Procedures: Collection Phase\n\n* **Definition:** The phase in which identified evidence is gathered under proper legal authorization — a warrant for law enforcement, or executive sign-off (CIO/CSO/CEO) for an internal investigation — following the order of volatility and preserving the chain of custody.\n\n> *Como recolectar evidencia física con guantes y bolsas etiquetadas: cada paso debe documentarse para que la evidencia sea válida en la corte.*\n\n#### Collection Phase: Order of Volatility (NIST SP 800-86)\n\n* **Definition:** A systematic approach in digital forensics that dictates the sequence in which data sources should be collected, starting with the most volatile (most susceptible to modification or loss) and ending with the least volatile, in order to minimize data loss and maintain evidentiary integrity.\n\n| Step | Data Source                                                                        |\n| ---- | ---------------------------------------------------------------------------------- |\n| 1    | System memory, including processor cache and RAM                                   |\n| 2    | System state — network configuration, active user sessions, non-altering data      |\n| 3    | Storage devices — hard drives, solid-state devices, non-volatile storage           |\n| 4    | Network traffic and logs                                                           |\n| 5    | Remotely stored archive data — backups, cloud storage, external devices, printouts |\n\n> *Como salvar objetos de una casa que se está incendiando: primero los que se queman más rápido (papeles), y al final los que resisten más (objetos de metal).*\n\n#### Collection Phase: Chain of Custody\n\n* **Definition:** A documented and verifiable record that tracks the handling, transfer, and preservation of digital evidence from the moment it is collected until it is presented in a court of law.\n\nEvery person who handles the evidence — from the initial collector to a forensic analyst or legal professional — must document their actions and any change in custody status, ensuring the evidence remains untainted and admissible.\n\n> *Como el recibo firmado cada vez que un paquete cambia de manos en una entrega: si falta un eslabón, no puedes confiar en que el paquete llegó intacto.*\n\n#### Collection Phase: Disk Imaging\n\n* **Definition:** The process of creating a bit-by-bit or logical copy of a storage device, preserving its entire content — including deleted files and unallocated space — so the original device remains untouched during analysis.\n\n> *Como fotocopiar un libro página por página, incluyendo las manchas y los márgenes, en lugar de solo copiar el texto.*\n\n#### Collection Phase: File Carving\n\n* **Definition:** A technique that extracts files and data fragments directly from storage media without relying on the file system, particularly useful when file metadata is missing or corrupted.\n\n> *Como reconstruir un jarrón roto juntando los pedazos esparcidos por el piso, sin tener la caja original que decía cómo iba armado.*\n\n### Digital Forensic Procedures: Analysis Phase\n\n* **Definition:** The phase in which forensic analysts apply repeatable methods and tools to a forensically sound copy of the evidence, systematically uncovering relevant information such as potential criminal activity, hidden files, timestamps, and user interactions.\n\nAnalysts follow strict, documented protocols to ensure consistency and objectivity, deriving insights that support any resulting legal proceedings.\n\n> *Como un patólogo forense examinando una muestra en el laboratorio, siguiendo protocolos estrictos para que sus conclusiones sean confiables.*\n\n### Digital Forensic Procedures: Reporting Phase\n\n* **Definition:** The final phase in which the forensic analyst documents the methods and tools used, the actions performed during analysis, the detailed findings, and the final conclusions, in a report that may serve as evidence in legal proceedings.\n\nThe analyst must be prepared to testify in court about these findings and defend their work against challenges from a defense attorney.\n\n> *Como el testimonio de un perito en un juicio: debe poder explicar y defender cada paso de su trabajo ante un abogado defensor.*\n\n### Digital Forensic Procedures: Legal Hold\n\n* **Definition:** A formal notification instructing employees to **preserve** all potentially relevant electronic data, documents, and records when litigation is reasonably expected, freezing the state of that information for future legal use.\n\n**Any alteration or destruction of data under legal hold can lead to severe legal consequences.**\n\n> *Como congelar una escena completa en el tiempo: nada se puede tocar ni borrar hasta que termine el proceso legal.*\n\n### Digital Forensic Procedures: Preservation\n\n* **Definition:** The proactive steps taken to maintain and protect electronic evidence in its original state — such as making backup copies, isolating critical systems, and implementing access controls — to prevent unauthorized alteration.\n\nPreservation supports both the evidentiary integrity needed for a strong case and compliance with any active legal hold.\n\n> *Como guardar un documento histórico en una vitrina sellada con clima controlado para que no se deteriore.*\n\n### Digital Forensic Procedures: E-Discovery\n\n* **Definition:** The process of identifying, collecting, and producing electronically stored information during legal proceedings, encompassing the search, analysis, and presentation of digital evidence in a format suitable for litigation.\n\nE-discovery tools efficiently sift through emails, documents, databases, and other digital records to meet legal disclosure obligations.\n\nDue to the complexity of modern litigations where electronic data often plays a central role, your organization should opt to appoint a **liaison** with legal knowledge and expertise to help facilitate communication and cooperation with law enforcement and forensic teams to ensure you stay on the right side of the law. This liaison can serve as a point of contact for interactions and ensuring a smoother process keeping any action under the law.\n\n> *Como buscar una aguja específica entre miles de correos y documentos digitales para presentarla como prueba en un juicio.*\n\n### Digital Forensic Procedures: Forensic Ethics\n\n* **Definition:** The code of ethics governing digital forensic analysts, emphasizing three key principles: **avoiding bias**, **using repeatable actions**, and **preserving the integrity of the evidence**.\n\nConclusions must be based solely on the evidence, never on personal bias — some organizations separate the roles of **digital media collectors** (who gather evidence) from **digital forensic examiners** (who analyze it, without knowing the parties involved) to minimize this risk. Analysis must also be **repeatable**: **timestamp**, **every action**, and **result should be documented** (e.g., in a log with exact commands and screenshots) so another analyst using the same evidence and methods reaches the same conclusion. Finally, evidence must never be altered — analysis should always be performed on a disk **image** of a device, never on the original drive, to avoid modifying files such as swap files during the investigation.\n\nFailure to follow these ethical standards gives a defense attorney grounds to discredit findings, potentially making evidence inadmissible and allowing a threat actor to escape prosecution.\n\n> *Como un juez que no debe conocer a las partes involucradas para no tener prejuicios, y que además debe explicar su razonamiento de forma que cualquier otro juez llegue a la misma conclusión con la misma evidencia.*\n\n---"
+      },
+      {
+        "name": "Data Collection Procedures",
+        "definition": "The established methods for gathering relevant information and evidence during an incident response for forensic investigation, allowing systems to be restored to operation quickly while preserving evidence for later analysis or law enforcement use.",
+        "analogy": "*Como preparar un expediente completo para un caso judicial: no basta con una sola prueba, se necesita reunir fotos, testimonios, registros y costos para tener el panorama completo.*",
+        "tables": [
+          {
+            "headers": [
+              "Priority",
+              "Data Source"
+            ],
+            "rows": [
+              [
+                "1",
+                "CPU registers and cache memory (extremely small, changes constantly)"
+              ],
+              [
+                "2",
+                "Other volatile memory — system RAM, routing tables, ARP caches, process tables, temporary swap files"
+              ],
+              [
+                "3",
+                "Persistent mass storage — hard drives, SSDs, flash drives"
+              ],
+              [
+                "4",
+                "Remotely logged data — SIEM and monitoring data (still being written to elsewhere)"
+              ],
+              [
+                "5",
+                "Physical configuration and network topology"
+              ],
+              [
+                "6",
+                "Archival media — backup tapes and offsite storage like CDR (Call Detail Record) or a DVR (Digital Video Recorder) (write-once, lowest priority)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The established methods for gathering relevant information and evidence during an incident response for forensic investigation, allowing systems to be restored to operation quickly while preserving evidence for later analysis or law enforcement use.\n\nData collection efforts typically include **capturing** and **hashing** system images (e.g., with FTK Imager), analyzing data with forensic software (FTK/Forensic Toolkit, EnCase), capturing screenshots of the scene, reviewing network traffic logs and captures, and pulling CCTV video if physical intrusion is suspected. Teams also take statements from witnesses and administrators, review software licensing and documentation, and track man-hours and expenses for the incident's total cost.\n\n> *Como preparar un expediente completo para un caso judicial: no basta con una sola prueba, se necesita reunir fotos, testimonios, registros y costos para tener el panorama completo.*\n\n### Data Collection Procedures: Data Acquisition\n\n* **Definition:** The methods and tools used to create a forensically sound copy of data from a source device, such as system memory or a hard disk.\n\nBefore acquiring any data, the analyst must confirm they have the **legal right to search or seize** the device — a company-owned device is generally fair game, but a BYOD (bring-your-own-device) system complicates this significantly, since the employee — not the company — owns it, and unauthorized seizure can make the evidence inadmissible. The analyst must also decide how to handle a live system: collecting data from a powered-on machine risks contaminating volatile evidence, while powering it down can permanently lose other evidence — both approaches have tradeoffs depending on what needs to be collected.\n\n> *Como pedir permiso antes de revisar el celular de alguien: si el dispositivo no es tuyo (BYOD), necesitas autorización legal clara antes de tocarlo.*\n\n#### Data Acquisition: Detailed Order of Volatility (Practical Sequence)\n\n* **Definition:** An expanded, practice-oriented evidence-collection sequence that prioritizes the fastest-changing data first: CPU registers and cache, other volatile memory, persistent mass storage, remotely logged data, physical configuration, and archival media.\n\n| Priority | Data Source                                                                                                                                     |\n| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |\n| 1        | CPU registers and cache memory (extremely small, changes constantly)                                                                            |\n| 2        | Other volatile memory — system RAM, routing tables, ARP caches, process tables, temporary swap files                                            |\n| 3        | Persistent mass storage — hard drives, SSDs, flash drives                                                                                       |\n| 4        | Remotely logged data — SIEM and monitoring data (still being written to elsewhere)                                                              |\n| 5        | Physical configuration and network topology                                                                                                     |\n| 6        | Archival media — backup tapes and offsite storage like CDR (Call Detail Record) or a DVR (Digital Video Recorder) (write-once, lowest priority) |\n\nThis practical sequence expands on the five-step NIST SP 800-86 order of volatility covered in \"Digital Forensic Procedures\" by separating out physical topology and clarifying where SIEM/remote logs fit relative to storage devices.\n\n> *Como evacuar un edificio en incendio por prioridad: primero las zonas donde el fuego avanza más rápido, y al final los archivos guardados en la bóveda que resisten más tiempo.*\n\n```markdown\n⚠️ Analyst Warning: Volatile Registry Hives & Memory Forensics\n----------------------------------------------------------------------------------------\n**The Misconception**: Junior analysts often assume the Windows Registry \nresides entirely on the hard drive.\n\n**The Reality**: Critical portions of the registry—most notably \nthe HKLM\\HARDWARE hive—are highly volatile and stored exclusively in memory (RAM) while the system is running.\n\n**Forensic Impact**: The \\HARDWARE hive logs critical hardware interactions, \nincluding every external disk or thumb drive connected to or disconnected from the system. \nIf you only pull the registry from the hard disk, this data is lost.\n\nBest Practice Workflow: \n1. Memory Dump First: Always capture and analyze a \nmemory dump first to extract active volatile hives (\\HARDWARE).\n2. Hard Drive Second: Analyze the physical disk \nafterward to cross-reference data and catch anything missed in memory.\n\n**Analytic Value**: Identifying connected flash drives via \nmemory forensics provides immediate leads to track potential \ndata exfiltration routes.\n```\n\n#### Data Acquisition: Windows Registry Considerations\n\n* **Definition:** A forensic caveat noting that certain Windows registry hives — such as `HKLM\\HARDWARE` — exist only in memory and must be captured via a memory dump rather than from the hard disk, since they record every disk device connected to or removed from the computer.\n\nAnalyzing the registry via a memory dump first (then again from the hard drive) helps ensure nothing relevant, such as evidence of a USB thumb drive used to exfiltrate data, is missed.\n\n> *Como una libreta de visitas que se borra si apagas las luces de la recepción: si no la lees mientras el sistema está encendido, pierdes el registro de quién entró y salió.*\n\n---"
+      },
+      {
+        "name": "Disk Imaging and Analysis in Practice",
+        "definition": "The practical application of forensic tools to create and analyze a bit-by-bit copy of a storage device, demonstrated using the Linux `dd` command and the Windows-based FTK Imager tool.",
+        "analogy": "*Como el paso de la teoría a la práctica en un laboratorio de química: ya sabes la fórmula, ahora la ejecutas con las manos usando las herramientas reales.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The practical application of forensic tools to create and analyze a bit-by-bit copy of a storage device, demonstrated using the Linux `dd` command and the Windows-based FTK Imager tool.\n\n> *Como el paso de la teoría a la práctica en un laboratorio de química: ya sabes la fórmula, ahora la ejecutas con las manos usando las herramientas reales.*\n\n### Disk Imaging in Practice: The `dd` Command (Linux/Unix/macOS)\n\n* **Definition:** A command-line utility used to create a bit-by-bit image of an entire disk (partitioned and unpartitioned space), typically connected through a write blocker and followed by hashing to preserve the chain of custody.\n\n```bash\n# Listar dispositivos conectados\nfdisk -l\n\n# Crear la imagen bit a bit del disco completo (no solo la partición)\ndd bs=64k if=/dev/sdb of=usb2gb.dd\n\n# Generar el hash para la cadena de custodia\nmd5sum usb2gb.dd\n# Recomendado también usar SHA-1 o SHA-256, ya que MD5 se considera débil hoy en día\n```\n\nImaging the **entire disk** (not just a single partition) is important because hidden data can exist outside the partitioned space.\n\n> *Como usar una fotocopiadora industrial que copia cada mancha y doblez de un documento, y luego sellar la copia con una firma notarial (el hash) para probar que no fue alterada.*\n\n### Disk Imaging in Practice: FTK Imager\n\n* **Definition:** A graphical forensic tool used to create verified disk images — with automatic hash verification — and to browse and recover data, including deleted files, from an acquired image without ever touching the original evidence.\n\nThe typical workflow is: `File → Create Disk Image` → select the physical drive → choose a **raw DD** output format (readable by any forensic tool, unlike EnCase's E01 or FTK's AFF) → enter case/examiner details → let the tool image and verify (computing MD5 and SHA-1 hashes automatically). Analysis is then performed by loading the resulting image file back into FTK, where deleted files, unallocated space, and slack space can be browsed and recovered — all without modifying the original drive, which is no longer even connected to the system.\n\n> *Como una lupa de detective que te permite ver documentos \"borrados\" de un archivero, sin tener que tocar el archivero original.*\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "Incident: An act of violating an explicit or implied security policy",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Incident**",
+                "An act of violating an explicit or implied security policy"
+              ],
+              [
+                "**NIST SP 800-61**",
+                "The NIST guide defining the four-phase incident response model"
+              ],
+              [
+                "**Preparation**",
+                "IR phase focused on hardening systems and getting ready before an incident occurs"
+              ],
+              [
+                "**Detection**",
+                "IR phase focused on determining whether a security incident has occurred"
+              ],
+              [
+                "**Analysis**",
+                "IR phase that examines and evaluates an incident's scope and impact"
+              ],
+              [
+                "**Containment**",
+                "IR phase that limits the scope and spread of an incident"
+              ],
+              [
+                "**Eradication**",
+                "IR phase that removes malicious activity from a system or network"
+              ],
+              [
+                "**Recovery**",
+                "IR phase that restores systems and services to a normal, secured state"
+              ],
+              [
+                "**Post-Incident Activity**",
+                "IR phase for root cause analysis, lessons learned, and the after-action report"
+              ],
+              [
+                "**Root Cause Analysis**",
+                "Four-step, no-blame process to identify and prevent the recurrence of an incident's initial cause"
+              ],
+              [
+                "**Lessons Learned Process**",
+                "Formalized documentation of what went right/wrong during an incident response"
+              ],
+              [
+                "**After-Action Report**",
+                "Formal report documenting an incident's root cause and lessons learned recommendations"
+              ],
+              [
+                "**Incident Response Team**",
+                "Core and temporary personnel responsible for executing an incident response"
+              ],
+              [
+                "**Threat Hunting**",
+                "Proactive search for threats not caught by normal security monitoring"
+              ],
+              [
+                "**TTP**",
+                "Tactics, Techniques, and Procedures used by a threat actor"
+              ],
+              [
+                "**IoC**",
+                "Indicator of Compromise — evidence suggesting a security breach"
+              ],
+              [
+                "**Advisories and Bulletins**",
+                "Vendor/researcher publications on newly discovered TTPs or vulnerabilities"
+              ],
+              [
+                "**Intelligence Fusion**",
+                "Combining SIEM data with external threat intelligence feeds"
+              ],
+              [
+                "**Training**",
+                "Education ensuring staff understand IR processes, procedures, and priorities"
+              ],
+              [
+                "**Testing**",
+                "Practical exercise of incident response procedures"
+              ],
+              [
+                "**Tabletop Exercise (TTX)**",
+                "Discussion-based IR test conducted verbally, not on live systems"
+              ],
+              [
+                "**Penetration Test**",
+                "Authorized, scenario-based intrusion attempt governed by rules of engagement"
+              ],
+              [
+                "**Rules of Engagement**",
+                "Agreed boundaries and methodology for a penetration test"
+              ],
+              [
+                "**Simulation Exercise**",
+                "Realistic, hands-on IR test mimicking an actual incident"
+              ],
+              [
+                "**Digital Forensics**",
+                "Systematic investigation and analysis of digital devices/data for legal purposes"
+              ],
+              [
+                "**Identification Phase**",
+                "Forensics phase securing the scene and scoping evidence to collect"
+              ],
+              [
+                "**Collection Phase**",
+                "Forensics phase gathering evidence under legal authorization"
+              ],
+              [
+                "**Order of Volatility**",
+                "Sequence for collecting evidence from most to least volatile"
+              ],
+              [
+                "**Chain of Custody**",
+                "Documented record tracking evidence handling from collection to court"
+              ],
+              [
+                "**Disk Imaging**",
+                "Creating a bit-by-bit copy of a storage device"
+              ],
+              [
+                "**File Carving**",
+                "Extracting files/fragments from storage media without relying on the file system"
+              ],
+              [
+                "**Analysis Phase**",
+                "Forensics phase examining a sound copy of evidence using repeatable methods"
+              ],
+              [
+                "**Reporting Phase**",
+                "Forensics phase documenting methods, actions, and findings for legal use"
+              ],
+              [
+                "**Legal Hold**",
+                "Formal notice to preserve all potentially relevant electronic data during expected litigation"
+              ],
+              [
+                "**Preservation**",
+                "Proactive steps to protect electronic evidence from alteration"
+              ],
+              [
+                "**E-Discovery**",
+                "Identifying, collecting, and producing electronically stored information for litigation"
+              ],
+              [
+                "**Forensic Ethics**",
+                "Principles of avoiding bias, ensuring repeatability, and preserving evidence integrity"
+              ],
+              [
+                "**Data Acquisition**",
+                "Method/tools used to create a forensically sound copy of data from a source device"
+              ],
+              [
+                "**Write Blocker**",
+                "Hardware/software device preventing writes to evidence media during acquisition"
+              ],
+              [
+                "**HKLM\\HARDWARE**",
+                "Windows registry hive existing only in memory; logs connected/removed storage devices"
+              ],
+              [
+                "**dd**",
+                "Linux/Unix command-line utility for creating bit-by-bit disk images"
+              ],
+              [
+                "**FTK Imager**",
+                "Graphical forensic tool for creating verified disk images and recovering deleted data"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term                         | Definition                                                                                        |\n| ---------------------------- | ------------------------------------------------------------------------------------------------- |\n| **Incident**                 | An act of violating an explicit or implied security policy                                        |\n| **NIST SP 800-61**           | The NIST guide defining the four-phase incident response model                                    |\n| **Preparation**              | IR phase focused on hardening systems and getting ready before an incident occurs                 |\n| **Detection**                | IR phase focused on determining whether a security incident has occurred                          |\n| **Analysis**                 | IR phase that examines and evaluates an incident's scope and impact                               |\n| **Containment**              | IR phase that limits the scope and spread of an incident                                          |\n| **Eradication**              | IR phase that removes malicious activity from a system or network                                 |\n| **Recovery**                 | IR phase that restores systems and services to a normal, secured state                            |\n| **Post-Incident Activity**   | IR phase for root cause analysis, lessons learned, and the after-action report                    |\n| **Root Cause Analysis**      | Four-step, no-blame process to identify and prevent the recurrence of an incident's initial cause |\n| **Lessons Learned Process**  | Formalized documentation of what went right/wrong during an incident response                     |\n| **After-Action Report**      | Formal report documenting an incident's root cause and lessons learned recommendations            |\n| **Incident Response Team**   | Core and temporary personnel responsible for executing an incident response                       |\n| **Threat Hunting**           | Proactive search for threats not caught by normal security monitoring                             |\n| **TTP**                      | Tactics, Techniques, and Procedures used by a threat actor                                        |\n| **IoC**                      | Indicator of Compromise — evidence suggesting a security breach                                   |\n| **Advisories and Bulletins** | Vendor/researcher publications on newly discovered TTPs or vulnerabilities                        |\n| **Intelligence Fusion**      | Combining SIEM data with external threat intelligence feeds                                       |\n| **Training**                 | Education ensuring staff understand IR processes, procedures, and priorities                      |\n| **Testing**                  | Practical exercise of incident response procedures                                                |\n| **Tabletop Exercise (TTX)**  | Discussion-based IR test conducted verbally, not on live systems                                  |\n| **Penetration Test**         | Authorized, scenario-based intrusion attempt governed by rules of engagement                      |\n| **Rules of Engagement**      | Agreed boundaries and methodology for a penetration test                                          |\n| **Simulation Exercise**      | Realistic, hands-on IR test mimicking an actual incident                                          |\n| **Digital Forensics**        | Systematic investigation and analysis of digital devices/data for legal purposes                  |\n| **Identification Phase**     | Forensics phase securing the scene and scoping evidence to collect                                |\n| **Collection Phase**         | Forensics phase gathering evidence under legal authorization                                      |\n| **Order of Volatility**      | Sequence for collecting evidence from most to least volatile                                      |\n| **Chain of Custody**         | Documented record tracking evidence handling from collection to court                             |\n| **Disk Imaging**             | Creating a bit-by-bit copy of a storage device                                                    |\n| **File Carving**             | Extracting files/fragments from storage media without relying on the file system                  |\n| **Analysis Phase**           | Forensics phase examining a sound copy of evidence using repeatable methods                       |\n| **Reporting Phase**          | Forensics phase documenting methods, actions, and findings for legal use                          |\n| **Legal Hold**               | Formal notice to preserve all potentially relevant electronic data during expected litigation     |\n| **Preservation**             | Proactive steps to protect electronic evidence from alteration                                    |\n| **E-Discovery**              | Identifying, collecting, and producing electronically stored information for litigation           |\n| **Forensic Ethics**          | Principles of avoiding bias, ensuring repeatability, and preserving evidence integrity            |\n| **Data Acquisition**         | Method/tools used to create a forensically sound copy of data from a source device                |\n| **Write Blocker**            | Hardware/software device preventing writes to evidence media during acquisition                   |\n| **HKLM\\HARDWARE**            | Windows registry hive existing only in memory; logs connected/removed storage devices             |\n| **dd**                       | Linux/Unix command-line utility for creating bit-by-bit disk images                               |\n| **FTK Imager**               | Graphical forensic tool for creating verified disk images and recovering deleted data             |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Incident Response Overview",
+        "definition": "The critical cybersecurity process that outlines a systematic approach an organization takes to manage and mitigate security incidents, minimizing their impact and facilitating a swift return to normal operations. (Objective 4.8)",
+        "analogy": "*Es como el protocolo de emergencias de un hospital: sin importar qué tipo de accidente llegue, existe un proceso estructurado — triage, estabilización, tratamiento, alta — que se sigue siempre para minimizar el daño y regresar al paciente a la normalidad.*",
+        "raw_content": "* **Definition:** The critical cybersecurity process that outlines a systematic approach an organization takes to manage and mitigate security incidents, minimizing their impact and facilitating a swift return to normal operations. (Objective 4.8)\n\nAn **incident** is an act of violating an explicit or implied security policy — for example, stealing someone's password to log into their account, or an attacker installing malware on a system. Both break the organization's expectation that only authorized people and code interact with its systems.\n\nThe primary goals of incident response are to **minimize the impact** of a breach, **reduce the time** it takes to identify and contain threats, and **facilitate a swift recovery** to normal operations. This requires detection and classification, containment and eradication, evidence preservation, communication and reporting, and lessons learned for future prevention.\n\n> *Es como el protocolo de emergencias de un hospital: sin importar qué tipo de accidente llegue, existe un proceso estructurado — triage, estabilización, tratamiento, alta — que se sigue siempre para minimizar el daño y regresar al paciente a la normalidad.*\n\n---"
+      },
+      {
+        "name": "The Incident Response Process: NIST vs. CompTIA Models",
+        "definition": "The structured sequence of phases an organization follows when responding to a security incident; NIST defines a four-phase model, while CompTIA expands it into a seven-phase model for exam purposes.",
+        "analogy": "*Como comparar un mapa de carreteras simplificado (NIST, 4 paradas grandes) con uno detallado que muestra cada salida (CompTIA, 7 paradas): ambos te llevan al mismo destino, pero uno da más detalle para el examen.*",
+        "raw_content": "* **Definition:** The structured sequence of phases an organization follows when responding to a security incident; NIST defines a four-phase model, while CompTIA expands it into a seven-phase model for exam purposes.\n\nNIST's *Computer Security Incident Handling Guide* (Special Publication 800-61) defines **four phases**: preparation, detection and analysis, containment/eradication/recovery, and post-incident activity. CompTIA splits \"detection and analysis\" into two separate phases, and \"containment, eradication, and recovery\" into three separate phases, producing a **seven-phase model**. On the exam, always use the CompTIA seven-phase model.\n\nThe process is often **non-linear** — while responding, a team commonly loops backward from containment into detection and analysis again when new suspicious activity is found.\n\n| Model                  | Phases                                                                                                               |\n| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |\n| **NIST (4 phases)**    | Preparation → Detection and Analysis → Containment, Eradication, and Recovery → Post-Incident Activity               |\n| **CompTIA (7 phases)** | Preparation → Detection → Analysis → Containment → Eradication → Recovery → Post-Incident Activity (Lessons Learned) |\n\n> *Como comparar un mapa de carreteras simplificado (NIST, 4 paradas grandes) con uno detallado que muestra cada salida (CompTIA, 7 paradas): ambos te llevan al mismo destino, pero uno da más detalle para el examen.*"
+      },
+      {
+        "name": "Incident Response Process: Preparation",
+        "definition": "The phase in which cybersecurity practitioners make systems resilient to attack by hardening infrastructure, writing policies and procedures, and establishing communication plans, before any incident occurs.",
+        "analogy": "*Como el entrenamiento de bomberos antes de que ocurra un incendio: revisan el equipo, practican rutas de escape y lo preparan todo antes de la emergencia real.*",
+        "raw_content": "* **Definition:** The phase in which cybersecurity practitioners make systems resilient to attack by hardening infrastructure, writing policies and procedures, and establishing communication plans, before any incident occurs.\n\nThis phase also includes **training**, **testing**, and **exercising** staff with simulated incidents, and creating incident response kits — everything needed to be ready before something bad happens, including setting up encrypted out-of-band communication paths.\n\n> *Como el entrenamiento de bomberos antes de que ocurra un incendio: revisan el equipo, practican rutas de escape y lo preparan todo antes de la emergencia real.*"
+      },
+      {
+        "name": "Incident Response Process: Detection",
+        "definition": "The phase focused on determining whether a security incident has actually occurred, with cybersecurity and triage analysts categorizing and assessing its potential severity.",
+        "analogy": "*Como un detector de humo: su único trabajo es avisar que \"algo está pasando\", sin todavía saber qué tan grave es el incendio.*",
+        "raw_content": "* **Definition:** The phase focused on determining whether a security incident has actually occurred, with cybersecurity and triage analysts categorizing and assessing its potential severity.\n\n> *Como un detector de humo: su único trabajo es avisar que \"algo está pasando\", sin todavía saber qué tan grave es el incendio.*"
+      },
+      {
+        "name": "Incident Response Process: Analysis",
+        "definition": "The phase in which an incident is thoroughly examined and evaluated to **understand its scope and impact**, after which stakeholders are notified and containment is initiated.",
+        "analogy": "*Como un médico de emergencias que, tras la alarma inicial, examina al paciente para entender qué tan grave es la lesión antes de decidir el tratamiento.*",
+        "raw_content": "* **Definition:** The phase in which an incident is thoroughly examined and evaluated to **understand its scope and impact**, after which stakeholders are notified and containment is initiated.\n\nAnalysts work to understand the nature and potential consequences of the incident, providing insights that guide the initial response actions.\n\n> *Como un médico de emergencias que, tras la alarma inicial, examina al paciente para entender qué tan grave es la lesión antes de decidir el tratamiento.*"
+      },
+      {
+        "name": "Incident Response Process: Containment",
+        "definition": "The phase used to **limit the scope and magnitude of an incident** by **securing data and minimizing impact** on business operations, customers, and partners.",
+        "analogy": "*Como cerrar las compuertas de un barco que se está inundando: todavía no arreglas el agujero, pero evitas que el agua (o el malware) se extienda al resto del barco.*",
+        "raw_content": "* **Definition:** The phase used to **limit the scope and magnitude of an incident** by **securing data and minimizing impact** on business operations, customers, and partners.\n\nFor example, if malware is detected on a system, the goal is to prevent it from spreading — such as by disconnecting the infected client from the network and locking out the affected user.\n\n> *Como cerrar las compuertas de un barco que se está inundando: todavía no arreglas el agujero, pero evitas que el agua (o el malware) se extienda al resto del barco.*"
+      },
+      {
+        "name": "Incident Response Process: Eradication",
+        "definition": "The phase, beginning once an incident is contained, focused on completely **removing the malicious activity from the affected system or network**.",
+        "analogy": "*Como fumigar una casa después de aislar la habitación infestada: ahora eliminas por completo la plaga.*",
+        "raw_content": "* **Definition:** The phase, beginning once an incident is contained, focused on completely **removing the malicious activity from the affected system or network**.\n\nContinuing the malware example, once spread is stopped, the malware is removed or the system is reimaged from a known-good image.\n\n> *Como fumigar una casa después de aislar la habitación infestada: ahora eliminas por completo la plaga.*"
+      },
+      {
+        "name": "Incident Response Process: Recovery",
+        "definition": "The phase focused on restoring affected systems and services to their normal, secured state — often via restoring from a **known-good backup**, **installing patches**, or **updating configurations**.",
+        "analogy": "*Como la rehabilitación después de una cirugía: no basta con quitar el problema, hay que devolver el cuerpo al funcionamiento normal y vigilarlo durante la recuperación.*",
+        "raw_content": "* **Definition:** The phase focused on restoring affected systems and services to their normal, secured state — often via restoring from a **known-good backup**, **installing patches**, or **updating configurations**.\n\nRecovery may also include monitoring systems for lingering threats to ensure a smooth return to normal operations and increased resilience against future attacks.\n\n> *Como la rehabilitación después de una cirugía: no basta con quitar el problema, hay que devolver el cuerpo al funcionamiento normal y vigilarlo durante la recuperación.*"
+      },
+      {
+        "name": "Incident Response Process: Post-Incident Activity (Lessons Learned)",
+        "definition": "The final phase, occurring after containment, eradication, and recovery are complete, in which the team analyzes the incident and the response itself to identify what worked and what could be improved.",
+        "analogy": "*Como la reunión que hace un equipo deportivo después del partido para ver la repetición del juego: no importa si ganaron o perdieron, analizan qué funcionó y qué no.*",
+        "raw_content": "* **Definition:** The final phase, occurring after containment, eradication, and recovery are complete, in which the team analyzes the incident and the response itself to identify what worked and what could be improved.\n\nThree major actions occur during this phase: the **root cause analysis**, the **lessons learned process**, and the **after-action report** (see Sections 5, and the sub-concepts below).\n\n> *Como la reunión que hace un equipo deportivo después del partido para ver la repetición del juego: no importa si ganaron o perdieron, analizan qué funcionó y qué no.*"
+      },
+      {
+        "name": "Post-Incident Activity: Lessons Learned Process",
+        "definition": "A formalized method for documenting **what went right**, **what went wrong**, and **what could be done better** during an incident response, feeding directly into organizational process improvements.",
+        "analogy": "*Como un diario de errores de cocina: no rediseñas la receta completa cada vez, solo anotas qué salió mal para no repetirlo.*",
+        "raw_content": "* **Definition:** A formalized method for documenting **what went right**, **what went wrong**, and **what could be done better** during an incident response, feeding directly into organizational process improvements.\n\nFor example, if a change management board was too slow to approve a needed security fix, a lesson learned might be to decrease approval times for emergent change requests during an incident.\n\n> *Como un diario de errores de cocina: no rediseñas la receta completa cada vez, solo anotas qué salió mal para no repetirlo.*"
+      },
+      {
+        "name": "Post-Incident Activity: After-Action Report",
+        "definition": "A formalized report that documents what happened during an incident, including the root cause analysis and the recommendations produced by the lessons learned process.",
+        "analogy": "*Como el reporte policial de un accidente de tránsito: documenta oficialmente los hechos para que quede constancia y se pueda actuar después.*",
+        "raw_content": "* **Definition:** A formalized report that documents what happened during an incident, including the root cause analysis and the recommendations produced by the lessons learned process.\n\nDepending on the organization, this report may be highly detailed and technical, or written as an executive summary.\n\n> *Como el reporte policial de un accidente de tránsito: documenta oficialmente los hechos para que quede constancia y se pueda actuar después.*\n\n---"
+      },
+      {
+        "name": "The Incident Response Team",
+        "definition": "The group of professionals responsible for executing an incident response, composed of a core team of experienced cybersecurity practitioners supplemented by temporary members brought in for a specific incident.",
+        "analogy": "*Como el equipo de respuesta de un hospital durante una emergencia masiva: hay un líder de trauma, especialistas que se convocan según se necesiten, y administración que gestiona recursos y la comunicación con la prensa.*",
+        "raw_content": "* **Definition:** The group of professionals responsible for executing an incident response, composed of a core team of experienced cybersecurity practitioners supplemented by temporary members brought in for a specific incident.\n\nThe team includes a **leader** (a skilled incident responder), **subject-matter experts**, **IT support staff**, **legal counsel**, and **human resources/public relations**. Large organizations often maintain dedicated, full-time IR teams, while smaller organizations assemble temporary teams as an additional duty for existing employees (e.g., deputizing a database administrator when a database is involved). Organizational leadership must ensure the team has funding, resources, and expertise, and must make the critical business decisions and communications with stakeholders or media.\n\n> *Como el equipo de respuesta de un hospital durante una emergencia masiva: hay un líder de trauma, especialistas que se convocan según se necesiten, y administración que gestiona recursos y la comunicación con la prensa.*"
+      },
+      {
+        "name": "Incident Response Team: Outsourced IR Teams",
+        "definition": "Third-party specialized teams hired by an organization to perform incident response on its behalf, offering deep specialization but at high cost and with less familiarity with the organization's specific network.",
+        "analogy": "*Como contratar bomberos externos que nunca han visto el plano de tu edificio: son expertos, pero tardan más en orientarse que el equipo interno.*",
+        "raw_content": "* **Definition:** Third-party specialized teams hired by an organization to perform incident response on its behalf, offering deep specialization but at high cost and with less familiarity with the organization's specific network.\n\nBecause these teams don't know the enterprise environment in advance, they need time to learn the network before they can respond effectively — a tradeoff against their day-to-day specialization advantage.\n\n> *Como contratar bomberos externos que nunca han visto el plano de tu edificio: son expertos, pero tardan más en orientarse que el equipo interno.*\n\n---"
+      },
+      {
+        "name": "Threat Hunting",
+        "definition": "A proactive cybersecurity technique focused on continuously searching for existing or emerging threats within an organization's network that have not been discovered by normal security monitoring. Essentially, threat hunting is the act of being proactive in your defense as opposed to being reactive like you are with incident response.",
+        "analogy": "*Como un guardia de seguridad que, en lugar de esperar a que suene la alarma, camina activamente por el edificio buscando puertas que alguien pudo haber forzado sin activarla.*",
+        "raw_content": "* **Definition:** A proactive cybersecurity technique focused on continuously searching for existing or emerging threats within an organization's network that have not been discovered by normal security monitoring. Essentially, threat hunting is the act of being proactive in your defense as opposed to being reactive like you are with incident response.\n\nThreat hunting begins with the assumption that **existing detection rules have already failed** to alert on something malicious — it looks for what has bypassed the rules, unlike routine monitoring, which relies on known signatures for well-documented TTPs. Because threat actors modify their tactics once they become well-known, threat hunters look for new TTPs and create new indicators of compromise (IoCs).\n\n> *Como un guardia de seguridad que, en lugar de esperar a que suene la alarma, camina activamente por el edificio buscando puertas que alguien pudo haber forzado sin activarla.*"
+      },
+      {
+        "name": "Threat Hunting: Threat Modeling and Hypothesis",
+        "definition": "The initial step of threat hunting, in which analysts establish a hypothesis by identifying which potential attack events have the highest likelihood and highest impact, combining threat modeling with threat intelligence.",
+        "analogy": "*Como un detective que, antes de investigar, se pregunta \"¿quién tendría motivo para hacer esto y cómo lo haría?\" antes de buscar pistas.*",
+        "raw_content": "* **Definition:** The initial step of threat hunting, in which analysts establish a hypothesis by identifying which potential attack events have the highest likelihood and highest impact, combining threat modeling with threat intelligence.\n\nThis step starts by asking **who might want to harm us?**,  **Who might want to break into our networks?** and **how might they be able to do that?**.\n\n> *Como un detective que, antes de investigar, se pregunta \"¿quién tendría motivo para hacer esto y cómo lo haría?\" antes de buscar pistas.*"
+      },
+      {
+        "name": "Threat Hunting: Profiling Threat Actors and Activities",
+        "definition": "The step of creating scenarios that illustrate how a prospective attacker might attempt an intrusion, including their likely TTPs and category (insider threat, hacktivist, criminal organization, or nation-state APT).",
+        "analogy": "*Como perfilar a un ladrón antes de un robo: ¿usará una ganzúa o romperá una ventana? Saber esto ayuda a anticipar sus movimientos.*",
+        "raw_content": "* **Definition:** The step of creating scenarios that illustrate how a prospective attacker might attempt an intrusion, including their likely TTPs and category (insider threat, hacktivist, criminal organization, or nation-state APT).\n\nThis profiling determines the attacker's probable objectives and which systems they might target.\n\n> *Como perfilar a un ladrón antes de un robo: ¿usará una ganzúa o romperá una ventana? Saber esto ayuda a anticipar sus movimientos.*"
+      },
+      {
+        "name": "Threat Hunting: Advisories and Bulletins",
+        "definition": "Publications released by vendors and security researchers when new TTPs or vulnerabilities are discovered, often before any signature exists in an organization's protection suite.",
+        "analogy": "*Como un boletín de salud pública que anuncia un nuevo virus antes de que exista la vacuna: te avisa para que tomes precauciones mientras se desarrolla la cura.*",
+        "raw_content": "* **Definition:** Publications released by vendors and security researchers when new TTPs or vulnerabilities are discovered, often before any signature exists in an organization's protection suite.\n\nThreat hunters use these bulletins to determine whether their own network is at risk, even without an existing detection signature.\n\n> *Como un boletín de salud pública que anuncia un nuevo virus antes de que exista la vacuna: te avisa para que tomes precauciones mientras se desarrolla la cura.*"
+      },
+      {
+        "name": "Threat Hunting: Intelligence Fusion and Threat Data",
+        "definition": "The practice of using a SIEM and threat analysis platforms together with external TTP/IoC threat data feeds to efficiently identify items of concern within an organization's own logs.",
+        "analogy": "*Como cruzar el reporte del clima de varias fuentes con lo que ves por tu ventana: combinar datos externos e internos da una imagen más completa de la amenaza real.*",
+        "raw_content": "* **Definition:** The practice of using a SIEM and threat analysis platforms together with external TTP/IoC threat data feeds to efficiently identify items of concern within an organization's own logs.\n\nCombining internal log data with real-world threat intelligence produces actionable intelligence — for example, correlating outbound traffic to a suspicious domain (found via threat research) with a list of internal hosts that need further investigation.\n\n> *Como cruzar el reporte del clima de varias fuentes con lo que ves por tu ventana: combinar datos externos e internos da una imagen más completa de la amenaza real.*\n\n---"
+      },
+      {
+        "name": "Root Cause Analysis",
+        "definition": "A systematic four-step process used to identify the initial source of a security incident and to prevent it from recurring: **(1) define/scope the incident**, **(2) determine the causal relationships that led to it**, **(3) identify an effective solution**, and **(4) implement and track that solution**.",
+        "analogy": "*Como la investigación de un accidente aéreo por la NTSB: no busca culpar al piloto, busca entender qué falló en todo el sistema para que nunca vuelva a pasar.*",
+        "raw_content": "* **Definition:** A systematic four-step process used to identify the initial source of a security incident and to prevent it from recurring: **(1) define/scope the incident**, **(2) determine the causal relationships that led to it**, **(3) identify an effective solution**, and **(4) implement and track that solution**.\n\nUsing a malware infection as an example: the initial vector might be a user plugging in an infected USB thumb drive. Prevention measures could include updating antivirus signatures across all workstations, blocking USB mass-storage data transfer, and patching the specific vulnerability the malware exploited.\n\nRoot cause analysis must always use a **no-blame approach** — its purpose is not to assign fault to an individual or team, but to identify systemic weaknesses and develop effective preventative measures, encouraging open and honest reporting. The NTSB's independent, no-blame investigation of the 2018–2019 Boeing 737 MAX crashes — which identified a defective sensor and flawed flight-control software, rather than pilot error, as the root cause — illustrates this principle at scale.\n\n⚠️ **Exam Tip:** Root cause analysis is a **no-blame process** — its goal is prevention, not punishment.\n\n> *Como la investigación de un accidente aéreo por la NTSB: no busca culpar al piloto, busca entender qué falló en todo el sistema para que nunca vuelva a pasar.*\n\n---"
+      },
+      {
+        "name": "Incident Response Training and Testing",
+        "definition": "The objective domain covering the preparation of personnel and systems to respond effectively to security incidents, through **training** (education) and **testing** (practical exercises).",
+        "analogy": "",
+        "raw_content": "* **Definition:** The objective domain covering the preparation of personnel and systems to respond effectively to security incidents, through **training** (education) and **testing** (practical exercises)."
+      },
+      {
+        "name": "Incident Response Training and Testing: Testing",
+        "definition": "The practical exercise of incident response procedures, verifying that personnel can actually execute what they were taught in training, as opposed to merely knowing what to do.",
+        "analogy": "*Como la diferencia entre practicar un discurso frente al espejo y darlo de verdad frente a una audiencia: solo la segunda prueba si realmente estás listo.*",
+        "raw_content": "* **Definition:** The practical exercise of incident response procedures, verifying that personnel can actually execute what they were taught in training, as opposed to merely knowing what to do.\n\nTesting can range from a low-cost, discussion-based tabletop exercise up to a full-scale, multi-site simulation costing hundreds of thousands of dollars — each with different tradeoffs between realism and cost. The three major testing formats are the **tabletop exercise**, the **penetration test**, and the **full-scale simulation**, each detailed below.\n\n> *Como la diferencia entre practicar un discurso frente al espejo y darlo de verdad frente a una audiencia: solo la segunda prueba si realmente estás listo.*"
+      },
+      {
+        "name": "Testing: Tabletop Exercise (TTX)",
+        "definition": "A discussion-based exercise that runs an incident response scenario against a framework of controls or a red team, conducted verbally \"around a table\" rather than performed physically on a live network.",
+        "analogy": "*Como un ensayo de obra de teatro sentados alrededor de una mesa, leyendo el guion en voz alta sin actuar físicamente las escenas.*",
+        "raw_content": "* **Definition:** A discussion-based exercise that runs an incident response scenario against a framework of controls or a red team, conducted verbally \"around a table\" rather than performed physically on a live network.\n\nA facilitator presents a scenario (e.g., \"you have an indication of a data breach on this server — what would you do?\") and participants describe their responses in turn. A common variant splits participants into a **red team** (attackers) and a **blue team** (defenders), who alternate describing attack and defense actions across several rounds. TTXs are far less expensive than full exercises, but provide no hands-on, on-keyboard experience.\n\n> *Como un ensayo de obra de teatro sentados alrededor de una mesa, leyendo el guion en voz alta sin actuar físicamente las escenas.*"
+      },
+      {
+        "name": "Testing: Penetration Test",
+        "definition": "An exercise in which a red team attempts to conduct an actual intrusion into the network using a specific scenario based on threat modeling, governed by an agreed-upon methodology and rules of engagement.",
+        "analogy": "*Como un simulacro de robo autorizado por el dueño del banco: los \"ladrones\" tienen permiso y reglas claras sobre qué pueden y no pueden hacer.*",
+        "raw_content": "* **Definition:** An exercise in which a red team attempts to conduct an actual intrusion into the network using a specific scenario based on threat modeling, governed by an agreed-upon methodology and rules of engagement.\n\nA penetration test is goal-directed — for example, targeting a database — rather than an unconstrained attack (a denial-of-service attack would typically fall outside the rules of engagement unless explicitly permitted). Seeing tools or operating systems such as **Metasploit, Cobalt Strike, Kali Linux, ParrotOS, or Commando OS** on a network should prompt a defender to consider whether this reflects an authorized pentest or, worse, an actual attacker — since these are open-source tools available to anyone.\n\n> *Como un simulacro de robo autorizado por el dueño del banco: los \"ladrones\" tienen permiso y reglas claras sobre qué pueden y no pueden hacer.*"
+      },
+      {
+        "name": "Testing: Simulation Exercise",
+        "definition": "A realistic, hands-on exercise that goes beyond theoretical tabletop discussion to mimic actual incidents — such as simulated phishing attacks, ransomware infections, or complex multi-stage breaches involving external parties like law enforcement or PR — in a controlled but authentic environment.",
+        "analogy": "*Como un simulacro de incendio real con humo artificial y bomberos actuando en tiempo real, en lugar de solo hablar sobre qué harían.*",
+        "raw_content": "* **Definition:** A realistic, hands-on exercise that goes beyond theoretical tabletop discussion to mimic actual incidents — such as simulated phishing attacks, ransomware infections, or complex multi-stage breaches involving external parties like law enforcement or PR — in a controlled but authentic environment.\n\nThese exercises are invaluablefor: \n\n* identifying gaps in your incident response plan.\n* improving coordination between teams\n* ensuring that everyone understands their roles during a real incident.\n\nSimulations assess not only technical skill but also decision-making under pressure and internal/external communication. They should align with the organization's threat landscape and risk profile, and are invaluable for identifying gaps in the IR plan and improving team coordination.\n\n> *Como un simulacro de incendio real con humo artificial y bomberos actuando en tiempo real, en lugar de solo hablar sobre qué harían.*\n\n---"
+      },
+      {
+        "name": "Digital Forensic Procedures",
+        "definition": "The systematic techniques and methodologies used to gather, analyze, and preserve digital evidence for investigations into cybercrimes or security incidents, following organizational written procedures at all times to ensure evidence is handled correctly and remains admissible.",
+        "analogy": "*Como el trabajo de un investigador de la escena del crimen (CSI), pero aplicado a discos duros y teléfonos en lugar de huellas dactilares.*",
+        "raw_content": "* **Definition:** The systematic techniques and methodologies used to gather, analyze, and preserve digital evidence for investigations into cybercrimes or security incidents, following organizational written procedures at all times to ensure evidence is handled correctly and remains admissible.\n\nDigital forensic procedures are broken into four main phases: **identification, collection, analysis,** and **reporting**, detailed below.\n\n> *Como el trabajo de un investigador de la escena del crimen (CSI), pero aplicado a discos duros y teléfonos en lugar de huellas dactilares.*"
+      },
+      {
+        "name": "Digital Forensic Procedures: Identification Phase",
+        "definition": "The phase focused on ensuring the safety of the scene, securing it to prevent evidence contamination, and determining the scope of evidence that needs to be collected.",
+        "analogy": "*Como acordonar la escena de un crimen con cinta amarilla antes de que alguien contamine las pruebas.*",
+        "raw_content": "* **Definition:** The phase focused on ensuring the safety of the scene, securing it to prevent evidence contamination, and determining the scope of evidence that needs to be collected.\n\nThis includes documenting the scene with video or photographs before anything is touched, and identifying where relevant data might be stored (tablet, smartphone, smart TV, server) based on the scope defined in a warrant or authorization.\n\n> *Como acordonar la escena de un crimen con cinta amarilla antes de que alguien contamine las pruebas.*"
+      },
+      {
+        "name": "Digital Forensic Procedures: Collection Phase",
+        "definition": "The phase in which identified evidence is gathered under proper legal authorization — a warrant for law enforcement, or executive sign-off (CIO/CSO/CEO) for an internal investigation — following the order of volatility and preserving the chain of custody.",
+        "analogy": "*Como recolectar evidencia física con guantes y bolsas etiquetadas: cada paso debe documentarse para que la evidencia sea válida en la corte.*",
+        "raw_content": "* **Definition:** The phase in which identified evidence is gathered under proper legal authorization — a warrant for law enforcement, or executive sign-off (CIO/CSO/CEO) for an internal investigation — following the order of volatility and preserving the chain of custody.\n\n> *Como recolectar evidencia física con guantes y bolsas etiquetadas: cada paso debe documentarse para que la evidencia sea válida en la corte.*"
+      },
+      {
+        "name": "Collection Phase: Order of Volatility (NIST SP 800-86)",
+        "definition": "A systematic approach in digital forensics that dictates the sequence in which data sources should be collected, starting with the most volatile (most susceptible to modification or loss) and ending with the least volatile, in order to minimize data loss and maintain evidentiary integrity.",
+        "analogy": "*Como salvar objetos de una casa que se está incendiando: primero los que se queman más rápido (papeles), y al final los que resisten más (objetos de metal).*",
+        "raw_content": "* **Definition:** A systematic approach in digital forensics that dictates the sequence in which data sources should be collected, starting with the most volatile (most susceptible to modification or loss) and ending with the least volatile, in order to minimize data loss and maintain evidentiary integrity.\n\n| Step | Data Source                                                                        |\n| ---- | ---------------------------------------------------------------------------------- |\n| 1    | System memory, including processor cache and RAM                                   |\n| 2    | System state — network configuration, active user sessions, non-altering data      |\n| 3    | Storage devices — hard drives, solid-state devices, non-volatile storage           |\n| 4    | Network traffic and logs                                                           |\n| 5    | Remotely stored archive data — backups, cloud storage, external devices, printouts |\n\n> *Como salvar objetos de una casa que se está incendiando: primero los que se queman más rápido (papeles), y al final los que resisten más (objetos de metal).*"
+      },
+      {
+        "name": "Collection Phase: Chain of Custody",
+        "definition": "A documented and verifiable record that tracks the handling, transfer, and preservation of digital evidence from the moment it is collected until it is presented in a court of law.",
+        "analogy": "*Como el recibo firmado cada vez que un paquete cambia de manos en una entrega: si falta un eslabón, no puedes confiar en que el paquete llegó intacto.*",
+        "raw_content": "* **Definition:** A documented and verifiable record that tracks the handling, transfer, and preservation of digital evidence from the moment it is collected until it is presented in a court of law.\n\nEvery person who handles the evidence — from the initial collector to a forensic analyst or legal professional — must document their actions and any change in custody status, ensuring the evidence remains untainted and admissible.\n\n> *Como el recibo firmado cada vez que un paquete cambia de manos en una entrega: si falta un eslabón, no puedes confiar en que el paquete llegó intacto.*"
+      },
+      {
+        "name": "Collection Phase: Disk Imaging",
+        "definition": "The process of creating a bit-by-bit or logical copy of a storage device, preserving its entire content — including deleted files and unallocated space — so the original device remains untouched during analysis.",
+        "analogy": "*Como fotocopiar un libro página por página, incluyendo las manchas y los márgenes, en lugar de solo copiar el texto.*",
+        "raw_content": "* **Definition:** The process of creating a bit-by-bit or logical copy of a storage device, preserving its entire content — including deleted files and unallocated space — so the original device remains untouched during analysis.\n\n> *Como fotocopiar un libro página por página, incluyendo las manchas y los márgenes, en lugar de solo copiar el texto.*"
+      },
+      {
+        "name": "Collection Phase: File Carving",
+        "definition": "A technique that extracts files and data fragments directly from storage media without relying on the file system, particularly useful when file metadata is missing or corrupted.",
+        "analogy": "*Como reconstruir un jarrón roto juntando los pedazos esparcidos por el piso, sin tener la caja original que decía cómo iba armado.*",
+        "raw_content": "* **Definition:** A technique that extracts files and data fragments directly from storage media without relying on the file system, particularly useful when file metadata is missing or corrupted.\n\n> *Como reconstruir un jarrón roto juntando los pedazos esparcidos por el piso, sin tener la caja original que decía cómo iba armado.*"
+      },
+      {
+        "name": "Digital Forensic Procedures: Analysis Phase",
+        "definition": "The phase in which forensic analysts apply repeatable methods and tools to a forensically sound copy of the evidence, systematically uncovering relevant information such as potential criminal activity, hidden files, timestamps, and user interactions.",
+        "analogy": "*Como un patólogo forense examinando una muestra en el laboratorio, siguiendo protocolos estrictos para que sus conclusiones sean confiables.*",
+        "raw_content": "* **Definition:** The phase in which forensic analysts apply repeatable methods and tools to a forensically sound copy of the evidence, systematically uncovering relevant information such as potential criminal activity, hidden files, timestamps, and user interactions.\n\nAnalysts follow strict, documented protocols to ensure consistency and objectivity, deriving insights that support any resulting legal proceedings.\n\n> *Como un patólogo forense examinando una muestra en el laboratorio, siguiendo protocolos estrictos para que sus conclusiones sean confiables.*"
+      },
+      {
+        "name": "Digital Forensic Procedures: Reporting Phase",
+        "definition": "The final phase in which the forensic analyst documents the methods and tools used, the actions performed during analysis, the detailed findings, and the final conclusions, in a report that may serve as evidence in legal proceedings.",
+        "analogy": "*Como el testimonio de un perito en un juicio: debe poder explicar y defender cada paso de su trabajo ante un abogado defensor.*",
+        "raw_content": "* **Definition:** The final phase in which the forensic analyst documents the methods and tools used, the actions performed during analysis, the detailed findings, and the final conclusions, in a report that may serve as evidence in legal proceedings.\n\nThe analyst must be prepared to testify in court about these findings and defend their work against challenges from a defense attorney.\n\n> *Como el testimonio de un perito en un juicio: debe poder explicar y defender cada paso de su trabajo ante un abogado defensor.*"
+      },
+      {
+        "name": "Digital Forensic Procedures: Legal Hold",
+        "definition": "A formal notification instructing employees to **preserve** all potentially relevant electronic data, documents, and records when litigation is reasonably expected, freezing the state of that information for future legal use.",
+        "analogy": "*Como congelar una escena completa en el tiempo: nada se puede tocar ni borrar hasta que termine el proceso legal.*",
+        "raw_content": "* **Definition:** A formal notification instructing employees to **preserve** all potentially relevant electronic data, documents, and records when litigation is reasonably expected, freezing the state of that information for future legal use.\n\n**Any alteration or destruction of data under legal hold can lead to severe legal consequences.**\n\n> *Como congelar una escena completa en el tiempo: nada se puede tocar ni borrar hasta que termine el proceso legal.*"
+      },
+      {
+        "name": "Digital Forensic Procedures: Preservation",
+        "definition": "The proactive steps taken to maintain and protect electronic evidence in its original state — such as making backup copies, isolating critical systems, and implementing access controls — to prevent unauthorized alteration.",
+        "analogy": "*Como guardar un documento histórico en una vitrina sellada con clima controlado para que no se deteriore.*",
+        "raw_content": "* **Definition:** The proactive steps taken to maintain and protect electronic evidence in its original state — such as making backup copies, isolating critical systems, and implementing access controls — to prevent unauthorized alteration.\n\nPreservation supports both the evidentiary integrity needed for a strong case and compliance with any active legal hold.\n\n> *Como guardar un documento histórico en una vitrina sellada con clima controlado para que no se deteriore.*"
+      },
+      {
+        "name": "Digital Forensic Procedures: E-Discovery",
+        "definition": "The process of identifying, collecting, and producing electronically stored information during legal proceedings, encompassing the search, analysis, and presentation of digital evidence in a format suitable for litigation.",
+        "analogy": "*Como buscar una aguja específica entre miles de correos y documentos digitales para presentarla como prueba en un juicio.*",
+        "raw_content": "* **Definition:** The process of identifying, collecting, and producing electronically stored information during legal proceedings, encompassing the search, analysis, and presentation of digital evidence in a format suitable for litigation.\n\nE-discovery tools efficiently sift through emails, documents, databases, and other digital records to meet legal disclosure obligations.\n\nDue to the complexity of modern litigations where electronic data often plays a central role, your organization should opt to appoint a **liaison** with legal knowledge and expertise to help facilitate communication and cooperation with law enforcement and forensic teams to ensure you stay on the right side of the law. This liaison can serve as a point of contact for interactions and ensuring a smoother process keeping any action under the law.\n\n> *Como buscar una aguja específica entre miles de correos y documentos digitales para presentarla como prueba en un juicio.*"
+      },
+      {
+        "name": "Digital Forensic Procedures: Forensic Ethics",
+        "definition": "The code of ethics governing digital forensic analysts, emphasizing three key principles: **avoiding bias**, **using repeatable actions**, and **preserving the integrity of the evidence**.",
+        "analogy": "*Como un juez que no debe conocer a las partes involucradas para no tener prejuicios, y que además debe explicar su razonamiento de forma que cualquier otro juez llegue a la misma conclusión con la misma evidencia.*",
+        "raw_content": "* **Definition:** The code of ethics governing digital forensic analysts, emphasizing three key principles: **avoiding bias**, **using repeatable actions**, and **preserving the integrity of the evidence**.\n\nConclusions must be based solely on the evidence, never on personal bias — some organizations separate the roles of **digital media collectors** (who gather evidence) from **digital forensic examiners** (who analyze it, without knowing the parties involved) to minimize this risk. Analysis must also be **repeatable**: **timestamp**, **every action**, and **result should be documented** (e.g., in a log with exact commands and screenshots) so another analyst using the same evidence and methods reaches the same conclusion. Finally, evidence must never be altered — analysis should always be performed on a disk **image** of a device, never on the original drive, to avoid modifying files such as swap files during the investigation.\n\nFailure to follow these ethical standards gives a defense attorney grounds to discredit findings, potentially making evidence inadmissible and allowing a threat actor to escape prosecution.\n\n> *Como un juez que no debe conocer a las partes involucradas para no tener prejuicios, y que además debe explicar su razonamiento de forma que cualquier otro juez llegue a la misma conclusión con la misma evidencia.*\n\n---"
+      },
+      {
+        "name": "Data Collection Procedures",
+        "definition": "The established methods for gathering relevant information and evidence during an incident response for forensic investigation, allowing systems to be restored to operation quickly while preserving evidence for later analysis or law enforcement use.",
+        "analogy": "*Como preparar un expediente completo para un caso judicial: no basta con una sola prueba, se necesita reunir fotos, testimonios, registros y costos para tener el panorama completo.*",
+        "raw_content": "* **Definition:** The established methods for gathering relevant information and evidence during an incident response for forensic investigation, allowing systems to be restored to operation quickly while preserving evidence for later analysis or law enforcement use.\n\nData collection efforts typically include **capturing** and **hashing** system images (e.g., with FTK Imager), analyzing data with forensic software (FTK/Forensic Toolkit, EnCase), capturing screenshots of the scene, reviewing network traffic logs and captures, and pulling CCTV video if physical intrusion is suspected. Teams also take statements from witnesses and administrators, review software licensing and documentation, and track man-hours and expenses for the incident's total cost.\n\n> *Como preparar un expediente completo para un caso judicial: no basta con una sola prueba, se necesita reunir fotos, testimonios, registros y costos para tener el panorama completo.*"
+      },
+      {
+        "name": "Data Collection Procedures: Data Acquisition",
+        "definition": "The methods and tools used to create a forensically sound copy of data from a source device, such as system memory or a hard disk.",
+        "analogy": "*Como pedir permiso antes de revisar el celular de alguien: si el dispositivo no es tuyo (BYOD), necesitas autorización legal clara antes de tocarlo.*",
+        "raw_content": "* **Definition:** The methods and tools used to create a forensically sound copy of data from a source device, such as system memory or a hard disk.\n\nBefore acquiring any data, the analyst must confirm they have the **legal right to search or seize** the device — a company-owned device is generally fair game, but a BYOD (bring-your-own-device) system complicates this significantly, since the employee — not the company — owns it, and unauthorized seizure can make the evidence inadmissible. The analyst must also decide how to handle a live system: collecting data from a powered-on machine risks contaminating volatile evidence, while powering it down can permanently lose other evidence — both approaches have tradeoffs depending on what needs to be collected.\n\n> *Como pedir permiso antes de revisar el celular de alguien: si el dispositivo no es tuyo (BYOD), necesitas autorización legal clara antes de tocarlo.*"
+      },
+      {
+        "name": "Data Acquisition: Detailed Order of Volatility (Practical Sequence)",
+        "definition": "An expanded, practice-oriented evidence-collection sequence that prioritizes the fastest-changing data first: CPU registers and cache, other volatile memory, persistent mass storage, remotely logged data, physical configuration, and archival media.",
+        "analogy": "*Como evacuar un edificio en incendio por prioridad: primero las zonas donde el fuego avanza más rápido, y al final los archivos guardados en la bóveda que resisten más tiempo.*",
+        "raw_content": "* **Definition:** An expanded, practice-oriented evidence-collection sequence that prioritizes the fastest-changing data first: CPU registers and cache, other volatile memory, persistent mass storage, remotely logged data, physical configuration, and archival media.\n\n| Priority | Data Source                                                                                                                                     |\n| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |\n| 1        | CPU registers and cache memory (extremely small, changes constantly)                                                                            |\n| 2        | Other volatile memory — system RAM, routing tables, ARP caches, process tables, temporary swap files                                            |\n| 3        | Persistent mass storage — hard drives, SSDs, flash drives                                                                                       |\n| 4        | Remotely logged data — SIEM and monitoring data (still being written to elsewhere)                                                              |\n| 5        | Physical configuration and network topology                                                                                                     |\n| 6        | Archival media — backup tapes and offsite storage like CDR (Call Detail Record) or a DVR (Digital Video Recorder) (write-once, lowest priority) |\n\nThis practical sequence expands on the five-step NIST SP 800-86 order of volatility covered in \"Digital Forensic Procedures\" by separating out physical topology and clarifying where SIEM/remote logs fit relative to storage devices.\n\n> *Como evacuar un edificio en incendio por prioridad: primero las zonas donde el fuego avanza más rápido, y al final los archivos guardados en la bóveda que resisten más tiempo.*\n\n```markdown\n⚠️ Analyst Warning: Volatile Registry Hives & Memory Forensics\n----------------------------------------------------------------------------------------\n**The Misconception**: Junior analysts often assume the Windows Registry \nresides entirely on the hard drive.\n\n**The Reality**: Critical portions of the registry—most notably \nthe HKLM\\HARDWARE hive—are highly volatile and stored exclusively in memory (RAM) while the system is running.\n\n**Forensic Impact**: The \\HARDWARE hive logs critical hardware interactions, \nincluding every external disk or thumb drive connected to or disconnected from the system. \nIf you only pull the registry from the hard disk, this data is lost.\n\nBest Practice Workflow: \n1. Memory Dump First: Always capture and analyze a \nmemory dump first to extract active volatile hives (\\HARDWARE).\n2. Hard Drive Second: Analyze the physical disk \nafterward to cross-reference data and catch anything missed in memory.\n\n**Analytic Value**: Identifying connected flash drives via \nmemory forensics provides immediate leads to track potential \ndata exfiltration routes.\n```"
+      },
+      {
+        "name": "Data Acquisition: Windows Registry Considerations",
+        "definition": "A forensic caveat noting that certain Windows registry hives — such as `HKLM\\HARDWARE` — exist only in memory and must be captured via a memory dump rather than from the hard disk, since they record every disk device connected to or removed from the computer.",
+        "analogy": "*Como una libreta de visitas que se borra si apagas las luces de la recepción: si no la lees mientras el sistema está encendido, pierdes el registro de quién entró y salió.*",
+        "raw_content": "* **Definition:** A forensic caveat noting that certain Windows registry hives — such as `HKLM\\HARDWARE` — exist only in memory and must be captured via a memory dump rather than from the hard disk, since they record every disk device connected to or removed from the computer.\n\nAnalyzing the registry via a memory dump first (then again from the hard drive) helps ensure nothing relevant, such as evidence of a USB thumb drive used to exfiltrate data, is missed.\n\n> *Como una libreta de visitas que se borra si apagas las luces de la recepción: si no la lees mientras el sistema está encendido, pierdes el registro de quién entró y salió.*\n\n---"
+      },
+      {
+        "name": "Disk Imaging and Analysis in Practice",
+        "definition": "The practical application of forensic tools to create and analyze a bit-by-bit copy of a storage device, demonstrated using the Linux `dd` command and the Windows-based FTK Imager tool.",
+        "analogy": "*Como el paso de la teoría a la práctica en un laboratorio de química: ya sabes la fórmula, ahora la ejecutas con las manos usando las herramientas reales.*",
+        "raw_content": "* **Definition:** The practical application of forensic tools to create and analyze a bit-by-bit copy of a storage device, demonstrated using the Linux `dd` command and the Windows-based FTK Imager tool.\n\n> *Como el paso de la teoría a la práctica en un laboratorio de química: ya sabes la fórmula, ahora la ejecutas con las manos usando las herramientas reales.*"
+      },
+      {
+        "name": "Disk Imaging in Practice: The `dd` Command (Linux/Unix/macOS)",
+        "definition": "A command-line utility used to create a bit-by-bit image of an entire disk (partitioned and unpartitioned space), typically connected through a write blocker and followed by hashing to preserve the chain of custody.",
+        "analogy": "*Como usar una fotocopiadora industrial que copia cada mancha y doblez de un documento, y luego sellar la copia con una firma notarial (el hash) para probar que no fue alterada.*",
+        "raw_content": "* **Definition:** A command-line utility used to create a bit-by-bit image of an entire disk (partitioned and unpartitioned space), typically connected through a write blocker and followed by hashing to preserve the chain of custody.\n\n```bash\n# Listar dispositivos conectados\nfdisk -l\n\n# Crear la imagen bit a bit del disco completo (no solo la partición)\ndd bs=64k if=/dev/sdb of=usb2gb.dd\n\n# Generar el hash para la cadena de custodia\nmd5sum usb2gb.dd\n# Recomendado también usar SHA-1 o SHA-256, ya que MD5 se considera débil hoy en día\n```\n\nImaging the **entire disk** (not just a single partition) is important because hidden data can exist outside the partitioned space.\n\n> *Como usar una fotocopiadora industrial que copia cada mancha y doblez de un documento, y luego sellar la copia con una firma notarial (el hash) para probar que no fue alterada.*"
+      },
+      {
+        "name": "Disk Imaging in Practice: FTK Imager",
+        "definition": "A graphical forensic tool used to create verified disk images — with automatic hash verification — and to browse and recover data, including deleted files, from an acquired image without ever touching the original evidence.",
+        "analogy": "*Como una lupa de detective que te permite ver documentos \"borrados\" de un archivero, sin tener que tocar el archivero original.*",
+        "raw_content": "* **Definition:** A graphical forensic tool used to create verified disk images — with automatic hash verification — and to browse and recover data, including deleted files, from an acquired image without ever touching the original evidence.\n\nThe typical workflow is: `File → Create Disk Image` → select the physical drive → choose a **raw DD** output format (readable by any forensic tool, unlike EnCase's E01 or FTK's AFF) → enter case/examiner details → let the tool image and verify (computing MD5 and SHA-1 hashes automatically). Analysis is then performed by loading the resulting image file back into FTK, where deleted files, unallocated space, and slack space can be browsed and recovered — all without modifying the original drive, which is no longer even connected to the system.\n\n> *Como una lupa de detective que te permite ver documentos \"borrados\" de un archivero, sin tener que tocar el archivero original.*\n\n---"
+      }
+    ]
+  },
+  {
+    "sectionId": "S25",
+    "sectionTitle": "Section 25: Investigating an Incident",
+    "concepts": [
+      {
+        "name": "Investigating with Data: SIEM (Security Information and Event Management)",
+        "definition": "A platform that aggregates data from multiple sources across the network into a single system, providing real-time analysis of security alerts generated by applications and network hardware.",
+        "analogy": "*Es como la torre de control de un aeropuerto: recibe información de radares, torres, y pistas por separado, pero la junta toda en una sola pantalla para que el controlador vea el panorama completo.*",
+        "tables": [
+          {
+            "headers": [
+              "Component",
+              "What it does"
+            ],
+            "rows": [
+              [
+                "**Sensor**",
+                "The actual endpoint being monitored; the data source feeding the SIEM"
+              ],
+              [
+                "**Sensitivity**",
+                "How much or how little the sensor logs — too much overloads processing/storage/bandwidth"
+              ],
+              [
+                "**Trends**",
+                "Graphical patterns over time (e.g., rising failed logins suggesting a brute force)"
+              ],
+              [
+                "**Alerts**",
+                "Automated notifications triggered by defined thresholds (e.g., 5 failed logins → notify admin)"
+              ],
+              [
+                "**Correlation**",
+                "Normalizing data from different sources (IP/hostname formats, time zones) into one consistent picture, usually standardized to **UTC**"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A platform that aggregates data from multiple sources across the network into a single system, providing real-time analysis of security alerts generated by applications and network hardware.\n\nA SIEM combines many different data sources into one dashboard, giving an analyst the number of hosts, authentications, and unique IPs on the network, with the ability to filter and search that data to find what's relevant during an investigation.\n\n> *Es como la torre de control de un aeropuerto: recibe información de radares, torres, y pistas por separado, pero la junta toda en una sola pantalla para que el controlador vea el panorama completo.*\n\n### SIEM: Core Components\n\n* **Definition:** The five functional elements that make a SIEM useful for detection and investigation — sensor, sensitivity, trends, alerts, and correlation.\n\n| Component       | What it does                                                                                                                           |\n| --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |\n| **Sensor**      | The actual endpoint being monitored; the data source feeding the SIEM                                                                  |\n| **Sensitivity** | How much or how little the sensor logs — too much overloads processing/storage/bandwidth                                               |\n| **Trends**      | Graphical patterns over time (e.g., rising failed logins suggesting a brute force)                                                     |\n| **Alerts**      | Automated notifications triggered by defined thresholds (e.g., 5 failed logins → notify admin)                                         |\n| **Correlation** | Normalizing data from different sources (IP/hostname formats, time zones) into one consistent picture, usually standardized to **UTC** |\n\n⚠️ **Exam Tip:** Correlation is critical because different systems may log time in different formats (local time, GMT, UTC). Standardizing to **UTC** avoids misreading the sequence of an attack.\n\n---"
+      },
+      {
+        "name": "Investigating with Data: Log Files",
+        "definition": "Files that record events occurring in an operating system, application, or communication between users, serving as the digital record of what happened on a system.",
+        "analogy": "*Es como tener varios diarios distintos en una casa: uno para quién entra y sale (seguridad), otro para las llamadas telefónicas (VoIP), y otro para qué páginas visitó cada persona (web) — cada diario cuenta una parte distinta de la historia.*",
+        "tables": [
+          {
+            "headers": [
+              "Log Type",
+              "Captures"
+            ],
+            "rows": [
+              [
+                "**Network log**",
+                "Traffic passing through routers and switches"
+              ],
+              [
+                "**System log**",
+                "Events on an individual host or server"
+              ],
+              [
+                "**Application log**",
+                "What a specific application is doing"
+              ],
+              [
+                "**Security log**",
+                "Failed and successful login attempts"
+              ],
+              [
+                "**Web log**",
+                "Websites accessed (proxy) or files touched on a web server"
+              ],
+              [
+                "**DNS log**",
+                "Requests made to a DNS server (who is resolving which domain)"
+              ],
+              [
+                "**Authentication log**",
+                "Successful/failed logins and logouts across systems"
+              ],
+              [
+                "**Dump file**",
+                "Memory contents written to disk when a system crashes"
+              ],
+              [
+                "**VoIP log/metadata**",
+                "Call metadata (who called whom, duration); calls may also be recorded per policy"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Files that record events occurring in an operating system, application, or communication between users, serving as the digital record of what happened on a system.\n\nThere are many categories of log files, each capturing a different slice of activity on the network.\n\n> *Es como tener varios diarios distintos en una casa: uno para quién entra y sale (seguridad), otro para las llamadas telefónicas (VoIP), y otro para qué páginas visitó cada persona (web) — cada diario cuenta una parte distinta de la historia.*\n\n| Log Type               | Captures                                                                         |\n| ---------------------- | -------------------------------------------------------------------------------- |\n| **Network log**        | Traffic passing through routers and switches                                     |\n| **System log**         | Events on an individual host or server                                           |\n| **Application log**    | What a specific application is doing                                             |\n| **Security log**       | Failed and successful login attempts                                             |\n| **Web log**            | Websites accessed (proxy) or files touched on a web server                       |\n| **DNS log**            | Requests made to a DNS server (who is resolving which domain)                    |\n| **Authentication log** | Successful/failed logins and logouts across systems                              |\n| **Dump file**          | Memory contents written to disk when a system crashes                            |\n| **VoIP log/metadata**  | Call metadata (who called whom, duration); calls may also be recorded per policy |\n\n---"
+      },
+      {
+        "name": "Investigating with Data: Syslog, Rsyslog, and Syslog-ng",
+        "definition": "Three variations of the same logging protocol that permit centralizing log data from different systems into a single repository, commonly feeding data into a SIEM.",
+        "analogy": "*Como tres compañías de correo diferentes que hacen exactamente el mismo trabajo: recoger cartas (logs) de muchas casas y llevarlas a una sola oficina central.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Three variations of the same logging protocol that permit centralizing log data from different systems into a single repository, commonly feeding data into a SIEM.\n  \n  \n\nAll three perform the same core function — collecting logs from various endpoints and forwarding them to a central location (often the SIEM itself).\n\n> *Como tres compañías de correo diferentes que hacen exactamente el mismo trabajo: recoger cartas (logs) de muchas casas y llevarlas a una sola oficina central.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: Journalctl",
+        "definition": "A Linux command-line utility used to query and display logs collected by journald, the logging service for systemd on Linux systems.",
+        "analogy": "*Es como el buscador interno de un archivo digital: en vez de hojear papel por papel, escribes el comando y te muestra exactamente los registros que necesitas.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A Linux command-line utility used to query and display logs collected by journald, the logging service for systemd on Linux systems.\n\nIf you need to review logs on a Linux machine, `journalctl` is the tool used to read them.\n\n> *Es como el buscador interno de un archivo digital: en vez de hojear papel por papel, escribes el comando y te muestra exactamente los registros que necesitas.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: NXLog",
+        "definition": "A multi-platform, open-source log management tool that helps identify security risks, policy breaches, and operational problems across server, OS, and application logs.",
+        "analogy": "*Como un traductor universal de logs: mientras que otros solo hablan el idioma de Linux, NXLog puede leer y centralizar logs de Windows, Linux, y Unix por igual.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A multi-platform, open-source log management tool that helps identify security risks, policy breaches, and operational problems across server, OS, and application logs.\n\nUnlike Rsyslog or Syslog-ng, which only work on Linux/Unix, **NXLog is cross-platform** — it also works on Windows.\n\n> *Como un traductor universal de logs: mientras que otros solo hablan el idioma de Linux, NXLog puede leer y centralizar logs de Windows, Linux, y Unix por igual.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: NetFlow",
+        "definition": "A network protocol created **by Cisco** that collects active IP network traffic flowing into or out of an interface, capturing summarized flow data such as origin, destination, volume, and path — not full packet contents.",
+        "analogy": "*Es como el registro de peajes de una autopista: sabes cuántos carros pasaron, de dónde venían y hacia dónde iban, pero no sabes qué llevaban dentro del carro.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A network protocol created **by Cisco** that collects active IP network traffic flowing into or out of an interface, capturing summarized flow data such as origin, destination, volume, and path — not full packet contents.\n\nNetFlow tells you **who** is using the most bandwidth and **where** traffic spikes occur, but it cannot tell you exactly what file or content was transferred — for that, a full packet capture is required.\n\n> *Es como el registro de peajes de una autopista: sabes cuántos carros pasaron, de dónde venían y hacia dónde iban, pero no sabes qué llevaban dentro del carro.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: sFlow (Sampled Flow)",
+        "definition": "An open-source, vendor-neutral alternative to NetFlow that exports truncated (sampled) packets along with interface counters for network monitoring, typically capturing only a fraction of total packets (e.g., 1 in 100 or 1 in 1,000).",
+        "analogy": "*Como probar la sopa con una cuchara en vez de tomarte la olla entera: una muestra pequeña te da una buena idea del sabor general sin necesitar todo el contenido.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An open-source, vendor-neutral alternative to NetFlow that exports truncated (sampled) packets along with interface counters for network monitoring, typically capturing only a fraction of total packets (e.g., 1 in 100 or 1 in 1,000).\n\nSince NetFlow is Cisco proprietary, sFlow serves as the generic, open version that reduces data size while still estimating traffic patterns.\n\n> *Como probar la sopa con una cuchara en vez de tomarte la olla entera: una muestra pequeña te da una buena idea del sabor general sin necesitar todo el contenido.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: IPFIX (Internet Protocol Flow Information Export)",
+        "definition": "A universal standard for exporting IP flow information from routers and probes to mediation, billing, and network management systems, defining how flow data is formatted and transferred from exporter to collector.",
+        "analogy": "*Como el medidor de agua o electricidad en tu casa: cuenta el consumo exacto para que la empresa de servicios pueda facturarte de forma precisa.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A universal standard for exporting IP flow information from routers and probes to mediation, billing, and network management systems, defining how flow data is formatted and transferred from exporter to collector.\n\nIPFIX is commonly used on the back end of service billing — for example, tracking data usage to charge a customer per gigabyte transferred.\n\n> *Como el medidor de agua o electricidad en tu casa: cuenta el consumo exacto para que la empresa de servicios pueda facturarte de forma precisa.*\n\n⚠️ **Exam Tip:** NetFlow, sFlow, and IPFIX all provide **bandwidth usage visibility**, not full packet content — that distinction is a common exam differentiator versus packet capture tools.\n\n---"
+      },
+      {
+        "name": "Investigating with Data: Metadata (Overview)",
+        "definition": "Data that describes other data — summarizing basic information about a piece of data (such as a file, call, or webpage visit) without revealing its actual content, making it easier to find and analyze.",
+        "analogy": "*Como la etiqueta de un paquete: te dice el peso, el remitente y el destinatario, pero no te dice qué hay adentro de la caja.*",
+        "tables": [
+          {
+            "headers": [
+              "Context",
+              "Example Metadata"
+            ],
+            "rows": [
+              [
+                "**Email**",
+                "Time sent, sender, originating/transiting servers"
+              ],
+              [
+                "**Mobile**",
+                "Data transferred, call duration, who was contacted"
+              ],
+              [
+                "**Web**",
+                "Websites visited, time spent on each page"
+              ],
+              [
+                "**File**",
+                "Creator, creation date, last watched/accessed date, view duration"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Data that describes other data — summarizing basic information about a piece of data (such as a file, call, or webpage visit) without revealing its actual content, making it easier to find and analyze.\n\nMetadata about a phone call might show the time, number called, and duration — without revealing what was said. This makes metadata a powerful, if incomplete, investigative resource.\n\n> *Como la etiqueta de un paquete: te dice el peso, el remitente y el destinatario, pero no te dice qué hay adentro de la caja.*\n\n| Context    | Example Metadata                                                  |\n| ---------- | ----------------------------------------------------------------- |\n| **Email**  | Time sent, sender, originating/transiting servers                 |\n| **Mobile** | Data transferred, call duration, who was contacted                |\n| **Web**    | Websites visited, time spent on each page                         |\n| **File**   | Creator, creation date, last watched/accessed date, view duration |\n\n---"
+      },
+      {
+        "name": "Dashboards",
+        "definition": "A graphical display of information from multiple systems, typically used inside a Security Operations Center as part of a \"single pane of glass\" architecture where one screen provides visibility across the entire organization.",
+        "analogy": "*Es como el tablero de un avión: en lugar de revisar cada sistema por separado (motores, combustible, altitud), el piloto ve todo en un solo panel para tomar decisiones rápidas.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A graphical display of information from multiple systems, typically used inside a Security Operations Center as part of a \"single pane of glass\" architecture where one screen provides visibility across the entire organization.\n\nA popular tool for building interactive dashboards is **Splunk**, a big data platform that ingests data from firewalls, applications, endpoints, operating systems, IDS/IPS, antivirus, and networks, then visualizes trends over time.\n\n> *Es como el tablero de un avión: en lugar de revisar cada sistema por separado (motores, combustible, altitud), el piloto ve todo en un solo panel para tomar decisiones rápidas.*\n\n### Dashboards: Reading Notable Event Trends\n\n* **Definition:** The practice of interpreting dashboard metrics (notables, urgency levels, host-based counts) to identify whether the network's security posture is improving or degrading over a given period.\n\nOn a sample dashboard, metrics like access notables, endpoint notables, network notables, identity notables, and antivirus infections are tracked week-over-week, with a color-coded up/down trend. Notable events are further broken down by **urgency** (unknown, informational, low, medium, high, critical) and can be drilled into by host to identify the most active source of alerts.\n\n> *Como el marcador de un partido de fútbol que también muestra estadísticas: no solo ves el resultado final, sino qué equipo tiene más posesión o faltas, para entender el panorama completo del juego.*\n\n⚠️ **Exam Tip:** Dashboards are the *starting point* of an investigation — they show trends and let you drill down, but the underlying logs (firewall, application, endpoint, etc.) provide the detailed evidence.\n\n---"
+      },
+      {
+        "name": "Automated Reports",
+        "definition": "A report generated automatically by a computer system — such as antivirus or an EDR platform — on a scheduled basis (hourly, daily) **to summarize suspicious or notable activity without requiring manual generation** by an analyst.",
+        "analogy": "*Es como el resumen automático de gastos que envía tu banco a fin de mes: no tuviste que pedirlo, y te avisa de inmediato si algo fuera de lo normal ocurrió en tu cuenta.*",
+        "tables": [
+          {
+            "headers": [
+              "Alert Example",
+              "Severity",
+              "Key Detail",
+              "Action Taken"
+            ],
+            "rows": [
+              [
+                "Suspicious file access (4:53 a.m.)",
+                "Critical",
+                "Rapid access pattern matches ransomware footprint",
+                "Account suspended, system isolated, backup initiated"
+              ],
+              [
+                "Excessive admin login failures",
+                "High",
+                "20+ failed logins in 5 minutes from an internal IP",
+                "IP blocked, admin password reset"
+              ],
+              [
+                "Unusual outbound traffic",
+                "Moderate",
+                "Large transfer to an IP flagged by threat intel feeds",
+                "Connection terminated, traffic placed under review"
+              ],
+              [
+                "Software installed (FileZilla FTP)",
+                "Informational",
+                "File hash didn't match a known-safe version",
+                "Execution blocked, user contacted to verify"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A report generated automatically by a computer system — such as antivirus or an EDR platform — on a scheduled basis (hourly, daily) **to summarize suspicious or notable activity without requiring manual generation** by an analyst.\n\nAn automated report typically includes a report ID, generation date, report period, and a \"prepared by\" field (often listing \"automated reporting system\" instead of a person), followed by an **executive summary** that lets a reader quickly decide whether the report needs deeper attention.\n\n> *Es como el resumen automático de gastos que envía tu banco a fin de mes: no tuviste que pedirlo, y te avisa de inmediato si algo fuera de lo normal ocurrió en tu cuenta.*\n\n### Automated Reports: Reading Incident Entries\n\n* **Definition:** The structured fields within an automated report entry — timestamp, alert severity, affected user/system, details, and action taken — used to determine whether a logged event represents a real security incident.\n\n| Alert Example                      | Severity      | Key Detail                                            | Action Taken                                         |\n| ---------------------------------- | ------------- | ----------------------------------------------------- | ---------------------------------------------------- |\n| Suspicious file access (4:53 a.m.) | Critical      | Rapid access pattern matches ransomware footprint     | Account suspended, system isolated, backup initiated |\n| Excessive admin login failures     | High          | 20+ failed logins in 5 minutes from an internal IP    | IP blocked, admin password reset                     |\n| Unusual outbound traffic           | Moderate      | Large transfer to an IP flagged by threat intel feeds | Connection terminated, traffic placed under review   |\n| Software installed (FileZilla FTP) | Informational | File hash didn't match a known-safe version           | Execution blocked, user contacted to verify          |\n\n⚠️ **Exam Tip:** Timing matters — activity occurring **outside normal business hours** (e.g., 4:53 a.m. for a 9-to-5 organization) is itself an indicator worth flagging, even before looking at the rest of the entry.\n\n---"
+      },
+      {
+        "name": "Vulnerability Scans (Vulnerability Scan Reports)",
+        "definition": "A report produced by a vulnerability scanning tool (e.g., Nessus, OpenVAS, QualysGuard) after scanning a system or network, listing discovered vulnerabilities that must be manually validated, prioritized, and remediated by an analyst — not accepted at face value.",
+        "analogy": "*Como un chequeo médico automático que te da una lista de posibles condiciones basada en síntomas generales: el médico (analista) todavía tiene que confirmar cuáles aplican realmente a ti antes de tratarlas.*",
+        "tables": [
+          {
+            "headers": [
+              "Field",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "**Report ID / Date**",
+                "Identifies and timestamps the scan"
+              ],
+              [
+                "**Executive summary**",
+                "High-level themes/trends for non-technical stakeholders (e.g., \"patch management problem\")"
+              ],
+              [
+                "**Vulnerability listing**",
+                "Each entry includes CVE ID, description, affected system, impact, **CVSS score**, and remediation"
+              ],
+              [
+                "**Additional findings**",
+                "Minor/informational issues (outdated SSL certs, unused services, misconfigured headers)"
+              ],
+              [
+                "**Recommendations**",
+                "Prioritized action: patch critical/high immediately, schedule medium, follow standard cycle for low"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A report produced by a vulnerability scanning tool (e.g., Nessus, OpenVAS, QualysGuard) after scanning a system or network, listing discovered vulnerabilities that must be manually validated, prioritized, and remediated by an analyst — not accepted at face value.\n\nScanners can produce **false positives** (e.g., flagging a missing Windows patch on a Mac). Analysts must confirm a vulnerability actually exists on the system before acting on it, then judge severity and criticality based on real environmental context.\n\n> *Como un chequeo médico automático que te da una lista de posibles condiciones basada en síntomas generales: el médico (analista) todavía tiene que confirmar cuáles aplican realmente a ti antes de tratarlas.*\n\n### Vulnerability Scans: Report Structure\n\n* **Definition:** The standard sections of a vulnerability scan report — report ID/date/scanner info, executive summary, and a prioritized vulnerability listing sorted by severity (critical → high → medium → low → informational) or by host.\n\n| Field                     | Purpose                                                                                             |\n| ------------------------- | --------------------------------------------------------------------------------------------------- |\n| **Report ID / Date**      | Identifies and timestamps the scan                                                                  |\n| **Executive summary**     | High-level themes/trends for non-technical stakeholders (e.g., \"patch management problem\")          |\n| **Vulnerability listing** | Each entry includes CVE ID, description, affected system, impact, **CVSS score**, and remediation   |\n| **Additional findings**   | Minor/informational issues (outdated SSL certs, unused services, misconfigured headers)             |\n| **Recommendations**       | Prioritized action: patch critical/high immediately, schedule medium, follow standard cycle for low |\n\n⚠️ **Exam Tip:** When **updating is not an option** alternative **compensating controls are necessary** for addressing vulnerabilities.\n\n### Vulnerability Scans: CVSS Score Interpretation\n\n* **Definition:** The Common Vulnerability Scoring System — a numeric score from 0 to 10 indicating vulnerability severity, where the scoring considers both exploitability (e.g., authenticated vs. unauthenticated attacker) and impact (how many systems/users are affected).\n\nAn **unauthenticated** RDP RCE on two desktops may have a *lower* CVSS score than an **authenticated** Exchange Server RCE, because the Exchange Server impacts the entire organization's email — impact scope drives the score as much as ease of exploitation.\n\n> *Como comparar el robo de la llave de un solo carro (impacto limitado) con el robo de la llave maestra de todo un edificio de apartamentos (impacto masivo): el segundo es más grave aunque ambos sean \"robos de llave.\"*\n\n⚠️ **Exam Tip:** Always weigh a scan's severity rating against **real environmental context** — a \"critical\" vulnerability on a server being decommissioned tomorrow is a lower true priority than the scanner's default rating suggests.\n\n---"
+      },
+      {
+        "name": "Packet Captures",
+        "definition": "A capture of all data traveling to or from a given network device (or, via a SPAN port, an entire network segment), used to analyze raw traffic at the packet level — including source/destination IPs, ports, protocol, flags, and payload length.",
+        "analogy": "*Es como revisar la grabación completa de las cámaras de seguridad de un banco, cuadro por cuadro, en lugar de solo el resumen del reporte de incidentes.*",
+        "tables": [
+          {
+            "headers": [
+              "Column",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**Number**",
+                "Sequential packet number in the capture"
+              ],
+              [
+                "**Time**",
+                "Elapsed time since capture start (not wall-clock time)"
+              ],
+              [
+                "**Source/Destination**",
+                "IP addresses involved, from the sensor's perspective"
+              ],
+              [
+                "**Protocol**",
+                "TCP, UDP, or other (e.g., ARP at Layer 2)"
+              ],
+              [
+                "**Length**",
+                "Size of the packet"
+              ],
+              [
+                "**Info**",
+                "Flags (SYN, ACK, etc.), sequence/window info, source port (SPort), destination port (Dport)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** A capture of all data traveling to or from a given network device (or, via a SPAN port, an entire network segment), used to analyze raw traffic at the packet level — including source/destination IPs, ports, protocol, flags, and payload length.\n\nOn the exam, packet captures are shown as short **snippets** (5–20 lines) rather than full multi-gigabyte captures, and the goal is to recognize the **pattern** of an attack from those few lines.\n\n> *Es como revisar la grabación completa de las cámaras de seguridad de un banco, cuadro por cuadro, en lugar de solo el resumen del reporte de incidentes.*\n\n### Packet Captures: Reading Key Columns\n\n* **Definition:** The standard fields present in a packet capture snippet — packet number, elapsed time, source/destination IP, protocol, length, and info (flags, ports, sequence data) — used to reconstruct what occurred during a session.\n\n| Column                 | Meaning                                                                                     |\n| ---------------------- | ------------------------------------------------------------------------------------------- |\n| **Number**             | Sequential packet number in the capture                                                     |\n| **Time**               | Elapsed time since capture start (not wall-clock time)                                      |\n| **Source/Destination** | IP addresses involved, from the sensor's perspective                                        |\n| **Protocol**           | TCP, UDP, or other (e.g., ARP at Layer 2)                                                   |\n| **Length**             | Size of the packet                                                                          |\n| **Info**               | Flags (SYN, ACK, etc.), sequence/window info, source port (SPort), destination port (Dport) |\n\n### Packet Captures: Port Scan Indicator\n\n* **Definition:** A traffic pattern showing repeated SYN packets sent from one source to one destination across many different destination ports in rapid succession, indicating reconnaissance activity such as an Nmap scan.\n\n![eae48a24-fadb-40b8-9699-edd717835e5e](file:///C:/Users/LENOVO/Documents/Obsidian%Vault/001_Material_Estudio/Security_plus/secPlus_images/eae48a24-fadb-40b8-9699-edd717835e5e.png)\n\nIn the example capture, the same source repeatedly sends SYN packets to increasing/varied destination ports (80, 23, 22, 21, 443…) against a single destination — a signature of port scanning.\n\n> *Como alguien caminando por un pasillo de hotel probando cada manija de puerta una por una, buscando cuál está sin seguro.*\n\n### Packet Captures: SYN Flood (Denial of Service) Indicator\n\n* **Definition:** A traffic pattern showing a large volume of SYN packets from one source to one destination with no corresponding SYN-ACK or ACK responses, indicating an attacker deliberately leaving TCP handshakes half-open to exhaust server resources.\n\n![1352ed82-a87e-445d-a97c-e636fb16574f](file:///C:/Users/LENOVO/Documents/Obsidian%Vault/001_Material_Estudio/Security_plus/secPlus_images/1352ed82-a87e-445d-a97c-e636fb16574f.png)\n\nBecause only the first step of the three-way handshake occurs repeatedly, the destination server's connection table fills up, potentially crashing the service.\n\n> *Como llamar repetidamente a una puerta y salir corriendo antes de que alguien abra: la persona dentro pierde tiempo y energía revisando puertas que nunca se completan.*\n\n### Packet Captures: **Distributed** Denial of Service (DDoS) Indicator\n\n* **Definition:** A traffic pattern similar to a SYN flood but originating from many **distinct source** IP addresses all targeting the **same destination** simultaneously, indicating a coordinated or botnet-driven attack.\n\n![c3710bc6-13d5-423e-9c06-ee2aba2c2f0b](file:///C:/Users/LENOVO/Documents/Obsidian%Vault/001_Material_Estudio/Security_plus/secPlus_images/c3710bc6-13d5-423e-9c06-ee2aba2c2f0b.png)\n\nThe key distinguishing factor from a single-source SYN flood is that the **source IP changes** every few hundred packets while the destination remains constant.\n\n> *Como si en vez de una sola persona tocando la puerta sin parar, fueran cien personas distintas tocando la misma puerta al mismo tiempo — el volumen colectivo es lo que abruma al sistema.*\n\n⚠️ **Exam Tip:** Same source + same destination + repeated SYNs with no ACKs = **DoS (SYN flood)**. Many different sources + same destination + the same pattern = **DDoS**. Repeated SYNs across many *different destination ports* = **port scan**.\n\n---"
+      },
+      {
+        "name": "Firewall Logs",
+        "definition": "Log entries generated by a firewall recording allowed and blocked traffic, which can operate at Layer 4 (port/protocol-based) or Layer 7 (application-aware, deep packet inspection) depending on the firewall type.",
+        "analogy": "*Como el libro de visitas de un edificio con dos tipos de guardias: uno solo revisa si tienes cita (capa 4, puertos), y el otro además revisa qué llevas en tu maletín (capa 7, contenido).*",
+        "tables": [
+          {
+            "headers": [
+              "Status Code",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**200**",
+                "OK — request succeeded (may still have been intercepted by the WAF before reaching the user)"
+              ],
+              [
+                "**403**",
+                "Forbidden — server understood the request but refused to authorize it (often the WAF blocking a malicious pattern)"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Log entries generated by a firewall recording allowed and blocked traffic, which can operate at Layer 4 (port/protocol-based) or Layer 7 (application-aware, deep packet inspection) depending on the firewall type.\n\n> *Como el libro de visitas de un edificio con dos tipos de guardias: uno solo revisa si tienes cita (capa 4, puertos), y el otro además revisa qué llevas en tu maletín (capa 7, contenido).*\n\n### Firewall Logs: Standard firewall log\n\n* **Definition:** A basic firewall log format recording date, time, source/destination IP, source/destination port, protocol, and action (allow/deny) — useful for spotting reconnaissance such as port scans by observing one source repeatedly probing different destination ports, all blocked. This operate in Layer 4 Firewall Log (Port Scan Detection)\n\n```\nEjemplo: mismo origen probando múltiples puertos, todos bloqueados\n185.76.9.23:54321 -> 192.168.1.105:22   BLOCKED\n185.76.9.23:54322 -> 192.168.1.105:80   BLOCKED\n185.76.9.23:54323 -> 192.168.1.105:443  BLOCKED\n185.76.9.23:54324 -> 192.168.1.105:8080 BLOCKED\n```\n\n![Screenshot_1](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_1.png)\n\n### Firewall Logs: Web Application Firewall (WAF) Log\n\n* **Definition:** A firewall log produced by a Web Application Firewall using deep packet inspection, recording HTTP method, requested URI, and response status code — allowing detection of application-layer attacks like SQL injection based on the content of a request rather than just its port.\n\n| Status Code | Meaning                                                                                                            |\n| ----------- | ------------------------------------------------------------------------------------------------------------------ |\n| **200**     | OK — request succeeded (may still have been intercepted by the WAF before reaching the user)                       |\n| **403**     | Forbidden — server understood the request but refused to authorize it (often the WAF blocking a malicious pattern) |\n\n```\n# Señales de SQL injection en la columna URI\n/index.php?id=1                              → normal\n/index.php?id='OR '1'='1' --                 → SQLi (condición siempre verdadera)\n/search?q=' ; DROP TABLE users;              → SQLi destructivo (borra tabla)\n/page?id=1 AND SELECT COUNT * from sysusers  → SQLi de reconocimiento (enumera tablas)\n```\n\n![Screenshot_2](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_2.png)\n\n⚠️ **Exam Tip:** Watch for the pattern `something=something` (like `'1'='1'`), keywords like `DROP TABLE` or `SELECT`, or unusual response delays (**time-based blind SQL injection**) — all are strong indicators of SQL injection in a WAF log, regardless of the exact syntax used.\n\n---"
+      },
+      {
+        "name": "Application Logs",
+        "definition": "Logs generated by individual applications recording user actions (open, save, print, macro execution, etc.), stored either within the application's own folder or centralized into a SIEM/Syslog server/Windows Application log.",
+        "analogy": "*Como la bitácora de un restaurante que anota cada plato que sale de la cocina: casi todo es rutina normal, hasta que una orden específica muestra señales de que algo salió mal.*",
+        "tables": [
+          {
+            "headers": [
+              "Step",
+              "Event"
+            ],
+            "rows": [
+              [
+                "1",
+                "Macro execution attempt detected and **blocked** (security setting)"
+              ],
+              [
+                "2",
+                "Macro security alert sent to the user"
+              ],
+              [
+                "3",
+                "Macro content scanned — code **matches known malware**"
+              ],
+              [
+                "4",
+                "File **quarantined**"
+              ],
+              [
+                "5",
+                "Admin alert generated"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Logs generated by individual applications recording user actions (open, save, print, macro execution, etc.), stored either within the application's own folder or centralized into a SIEM/Syslog server/Windows Application log.\n\nApplication logs record timestamp, a sequential **Event ID**, description, user, action taken, and details — allowing an analyst to trace a chain of events precisely (e.g., referencing \"line 5,400\" to another analyst).\n\n![Screenshot_3](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_3.png)\n\n> *Como la bitácora de un restaurante que anota cada plato que sale de la cocina: casi todo es rutina normal, hasta que una orden específica muestra señales de que algo salió mal.*\n\n### Application Logs: Identifying a Malicious Macro Chain\n\n* **Definition:** The sequence of application log entries showing a file containing a macro being opened, flagged, scanned, matched to known malware, and quarantined — distinguishing one malicious file from many benign entries in the same log.\n\n| Step | Event                                                               |\n| ---- | ------------------------------------------------------------------- |\n| 1    | Macro execution attempt detected and **blocked** (security setting) |\n| 2    | Macro security alert sent to the user                               |\n| 3    | Macro content scanned — code **matches known malware**              |\n| 4    | File **quarantined**                                                |\n| 5    | Admin alert generated                                               |\n\n⚠️ **Exam Tip:** In a long application log with many routine entries (open, save, print), the malicious file is the one accompanied by **block/scan/quarantine/alert** actions — routine open/save/print entries are noise, not signal.\n\n---"
+      },
+      {
+        "name": "Endpoint Logs",
+        "definition": "Logs generated by endpoint protection or EDR software recording the full lifecycle of a system compromise — from initial user action through malware download, execution, and outbound data exfiltration.",
+        "analogy": "*Es como ver una película del crimen desde el principio: no solo ves el resultado final, sino cada paso — desde que el ladrón entra por la ventana hasta que se lleva los objetos de valor.*",
+        "tables": [
+          {
+            "headers": [
+              "Stage",
+              "Event"
+            ],
+            "rows": [
+              [
+                "1",
+                "User downloads and executes `setup.exe` despite an antivirus alert (**stage one dropper**)"
+              ],
+              [
+                "2",
+                "Outbound connection established to a remote server"
+              ],
+              [
+                "3",
+                "`update.bin` downloaded and executed (**stage two dropper**) — deactivates antivirus"
+              ],
+              [
+                "4",
+                "New malicious process created (e.g., `malproc.exe`)"
+              ],
+              [
+                "5",
+                "Unauthorized registry modification detected"
+              ],
+              [
+                "6",
+                "Unusual outbound traffic (**data exfiltration**)"
+              ],
+              [
+                "7",
+                "Breach alert generated based on indicator of compromise"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** Logs generated by endpoint protection or EDR software recording the full lifecycle of a system compromise — from initial user action through malware download, execution, and outbound data exfiltration.\n\nEndpoint logs tend to be very descriptive, making the malicious chain easy to follow once you recognize the pattern of a **dropper-based infection**.\n\n> *Es como ver una película del crimen desde el principio: no solo ves el resultado final, sino cada paso — desde que el ladrón entra por la ventana hasta que se lleva los objetos de valor.*\n\n### Endpoint Logs: The Dropper Infection Chain\n\n* **Definition:** A two-stage malware delivery pattern where an initial small file (stage one dropper) is executed to download a larger malicious payload (stage two dropper), which then deploys the actual malicious process and begins data exfiltration.\n\n![Screenshot_4](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_4.png)\n\n| Stage | Event                                                                                      |\n| ----- | ------------------------------------------------------------------------------------------ |\n| 1     | User downloads and executes `setup.exe` despite an antivirus alert (**stage one dropper**) |\n| 2     | Outbound connection established to a remote server                                         |\n| 3     | `update.bin` downloaded and executed (**stage two dropper**) — deactivates antivirus       |\n| 4     | New malicious process created (e.g., `malproc.exe`)                                        |\n| 5     | Unauthorized registry modification detected                                                |\n| 6     | Unusual outbound traffic (**data exfiltration**)                                           |\n| 7     | Breach alert generated based on indicator of compromise                                    |\n\n⚠️ **Exam Tip:** A user **overriding/ignoring an antivirus alert** to run a downloaded file is one of the clearest human-factor indicators in an endpoint log — it marks the exact moment the infection chain begins.\n\n---"
+      },
+      {
+        "name": "OS-Specific Security Logs",
+        "definition": "Security logs native to an operating system that record authentication events — including failed login attempts, lockouts, and (in test/lab contexts) the specific credentials attempted — used to distinguish between types of password-cracking attacks.",
+        "analogy": "*Como el libro de registro de un club exclusivo que anota cada intento de entrada con la contraseña equivocada: el patrón de esos intentos revela qué método está usando quien intenta entrar.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Security logs native to an operating system that record authentication events — including failed login attempts, lockouts, and (in test/lab contexts) the specific credentials attempted — used to distinguish between types of password-cracking attacks.\n\n> *Como el libro de registro de un club exclusivo que anota cada intento de entrada con la contraseña equivocada: el patrón de esos intentos revela qué método está usando quien intenta entrar.*\n\n### OS-Specific Security Logs: Brute Force Attack Pattern\n\n* **Definition:** A password attack pattern visible in security logs as **sequential or incrementally changing values** (e.g., PIN codes counting upward) attempted against the same account, indicating automated, exhaustive guessing rather than informed guessing.\n\n```\nIntento 1: 123456   FAILED\nIntento 2: 123457   FAILED\nIntento 3: 123458   FAILED\nIntento 4: 123459   FAILED\nIntento 5: 123450   FAILED  → cuenta bloqueada\n```\n\n![Screenshot_5](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_5.png)\n\n### OS-Specific Security Logs: Dictionary Attack Pattern\n\n* **Definition:** A password attack pattern visible in security logs as **common words** or **lightly modified common words** (e.g., substituting symbols for letters) attempted against an account, indicating the use of a wordlist rather than sequential brute forcing.\n\n```\nIntento 1: puppy      FAILED\nIntento 2: baseball   FAILED\nIntento 3: cupcake    FAILED\nIntento 4: companion  FAILED\nIntento 5: loved      FAILED  → cuenta bloqueada\n```\n\n![Screenshot_6](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_6.png)\n\n⚠️ **Exam Tip:** Sequential/incrementing values or random-looking strings → **brute force**. Recognizable dictionary words (even with symbol substitutions like `p@ssw0rd`) → **dictionary attack**. Most exam security-log questions boil down to one of these two.\n\n---"
+      },
+      {
+        "name": "IPS/IDS Logs",
+        "definition": "Logs generated by an Intrusion Prevention System (which can block traffic) or Intrusion Detection System (which can only alert), recording severity, event description, and the action taken (block, alert, or monitor) for suspicious network activity.",
+        "analogy": "*Es como comparar un guardia que puede detener físicamente a un intruso en la puerta (IPS) con uno que solo puede avisar por radio que alguien entró (IDS).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Logs generated by an Intrusion Prevention System (which can block traffic) or Intrusion Detection System (which can only alert), recording severity, event description, and the action taken (block, alert, or monitor) for suspicious network activity.\n\nThe presence of a **block** action confirms the device is an IPS; an IDS can only detect and alert, never block.\n\n> *Es como comparar un guardia que puede detener físicamente a un intruso en la puerta (IPS) con uno que solo puede avisar por radio que alguien entró (IDS).*\n\n### IPS/IDS Logs: Prioritizing Alerts Over Blocks\n\n* **Definition:** The analytical principle that an IPS/IDS event which was successfully **blocked**, regardless of its labeled severity, represents a mitigated risk, while an event that only generated an **alert** (was not blocked) represents an active, unmitigated threat requiring immediate investigation.\n\n![Screenshot_7](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_7.png)\n\nIn a scenario with six \"high\" severity events, five were blocked (SQL injection, buffer overflow, privilege escalation, brute force, network scan) and therefore did not affect the network — but a **data exfiltration event that only alerted** (not blocked) is the true priority, because it means the attacker's traffic reached its goal.\n\n> *Aunque seis alarmas de incendio suenen \"altas\" en severidad, si cinco fueron apagadas automáticamente por el sistema de rociadores y una sigue ardiendo sin control, esa es la que hay que atender primero — sin importar que todas se llamen igual de \"graves\" en el papel.*\n\n⚠️ **Exam Tip:** When comparing multiple \"high\" severity choices on the exam, the correct answer is almost always the one where the action taken was **alert/monitor** (unmitigated) rather than **block/deny** (already contained).\n\n---"
+      },
+      {
+        "name": "Network Logs",
+        "definition": "Logs generated by network devices such as routers, recording interface, action (allow/deny/ARP reply), and traffic details — used to detect anomalies such as spoofing across otherwise normal traffic.",
+        "analogy": "*Como el registro de entradas y salidas de un edificio de oficinas con varias puertas (interfaces): la mayoría de los movimientos son rutina, pero un mismo gafete usado con dos caras distintas llamaría la atención.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** Logs generated by network devices such as routers, recording interface, action (allow/deny/ARP reply), and traffic details — used to detect anomalies such as spoofing across otherwise normal traffic.\n\n> *Como el registro de entradas y salidas de un edificio de oficinas con varias puertas (interfaces): la mayoría de los movimientos son rutina, pero un mismo gafete usado con dos caras distintas llamaría la atención.*\n\n### Network Logs: Detecting ARP Spoofing\n\n* **Definition:** A network log pattern showing the same IP address repeatedly associated with two different MAC addresses via ARP reply entries, indicating that an attacker is manipulating ARP tables to impersonate a legitimate host (ARP spoofing).\n\n![Screenshot_8](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_8.png)\n\nAmid otherwise normal allow/deny traffic (web, DNS, SSH, ICMP), **repeated ARP replies for the same IP oscillating between two different MAC addresses — occurring within seconds of each other — is the signature of ARP spoofing, likely using MAC-changing software.**\n\n> *Como si la misma persona mostrara dos identificaciones distintas cada pocos segundos en la entrada de un edificio: algo no cuadra, porque tu identidad no debería cambiar solo porque pasó el tiempo.*\n\n⚠️ **Exam Tip:** Private IP ranges (10.x, 172.x, 192.168.x) are commonly used on the exam even to represent \"public-facing\" traffic, simply to avoid referencing real organizations — **don't assume internal-looking IPs mean the traffic is automatically benign.**\n\n---"
+      },
+      {
+        "name": "Metadata in File-Based Investigations",
+        "definition": "The application of file-level metadata — checksum, file name/size/type, creation/modification/access dates, owner, and file path — to determine whether a specific file (such as a phishing attachment) is malicious and to block it network-wide.",
+        "analogy": "*Como examinar una carta sospechosa sin abrirla: revisas el matasellos, el peso, el remitente, y la letra — cada detalle da pistas sin necesidad de leer el contenido directamente.*",
+        "tables": [
+          {
+            "headers": [
+              "Indicator",
+              "Why it's suspicious"
+            ],
+            "rows": [
+              [
+                "**File type ≠ extension**",
+                "e.g., a file named `invoice.pdf` whose first bytes identify it as a `.exe` or `.jpg`"
+              ],
+              [
+                "**Misaligned dates**",
+                "Creation date far older/newer than expected (e.g., \"created 2012\" for an invoice received today)"
+              ],
+              [
+                "**Unexpected owner**",
+                "The file's creator/owner can explain (or fail to explain) how it appeared on their system"
+              ],
+              [
+                "**Suspicious file path**",
+                "Files running from `C:\\TEMP\\` are more likely malware than files in a trusted user document folder"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The application of file-level metadata — checksum, file name/size/type, creation/modification/access dates, owner, and file path — to determine whether a specific file (such as a phishing attachment) is malicious and to block it network-wide.\n\nThis builds on the general concept of metadata (see Investigative Data Sources: Metadata) by applying it specifically to malware/phishing file analysis.\n\n> *Como examinar una carta sospechosa sin abrirla: revisas el matasellos, el peso, el remitente, y la letra — cada detalle da pistas sin necesidad de leer el contenido directamente.*\n\n### Metadata in File-Based Investigations: Checksum as a Digital Fingerprint\n\n* **Definition:** An MD5 or SHA-256 hash value computed from a file's contents, used to uniquely identify a malicious file (including any embedded malware) so that the same file can be blocked network-wide if it appears again.\n\n> *Es como la huella digital de un criminal: una vez que la tienes, puedes reconocerlo instantáneamente sin importar qué nombre o disfraz use la próxima vez.*\n\n### Metadata in File-Based Investigations: Red-Flag Indicators\n\n* **Definition:** Metadata inconsistencies that individually are not conclusive but collectively raise suspicion that a file is malicious — including file type/extension mismatches, unusual or misaligned timestamps, unexpected file ownership, and suspicious file paths.\n\n![Screenshot_9](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_9.png)\n    There is nothing suspicious in the picture above but there are things to be consider when analizing metadata:\n\n| Indicator                 | Why it's suspicious                                                                                |\n| ------------------------- | -------------------------------------------------------------------------------------------------- |\n| **File type ≠ extension** | e.g., a file named `invoice.pdf` whose first bytes identify it as a `.exe` or `.jpg`               |\n| **Misaligned dates**      | Creation date far older/newer than expected (e.g., \"created 2012\" for an invoice received today)   |\n| **Unexpected owner**      | The file's creator/owner can explain (or fail to explain) how it appeared on their system          |\n| **Suspicious file path**  | Files running from `C:\\TEMP\\` are more likely malware than files in a trusted user document folder |\n\n⚠️ **Exam Tip:** No single metadata field proves maliciousness on its own — it's the **combination** of clues (hash matches known bad, wrong file type, temp directory, mismatched dates) that builds the case during an investigation.\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "SIEM: Security Information and Event Management — aggregates and correlates data for real-time alerting",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**SIEM**",
+                "Security Information and Event Management — aggregates and correlates data for real-time alerting"
+              ],
+              [
+                "**Syslog/Rsyslog/Syslog-ng**",
+                "Protocols for centralizing logs from multiple systems into one repository (Linux/Unix)"
+              ],
+              [
+                "**Journalctl**",
+                "Linux CLI tool for querying journald logs"
+              ],
+              [
+                "**NXLog**",
+                "Cross-platform (Windows + Linux/Unix) open-source log management tool"
+              ],
+              [
+                "**NetFlow**",
+                "Cisco protocol summarizing IP traffic flow (origin, destination, volume) — not full packet content"
+              ],
+              [
+                "**sFlow**",
+                "Open-source sampled-flow alternative to NetFlow"
+              ],
+              [
+                "**IPFIX**",
+                "Universal standard for exporting IP flow data to billing/management systems"
+              ],
+              [
+                "**Metadata**",
+                "Data that describes other data without revealing its content"
+              ],
+              [
+                "**Dashboard**",
+                "Graphical, single-pane-of-glass display aggregating data across systems"
+              ],
+              [
+                "**Splunk**",
+                "Popular big-data platform used to build security dashboards"
+              ],
+              [
+                "**Automated report**",
+                "System-generated report summarizing notable events on a schedule"
+              ],
+              [
+                "**Vulnerability scan report**",
+                "Output of a vulnerability scanner listing CVEs, severity, and remediation steps"
+              ],
+              [
+                "**CVE**",
+                "Common Vulnerability Exposure"
+              ],
+              [
+                "**CVSS**",
+                "Common Vulnerability Scoring System — numeric severity score (0–10)"
+              ],
+              [
+                "**False positive**",
+                "A scanner-reported vulnerability that doesn't actually apply to the system"
+              ],
+              [
+                "**Packet capture**",
+                "Raw capture of traffic to/from a device, analyzed packet by packet"
+              ],
+              [
+                "**Port scan**",
+                "Reconnaissance pattern: one source, one destination, many different ports probed"
+              ],
+              [
+                "**SYN flood**",
+                "DoS pattern: repeated SYNs with no ACK response, exhausting server resources"
+              ],
+              [
+                "**DDoS**",
+                "Same SYN-flood pattern but from many different source IPs against one destination"
+              ],
+              [
+                "**Firewall log**",
+                "Records allowed/denied traffic; Layer 4 (port-based) or Layer 7 (WAF/content-based)"
+              ],
+              [
+                "**WAF**",
+                "Web Application Firewall — inspects request content (e.g., detects SQL injection)"
+              ],
+              [
+                "**Application log**",
+                "Records actions taken within a specific application"
+              ],
+              [
+                "**Endpoint log**",
+                "Records the full infection lifecycle on a monitored device (EDR)"
+              ],
+              [
+                "**Dropper**",
+                "Malware that downloads and executes a further malicious payload (stage one/stage two)"
+              ],
+              [
+                "**OS-specific security log**",
+                "Native OS log of authentication events (logins, lockouts)"
+              ],
+              [
+                "**Brute force attack**",
+                "Password attack using sequential/incrementing or random guesses"
+              ],
+              [
+                "**Dictionary attack**",
+                "Password attack using common words or lightly modified common words"
+              ],
+              [
+                "**IPS**",
+                "Intrusion Prevention System — can detect AND block malicious traffic"
+              ],
+              [
+                "**IDS**",
+                "Intrusion Detection System — can only detect and alert, cannot block"
+              ],
+              [
+                "**Network log**",
+                "Router/switch log recording allow/deny/ARP activity by interface"
+              ],
+              [
+                "**ARP spoofing**",
+                "Attack where one IP is associated with two different MAC addresses to impersonate a host"
+              ],
+              [
+                "**Checksum (MD5/SHA-256)**",
+                "Hash used as a unique digital fingerprint to identify a malicious file"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term                          | Definition                                                                                         |\n| ----------------------------- | -------------------------------------------------------------------------------------------------- |\n| **SIEM**                      | Security Information and Event Management — aggregates and correlates data for real-time alerting  |\n| **Syslog/Rsyslog/Syslog-ng**  | Protocols for centralizing logs from multiple systems into one repository (Linux/Unix)             |\n| **Journalctl**                | Linux CLI tool for querying journald logs                                                          |\n| **NXLog**                     | Cross-platform (Windows + Linux/Unix) open-source log management tool                              |\n| **NetFlow**                   | Cisco protocol summarizing IP traffic flow (origin, destination, volume) — not full packet content |\n| **sFlow**                     | Open-source sampled-flow alternative to NetFlow                                                    |\n| **IPFIX**                     | Universal standard for exporting IP flow data to billing/management systems                        |\n| **Metadata**                  | Data that describes other data without revealing its content                                       |\n| **Dashboard**                 | Graphical, single-pane-of-glass display aggregating data across systems                            |\n| **Splunk**                    | Popular big-data platform used to build security dashboards                                        |\n| **Automated report**          | System-generated report summarizing notable events on a schedule                                   |\n| **Vulnerability scan report** | Output of a vulnerability scanner listing CVEs, severity, and remediation steps                    |\n| **CVE**                       | Common Vulnerability Exposure                                                                      |\n| **CVSS**                      | Common Vulnerability Scoring System — numeric severity score (0–10)                                |\n| **False positive**            | A scanner-reported vulnerability that doesn't actually apply to the system                         |\n| **Packet capture**            | Raw capture of traffic to/from a device, analyzed packet by packet                                 |\n| **Port scan**                 | Reconnaissance pattern: one source, one destination, many different ports probed                   |\n| **SYN flood**                 | DoS pattern: repeated SYNs with no ACK response, exhausting server resources                       |\n| **DDoS**                      | Same SYN-flood pattern but from many different source IPs against one destination                  |\n| **Firewall log**              | Records allowed/denied traffic; Layer 4 (port-based) or Layer 7 (WAF/content-based)                |\n| **WAF**                       | Web Application Firewall — inspects request content (e.g., detects SQL injection)                  |\n| **Application log**           | Records actions taken within a specific application                                                |\n| **Endpoint log**              | Records the full infection lifecycle on a monitored device (EDR)                                   |\n| **Dropper**                   | Malware that downloads and executes a further malicious payload (stage one/stage two)              |\n| **OS-specific security log**  | Native OS log of authentication events (logins, lockouts)                                          |\n| **Brute force attack**        | Password attack using sequential/incrementing or random guesses                                    |\n| **Dictionary attack**         | Password attack using common words or lightly modified common words                                |\n| **IPS**                       | Intrusion Prevention System — can detect AND block malicious traffic                               |\n| **IDS**                       | Intrusion Detection System — can only detect and alert, cannot block                               |\n| **Network log**               | Router/switch log recording allow/deny/ARP activity by interface                                   |\n| **ARP spoofing**              | Attack where one IP is associated with two different MAC addresses to impersonate a host           |\n| **Checksum (MD5/SHA-256)**    | Hash used as a unique digital fingerprint to identify a malicious file                             |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Investigating with Data: SIEM (Security Information and Event Management)",
+        "definition": "A platform that aggregates data from multiple sources across the network into a single system, providing real-time analysis of security alerts generated by applications and network hardware.",
+        "analogy": "*Es como la torre de control de un aeropuerto: recibe información de radares, torres, y pistas por separado, pero la junta toda en una sola pantalla para que el controlador vea el panorama completo.*",
+        "raw_content": "* **Definition:** A platform that aggregates data from multiple sources across the network into a single system, providing real-time analysis of security alerts generated by applications and network hardware.\n\nA SIEM combines many different data sources into one dashboard, giving an analyst the number of hosts, authentications, and unique IPs on the network, with the ability to filter and search that data to find what's relevant during an investigation.\n\n> *Es como la torre de control de un aeropuerto: recibe información de radares, torres, y pistas por separado, pero la junta toda en una sola pantalla para que el controlador vea el panorama completo.*"
+      },
+      {
+        "name": "SIEM: Core Components",
+        "definition": "The five functional elements that make a SIEM useful for detection and investigation — sensor, sensitivity, trends, alerts, and correlation.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The five functional elements that make a SIEM useful for detection and investigation — sensor, sensitivity, trends, alerts, and correlation.\n\n| Component       | What it does                                                                                                                           |\n| --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |\n| **Sensor**      | The actual endpoint being monitored; the data source feeding the SIEM                                                                  |\n| **Sensitivity** | How much or how little the sensor logs — too much overloads processing/storage/bandwidth                                               |\n| **Trends**      | Graphical patterns over time (e.g., rising failed logins suggesting a brute force)                                                     |\n| **Alerts**      | Automated notifications triggered by defined thresholds (e.g., 5 failed logins → notify admin)                                         |\n| **Correlation** | Normalizing data from different sources (IP/hostname formats, time zones) into one consistent picture, usually standardized to **UTC** |\n\n⚠️ **Exam Tip:** Correlation is critical because different systems may log time in different formats (local time, GMT, UTC). Standardizing to **UTC** avoids misreading the sequence of an attack.\n\n---"
+      },
+      {
+        "name": "Investigating with Data: Log Files",
+        "definition": "Files that record events occurring in an operating system, application, or communication between users, serving as the digital record of what happened on a system.",
+        "analogy": "*Es como tener varios diarios distintos en una casa: uno para quién entra y sale (seguridad), otro para las llamadas telefónicas (VoIP), y otro para qué páginas visitó cada persona (web) — cada diario cuenta una parte distinta de la historia.*",
+        "raw_content": "* **Definition:** Files that record events occurring in an operating system, application, or communication between users, serving as the digital record of what happened on a system.\n\nThere are many categories of log files, each capturing a different slice of activity on the network.\n\n> *Es como tener varios diarios distintos en una casa: uno para quién entra y sale (seguridad), otro para las llamadas telefónicas (VoIP), y otro para qué páginas visitó cada persona (web) — cada diario cuenta una parte distinta de la historia.*\n\n| Log Type               | Captures                                                                         |\n| ---------------------- | -------------------------------------------------------------------------------- |\n| **Network log**        | Traffic passing through routers and switches                                     |\n| **System log**         | Events on an individual host or server                                           |\n| **Application log**    | What a specific application is doing                                             |\n| **Security log**       | Failed and successful login attempts                                             |\n| **Web log**            | Websites accessed (proxy) or files touched on a web server                       |\n| **DNS log**            | Requests made to a DNS server (who is resolving which domain)                    |\n| **Authentication log** | Successful/failed logins and logouts across systems                              |\n| **Dump file**          | Memory contents written to disk when a system crashes                            |\n| **VoIP log/metadata**  | Call metadata (who called whom, duration); calls may also be recorded per policy |\n\n---"
+      },
+      {
+        "name": "Investigating with Data: Syslog, Rsyslog, and Syslog-ng",
+        "definition": "Three variations of the same logging protocol that permit centralizing log data from different systems into a single repository, commonly feeding data into a SIEM.",
+        "analogy": "*Como tres compañías de correo diferentes que hacen exactamente el mismo trabajo: recoger cartas (logs) de muchas casas y llevarlas a una sola oficina central.*",
+        "raw_content": "* **Definition:** Three variations of the same logging protocol that permit centralizing log data from different systems into a single repository, commonly feeding data into a SIEM.\n  \n  \n\nAll three perform the same core function — collecting logs from various endpoints and forwarding them to a central location (often the SIEM itself).\n\n> *Como tres compañías de correo diferentes que hacen exactamente el mismo trabajo: recoger cartas (logs) de muchas casas y llevarlas a una sola oficina central.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: Journalctl",
+        "definition": "A Linux command-line utility used to query and display logs collected by journald, the logging service for systemd on Linux systems.",
+        "analogy": "*Es como el buscador interno de un archivo digital: en vez de hojear papel por papel, escribes el comando y te muestra exactamente los registros que necesitas.*",
+        "raw_content": "* **Definition:** A Linux command-line utility used to query and display logs collected by journald, the logging service for systemd on Linux systems.\n\nIf you need to review logs on a Linux machine, `journalctl` is the tool used to read them.\n\n> *Es como el buscador interno de un archivo digital: en vez de hojear papel por papel, escribes el comando y te muestra exactamente los registros que necesitas.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: NXLog",
+        "definition": "A multi-platform, open-source log management tool that helps identify security risks, policy breaches, and operational problems across server, OS, and application logs.",
+        "analogy": "*Como un traductor universal de logs: mientras que otros solo hablan el idioma de Linux, NXLog puede leer y centralizar logs de Windows, Linux, y Unix por igual.*",
+        "raw_content": "* **Definition:** A multi-platform, open-source log management tool that helps identify security risks, policy breaches, and operational problems across server, OS, and application logs.\n\nUnlike Rsyslog or Syslog-ng, which only work on Linux/Unix, **NXLog is cross-platform** — it also works on Windows.\n\n> *Como un traductor universal de logs: mientras que otros solo hablan el idioma de Linux, NXLog puede leer y centralizar logs de Windows, Linux, y Unix por igual.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: NetFlow",
+        "definition": "A network protocol created **by Cisco** that collects active IP network traffic flowing into or out of an interface, capturing summarized flow data such as origin, destination, volume, and path — not full packet contents.",
+        "analogy": "*Es como el registro de peajes de una autopista: sabes cuántos carros pasaron, de dónde venían y hacia dónde iban, pero no sabes qué llevaban dentro del carro.*",
+        "raw_content": "* **Definition:** A network protocol created **by Cisco** that collects active IP network traffic flowing into or out of an interface, capturing summarized flow data such as origin, destination, volume, and path — not full packet contents.\n\nNetFlow tells you **who** is using the most bandwidth and **where** traffic spikes occur, but it cannot tell you exactly what file or content was transferred — for that, a full packet capture is required.\n\n> *Es como el registro de peajes de una autopista: sabes cuántos carros pasaron, de dónde venían y hacia dónde iban, pero no sabes qué llevaban dentro del carro.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: sFlow (Sampled Flow)",
+        "definition": "An open-source, vendor-neutral alternative to NetFlow that exports truncated (sampled) packets along with interface counters for network monitoring, typically capturing only a fraction of total packets (e.g., 1 in 100 or 1 in 1,000).",
+        "analogy": "*Como probar la sopa con una cuchara en vez de tomarte la olla entera: una muestra pequeña te da una buena idea del sabor general sin necesitar todo el contenido.*",
+        "raw_content": "* **Definition:** An open-source, vendor-neutral alternative to NetFlow that exports truncated (sampled) packets along with interface counters for network monitoring, typically capturing only a fraction of total packets (e.g., 1 in 100 or 1 in 1,000).\n\nSince NetFlow is Cisco proprietary, sFlow serves as the generic, open version that reduces data size while still estimating traffic patterns.\n\n> *Como probar la sopa con una cuchara en vez de tomarte la olla entera: una muestra pequeña te da una buena idea del sabor general sin necesitar todo el contenido.*\n\n---"
+      },
+      {
+        "name": "Investigating with Data: IPFIX (Internet Protocol Flow Information Export)",
+        "definition": "A universal standard for exporting IP flow information from routers and probes to mediation, billing, and network management systems, defining how flow data is formatted and transferred from exporter to collector.",
+        "analogy": "*Como el medidor de agua o electricidad en tu casa: cuenta el consumo exacto para que la empresa de servicios pueda facturarte de forma precisa.*",
+        "raw_content": "* **Definition:** A universal standard for exporting IP flow information from routers and probes to mediation, billing, and network management systems, defining how flow data is formatted and transferred from exporter to collector.\n\nIPFIX is commonly used on the back end of service billing — for example, tracking data usage to charge a customer per gigabyte transferred.\n\n> *Como el medidor de agua o electricidad en tu casa: cuenta el consumo exacto para que la empresa de servicios pueda facturarte de forma precisa.*\n\n⚠️ **Exam Tip:** NetFlow, sFlow, and IPFIX all provide **bandwidth usage visibility**, not full packet content — that distinction is a common exam differentiator versus packet capture tools.\n\n---"
+      },
+      {
+        "name": "Investigating with Data: Metadata (Overview)",
+        "definition": "Data that describes other data — summarizing basic information about a piece of data (such as a file, call, or webpage visit) without revealing its actual content, making it easier to find and analyze.",
+        "analogy": "*Como la etiqueta de un paquete: te dice el peso, el remitente y el destinatario, pero no te dice qué hay adentro de la caja.*",
+        "raw_content": "* **Definition:** Data that describes other data — summarizing basic information about a piece of data (such as a file, call, or webpage visit) without revealing its actual content, making it easier to find and analyze.\n\nMetadata about a phone call might show the time, number called, and duration — without revealing what was said. This makes metadata a powerful, if incomplete, investigative resource.\n\n> *Como la etiqueta de un paquete: te dice el peso, el remitente y el destinatario, pero no te dice qué hay adentro de la caja.*\n\n| Context    | Example Metadata                                                  |\n| ---------- | ----------------------------------------------------------------- |\n| **Email**  | Time sent, sender, originating/transiting servers                 |\n| **Mobile** | Data transferred, call duration, who was contacted                |\n| **Web**    | Websites visited, time spent on each page                         |\n| **File**   | Creator, creation date, last watched/accessed date, view duration |\n\n---"
+      },
+      {
+        "name": "Dashboards",
+        "definition": "A graphical display of information from multiple systems, typically used inside a Security Operations Center as part of a \"single pane of glass\" architecture where one screen provides visibility across the entire organization.",
+        "analogy": "*Es como el tablero de un avión: en lugar de revisar cada sistema por separado (motores, combustible, altitud), el piloto ve todo en un solo panel para tomar decisiones rápidas.*",
+        "raw_content": "* **Definition:** A graphical display of information from multiple systems, typically used inside a Security Operations Center as part of a \"single pane of glass\" architecture where one screen provides visibility across the entire organization.\n\nA popular tool for building interactive dashboards is **Splunk**, a big data platform that ingests data from firewalls, applications, endpoints, operating systems, IDS/IPS, antivirus, and networks, then visualizes trends over time.\n\n> *Es como el tablero de un avión: en lugar de revisar cada sistema por separado (motores, combustible, altitud), el piloto ve todo en un solo panel para tomar decisiones rápidas.*"
+      },
+      {
+        "name": "Dashboards: Reading Notable Event Trends",
+        "definition": "The practice of interpreting dashboard metrics (notables, urgency levels, host-based counts) to identify whether the network's security posture is improving or degrading over a given period.",
+        "analogy": "*Como el marcador de un partido de fútbol que también muestra estadísticas: no solo ves el resultado final, sino qué equipo tiene más posesión o faltas, para entender el panorama completo del juego.*",
+        "raw_content": "* **Definition:** The practice of interpreting dashboard metrics (notables, urgency levels, host-based counts) to identify whether the network's security posture is improving or degrading over a given period.\n\nOn a sample dashboard, metrics like access notables, endpoint notables, network notables, identity notables, and antivirus infections are tracked week-over-week, with a color-coded up/down trend. Notable events are further broken down by **urgency** (unknown, informational, low, medium, high, critical) and can be drilled into by host to identify the most active source of alerts.\n\n> *Como el marcador de un partido de fútbol que también muestra estadísticas: no solo ves el resultado final, sino qué equipo tiene más posesión o faltas, para entender el panorama completo del juego.*\n\n⚠️ **Exam Tip:** Dashboards are the *starting point* of an investigation — they show trends and let you drill down, but the underlying logs (firewall, application, endpoint, etc.) provide the detailed evidence.\n\n---"
+      },
+      {
+        "name": "Automated Reports",
+        "definition": "A report generated automatically by a computer system — such as antivirus or an EDR platform — on a scheduled basis (hourly, daily) **to summarize suspicious or notable activity without requiring manual generation** by an analyst.",
+        "analogy": "*Es como el resumen automático de gastos que envía tu banco a fin de mes: no tuviste que pedirlo, y te avisa de inmediato si algo fuera de lo normal ocurrió en tu cuenta.*",
+        "raw_content": "* **Definition:** A report generated automatically by a computer system — such as antivirus or an EDR platform — on a scheduled basis (hourly, daily) **to summarize suspicious or notable activity without requiring manual generation** by an analyst.\n\nAn automated report typically includes a report ID, generation date, report period, and a \"prepared by\" field (often listing \"automated reporting system\" instead of a person), followed by an **executive summary** that lets a reader quickly decide whether the report needs deeper attention.\n\n> *Es como el resumen automático de gastos que envía tu banco a fin de mes: no tuviste que pedirlo, y te avisa de inmediato si algo fuera de lo normal ocurrió en tu cuenta.*"
+      },
+      {
+        "name": "Automated Reports: Reading Incident Entries",
+        "definition": "The structured fields within an automated report entry — timestamp, alert severity, affected user/system, details, and action taken — used to determine whether a logged event represents a real security incident.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The structured fields within an automated report entry — timestamp, alert severity, affected user/system, details, and action taken — used to determine whether a logged event represents a real security incident.\n\n| Alert Example                      | Severity      | Key Detail                                            | Action Taken                                         |\n| ---------------------------------- | ------------- | ----------------------------------------------------- | ---------------------------------------------------- |\n| Suspicious file access (4:53 a.m.) | Critical      | Rapid access pattern matches ransomware footprint     | Account suspended, system isolated, backup initiated |\n| Excessive admin login failures     | High          | 20+ failed logins in 5 minutes from an internal IP    | IP blocked, admin password reset                     |\n| Unusual outbound traffic           | Moderate      | Large transfer to an IP flagged by threat intel feeds | Connection terminated, traffic placed under review   |\n| Software installed (FileZilla FTP) | Informational | File hash didn't match a known-safe version           | Execution blocked, user contacted to verify          |\n\n⚠️ **Exam Tip:** Timing matters — activity occurring **outside normal business hours** (e.g., 4:53 a.m. for a 9-to-5 organization) is itself an indicator worth flagging, even before looking at the rest of the entry.\n\n---"
+      },
+      {
+        "name": "Vulnerability Scans (Vulnerability Scan Reports)",
+        "definition": "A report produced by a vulnerability scanning tool (e.g., Nessus, OpenVAS, QualysGuard) after scanning a system or network, listing discovered vulnerabilities that must be manually validated, prioritized, and remediated by an analyst — not accepted at face value.",
+        "analogy": "*Como un chequeo médico automático que te da una lista de posibles condiciones basada en síntomas generales: el médico (analista) todavía tiene que confirmar cuáles aplican realmente a ti antes de tratarlas.*",
+        "raw_content": "* **Definition:** A report produced by a vulnerability scanning tool (e.g., Nessus, OpenVAS, QualysGuard) after scanning a system or network, listing discovered vulnerabilities that must be manually validated, prioritized, and remediated by an analyst — not accepted at face value.\n\nScanners can produce **false positives** (e.g., flagging a missing Windows patch on a Mac). Analysts must confirm a vulnerability actually exists on the system before acting on it, then judge severity and criticality based on real environmental context.\n\n> *Como un chequeo médico automático que te da una lista de posibles condiciones basada en síntomas generales: el médico (analista) todavía tiene que confirmar cuáles aplican realmente a ti antes de tratarlas.*"
+      },
+      {
+        "name": "Vulnerability Scans: Report Structure",
+        "definition": "The standard sections of a vulnerability scan report — report ID/date/scanner info, executive summary, and a prioritized vulnerability listing sorted by severity (critical → high → medium → low → informational) or by host.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The standard sections of a vulnerability scan report — report ID/date/scanner info, executive summary, and a prioritized vulnerability listing sorted by severity (critical → high → medium → low → informational) or by host.\n\n| Field                     | Purpose                                                                                             |\n| ------------------------- | --------------------------------------------------------------------------------------------------- |\n| **Report ID / Date**      | Identifies and timestamps the scan                                                                  |\n| **Executive summary**     | High-level themes/trends for non-technical stakeholders (e.g., \"patch management problem\")          |\n| **Vulnerability listing** | Each entry includes CVE ID, description, affected system, impact, **CVSS score**, and remediation   |\n| **Additional findings**   | Minor/informational issues (outdated SSL certs, unused services, misconfigured headers)             |\n| **Recommendations**       | Prioritized action: patch critical/high immediately, schedule medium, follow standard cycle for low |\n\n⚠️ **Exam Tip:** When **updating is not an option** alternative **compensating controls are necessary** for addressing vulnerabilities."
+      },
+      {
+        "name": "Vulnerability Scans: CVSS Score Interpretation",
+        "definition": "The Common Vulnerability Scoring System — a numeric score from 0 to 10 indicating vulnerability severity, where the scoring considers both exploitability (e.g., authenticated vs. unauthenticated attacker) and impact (how many systems/users are affected).",
+        "analogy": "*Como comparar el robo de la llave de un solo carro (impacto limitado) con el robo de la llave maestra de todo un edificio de apartamentos (impacto masivo): el segundo es más grave aunque ambos sean \"robos de llave.\"*",
+        "raw_content": "* **Definition:** The Common Vulnerability Scoring System — a numeric score from 0 to 10 indicating vulnerability severity, where the scoring considers both exploitability (e.g., authenticated vs. unauthenticated attacker) and impact (how many systems/users are affected).\n\nAn **unauthenticated** RDP RCE on two desktops may have a *lower* CVSS score than an **authenticated** Exchange Server RCE, because the Exchange Server impacts the entire organization's email — impact scope drives the score as much as ease of exploitation.\n\n> *Como comparar el robo de la llave de un solo carro (impacto limitado) con el robo de la llave maestra de todo un edificio de apartamentos (impacto masivo): el segundo es más grave aunque ambos sean \"robos de llave.\"*\n\n⚠️ **Exam Tip:** Always weigh a scan's severity rating against **real environmental context** — a \"critical\" vulnerability on a server being decommissioned tomorrow is a lower true priority than the scanner's default rating suggests.\n\n---"
+      },
+      {
+        "name": "Packet Captures",
+        "definition": "A capture of all data traveling to or from a given network device (or, via a SPAN port, an entire network segment), used to analyze raw traffic at the packet level — including source/destination IPs, ports, protocol, flags, and payload length.",
+        "analogy": "*Es como revisar la grabación completa de las cámaras de seguridad de un banco, cuadro por cuadro, en lugar de solo el resumen del reporte de incidentes.*",
+        "raw_content": "* **Definition:** A capture of all data traveling to or from a given network device (or, via a SPAN port, an entire network segment), used to analyze raw traffic at the packet level — including source/destination IPs, ports, protocol, flags, and payload length.\n\nOn the exam, packet captures are shown as short **snippets** (5–20 lines) rather than full multi-gigabyte captures, and the goal is to recognize the **pattern** of an attack from those few lines.\n\n> *Es como revisar la grabación completa de las cámaras de seguridad de un banco, cuadro por cuadro, en lugar de solo el resumen del reporte de incidentes.*"
+      },
+      {
+        "name": "Packet Captures: Reading Key Columns",
+        "definition": "The standard fields present in a packet capture snippet — packet number, elapsed time, source/destination IP, protocol, length, and info (flags, ports, sequence data) — used to reconstruct what occurred during a session.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The standard fields present in a packet capture snippet — packet number, elapsed time, source/destination IP, protocol, length, and info (flags, ports, sequence data) — used to reconstruct what occurred during a session.\n\n| Column                 | Meaning                                                                                     |\n| ---------------------- | ------------------------------------------------------------------------------------------- |\n| **Number**             | Sequential packet number in the capture                                                     |\n| **Time**               | Elapsed time since capture start (not wall-clock time)                                      |\n| **Source/Destination** | IP addresses involved, from the sensor's perspective                                        |\n| **Protocol**           | TCP, UDP, or other (e.g., ARP at Layer 2)                                                   |\n| **Length**             | Size of the packet                                                                          |\n| **Info**               | Flags (SYN, ACK, etc.), sequence/window info, source port (SPort), destination port (Dport) |"
+      },
+      {
+        "name": "Packet Captures: Port Scan Indicator",
+        "definition": "A traffic pattern showing repeated SYN packets sent from one source to one destination across many different destination ports in rapid succession, indicating reconnaissance activity such as an Nmap scan.",
+        "analogy": "*Como alguien caminando por un pasillo de hotel probando cada manija de puerta una por una, buscando cuál está sin seguro.*",
+        "raw_content": "* **Definition:** A traffic pattern showing repeated SYN packets sent from one source to one destination across many different destination ports in rapid succession, indicating reconnaissance activity such as an Nmap scan.\n\n![eae48a24-fadb-40b8-9699-edd717835e5e](file:///C:/Users/LENOVO/Documents/Obsidian%Vault/001_Material_Estudio/Security_plus/secPlus_images/eae48a24-fadb-40b8-9699-edd717835e5e.png)\n\nIn the example capture, the same source repeatedly sends SYN packets to increasing/varied destination ports (80, 23, 22, 21, 443…) against a single destination — a signature of port scanning.\n\n> *Como alguien caminando por un pasillo de hotel probando cada manija de puerta una por una, buscando cuál está sin seguro.*"
+      },
+      {
+        "name": "Packet Captures: SYN Flood (Denial of Service) Indicator",
+        "definition": "A traffic pattern showing a large volume of SYN packets from one source to one destination with no corresponding SYN-ACK or ACK responses, indicating an attacker deliberately leaving TCP handshakes half-open to exhaust server resources.",
+        "analogy": "*Como llamar repetidamente a una puerta y salir corriendo antes de que alguien abra: la persona dentro pierde tiempo y energía revisando puertas que nunca se completan.*",
+        "raw_content": "* **Definition:** A traffic pattern showing a large volume of SYN packets from one source to one destination with no corresponding SYN-ACK or ACK responses, indicating an attacker deliberately leaving TCP handshakes half-open to exhaust server resources.\n\n![1352ed82-a87e-445d-a97c-e636fb16574f](file:///C:/Users/LENOVO/Documents/Obsidian%Vault/001_Material_Estudio/Security_plus/secPlus_images/1352ed82-a87e-445d-a97c-e636fb16574f.png)\n\nBecause only the first step of the three-way handshake occurs repeatedly, the destination server's connection table fills up, potentially crashing the service.\n\n> *Como llamar repetidamente a una puerta y salir corriendo antes de que alguien abra: la persona dentro pierde tiempo y energía revisando puertas que nunca se completan.*"
+      },
+      {
+        "name": "Packet Captures: **Distributed** Denial of Service (DDoS) Indicator",
+        "definition": "A traffic pattern similar to a SYN flood but originating from many **distinct source** IP addresses all targeting the **same destination** simultaneously, indicating a coordinated or botnet-driven attack.",
+        "analogy": "*Como si en vez de una sola persona tocando la puerta sin parar, fueran cien personas distintas tocando la misma puerta al mismo tiempo — el volumen colectivo es lo que abruma al sistema.*",
+        "raw_content": "* **Definition:** A traffic pattern similar to a SYN flood but originating from many **distinct source** IP addresses all targeting the **same destination** simultaneously, indicating a coordinated or botnet-driven attack.\n\n![c3710bc6-13d5-423e-9c06-ee2aba2c2f0b](file:///C:/Users/LENOVO/Documents/Obsidian%Vault/001_Material_Estudio/Security_plus/secPlus_images/c3710bc6-13d5-423e-9c06-ee2aba2c2f0b.png)\n\nThe key distinguishing factor from a single-source SYN flood is that the **source IP changes** every few hundred packets while the destination remains constant.\n\n> *Como si en vez de una sola persona tocando la puerta sin parar, fueran cien personas distintas tocando la misma puerta al mismo tiempo — el volumen colectivo es lo que abruma al sistema.*\n\n⚠️ **Exam Tip:** Same source + same destination + repeated SYNs with no ACKs = **DoS (SYN flood)**. Many different sources + same destination + the same pattern = **DDoS**. Repeated SYNs across many *different destination ports* = **port scan**.\n\n---"
+      },
+      {
+        "name": "Firewall Logs",
+        "definition": "Log entries generated by a firewall recording allowed and blocked traffic, which can operate at Layer 4 (port/protocol-based) or Layer 7 (application-aware, deep packet inspection) depending on the firewall type.",
+        "analogy": "*Como el libro de visitas de un edificio con dos tipos de guardias: uno solo revisa si tienes cita (capa 4, puertos), y el otro además revisa qué llevas en tu maletín (capa 7, contenido).*",
+        "raw_content": "* **Definition:** Log entries generated by a firewall recording allowed and blocked traffic, which can operate at Layer 4 (port/protocol-based) or Layer 7 (application-aware, deep packet inspection) depending on the firewall type.\n\n> *Como el libro de visitas de un edificio con dos tipos de guardias: uno solo revisa si tienes cita (capa 4, puertos), y el otro además revisa qué llevas en tu maletín (capa 7, contenido).*"
+      },
+      {
+        "name": "Firewall Logs: Standard firewall log",
+        "definition": "A basic firewall log format recording date, time, source/destination IP, source/destination port, protocol, and action (allow/deny) — useful for spotting reconnaissance such as port scans by observing one source repeatedly probing different destination ports, all blocked. This operate in Layer 4 Firewall Log (Port Scan Detection)",
+        "analogy": "",
+        "raw_content": "* **Definition:** A basic firewall log format recording date, time, source/destination IP, source/destination port, protocol, and action (allow/deny) — useful for spotting reconnaissance such as port scans by observing one source repeatedly probing different destination ports, all blocked. This operate in Layer 4 Firewall Log (Port Scan Detection)\n\n```\nEjemplo: mismo origen probando múltiples puertos, todos bloqueados\n185.76.9.23:54321 -> 192.168.1.105:22   BLOCKED\n185.76.9.23:54322 -> 192.168.1.105:80   BLOCKED\n185.76.9.23:54323 -> 192.168.1.105:443  BLOCKED\n185.76.9.23:54324 -> 192.168.1.105:8080 BLOCKED\n```\n\n![Screenshot_1](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_1.png)"
+      },
+      {
+        "name": "Firewall Logs: Web Application Firewall (WAF) Log",
+        "definition": "A firewall log produced by a Web Application Firewall using deep packet inspection, recording HTTP method, requested URI, and response status code — allowing detection of application-layer attacks like SQL injection based on the content of a request rather than just its port.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A firewall log produced by a Web Application Firewall using deep packet inspection, recording HTTP method, requested URI, and response status code — allowing detection of application-layer attacks like SQL injection based on the content of a request rather than just its port.\n\n| Status Code | Meaning                                                                                                            |\n| ----------- | ------------------------------------------------------------------------------------------------------------------ |\n| **200**     | OK — request succeeded (may still have been intercepted by the WAF before reaching the user)                       |\n| **403**     | Forbidden — server understood the request but refused to authorize it (often the WAF blocking a malicious pattern) |\n\n```\n# Señales de SQL injection en la columna URI\n/index.php?id=1                              → normal\n/index.php?id='OR '1'='1' --                 → SQLi (condición siempre verdadera)\n/search?q=' ; DROP TABLE users;              → SQLi destructivo (borra tabla)\n/page?id=1 AND SELECT COUNT * from sysusers  → SQLi de reconocimiento (enumera tablas)\n```\n\n![Screenshot_2](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_2.png)\n\n⚠️ **Exam Tip:** Watch for the pattern `something=something` (like `'1'='1'`), keywords like `DROP TABLE` or `SELECT`, or unusual response delays (**time-based blind SQL injection**) — all are strong indicators of SQL injection in a WAF log, regardless of the exact syntax used.\n\n---"
+      },
+      {
+        "name": "Application Logs",
+        "definition": "Logs generated by individual applications recording user actions (open, save, print, macro execution, etc.), stored either within the application's own folder or centralized into a SIEM/Syslog server/Windows Application log.",
+        "analogy": "*Como la bitácora de un restaurante que anota cada plato que sale de la cocina: casi todo es rutina normal, hasta que una orden específica muestra señales de que algo salió mal.*",
+        "raw_content": "* **Definition:** Logs generated by individual applications recording user actions (open, save, print, macro execution, etc.), stored either within the application's own folder or centralized into a SIEM/Syslog server/Windows Application log.\n\nApplication logs record timestamp, a sequential **Event ID**, description, user, action taken, and details — allowing an analyst to trace a chain of events precisely (e.g., referencing \"line 5,400\" to another analyst).\n\n![Screenshot_3](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_3.png)\n\n> *Como la bitácora de un restaurante que anota cada plato que sale de la cocina: casi todo es rutina normal, hasta que una orden específica muestra señales de que algo salió mal.*"
+      },
+      {
+        "name": "Application Logs: Identifying a Malicious Macro Chain",
+        "definition": "The sequence of application log entries showing a file containing a macro being opened, flagged, scanned, matched to known malware, and quarantined — distinguishing one malicious file from many benign entries in the same log.",
+        "analogy": "",
+        "raw_content": "* **Definition:** The sequence of application log entries showing a file containing a macro being opened, flagged, scanned, matched to known malware, and quarantined — distinguishing one malicious file from many benign entries in the same log.\n\n| Step | Event                                                               |\n| ---- | ------------------------------------------------------------------- |\n| 1    | Macro execution attempt detected and **blocked** (security setting) |\n| 2    | Macro security alert sent to the user                               |\n| 3    | Macro content scanned — code **matches known malware**              |\n| 4    | File **quarantined**                                                |\n| 5    | Admin alert generated                                               |\n\n⚠️ **Exam Tip:** In a long application log with many routine entries (open, save, print), the malicious file is the one accompanied by **block/scan/quarantine/alert** actions — routine open/save/print entries are noise, not signal.\n\n---"
+      },
+      {
+        "name": "Endpoint Logs",
+        "definition": "Logs generated by endpoint protection or EDR software recording the full lifecycle of a system compromise — from initial user action through malware download, execution, and outbound data exfiltration.",
+        "analogy": "*Es como ver una película del crimen desde el principio: no solo ves el resultado final, sino cada paso — desde que el ladrón entra por la ventana hasta que se lleva los objetos de valor.*",
+        "raw_content": "* **Definition:** Logs generated by endpoint protection or EDR software recording the full lifecycle of a system compromise — from initial user action through malware download, execution, and outbound data exfiltration.\n\nEndpoint logs tend to be very descriptive, making the malicious chain easy to follow once you recognize the pattern of a **dropper-based infection**.\n\n> *Es como ver una película del crimen desde el principio: no solo ves el resultado final, sino cada paso — desde que el ladrón entra por la ventana hasta que se lleva los objetos de valor.*"
+      },
+      {
+        "name": "Endpoint Logs: The Dropper Infection Chain",
+        "definition": "A two-stage malware delivery pattern where an initial small file (stage one dropper) is executed to download a larger malicious payload (stage two dropper), which then deploys the actual malicious process and begins data exfiltration.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A two-stage malware delivery pattern where an initial small file (stage one dropper) is executed to download a larger malicious payload (stage two dropper), which then deploys the actual malicious process and begins data exfiltration.\n\n![Screenshot_4](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_4.png)\n\n| Stage | Event                                                                                      |\n| ----- | ------------------------------------------------------------------------------------------ |\n| 1     | User downloads and executes `setup.exe` despite an antivirus alert (**stage one dropper**) |\n| 2     | Outbound connection established to a remote server                                         |\n| 3     | `update.bin` downloaded and executed (**stage two dropper**) — deactivates antivirus       |\n| 4     | New malicious process created (e.g., `malproc.exe`)                                        |\n| 5     | Unauthorized registry modification detected                                                |\n| 6     | Unusual outbound traffic (**data exfiltration**)                                           |\n| 7     | Breach alert generated based on indicator of compromise                                    |\n\n⚠️ **Exam Tip:** A user **overriding/ignoring an antivirus alert** to run a downloaded file is one of the clearest human-factor indicators in an endpoint log — it marks the exact moment the infection chain begins.\n\n---"
+      },
+      {
+        "name": "OS-Specific Security Logs",
+        "definition": "Security logs native to an operating system that record authentication events — including failed login attempts, lockouts, and (in test/lab contexts) the specific credentials attempted — used to distinguish between types of password-cracking attacks.",
+        "analogy": "*Como el libro de registro de un club exclusivo que anota cada intento de entrada con la contraseña equivocada: el patrón de esos intentos revela qué método está usando quien intenta entrar.*",
+        "raw_content": "* **Definition:** Security logs native to an operating system that record authentication events — including failed login attempts, lockouts, and (in test/lab contexts) the specific credentials attempted — used to distinguish between types of password-cracking attacks.\n\n> *Como el libro de registro de un club exclusivo que anota cada intento de entrada con la contraseña equivocada: el patrón de esos intentos revela qué método está usando quien intenta entrar.*"
+      },
+      {
+        "name": "OS-Specific Security Logs: Brute Force Attack Pattern",
+        "definition": "A password attack pattern visible in security logs as **sequential or incrementally changing values** (e.g., PIN codes counting upward) attempted against the same account, indicating automated, exhaustive guessing rather than informed guessing.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A password attack pattern visible in security logs as **sequential or incrementally changing values** (e.g., PIN codes counting upward) attempted against the same account, indicating automated, exhaustive guessing rather than informed guessing.\n\n```\nIntento 1: 123456   FAILED\nIntento 2: 123457   FAILED\nIntento 3: 123458   FAILED\nIntento 4: 123459   FAILED\nIntento 5: 123450   FAILED  → cuenta bloqueada\n```\n\n![Screenshot_5](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_5.png)"
+      },
+      {
+        "name": "OS-Specific Security Logs: Dictionary Attack Pattern",
+        "definition": "A password attack pattern visible in security logs as **common words** or **lightly modified common words** (e.g., substituting symbols for letters) attempted against an account, indicating the use of a wordlist rather than sequential brute forcing.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A password attack pattern visible in security logs as **common words** or **lightly modified common words** (e.g., substituting symbols for letters) attempted against an account, indicating the use of a wordlist rather than sequential brute forcing.\n\n```\nIntento 1: puppy      FAILED\nIntento 2: baseball   FAILED\nIntento 3: cupcake    FAILED\nIntento 4: companion  FAILED\nIntento 5: loved      FAILED  → cuenta bloqueada\n```\n\n![Screenshot_6](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_6.png)\n\n⚠️ **Exam Tip:** Sequential/incrementing values or random-looking strings → **brute force**. Recognizable dictionary words (even with symbol substitutions like `p@ssw0rd`) → **dictionary attack**. Most exam security-log questions boil down to one of these two.\n\n---"
+      },
+      {
+        "name": "IPS/IDS Logs",
+        "definition": "Logs generated by an Intrusion Prevention System (which can block traffic) or Intrusion Detection System (which can only alert), recording severity, event description, and the action taken (block, alert, or monitor) for suspicious network activity.",
+        "analogy": "*Es como comparar un guardia que puede detener físicamente a un intruso en la puerta (IPS) con uno que solo puede avisar por radio que alguien entró (IDS).*",
+        "raw_content": "* **Definition:** Logs generated by an Intrusion Prevention System (which can block traffic) or Intrusion Detection System (which can only alert), recording severity, event description, and the action taken (block, alert, or monitor) for suspicious network activity.\n\nThe presence of a **block** action confirms the device is an IPS; an IDS can only detect and alert, never block.\n\n> *Es como comparar un guardia que puede detener físicamente a un intruso en la puerta (IPS) con uno que solo puede avisar por radio que alguien entró (IDS).*"
+      },
+      {
+        "name": "IPS/IDS Logs: Prioritizing Alerts Over Blocks",
+        "definition": "The analytical principle that an IPS/IDS event which was successfully **blocked**, regardless of its labeled severity, represents a mitigated risk, while an event that only generated an **alert** (was not blocked) represents an active, unmitigated threat requiring immediate investigation.",
+        "analogy": "*Aunque seis alarmas de incendio suenen \"altas\" en severidad, si cinco fueron apagadas automáticamente por el sistema de rociadores y una sigue ardiendo sin control, esa es la que hay que atender primero — sin importar que todas se llamen igual de \"graves\" en el papel.*",
+        "raw_content": "* **Definition:** The analytical principle that an IPS/IDS event which was successfully **blocked**, regardless of its labeled severity, represents a mitigated risk, while an event that only generated an **alert** (was not blocked) represents an active, unmitigated threat requiring immediate investigation.\n\n![Screenshot_7](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_7.png)\n\nIn a scenario with six \"high\" severity events, five were blocked (SQL injection, buffer overflow, privilege escalation, brute force, network scan) and therefore did not affect the network — but a **data exfiltration event that only alerted** (not blocked) is the true priority, because it means the attacker's traffic reached its goal.\n\n> *Aunque seis alarmas de incendio suenen \"altas\" en severidad, si cinco fueron apagadas automáticamente por el sistema de rociadores y una sigue ardiendo sin control, esa es la que hay que atender primero — sin importar que todas se llamen igual de \"graves\" en el papel.*\n\n⚠️ **Exam Tip:** When comparing multiple \"high\" severity choices on the exam, the correct answer is almost always the one where the action taken was **alert/monitor** (unmitigated) rather than **block/deny** (already contained).\n\n---"
+      },
+      {
+        "name": "Network Logs",
+        "definition": "Logs generated by network devices such as routers, recording interface, action (allow/deny/ARP reply), and traffic details — used to detect anomalies such as spoofing across otherwise normal traffic.",
+        "analogy": "*Como el registro de entradas y salidas de un edificio de oficinas con varias puertas (interfaces): la mayoría de los movimientos son rutina, pero un mismo gafete usado con dos caras distintas llamaría la atención.*",
+        "raw_content": "* **Definition:** Logs generated by network devices such as routers, recording interface, action (allow/deny/ARP reply), and traffic details — used to detect anomalies such as spoofing across otherwise normal traffic.\n\n> *Como el registro de entradas y salidas de un edificio de oficinas con varias puertas (interfaces): la mayoría de los movimientos son rutina, pero un mismo gafete usado con dos caras distintas llamaría la atención.*"
+      },
+      {
+        "name": "Network Logs: Detecting ARP Spoofing",
+        "definition": "A network log pattern showing the same IP address repeatedly associated with two different MAC addresses via ARP reply entries, indicating that an attacker is manipulating ARP tables to impersonate a legitimate host (ARP spoofing).",
+        "analogy": "*Como si la misma persona mostrara dos identificaciones distintas cada pocos segundos en la entrada de un edificio: algo no cuadra, porque tu identidad no debería cambiar solo porque pasó el tiempo.*",
+        "raw_content": "* **Definition:** A network log pattern showing the same IP address repeatedly associated with two different MAC addresses via ARP reply entries, indicating that an attacker is manipulating ARP tables to impersonate a legitimate host (ARP spoofing).\n\n![Screenshot_8](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_8.png)\n\nAmid otherwise normal allow/deny traffic (web, DNS, SSH, ICMP), **repeated ARP replies for the same IP oscillating between two different MAC addresses — occurring within seconds of each other — is the signature of ARP spoofing, likely using MAC-changing software.**\n\n> *Como si la misma persona mostrara dos identificaciones distintas cada pocos segundos en la entrada de un edificio: algo no cuadra, porque tu identidad no debería cambiar solo porque pasó el tiempo.*\n\n⚠️ **Exam Tip:** Private IP ranges (10.x, 172.x, 192.168.x) are commonly used on the exam even to represent \"public-facing\" traffic, simply to avoid referencing real organizations — **don't assume internal-looking IPs mean the traffic is automatically benign.**\n\n---"
+      },
+      {
+        "name": "Metadata in File-Based Investigations",
+        "definition": "The application of file-level metadata — checksum, file name/size/type, creation/modification/access dates, owner, and file path — to determine whether a specific file (such as a phishing attachment) is malicious and to block it network-wide.",
+        "analogy": "*Como examinar una carta sospechosa sin abrirla: revisas el matasellos, el peso, el remitente, y la letra — cada detalle da pistas sin necesidad de leer el contenido directamente.*",
+        "raw_content": "* **Definition:** The application of file-level metadata — checksum, file name/size/type, creation/modification/access dates, owner, and file path — to determine whether a specific file (such as a phishing attachment) is malicious and to block it network-wide.\n\nThis builds on the general concept of metadata (see Investigative Data Sources: Metadata) by applying it specifically to malware/phishing file analysis.\n\n> *Como examinar una carta sospechosa sin abrirla: revisas el matasellos, el peso, el remitente, y la letra — cada detalle da pistas sin necesidad de leer el contenido directamente.*"
+      },
+      {
+        "name": "Metadata in File-Based Investigations: Checksum as a Digital Fingerprint",
+        "definition": "An MD5 or SHA-256 hash value computed from a file's contents, used to uniquely identify a malicious file (including any embedded malware) so that the same file can be blocked network-wide if it appears again.",
+        "analogy": "*Es como la huella digital de un criminal: una vez que la tienes, puedes reconocerlo instantáneamente sin importar qué nombre o disfraz use la próxima vez.*",
+        "raw_content": "* **Definition:** An MD5 or SHA-256 hash value computed from a file's contents, used to uniquely identify a malicious file (including any embedded malware) so that the same file can be blocked network-wide if it appears again.\n\n> *Es como la huella digital de un criminal: una vez que la tienes, puedes reconocerlo instantáneamente sin importar qué nombre o disfraz use la próxima vez.*"
+      },
+      {
+        "name": "Metadata in File-Based Investigations: Red-Flag Indicators",
+        "definition": "Metadata inconsistencies that individually are not conclusive but collectively raise suspicion that a file is malicious — including file type/extension mismatches, unusual or misaligned timestamps, unexpected file ownership, and suspicious file paths.",
+        "analogy": "",
+        "raw_content": "* **Definition:** Metadata inconsistencies that individually are not conclusive but collectively raise suspicion that a file is malicious — including file type/extension mismatches, unusual or misaligned timestamps, unexpected file ownership, and suspicious file paths.\n\n![Screenshot_9](C:\\Users\\LENOVO\\Documents\\Obsidian%20Vault\\001_Material_Estudio\\Security_plus\\secPlus_images\\Screenshot_9.png)\n    There is nothing suspicious in the picture above but there are things to be consider when analizing metadata:\n\n| Indicator                 | Why it's suspicious                                                                                |\n| ------------------------- | -------------------------------------------------------------------------------------------------- |\n| **File type ≠ extension** | e.g., a file named `invoice.pdf` whose first bytes identify it as a `.exe` or `.jpg`               |\n| **Misaligned dates**      | Creation date far older/newer than expected (e.g., \"created 2012\" for an invoice received today)   |\n| **Unexpected owner**      | The file's creator/owner can explain (or fail to explain) how it appeared on their system          |\n| **Suspicious file path**  | Files running from `C:\\TEMP\\` are more likely malware than files in a trusted user document folder |\n\n⚠️ **Exam Tip:** No single metadata field proves maliciousness on its own — it's the **combination** of clues (hash matches known bad, wrong file type, temp directory, mismatched dates) that builds the case during an investigation.\n\n---"
+      }
+    ]
+  },
+  {
+    "sectionId": "S26",
+    "sectionTitle": "Section 26: Automation and Orchestration",
+    "concepts": [
+      {
+        "name": "Automation",
+        "definition": "The process of automatically executing tasks without manual intervention, typically achieved using specialized software or scripts, allowing repetitive tasks to be performed consistently and efficiently.",
+        "analogy": "*Es como poner el lavado de ropa en modo automático: presionas un botón y la máquina hace ciclos repetitivos de lavado, enjuague y centrifugado sin que tengas que estar ahí supervisando cada paso.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The process of automatically executing tasks without manual intervention, typically achieved using specialized software or scripts, allowing repetitive tasks to be performed consistently and efficiently.\n\nAutomation reduces the chances of human error and frees up time for more complex tasks by handling repetitive work autonomously. It focuses on making **individual tasks** run without human involvement.\n\n> *Es como poner el lavado de ropa en modo automático: presionas un botón y la máquina hace ciclos repetitivos de lavado, enjuague y centrifugado sin que tengas que estar ahí supervisando cada paso.*\n\n---"
+      },
+      {
+        "name": "Orchestration",
+        "definition": "The coordinated and sequenced execution of multiple automated tasks to achieve a specific outcome or workflow, ensuring tasks are executed in the correct order and that dependencies between them are managed appropriately.",
+        "analogy": "*Si la automatización es una lavadora funcionando sola, la orquestación es el director de una fábrica textil completa: coordina que la tela llegue a tiempo a la lavadora, luego a la secadora, luego al doblado, y finalmente al empaque, todo en el orden correcto.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The coordinated and sequenced execution of multiple automated tasks to achieve a specific outcome or workflow, ensuring tasks are executed in the correct order and that dependencies between them are managed appropriately.\n\nWhile automation focuses on making a single task autonomous, orchestration looks at the **bigger picture**, directing various automated processes to work together harmoniously toward a broader goal.\n\n> *Si la automatización es una lavadora funcionando sola, la orquestación es el director de una fábrica textil completa: coordina que la tela llegue a tiempo a la lavadora, luego a la secadora, luego al doblado, y finalmente al empaque, todo en el orden correcto.*\n\n⚠️ **Exam Tip:** Automation = a single autonomous task. Orchestration = multiple automated tasks coordinated together into one workflow.\n\n---"
+      },
+      {
+        "name": "SOAR — Security Orchestration, Automation, and Response",
+        "definition": "A class of security tools that facilitates incident response, threat hunting, and security configuration management by orchestrating and automating runbooks and delivering data enrichment.",
+        "analogy": "*Como cuando el firewall de próxima generación (NGFW) tomó las capas 3 y 4 de un firewall tradicional y las llevó hasta la capa 7: SOAR toma tu SIEM tradicional y lo lleva al siguiente nivel, agregando capacidad de acción automática, no solo de alerta.*",
+        "tables": [],
+        "list_items": [
+          "Scanning security and threat data to identify patterns",
+          "Analyzing data using machine learning",
+          "Automating data enrichment to make SIEM data more useful for analysts",
+          "Provisioning resources during incident response (creating new accounts, spinning up new VMs, deleting an infected VDI instance and issuing a clean one)",
+          "Executing automated playbooks"
+        ],
+        "raw_content": "* **Definition:** A class of security tools that facilitates incident response, threat hunting, and security configuration management by orchestrating and automating runbooks and delivering data enrichment.\n\nSOAR is best understood as **SIEM 2.0** — it takes traditional security information and event monitoring and integrates it with orchestration and automation capabilities. SOAR is primarily used for **incident response**, though it also supports threat hunting.\n\n> *Como cuando el firewall de próxima generación (NGFW) tomó las capas 3 y 4 de un firewall tradicional y las llevó hasta la capa 7: SOAR toma tu SIEM tradicional y lo lleva al siguiente nivel, agregando capacidad de acción automática, no solo de alerta.*\n\n**SOAR capabilities include:**\n\n* Scanning security and threat data to identify patterns\n* Analyzing data using machine learning\n* Automating data enrichment to make SIEM data more useful for analysts\n* Provisioning resources during incident response (creating new accounts, spinning up new VMs, deleting an infected VDI instance and issuing a clean one)\n* Executing automated playbooks\n\n---"
+      },
+      {
+        "name": "SOAR: Playbook",
+        "definition": "A checklist of actions to be performed to detect and respond to a specific type of security incident.",
+        "analogy": "*Es como la receta escrita de un chef: enumera los pasos exactos a seguir, pero no dice quién los va a cocinar — puede ser el chef mismo (manual) o un robot de cocina (automatizado).*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** A checklist of actions to be performed to detect and respond to a specific type of security incident.\n\nA playbook defines the **steps** — whether manual or automated — that should be taken for a given incident type. For example, a phishing-click playbook might specify: isolate the machine, run a virus scan, check the registry for persistence, back up user data, and reimage the device.\n\n> *Es como la receta escrita de un chef: enumera los pasos exactos a seguir, pero no dice quién los va a cocinar — puede ser el chef mismo (manual) o un robot de cocina (automatizado).*\n\n---"
+      },
+      {
+        "name": "SOAR: Runbook",
+        "definition": "An automated version of a playbook that leaves clearly defined interaction points for human analysis.",
+        "analogy": "*Si el playbook es la receta escrita, el runbook es la máquina de cocina automática que sigue esa receta sola, pero se detiene y te pregunta antes del paso crítico: \"¿Confirmas que quiero hornear esto a máxima temperatura?\"*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** An automated version of a playbook that leaves clearly defined interaction points for human analysis.\n\nA runbook automates most of the playbook's steps but pauses at specific checkpoints so a human analyst can make a judgment call — for example, deciding whether to actually reimage a machine after an automated scan completes.\n\n> *Si el playbook es la receta escrita, el runbook es la máquina de cocina automática que sigue esa receta sola, pero se detiene y te pregunta antes del paso crítico: \"¿Confirmas que quiero hornear esto a máxima temperatura?\"*\n\n---"
+      },
+      {
+        "name": "When to Automate and Orchestrate",
+        "definition": "The decision framework used to evaluate whether a given process is a good candidate for automation or orchestration, based on complexity, cost, single points of failure, technical debt, and ongoing supportability.",
+        "analogy": "*Como decidir si vale la pena comprar una máquina industrial para una tarea: si la vas a repetir todos los días, se paga sola con el tiempo; si la vas a hacer una sola vez cada varios años, es más barato hacerlo a mano.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The decision framework used to evaluate whether a given process is a good candidate for automation or orchestration, based on complexity, cost, single points of failure, technical debt, and ongoing supportability.\n\nAutomation and orchestration are indispensable in a modern IT and cybersecurity environment, but effective deployment requires weighing several factors before implementation. The most effective use of automation and orchestration is for tasks and workflows that are both **repeatable and stable**. One-off, highly variable, or infrequently performed tasks are usually poor candidates.\n\n> *Como decidir si vale la pena comprar una máquina industrial para una tarea: si la vas a repetir todos los días, se paga sola con el tiempo; si la vas a hacer una sola vez cada varios años, es más barato hacerlo a mano.*\n\n**Example — repeatable task:** Migrating 10 user accounts once every few years → do it manually (30 minutes) rather than spending 4–5 hours automating it.\n\n**Example — repeatable task:** Migrating accounts every single day → automate it, since the one-time automation cost pays off quickly through daily time savings.\n\n### When to Automate: Complexity\n\n* **Definition:** A consideration factor evaluating how complex a candidate process is, since automation and orchestration technologies deliver the best return on investment when applied to repetitive, somewhat complex tasks.\n\nA simple nightly backup is a good candidate for **automation** but does not require orchestration. A multi-step incident response workflow (isolate a machine, image the drive, submit to forensics, reformat, reinstall a known-good image, rescan, and return to the network) requires **orchestration**, since it launches multiple automated processes in sequence.\n\n> *Como diferenciar entre un electrodoméstico simple (una tostadora automática) y un sistema completo de una fábrica: entre más complejo el proceso, más justifica invertir en coordinar varias máquinas juntas (orquestación), no solo una.*\n\n### When to Automate: Cost\n\n* **Definition:** A consideration factor weighing the upfront investment required to build automation or orchestration against the long-term efficiency gains and savings they provide.\n\nAutomation and orchestration promise long-term savings but typically require a large initial investment in development, service providers, or personnel. Organizations should conduct a **cost-benefit analysis** covering hardware, software, personnel, and ongoing support costs before committing.\n\n> *Como comprar una máquina de coser industrial para un taller: cuesta caro al inicio, pero si vas a coser miles de prendas, se paga sola con el tiempo — a diferencia de coser a mano una sola camisa ocasional.*\n\n### When to Automate: Single Points of Failure\n\n* **Definition:** A risk consideration addressing the danger that essential business processes become fully dependent on automation or orchestration systems, with no fallback if those systems fail.\n\nOrganizations often forget to maintain a backup manual process in case an automation or orchestration system breaks. Mitigating this risk requires **redundancy and failover mechanisms** — both technical (backup servers, failover systems) and manual (a documented fallback human process).\n\n> *Como tener un solo puente para cruzar un río: si ese puente colapsa, toda la ciudad queda incomunicada. Siempre conviene tener un camino alterno, aunque sea más lento.*\n\n### When to Automate: Technical Debt\n\n* **Definition:** The accumulated cost and complexity of suboptimal or hastily implemented automation/orchestration solutions that must eventually be addressed or refactored.\n\nAutomation and orchestration systems **accumulate technical debt if not properly maintained or if they become outdated**. \nMitigation: Regular reviews and updates are required to keep these systems aligned with the organization's evolving needs.\n\n> *Como remendar una tubería vieja con cinta adhesiva en vez de reemplazarla: funciona por ahora, pero cada parche acumulado hace que arreglarlo todo bien después cueste mucho más tiempo y dinero.*\n\n### When to Automate: Ongoing Supportability\n\n* **Definition:** The requirement that an organization maintain the skills, training, and processes needed to keep automation and orchestration systems functioning as connected systems, APIs, and webhooks change over time.\n\nAutomations frequently rely on interconnections with external systems through APIs and webhooks. When any of those external systems are updated or replaced, it can break the automation. Organizations must ensure their teams have the skills to adapt these systems over time rather than treating automation as a one-time build.\n\n> *Como un carro que necesita mantenimiento constante: comprarlo es solo el primer paso, pero si no le das servicio cuando las piezas se desgastan, eventualmente deja de funcionar.*\n\n---"
+      },
+      {
+        "name": "Benefits of Automation and Orchestration",
+        "definition": "The objective domain covering the operational, financial, and organizational advantages gained by implementing automation and orchestration in secure operations.",
+        "analogy": "*Como los beneficios de instalar semáforos automáticos en una ciudad: no solo hace que el tráfico fluya más rápido, sino que también reduce accidentes, libera policías de tránsito para tareas más importantes, y responde más rápido ante una emergencia.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain covering the operational, financial, and organizational advantages gained by implementing automation and orchestration in secure operations.\n\nThere are seven main benefits of using automation and orchestration in an organization.\n\n> *Como los beneficios de instalar semáforos automáticos en una ciudad: no solo hace que el tráfico fluya más rápido, sino que también reduce accidentes, libera policías de tránsito para tareas más importantes, y responde más rápido ante una emergencia.*\n\n### Benefit 1: Increased Efficiency and Time Savings\n\nRepetitive, time-consuming processes (system patching, software deployment, data backups) can run without human intervention, freeing up human resources and reducing the risk of human error.\n\n### Benefit 2: Enforcing Baselines\n\nAutomation and orchestration enforce security and compliance baselines consistently across the entire enterprise by defining standardized configurations and policies aligned with industry best practices and regulatory requirements.\n\n### Benefit 3: Standard Infrastructure Configurations\n\nAutomation and orchestration help create and enforce standardized infrastructure configurations. If a deviation from the standard is detected, orchestration can trigger automated corrective actions.\n\n### Benefit 4: Scaling in a More Secure Manner\n\nAutomation and orchestration allow resources to scale up or down dynamically (provisioning VMs, adjusting access controls) while adhering to security protocols — critical in cloud environments where a human cannot deploy new servers as quickly or as securely as an automated process.\n\n### Benefit 5: Increased Employee Retention\n\nBy automating repetitive and mundane tasks, employees can focus on more strategic and creative work, increasing job satisfaction and reducing burnout — which in turn improves retention.\n\n### Benefit 6: Faster Reaction Times\n\nAutomation and orchestration allow organizations to detect and respond to incidents in real time, since automated systems are never distracted, tired, or on vacation. Detection and response speed is often the deciding factor between a mitigated threat and a full data breach.\n\n### Benefit 7: Workforce Multiplier\n\nAutomation and orchestration augment the capabilities of existing staff, allowing a smaller team to manage a larger and more complex infrastructure, optimizing resource allocation and reducing labor costs over time.\n\n⚠️ **Exam Tip:** Remember all seven benefits as a set: efficiency/time savings, baseline enforcement, standard configurations, secure scaling, employee retention, faster reaction times, and workforce multiplier.\n\n---"
+      },
+      {
+        "name": "Automating Support Tickets",
+        "definition": "The objective domain covering the use of automation to streamline support ticket management, primarily through automated ticket creation and automated ticket escalation.",
+        "analogy": "*Como una recepción de hospital que automáticamente asigna un número de prioridad a cada paciente que llega según sus síntomas, en lugar de que una sola persona decida manualmente el orden de atención de todos.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain covering the use of automation to streamline support ticket management, primarily through automated ticket creation and automated ticket escalation.\n\nAutomating support ticket management introduces efficiency, consistency, and scalability into a support process that would otherwise be overwhelmed by high ticket volume, leading to delays and lower customer satisfaction.\n\n> *Como una recepción de hospital que automáticamente asigna un número de prioridad a cada paciente que llega según sus síntomas, en lugar de que una sola persona decida manualmente el orden de atención de todos.*\n\n### Automating Support Tickets: Ticket Creation\n\n* **Definition:** The automatic generation of support tickets when users or customers report issues or requests, following a six-step process from submission to notification.\n\n**The six-step ticket creation process:**\n\n1. User/customer submits a request (email, web form, support portal).\n2. Automation tool monitors incoming requests and automatically generates a ticket based on predefined criteria (e.g., keywords).\n3. The system captures essential information (issue description, contact details, metadata) and attaches it to the ticket.\n4. The ticket is automatically categorized based on content or source (e.g., network support vs. software support).\n5. A priority is assigned based on predefined rules (urgent issues get higher priority).\n6. An automated notification is sent to the relevant support team or technician.\n\n> *Como una banda transportadora en una fábrica de paquetes: cada paquete (ticket) pasa automáticamente por las estaciones de pesaje, etiquetado y clasificación antes de llegar a la persona correcta que lo va a procesar.*\n\n### Automating Support Tickets: Ticket Escalation\n\n* **Definition:** The automated process of ensuring complex or high-priority tickets are addressed by the appropriate personnel, following a five-step process from criteria definition to resolution.\n\n**The five-step ticket escalation process:**\n\n1. The organization defines **escalation criteria** based on issue nature, urgency, and SLA requirements.\n2. **Automation rules** are configured to monitor ticket attributes (priority, response time, unresolved status).\n3. **Escalation actions** are triggered automatically — notifying a supervisor, reassigning to a higher-level technician, or changing the ticket's priority.\n4. **Monitoring and tracking** continues on the escalated ticket to ensure it follows the organization's escalation protocol.\n5. **Resolution and closure** — once resolved, the system closes the ticket and notifies the user.\n\n> *Como el protocolo de una sala de emergencias: si un paciente no mejora en el tiempo esperado, automáticamente se avisa a un médico de mayor rango, sin que nadie tenga que acordarse de hacerlo manualmente.*\n\n⚠️ **Exam Tip:** Automating ticket escalation not only ensures critical issues are handled properly but also maintains transparency, accountability, and helps organizations meet their SLA targets.\n\n---"
+      },
+      {
+        "name": "Automating Onboarding",
+        "definition": "The objective domain covering the use of automation to integrate new employees into an organization's systems and culture quickly, efficiently, and with reduced administrative burden — primarily through user provisioning and resource provisioning.",
+        "analogy": "*Como el proceso de check-in automático en un hotel de lujo: en lugar de que un empleado tenga que asignarte manualmente una habitación, la llave y el WiFi uno por uno, el sistema lo hace todo automáticamente apenas confirmas tu reserva.*",
+        "tables": [],
+        "list_items": [
+          "speeding up the onboarding process",
+          "reducing errors",
+          "ensuring compliance",
+          "saving time and resources"
+        ],
+        "raw_content": "* **Definition:** The objective domain covering the use of automation to integrate new employees into an organization's systems and culture quickly, efficiently, and with reduced administrative burden — primarily through user provisioning and resource provisioning.\n\nAutomating the onboarding process directly impacts productivity, employee satisfaction, and retention by eliminating tedious manual tasks and providing a structured, consistent experience for **new hires**.\n\n> *Como el proceso de check-in automático en un hotel de lujo: en lugar de que un empleado tenga que asignarte manualmente una habitación, la llave y el WiFi uno por uno, el sistema lo hace todo automáticamente apenas confirmas tu reserva.*\n\n**Benefits:**\n\n* speeding up the onboarding process\n\n* reducing errors\n\n* ensuring compliance\n\n* saving time and resources\n\n\n\n### Automating Onboarding: User Provisioning\n\n* **Definition:** The automated creation and management of user accounts and access rights to internal systems as part of the onboarding process.\n\n**The user provisioning process:**\n\n1. The new employee's information (personal details, role, department) is collected via an online form or HR system.\n2. Automation creates user accounts across systems (email, project management platforms, internal tools).\n3. The system automatically assigns the appropriate roles and access levels based on department and position.\n4. Automated notifications confirm account creation to the employee, their manager, and IT.\n5. The system performs continuous synchronization — automatically reflecting changes (promotions, department transfers) across all connected accounts and permissions.\n\n> *Como una llave maestra que se programa automáticamente para abrir solo las puertas del edificio que corresponden a tu puesto de trabajo, sin que nadie tenga que copiar llaves físicas manualmente.*\n\n### Automating Onboarding: Resource Provisioning\n\n* **Definition:** The automated allocation of physical and digital resources — such as workstations, software licenses, and communication tools — needed for a new employee's role.\n\n**The five-step resource provisioning process:**\n\n1. **Requirements analysis** — the system analyzes the employee's role/department to determine what resources are needed.\n2. **Resource allocation** — the system either allocates available inventory or initiates procurement for resources not on hand.\n3. **Configuration and customization** — resources are configured for the specific role (e.g., a graphic designer's workstation gets design software; a salesperson gets CRM access).\n4. **Verification and auditing** — confirms the provisioning succeeded and keeps inventory/compliance records up to date.\n5. **Feedback gathering** — the new employee and manager confirm the resources meet their needs or report gaps.\n\n> *Como equipar automáticamente el kit de herramientas de un nuevo empleado según su oficio: a un electricista le entregan un multímetro, y a un plomero le entregan una llave inglesa — el sistema sabe qué le corresponde a cada quién sin que un supervisor tenga que decidirlo manualmente cada vez.*\n\n---"
+      },
+      {
+        "name": "Automating Security",
+        "definition": "The objective domain covering the use of automation to configure and enforce guardrails, security groups, service access management, and permissions across an organization. (Security measures)",
+        "analogy": "*Como instalar sensores de movimiento y cámaras inteligentes en una casa en lugar de depender de un guardia que puede distraerse: el sistema automatizado nunca se cansa ni se olvida de revisar.*",
+        "tables": [],
+        "list_items": [
+          "revoking a user's permissions",
+          "reconfiguring an affected component",
+          "isolating a potential infected workstation from the network."
+        ],
+        "raw_content": "* **Definition:** The objective domain covering the use of automation to configure and enforce guardrails, security groups, service access management, and permissions across an organization. (Security measures)\n\nSecurity automation performs repetitive security tasks that are crucial for protection but time-consuming or prone to human error, ensuring defenses are consistently maintained and threats are responded to swiftly.\n\n> *Como instalar sensores de movimiento y cámaras inteligentes en una casa en lugar de depender de un guardia que puede distraerse: el sistema automatizado nunca se cansa ni se olvida de revisar.*\n\n### Automating Security: Guardrails\n\n* **Definition:** Automated safety controls that protect against insecure infrastructure configurations by enforcing an organization's security standards and preventing deviations that could introduce vulnerabilities.\n\nGuardrails continuously monitor infrastructure configuration and network traffic against established standards. When a violation is detected, the system generates an alert and can take predefined corrective action without waiting for human intervention — such as revoking permissions, reconfiguring a component, or isolating an infected workstation.\n\n> *Como los rieles de contención en una carretera de montaña: no evitan que conduzcas, pero te impiden salirte del camino y caer por el precipicio, corrigiendo automáticamente cualquier desviación peligrosa.*\n\n\n\nWhen a potential security violation is detected, the system will generate an alert and take predefined corrective actions without waiting for human intervention. These actions could involve things like:\n\n* revoking a user's permissions\n\n* reconfiguring an affected component\n\n* isolating a potential infected workstation from the network.\n\n\n\n### Automating Security: Security Groups\n\n* **Definition:** Automated management of virtual firewall rule sets applied to cloud-based server instances, specifying which incoming and outgoing traffic is permitted.\n\nAutomation assigns instances to the appropriate security group with predefined traffic rules based on function, location, or project. Automated systems can also dynamically adjust security group configurations as threats evolve and analyze traffic to detect unauthorized access attempts.\n\n> *Como asignar automáticamente pulseras de acceso de diferentes colores a los visitantes de un evento: cada color decide a qué áreas puede entrar esa persona, sin que un guardia tenga que decidirlo caso por caso.*\n\n### Automating Security: Service Access Management\n\n* **Definition:** The automated review, monitoring, and control of enabling or disabling services and access to prevent unnecessary exposure to risk while maintaining operational efficiency.\n\n**Automation tools regularly review who has access to what, ensuring employees only retain access necessary for their current role.** If unusual activity is detected, access can be automatically restricted or disabled pending human investigation. Services can also be automatically enabled/disabled on a schedule to reduce the window of exposure to attack.\n\n> *Como apagar automáticamente las luces y cerrar las puertas de las oficinas que nadie está usando fuera del horario laboral: reduces las oportunidades de que alguien entre sin permiso, sin necesitar que un guardia recorra el edificio.*\n\n### Automating Security: Permission Management (RBAC)\n\n* **Definition:** The use of role-based access control (RBAC) automation to consistently assign and manage system permissions based on an individual's assigned organizational role.\n\nAutomated provisioning and deprovisioning updates a user's permissions whenever they join, move within, or leave the organization, preventing unauthorized access to sensitive information. Automated routines also perform regular compliance checks on permission settings against internal policy and external regulation.\n\n> *Como una tarjeta de acceso de empleado que se reprograma automáticamente el mismo día que cambias de departamento: ya no abre las puertas de tu antiguo equipo, y automáticamente abre las de tu nuevo puesto.*\n\n---"
+      },
+      {
+        "name": "Automating Application Development",
+        "definition": "The objective domain covering the use of automation and orchestration — primarily through CI/CD — to manage, test, and deploy applications with minimal human intervention, improving efficiency, consistency, and software quality.",
+        "analogy": "*Como la diferencia entre construir una casa completa antes de mostrarla (metodología waterfall) versus ir mostrando y ajustando cada habitación a medida que se construye (metodología ágil con CI/CD).*",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**Release**",
+                "Making the software available to be installed and used (a readiness milestone)"
+              ],
+              [
+                "**Deployment**",
+                "Actually installing/pushing the software into an environment (testing, staging, or production)"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Model",
+              "Deploys to production automatically?",
+              "Human decision point"
+            ],
+            "rows": [
+              [
+                "**Continuous Delivery**",
+                "No",
+                "Yes — deployment to production is manual"
+              ],
+              [
+                "**Continuous Deployment**",
+                "Yes",
+                "No — fully automated end-to-end"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain covering the use of automation and orchestration — primarily through CI/CD — to manage, test, and deploy applications with minimal human intervention, improving efficiency, consistency, and software quality.\n\nUnder legacy waterfall development, every step of testing, release, and deployment was performed manually, often taking 3 to 12 months to release software. Modern iterative/Agile development combined with **CI/CD (Continuous Integration/Continuous Delivery or Deployment)** can release features within days — or, in high-velocity organizations, multiple times per day.\n\n> *Como la diferencia entre construir una casa completa antes de mostrarla (metodología waterfall) versus ir mostrando y ajustando cada habitación a medida que se construye (metodología ágil con CI/CD).*\n\n### Automating Application Development: Continuous Integration (CI)\n\n* **Definition:** A software development practice where developers merge their code changes into a central repository multiple times per day, with each check-in automatically verified by an automated build and testing process.\n\nCI provides early notification of integration problems, manages code changes from multiple contributors automatically, executes automated tests immediately after integration, and gives developers rapid feedback so they can correct issues quickly. This constant feedback loop maintains the integrity and functionality of the final application.\n\n> *Como coser en tiempo real cada pieza de tela que llega a una fábrica de ropa en lugar de esperar a que todas las piezas se acumulen al final: si una pieza no encaja, lo sabes de inmediato, no semanas después.*\n\n### Automating Application Development: Release vs. Deployment\n\n* **Definition:** Two related but distinct concepts — a release is the process of finalizing and preparing verified software for delivery into a specific environment; deployment is the automated, consistent process of actually pushing that software into a target environment so it becomes operational.\n\n| Term           | Meaning                                                                                        |\n| -------------- | ---------------------------------------------------------------------------------------------- |\n| **Release**    | Making the software available to be installed and used (a readiness milestone)                 |\n| **Deployment** | Actually installing/pushing the software into an environment (testing, staging, or production) |\n\n> *El \"release\" es como cuando un restaurante anuncia que un platillo nuevo ya está listo en el menú. El \"deployment\" es el mesero llevando ese platillo específico a la mesa de un cliente.*\n\n### Automating Application Development: Continuous Delivery (CD)\n\n* **Definition:** A CI/CD practice that ensures the code base is always in a deployable state after every change through automated testing and building, **but it does not automatically deploy the changes to the production environment.**.\n\nWith continuous delivery, deployment into production remains a **manual, business-driven decision**, giving the team flexibility to decide when to deploy based on timing, market conditions, and stakeholder readiness, while always maintaining a production-ready version of the software.\n\n> *Como tener el carro siempre listo con gasolina llena, revisado y estacionado en la entrada de la casa, pero la decisión de manejar hasta el destino la tomas tú manualmente cuando estés listo.*\n\n### Automating Application Development: Continuous Deployment (CD)\n\n* **Definition:** A CI/CD practice that automatically deploys every code change that **passes all pipeline stages directly into the production environment with no human intervention.**\n\nContinuous deployment ensures identical, error-free deployments and faster release cycles. It relies on **automated rollback features** to revert to a previous known-good state in the event of a failure, which is essential for maintaining service continuity.\n\n> *Es como un carro autónomo que no solo está listo para manejar, sino que también conduce solo hasta el destino sin que tú tengas que tomar el volante — y si detecta un problema en el camino, automáticamente da reversa a un punto seguro.*\n\n| Model                     | Deploys to production automatically? | Human decision point                     |\n| ------------------------- | ------------------------------------ | ---------------------------------------- |\n| **Continuous Delivery**   | No                                   | Yes — deployment to production is manual |\n| **Continuous Deployment** | Yes                                  | No — fully automated end-to-end          |\n\n⚠️ **Exam Tip:** Both models always begin with Continuous Integration. The distinction between Continuous Delivery and Continuous Deployment is whether the final push to production is manual or fully automated.\n\n---"
+      },
+      {
+        "name": "Integrations and APIs",
+        "definition": "The objective domain covering the use of application programming interfaces (APIs) and system integrations to enable interconnectivity and enhanced capability between modern software applications, automations, and orchestrations.",
+        "analogy": "*Como los enchufes universales de un adaptador de viaje: te permiten conectar tu aparato eléctrico a la toma de corriente de cualquier país sin tener que rediseñar el aparato — la API es ese adaptador entre dos sistemas distintos.*",
+        "tables": [
+          {
+            "headers": [
+              "Feature",
+              "REST",
+              "SOAP"
+            ],
+            "rows": [
+              [
+                "**Data format**",
+                "Typically JSON",
+                "XML"
+              ],
+              [
+                "**Weight**",
+                "Lightweight",
+                "Heavier/more structured"
+              ],
+              [
+                "**Security & compliance**",
+                "Basic",
+                "Stronger — built for regulatory/transactional needs"
+              ],
+              [
+                "**Best use case**",
+                "General web integrations",
+                "Enterprise services needing strict compliance"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain covering the use of application programming interfaces (APIs) and system integrations to enable interconnectivity and enhanced capability between modern software applications, automations, and orchestrations.\n\nAn **integration** is the process of **combining different subsystems or components into one comprehensive system so they function properly together**. Integrations and APIs are the fundamental elements driving efficiency, innovation, and scalability in automation and orchestration, especially in microservice or service-oriented architectures.\n\n> *Como los enchufes universales de un adaptador de viaje: te permiten conectar tu aparato eléctrico a la toma de corriente de cualquier país sin tener que rediseñar el aparato — la API es ese adaptador entre dos sistemas distintos.*\n\n### Integrations and APIs: API\n\n* **Definition:** Application Programming Interface — a set of rules and protocols that allow one product or service to communicate with another in a controlled environment using a specific data exchange format.\n\nAPIs act as a library of programming utilities that let developers access another application's functions or features programmatically, enabling administration, management, and monitoring of cloud-based infrastructure without building the underlying service from scratch.\n\n> *Como el menú de un restaurante: no necesitas saber cómo se cocina cada platillo (la lógica interna del sistema), solo necesitas saber qué puedes pedir y cómo pedirlo.*\n\n### Integrations and APIs: REST\n\n* **Definition:** Representational State Transfer — an architectural style for APIs that uses standard HTTP methods, status codes, uniform resource identifiers, and MIME types to interact statelessly with a web service.\n\nREST commonly uses the **JSON** format for data transfer, making it lightweight and easy to integrate into existing websites without extensive modification.\n\n> *Como pedir comida por una aplicación móvil sencilla: haces una solicitud clara y directa, y recibes una respuesta rápida, sin protocolos complicados de por medio.*\n\n### Integrations and APIs: SOAP\n\n* **Definition:** Simple Object Access Protocol — a strict, standardized messaging protocol, typically using XML format with a header and body, used to transport data between two services with strong security and transactional compliance.\n\nSOAP is more robust than REST, offering additional security features and transaction compliance, making it well suited for enterprise-level web services requiring complex transactions and regulatory compliance.\n\n> *Como enviar un documento legal notariado por correo certificado en lugar de un mensaje de texto: es más pesado y formal, pero ofrece garantías de seguridad y validez que un mensaje simple no ofrece.*\n\n| Feature                   | REST                     | SOAP                                                |\n| ------------------------- | ------------------------ | --------------------------------------------------- |\n| **Data format**           | Typically JSON           | XML                                                 |\n| **Weight**                | Lightweight              | Heavier/more structured                             |\n| **Security & compliance** | Basic                    | Stronger — built for regulatory/transactional needs |\n| **Best use case**         | General web integrations | Enterprise services needing strict compliance       |\n\n### Integrations and APIs: Curl\n\n* **Definition:** A command-line tool, installed by default on Linux and macOS (and installable on Windows), used to transfer data to and from a server over a supported protocol in order to test API functionality.\n\nCurl supports many protocols, including HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP, and FILE — though for testing web APIs, HTTP or HTTPS is most common depending on whether the endpoint is secure.\n\n```bash\n# Ejemplo de comando Curl para probar una API:\ncurl --data \"firstname=boolean&lastname=world\" https://httpbin.org/post\n```\n\nIn this example, the command sends the key-value pairs `firstname=boolean` and `lastname=world` to the specified API endpoint. The API typically responds in JSON format, echoing back the arguments and fields received — a useful way to verify that an API integration is functioning correctly during development or a penetration test.\n\n> *Como probar un citófono antes de instalarlo en un edificio completo: presionas el botón manualmente para confirmar que suena del otro lado, antes de confiar en que funcionará automáticamente para todos los residentes.*\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "Automation: Automatically executing individual tasks without manual intervention",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Automation**",
+                "Automatically executing individual tasks without manual intervention"
+              ],
+              [
+                "**Orchestration**",
+                "Coordinated, sequenced execution of multiple automated tasks toward a broader workflow"
+              ],
+              [
+                "**SOAR**",
+                "Security Orchestration, Automation, and Response — SIEM 2.0 for incident response and threat hunting"
+              ],
+              [
+                "**Playbook**",
+                "A checklist of manual or automated steps to detect and respond to a specific incident type"
+              ],
+              [
+                "**Runbook**",
+                "An automated playbook with defined human checkpoints"
+              ],
+              [
+                "**Technical debt**",
+                "Accumulated cost/complexity of suboptimal automation that must be refactored later"
+              ],
+              [
+                "**Single point of failure**",
+                "A component whose failure disrupts the entire dependent process"
+              ],
+              [
+                "**Guardrails**",
+                "Automated controls enforcing security standards and preventing insecure configurations"
+              ],
+              [
+                "**Security groups**",
+                "Virtual firewall rule sets controlling traffic to/from cloud instances"
+              ],
+              [
+                "**RBAC**",
+                "Role-Based Access Control — permissions assigned automatically based on organizational role"
+              ],
+              [
+                "**User provisioning**",
+                "Automated creation/management of user accounts and access rights"
+              ],
+              [
+                "**Resource provisioning**",
+                "Automated allocation of physical/digital resources needed for a role"
+              ],
+              [
+                "**CI**",
+                "Continuous Integration — frequent automated merging, building, and testing of code"
+              ],
+              [
+                "**Continuous Delivery**",
+                "CI/CD model where production deployment remains a manual decision"
+              ],
+              [
+                "**Continuous Deployment**",
+                "CI/CD model where every passing change deploys to production automatically"
+              ],
+              [
+                "**Release**",
+                "Preparing verified software for delivery to an environment"
+              ],
+              [
+                "**Deployment**",
+                "Actually installing/pushing software into a target environment"
+              ],
+              [
+                "**API**",
+                "Application Programming Interface — rules/protocols enabling two systems to communicate"
+              ],
+              [
+                "**REST**",
+                "Representational State Transfer — lightweight, stateless API architecture, typically JSON"
+              ],
+              [
+                "**SOAP**",
+                "Simple Object Access Protocol — strict, XML-based, security/compliance-focused API protocol"
+              ],
+              [
+                "**Curl**",
+                "Command-line tool for transferring data to/from a server to test API endpoints"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term                        | Definition                                                                                           |\n| --------------------------- | ---------------------------------------------------------------------------------------------------- |\n| **Automation**              | Automatically executing individual tasks without manual intervention                                 |\n| **Orchestration**           | Coordinated, sequenced execution of multiple automated tasks toward a broader workflow               |\n| **SOAR**                    | Security Orchestration, Automation, and Response — SIEM 2.0 for incident response and threat hunting |\n| **Playbook**                | A checklist of manual or automated steps to detect and respond to a specific incident type           |\n| **Runbook**                 | An automated playbook with defined human checkpoints                                                 |\n| **Technical debt**          | Accumulated cost/complexity of suboptimal automation that must be refactored later                   |\n| **Single point of failure** | A component whose failure disrupts the entire dependent process                                      |\n| **Guardrails**              | Automated controls enforcing security standards and preventing insecure configurations               |\n| **Security groups**         | Virtual firewall rule sets controlling traffic to/from cloud instances                               |\n| **RBAC**                    | Role-Based Access Control — permissions assigned automatically based on organizational role          |\n| **User provisioning**       | Automated creation/management of user accounts and access rights                                     |\n| **Resource provisioning**   | Automated allocation of physical/digital resources needed for a role                                 |\n| **CI**                      | Continuous Integration — frequent automated merging, building, and testing of code                   |\n| **Continuous Delivery**     | CI/CD model where production deployment remains a manual decision                                    |\n| **Continuous Deployment**   | CI/CD model where every passing change deploys to production automatically                           |\n| **Release**                 | Preparing verified software for delivery to an environment                                           |\n| **Deployment**              | Actually installing/pushing software into a target environment                                       |\n| **API**                     | Application Programming Interface — rules/protocols enabling two systems to communicate              |\n| **REST**                    | Representational State Transfer — lightweight, stateless API architecture, typically JSON            |\n| **SOAP**                    | Simple Object Access Protocol — strict, XML-based, security/compliance-focused API protocol          |\n| **Curl**                    | Command-line tool for transferring data to/from a server to test API endpoints                       |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Automation",
+        "definition": "The process of automatically executing tasks without manual intervention, typically achieved using specialized software or scripts, allowing repetitive tasks to be performed consistently and efficiently.",
+        "analogy": "*Es como poner el lavado de ropa en modo automático: presionas un botón y la máquina hace ciclos repetitivos de lavado, enjuague y centrifugado sin que tengas que estar ahí supervisando cada paso.*",
+        "raw_content": "* **Definition:** The process of automatically executing tasks without manual intervention, typically achieved using specialized software or scripts, allowing repetitive tasks to be performed consistently and efficiently.\n\nAutomation reduces the chances of human error and frees up time for more complex tasks by handling repetitive work autonomously. It focuses on making **individual tasks** run without human involvement.\n\n> *Es como poner el lavado de ropa en modo automático: presionas un botón y la máquina hace ciclos repetitivos de lavado, enjuague y centrifugado sin que tengas que estar ahí supervisando cada paso.*\n\n---"
+      },
+      {
+        "name": "Orchestration",
+        "definition": "The coordinated and sequenced execution of multiple automated tasks to achieve a specific outcome or workflow, ensuring tasks are executed in the correct order and that dependencies between them are managed appropriately.",
+        "analogy": "*Si la automatización es una lavadora funcionando sola, la orquestación es el director de una fábrica textil completa: coordina que la tela llegue a tiempo a la lavadora, luego a la secadora, luego al doblado, y finalmente al empaque, todo en el orden correcto.*",
+        "raw_content": "* **Definition:** The coordinated and sequenced execution of multiple automated tasks to achieve a specific outcome or workflow, ensuring tasks are executed in the correct order and that dependencies between them are managed appropriately.\n\nWhile automation focuses on making a single task autonomous, orchestration looks at the **bigger picture**, directing various automated processes to work together harmoniously toward a broader goal.\n\n> *Si la automatización es una lavadora funcionando sola, la orquestación es el director de una fábrica textil completa: coordina que la tela llegue a tiempo a la lavadora, luego a la secadora, luego al doblado, y finalmente al empaque, todo en el orden correcto.*\n\n⚠️ **Exam Tip:** Automation = a single autonomous task. Orchestration = multiple automated tasks coordinated together into one workflow.\n\n---"
+      },
+      {
+        "name": "SOAR — Security Orchestration, Automation, and Response",
+        "definition": "A class of security tools that facilitates incident response, threat hunting, and security configuration management by orchestrating and automating runbooks and delivering data enrichment.",
+        "analogy": "*Como cuando el firewall de próxima generación (NGFW) tomó las capas 3 y 4 de un firewall tradicional y las llevó hasta la capa 7: SOAR toma tu SIEM tradicional y lo lleva al siguiente nivel, agregando capacidad de acción automática, no solo de alerta.*",
+        "raw_content": "* **Definition:** A class of security tools that facilitates incident response, threat hunting, and security configuration management by orchestrating and automating runbooks and delivering data enrichment.\n\nSOAR is best understood as **SIEM 2.0** — it takes traditional security information and event monitoring and integrates it with orchestration and automation capabilities. SOAR is primarily used for **incident response**, though it also supports threat hunting.\n\n> *Como cuando el firewall de próxima generación (NGFW) tomó las capas 3 y 4 de un firewall tradicional y las llevó hasta la capa 7: SOAR toma tu SIEM tradicional y lo lleva al siguiente nivel, agregando capacidad de acción automática, no solo de alerta.*\n\n**SOAR capabilities include:**\n\n* Scanning security and threat data to identify patterns\n* Analyzing data using machine learning\n* Automating data enrichment to make SIEM data more useful for analysts\n* Provisioning resources during incident response (creating new accounts, spinning up new VMs, deleting an infected VDI instance and issuing a clean one)\n* Executing automated playbooks\n\n---"
+      },
+      {
+        "name": "SOAR: Playbook",
+        "definition": "A checklist of actions to be performed to detect and respond to a specific type of security incident.",
+        "analogy": "*Es como la receta escrita de un chef: enumera los pasos exactos a seguir, pero no dice quién los va a cocinar — puede ser el chef mismo (manual) o un robot de cocina (automatizado).*",
+        "raw_content": "* **Definition:** A checklist of actions to be performed to detect and respond to a specific type of security incident.\n\nA playbook defines the **steps** — whether manual or automated — that should be taken for a given incident type. For example, a phishing-click playbook might specify: isolate the machine, run a virus scan, check the registry for persistence, back up user data, and reimage the device.\n\n> *Es como la receta escrita de un chef: enumera los pasos exactos a seguir, pero no dice quién los va a cocinar — puede ser el chef mismo (manual) o un robot de cocina (automatizado).*\n\n---"
+      },
+      {
+        "name": "SOAR: Runbook",
+        "definition": "An automated version of a playbook that leaves clearly defined interaction points for human analysis.",
+        "analogy": "*Si el playbook es la receta escrita, el runbook es la máquina de cocina automática que sigue esa receta sola, pero se detiene y te pregunta antes del paso crítico: \"¿Confirmas que quiero hornear esto a máxima temperatura?\"*",
+        "raw_content": "* **Definition:** An automated version of a playbook that leaves clearly defined interaction points for human analysis.\n\nA runbook automates most of the playbook's steps but pauses at specific checkpoints so a human analyst can make a judgment call — for example, deciding whether to actually reimage a machine after an automated scan completes.\n\n> *Si el playbook es la receta escrita, el runbook es la máquina de cocina automática que sigue esa receta sola, pero se detiene y te pregunta antes del paso crítico: \"¿Confirmas que quiero hornear esto a máxima temperatura?\"*\n\n---"
+      },
+      {
+        "name": "When to Automate and Orchestrate",
+        "definition": "The decision framework used to evaluate whether a given process is a good candidate for automation or orchestration, based on complexity, cost, single points of failure, technical debt, and ongoing supportability.",
+        "analogy": "*Como decidir si vale la pena comprar una máquina industrial para una tarea: si la vas a repetir todos los días, se paga sola con el tiempo; si la vas a hacer una sola vez cada varios años, es más barato hacerlo a mano.*",
+        "raw_content": "* **Definition:** The decision framework used to evaluate whether a given process is a good candidate for automation or orchestration, based on complexity, cost, single points of failure, technical debt, and ongoing supportability.\n\nAutomation and orchestration are indispensable in a modern IT and cybersecurity environment, but effective deployment requires weighing several factors before implementation. The most effective use of automation and orchestration is for tasks and workflows that are both **repeatable and stable**. One-off, highly variable, or infrequently performed tasks are usually poor candidates.\n\n> *Como decidir si vale la pena comprar una máquina industrial para una tarea: si la vas a repetir todos los días, se paga sola con el tiempo; si la vas a hacer una sola vez cada varios años, es más barato hacerlo a mano.*\n\n**Example — repeatable task:** Migrating 10 user accounts once every few years → do it manually (30 minutes) rather than spending 4–5 hours automating it.\n\n**Example — repeatable task:** Migrating accounts every single day → automate it, since the one-time automation cost pays off quickly through daily time savings."
+      },
+      {
+        "name": "When to Automate: Complexity",
+        "definition": "A consideration factor evaluating how complex a candidate process is, since automation and orchestration technologies deliver the best return on investment when applied to repetitive, somewhat complex tasks.",
+        "analogy": "*Como diferenciar entre un electrodoméstico simple (una tostadora automática) y un sistema completo de una fábrica: entre más complejo el proceso, más justifica invertir en coordinar varias máquinas juntas (orquestación), no solo una.*",
+        "raw_content": "* **Definition:** A consideration factor evaluating how complex a candidate process is, since automation and orchestration technologies deliver the best return on investment when applied to repetitive, somewhat complex tasks.\n\nA simple nightly backup is a good candidate for **automation** but does not require orchestration. A multi-step incident response workflow (isolate a machine, image the drive, submit to forensics, reformat, reinstall a known-good image, rescan, and return to the network) requires **orchestration**, since it launches multiple automated processes in sequence.\n\n> *Como diferenciar entre un electrodoméstico simple (una tostadora automática) y un sistema completo de una fábrica: entre más complejo el proceso, más justifica invertir en coordinar varias máquinas juntas (orquestación), no solo una.*"
+      },
+      {
+        "name": "When to Automate: Cost",
+        "definition": "A consideration factor weighing the upfront investment required to build automation or orchestration against the long-term efficiency gains and savings they provide.",
+        "analogy": "*Como comprar una máquina de coser industrial para un taller: cuesta caro al inicio, pero si vas a coser miles de prendas, se paga sola con el tiempo — a diferencia de coser a mano una sola camisa ocasional.*",
+        "raw_content": "* **Definition:** A consideration factor weighing the upfront investment required to build automation or orchestration against the long-term efficiency gains and savings they provide.\n\nAutomation and orchestration promise long-term savings but typically require a large initial investment in development, service providers, or personnel. Organizations should conduct a **cost-benefit analysis** covering hardware, software, personnel, and ongoing support costs before committing.\n\n> *Como comprar una máquina de coser industrial para un taller: cuesta caro al inicio, pero si vas a coser miles de prendas, se paga sola con el tiempo — a diferencia de coser a mano una sola camisa ocasional.*"
+      },
+      {
+        "name": "When to Automate: Single Points of Failure",
+        "definition": "A risk consideration addressing the danger that essential business processes become fully dependent on automation or orchestration systems, with no fallback if those systems fail.",
+        "analogy": "*Como tener un solo puente para cruzar un río: si ese puente colapsa, toda la ciudad queda incomunicada. Siempre conviene tener un camino alterno, aunque sea más lento.*",
+        "raw_content": "* **Definition:** A risk consideration addressing the danger that essential business processes become fully dependent on automation or orchestration systems, with no fallback if those systems fail.\n\nOrganizations often forget to maintain a backup manual process in case an automation or orchestration system breaks. Mitigating this risk requires **redundancy and failover mechanisms** — both technical (backup servers, failover systems) and manual (a documented fallback human process).\n\n> *Como tener un solo puente para cruzar un río: si ese puente colapsa, toda la ciudad queda incomunicada. Siempre conviene tener un camino alterno, aunque sea más lento.*"
+      },
+      {
+        "name": "When to Automate: Technical Debt",
+        "definition": "The accumulated cost and complexity of suboptimal or hastily implemented automation/orchestration solutions that must eventually be addressed or refactored.",
+        "analogy": "*Como remendar una tubería vieja con cinta adhesiva en vez de reemplazarla: funciona por ahora, pero cada parche acumulado hace que arreglarlo todo bien después cueste mucho más tiempo y dinero.*",
+        "raw_content": "* **Definition:** The accumulated cost and complexity of suboptimal or hastily implemented automation/orchestration solutions that must eventually be addressed or refactored.\n\nAutomation and orchestration systems **accumulate technical debt if not properly maintained or if they become outdated**. \nMitigation: Regular reviews and updates are required to keep these systems aligned with the organization's evolving needs.\n\n> *Como remendar una tubería vieja con cinta adhesiva en vez de reemplazarla: funciona por ahora, pero cada parche acumulado hace que arreglarlo todo bien después cueste mucho más tiempo y dinero.*"
+      },
+      {
+        "name": "When to Automate: Ongoing Supportability",
+        "definition": "The requirement that an organization maintain the skills, training, and processes needed to keep automation and orchestration systems functioning as connected systems, APIs, and webhooks change over time.",
+        "analogy": "*Como un carro que necesita mantenimiento constante: comprarlo es solo el primer paso, pero si no le das servicio cuando las piezas se desgastan, eventualmente deja de funcionar.*",
+        "raw_content": "* **Definition:** The requirement that an organization maintain the skills, training, and processes needed to keep automation and orchestration systems functioning as connected systems, APIs, and webhooks change over time.\n\nAutomations frequently rely on interconnections with external systems through APIs and webhooks. When any of those external systems are updated or replaced, it can break the automation. Organizations must ensure their teams have the skills to adapt these systems over time rather than treating automation as a one-time build.\n\n> *Como un carro que necesita mantenimiento constante: comprarlo es solo el primer paso, pero si no le das servicio cuando las piezas se desgastan, eventualmente deja de funcionar.*\n\n---"
+      },
+      {
+        "name": "Benefits of Automation and Orchestration",
+        "definition": "The objective domain covering the operational, financial, and organizational advantages gained by implementing automation and orchestration in secure operations.",
+        "analogy": "*Como los beneficios de instalar semáforos automáticos en una ciudad: no solo hace que el tráfico fluya más rápido, sino que también reduce accidentes, libera policías de tránsito para tareas más importantes, y responde más rápido ante una emergencia.*",
+        "raw_content": "* **Definition:** The objective domain covering the operational, financial, and organizational advantages gained by implementing automation and orchestration in secure operations.\n\nThere are seven main benefits of using automation and orchestration in an organization.\n\n> *Como los beneficios de instalar semáforos automáticos en una ciudad: no solo hace que el tráfico fluya más rápido, sino que también reduce accidentes, libera policías de tránsito para tareas más importantes, y responde más rápido ante una emergencia.*"
+      },
+      {
+        "name": "Automating Support Tickets",
+        "definition": "The objective domain covering the use of automation to streamline support ticket management, primarily through automated ticket creation and automated ticket escalation.",
+        "analogy": "*Como una recepción de hospital que automáticamente asigna un número de prioridad a cada paciente que llega según sus síntomas, en lugar de que una sola persona decida manualmente el orden de atención de todos.*",
+        "raw_content": "* **Definition:** The objective domain covering the use of automation to streamline support ticket management, primarily through automated ticket creation and automated ticket escalation.\n\nAutomating support ticket management introduces efficiency, consistency, and scalability into a support process that would otherwise be overwhelmed by high ticket volume, leading to delays and lower customer satisfaction.\n\n> *Como una recepción de hospital que automáticamente asigna un número de prioridad a cada paciente que llega según sus síntomas, en lugar de que una sola persona decida manualmente el orden de atención de todos.*"
+      },
+      {
+        "name": "Automating Support Tickets: Ticket Creation",
+        "definition": "The automatic generation of support tickets when users or customers report issues or requests, following a six-step process from submission to notification.",
+        "analogy": "*Como una banda transportadora en una fábrica de paquetes: cada paquete (ticket) pasa automáticamente por las estaciones de pesaje, etiquetado y clasificación antes de llegar a la persona correcta que lo va a procesar.*",
+        "raw_content": "* **Definition:** The automatic generation of support tickets when users or customers report issues or requests, following a six-step process from submission to notification.\n\n**The six-step ticket creation process:**\n\n1. User/customer submits a request (email, web form, support portal).\n2. Automation tool monitors incoming requests and automatically generates a ticket based on predefined criteria (e.g., keywords).\n3. The system captures essential information (issue description, contact details, metadata) and attaches it to the ticket.\n4. The ticket is automatically categorized based on content or source (e.g., network support vs. software support).\n5. A priority is assigned based on predefined rules (urgent issues get higher priority).\n6. An automated notification is sent to the relevant support team or technician.\n\n> *Como una banda transportadora en una fábrica de paquetes: cada paquete (ticket) pasa automáticamente por las estaciones de pesaje, etiquetado y clasificación antes de llegar a la persona correcta que lo va a procesar.*"
+      },
+      {
+        "name": "Automating Support Tickets: Ticket Escalation",
+        "definition": "The automated process of ensuring complex or high-priority tickets are addressed by the appropriate personnel, following a five-step process from criteria definition to resolution.",
+        "analogy": "*Como el protocolo de una sala de emergencias: si un paciente no mejora en el tiempo esperado, automáticamente se avisa a un médico de mayor rango, sin que nadie tenga que acordarse de hacerlo manualmente.*",
+        "raw_content": "* **Definition:** The automated process of ensuring complex or high-priority tickets are addressed by the appropriate personnel, following a five-step process from criteria definition to resolution.\n\n**The five-step ticket escalation process:**\n\n1. The organization defines **escalation criteria** based on issue nature, urgency, and SLA requirements.\n2. **Automation rules** are configured to monitor ticket attributes (priority, response time, unresolved status).\n3. **Escalation actions** are triggered automatically — notifying a supervisor, reassigning to a higher-level technician, or changing the ticket's priority.\n4. **Monitoring and tracking** continues on the escalated ticket to ensure it follows the organization's escalation protocol.\n5. **Resolution and closure** — once resolved, the system closes the ticket and notifies the user.\n\n> *Como el protocolo de una sala de emergencias: si un paciente no mejora en el tiempo esperado, automáticamente se avisa a un médico de mayor rango, sin que nadie tenga que acordarse de hacerlo manualmente.*\n\n⚠️ **Exam Tip:** Automating ticket escalation not only ensures critical issues are handled properly but also maintains transparency, accountability, and helps organizations meet their SLA targets.\n\n---"
+      },
+      {
+        "name": "Automating Onboarding",
+        "definition": "The objective domain covering the use of automation to integrate new employees into an organization's systems and culture quickly, efficiently, and with reduced administrative burden — primarily through user provisioning and resource provisioning.",
+        "analogy": "*Como el proceso de check-in automático en un hotel de lujo: en lugar de que un empleado tenga que asignarte manualmente una habitación, la llave y el WiFi uno por uno, el sistema lo hace todo automáticamente apenas confirmas tu reserva.*",
+        "raw_content": "* **Definition:** The objective domain covering the use of automation to integrate new employees into an organization's systems and culture quickly, efficiently, and with reduced administrative burden — primarily through user provisioning and resource provisioning.\n\nAutomating the onboarding process directly impacts productivity, employee satisfaction, and retention by eliminating tedious manual tasks and providing a structured, consistent experience for **new hires**.\n\n> *Como el proceso de check-in automático en un hotel de lujo: en lugar de que un empleado tenga que asignarte manualmente una habitación, la llave y el WiFi uno por uno, el sistema lo hace todo automáticamente apenas confirmas tu reserva.*\n\n**Benefits:**\n\n* speeding up the onboarding process\n\n* reducing errors\n\n* ensuring compliance\n\n* saving time and resources"
+      },
+      {
+        "name": "Automating Onboarding: User Provisioning",
+        "definition": "The automated creation and management of user accounts and access rights to internal systems as part of the onboarding process.",
+        "analogy": "*Como una llave maestra que se programa automáticamente para abrir solo las puertas del edificio que corresponden a tu puesto de trabajo, sin que nadie tenga que copiar llaves físicas manualmente.*",
+        "raw_content": "* **Definition:** The automated creation and management of user accounts and access rights to internal systems as part of the onboarding process.\n\n**The user provisioning process:**\n\n1. The new employee's information (personal details, role, department) is collected via an online form or HR system.\n2. Automation creates user accounts across systems (email, project management platforms, internal tools).\n3. The system automatically assigns the appropriate roles and access levels based on department and position.\n4. Automated notifications confirm account creation to the employee, their manager, and IT.\n5. The system performs continuous synchronization — automatically reflecting changes (promotions, department transfers) across all connected accounts and permissions.\n\n> *Como una llave maestra que se programa automáticamente para abrir solo las puertas del edificio que corresponden a tu puesto de trabajo, sin que nadie tenga que copiar llaves físicas manualmente.*"
+      },
+      {
+        "name": "Automating Onboarding: Resource Provisioning",
+        "definition": "The automated allocation of physical and digital resources — such as workstations, software licenses, and communication tools — needed for a new employee's role.",
+        "analogy": "*Como equipar automáticamente el kit de herramientas de un nuevo empleado según su oficio: a un electricista le entregan un multímetro, y a un plomero le entregan una llave inglesa — el sistema sabe qué le corresponde a cada quién sin que un supervisor tenga que decidirlo manualmente cada vez.*",
+        "raw_content": "* **Definition:** The automated allocation of physical and digital resources — such as workstations, software licenses, and communication tools — needed for a new employee's role.\n\n**The five-step resource provisioning process:**\n\n1. **Requirements analysis** — the system analyzes the employee's role/department to determine what resources are needed.\n2. **Resource allocation** — the system either allocates available inventory or initiates procurement for resources not on hand.\n3. **Configuration and customization** — resources are configured for the specific role (e.g., a graphic designer's workstation gets design software; a salesperson gets CRM access).\n4. **Verification and auditing** — confirms the provisioning succeeded and keeps inventory/compliance records up to date.\n5. **Feedback gathering** — the new employee and manager confirm the resources meet their needs or report gaps.\n\n> *Como equipar automáticamente el kit de herramientas de un nuevo empleado según su oficio: a un electricista le entregan un multímetro, y a un plomero le entregan una llave inglesa — el sistema sabe qué le corresponde a cada quién sin que un supervisor tenga que decidirlo manualmente cada vez.*\n\n---"
+      },
+      {
+        "name": "Automating Security",
+        "definition": "The objective domain covering the use of automation to configure and enforce guardrails, security groups, service access management, and permissions across an organization. (Security measures)",
+        "analogy": "*Como instalar sensores de movimiento y cámaras inteligentes en una casa en lugar de depender de un guardia que puede distraerse: el sistema automatizado nunca se cansa ni se olvida de revisar.*",
+        "raw_content": "* **Definition:** The objective domain covering the use of automation to configure and enforce guardrails, security groups, service access management, and permissions across an organization. (Security measures)\n\nSecurity automation performs repetitive security tasks that are crucial for protection but time-consuming or prone to human error, ensuring defenses are consistently maintained and threats are responded to swiftly.\n\n> *Como instalar sensores de movimiento y cámaras inteligentes en una casa en lugar de depender de un guardia que puede distraerse: el sistema automatizado nunca se cansa ni se olvida de revisar.*"
+      },
+      {
+        "name": "Automating Security: Guardrails",
+        "definition": "Automated safety controls that protect against insecure infrastructure configurations by enforcing an organization's security standards and preventing deviations that could introduce vulnerabilities.",
+        "analogy": "*Como los rieles de contención en una carretera de montaña: no evitan que conduzcas, pero te impiden salirte del camino y caer por el precipicio, corrigiendo automáticamente cualquier desviación peligrosa.*",
+        "raw_content": "* **Definition:** Automated safety controls that protect against insecure infrastructure configurations by enforcing an organization's security standards and preventing deviations that could introduce vulnerabilities.\n\nGuardrails continuously monitor infrastructure configuration and network traffic against established standards. When a violation is detected, the system generates an alert and can take predefined corrective action without waiting for human intervention — such as revoking permissions, reconfiguring a component, or isolating an infected workstation.\n\n> *Como los rieles de contención en una carretera de montaña: no evitan que conduzcas, pero te impiden salirte del camino y caer por el precipicio, corrigiendo automáticamente cualquier desviación peligrosa.*\n\n\n\nWhen a potential security violation is detected, the system will generate an alert and take predefined corrective actions without waiting for human intervention. These actions could involve things like:\n\n* revoking a user's permissions\n\n* reconfiguring an affected component\n\n* isolating a potential infected workstation from the network."
+      },
+      {
+        "name": "Automating Security: Security Groups",
+        "definition": "Automated management of virtual firewall rule sets applied to cloud-based server instances, specifying which incoming and outgoing traffic is permitted.",
+        "analogy": "*Como asignar automáticamente pulseras de acceso de diferentes colores a los visitantes de un evento: cada color decide a qué áreas puede entrar esa persona, sin que un guardia tenga que decidirlo caso por caso.*",
+        "raw_content": "* **Definition:** Automated management of virtual firewall rule sets applied to cloud-based server instances, specifying which incoming and outgoing traffic is permitted.\n\nAutomation assigns instances to the appropriate security group with predefined traffic rules based on function, location, or project. Automated systems can also dynamically adjust security group configurations as threats evolve and analyze traffic to detect unauthorized access attempts.\n\n> *Como asignar automáticamente pulseras de acceso de diferentes colores a los visitantes de un evento: cada color decide a qué áreas puede entrar esa persona, sin que un guardia tenga que decidirlo caso por caso.*"
+      },
+      {
+        "name": "Automating Security: Service Access Management",
+        "definition": "The automated review, monitoring, and control of enabling or disabling services and access to prevent unnecessary exposure to risk while maintaining operational efficiency.",
+        "analogy": "*Como apagar automáticamente las luces y cerrar las puertas de las oficinas que nadie está usando fuera del horario laboral: reduces las oportunidades de que alguien entre sin permiso, sin necesitar que un guardia recorra el edificio.*",
+        "raw_content": "* **Definition:** The automated review, monitoring, and control of enabling or disabling services and access to prevent unnecessary exposure to risk while maintaining operational efficiency.\n\n**Automation tools regularly review who has access to what, ensuring employees only retain access necessary for their current role.** If unusual activity is detected, access can be automatically restricted or disabled pending human investigation. Services can also be automatically enabled/disabled on a schedule to reduce the window of exposure to attack.\n\n> *Como apagar automáticamente las luces y cerrar las puertas de las oficinas que nadie está usando fuera del horario laboral: reduces las oportunidades de que alguien entre sin permiso, sin necesitar que un guardia recorra el edificio.*"
+      },
+      {
+        "name": "Automating Security: Permission Management (RBAC)",
+        "definition": "The use of role-based access control (RBAC) automation to consistently assign and manage system permissions based on an individual's assigned organizational role.",
+        "analogy": "*Como una tarjeta de acceso de empleado que se reprograma automáticamente el mismo día que cambias de departamento: ya no abre las puertas de tu antiguo equipo, y automáticamente abre las de tu nuevo puesto.*",
+        "raw_content": "* **Definition:** The use of role-based access control (RBAC) automation to consistently assign and manage system permissions based on an individual's assigned organizational role.\n\nAutomated provisioning and deprovisioning updates a user's permissions whenever they join, move within, or leave the organization, preventing unauthorized access to sensitive information. Automated routines also perform regular compliance checks on permission settings against internal policy and external regulation.\n\n> *Como una tarjeta de acceso de empleado que se reprograma automáticamente el mismo día que cambias de departamento: ya no abre las puertas de tu antiguo equipo, y automáticamente abre las de tu nuevo puesto.*\n\n---"
+      },
+      {
+        "name": "Automating Application Development",
+        "definition": "The objective domain covering the use of automation and orchestration — primarily through CI/CD — to manage, test, and deploy applications with minimal human intervention, improving efficiency, consistency, and software quality.",
+        "analogy": "*Como la diferencia entre construir una casa completa antes de mostrarla (metodología waterfall) versus ir mostrando y ajustando cada habitación a medida que se construye (metodología ágil con CI/CD).*",
+        "raw_content": "* **Definition:** The objective domain covering the use of automation and orchestration — primarily through CI/CD — to manage, test, and deploy applications with minimal human intervention, improving efficiency, consistency, and software quality.\n\nUnder legacy waterfall development, every step of testing, release, and deployment was performed manually, often taking 3 to 12 months to release software. Modern iterative/Agile development combined with **CI/CD (Continuous Integration/Continuous Delivery or Deployment)** can release features within days — or, in high-velocity organizations, multiple times per day.\n\n> *Como la diferencia entre construir una casa completa antes de mostrarla (metodología waterfall) versus ir mostrando y ajustando cada habitación a medida que se construye (metodología ágil con CI/CD).*"
+      },
+      {
+        "name": "Automating Application Development: Continuous Integration (CI)",
+        "definition": "A software development practice where developers merge their code changes into a central repository multiple times per day, with each check-in automatically verified by an automated build and testing process.",
+        "analogy": "*Como coser en tiempo real cada pieza de tela que llega a una fábrica de ropa en lugar de esperar a que todas las piezas se acumulen al final: si una pieza no encaja, lo sabes de inmediato, no semanas después.*",
+        "raw_content": "* **Definition:** A software development practice where developers merge their code changes into a central repository multiple times per day, with each check-in automatically verified by an automated build and testing process.\n\nCI provides early notification of integration problems, manages code changes from multiple contributors automatically, executes automated tests immediately after integration, and gives developers rapid feedback so they can correct issues quickly. This constant feedback loop maintains the integrity and functionality of the final application.\n\n> *Como coser en tiempo real cada pieza de tela que llega a una fábrica de ropa en lugar de esperar a que todas las piezas se acumulen al final: si una pieza no encaja, lo sabes de inmediato, no semanas después.*"
+      },
+      {
+        "name": "Automating Application Development: Release vs. Deployment",
+        "definition": "Two related but distinct concepts — a release is the process of finalizing and preparing verified software for delivery into a specific environment; deployment is the automated, consistent process of actually pushing that software into a target environment so it becomes operational.",
+        "analogy": "*El \"release\" es como cuando un restaurante anuncia que un platillo nuevo ya está listo en el menú. El \"deployment\" es el mesero llevando ese platillo específico a la mesa de un cliente.*",
+        "raw_content": "* **Definition:** Two related but distinct concepts — a release is the process of finalizing and preparing verified software for delivery into a specific environment; deployment is the automated, consistent process of actually pushing that software into a target environment so it becomes operational.\n\n| Term           | Meaning                                                                                        |\n| -------------- | ---------------------------------------------------------------------------------------------- |\n| **Release**    | Making the software available to be installed and used (a readiness milestone)                 |\n| **Deployment** | Actually installing/pushing the software into an environment (testing, staging, or production) |\n\n> *El \"release\" es como cuando un restaurante anuncia que un platillo nuevo ya está listo en el menú. El \"deployment\" es el mesero llevando ese platillo específico a la mesa de un cliente.*"
+      },
+      {
+        "name": "Automating Application Development: Continuous Delivery (CD)",
+        "definition": "A CI/CD practice that ensures the code base is always in a deployable state after every change through automated testing and building, **but it does not automatically deploy the changes to the production environment.**.",
+        "analogy": "*Como tener el carro siempre listo con gasolina llena, revisado y estacionado en la entrada de la casa, pero la decisión de manejar hasta el destino la tomas tú manualmente cuando estés listo.*",
+        "raw_content": "* **Definition:** A CI/CD practice that ensures the code base is always in a deployable state after every change through automated testing and building, **but it does not automatically deploy the changes to the production environment.**.\n\nWith continuous delivery, deployment into production remains a **manual, business-driven decision**, giving the team flexibility to decide when to deploy based on timing, market conditions, and stakeholder readiness, while always maintaining a production-ready version of the software.\n\n> *Como tener el carro siempre listo con gasolina llena, revisado y estacionado en la entrada de la casa, pero la decisión de manejar hasta el destino la tomas tú manualmente cuando estés listo.*"
+      },
+      {
+        "name": "Automating Application Development: Continuous Deployment (CD)",
+        "definition": "A CI/CD practice that automatically deploys every code change that **passes all pipeline stages directly into the production environment with no human intervention.**",
+        "analogy": "*Es como un carro autónomo que no solo está listo para manejar, sino que también conduce solo hasta el destino sin que tú tengas que tomar el volante — y si detecta un problema en el camino, automáticamente da reversa a un punto seguro.*",
+        "raw_content": "* **Definition:** A CI/CD practice that automatically deploys every code change that **passes all pipeline stages directly into the production environment with no human intervention.**\n\nContinuous deployment ensures identical, error-free deployments and faster release cycles. It relies on **automated rollback features** to revert to a previous known-good state in the event of a failure, which is essential for maintaining service continuity.\n\n> *Es como un carro autónomo que no solo está listo para manejar, sino que también conduce solo hasta el destino sin que tú tengas que tomar el volante — y si detecta un problema en el camino, automáticamente da reversa a un punto seguro.*\n\n| Model                     | Deploys to production automatically? | Human decision point                     |\n| ------------------------- | ------------------------------------ | ---------------------------------------- |\n| **Continuous Delivery**   | No                                   | Yes — deployment to production is manual |\n| **Continuous Deployment** | Yes                                  | No — fully automated end-to-end          |\n\n⚠️ **Exam Tip:** Both models always begin with Continuous Integration. The distinction between Continuous Delivery and Continuous Deployment is whether the final push to production is manual or fully automated.\n\n---"
+      },
+      {
+        "name": "Integrations and APIs",
+        "definition": "The objective domain covering the use of application programming interfaces (APIs) and system integrations to enable interconnectivity and enhanced capability between modern software applications, automations, and orchestrations.",
+        "analogy": "*Como los enchufes universales de un adaptador de viaje: te permiten conectar tu aparato eléctrico a la toma de corriente de cualquier país sin tener que rediseñar el aparato — la API es ese adaptador entre dos sistemas distintos.*",
+        "raw_content": "* **Definition:** The objective domain covering the use of application programming interfaces (APIs) and system integrations to enable interconnectivity and enhanced capability between modern software applications, automations, and orchestrations.\n\nAn **integration** is the process of **combining different subsystems or components into one comprehensive system so they function properly together**. Integrations and APIs are the fundamental elements driving efficiency, innovation, and scalability in automation and orchestration, especially in microservice or service-oriented architectures.\n\n> *Como los enchufes universales de un adaptador de viaje: te permiten conectar tu aparato eléctrico a la toma de corriente de cualquier país sin tener que rediseñar el aparato — la API es ese adaptador entre dos sistemas distintos.*"
+      },
+      {
+        "name": "Integrations and APIs: API",
+        "definition": "Application Programming Interface — a set of rules and protocols that allow one product or service to communicate with another in a controlled environment using a specific data exchange format.",
+        "analogy": "*Como el menú de un restaurante: no necesitas saber cómo se cocina cada platillo (la lógica interna del sistema), solo necesitas saber qué puedes pedir y cómo pedirlo.*",
+        "raw_content": "* **Definition:** Application Programming Interface — a set of rules and protocols that allow one product or service to communicate with another in a controlled environment using a specific data exchange format.\n\nAPIs act as a library of programming utilities that let developers access another application's functions or features programmatically, enabling administration, management, and monitoring of cloud-based infrastructure without building the underlying service from scratch.\n\n> *Como el menú de un restaurante: no necesitas saber cómo se cocina cada platillo (la lógica interna del sistema), solo necesitas saber qué puedes pedir y cómo pedirlo.*"
+      },
+      {
+        "name": "Integrations and APIs: REST",
+        "definition": "Representational State Transfer — an architectural style for APIs that uses standard HTTP methods, status codes, uniform resource identifiers, and MIME types to interact statelessly with a web service.",
+        "analogy": "*Como pedir comida por una aplicación móvil sencilla: haces una solicitud clara y directa, y recibes una respuesta rápida, sin protocolos complicados de por medio.*",
+        "raw_content": "* **Definition:** Representational State Transfer — an architectural style for APIs that uses standard HTTP methods, status codes, uniform resource identifiers, and MIME types to interact statelessly with a web service.\n\nREST commonly uses the **JSON** format for data transfer, making it lightweight and easy to integrate into existing websites without extensive modification.\n\n> *Como pedir comida por una aplicación móvil sencilla: haces una solicitud clara y directa, y recibes una respuesta rápida, sin protocolos complicados de por medio.*"
+      },
+      {
+        "name": "Integrations and APIs: SOAP",
+        "definition": "Simple Object Access Protocol — a strict, standardized messaging protocol, typically using XML format with a header and body, used to transport data between two services with strong security and transactional compliance.",
+        "analogy": "*Como enviar un documento legal notariado por correo certificado en lugar de un mensaje de texto: es más pesado y formal, pero ofrece garantías de seguridad y validez que un mensaje simple no ofrece.*",
+        "raw_content": "* **Definition:** Simple Object Access Protocol — a strict, standardized messaging protocol, typically using XML format with a header and body, used to transport data between two services with strong security and transactional compliance.\n\nSOAP is more robust than REST, offering additional security features and transaction compliance, making it well suited for enterprise-level web services requiring complex transactions and regulatory compliance.\n\n> *Como enviar un documento legal notariado por correo certificado en lugar de un mensaje de texto: es más pesado y formal, pero ofrece garantías de seguridad y validez que un mensaje simple no ofrece.*\n\n| Feature                   | REST                     | SOAP                                                |\n| ------------------------- | ------------------------ | --------------------------------------------------- |\n| **Data format**           | Typically JSON           | XML                                                 |\n| **Weight**                | Lightweight              | Heavier/more structured                             |\n| **Security & compliance** | Basic                    | Stronger — built for regulatory/transactional needs |\n| **Best use case**         | General web integrations | Enterprise services needing strict compliance       |"
+      },
+      {
+        "name": "Integrations and APIs: Curl",
+        "definition": "A command-line tool, installed by default on Linux and macOS (and installable on Windows), used to transfer data to and from a server over a supported protocol in order to test API functionality.",
+        "analogy": "*Como probar un citófono antes de instalarlo en un edificio completo: presionas el botón manualmente para confirmar que suena del otro lado, antes de confiar en que funcionará automáticamente para todos los residentes.*",
+        "raw_content": "* **Definition:** A command-line tool, installed by default on Linux and macOS (and installable on Windows), used to transfer data to and from a server over a supported protocol in order to test API functionality.\n\nCurl supports many protocols, including HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP, and FILE — though for testing web APIs, HTTP or HTTPS is most common depending on whether the endpoint is secure.\n\n```bash\n# Ejemplo de comando Curl para probar una API:\ncurl --data \"firstname=boolean&lastname=world\" https://httpbin.org/post\n```\n\nIn this example, the command sends the key-value pairs `firstname=boolean` and `lastname=world` to the specified API endpoint. The API typically responds in JSON format, echoing back the arguments and fields received — a useful way to verify that an API integration is functioning correctly during development or a penetration test.\n\n> *Como probar un citófono antes de instalarlo en un edificio completo: presionas el botón manualmente para confirmar que suena del otro lado, antes de confiar en que funcionará automáticamente para todos los residentes.*\n\n---"
+      }
+    ]
+  },
+  {
+    "sectionId": "S27",
+    "sectionTitle": "Section 27: Security Awareness",
+    "concepts": [
+      {
+        "name": "Security Awareness Training",
+        "definition": "The objective domain (5.6) covering the knowledge, skills, and organizational practices that equip individuals to recognize and respond to security threats, reducing the risk posed by human error within an enterprise.",
+        "analogy": "*Es como instalar la mejor cerradura de la puerta principal, pero dejar la ventana abierta porque nadie le explicó a la familia por qué debía cerrarla.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The objective domain (5.6) covering the knowledge, skills, and organizational practices that equip individuals to recognize and respond to security threats, reducing the risk posed by human error within an enterprise.\n\nSecurity awareness training exists because technically robust defenses (firewalls, encryption, EDR) cannot compensate for human error, which remains one of the most significant vulnerabilities inside any enterprise network. Phishing emails, malware attacks, and social engineering schemes are among the most common techniques threat actors use to exploit the human element.\n\n> *Es como instalar la mejor cerradura de la puerta principal, pero dejar la ventana abierta porque nadie le explicó a la familia por qué debía cerrarla.*\n\nThis section covers six areas under Objective 5.6: **recognizing insider threats**, **password management**, **avoiding social engineering**, **policies and handbooks**, **remote and hybrid work environments**, and **creating a culture of security**.\n\n---"
+      },
+      {
+        "name": "Recognizing Insider Threats",
+        "definition": "The practice of identifying security risks that originate from individuals within an organization — employees, former employees, contractors, or business partners — who may exploit their legitimate access intentionally or unintentionally.",
+        "analogy": "*Es como el guardia de seguridad de un banco que un día empieza a actuar raro: nadie sospecha de él primero porque ya tiene las llaves, pero es justamente por eso que representa el mayor riesgo.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The practice of identifying security risks that originate from individuals within an organization — employees, former employees, contractors, or business partners — who may exploit their legitimate access intentionally or unintentionally.\n\nInsider threats are dangerous precisely because the individual already has inside information about the organization's security practices, data, and systems. Training users to recognize **anomalous behavior** — behavior that is risky, unexpected, or unintentional — is critical to flagging a potential insider threat before damage occurs.\n\n> *Es como el guardia de seguridad de un banco que un día empieza a actuar raro: nadie sospecha de él primero porque ya tiene las llaves, pero es justamente por eso que representa el mayor riesgo.*\n\n### Insider Threats: Risky Behavior Indicators\n\n* **Definition:** Observable changes in an employee's conduct — such as reporting to work intoxicated or severely impaired — that signal a personal issue with the potential to translate into a security risk.\n\nAn employee who occasionally shows up hungover may simply have had a long weekend, but a *pattern* of impaired behavior is a red flag. Impaired judgment can lead to unintended disclosure of sensitive information or intentional misconduct resulting from compromised decision-making. In high-clearance government environments, personnel reporting for duty in an altered state are flagged for further investigation, since substance abuse issues increase susceptibility to coercion (e.g., being pressured into selling secrets to a nation-state).\n\n> *Como un piloto de avión que llega oliendo a alcohol: no es solo un problema personal, es un riesgo directo para todos los que dependen de su buen juicio.*\n\n### Insider Threats: Emotional Distress Indicators\n\n* **Definition:** Behavioral signs — such as giving away personal possessions or displaying symptoms of depression — that may indicate an employee is undergoing significant emotional turmoil with security implications.\n\nIndividuals in emotional distress may become less vigilant in following security protocols, leading to unintentional breaches, or may become vulnerable to exploitation by malicious actors, competitors, or nation-states seeking an insider. Management and HR should engage with empathy and support while still mitigating the security risk.\n\n> *Como un cable eléctrico deshilachado: no lo tocas para castigarlo, lo atiendes con cuidado, pero sabes que representa un peligro real si no se maneja a tiempo.*\n\n### Insider Threats: Lifestyle Incongruence\n\n* **Definition:** A discrepancy between an employee's observable lifestyle (assets, spending habits) and their known income or financial situation, which may indicate illicit activity such as theft or the sale of corporate secrets.\n\nA lifestyle incongruence does not automatically indicate wrongdoing — the discrepancy could have a legitimate explanation (e.g., a spouse's income, an inheritance). However, an unexplained incongruence — such as a sudden purchase of an expensive car or home with no corresponding change in known income — warrants a **discreet investigation** to rule out foul play without violating the employee's privacy. This is why cleared government personnel must file financial disclosure forms and report windfalls (inheritances, lottery winnings) so unexplained wealth can be distinguished from legitimate income.\n\n> *Como ver a un compañero de trabajo con el mismo salario que tú, pero que de repente llega en un carro que cuesta el doble de lo que ambos ganan en un año — algo no cuadra, y merece revisarse con discreción.*\n\n### Insider Threats: Financial Struggles\n\n* **Definition:** Signs of significant personal debt or financial hardship displayed by an employee, which represent a security concern because financial pressure increases susceptibility to bribery or the temptation to sell sensitive data.\n\nOrganizations should have policies for this scenario, such as offering financial counseling to affected employees and monitoring for unusual access or transmission of confidential data.\n\n> *Como una persona ahogada en deudas: el desespero puede llevarla a aceptar dinero de quien sea, incluso de un competidor, a cambio de información valiosa.*\n\n### Insider Threats: Insider Threat Program\n\n* **Definition:** A formal organizational program that promotes a culture encouraging employees to report suspicious activity, trains staff to recognize warning signs, and implements policies supporting mental health and financial well-being while conducting fair and confidential investigations.\n\nA strong insider threat program balances **user activity monitoring** (detecting unusual access patterns, excessive data copying/downloading, or work at odd hours) with the **privacy rights** of employees. Recognizing insider threats is about attention to warning signs *and* having a fair, supportive process for handling them.\n\n> *Como un chequeo médico anual de una empresa: no busca castigar a nadie, busca detectar problemas a tiempo y ofrecer ayuda antes de que se conviertan en una crisis.*\n\n---"
+      },
+      {
+        "name": "Password Management",
+        "definition": "The practices and tools used to create, store, and manage passwords for online accounts and systems in a way that ensures each password is strong, unique, and stored securely to reduce the risk of unauthorized access.",
+        "analogy": "*Es como usar la misma llave para tu casa, tu carro y tu oficina: si alguien copia esa llave una sola vez, tiene acceso a todo lo que tienes.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The practices and tools used to create, store, and manage passwords for online accounts and systems in a way that ensures each password is strong, unique, and stored securely to reduce the risk of unauthorized access.\n\nThe most dangerous common practice is **password reuse** — using the same password (often paired with the same email-based username) across multiple sites. If one site is breached, attackers will attempt **credential replay** across many other services using the exposed credentials. Because remembering many long, unique, complex passwords is impractical for humans, a **password manager** solves this problem.\n\n> *Es como usar la misma llave para tu casa, tu carro y tu oficina: si alguien copia esa llave una sola vez, tiene acceso a todo lo que tienes.*\n\n### Password Management: Password Manager\n\n* **Definition:** A specialized tool, plugin, or browser extension that securely generates, stores, and autofills unique usernames and passwords for multiple sites, protected by a single master password.\n\nBrowser-built-in password managers (Chrome, Edge, Safari, Firefox) exist but are generally considered less secure than dedicated third-party tools such as **Bitwarden**, **1Password**, **Dashlane**, or **LastPass**. The **master password** is used to encrypt the entire vault; if the master password is forgotten, all stored credentials become inaccessible, since it functions as the encryption key. Enterprise versions of password managers also support securely sharing credentials among team members.\n\n> *Es como tener una sola caja fuerte con una sola combinación maestra, en lugar de tener que memorizar la combinación de cien cajas fuertes distintas.*\n\n⚠️ **Exam Tip:** Password managers directly mitigate **password reuse**, one of the most common and most exploitable end-user security failures.\n\n---"
+      },
+      {
+        "name": "Avoiding Social Engineering",
+        "definition": "The set of awareness practices and behaviors used to prevent social engineering attacks — deceptive attempts by a bad actor to manipulate individuals into breaking normal security procedures by exploiting human psychology.",
+        "analogy": "*Como reconocer a un vendedor demasiado insistente en la puerta de tu casa: la señal de alerta no es lo que dice, sino cómo intenta apurarte y ganarse tu confianza demasiado rápido.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The set of awareness practices and behaviors used to prevent social engineering attacks — deceptive attempts by a bad actor to manipulate individuals into breaking normal security procedures by exploiting human psychology.\n\nBecause social engineering attacks are often designed to appear innocent, **situational awareness** and vigilance form the first line of defense.\n\n> *Como reconocer a un vendedor demasiado insistente en la puerta de tu casa: la señal de alerta no es lo que dice, sino cómo intenta apurarte y ganarse tu confianza demasiado rápido.*\n\n### Avoiding Social Engineering: Situational Awareness\n\n* **Definition:** A state of mindfulness about one's immediate surroundings, the actions being requested, and the potential negative consequences of performing those actions.\n\nSituational awareness is the umbrella practice that prevents shoulder surfing, eavesdropping, piggybacking, and dumpster diving from succeeding.\n\n> *Es como caminar por una calle desconocida de noche: no significa tener miedo, significa estar consciente de quién está cerca y qué está pasando alrededor.*\n\n### Avoiding Social Engineering: Shoulder Surfing\n\n* **Definition:** An attack in which someone peeks over a victim's shoulder to view sensitive information displayed on their screen.\n\nCountermeasures include using a **privacy screen protector**, staying aware of surroundings in public spaces, and avoiding reading confidential information outside secured areas.\n\n> *Como alguien que finge no mirar, pero está leyendo tu PIN por encima de tu hombro en el cajero automático.*\n\n### Avoiding Social Engineering: Eavesdropping\n\n* **Definition:** An attack in which someone listens in on private conversations or meetings, either in person or via a compromised smart device, to gather sensitive information.\n\nSensitive discussions should occur only in soundproofed or secure areas, with awareness of smartphones, smartwatches, or other devices in the room that could be remotely hijacked to record the conversation.\n\n> *Como discutir secretos de la empresa en una cafetería pública: alguien en la mesa de al lado puede estar escuchando cada palabra sin que lo notes.*\n\n### Avoiding Social Engineering: Piggybacking / Tailgating\n\n* **Definition:** A physical social engineering technique in which an unauthorized individual slips into a secure facility undetected by closely following someone with legitimate access.\n\nMitigated through **access control vestibules (mantraps)** that only allow one person through at a time, combined with employee situational awareness.\n\n> *Como colarse a un concierto pegado detrás de alguien que sí tiene entrada, justo cuando el guardia mira hacia otro lado.*\n\n### Avoiding Social Engineering: Dumpster Diving\n\n* **Definition:** An attack in which discarded materials in the trash or recycling are sifted through to reconstruct a larger, more informative picture of an organization's confidential data.\n\nCountered through good situational awareness and, more formally, through data destruction policies (see [[#Policies and Handbooks: Data Destruction Policy]]).\n\n> *Como armar un rompecabezas con los papeles rotos que alguien tiró a la basura sin destruirlos correctamente.*\n\n### Avoiding Social Engineering: Operational Security (OPSEC)\n\n* **Definition:** A protective discipline, originally coined by the military, that involves safeguarding critical information — including daily routines, project details, and internal procedures — that could indicate an organization's activities to an adversary.\n\nOPSEC is a **mindset**, not just a protocol: social engineers piece together seemingly innocuous details shared over social media, phone calls, or casual conversation to construct a narrative they can exploit — for example, pretending to be part of someone's work life using information the victim unknowingly divulged.\n\n> *Como no comentar en redes sociales que vas a estar de viaje: parece un dato inofensivo, pero le dice a un ladrón exactamente cuándo tu casa va a estar vacía.*\n\n### Avoiding Social Engineering: Baiting via Removable Media and Cables\n\n* **Definition:** A social engineering technique in which an attacker leaves an infected USB drive or malicious charging cable in a location where a victim is likely to find it and connect it to their device out of curiosity or convenience.\n\nA USB drive \"accidentally\" left in a parking lot, once plugged in, can silently infect a workstation or the entire organizational network with malware. As users became wiser to USB baiting, attackers shifted to **malicious charging cables** with malware embedded in the firmware, deployed in airports, lounges, and coffee shops. The mitigation is simple: never plug in an unknown USB device, and always carry your own charger and cable.\n\n> *Como aceptar un dulce envuelto de un extraño: aunque se vea inofensivo, no sabes qué contiene realmente hasta que ya es demasiado tarde.*\n\n### Avoiding Social Engineering: Urgency and Pretexting Tactics\n\n* **Definition:** A manipulation technique in which an attacker impersonates a trusted role (e.g., IT support) and creates a false sense of urgency or fear — such as threatening immediate legal or financial consequences — to pressure the victim into bypassing normal security protocols.\n\nThis tactic works because people under time pressure are more likely to make mistakes and skip verification steps.\n\n> *Como una llamada que te dice \"si no pagas en los próximos 10 minutos, te embargan la casa\": el pánico que generan es la herramienta, no la amenaza en sí.*\n\n⚠️ **Exam Tip:** The best organizational defense against all social engineering techniques is a proactive security culture reinforced with **simulated phishing exercises** and remediation training for employees who fall for them.\n\n---"
+      },
+      {
+        "name": "Policies and Handbooks",
+        "definition": "The formal documented guidelines (policies) and comprehensive reference guides (handbooks) that define how an organization operates, makes decisions, and expects its employees to behave — including in situations not explicitly covered by training.",
+        "analogy": "*La política es la ley del país; el manual del empleado es la guía turística que te explica cómo aplicarla en el día a día.*",
+        "tables": [],
+        "list_items": [],
+        "raw_content": "* **Definition:** The formal documented guidelines (policies) and comprehensive reference guides (handbooks) that define how an organization operates, makes decisions, and expects its employees to behave — including in situations not explicitly covered by training.\n\nA **policy** is a deliberate system of principles and rules crafted to uphold internal controls and ensure legal/ethical compliance. A **handbook** is a comprehensive, often booklet-form guide providing detailed procedures and best practices as an ongoing reference — for example, an employee handbook outlining company procedures and expectations. Policies and handbooks differ significantly between organizations based on industry, needs, and use cases, so employees must read *and* comprehend them, not just acknowledge them.\n\n> *La política es la ley del país; el manual del empleado es la guía turística que te explica cómo aplicarla en el día a día.*\n\n### Policies and Handbooks: Data Destruction Policy\n\n* **Definition:** A policy that defines the required method for securely disposing of physical or digital materials containing sensitive information, based on the material's classification level.\n\nExample schemes include color-coded paper (e.g., pink paper for sensitive printouts requiring cross-cut shredding) or classification-based disposal (unclassified → recycle, secret → shred, top secret → incinerate). These policies directly counter the **dumpster diving** attack described above.\n\n> *Como separar la basura por colores según qué tan peligrosa es: no todo se tira igual, y algunas cosas hay que quemarlas para asegurarse de que no quede nada.*\n\n### Policies and Handbooks: Remote Work / Take-Home Policy\n\n* **Definition:** A policy defining what types of physical and digital information are permitted to leave the organization's secure premises with an employee, based on data classification.\n\nHighly classified environments may prohibit personal devices inside the building entirely and restrict which tasks (e.g., annual training) can be completed remotely, versus which require being physically inside a secured facility. Physical checks (bags, backpacks) may be used to enforce this policy on exit.\n\n> *Como un préstamo de biblioteca: algunos libros los puedes llevar a casa, pero los de la sección de \"solo consulta\" tienen que quedarse dentro del edificio.*\n\n⚠️ **Exam Tip:** Policies and handbooks must be reviewed **at least annually**, updated as threats evolve, and any significant changes should be highlighted in a summary so employees don't miss critical updates (e.g., a changed password complexity requirement).\n\n---"
+      },
+      {
+        "name": "Remote and Hybrid Work Environments",
+        "definition": "The objective domain covering the security considerations, risks, and mitigations associated with employees performing work outside a traditional office environment, whether entirely remotely or through a blended arrangement.",
+        "analogy": "*Como mudar la oficina de un edificio con guardias y cámaras a la sala de la casa de cada empleado: la comodidad sube, pero también sube el número de puertas que hay que vigilar.*",
+        "tables": [],
+        "list_items": [
+          "Require a **VPN** for secure, encrypted, end-to-end connections back to company resources.",
+          "Require **multi-factor authentication (MFA)** as an added layer of protection if credentials are compromised.",
+          "Provide continuous cybersecurity awareness training on phishing recognition and safe data handling for remote staff.",
+          "Prefer **company-issued devices** loaded with up-to-date security software, firewalls, and monitoring tools over unmanaged personal devices; if a **BYOD** policy is used instead of **CYOD** or **COPE**, the organization must define required security measures despite not owning the device.",
+          "Maintain **automated backups** (physical or cloud) to protect against data loss from ransomware or other attacks.",
+          "Choose collaboration tools/platforms with **end-to-end encryption**, robust administrative controls, and compliance with recognized security standards.",
+          "Maintain clear communication channels between the security team and remote staff, supported by regular security audits and feedback sessions."
+        ],
+        "raw_content": "* **Definition:** The objective domain covering the security considerations, risks, and mitigations associated with employees performing work outside a traditional office environment, whether entirely remotely or through a blended arrangement.\n\n> *Como mudar la oficina de un edificio con guardias y cámaras a la sala de la casa de cada empleado: la comodidad sube, pero también sube el número de puertas que hay que vigilar.*\n\n### Remote and Hybrid Work: Remote Work\n\n* **Definition:** A work arrangement in which employees perform their job functions entirely outside the traditional office environment — commonly from home or another remote location — using technology such as the internet.\n\n### Remote and Hybrid Work: Hybrid Work\n\n* **Definition:** A work model that combines in-office work with remote work, where employees split their work week between the traditional office and a remote location.\n\n### Remote and Hybrid Work: Security Risks of Remote Environments\n\nWorking outside the office removes the organization's physical security controls and shifts data transmission from a trusted internal network onto a mix of public and private networks (home Wi-Fi, hotel networks, coffee shop hotspots) with weaker security controls, increasing exposure to eavesdropping over unencrypted connections and weak Wi-Fi password infiltration. Remote and hybrid work also increases the risk of **device loss or theft**, making device-level protections essential.\n\n> *Como enviar dinero por correo postal ordinario en vez de un camión blindado: llega, pero por un camino con muchas más manos de por medio.*\n\n### Remote and Hybrid Work: Mitigations\n\n* Require a **VPN** for secure, encrypted, end-to-end connections back to company resources.\n* Require **multi-factor authentication (MFA)** as an added layer of protection if credentials are compromised.\n* Provide continuous cybersecurity awareness training on phishing recognition and safe data handling for remote staff.\n* Prefer **company-issued devices** loaded with up-to-date security software, firewalls, and monitoring tools over unmanaged personal devices; if a **BYOD** policy is used instead of **CYOD** or **COPE**, the organization must define required security measures despite not owning the device.\n* Maintain **automated backups** (physical or cloud) to protect against data loss from ransomware or other attacks.\n* Choose collaboration tools/platforms with **end-to-end encryption**, robust administrative controls, and compliance with recognized security standards.\n* Maintain clear communication channels between the security team and remote staff, supported by regular security audits and feedback sessions.\n\n> *Como equipar a un soldado que va a operar fuera de la base: necesita su propio equipo de comunicación cifrado, su identificación reforzada, y un canal directo con el cuartel general.*\n\n---"
+      },
+      {
+        "name": "Creating a Culture of Security",
+        "definition": "An organizational mindset in which every member prioritizes security within daily tasks and decision-making, treating the protection of data, assets, and reputation as a collective responsibility rather than solely a technical or IT function.",
+        "analogy": "*Como una familia donde cerrar la puerta con llave no es una regla impuesta, sino un hábito que todos hacen de forma natural porque entienden por qué importa.*",
+        "tables": [
+          {
+            "headers": [
+              "Phase",
+              "Description"
+            ],
+            "rows": [
+              [
+                "**Leadership Commitment**",
+                "Executive leadership visibly commits to security so the tone cascades through the whole organization, framed as shared responsibility, not a mandate."
+              ],
+              [
+                "**Development**",
+                "Strategic planning: creating actionable, resourced policies covering acceptable practices, threat education (phishing, social engineering), and sensitive data handling guidelines."
+              ],
+              [
+                "**Execution**",
+                "A continual process (not a one-time rollout) — ongoing training, simulated cyberattacks, and consistent threat communication embedded into daily workflows."
+              ],
+              [
+                "**Monitoring & Reporting**",
+                "Initial post-rollout monitoring followed by recurring check-ins: tracking network breaches, employee compliance, strategy effectiveness, and improvement areas."
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "* **Definition:** An organizational mindset in which every member prioritizes security within daily tasks and decision-making, treating the protection of data, assets, and reputation as a collective responsibility rather than solely a technical or IT function.\n\nTechnical controls fail if employees do not value security enough to follow them. Building this culture requires weaving cybersecurity into the organization's everyday ethos, behaviors, and decisions through **organizational change management (OCM)**.\n\n> *Como una familia donde cerrar la puerta con llave no es una regla impuesta, sino un hábito que todos hacen de forma natural porque entienden por qué importa.*\n\n### Creating a Culture of Security: Organizational Change Management (OCM)\n\n* **Definition:** A structured framework — beginning with executive leadership commitment and proceeding through strategic development, execution, and continuous monitoring — used to shift an organization's mindset so that cybersecurity becomes embedded in daily operations rather than treated as a mandated directive.\n\nOCM proceeds through distinct phases:\n\n| Phase           | Description                                                                                       |\n| --------------- | --------------------------------------------------------------------------------------------------- |\n| **Leadership Commitment** | Executive leadership visibly commits to security so the tone cascades through the whole organization, framed as shared responsibility, not a mandate. |\n| **Development** | Strategic planning: creating actionable, resourced policies covering acceptable practices, threat education (phishing, social engineering), and sensitive data handling guidelines. |\n| **Execution**   | A continual process (not a one-time rollout) — ongoing training, simulated cyberattacks, and consistent threat communication embedded into daily workflows. |\n| **Monitoring & Reporting** | Initial post-rollout monitoring followed by recurring check-ins: tracking network breaches, employee compliance, strategy effectiveness, and improvement areas. |\n\nA critical component of the monitoring phase is fostering an environment where employees feel safe **reporting suspicious activity** without fear of blame, and establishing **feedback loops** so monitoring insights directly shape future security actions.\n\n> *Como entrenar a un equipo deportivo: no basta con dar una charla motivacional una vez; se necesita práctica constante, retroalimentación después de cada partido, y ajustes continuos a la estrategia.*\n\n⚠️ **Exam Tip:** A culture of security is validated not by the absence of incidents, but by employees' willingness to proactively report suspicious activity without fear of retaliation.\n\n---"
+      },
+      {
+        "name": "Key Terms Glossary",
+        "definition": "Insider Threat: A security risk originating from an individual within the organization (employee, contractor, partner)",
+        "analogy": "",
+        "tables": [
+          {
+            "headers": [
+              "Term",
+              "Definition"
+            ],
+            "rows": [
+              [
+                "**Insider Threat**",
+                "A security risk originating from an individual within the organization (employee, contractor, partner)"
+              ],
+              [
+                "**Anomalous Behavior**",
+                "Risky, unexpected, or unintentional behavior that may flag a potential insider threat"
+              ],
+              [
+                "**Lifestyle Incongruence**",
+                "A mismatch between an employee's observable lifestyle and their known income"
+              ],
+              [
+                "**Insider Threat Program**",
+                "Formal program combining reporting culture, training, and user activity monitoring to detect insider risks"
+              ],
+              [
+                "**Password Reuse**",
+                "Using the same password across multiple accounts/sites — a major security vulnerability"
+              ],
+              [
+                "**Password Manager**",
+                "A tool that generates, stores, and autofills unique credentials, protected by a master password"
+              ],
+              [
+                "**Situational Awareness**",
+                "Mindfulness of one's surroundings and the consequences of requested actions"
+              ],
+              [
+                "**Shoulder Surfing**",
+                "Viewing sensitive on-screen information by looking over someone's shoulder"
+              ],
+              [
+                "**Eavesdropping**",
+                "Listening in on private conversations or meetings to gather sensitive information"
+              ],
+              [
+                "**Piggybacking / Tailgating**",
+                "Following an authorized person into a secure facility without proper access"
+              ],
+              [
+                "**Dumpster Diving**",
+                "Searching discarded materials to reconstruct sensitive information"
+              ],
+              [
+                "**OPSEC**",
+                "Operational Security — safeguarding information that could reveal organizational activities to an adversary"
+              ],
+              [
+                "**Baiting**",
+                "Leaving infected media (USB drives, charging cables) for a victim to connect out of curiosity"
+              ],
+              [
+                "**Policy**",
+                "A formal system of rules guiding organizational decisions and compliance"
+              ],
+              [
+                "**Handbook**",
+                "A comprehensive reference guide detailing procedures and best practices"
+              ],
+              [
+                "**Data Destruction Policy**",
+                "Rules defining secure disposal methods for sensitive materials based on classification"
+              ],
+              [
+                "**Remote Work**",
+                "Performing job functions entirely outside the traditional office"
+              ],
+              [
+                "**Hybrid Work**",
+                "A blend of in-office and remote work arrangements"
+              ],
+              [
+                "**BYOD**",
+                "Bring Your Own Device — employees use personal devices for work, complicating security enforcement"
+              ],
+              [
+                "**CYOD / COPE**",
+                "Choose Your Own Device / Corporate-Owned, Personally Enabled — organization-controlled device models"
+              ],
+              [
+                "**Culture of Security**",
+                "An organizational mindset where all members share responsibility for protecting data and assets"
+              ],
+              [
+                "**OCM**",
+                "Organizational Change Management — structured framework for shifting organizational security mindset"
+              ]
+            ]
+          }
+        ],
+        "list_items": [],
+        "raw_content": "| Term | Definition |\n| --- | --- |\n| **Insider Threat** | A security risk originating from an individual within the organization (employee, contractor, partner) |\n| **Anomalous Behavior** | Risky, unexpected, or unintentional behavior that may flag a potential insider threat |\n| **Lifestyle Incongruence** | A mismatch between an employee's observable lifestyle and their known income |\n| **Insider Threat Program** | Formal program combining reporting culture, training, and user activity monitoring to detect insider risks |\n| **Password Reuse** | Using the same password across multiple accounts/sites — a major security vulnerability |\n| **Password Manager** | A tool that generates, stores, and autofills unique credentials, protected by a master password |\n| **Situational Awareness** | Mindfulness of one's surroundings and the consequences of requested actions |\n| **Shoulder Surfing** | Viewing sensitive on-screen information by looking over someone's shoulder |\n| **Eavesdropping** | Listening in on private conversations or meetings to gather sensitive information |\n| **Piggybacking / Tailgating** | Following an authorized person into a secure facility without proper access |\n| **Dumpster Diving** | Searching discarded materials to reconstruct sensitive information |\n| **OPSEC** | Operational Security — safeguarding information that could reveal organizational activities to an adversary |\n| **Baiting** | Leaving infected media (USB drives, charging cables) for a victim to connect out of curiosity |\n| **Policy** | A formal system of rules guiding organizational decisions and compliance |\n| **Handbook** | A comprehensive reference guide detailing procedures and best practices |\n| **Data Destruction Policy** | Rules defining secure disposal methods for sensitive materials based on classification |\n| **Remote Work** | Performing job functions entirely outside the traditional office |\n| **Hybrid Work** | A blend of in-office and remote work arrangements |\n| **BYOD** | Bring Your Own Device — employees use personal devices for work, complicating security enforcement |\n| **CYOD / COPE** | Choose Your Own Device / Corporate-Owned, Personally Enabled — organization-controlled device models |\n| **Culture of Security** | An organizational mindset where all members share responsibility for protecting data and assets |\n| **OCM** | Organizational Change Management — structured framework for shifting organizational security mindset |"
+      }
+    ],
+    "flashcards": [
+      {
+        "name": "Security Awareness Training",
+        "definition": "The objective domain (5.6) covering the knowledge, skills, and organizational practices that equip individuals to recognize and respond to security threats, reducing the risk posed by human error within an enterprise.",
+        "analogy": "*Es como instalar la mejor cerradura de la puerta principal, pero dejar la ventana abierta porque nadie le explicó a la familia por qué debía cerrarla.*",
+        "raw_content": "* **Definition:** The objective domain (5.6) covering the knowledge, skills, and organizational practices that equip individuals to recognize and respond to security threats, reducing the risk posed by human error within an enterprise.\n\nSecurity awareness training exists because technically robust defenses (firewalls, encryption, EDR) cannot compensate for human error, which remains one of the most significant vulnerabilities inside any enterprise network. Phishing emails, malware attacks, and social engineering schemes are among the most common techniques threat actors use to exploit the human element.\n\n> *Es como instalar la mejor cerradura de la puerta principal, pero dejar la ventana abierta porque nadie le explicó a la familia por qué debía cerrarla.*\n\nThis section covers six areas under Objective 5.6: **recognizing insider threats**, **password management**, **avoiding social engineering**, **policies and handbooks**, **remote and hybrid work environments**, and **creating a culture of security**.\n\n---"
+      },
+      {
+        "name": "Recognizing Insider Threats",
+        "definition": "The practice of identifying security risks that originate from individuals within an organization — employees, former employees, contractors, or business partners — who may exploit their legitimate access intentionally or unintentionally.",
+        "analogy": "*Es como el guardia de seguridad de un banco que un día empieza a actuar raro: nadie sospecha de él primero porque ya tiene las llaves, pero es justamente por eso que representa el mayor riesgo.*",
+        "raw_content": "* **Definition:** The practice of identifying security risks that originate from individuals within an organization — employees, former employees, contractors, or business partners — who may exploit their legitimate access intentionally or unintentionally.\n\nInsider threats are dangerous precisely because the individual already has inside information about the organization's security practices, data, and systems. Training users to recognize **anomalous behavior** — behavior that is risky, unexpected, or unintentional — is critical to flagging a potential insider threat before damage occurs.\n\n> *Es como el guardia de seguridad de un banco que un día empieza a actuar raro: nadie sospecha de él primero porque ya tiene las llaves, pero es justamente por eso que representa el mayor riesgo.*"
+      },
+      {
+        "name": "Insider Threats: Risky Behavior Indicators",
+        "definition": "Observable changes in an employee's conduct — such as reporting to work intoxicated or severely impaired — that signal a personal issue with the potential to translate into a security risk.",
+        "analogy": "*Como un piloto de avión que llega oliendo a alcohol: no es solo un problema personal, es un riesgo directo para todos los que dependen de su buen juicio.*",
+        "raw_content": "* **Definition:** Observable changes in an employee's conduct — such as reporting to work intoxicated or severely impaired — that signal a personal issue with the potential to translate into a security risk.\n\nAn employee who occasionally shows up hungover may simply have had a long weekend, but a *pattern* of impaired behavior is a red flag. Impaired judgment can lead to unintended disclosure of sensitive information or intentional misconduct resulting from compromised decision-making. In high-clearance government environments, personnel reporting for duty in an altered state are flagged for further investigation, since substance abuse issues increase susceptibility to coercion (e.g., being pressured into selling secrets to a nation-state).\n\n> *Como un piloto de avión que llega oliendo a alcohol: no es solo un problema personal, es un riesgo directo para todos los que dependen de su buen juicio.*"
+      },
+      {
+        "name": "Insider Threats: Emotional Distress Indicators",
+        "definition": "Behavioral signs — such as giving away personal possessions or displaying symptoms of depression — that may indicate an employee is undergoing significant emotional turmoil with security implications.",
+        "analogy": "*Como un cable eléctrico deshilachado: no lo tocas para castigarlo, lo atiendes con cuidado, pero sabes que representa un peligro real si no se maneja a tiempo.*",
+        "raw_content": "* **Definition:** Behavioral signs — such as giving away personal possessions or displaying symptoms of depression — that may indicate an employee is undergoing significant emotional turmoil with security implications.\n\nIndividuals in emotional distress may become less vigilant in following security protocols, leading to unintentional breaches, or may become vulnerable to exploitation by malicious actors, competitors, or nation-states seeking an insider. Management and HR should engage with empathy and support while still mitigating the security risk.\n\n> *Como un cable eléctrico deshilachado: no lo tocas para castigarlo, lo atiendes con cuidado, pero sabes que representa un peligro real si no se maneja a tiempo.*"
+      },
+      {
+        "name": "Insider Threats: Lifestyle Incongruence",
+        "definition": "A discrepancy between an employee's observable lifestyle (assets, spending habits) and their known income or financial situation, which may indicate illicit activity such as theft or the sale of corporate secrets.",
+        "analogy": "*Como ver a un compañero de trabajo con el mismo salario que tú, pero que de repente llega en un carro que cuesta el doble de lo que ambos ganan en un año — algo no cuadra, y merece revisarse con discreción.*",
+        "raw_content": "* **Definition:** A discrepancy between an employee's observable lifestyle (assets, spending habits) and their known income or financial situation, which may indicate illicit activity such as theft or the sale of corporate secrets.\n\nA lifestyle incongruence does not automatically indicate wrongdoing — the discrepancy could have a legitimate explanation (e.g., a spouse's income, an inheritance). However, an unexplained incongruence — such as a sudden purchase of an expensive car or home with no corresponding change in known income — warrants a **discreet investigation** to rule out foul play without violating the employee's privacy. This is why cleared government personnel must file financial disclosure forms and report windfalls (inheritances, lottery winnings) so unexplained wealth can be distinguished from legitimate income.\n\n> *Como ver a un compañero de trabajo con el mismo salario que tú, pero que de repente llega en un carro que cuesta el doble de lo que ambos ganan en un año — algo no cuadra, y merece revisarse con discreción.*"
+      },
+      {
+        "name": "Insider Threats: Financial Struggles",
+        "definition": "Signs of significant personal debt or financial hardship displayed by an employee, which represent a security concern because financial pressure increases susceptibility to bribery or the temptation to sell sensitive data.",
+        "analogy": "*Como una persona ahogada en deudas: el desespero puede llevarla a aceptar dinero de quien sea, incluso de un competidor, a cambio de información valiosa.*",
+        "raw_content": "* **Definition:** Signs of significant personal debt or financial hardship displayed by an employee, which represent a security concern because financial pressure increases susceptibility to bribery or the temptation to sell sensitive data.\n\nOrganizations should have policies for this scenario, such as offering financial counseling to affected employees and monitoring for unusual access or transmission of confidential data.\n\n> *Como una persona ahogada en deudas: el desespero puede llevarla a aceptar dinero de quien sea, incluso de un competidor, a cambio de información valiosa.*"
+      },
+      {
+        "name": "Insider Threats: Insider Threat Program",
+        "definition": "A formal organizational program that promotes a culture encouraging employees to report suspicious activity, trains staff to recognize warning signs, and implements policies supporting mental health and financial well-being while conducting fair and confidential investigations.",
+        "analogy": "*Como un chequeo médico anual de una empresa: no busca castigar a nadie, busca detectar problemas a tiempo y ofrecer ayuda antes de que se conviertan en una crisis.*",
+        "raw_content": "* **Definition:** A formal organizational program that promotes a culture encouraging employees to report suspicious activity, trains staff to recognize warning signs, and implements policies supporting mental health and financial well-being while conducting fair and confidential investigations.\n\nA strong insider threat program balances **user activity monitoring** (detecting unusual access patterns, excessive data copying/downloading, or work at odd hours) with the **privacy rights** of employees. Recognizing insider threats is about attention to warning signs *and* having a fair, supportive process for handling them.\n\n> *Como un chequeo médico anual de una empresa: no busca castigar a nadie, busca detectar problemas a tiempo y ofrecer ayuda antes de que se conviertan en una crisis.*\n\n---"
+      },
+      {
+        "name": "Password Management",
+        "definition": "The practices and tools used to create, store, and manage passwords for online accounts and systems in a way that ensures each password is strong, unique, and stored securely to reduce the risk of unauthorized access.",
+        "analogy": "*Es como usar la misma llave para tu casa, tu carro y tu oficina: si alguien copia esa llave una sola vez, tiene acceso a todo lo que tienes.*",
+        "raw_content": "* **Definition:** The practices and tools used to create, store, and manage passwords for online accounts and systems in a way that ensures each password is strong, unique, and stored securely to reduce the risk of unauthorized access.\n\nThe most dangerous common practice is **password reuse** — using the same password (often paired with the same email-based username) across multiple sites. If one site is breached, attackers will attempt **credential replay** across many other services using the exposed credentials. Because remembering many long, unique, complex passwords is impractical for humans, a **password manager** solves this problem.\n\n> *Es como usar la misma llave para tu casa, tu carro y tu oficina: si alguien copia esa llave una sola vez, tiene acceso a todo lo que tienes.*"
+      },
+      {
+        "name": "Password Management: Password Manager",
+        "definition": "A specialized tool, plugin, or browser extension that securely generates, stores, and autofills unique usernames and passwords for multiple sites, protected by a single master password.",
+        "analogy": "*Es como tener una sola caja fuerte con una sola combinación maestra, en lugar de tener que memorizar la combinación de cien cajas fuertes distintas.*",
+        "raw_content": "* **Definition:** A specialized tool, plugin, or browser extension that securely generates, stores, and autofills unique usernames and passwords for multiple sites, protected by a single master password.\n\nBrowser-built-in password managers (Chrome, Edge, Safari, Firefox) exist but are generally considered less secure than dedicated third-party tools such as **Bitwarden**, **1Password**, **Dashlane**, or **LastPass**. The **master password** is used to encrypt the entire vault; if the master password is forgotten, all stored credentials become inaccessible, since it functions as the encryption key. Enterprise versions of password managers also support securely sharing credentials among team members.\n\n> *Es como tener una sola caja fuerte con una sola combinación maestra, en lugar de tener que memorizar la combinación de cien cajas fuertes distintas.*\n\n⚠️ **Exam Tip:** Password managers directly mitigate **password reuse**, one of the most common and most exploitable end-user security failures.\n\n---"
+      },
+      {
+        "name": "Avoiding Social Engineering",
+        "definition": "The set of awareness practices and behaviors used to prevent social engineering attacks — deceptive attempts by a bad actor to manipulate individuals into breaking normal security procedures by exploiting human psychology.",
+        "analogy": "*Como reconocer a un vendedor demasiado insistente en la puerta de tu casa: la señal de alerta no es lo que dice, sino cómo intenta apurarte y ganarse tu confianza demasiado rápido.*",
+        "raw_content": "* **Definition:** The set of awareness practices and behaviors used to prevent social engineering attacks — deceptive attempts by a bad actor to manipulate individuals into breaking normal security procedures by exploiting human psychology.\n\nBecause social engineering attacks are often designed to appear innocent, **situational awareness** and vigilance form the first line of defense.\n\n> *Como reconocer a un vendedor demasiado insistente en la puerta de tu casa: la señal de alerta no es lo que dice, sino cómo intenta apurarte y ganarse tu confianza demasiado rápido.*"
+      },
+      {
+        "name": "Avoiding Social Engineering: Situational Awareness",
+        "definition": "A state of mindfulness about one's immediate surroundings, the actions being requested, and the potential negative consequences of performing those actions.",
+        "analogy": "*Es como caminar por una calle desconocida de noche: no significa tener miedo, significa estar consciente de quién está cerca y qué está pasando alrededor.*",
+        "raw_content": "* **Definition:** A state of mindfulness about one's immediate surroundings, the actions being requested, and the potential negative consequences of performing those actions.\n\nSituational awareness is the umbrella practice that prevents shoulder surfing, eavesdropping, piggybacking, and dumpster diving from succeeding.\n\n> *Es como caminar por una calle desconocida de noche: no significa tener miedo, significa estar consciente de quién está cerca y qué está pasando alrededor.*"
+      },
+      {
+        "name": "Avoiding Social Engineering: Shoulder Surfing",
+        "definition": "An attack in which someone peeks over a victim's shoulder to view sensitive information displayed on their screen.",
+        "analogy": "*Como alguien que finge no mirar, pero está leyendo tu PIN por encima de tu hombro en el cajero automático.*",
+        "raw_content": "* **Definition:** An attack in which someone peeks over a victim's shoulder to view sensitive information displayed on their screen.\n\nCountermeasures include using a **privacy screen protector**, staying aware of surroundings in public spaces, and avoiding reading confidential information outside secured areas.\n\n> *Como alguien que finge no mirar, pero está leyendo tu PIN por encima de tu hombro en el cajero automático.*"
+      },
+      {
+        "name": "Avoiding Social Engineering: Eavesdropping",
+        "definition": "An attack in which someone listens in on private conversations or meetings, either in person or via a compromised smart device, to gather sensitive information.",
+        "analogy": "*Como discutir secretos de la empresa en una cafetería pública: alguien en la mesa de al lado puede estar escuchando cada palabra sin que lo notes.*",
+        "raw_content": "* **Definition:** An attack in which someone listens in on private conversations or meetings, either in person or via a compromised smart device, to gather sensitive information.\n\nSensitive discussions should occur only in soundproofed or secure areas, with awareness of smartphones, smartwatches, or other devices in the room that could be remotely hijacked to record the conversation.\n\n> *Como discutir secretos de la empresa en una cafetería pública: alguien en la mesa de al lado puede estar escuchando cada palabra sin que lo notes.*"
+      },
+      {
+        "name": "Avoiding Social Engineering: Piggybacking / Tailgating",
+        "definition": "A physical social engineering technique in which an unauthorized individual slips into a secure facility undetected by closely following someone with legitimate access.",
+        "analogy": "*Como colarse a un concierto pegado detrás de alguien que sí tiene entrada, justo cuando el guardia mira hacia otro lado.*",
+        "raw_content": "* **Definition:** A physical social engineering technique in which an unauthorized individual slips into a secure facility undetected by closely following someone with legitimate access.\n\nMitigated through **access control vestibules (mantraps)** that only allow one person through at a time, combined with employee situational awareness.\n\n> *Como colarse a un concierto pegado detrás de alguien que sí tiene entrada, justo cuando el guardia mira hacia otro lado.*"
+      },
+      {
+        "name": "Avoiding Social Engineering: Dumpster Diving",
+        "definition": "An attack in which discarded materials in the trash or recycling are sifted through to reconstruct a larger, more informative picture of an organization's confidential data.",
+        "analogy": "*Como armar un rompecabezas con los papeles rotos que alguien tiró a la basura sin destruirlos correctamente.*",
+        "raw_content": "* **Definition:** An attack in which discarded materials in the trash or recycling are sifted through to reconstruct a larger, more informative picture of an organization's confidential data.\n\nCountered through good situational awareness and, more formally, through data destruction policies (see [[#Policies and Handbooks: Data Destruction Policy]]).\n\n> *Como armar un rompecabezas con los papeles rotos que alguien tiró a la basura sin destruirlos correctamente.*"
+      },
+      {
+        "name": "Avoiding Social Engineering: Operational Security (OPSEC)",
+        "definition": "A protective discipline, originally coined by the military, that involves safeguarding critical information — including daily routines, project details, and internal procedures — that could indicate an organization's activities to an adversary.",
+        "analogy": "*Como no comentar en redes sociales que vas a estar de viaje: parece un dato inofensivo, pero le dice a un ladrón exactamente cuándo tu casa va a estar vacía.*",
+        "raw_content": "* **Definition:** A protective discipline, originally coined by the military, that involves safeguarding critical information — including daily routines, project details, and internal procedures — that could indicate an organization's activities to an adversary.\n\nOPSEC is a **mindset**, not just a protocol: social engineers piece together seemingly innocuous details shared over social media, phone calls, or casual conversation to construct a narrative they can exploit — for example, pretending to be part of someone's work life using information the victim unknowingly divulged.\n\n> *Como no comentar en redes sociales que vas a estar de viaje: parece un dato inofensivo, pero le dice a un ladrón exactamente cuándo tu casa va a estar vacía.*"
+      },
+      {
+        "name": "Avoiding Social Engineering: Baiting via Removable Media and Cables",
+        "definition": "A social engineering technique in which an attacker leaves an infected USB drive or malicious charging cable in a location where a victim is likely to find it and connect it to their device out of curiosity or convenience.",
+        "analogy": "*Como aceptar un dulce envuelto de un extraño: aunque se vea inofensivo, no sabes qué contiene realmente hasta que ya es demasiado tarde.*",
+        "raw_content": "* **Definition:** A social engineering technique in which an attacker leaves an infected USB drive or malicious charging cable in a location where a victim is likely to find it and connect it to their device out of curiosity or convenience.\n\nA USB drive \"accidentally\" left in a parking lot, once plugged in, can silently infect a workstation or the entire organizational network with malware. As users became wiser to USB baiting, attackers shifted to **malicious charging cables** with malware embedded in the firmware, deployed in airports, lounges, and coffee shops. The mitigation is simple: never plug in an unknown USB device, and always carry your own charger and cable.\n\n> *Como aceptar un dulce envuelto de un extraño: aunque se vea inofensivo, no sabes qué contiene realmente hasta que ya es demasiado tarde.*"
+      },
+      {
+        "name": "Avoiding Social Engineering: Urgency and Pretexting Tactics",
+        "definition": "A manipulation technique in which an attacker impersonates a trusted role (e.g., IT support) and creates a false sense of urgency or fear — such as threatening immediate legal or financial consequences — to pressure the victim into bypassing normal security protocols.",
+        "analogy": "*Como una llamada que te dice \"si no pagas en los próximos 10 minutos, te embargan la casa\": el pánico que generan es la herramienta, no la amenaza en sí.*",
+        "raw_content": "* **Definition:** A manipulation technique in which an attacker impersonates a trusted role (e.g., IT support) and creates a false sense of urgency or fear — such as threatening immediate legal or financial consequences — to pressure the victim into bypassing normal security protocols.\n\nThis tactic works because people under time pressure are more likely to make mistakes and skip verification steps.\n\n> *Como una llamada que te dice \"si no pagas en los próximos 10 minutos, te embargan la casa\": el pánico que generan es la herramienta, no la amenaza en sí.*\n\n⚠️ **Exam Tip:** The best organizational defense against all social engineering techniques is a proactive security culture reinforced with **simulated phishing exercises** and remediation training for employees who fall for them.\n\n---"
+      },
+      {
+        "name": "Policies and Handbooks",
+        "definition": "The formal documented guidelines (policies) and comprehensive reference guides (handbooks) that define how an organization operates, makes decisions, and expects its employees to behave — including in situations not explicitly covered by training.",
+        "analogy": "*La política es la ley del país; el manual del empleado es la guía turística que te explica cómo aplicarla en el día a día.*",
+        "raw_content": "* **Definition:** The formal documented guidelines (policies) and comprehensive reference guides (handbooks) that define how an organization operates, makes decisions, and expects its employees to behave — including in situations not explicitly covered by training.\n\nA **policy** is a deliberate system of principles and rules crafted to uphold internal controls and ensure legal/ethical compliance. A **handbook** is a comprehensive, often booklet-form guide providing detailed procedures and best practices as an ongoing reference — for example, an employee handbook outlining company procedures and expectations. Policies and handbooks differ significantly between organizations based on industry, needs, and use cases, so employees must read *and* comprehend them, not just acknowledge them.\n\n> *La política es la ley del país; el manual del empleado es la guía turística que te explica cómo aplicarla en el día a día.*"
+      },
+      {
+        "name": "Policies and Handbooks: Data Destruction Policy",
+        "definition": "A policy that defines the required method for securely disposing of physical or digital materials containing sensitive information, based on the material's classification level.",
+        "analogy": "*Como separar la basura por colores según qué tan peligrosa es: no todo se tira igual, y algunas cosas hay que quemarlas para asegurarse de que no quede nada.*",
+        "raw_content": "* **Definition:** A policy that defines the required method for securely disposing of physical or digital materials containing sensitive information, based on the material's classification level.\n\nExample schemes include color-coded paper (e.g., pink paper for sensitive printouts requiring cross-cut shredding) or classification-based disposal (unclassified → recycle, secret → shred, top secret → incinerate). These policies directly counter the **dumpster diving** attack described above.\n\n> *Como separar la basura por colores según qué tan peligrosa es: no todo se tira igual, y algunas cosas hay que quemarlas para asegurarse de que no quede nada.*"
+      },
+      {
+        "name": "Policies and Handbooks: Remote Work / Take-Home Policy",
+        "definition": "A policy defining what types of physical and digital information are permitted to leave the organization's secure premises with an employee, based on data classification.",
+        "analogy": "*Como un préstamo de biblioteca: algunos libros los puedes llevar a casa, pero los de la sección de \"solo consulta\" tienen que quedarse dentro del edificio.*",
+        "raw_content": "* **Definition:** A policy defining what types of physical and digital information are permitted to leave the organization's secure premises with an employee, based on data classification.\n\nHighly classified environments may prohibit personal devices inside the building entirely and restrict which tasks (e.g., annual training) can be completed remotely, versus which require being physically inside a secured facility. Physical checks (bags, backpacks) may be used to enforce this policy on exit.\n\n> *Como un préstamo de biblioteca: algunos libros los puedes llevar a casa, pero los de la sección de \"solo consulta\" tienen que quedarse dentro del edificio.*\n\n⚠️ **Exam Tip:** Policies and handbooks must be reviewed **at least annually**, updated as threats evolve, and any significant changes should be highlighted in a summary so employees don't miss critical updates (e.g., a changed password complexity requirement).\n\n---"
+      },
+      {
+        "name": "Remote and Hybrid Work Environments",
+        "definition": "The objective domain covering the security considerations, risks, and mitigations associated with employees performing work outside a traditional office environment, whether entirely remotely or through a blended arrangement.",
+        "analogy": "*Como mudar la oficina de un edificio con guardias y cámaras a la sala de la casa de cada empleado: la comodidad sube, pero también sube el número de puertas que hay que vigilar.*",
+        "raw_content": "* **Definition:** The objective domain covering the security considerations, risks, and mitigations associated with employees performing work outside a traditional office environment, whether entirely remotely or through a blended arrangement.\n\n> *Como mudar la oficina de un edificio con guardias y cámaras a la sala de la casa de cada empleado: la comodidad sube, pero también sube el número de puertas que hay que vigilar.*"
+      },
+      {
+        "name": "Remote and Hybrid Work: Remote Work",
+        "definition": "A work arrangement in which employees perform their job functions entirely outside the traditional office environment — commonly from home or another remote location — using technology such as the internet.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A work arrangement in which employees perform their job functions entirely outside the traditional office environment — commonly from home or another remote location — using technology such as the internet."
+      },
+      {
+        "name": "Remote and Hybrid Work: Hybrid Work",
+        "definition": "A work model that combines in-office work with remote work, where employees split their work week between the traditional office and a remote location.",
+        "analogy": "",
+        "raw_content": "* **Definition:** A work model that combines in-office work with remote work, where employees split their work week between the traditional office and a remote location."
+      },
+      {
+        "name": "Creating a Culture of Security",
+        "definition": "An organizational mindset in which every member prioritizes security within daily tasks and decision-making, treating the protection of data, assets, and reputation as a collective responsibility rather than solely a technical or IT function.",
+        "analogy": "*Como una familia donde cerrar la puerta con llave no es una regla impuesta, sino un hábito que todos hacen de forma natural porque entienden por qué importa.*",
+        "raw_content": "* **Definition:** An organizational mindset in which every member prioritizes security within daily tasks and decision-making, treating the protection of data, assets, and reputation as a collective responsibility rather than solely a technical or IT function.\n\nTechnical controls fail if employees do not value security enough to follow them. Building this culture requires weaving cybersecurity into the organization's everyday ethos, behaviors, and decisions through **organizational change management (OCM)**.\n\n> *Como una familia donde cerrar la puerta con llave no es una regla impuesta, sino un hábito que todos hacen de forma natural porque entienden por qué importa.*"
+      },
+      {
+        "name": "Creating a Culture of Security: Organizational Change Management (OCM)",
+        "definition": "A structured framework — beginning with executive leadership commitment and proceeding through strategic development, execution, and continuous monitoring — used to shift an organization's mindset so that cybersecurity becomes embedded in daily operations rather than treated as a mandated directive.",
+        "analogy": "*Como entrenar a un equipo deportivo: no basta con dar una charla motivacional una vez; se necesita práctica constante, retroalimentación después de cada partido, y ajustes continuos a la estrategia.*",
+        "raw_content": "* **Definition:** A structured framework — beginning with executive leadership commitment and proceeding through strategic development, execution, and continuous monitoring — used to shift an organization's mindset so that cybersecurity becomes embedded in daily operations rather than treated as a mandated directive.\n\nOCM proceeds through distinct phases:\n\n| Phase           | Description                                                                                       |\n| --------------- | --------------------------------------------------------------------------------------------------- |\n| **Leadership Commitment** | Executive leadership visibly commits to security so the tone cascades through the whole organization, framed as shared responsibility, not a mandate. |\n| **Development** | Strategic planning: creating actionable, resourced policies covering acceptable practices, threat education (phishing, social engineering), and sensitive data handling guidelines. |\n| **Execution**   | A continual process (not a one-time rollout) — ongoing training, simulated cyberattacks, and consistent threat communication embedded into daily workflows. |\n| **Monitoring & Reporting** | Initial post-rollout monitoring followed by recurring check-ins: tracking network breaches, employee compliance, strategy effectiveness, and improvement areas. |\n\nA critical component of the monitoring phase is fostering an environment where employees feel safe **reporting suspicious activity** without fear of blame, and establishing **feedback loops** so monitoring insights directly shape future security actions.\n\n> *Como entrenar a un equipo deportivo: no basta con dar una charla motivacional una vez; se necesita práctica constante, retroalimentación después de cada partido, y ajustes continuos a la estrategia.*\n\n⚠️ **Exam Tip:** A culture of security is validated not by the absence of incidents, but by employees' willingness to proactively report suspicious activity without fear of retaliation.\n\n---"
+      }
+    ]
   }
 ];

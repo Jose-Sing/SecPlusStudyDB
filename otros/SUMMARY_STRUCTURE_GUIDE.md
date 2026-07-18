@@ -56,17 +56,18 @@ Each `##` creates a **separate card** in the Library. It is the primary unit of 
 
 * * *
 
-### ✅ `###` and `####` — Sub-Headings and Sub-Concepts
+### ✅ `H3` to `H6` — Sub-Headings and Sub-Concepts
 
-Headings at the `###` and `####` levels are parsed dynamically based on the presence of an explicit definition:
+Headings at the `###` to `#######` levels are parsed dynamically based on the presence of an explicit definition:
 
 1. **Sub-Concepts (Separate Flashcards):**
-   If a `###` or `####` section contains an explicit `* **Definition:**` line, it is extracted as its own **independent concept card**. This is ideal for specific technical terms or tools that need their own flashcard.
+   If a `header` section contains an explicit `* **Definition:**` line, it is extracted as its own **independent concept card**. This is ideal for specific technical terms or tools that need their own flashcard.
        ### Type 1 Hypervisor
        * **Definition:** A bare-metal hypervisor that runs directly on physical host hardware.
 
 2. **Internal Sub-Headings (Rendered Inside the Parent Card):**
-   If a `###` or `####` section does **not** contain an explicit `* **Definition:**` line, it is treated as a sub-section of the parent `##` concept and rendered within its card.
+   If a `###` to `#######` section does **not** contain an explicit `* **Definition:**` line, it is treated as a sub-section of the parent `##` concept and rendered within its card.
+       Example: 
        ### Characteristics of Symmetric Encryption
        - Uses a single shared key for encryption and decryption.
 
@@ -155,8 +156,8 @@ To guarantee that the flashcards and the search library contain highly accurate,
     * **Definition:** A clear, concise technical description in English.
 
 * **Format Rule:** Must start with an asterisk `*`, followed by one space, followed by `**Definition:**` in bold, and then the definition text. Do not use a hyphen `-` at the start of this line, as the parser specifically checks for `*`.
-* **Auto-fallback:** If a main `##` concept lacks this explicit line, the parser will attempt to extract the first plain text paragraph or table row. However, using explicit definition lines is highly recommended for S8–S15 summaries to ensure maximum precision.
-* **Sub-concept registration:** A `###` or `####` heading *must* contain this line to be extracted as a separate concept. Otherwise, it is merged into the parent concept's card.
+* **Auto-fallback:** If a main `##` concept lacks this explicit line, the parser will attempt to extract the first plain text paragraph or table row. However, using explicit definition lines is highly recommended to ensure maximum precision.
+* **Sub-concept registration:** A `###` to `######` heading *must* contain this line to be extracted as a separate concept. Otherwise, it is merged into the parent concept's card.
 
 * * *
 
@@ -194,24 +195,32 @@ Concept Structure — Full Template
 
     ## Concept Name
     
-    Introduction paragraph with **key terms** in bold and `code` where applicable.
+    **Definition** Introduction paragraph with **key terms** in bold and `code` where applicable.
     
     > *Analogy in Spanish that connects the concept to something everyday.*
     
-    ### Optional Sub-section
+    ### Optional Sub-section if its needed under context
     
     | Column 1    | Column 2    | Column 3    |
     | ----------- | ----------- | ----------- |
     | **Value A** | Description | Notes       |
     | **Value B** | Description | Notes       |
     
-    ### Another Sub-section
+    #### Another Sub-section if its needed under context
     
     - List item one
     - List item two with **emphasis**
     - Item with `inline code`
     
-    > *Second analogy or additional context note.*
+    > *analogy or additional context note.*
+    
+     ##### Another Sub-section if its needed under context
+    
+    - List item one
+    - List item two with **emphasis**
+    - Item with `inline code`
+    
+    > *analogy or additional context note.*
     
     ⚠️ **Important warning** in plain paragraph with emoji at the start.
     
@@ -246,15 +255,24 @@ Minimal Working Example
     
     ---
     
-    ## 2. MAC — Mandatory Access Control
-    
-    Access is controlled by the **system** based on classification labels, not the owner.
-    
-    > *It's like military classification: Top Secret, Secret, Confidential. The system decides who can see what, not the document owner.*
-    
-    - Used in government and military environments
-    - Labels: Top Secret, Secret, Confidential, Unclassified
-    - Users cannot override the policy
+	## 2. Security Content Automation Protocol (SCAP)
+
+	* **Definition:** A suite of open standards, developed by NIST, that enhances the automation of vulnerability management, security measurement, and policy compliance evaluation across an organization's deployed systems.
+	The purpuse is to perform the following tasks:
+	* Vulnerability Scanning
+	* Configuration Checking
+	* Software inventory
+
+	SCAP standardizes the "language" that scanning tools use, so tools from different vendors can exchange results seamlessly. It relies on three core languages (OVAL, XCCDF, ARF) and three enumeration schemes (CCE, CPE, CVE), plus the 	CVSS scoring system and configuration benchmarks.
+
+	> *Como un tratado internacional que obliga a todos los países a usar el mismo sistema de medidas (metros, kilos): así cualquier herramienta puede "hablar" con cualquier otra sin traducción.*
+
+	### SCAP languages:
+	#### SCAP: OVAL
+
+	* **Definition:** The Open Vulnerability and Assessment Language — an XML schema for describing system security states, machine configurations, and querying vulnerability reports in a consistent, interoperable way regardless of the scanning tool used.
+
+	> *Como un formulario estándar de reporte médico: sin importar el hospital, todos los doctores llenan los mismos campos y todos se entienden.*
     
     ---
 
@@ -263,8 +281,8 @@ Minimal Working Example
 Final Notes
 -----------
 
-* **Independent Concepts:** A concept card is created for every `##` heading automatically, or for any `###` or `####` heading if it contains a `* **Definition:**` line.
-* **Mismatches and Pollutions:** Sub-concept definitions (under H3/H4 headings) should be marked with `* **Definition:**` if they need their own independent card, preventing them from being merged or overwriting the parent's definition.
+* **Independent Concepts:** A concept card is created for every `##` heading automatically, or for any `###`  to `######` heading if it contains a `* **Definition:**` line.
+* **Mismatches and Pollutions:** Sub-concept definitions (under H3/H4/H5/H6 headings) should be marked with `* **Definition:**` if they need their own independent card, preventing them from being merged or overwriting the parent's definition.
 * **Running the Parser:** Run `python parse_summaries.py` in the root workspace directory to recompile all study guides into `data.js`.
 * **Ordering:** The order of concepts in the Study Guide Library matches their sequential order in the `.md` files.
 * **Title Filtering:** The visible name of the flashcard/concept is the heading text with any leading numbers (`1.`, `2.`) or emojis removed.
