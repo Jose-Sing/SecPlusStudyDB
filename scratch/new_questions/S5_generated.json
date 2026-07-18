@@ -1,0 +1,182 @@
+[
+  {
+    "question": "An employee receives an email that appears to be from the company's CEO, stating: 'I am in a meeting and cannot be reached. I need you to urgently purchase $500 in gift cards for client presentations and email me the codes within the next 10 minutes.' The email threatens disciplinary action if the request is ignored. Which TWO motivational triggers is the attacker primarily exploiting?",
+    "options": [
+      "Authority and Urgency",
+      "Social Proof and Scarcity",
+      "Likability and Social Proof",
+      "Fear and Scarcity"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "The attacker impersonates the CEO (Authority) and imposes a strict 10-minute deadline (Urgency) to force the employee to bypass normal verification procedures (Option A). While fear is involved, Authority and Urgency are the most direct triggers used in CEO fraud/gift card scams."
+  },
+  {
+    "question": "A finance manager receives an email from what appears to be the company's primary vendor, requesting that all future payments be sent to a new bank account. The email uses the vendor's actual logo, formatting, and a display name of the vendor's CFO, but the actual sender address is slightly altered. What specific type of attack is occurring?",
+    "options": [
+      "Business Email Compromise (BEC)",
+      "Whaling",
+      "Watering Hole Attack",
+      "Vishing"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Business Email Compromise (BEC) (Option A) targets finance or HR departments by spoofing or compromising executive/vendor emails to authorize fraudulent wire transfers or redirect payments. Whaling (Option B) targets high-level executives themselves, whereas BEC targets the finance staff who process payments. Watering hole (Option C) compromises websites."
+  },
+  {
+    "question": "A cybersecurity consultant is hired to test an organization's physical security. They dress up as an IT support technician, wait near the building entrance, and ask an employee to hold the door open because their hands are full with a stack of servers. What combination of techniques is the consultant using?",
+    "options": [
+      "Impersonation and Piggybacking",
+      "Pretexting and Tailgating",
+      "Brand Impersonation and Shoulder Surfing",
+      "Baiting and Eavesdropping"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "The consultant assumes a false identity (Impersonation) and intentionally convinces an authorized employee to let them through the secure door (Piggybacking). This combination (Option A) relies on social manipulation. Tailgating (Option B) would mean sneaking in without the employee's consent."
+  },
+  {
+    "question": "An attacker wants to compromise the executives of a defense contracting firm. Instead of sending phishing emails, the attacker discovers that many executives frequent a specific online golf forum. The attacker injects malware into the forum's login page and waits for the executives to visit. What type of attack is this?",
+    "options": [
+      "Watering Hole Attack",
+      "Spear Phishing",
+      "Typosquatting",
+      "Diversion Theft"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "A Watering Hole Attack (Option A) is a passive, targeted attack where the attacker compromises a trusted third-party website that the intended victims are known to visit, rather than attacking the victims directly. Spear Phishing (Option B) relies on email. Typosquatting (Option C) relies on misspelled domains."
+  },
+  {
+    "question": "Several employees report receiving automated phone calls claiming to be from the IRS, stating that a warrant will be issued for their arrest unless they immediately pay back taxes over the phone using a credit card. Which type of phishing attack is this?",
+    "options": [
+      "Vishing",
+      "Smishing",
+      "Spear Phishing",
+      "Whaling"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Vishing (Voice Phishing) (Option A) is conducted over voice calls, impersonating trusted entities to extract information or money. Smishing (Option B) uses SMS text messages. Spear phishing (Option C) uses targeted emails."
+  },
+  {
+    "question": "A user intends to visit `linkedin.com` to check their messages but accidentally types `1inkedin.com`. They are taken to a fake website that looks identical to the real login page, which captures their credentials when they try to log in. What specific technique did the attacker use to register the malicious domain?",
+    "options": [
+      "Typosquatting",
+      "Brand Impersonation",
+      "Diversion Theft",
+      "Watering Hole Attack"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Typosquatting (Option A), or URL hijacking, occurs when an attacker registers a domain name containing deliberate typographical errors that closely resemble a legitimate site, anticipating users will mistype the URL. While it involves Brand Impersonation (Option B) visually, Typosquatting is the specific technique used for the domain registration."
+  },
+  {
+    "question": "During the holiday season, an employee receives a text message stating: 'USPS: Your package is stuck at the distribution center. Click here to pay the $1.50 redelivery fee or it will be returned to sender.' Which type of attack is the employee experiencing?",
+    "options": [
+      "Smishing",
+      "Vishing",
+      "Hoax",
+      "Baiting"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Smishing (SMS Phishing) (Option A) delivers malicious links or fraudulent requests via text messages. Vishing (Option B) involves voice calls. A Hoax (Option C) spreads false warnings (like viruses), and Baiting (Option D) typically involves leaving physical infected media like USB drives."
+  },
+  {
+    "question": "An attacker calls a company's help desk and claims to be a new remote employee who forgot their password. Before asking for a reset, the attacker spends ten minutes chatting with the help desk agent about their shared love of a local sports team, gaining the agent's trust. Which motivational trigger is the attacker primarily utilizing?",
+    "options": [
+      "Likability",
+      "Authority",
+      "Scarcity",
+      "Social Proof"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Likability (Option A) is used when the attacker builds rapport, finds common ground, and creates a friendly interaction to lower the victim's guard so they are more willing to bypass security protocols. Authority (Option B) relies on power/seniority, not friendliness."
+  },
+  {
+    "question": "An organization wants to test its employees' susceptibility to social engineering. The security team sends a fake email offering a free iPad to the first 50 people who click a link. When employees click, they are redirected to a training video. What is the BEST description of this activity?",
+    "options": [
+      "Anti-Phishing Campaign",
+      "Influence Campaign",
+      "Pretexting Simulation",
+      "Vulnerability Scan"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "An Anti-Phishing Campaign (Option A) combines simulated phishing attacks with immediate remedial training for users who fall for the trick. It is a proactive security awareness tool. An Influence Campaign (Option B) is used to affect public perception (e.g., via social media)."
+  },
+  {
+    "question": "A nation-state actor creates hundreds of fake social media accounts to spread fabricated news stories about a political candidate right before an election. The attacker knows the stories are false but spreads them to manipulate voter behavior. What is this an example of?",
+    "options": [
+      "Disinformation",
+      "Misinformation",
+      "Hoax",
+      "Typosquatting"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Disinformation (Option A) is the deliberate creation and distribution of false information with the intent to deceive and manipulate. Misinformation (Option B) is sharing false information without harmful intent (e.g., an honest mistake). A Hoax (Option C) is usually a viral prank or fake warning, not a coordinated political campaign."
+  },
+  {
+    "question": "An attacker researches a company's Chief Financial Officer (CFO) on social media, discovers the CFO is attending a specific conference in Paris, and sends a highly crafted email appearing to be from the conference organizers with an infected PDF itinerary attached. What specific type of attack is this?",
+    "options": [
+      "Whaling",
+      "Watering Hole",
+      "Vishing",
+      "Dumpster Diving"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Whaling (Option A) is a specialized form of spear phishing that specifically targets high-value individuals, such as CEOs or CFOs. Because the attacker researched the specific executive and tailored the email, it fits whaling perfectly. Watering hole (Option B) compromises a website, not an email attachment."
+  },
+  {
+    "question": "An employee finds a brand-new USB drive lying on the floor in the company breakroom. The drive has a label that says 'Q3 Layoff Plans - CONFIDENTIAL'. The employee plugs the drive into their workstation to see who is getting fired, which secretly installs a backdoor. What type of social engineering attack is this?",
+    "options": [
+      "Baiting",
+      "Pretexting",
+      "Tailgating",
+      "Phishing"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Baiting (Option A) involves leaving a physical device (like a USB drive) in a location where a target is likely to find it, relying on curiosity to trick the victim into connecting it to a system. Pretexting (Option B) involves a fabricated scenario or conversation. Phishing (Option D) is done via communication channels (email)."
+  },
+  {
+    "question": "An attacker calls a company's receptionist, poses as an IT support technician, and claims they need to verify the version of Windows running on the CEO's computer to 'prepare for an urgent mandatory update.' The receptionist provides the information. Which technique did the attacker use?",
+    "options": [
+      "Pretexting",
+      "Smishing",
+      "Shoulder Surfing",
+      "Eavesdropping"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Pretexting (Option A) involves creating a fabricated scenario (the urgent update) to manipulate a target into divulging information. The attacker provides a believable context so the victim willingly complies. Smishing (Option B) is SMS phishing. Shoulder surfing (Option C) and Eavesdropping (Option D) are passive observation techniques."
+  },
+  {
+    "question": "An attacker obtains a list of valid customer emails from a leaked database. They send an email to all addresses claiming to be from a popular streaming service, asking users to update their credit card information. The email is not customized to the individual recipients. Which type of attack is this?",
+    "options": [
+      "Phishing",
+      "Spear Phishing",
+      "Whaling",
+      "Watering Hole"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "General Phishing (Option A) is untargeted (spray and pray) and mass-distributed. Because the attacker did not customize the emails for specific individuals beyond having their address, it is standard phishing. Spear Phishing (Option B) requires specific targeting and customization."
+  },
+  {
+    "question": "A security analyst recommends installing privacy screens on all monitors in the HR and Finance departments, as well as enforcing a 'clean desk' policy where no documents are left out overnight. Which TWO social engineering techniques are these controls PRIMARILY designed to mitigate?",
+    "options": [
+      "Shoulder Surfing and Dumpster Diving",
+      "Eavesdropping and Vishing",
+      "Shoulder Surfing and Piggybacking",
+      "Dumpster Diving and Baiting"
+    ],
+    "correctAnswer": 0,
+    "section": "S5",
+    "explanation": "Privacy screens mitigate Shoulder Surfing (observing screens to steal data). A clean desk policy (along with shredding) helps mitigate physical theft and Dumpster Diving (searching trash/desks for sensitive info). Therefore, Option A is correct. Neither control addresses voice calls (Vishing) or physical entry (Piggybacking)."
+  }
+]

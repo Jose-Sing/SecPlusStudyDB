@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A security analyst uses an automated tool to compare an organization's servers against a database of known CVEs. The tool highlights missing patches and misconfigurations. What process is the analyst performing?",
+    "options": [
+      "Vulnerability Scanning",
+      "Dynamic Code Analysis",
+      "Penetration Testing",
+      "Threat Hunting"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "Vulnerability scanning (Option A) is the automated process of probing systems to discover known weaknesses by comparing their current state to a database of known vulnerabilities (CVEs). Dynamic analysis (Option B) tests running application code. Penetration testing (Option C) actively exploits vulnerabilities. Threat hunting (Option D) is a manual search for hidden threats."
+  },
+  {
+    "question": "A software development team implements a tool in their CI/CD pipeline that automatically checks all third-party libraries for known security flaws before the code is compiled. What type of application security is this?",
+    "options": [
+      "Package Monitoring",
+      "Dynamic Application Security Testing (DAST)",
+      "Fuzzing",
+      "Penetration Testing"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "Package monitoring (Option A) ensures that third-party libraries and dependencies used in an application are secure and up to date. DAST (Option B) tests the application while it is running. Fuzzing (Option C) injects random data into an application. Penetration testing (Option D) simulates real-world attacks."
+  },
+  {
+    "question": "A bank joins an industry-specific alliance to share and receive actionable threat intelligence regarding cyber attacks targeting the financial sector. What type of organization did the bank join?",
+    "options": [
+      "Information Sharing and Analysis Center (ISAC)",
+      "Open-Source Intelligence (OSINT) Forum",
+      "Dark Web Marketplace",
+      "Bug Bounty Platform"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "An ISAC (Option A) is an industry-specific alliance (e.g., FS-ISAC for finance) formed to share threat intelligence and vulnerabilities among members. OSINT (Option B) is public intelligence. The Dark Web (Option C) is used by criminals. A Bug Bounty Platform (Option D) pays researchers to find vulnerabilities."
+  },
+  {
+    "question": "A security researcher discovers a critical flaw in a popular web browser. Instead of publishing it online immediately, they privately contact the browser's developer, providing details and agreeing on a 90-day window for a patch to be released before going public. What practice is this?",
+    "options": [
+      "Responsible Disclosure",
+      "Zero-Day Exploitation",
+      "Extortion",
+      "Public Shaming"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "Responsible disclosure (Option A) is an ethical practice where a researcher privately informs a vendor of a vulnerability and gives them time to fix it before making it public. Zero-day exploitation (Option B) uses the flaw maliciously. Extortion (Option C) demands payment for silence. Public shaming (Option D) is immediate public release."
+  },
+  {
+    "question": "A vulnerability scanner flags a Linux server as vulnerable to a specific Windows SMB flaw (MS17-010). The analyst reviews the finding and determines the flaw cannot affect the Linux operating system. How should this finding be categorized?",
+    "options": [
+      "False Positive",
+      "False Negative",
+      "True Positive",
+      "True Negative"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "A False Positive (Option A) occurs when a scanner incorrectly reports a vulnerability that does not exist or does not apply (like a Windows flaw on a Linux machine). A False Negative (Option B) is a missed vulnerability. True Positive (Option C) is a correctly identified vulnerability. True Negative (Option D) is a correctly identified secure state."
+  },
+  {
+    "question": "A security administrator is prioritizing vulnerabilities for remediation. They encounter a vulnerability with a severity score of 9.8 based on its attack vector, impact, and exploitability. What scoring framework provides this metric?",
+    "options": [
+      "Common Vulnerability Scoring System (CVSS)",
+      "Common Vulnerabilities and Exposures (CVE)",
+      "Common Platform Enumeration (CPE)",
+      "Open Vulnerability and Assessment Language (OVAL)"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "CVSS (Option A) is a standardized framework that assigns a numeric severity score (0-10) to vulnerabilities based on their characteristics. CVE (Option B) provides unique identifiers/names for vulnerabilities. CPE (Option C) identifies platforms. OVAL (Option D) is an XML schema for security states."
+  },
+  {
+    "question": "An organization discovers a vulnerability on a legacy server that cannot be patched. Instead, they implement strict firewall rules to block all traffic to the vulnerable service from outside the local subnet. What type of remediation strategy is this?",
+    "options": [
+      "Compensating Controls",
+      "Patching",
+      "Risk Transfer",
+      "Exception"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "Compensating Controls (Option A) are alternative security measures put in place when the primary control (like a patch) cannot be applied, mitigating the risk to an acceptable level. Patching (Option B) fixes the flaw directly. Risk transfer (Option C) involves insurance. An exception (Option D) is a policy waiver, not the technical control itself."
+  },
+  {
+    "question": "An IT administrator performs a vulnerability scan using a domain administrator account. This allows the scanner to log into the target systems and check for missing registry keys and outdated local software versions. What type of scan is this?",
+    "options": [
+      "Credentialed Scan",
+      "Un-credentialed Scan",
+      "Discovery Scan",
+      "Dynamic Scan"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "A Credentialed Scan (Option A) uses valid login credentials, allowing the scanner to deeply inspect the OS, registry, and local file system for vulnerabilities. An Un-credentialed scan (Option B) only sees what is exposed externally. A Discovery Scan (Option C) just finds active IPs. Dynamic scan (Option D) relates to application testing."
+  },
+  {
+    "question": "After applying a critical security patch to a web server, what is the most important immediate next step a security analyst should take to ensure the patch worked and no new issues were introduced?",
+    "options": [
+      "Perform a post-remediation vulnerability rescan",
+      "Update the disaster recovery plan",
+      "Purchase cybersecurity insurance",
+      "Submit the vulnerability to a bug bounty program"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "Rescanning (Option A) is critical to validate remediation, ensuring the patch successfully removed the vulnerability and didn't inadvertently introduce new ones. Updating plans (Option B) is administrative. Buying insurance (Option C) transfers risk but doesn't validate a fix. Bug bounties (Option D) are for finding new flaws."
+  },
+  {
+    "question": "A cybersecurity analyst prepares a summary of recently discovered vulnerabilities for the organization's Board of Directors. The document focuses on the overall security posture and business risk rather than technical patching details. What type of reporting is this?",
+    "options": [
+      "Vertical Internal Reporting",
+      "Horizontal Internal Reporting",
+      "External Reporting",
+      "Responsible Disclosure"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "Vertical internal reporting (Option A) involves summarizing security posture and risk for upper management or executives. Horizontal reporting (Option B) provides technical details to peers (like sysadmins) for patching. External reporting (Option C) goes outside the company. Responsible disclosure (Option D) is reporting a flaw to a vendor."
+  },
+  {
+    "question": "A company discovers that it would cost $500,000 to completely mitigate a specific security risk, but the potential loss from a breach is only $100,000. They decide to purchase a policy to cover the potential financial loss instead of fixing the issue. What response strategy is this?",
+    "options": [
+      "Cybersecurity Insurance (Risk Transfer)",
+      "Compensating Control",
+      "Network Segmentation",
+      "Patching"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "Cybersecurity Insurance (Option A) is a risk transfer strategy used to cover financial losses when the cost of mitigation exceeds the potential loss. Compensating controls (Option B) mitigate risk technically. Segmentation (Option C) isolates networks. Patching (Option D) fixes the vulnerability directly."
+  },
+  {
+    "question": "An administrator wants to ensure that a newly discovered vulnerability on an administrative workstation cannot spread to the patient records database. They place the database on a separate, isolated VLAN with strict firewall rules. What remediation technique is this?",
+    "options": [
+      "Network Segmentation",
+      "Risk Acceptance",
+      "Patching",
+      "Alert Tuning"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "Network segmentation (Option A) divides a network into isolated zones (like a VLAN), preventing threats in one segment from moving laterally to another. Risk acceptance (Option B) is doing nothing. Patching (Option C) fixes the software flaw. Alert tuning (Option D) adjusts monitoring thresholds."
+  },
+  {
+    "question": "A vulnerability scanner fails to detect an actively exploitable flaw on a server because the scanner's definition plugins have not been updated in six months. What type of finding does this result in?",
+    "options": [
+      "False Negative",
+      "False Positive",
+      "True Positive",
+      "True Negative"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "A False Negative (Option A) occurs when a scanner misses a real vulnerability, often due to outdated plugins or lack of credentials. This is highly dangerous as it creates a false sense of security. False Positive (Option B) is a fake alert. True Positive (Option C) is a correct alert. True Negative (Option D) is correctly finding no flaw."
+  },
+  {
+    "question": "An organization calculates that if a specific database vulnerability is exploited, 40% of the customer records will be compromised. What metric does this 40% represent in quantitative risk analysis?",
+    "options": [
+      "Exposure Factor (EF)",
+      "Single Loss Expectancy (SLE)",
+      "Annualized Rate of Occurrence (ARO)",
+      "Common Vulnerability Scoring System (CVSS)"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "The Exposure Factor (Option A) is the percentage of an asset's value that would be lost if a specific risk is realized. SLE (Option B) is the monetary loss of one event. ARO (Option C) is how often it happens per year. CVSS (Option D) scores vulnerability severity, not financial risk."
+  },
+  {
+    "question": "A cybersecurity team monitors a hidden, non-indexed part of the internet where cybercriminals sell stolen credentials and discuss new zero-day exploits. What source of threat intelligence is the team utilizing?",
+    "options": [
+      "Dark Web",
+      "Open-Source Intelligence (OSINT)",
+      "Information Sharing and Analysis Center (ISAC)",
+      "Vulnerability Scanner"
+    ],
+    "correctAnswer": 0,
+    "section": "S22",
+    "explanation": "The Dark Web (Option A) is the intentionally hidden part of the internet used by threat actors, making it a valuable source of early-warning threat intelligence. OSINT (Option B) uses publicly available internet data. ISACs (Option C) are formal industry sharing alliances. Vulnerability scanners (Option D) probe local systems."
+  }
+]

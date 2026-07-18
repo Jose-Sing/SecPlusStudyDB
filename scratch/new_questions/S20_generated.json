@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A new web server is deployed with both HTTP (port 80) and HTTPS (port 443) enabled by default for backward compatibility. The organization's policy requires all web traffic to be encrypted. What is the most appropriate hardening action?",
+    "options": [
+      "Disable port 80",
+      "Disable port 443",
+      "Implement an AppLocker rule",
+      "Enable File Integrity Monitoring"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "To enforce encrypted web traffic and eliminate insecure default configurations, port 80 (HTTP) (Option A) must be disabled, leaving only port 443 (HTTPS) active. Disabling port 443 (Option B) would force insecure traffic. AppLocker (Option C) restricts applications, not network ports. FIM (Option D) monitors file changes."
+  },
+  {
+    "question": "A system administrator implements a security policy using Windows AppLocker that explicitly lists the 15 approved applications users are allowed to run, blocking all other executables by default. What security principle is this an example of?",
+    "options": [
+      "Allowlisting",
+      "Blocklisting",
+      "Sandboxing",
+      "Mandatory Access Control"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Allowlisting (Option A) is the practice of explicitly defining which applications are permitted to run and denying everything else by default. Blocklisting (Option B) allows everything except explicitly banned items. Sandboxing (Option C) isolates running code. Mandatory Access Control (Option D) is an OS-level permission model, though allowlisting is a form of access control."
+  },
+  {
+    "question": "During a security audit, an analyst discovers that a production database server is running the Windows Print Spooler service, even though no printers are connected to the network segment. What hardening practice should the analyst recommend?",
+    "options": [
+      "Disable unnecessary services",
+      "Apply the latest Service Pack",
+      "Implement a Trusted Operating System",
+      "Enable Full-Disk Encryption"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Disabling unnecessary services (Option A) reduces the system's attack surface by eliminating background processes (like the Print Spooler on a DB server) that could be exploited. Service Packs (Option B) patch systems but don't turn off unneeded features. Trusted OS (Option C) and FDE (Option D) are good practices but do not directly address running unnecessary background processes."
+  },
+  {
+    "question": "A defense contractor requires an operating system that enforces Mandatory Access Control (MAC) and has been formally evaluated to meet EAL4+ standards under the Common Criteria. What type of operating system are they looking for?",
+    "options": [
+      "Trusted Operating System (TOS)",
+      "Open-Source Operating System",
+      "Unmanaged Operating System",
+      "Virtualized Operating System"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "A Trusted Operating System (TOS) (Option A) is one that has undergone rigorous security evaluations (like EAL ratings) and enforces strict security policies like Mandatory Access Control. Open-Source (Option B) just means the code is visible. Unmanaged (Option C) is insecure. Virtualized (Option D) refers to the deployment method, not the security assurance level."
+  },
+  {
+    "question": "A critical vulnerability is discovered in an organization's web application framework that is actively being exploited in the wild. The vendor releases an immediate, specific patch to address only this vulnerability. What type of software fix is this?",
+    "options": [
+      "Hotfix",
+      "Service Pack",
+      "Feature Update",
+      "Secure Baseline"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "A hotfix (Option A) is an immediate, targeted patch released to address a specific, urgent security vulnerability. A Service Pack (Option B) is a large bundle of hundreds of previous updates. A Feature Update (Option C) adds new capabilities. A Secure Baseline (Option D) is a standardized configuration."
+  },
+  {
+    "question": "A system administrator needs to deploy a new Windows security update to 5,000 workstations. To minimize the risk of a bad patch taking down the entire company, they deploy it to the IT department first, then 10% of users, and finally the rest of the company over two weeks. What patch management strategy is this?",
+    "options": [
+      "Patch Rings",
+      "Hotfix Deployment",
+      "Automated Rollback",
+      "Sandboxing"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Patch Rings (Option A) is a staged rollout strategy where patches are deployed to progressively larger groups (rings) to isolate and identify issues before widespread deployment. Hotfix Deployment (Option B) is what is being deployed, not the strategy. Automated Rollback (Option C) uninstalls bad patches. Sandboxing (Option D) tests isolated code."
+  },
+  {
+    "question": "A Linux administrator wants to transition a server from Discretionary Access Control (DAC) to a model where access is controlled strictly by system policies that users cannot override, even if they own the files. Which security framework should they enable?",
+    "options": [
+      "SELinux",
+      "AppLocker",
+      "Group Policy",
+      "BitLocker"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "SELinux (Security-Enhanced Linux) (Option A) is a framework that implements Mandatory Access Control (MAC) on Linux systems, enforcing system-wide policies that override user discretion. AppLocker and Group Policy (Options B and C) are Windows features. BitLocker (Option D) is Windows full-disk encryption."
+  },
+  {
+    "question": "A security team creates a fully patched and hardened Windows 11 installation with all required corporate security agents installed and default passwords changed. They save a snapshot of this system to clone onto all new employee laptops. What is this snapshot called?",
+    "options": [
+      "Secure Baseline (Disk Image)",
+      "Evaluation Assurance Level (EAL)",
+      "Hotfix Bundle",
+      "System Sandbox"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "A Secure Baseline or Disk Image (Option A) is a vetted, standardized, and hardened configuration used as the starting point for deploying all new systems to ensure consistency. EAL (Option B) is a security rating. A Hotfix Bundle (Option C) is a service pack. A Sandbox (Option D) is an isolated testing environment."
+  },
+  {
+    "question": "An organization wants to protect all data stored on its employee laptops in case the physical devices are lost or stolen while powered off. Which encryption level provides the best protection for this scenario?",
+    "options": [
+      "Full-Disk Encryption (FDE)",
+      "File-Level Encryption",
+      "Record-Level Encryption",
+      "Database Encryption"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Full-Disk Encryption (FDE) (Option A) encrypts the entire storage drive, protecting all OS files, temp files, and user data if a device is stolen while powered off. File-Level (Option B) requires users to manually encrypt files. Record-Level and Database Encryption (Options C and D) apply only to structured SQL databases."
+  },
+  {
+    "question": "A database administrator needs to encrypt an entire SQL database at rest without requiring developers to rewrite the web applications that connect to it. What technology should they use?",
+    "options": [
+      "Transparent Data Encryption (TDE)",
+      "BitLocker",
+      "VeraCrypt",
+      "GPG"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Transparent Data Encryption (TDE) (Option A) encrypts an entire SQL database automatically in the background without requiring any changes to the applications accessing it. BitLocker (Option B) is OS-level full-disk encryption. VeraCrypt (Option C) creates encrypted volumes. GPG (Option D) is for individual file encryption."
+  },
+  {
+    "question": "A security administrator wants to centrally enforce password complexity rules, disable the Guest account, and deploy AppLocker restrictions across all 500 Windows workstations in the corporate domain. What Windows feature should they use?",
+    "options": [
+      "Group Policy (GPO)",
+      "SELinux",
+      "Device Manager",
+      "Task Scheduler"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Group Policy Objects (GPO) (Option A) allow administrators to centrally manage and enforce security settings, software restrictions, and user rights across all machines in a Windows domain. SELinux (Option B) is for Linux. Device Manager (Option C) manages hardware drivers. Task Scheduler (Option D) runs timed scripts."
+  },
+  {
+    "question": "A system administrator is tuning SELinux on a new server. They want SELinux to log all policy violations so they can see what would be blocked, but they do not want SELinux to actually block any processes from executing yet. What mode should SELinux be set to?",
+    "options": [
+      "Permissive Mode",
+      "Enforcing Mode",
+      "Disabled Mode",
+      "Strict Mode"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "In Permissive Mode (Option A), SELinux logs policy violations but allows the actions to proceed, which is ideal for troubleshooting and tuning. Enforcing Mode (Option B) actively blocks violations. Disabled Mode (Option C) turns SELinux off entirely. Strict Mode (Option D) is a policy type, not an operational mode."
+  },
+  {
+    "question": "An organization decides to prevent known malicious applications from running on employee workstations by adding their file hashes to a restriction list. However, any unrecognized or new executables are allowed to run by default. What application restriction model is this?",
+    "options": [
+      "Blocklisting",
+      "Allowlisting",
+      "Sandboxing",
+      "Least Privilege"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Blocklisting (Option A) allows everything to run by default except items explicitly placed on the denied list. Allowlisting (Option B) is the opposite—blocking everything by default except explicitly approved items. Sandboxing (Option C) isolates code. Least Privilege (Option D) relates to user access rights."
+  },
+  {
+    "question": "A security analyst monitors a server for a week to establish what a 'normal' day of network traffic looks like, recording average CPU usage and bandwidth consumption. This allows the analyst to detect anomalous spikes in the future. What is this process called?",
+    "options": [
+      "Baselining",
+      "Hardening",
+      "Fuzzing",
+      "Patching"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Baselining (Option A) is the process of measuring a system's normal performance and security state so that any future deviations can be quickly identified as anomalies. Hardening (Option B) is securing the system. Fuzzing (Option C) is dynamic software testing. Patching (Option D) is updating software."
+  },
+  {
+    "question": "A hospital's patient database encrypts only the specific column containing Social Security Numbers, leaving the rest of the database unencrypted to maintain fast read speeds for less sensitive data. What level of encryption is this?",
+    "options": [
+      "Record-Level Encryption",
+      "Database-Level Encryption (TDE)",
+      "File-Level Encryption",
+      "Partition Encryption"
+    ],
+    "correctAnswer": 0,
+    "section": "S20",
+    "explanation": "Record-Level Encryption (Option A) encrypts specific rows or columns within a database, providing the most granular protection for highly sensitive fields while leaving the rest of the database fast and accessible. TDE (Option B) encrypts the whole database. File (Option C) and Partition (Option D) encryption operate at the OS/disk level, not within the DB structure."
+  }
+]

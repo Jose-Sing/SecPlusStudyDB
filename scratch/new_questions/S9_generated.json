@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A financial institution decides to implement a new online banking platform. The security team performs a comprehensive review of the new system's architecture to identify threats and vulnerabilities prior to launch. They do not plan to repeat this specific assessment after the platform is live. What is the frequency of this risk assessment?",
+    "options": [
+      "One-time",
+      "Ad-hoc",
+      "Recurring",
+      "Continuous"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "A One-time assessment (Option A) is conducted for a specific project or initiative (like launching a new platform) and is not repeated. Ad-hoc (Option B) is triggered by an event and may be repeated if the event happens again. Recurring (Option C) is scheduled (e.g., annually). Continuous (Option D) is ongoing real-time monitoring."
+  },
+  {
+    "question": "An IT department is analyzing the impact of a potential server failure. The analysis determines that if the database server goes down, the maximum acceptable downtime before the business suffers severe financial impact is 4 hours. Which Business Impact Analysis (BIA) metric does this 4-hour limit represent?",
+    "options": [
+      "Recovery Time Objective (RTO)",
+      "Recovery Point Objective (RPO)",
+      "Mean Time to Repair (MTTR)",
+      "Mean Time Between Failures (MTBF)"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "The Recovery Time Objective (RTO) (Option A) defines the maximum acceptable downtime before severe business impact occurs. The Recovery Point Objective (RPO) (Option B) refers to the maximum acceptable data loss measured in time. MTTR (Option C) is the average time it takes to repair a failure. MTBF (Option D) measures reliability between failures."
+  },
+  {
+    "question": "A security analyst is preparing a report for the executive board. The analyst states that an earthquake destroying the primary data center has a 'Low' probability of occurring, but a 'High' impact if it does, resulting in an overall 'Medium' priority. What type of risk analysis did the analyst perform?",
+    "options": [
+      "Qualitative Risk Analysis",
+      "Quantitative Risk Analysis",
+      "Continuous Risk Assessment",
+      "Risk Avoidance"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "Qualitative Risk Analysis (Option A) uses descriptive, categorical scales (Low, Medium, High) based on expert judgment to assess and prioritize risks. Quantitative Risk Analysis (Option B) uses hard numerical measurements and financial values (like ALE or SLE). Continuous Risk Assessment (Option C) is a frequency type. Risk Avoidance (Option D) is a strategy."
+  },
+  {
+    "question": "An e-commerce company has a web server worth $20,000. Historical data shows that a DDoS attack takes the server offline completely (100% loss of function) once every four years. Using quantitative risk analysis, what is the Annualized Loss Expectancy (ALE) for this risk?",
+    "options": [
+      "$5,000",
+      "$20,000",
+      "$10,000",
+      "$80,000"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "First, calculate the Single Loss Expectancy (SLE): Asset Value ($20,000) \u00d7 Exposure Factor (100% or 1.0) = $20,000. Second, calculate the Annualized Rate of Occurrence (ARO): 1 attack / 4 years = 0.25. Finally, calculate the ALE: SLE ($20,000) \u00d7 ARO (0.25) = $5,000/year (Option A)."
+  },
+  {
+    "question": "A startup decides to launch a new, highly experimental cryptocurrency exchange platform, fully aware that it faces massive regulatory and cyber risks. They believe the potential profit outweighs the risks. How would you categorize this organization's risk appetite?",
+    "options": [
+      "Expansionary",
+      "Conservative",
+      "Neutral",
+      "Transferred"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "An Expansionary risk appetite (Option A) indicates a willingness to take on more risk for the chance of higher returns, typical of aggressive, growth-oriented businesses. Conservative (Option B) prefers stability over risk. Neutral (Option C) balances the two. Transferred (Option D) is a mitigation strategy, not an appetite."
+  },
+  {
+    "question": "A retail chain identifies that shoplifting costs them $50,000 annually. They decide to hire a security guard company for $60,000 annually, which they estimate will eliminate all shoplifting. However, the executive board rejects the proposal because the cost of the control exceeds the cost of the risk, deciding to simply absorb the $50,000 loss. Which risk management strategy did the board choose?",
+    "options": [
+      "Risk Acceptance",
+      "Risk Mitigation",
+      "Risk Avoidance",
+      "Risk Transference"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "Risk Acceptance (Option A) involves acknowledging the risk and taking no action to prevent it, often because the cost of mitigation is higher than the potential loss. Risk Mitigation (Option B) would be hiring the guards. Risk Avoidance (Option C) would be closing the store. Risk Transference (Option D) would be buying insurance."
+  },
+  {
+    "question": "An organization relies heavily on a specialized cloud service provider. To manage the risk of the provider experiencing an outage, the organization signs a Service Level Agreement (SLA) that requires the provider to pay a $10,000 penalty for every hour of downtime. Which risk management strategy is the organization employing?",
+    "options": [
+      "Risk Transference",
+      "Risk Acceptance",
+      "Risk Mitigation",
+      "Risk Avoidance"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "Risk Transference (Option A) shifts the financial consequences of a risk to another party. By using an SLA with financial penalties (or buying insurance), the organization is transferring the financial risk of downtime to the cloud provider. Mitigation (Option C) would be building a redundant backup system."
+  },
+  {
+    "question": "A bank monitors the number of failed login attempts per hour across its customer portal. Historically, the baseline is 500 failed attempts per hour. If the number exceeds 2,000, it triggers an alert to the security team, signaling a potential incoming credential stuffing attack before major damage occurs. In risk management terminology, what is this metric called?",
+    "options": [
+      "Key Risk Indicator (KRI)",
+      "Annualized Rate of Occurrence (ARO)",
+      "Recovery Point Objective (RPO)",
+      "Risk Threshold"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "A Key Risk Indicator (KRI) (Option A) is a forward-looking, predictive metric that provides an early warning signal of rising risk exposure before it escalates into a full incident. ARO (Option B) is how often an event occurs annually. RPO (Option C) is tolerable data loss. A Risk Threshold (Option D) is a limit, but the metric itself is the KRI."
+  },
+  {
+    "question": "During a risk assessment, a security team identifies that physical theft of unencrypted laptops is a 'High' risk. They implement a policy requiring Full Disk Encryption (FDE) on all devices. However, there is still a small chance that an attacker could steal a laptop while it is powered on and unlocked. What term describes this remaining risk?",
+    "options": [
+      "Residual Risk",
+      "Control Risk",
+      "Inherent Risk",
+      "Accepted Risk"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "Residual Risk (Option A) is the amount of risk that remains after mitigation controls have been applied to the inherent risk. Control Risk (Option B) is the risk that the control itself fails or degrades. Inherent Risk (Option C) is the raw risk before any controls are applied."
+  },
+  {
+    "question": "A project manager is creating a document that lists all potential threats to a new software deployment, including the likelihood of each threat, the potential impact, the current mitigation strategy, and the person responsible for monitoring it. What is this document called?",
+    "options": [
+      "Risk Register",
+      "Business Impact Analysis (BIA)",
+      "Incident Response Plan",
+      "Vulnerability Assessment"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "A Risk Register (Option A) is the central document that records all identified risks, their details (impact, likelihood), mitigation strategies, and the assigned risk owner. A BIA (Option B) focuses specifically on business continuity and recovery metrics (RTO/RPO). An Incident Response Plan (Option C) details how to react to a breach."
+  },
+  {
+    "question": "An organization is considering expanding its operations into a region known for extreme political instability and frequent communication blackouts. After conducting a risk analysis, the executive board decides the potential for catastrophic loss is too high and cancels the expansion entirely. Which risk strategy did they apply?",
+    "options": [
+      "Risk Avoidance",
+      "Risk Acceptance",
+      "Risk Transference",
+      "Risk Mitigation"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "Risk Avoidance (Option A) involves changing plans to eliminate the risk entirely, usually because the risk is too severe to accept, mitigate, or transfer. Canceling the expansion avoids the risk completely. Acceptance (Option B) would be proceeding anyway. Transference (Option C) would be buying insurance. Mitigation (Option D) would be building redundant communication lines."
+  },
+  {
+    "question": "Which phase of the 5-step risk management lifecycle involves creating dashboards or heat maps to communicate risk information to stakeholders and ensure regulatory compliance?",
+    "options": [
+      "Risk Reporting",
+      "Risk Monitoring",
+      "Risk Treatment",
+      "Risk Identification"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "Risk Reporting (Option A) is the phase where risk information is communicated to stakeholders (via dashboards or reports) to guide informed decision-making and prove regulatory compliance. Risk Monitoring (Option B) is the ongoing tracking of risks. Risk Treatment (Option C) is applying controls. Identification (Option D) is finding the risks initially."
+  },
+  {
+    "question": "An organization implements a strict policy that no employees may use removable USB drives. However, the marketing director requests permission to use a USB drive for one week to transfer large video files for an upcoming conference, arguing that cloud transfer is too slow. The security team approves the request. Which specific risk response was granted?",
+    "options": [
+      "Exception",
+      "Exemption",
+      "Mitigation",
+      "Transference"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "An Exception (Option A) is a form of risk acceptance where a party is normally subject to a rule but avoids it temporarily or under specific, defined conditions (e.g., for one week for a specific task). An Exemption (Option B) means the party is completely excluded from the rule permanently. Mitigation (Option C) reduces risk. Transference (Option D) shifts financial liability."
+  },
+  {
+    "question": "A manufacturer is analyzing its production line equipment. A specific cutting machine breaks down, on average, once every 120 days. When it breaks down, it takes the maintenance team an average of 6 hours to fix it and get it running again. In this scenario, what does the '120 days' metric represent?",
+    "options": [
+      "Mean Time Between Failures (MTBF)",
+      "Mean Time to Repair (MTTR)",
+      "Recovery Time Objective (RTO)",
+      "Recovery Point Objective (RPO)"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "The '120 days' represents the Mean Time Between Failures (MTBF) (Option A), which is the average time between system failures and serves as an indicator of reliability. The '6 hours' represents the Mean Time to Repair (MTTR) (Option B). RTO (Option C) is a target maximum downtime, not a historical average."
+  },
+  {
+    "question": "A company is conducting a quantitative risk analysis on a database containing proprietary source code valued at $1,000,000. They determine that a successful exfiltration attack by a competitor would result in a 25% loss of the asset's value. What is the Exposure Factor (EF) in this scenario?",
+    "options": [
+      "25%",
+      "$250,000",
+      "$1,000,000",
+      "4 (since it would take 4 attacks to lose 100%)"
+    ],
+    "correctAnswer": 0,
+    "section": "S9",
+    "explanation": "The Exposure Factor (EF) (Option A) is the percentage of the asset lost in a single event, which is explicitly stated as 25%. The Single Loss Expectancy (SLE) would be $250,000 (Option B). The Asset Value is $1,000,000 (Option C). The ARO is not provided."
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A security analyst notices that a junior employee, who earns a modest salary, has recently started driving a luxury sports car and taking expensive international vacations. While there may be a legitimate explanation, what insider threat indicator does this represent?",
+    "options": [
+      "Lifestyle Incongruence",
+      "Emotional Distress",
+      "Risky Behavior",
+      "Social Engineering"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "Lifestyle Incongruence (Option A) occurs when an employee's spending habits or assets do not match their known legitimate income, potentially indicating illicit activity like selling corporate secrets. Emotional Distress (Option B) involves psychological turmoil. Risky behavior (Option C) might involve working intoxicated. Social Engineering (Option D) is an external attack method."
+  },
+  {
+    "question": "A user employs the same password for their corporate email, their personal banking app, and an online shopping site. If the shopping site is compromised, what specific type of attack will hackers likely use to breach the corporate email?",
+    "options": [
+      "Credential Replay",
+      "Brute Force",
+      "Dictionary Attack",
+      "Rainbow Table"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "Because of password reuse, attackers will use Credential Replay (Option A) (or credential stuffing), taking the stolen username/password pair from one site and trying it on others. Brute force (Option B), dictionary attacks (Option C), and rainbow tables (Option D) are password guessing/cracking methods, not reusing already known credentials."
+  },
+  {
+    "question": "An organization requires employees to use a tool that securely generates, stores, and autofills unique, complex passwords for all their work-related accounts, protected by a single master password. What tool is this?",
+    "options": [
+      "Password Manager",
+      "Single Sign-On (SSO)",
+      "Multi-Factor Authentication (MFA)",
+      "Virtual Private Network (VPN)"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "A Password Manager (Option A) securely stores unique passwords in a vault unlocked by a master password. SSO (Option B) uses one central authentication server, not a stored vault of many passwords. MFA (Option C) requires multiple proofs of identity. A VPN (Option D) encrypts network traffic."
+  },
+  {
+    "question": "An attacker follows an employee closely through a secure door that requires a badge swipe, gaining entry to the building without scanning their own badge. What social engineering technique is this?",
+    "options": [
+      "Piggybacking / Tailgating",
+      "Dumpster Diving",
+      "Shoulder Surfing",
+      "Eavesdropping"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "Piggybacking or Tailgating (Option A) is the physical act of following an authorized person into a restricted area. Dumpster diving (Option B) is searching trash. Shoulder surfing (Option C) is looking at someone's screen. Eavesdropping (Option D) is listening to private conversations."
+  },
+  {
+    "question": "A company implements a rule stating that all documents containing confidential patient data must be destroyed using a cross-cut shredder before disposal. Which specific policy mandates this action?",
+    "options": [
+      "Data Destruction Policy",
+      "Remote Work Policy",
+      "Acceptable Use Policy (AUP)",
+      "Bring Your Own Device (BYOD) Policy"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "A Data Destruction Policy (Option A) dictates how physical and digital data must be securely destroyed based on its classification level (e.g., shredding or incinerating). Remote work, AUP, and BYOD policies (Options B, C, D) cover where work is done, how assets are used, and device ownership, respectively."
+  },
+  {
+    "question": "An attacker leaves several infected USB drives in a company's parking lot, hoping an employee will pick one up and plug it into a corporate workstation. What type of social engineering attack is this?",
+    "options": [
+      "Baiting",
+      "Phishing",
+      "Piggybacking",
+      "Pretexting"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "Baiting (Option A) relies on a victim's curiosity or greed, offering something enticing (like a 'lost' USB drive or malicious charging cable) to trick them into installing malware. Phishing (Option B) uses deceptive emails. Piggybacking (Option C) is physical entry. Pretexting (Option D) involves creating a fabricated scenario or persona."
+  },
+  {
+    "question": "An organization provides employees with a comprehensive booklet detailing how to set up a secure home office, tips for recognizing phishing emails, and step-by-step instructions for using the VPN. What type of document is this?",
+    "options": [
+      "Handbook",
+      "Policy",
+      "Service Level Agreement (SLA)",
+      "Non-Disclosure Agreement (NDA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "A Handbook (Option A) provides practical guidance, explanations, and 'how-to' instructions for employees. A Policy (Option B) dictates the formal, mandatory rules (the 'what'). An SLA (Option C) defines service guarantees with vendors. An NDA (Option D) is a legal confidentiality contract."
+  },
+  {
+    "question": "A company transitions to a fully remote workforce. To ensure that all traffic between employee laptops and the corporate network is encrypted and secure when employees use public Wi-Fi, what technology MUST be implemented?",
+    "options": [
+      "Virtual Private Network (VPN)",
+      "Password Manager",
+      "Intrusion Detection System (IDS)",
+      "Data Loss Prevention (DLP)"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "A VPN (Option A) creates a secure, encrypted tunnel over a public network, protecting remote workers' traffic from eavesdropping on insecure Wi-Fi. A password manager (Option B) stores credentials. An IDS (Option C) monitors for attacks. DLP (Option D) prevents data exfiltration."
+  },
+  {
+    "question": "An employee receives an urgent phone call from someone claiming to be the CEO, demanding that $50,000 be wired to a vendor immediately to prevent a lawsuit. The caller uses fear and time pressure to force the employee to bypass accounting procedures. What social engineering tactic is being used?",
+    "options": [
+      "Pretexting with Urgency",
+      "Shoulder Surfing",
+      "Dumpster Diving",
+      "Baiting"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "The attacker is Pretexting (impersonating the CEO) and applying Urgency/Fear (Option A) to pressure the victim into making a mistake. Shoulder surfing (Option B) is viewing screens. Dumpster diving (Option C) is searching trash. Baiting (Option D) offers a physical/digital lure."
+  },
+  {
+    "question": "An organization wants to shift its mindset so that every employee views data protection as their personal responsibility, rather than just an IT department rule. They start by securing visible commitment from the CEO and integrating security training into daily workflows. What process are they using?",
+    "options": [
+      "Organizational Change Management (OCM)",
+      "Digital Forensics",
+      "Vulnerability Management",
+      "Continuous Deployment"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "Organizational Change Management (OCM) (Option A) is the structured framework used to shift corporate culture, ensuring security becomes embedded in daily operations starting with leadership commitment. Forensics, Vulnerability Management, and Continuous Deployment (Options B, C, D) are technical processes, not cultural shifts."
+  },
+  {
+    "question": "A military contractor trains its employees not to post details about their daily commute, work schedules, or project names on social media, because adversaries could piece these minor details together to plan an attack. What protective discipline is this?",
+    "options": [
+      "Operational Security (OPSEC)",
+      "Network Segmentation",
+      "Data Classification",
+      "Role-Based Access Control (RBAC)"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "Operational Security (OPSEC) (Option A) is the practice of safeguarding seemingly harmless, unclassified information that could reveal an organization's routines or capabilities to an adversary. Network segmentation, data classification, and RBAC (Options B, C, D) are internal technical/administrative controls."
+  },
+  {
+    "question": "An employee going through a difficult divorce begins skipping required security checks and accidentally leaves confidential files exposed on a shared network drive. While the actions were unintentional, what insider threat indicator does this reflect?",
+    "options": [
+      "Emotional Distress",
+      "Lifestyle Incongruence",
+      "Malicious Intent",
+      "Baiting"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "Emotional Distress (Option A) can cause employees to lose focus and bypass security controls unintentionally, making it a key insider threat indicator. Lifestyle incongruence (Option B) involves unexplained wealth. Malicious intent (Option C) involves deliberate sabotage/theft. Baiting (Option D) is a social engineering attack."
+  },
+  {
+    "question": "To reduce the risk of remote workers introducing malware via their personal laptops, a company purchases laptops, installs monitoring software and firewalls on them, and issues them to employees for both work and limited personal use. What device deployment model is this?",
+    "options": [
+      "Corporate-Owned, Personally Enabled (COPE)",
+      "Bring Your Own Device (BYOD)",
+      "Virtual Desktop Infrastructure (VDI)",
+      "Software as a Service (SaaS)"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "In a COPE (Corporate-Owned, Personally Enabled) (Option A) model, the company owns and secures the hardware, but allows the employee to use it for personal tasks. BYOD (Option B) means the employee owns the device. VDI (Option C) virtualizes desktops. SaaS (Option D) is cloud software."
+  },
+  {
+    "question": "An attacker sits at a coffee shop next to two executives and listens carefully as they discuss the details of an unannounced corporate merger. What type of attack has occurred?",
+    "options": [
+      "Eavesdropping",
+      "Shoulder Surfing",
+      "Dumpster Diving",
+      "Phishing"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "Eavesdropping (Option A) is the act of secretly listening to private conversations. Shoulder surfing (Option B) involves looking at screens visually. Dumpster diving (Option C) involves physical trash. Phishing (Option D) involves deceptive emails."
+  },
+  {
+    "question": "An organization creates a formal system that encourages employees to report suspicious behavior anonymously, provides financial counseling, and monitors for unusual after-hours data downloads. What is this system called?",
+    "options": [
+      "Insider Threat Program",
+      "Intrusion Prevention System (IPS)",
+      "Security Information and Event Management (SIEM)",
+      "Identity and Access Management (IAM)"
+    ],
+    "correctAnswer": 0,
+    "section": "S27",
+    "explanation": "An Insider Threat Program (Option A) combines human elements (reporting culture, counseling) with technical monitoring (unusual downloads) to mitigate risks from internal staff. An IPS (Option B) blocks network attacks. A SIEM (Option C) aggregates logs. IAM (Option D) manages user accounts."
+  }
+]

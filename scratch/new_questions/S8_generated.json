@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A web developer is implementing a feature that requires verifying the integrity of large downloaded files. The developer wants to use an algorithm that is computationally fast, widely supported, and resistant to collision attacks, avoiding deprecated standards. Which hashing algorithm is the BEST choice?",
+    "options": [
+      "SHA-256",
+      "MD5",
+      "SHA-1",
+      "RSA"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "SHA-256 (Option A) is part of the SHA-2 family and is the current standard for secure hashing, resistant to collisions. MD5 (Option B) and SHA-1 (Option C) are both deprecated due to proven collision vulnerabilities. RSA (Option D) is an asymmetric encryption algorithm, not a hashing algorithm."
+  },
+  {
+    "question": "An organization wants to securely exchange a symmetric session key over an insecure public network between a client and a server. Which cryptographic algorithm is specifically designed to facilitate this secure key exchange?",
+    "options": [
+      "Diffie-Hellman",
+      "AES",
+      "SHA-3",
+      "RC4"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "Diffie-Hellman (Option A) is an asymmetric algorithm specifically designed for securely exchanging cryptographic keys over a public channel. AES (Option B) and RC4 (Option D) are symmetric algorithms that require the key to already be securely exchanged. SHA-3 (Option C) is a hashing algorithm."
+  },
+  {
+    "question": "A company is developing a secure messaging app for low-power IoT devices. The devices have limited CPU and battery life, so the cryptography must provide high security with minimal computational overhead. Which asymmetric algorithm is the MOST appropriate for this scenario?",
+    "options": [
+      "ECC (Elliptic Curve Cryptography)",
+      "RSA (Rivest-Shamir-Adleman)",
+      "3DES (Triple DES)",
+      "Blowfish"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "ECC (Option A) provides the same level of security as RSA but with significantly smaller key sizes, making it highly efficient and the standard choice for mobile, IoT, and low-power devices. RSA (Option B) requires much larger keys and more processing power. 3DES and Blowfish (Options C and D) are symmetric block ciphers, not asymmetric."
+  },
+  {
+    "question": "A user wants to digitally sign a contract before sending it to a business partner to ensure non-repudiation and integrity. Which cryptographic key MUST the user apply to the hash of the document to create a valid digital signature?",
+    "options": [
+      "The sender's private key",
+      "The sender's public key",
+      "The receiver's private key",
+      "The receiver's public key"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "To create a digital signature, the sender must encrypt the hash of the message using their own private key (Option A). This proves that only the sender could have created the signature (non-repudiation). Using the receiver's public key (Option D) is for confidentiality (encryption), not signing."
+  },
+  {
+    "question": "An attacker captures a database of user passwords. Instead of brute-forcing the plaintext passwords, the attacker notices several accounts have the exact same hash digest, indicating they use the same password. Which cryptographic defense mechanism did the developers FAIL to implement?",
+    "options": [
+      "Salting",
+      "Key Stretching",
+      "Digital Certificates",
+      "Symmetric Encryption"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "Salting (Option A) involves adding a random, unique value to each password before hashing it. This ensures that even if two users have the same password, their resulting hashes will be entirely different. Key stretching (Option B) slows down brute-force attacks but doesn't prevent identical passwords from producing identical hashes if unsalted."
+  },
+  {
+    "question": "A corporate web server must support HTTPS for multiple subdomains (e.g., mail.company.com, hr.company.com, and portal.company.com) without purchasing a separate certificate for each one. However, it does not need to support entirely different root domains. Which type of digital certificate is the BEST choice?",
+    "options": [
+      "Wildcard Certificate",
+      "SAN (Subject Alternate Name) Certificate",
+      "Self-signed Certificate",
+      "Extended Validation (EV) Certificate"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "A Wildcard Certificate (Option A) is designed to secure a root domain and all of its subdomains (e.g., *.company.com) using a single certificate. A SAN certificate (Option B) is better for securing entirely different root domains (e.g., company.com and organization.org) on the same server."
+  },
+  {
+    "question": "A bank requires a highly secure, tamper-proof physical appliance to generate, manage, and store cryptographic keys for its core financial transactions. Which encryption tool is specifically designed for this enterprise-level requirement?",
+    "options": [
+      "Hardware Security Module (HSM)",
+      "Trusted Platform Module (TPM)",
+      "Secure Enclave",
+      "Key Escrow"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "A Hardware Security Module (HSM) (Option A) is a dedicated, tamper-resistant hardware appliance used in enterprise environments (like banks) to securely manage, generate, and store cryptographic keys. A TPM (Option B) is a chip embedded on a single motherboard for local device security (like BitLocker). A Secure Enclave (Option C) protects data in use on a local CPU."
+  },
+  {
+    "question": "An attacker intercepts a secure connection and manipulates the handshake process, forcing the client and server to communicate using an obsolete, vulnerable protocol (SSL 3.0) instead of the TLS 1.3 protocol they both support. What type of cryptographic attack is this?",
+    "options": [
+      "Downgrade Attack",
+      "Collision Attack",
+      "Pass-the-Hash",
+      "Replay Attack"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "A Downgrade Attack (Option A), such as the POODLE attack, forces a system to abandon a modern, secure protocol and revert to an older, weaker cryptographic protocol that the attacker knows how to exploit. A Collision Attack (Option B) targets hashes. Pass-the-Hash (Option C) targets authentication. A Replay Attack (Option D) retransmits captured data."
+  },
+  {
+    "question": "A security analyst is investigating a suspected data leak. The analyst discovers that an insider has been hiding sensitive company documents within the pixel data of ordinary company marketing images and emailing them to a personal account. Which obfuscation technique is the insider utilizing?",
+    "options": [
+      "Steganography",
+      "Data Masking",
+      "Tokenization",
+      "Elliptic Curve Cryptography"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "Steganography (Option A) is the practice of hiding secret data within an ordinary, non-secret file (such as an image, audio, or video file) so that its very existence is undetected. Data Masking (Option B) replaces data with fake realistic data. Tokenization (Option C) replaces data with a meaningless placeholder. ECC (Option D) is an encryption algorithm."
+  },
+  {
+    "question": "An organization relies heavily on RSA for digital signatures and AES-256 for data encryption. In the context of the emerging threat from quantum computing, which algorithm is MOST at risk, and why?",
+    "options": [
+      "RSA, because quantum computers can rapidly factor the large prime numbers it relies on.",
+      "AES-256, because quantum computers can easily reverse symmetric block ciphers.",
+      "RSA, because it uses smaller block sizes than AES.",
+      "Both are equally at risk because quantum computers bypass all encryption layers simultaneously."
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "Quantum computers use Shor's algorithm to rapidly factor large prime numbers, which breaks asymmetric algorithms like RSA and ECC (Option A). Symmetric algorithms like AES are not broken by factoring; they are only weakened (mitigated by doubling the key size, e.g., AES-256 is still considered quantum-resistant)."
+  },
+  {
+    "question": "A Chief Information Security Officer (CISO) is implementing a Public Key Infrastructure (PKI). To protect the organization against the loss of a user's private key, the CISO mandates that a secure backup copy of all private keys be stored with a trusted third party. What PKI concept is being implemented?",
+    "options": [
+      "Key Escrow",
+      "Certificate Revocation List (CRL)",
+      "Certificate Signing Request (CSR)",
+      "OCSP Stapling"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "Key Escrow (Option A) is the secure storage of private keys by a trusted third party, allowing for key recovery if the original key is lost, corrupted, or required for legal investigations. A CRL (Option B) lists revoked certificates. A CSR (Option C) is a request for a new certificate. OCSP Stapling (Option D) improves revocation checking performance."
+  },
+  {
+    "question": "When securing a legacy wireless network, a security administrator notices that the protocol uses RC4 for encryption. Based on modern cryptographic standards, what is the status of RC4 and its structural type?",
+    "options": [
+      "It is a weak stream cipher that should be avoided.",
+      "It is a strong block cipher that is currently the industry standard.",
+      "It is an asymmetric algorithm used for key exchange.",
+      "It is a hashing algorithm vulnerable to collision attacks."
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "RC4 (Option A) is a stream cipher (it encrypts data bit-by-bit) that was famously used in WEP and SSL, but is now considered broken and weak. It is not a block cipher (Option B), asymmetric algorithm (Option C), or hashing algorithm (Option D)."
+  },
+  {
+    "question": "During a TLS handshake, a web browser receives a digital certificate from a web server. Before trusting the server, the browser must verify that the certificate has not been revoked. Which protocol allows the browser to query the CA in real-time for the status of this single specific certificate?",
+    "options": [
+      "OCSP (Online Certificate Status Protocol)",
+      "CRL (Certificate Revocation List)",
+      "CSR (Certificate Signing Request)",
+      "IPSec (Internet Protocol Security)"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "OCSP (Option A) allows a client to query the CA in real-time for the revocation status of a single certificate by its serial number, which is faster and more efficient than downloading the entire CRL (Option B). A CSR (Option C) is for requesting certificates, and IPSec (Option D) secures network traffic."
+  },
+  {
+    "question": "Which cryptographic principle ensures that a sender cannot later deny having sent a specific message, because the digital signature attached to the message could only have been generated by their unique cryptographic key?",
+    "options": [
+      "Non-repudiation",
+      "Confidentiality",
+      "Obfuscation",
+      "Availability"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "Non-repudiation (Option A) is the cryptographic guarantee that the sender of a message cannot later deny having sent it, usually achieved through digital signatures using the sender's private key. Confidentiality (Option B) keeps data secret. Obfuscation (Option C) hides data. Availability (Option D) ensures data is accessible."
+  },
+  {
+    "question": "A supply chain organization is implementing a decentralized, tamper-proof digital ledger to track shipments. The system uses a peer-to-peer network where each block of transaction data is cryptographically linked to the previous block's hash. What technology is being deployed?",
+    "options": [
+      "Blockchain",
+      "Public Key Infrastructure (PKI)",
+      "Secure Enclave",
+      "Hardware Security Module (HSM)"
+    ],
+    "correctAnswer": 0,
+    "section": "S8",
+    "explanation": "Blockchain (Option A) is a shared, immutable ledger where transactions are recorded in blocks, and each block contains the cryptographic hash of the previous block, creating a tamper-proof chain across a decentralized network. PKI (Option B) manages certificates. Secure Enclaves (Option C) isolate memory. HSMs (Option D) store keys physically."
+  }
+]

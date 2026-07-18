@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A security analyst configures a new firewall and needs to block unencrypted remote administration traffic from reaching a critical switch, while allowing secure remote administration. Which port should the analyst block?",
+    "options": [
+      "Port 23",
+      "Port 22",
+      "Port 443",
+      "Port 3389"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "Port 23 (Option A) is used by Telnet, which transmits data (including credentials) in plaintext and is considered insecure for remote administration. Port 22 (Option B) is used by SSH, which provides secure, encrypted remote administration. Port 443 (Option C) is for secure web traffic (HTTPS). Port 3389 (Option D) is for encrypted Remote Desktop Protocol (RDP) sessions."
+  },
+  {
+    "question": "A company wants to inspect HTTP and HTTPS traffic specifically to block SQL injection and Cross-Site Scripting (XSS) attacks aimed at their customer portal. Which type of firewall is BEST suited for this specific task?",
+    "options": [
+      "Web Application Firewall (WAF)",
+      "Packet Filtering Firewall",
+      "Stateful Firewall",
+      "Unified Threat Management (UTM)"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "A Web Application Firewall (WAF) (Option A) specifically inspects HTTP/HTTPS traffic at Layer 7 to identify and block web-specific attacks like SQL injection and XSS. A Packet Filtering Firewall (Option B) only looks at IP headers and ports. A Stateful Firewall (Option C) tracks connection states but doesn't perform deep web payload inspection. A UTM (Option D) is a broad all-in-one appliance, whereas a WAF is the specialized tool for web attacks."
+  },
+  {
+    "question": "An administrator is configuring a firewall Access Control List (ACL) to permit web traffic from a specific partner IP, but block all other incoming connections. Where should the 'deny all' rule be placed to ensure the web traffic rule is evaluated correctly?",
+    "options": [
+      "At the bottom of the ACL",
+      "At the top of the ACL",
+      "Immediately before the web traffic rule",
+      "It does not matter; rules are evaluated simultaneously"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "ACL rules are processed top-down, and the first matching rule wins. Therefore, the 'deny all' (implicit or explicit deny) must be placed at the bottom (Option A). If it were at the top (Option B) or before the specific rule (Option C), it would block everything immediately, and the firewall would never evaluate the web traffic rule. Rules are not evaluated simultaneously (Option D)."
+  },
+  {
+    "question": "A network security team installs a device connected to a SPAN port on the core switch. The device analyzes traffic patterns and compares them to a baseline, generating alerts when deviations occur, but it does not block any traffic. What type of device is this?",
+    "options": [
+      "Anomaly-based NIDS",
+      "Signature-based NIPS",
+      "Application-Level Proxy",
+      "Web Application Firewall (WAF)"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "An Anomaly-based Network Intrusion Detection System (NIDS) (Option A) connects to a SPAN/mirror port (passive/tap), monitors traffic by comparing it to a baseline (anomaly-based), and generates alerts without blocking (detection, not prevention). A NIPS (Option B) actively blocks traffic. A Proxy (Option C) and a WAF (Option D) are inline devices that actively process and block traffic."
+  },
+  {
+    "question": "A systems administrator needs to manage servers located in a highly secure network segment. To minimize the attack surface, the administrator must first connect to a hardened gateway server, which then provides access to the secure servers and centrally logs all administrative commands. What is this gateway server called?",
+    "options": [
+      "Jump Server",
+      "Load Balancer",
+      "Proxy Server",
+      "RADIUS Server"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "A Jump Server (Option A), or jump box, is a dedicated, highly secured gateway server used by administrators to access devices in different security zones. It acts as a single, auditable choke point for administrative access. A Load Balancer (Option B) distributes traffic. A Proxy Server (Option C) brokers client web requests. A RADIUS server (Option D) handles authentication."
+  },
+  {
+    "question": "A company wants to prevent visitors in the lobby from unplugging the lobby printer and connecting their personal laptops to the network jack. The network administrator configures the switch to only allow the MAC address of the printer on that specific port. What feature was implemented?",
+    "options": [
+      "Port Security",
+      "802.1x Authentication",
+      "Logical Separation (VLAN)",
+      "Access Control List (ACL)"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "Port Security (Option A) is a switch feature that restricts access to a specific port based on the MAC address of the connecting device. 802.1x (Option B) is a framework that requires user credentials or certificates before granting access, rather than just locking a MAC address. VLANs (Option C) segment networks logically. ACLs (Option D) filter traffic by IP/port, not typically by physical switch port MAC bindings."
+  },
+  {
+    "question": "An organization is deploying an 802.1x authentication framework for its wireless network. Which component acts as the centralized server that actually validates the user credentials and returns the accept or reject decision?",
+    "options": [
+      "Authentication Server",
+      "Authenticator",
+      "Supplicant",
+      "Extensible Authentication Protocol (EAP)"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "In 802.1x, the Authentication Server (Option A), typically a RADIUS or TACACS+ server, contains the user database and makes the actual accept/reject decision. The Authenticator (Option B) is the switch or Wireless Access Point (WAP) that passes the credentials. The Supplicant (Option C) is the client device requesting access. EAP (Option D) is the authentication framework used, not a component."
+  },
+  {
+    "question": "A network engineer is configuring an IPsec VPN for remote workers connecting from public Wi-Fi at coffee shops. To prevent attackers on the local public Wi-Fi from pivoting into the corporate network through the remote worker's laptop, which VPN configuration MUST the engineer use?",
+    "options": [
+      "Full Tunnel",
+      "Split Tunnel",
+      "Site-to-Site VPN",
+      "Transport Mode"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "A Full Tunnel VPN (Option A) forces all traffic from the remote device, including general Internet traffic, to route through the corporate VPN, securing the device from local network threats. A Split Tunnel (Option B) allows Internet traffic to bypass the VPN, leaving the laptop exposed to local attackers who could then pivot into the corporate tunnel. Site-to-Site (Option C) connects entire offices. Transport mode (Option D) is an IPsec setting, not a routing topology."
+  },
+  {
+    "question": "Two branch offices are connected via an IPsec VPN. The network administrator needs to ensure that the data payload is encrypted during transit over the internet to prevent eavesdropping. Which IPsec protocol provides this confidentiality?",
+    "options": [
+      "Encapsulating Security Payload (ESP)",
+      "Authentication Header (AH)",
+      "Internet Key Exchange (IKE)",
+      "Transport Layer Security (TLS)"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "Encapsulating Security Payload (ESP) (Option A) provides confidentiality (encryption) for the data payload in an IPsec VPN, as well as authentication and integrity. Authentication Header (AH) (Option B) provides integrity and authentication but does NOT encrypt the data. IKE (Option C) establishes the security associations. TLS (Option D) is a different protocol used for HTTPS and clientless VPNs, not standard IPsec."
+  },
+  {
+    "question": "A multinational corporation replaces its traditional centralized WAN architecture with a solution that dynamically routes traffic over broadband and cellular connections directly to cloud applications, optimizing performance for remote branches without sending all traffic back to headquarters. Which technology is the corporation adopting?",
+    "options": [
+      "SD-WAN",
+      "Site-to-Site VPN",
+      "Screened Subnet",
+      "Unified Threat Management (UTM)"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "A Software-Defined Wide Area Network (SD-WAN) (Option A) dynamically routes traffic across multiple WAN connections based on application needs, bypassing the latency of backhauling all cloud traffic to a central headquarters. A Site-to-Site VPN (Option B) typically creates the very hub-and-spoke topology SD-WAN aims to improve. A Screened Subnet (Option C) hosts public services. UTM (Option D) is a security appliance."
+  },
+  {
+    "question": "An organization adopts a cloud-native security framework that consolidates VPN, firewall, and Zero Trust Network Access (ZTNA) into a single service, delivering security closer to its distributed workforce rather than relying on on-premise hardware. Which architecture does this describe?",
+    "options": [
+      "SASE",
+      "MAC",
+      "HIDS",
+      "EAP-TLS"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "Secure Access Service Edge (SASE) (Option A) is a framework that converges networking (like SD-WAN) and network security services (like firewalls, CASB, ZTNA) into a single, cloud-delivered service model. MAC (Option B) is an access control model. HIDS (Option C) is a host intrusion detection system. EAP-TLS (Option D) is an authentication protocol."
+  },
+  {
+    "question": "A security architect is designing a network segment specifically to host a public-facing web server and an email gateway. This segment must be isolated from the internal corporate network to limit the impact of a potential compromise. What is this network segment called?",
+    "options": [
+      "Screened Subnet",
+      "Intranet",
+      "Air Gap",
+      "Private VLAN"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "A Screened Subnet (Option A), formerly known as a DMZ, is a buffer zone between the untrusted public Internet and the trusted internal corporate network, used to host public-facing services. An Intranet (Option B) is the internal trusted network. An Air Gap (Option C) is complete physical isolation. A Private VLAN (Option D) restricts traffic between ports on a switch, but isn't specifically a boundary zone for public servers."
+  },
+  {
+    "question": "To identify potential malicious activity, an analyst deploys a security device that actively blocks known threats in real-time as they cross the network boundary. What is the device's placement attribute?",
+    "options": [
+      "Inline",
+      "Passive",
+      "Tap",
+      "Out-of-Band"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "An active device that blocks traffic in real-time, such as an IPS or Firewall, must be placed Inline (Option A), meaning it sits directly in the traffic flow path. Passive (Option B), Tap (Option C), and Out-of-Band (Option D) all refer to devices that receive a copy of the traffic (like an IDS) and can only monitor and alert, but cannot actively block the traffic flow."
+  },
+  {
+    "question": "A hospital installs an electronic door locking system to secure the pharmacy. If the building experiences a complete loss of power and the backup batteries fail, the doors must automatically unlock so staff can still access emergency medication. Which failure mode must the system use?",
+    "options": [
+      "Fail-Open",
+      "Fail-Closed",
+      "Fail-Safe",
+      "Fail-Secure"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "A Fail-Open (Option A) (also known as fail-safe for human safety) configuration means that if the system fails, it defaults to allowing access (opening the doors) prioritizing availability and safety over security. Fail-Closed (Option B) (or fail-secure) means the system defaults to blocking access, prioritizing security over availability."
+  },
+  {
+    "question": "An organization selects security controls based on the principle that if a perimeter firewall fails to block an attacker, an internal Intrusion Prevention System (IPS) and host-based antivirus should still detect and stop the threat. Which principle is being applied?",
+    "options": [
+      "Defense in Depth",
+      "Least Privilege",
+      "Separation of Duties",
+      "Open Design Principle"
+    ],
+    "correctAnswer": 0,
+    "section": "S16",
+    "explanation": "Defense in Depth (Option A) is the practice of layering multiple, independent security controls so that if one fails, others are in place to stop the attack. Least Privilege (Option B) restricts user rights. Separation of Duties (Option C) requires multiple people to complete a critical task. Open Design (Option D) means security should not rely on obscurity."
+  }
+]

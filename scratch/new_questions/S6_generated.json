@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A network administrator notices that a legitimate background process (svchost.exe) is consuming an unusual amount of memory and establishing an outbound connection to an unknown IP address in Russia. The administrator stops the process, but it immediately restarts. An antivirus scan finds no malicious files on the hard drive. Which of the following malware techniques is MOST likely being used?",
+    "options": [
+      "Process Hollowing",
+      "Macro Virus",
+      "Hardware Keylogger",
+      "Logic Bomb"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "Process Hollowing (Option A) involves launching a legitimate process, clearing its memory, and injecting malicious code. This allows the malware to hide behind a trusted process name (like svchost.exe) and evade file-based antivirus since the malicious code runs in memory. A Macro Virus (Option B) infects documents. A Hardware Keylogger (Option C) is physical. A Logic Bomb (Option D) triggers on an event, but doesn't specifically explain the process impersonation and fileless evasion."
+  },
+  {
+    "question": "During a post-incident review, a forensics team discovers that an attacker gained initial access to a user's workstation by tricking them into opening a malicious PDF (Stage 1). The PDF then silently reached out to an external server and downloaded a Remote Access Trojan (RAT) to establish persistent control (Stage 2). Which term BEST describes the role of the malicious PDF in this attack model?",
+    "options": [
+      "Dropper",
+      "Rootkit",
+      "Botnet C2 Node",
+      "Worm"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "In a two-stage malware deployment, the initial lightweight payload designed to initiate or install the heavier, secondary malware (the RAT) is called a Dropper (Option A). A Rootkit (Option B) hides access. A C2 Node (Option C) controls botnets. A Worm (Option D) self-replicates without user action, whereas the user had to open the PDF."
+  },
+  {
+    "question": "A hospital's IT department is dealing with a severe malware infection. The malware spread to 500 computers across three different network segments within 15 minutes, causing significant network congestion. The security logs confirm that no users interacted with or clicked on any malicious links or files during the time of infection. What type of malware is this?",
+    "options": [
+      "Worm",
+      "Trojan",
+      "Virus",
+      "Spyware"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "A Worm (Option A) is malware that self-replicates and spreads rapidly across networks by exploiting vulnerabilities without requiring any user interaction. A Trojan (Option B) disguised as legitimate software requires user installation. A Virus (Option C) requires a user action (like opening a file) to execute and spread. Spyware (Option D) monitors activity."
+  },
+  {
+    "question": "A disgruntled employee writes a script that will delete the entire customer database if the employee's username is removed from the active directory. Three months after the employee is fired and their account is deleted, the database is wiped. What type of malicious code was used?",
+    "options": [
+      "Logic Bomb",
+      "Ransomware",
+      "Polymorphic Virus",
+      "Rootkit"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "A Logic Bomb (Option A) is malicious code inserted into a system that remains dormant until specific trigger conditions are met (in this case, the deletion of the user account). Ransomware (Option B) encrypts for financial gain. A Polymorphic Virus (Option C) changes its signature to evade detection. A Rootkit (Option D) provides undetected administrative access."
+  },
+  {
+    "question": "An attacker wants to compromise a secure server that relies on a traditional signature-based antivirus. To bypass the AV, the attacker uses a malware strain that encrypts its payload and changes its decryption module every single time it infects a new file. What type of virus is the attacker utilizing?",
+    "options": [
+      "Polymorphic",
+      "Metamorphic",
+      "Multipartite",
+      "Armored"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "A Polymorphic virus (Option A) changes its decryption module (or signature) each time it executes, making it difficult for signature-based AV to detect. A Metamorphic virus (Option B) is more advanced and rewrites its entire code, not just the decryption module. A Multipartite virus (Option C) infects both boot sectors and files. An Armored virus (Option D) uses obfuscation to stop reverse-engineering."
+  },
+  {
+    "question": "An organization is hit by a massive Distributed Denial of Service (DDoS) attack. The security team traces the attack traffic and discovers it is originating from thousands of compromised IoT security cameras located around the world. What is the overarching term for this network of compromised devices?",
+    "options": [
+      "Botnet",
+      "Command and Control (C2) Node",
+      "Fileless Malware",
+      "Zombie"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "A Botnet (Option A) is the entire network of compromised devices (zombies) controlled remotely by an attacker to perform coordinated actions like DDoS attacks. The C2 Node (Option B) is the server controlling them. Fileless malware (Option C) operates in memory. A Zombie (Option D) refers to a single compromised device within the botnet."
+  },
+  {
+    "question": "A user downloads what appears to be a free system optimization tool from a third-party website. The tool successfully cleans up temporary files, but in the background, it also silently installs a keylogger and opens a persistent remote connection for an attacker. Which type of malware did the user install?",
+    "options": [
+      "Trojan",
+      "Worm",
+      "Logic Bomb",
+      "Ransomware"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "A Trojan (Option A) is malware disguised as legitimate or desirable software (the optimization tool) that performs a hidden malicious function in the background. It relies on the user to willingly install it. A Worm (Option B) spreads automatically. A Logic Bomb (Option C) waits for a trigger. Ransomware (Option D) encrypts files."
+  },
+  {
+    "question": "An advanced persistent threat (APT) infiltrates a corporate network. Instead of downloading custom malware executables that might be caught by the intrusion detection system, the attackers exclusively use built-in Windows administration tools like PowerShell and WMI to move laterally and exfiltrate data. What attack strategy are they employing?",
+    "options": [
+      "Living off the Land (LotL)",
+      "Process Hollowing",
+      "DLL Injection",
+      "Two-Stage Deployment"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "Living off the Land (LotL) (Option A) is a strategy where attackers use legitimate, built-in system tools (like PowerShell) to conduct malicious activities, helping them blend into normal administrative behavior and evade detection. Process Hollowing (Option B) and DLL Injection (Option C) are specific memory injection techniques. Two-stage deployment (Option D) involves downloading external payloads."
+  },
+  {
+    "question": "A systems administrator suspects that a server has been compromised. Despite running multiple enterprise antivirus scans from within the running Windows operating system, no threats are detected. However, network logs show the server communicating with a known malicious IP at the kernel level (Ring 0). Which malware type is specifically designed to hide at this depth?",
+    "options": [
+      "Rootkit",
+      "Spyware",
+      "Boot Sector Virus",
+      "Bloatware"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "A Rootkit (Option A) is designed to gain administrative or kernel-level (Ring 0) control while remaining completely undetected by the operating system and traditional AV tools running on top of that OS. Spyware (Option B) monitors user activity at the application level. Boot Sector Viruses (Option C) infect the MBR, not necessarily the running kernel. Bloatware (Option D) is unwanted, non-malicious software."
+  },
+  {
+    "question": "Employees at a manufacturing company arrive at work on Monday to find that they cannot open any Word documents or PDFs. Their desktop backgrounds have been changed to a message demanding $50,000 in Bitcoin for the decryption key. What is the FIRST action the IT security team should take?",
+    "options": [
+      "Disconnect the infected systems from the network.",
+      "Pay the ransom to minimize downtime.",
+      "Restore the files from the weekend backup.",
+      "Run an antivirus scan to remove the malware."
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "In a Ransomware attack, the absolute FIRST step upon discovery is to disconnect/isolate the infected systems from the network (Option A) to prevent the malware from spreading and encrypting shared network drives. Paying the ransom (Option B) is discouraged. Restoring from backups (Option C) and removing the malware (Option D) happen during the eradication and recovery phases, after containment."
+  },
+  {
+    "question": "An attacker discovers that a company's web server has not been patched against a newly published vulnerability. The attacker sends a crafted malicious packet to the server, exploiting the vulnerability to gain a remote shell. In this scenario, what does the unpatched vulnerability represent?",
+    "options": [
+      "Threat Vector",
+      "Attack Vector",
+      "Payload",
+      "Dropper"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "The specific weakness or vulnerability being targeted (the unpatched software) is the Threat Vector (Option A) — the 'why it's possible'. The Attack Vector (Option B) would be the complete pathway (sending the crafted packet over the network to gain the shell). The Payload (Option C) is the malicious action (the remote shell). A Dropper (Option D) is an initial malware installer."
+  },
+  {
+    "question": "An attacker creates a piece of malware that intercepts the communication between the Windows OS and a trusted system DLL. By sitting in the middle of this communication pathway, the malware alters the data being passed without the OS realizing it has been intercepted. Which specific technique is the attacker using?",
+    "options": [
+      "Shimming",
+      "Process Hollowing",
+      "Code Injection",
+      "Living off the Land"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "A Shim (Option A) is a small piece of software placed between two components to intercept and redirect or modify calls between them, commonly used by rootkits. Process Hollowing (Option B) and Code Injection (Option C) involve inserting code directly into a process's memory space, rather than sitting between components as an interceptor."
+  },
+  {
+    "question": "A user buys a brand-new laptop. Upon booting it up, they find trial versions of three different antivirus programs, a proprietary media player, and several games already installed. While none of these programs are malicious, they consume 20% of the RAM on startup. What is the cybersecurity term for this software?",
+    "options": [
+      "Bloatware",
+      "Spyware",
+      "Trojan",
+      "Stealth Virus"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "Bloatware (Option A) refers to unwanted, pre-installed software on new devices. It is not inherently malicious, but it consumes system resources and expands the attack surface. Spyware (Option B) secretly monitors activity. A Trojan (Option C) is disguised malware. A Stealth Virus (Option D) hides its malicious payload."
+  },
+  {
+    "question": "A security analyst is reviewing logs and notices that an executive's account successfully logged in from the company headquarters in New York at 9:00 AM, and then successfully logged into the corporate VPN from an IP address in Tokyo at 9:15 AM. Which malware attack indicator is the analyst observing?",
+    "options": [
+      "Impossible Travel",
+      "Concurrent Session Utilization",
+      "Account Lockouts",
+      "Out-of-Cycle Logging"
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "Impossible Travel (Option A) indicates that an account was accessed from two geographically distant locations within an impossibly short timeframe, strongly suggesting compromised credentials. Concurrent Session Utilization (Option B) means simultaneous active sessions, but the geographic impossibility is the primary indicator here. Account Lockouts (Option C) indicate failed logins."
+  },
+  {
+    "question": "A user connects a mysterious USB drive they found in the parking lot to their workstation. The device registers as a standard keyboard to the operating system, but secretly records all the user's keystrokes and saves them to an internal chip. Why is this specific attack highly effective?",
+    "options": [
+      "Because software-based antivirus cannot detect it.",
+      "Because it executes entirely in the system's RAM.",
+      "Because it bypasses Multi-Factor Authentication (MFA).",
+      "Because it uses DLL injection to hide from the kernel."
+    ],
+    "correctAnswer": 0,
+    "section": "S6",
+    "explanation": "A hardware keylogger is highly effective because it is a physical device that the OS sees as a legitimate peripheral (a keyboard), meaning software-based antivirus cannot detect it (Option A). It does not execute in RAM (Option B) or use DLL injection (Option D). While it captures passwords, it does NOT bypass MFA (Option C) — the attacker would still need the second factor."
+  }
+]

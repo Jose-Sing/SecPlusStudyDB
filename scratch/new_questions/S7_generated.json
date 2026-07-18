@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A healthcare organization is migrating its patient records to a cloud service provider. The organization determines how the data will be used and collected, while the cloud provider only stores the data according to the organization's instructions. In the event of a privacy breach caused by the cloud provider, who holds the ULTIMATE accountability under data privacy laws?",
+    "options": [
+      "The Data Controller",
+      "The Data Processor",
+      "The Data Steward",
+      "The Data Custodian"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "The Data Controller (Option A) is the entity that decides the purpose and method of data processing and holds ultimate accountability for privacy breaches, even if they outsource the work. The cloud provider is the Data Processor (Option B), acting under the controller's direction. The Steward (Option C) ensures data quality/labeling, and the Custodian (Option D) handles technical day-to-day management."
+  },
+  {
+    "question": "An employee downloads a spreadsheet containing the salaries of every executive in the company. The employee does not modify or share the file, but stores it unencrypted on their local workstation. Under standard commercial data classification, which tier does this data fall into, and what is the primary risk?",
+    "options": [
+      "Private; exposure of internal individual data.",
+      "Sensitive; exposure of upcoming product plans.",
+      "Confidential; exposure of trade secrets.",
+      "Critical; exposure of cryptographic keys."
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Salaries, employee records, and SSNs are classified as Private (Option A) because they are for internal use only and relate to individual privacy. Sensitive data (Option B) usually refers to business operations with minimal impact. Confidential data (Option C) refers to IP or trade secrets with serious business impact. Critical data (Option D) refers to things like credit cards or keys."
+  },
+  {
+    "question": "A multinational corporation has a strict policy that all laptops must use BitLocker to protect data if the laptop is lost or stolen. However, the Chief Information Security Officer (CISO) is concerned that an attacker who compromises an active, logged-in session could still access the memory and steal cryptographic keys while they are being processed by an application. Which data state is the CISO concerned about, and what is the BEST protection method?",
+    "options": [
+      "Data in Use; Secure Enclave",
+      "Data at Rest; Full Disk Encryption",
+      "Data in Transit; TLS Tunneling",
+      "Data in Use; Database Encryption"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Data actively being processed in RAM by an application is Data in Use. A Secure Enclave (Option A), such as Intel SGX, creates an isolated processing environment in memory so untrusted processes cannot access it. FDE (Option B) protects Data at Rest (when the laptop is off). TLS (Option C) protects Data in Transit. Database encryption (Option D) protects Data at Rest."
+  },
+  {
+    "question": "A company wants to ensure that its customer database administrators can view a user's account details for troubleshooting, but cannot see the user's actual credit card number. Instead, the database should display 'XXXX-XXXX-XXXX-4321' when queried. Which data protection technique should be implemented?",
+    "options": [
+      "Data Masking",
+      "Hashing",
+      "Tokenization",
+      "Full Disk Encryption"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Data Masking (Option A) replaces sensitive data with placeholders (like 'X') to de-identify it while preserving the format for display purposes. Hashing (Option B) is one-way cryptographic scrambling. Tokenization (Option C) replaces the data with a meaningless token stored in a separate vault, usually for backend processing, not just display. FDE (Option D) encrypts the whole drive."
+  },
+  {
+    "question": "A financial institution implements a Data Loss Prevention (DLP) system at its network perimeter. The DLP is configured with a rule that looks for any outgoing email containing a 9-digit number formatted as 'XXX-XX-XXXX' (Social Security Number). The DLP is set to immediately drop the email and notify the security team. What is the configuration's 'Condition/Content Match' and 'Action' respectively?",
+    "options": [
+      "SSN Regex Pattern; Block",
+      "Email Application; Audit",
+      "All Users Scope; Quarantine",
+      "High Confidence Threshold; Alert"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "The 'Condition/Content Match' is what triggers the rule (the Regex pattern for the SSN). The 'Action' is what happens when triggered (dropping the email is a Block action). Therefore, Option A is correct. The Application is email, but Audit (Option B) doesn't drop the email. Quarantine (Option C) isolates it rather than outright dropping it."
+  },
+  {
+    "question": "An e-commerce company must comply with PCI DSS. To reduce the scope of their annual PCI audit, they want to ensure that if a web server is compromised, the attacker cannot pivot to the backend database server where credit card data is stored. Which of the following is the BEST architectural method to achieve this?",
+    "options": [
+      "Network Segmentation",
+      "Data Obfuscation",
+      "Endpoint DLP",
+      "Access Control Lists (ACLs)"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Network Segmentation (Option A) divides the network into isolated segments. By placing the web server and the database server in different, heavily restricted segments, lateral movement is severely limited, reducing the 'blast radius' and the scope of a PCI audit. Obfuscation (Option B) hides code. Endpoint DLP (Option C) prevents data exfiltration. ACLs (Option D) restrict permissions but don't physically isolate network traffic."
+  },
+  {
+    "question": "A European citizen creates an account with an online retailer headquartered in the United States, but hosted on servers in Germany. The citizen later demands that the retailer permanently delete all their personal data. The retailer must comply due to the laws of the country where the data was collected and processed. What principle dictates this requirement?",
+    "options": [
+      "Data Sovereignty",
+      "Geofencing",
+      "Data Custodianship",
+      "Tokenization"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Data Sovereignty (Option A) is the principle that digital data is subject to the laws of the country where it is collected or processed. Because the data involves an EU citizen and is processed on German servers, it falls under GDPR jurisdiction. Geofencing (Option B) blocks access by location. Custodianship (Option C) is a role. Tokenization (Option D) is a protection method."
+  },
+  {
+    "question": "A defense contractor must securely transmit classified design files across the public internet to a military base. The connection must authenticate and encrypt every single IP packet in the data stream at the network layer to prevent interception. Which protocol is BEST suited for this?",
+    "options": [
+      "IPSec",
+      "SSL",
+      "TLS",
+      "SGX"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "IPSec (Option A) secures IP communications by authenticating and encrypting each IP packet in a data stream, operating at the network layer (Layer 3), and is commonly used in VPNs. SSL/TLS (Options B and C) operate higher in the OSI model (Transport/Application) and typically secure specific application traffic (like HTTPS). SGX (Option D) is a secure enclave for data in use."
+  },
+  {
+    "question": "A company wants to ensure that its sales team can only access customer data from within the physical borders of the United States. If a salesperson travels to Europe and attempts to log in, the authentication system should automatically deny the request based on their IP address location. Which control should be implemented?",
+    "options": [
+      "Geofencing",
+      "Data Retention Policy",
+      "Network Segmentation",
+      "Cloud-based DLP"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Geofencing (Option A) involves setting virtual boundaries to restrict access based on geographic location, allowing organizations to block access attempts from outside approved regions. Retention policies (Option B) deal with time. Segmentation (Option C) deals with network architecture. DLP (Option D) prevents data exfiltration."
+  },
+  {
+    "question": "A software development firm stores its proprietary source code on an internal server. The code is considered a trade secret. The CISO mandates that the storage array itself must be encrypted so that if a physical hard drive is stolen from the data center, the thief cannot read the code. Which data state is being protected?",
+    "options": [
+      "Data at Rest",
+      "Data in Transit",
+      "Data in Use",
+      "Data in Motion"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Data stored on a physical hard drive or storage array that is not actively moving across a network or being processed in memory is Data at Rest (Option A). Therefore, encrypting the drive protects the data while it is at rest. Data in transit/motion (Options B and D) refers to network traffic. Data in use (Option C) is data in RAM."
+  },
+  {
+    "question": "An attacker manages to steal a backup tape containing a company's database of user passwords. However, the attacker realizes they cannot use the passwords because they have been converted into fixed-size, one-way values that cannot be reversed back into plaintext. Which data securing method was applied?",
+    "options": [
+      "Hashing",
+      "Encryption",
+      "Obfuscation",
+      "Tokenization"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Hashing (Option A) converts data into a fixed-size value and is strictly one-way (irreversible), which is the standard method for securely storing passwords. Encryption (Option B) is two-way and reversible with a key. Obfuscation (Option C) reduces readability but isn't a cryptographic standard for passwords. Tokenization (Option D) replaces data with a token mapped in a vault."
+  },
+  {
+    "question": "A hospital's compliance department is auditing their IT systems to ensure adherence to HIPAA. They find that patient records from 20 years ago belonging to deceased individuals are still being stored on primary servers, increasing storage costs and the attack surface. Which policy should the hospital update and enforce to resolve this?",
+    "options": [
+      "Data Retention Policy",
+      "Access Control List (ACL)",
+      "Endpoint DLP",
+      "Geofencing"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "A Data Retention Policy (Option A) defines how long data must be kept before it can be securely destroyed. Keeping data beyond its useful or legally mandated period unnecessarily increases risk. ACLs (Option B) control who can see the data. DLP (Option C) stops it from leaving. Geofencing (Option D) restricts access by location."
+  },
+  {
+    "question": "An employee uses their smartphone to take a picture of a printed quarterly earnings report before it is released to the public. They attempt to email the photo to a competitor. The company's Network DLP system intercepts the email, reads the text inside the photograph, and blocks the transmission. Which DLP feature enabled this detection?",
+    "options": [
+      "Optical Character Recognition (OCR)",
+      "File Hashing",
+      "Regex Content Matching",
+      "Endpoint Agent"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Optical Character Recognition (OCR) (Option A) is a technology integrated into advanced DLP solutions that scans images and photographs to extract and analyze text content, preventing users from bypassing DLP by taking screenshots or photos of sensitive text. File hashing (Option B) and Regex (Option C) work on text files, not images directly. Endpoint Agent (Option D) is a deployment type, not the specific image-reading feature."
+  },
+  {
+    "question": "Who in the organization is PRIMARILY responsible for determining the classification level of a specific data asset (e.g., deciding whether a project plan is 'Sensitive' or 'Confidential') based on its business value?",
+    "options": [
+      "The Data Owner",
+      "The Data Custodian",
+      "The Data Privacy Officer (DPO)",
+      "The System Administrator"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "The Data Owner (Option A) is the senior executive or business leader who understands the context and value of the data and holds ultimate responsibility for its classification and CIA. The Data Custodian/System Administrator (Options B and D) implements the technical controls dictated by the owner. The DPO (Option C) oversees privacy compliance."
+  },
+  {
+    "question": "A payment gateway wants to stop storing actual credit card numbers in its local database to reduce its compliance burden. Instead, it sends the credit card number to a highly secure third-party vault, which returns a random, meaningless string of characters. The gateway stores this string and uses it for future billing. What is this technique called?",
+    "options": [
+      "Tokenization",
+      "Hashing",
+      "Masking",
+      "Full Disk Encryption"
+    ],
+    "correctAnswer": 0,
+    "section": "S7",
+    "explanation": "Tokenization (Option A) replaces sensitive data with a non-sensitive placeholder (token) while the original data is stored in a separate, secure vault. The token is meaningless without the vault mapping, making it ideal for payment processing. Hashing (Option B) is one-way. Masking (Option C) hides parts of the data for display. FDE (Option D) encrypts the storage drive."
+  }
+]

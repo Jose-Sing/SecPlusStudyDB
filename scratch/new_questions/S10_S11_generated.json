@@ -1,0 +1,242 @@
+[
+  {
+    "question": "A financial firm is outsourcing its customer service portal to a Managed Service Provider (MSP). The firm wants to ensure it can legally inspect the MSP's internal security controls and data handling practices at any time during the contract. Which contractual element MUST be included to enforce this?",
+    "options": [
+      "Right to Audit Clause",
+      "Non-disclosure Agreement (NDA)",
+      "Statement of Work (SOW)",
+      "Service Level Agreement (SLA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Right to Audit Clause (Option A) is a contractual provision granting the organization the right to evaluate the vendor's internal processes and verify compliance with agreed-upon standards. An NDA (Option B) protects confidentiality. An SOW (Option C) details project-specific tasks. An SLA (Option D) defines service standards and penalties."
+  },
+  {
+    "question": "During a routine hardware upgrade, a network administrator discovers that a batch of newly purchased, budget-friendly routers contains slightly modified microchips that include an unauthorized remote access backdoor. What specific type of supply chain attack has occurred?",
+    "options": [
+      "Chip Washing",
+      "Software-based Supply Chain Attack",
+      "SolarWinds Attack",
+      "Denial of Service"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "Chip Washing (Option A) involves repackaging a microchip with a counterfeit or malware-embedded chip, often found in budget-friendly secondary markets, leading to hardware-based backdoors. A software-based attack (Option B) targets code. The SolarWinds attack (Option C) was software-based. Denial of Service (Option D) is an availability attack."
+  },
+  {
+    "question": "Two organizations have decided to form a joint venture to co-develop a new cybersecurity platform. They need a formal document that specifically outlines intellectual property ownership, profit-sharing percentages, and exit strategies if the venture fails. Which agreement is MOST appropriate?",
+    "options": [
+      "Business Partnership Agreement (BPA)",
+      "Memorandum of Understanding (MOU)",
+      "Service Level Agreement (SLA)",
+      "Non-disclosure Agreement (NDA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Business Partnership Agreement (BPA) (Option A) is used when two entities pool resources for mutual benefit and outlines profit sharing, decision-making, ownership of IP, and exit strategies. An MOU (Option B) is a non-binding intent to explore partnership. An SLA (Option C) defines service quality. An NDA (Option D) protects secrets."
+  },
+  {
+    "question": "An enterprise is planning a long-term relationship with a cloud provider for multiple upcoming projects. They want to sign a single overarching document that dictates the general terms, payment structures, and confidentiality rules for all future projects, allowing them to issue smaller, project-specific documents later. What is this overarching document called?",
+    "options": [
+      "Master Service Agreement (MSA)",
+      "Statement of Work (SOW)",
+      "Memorandum of Agreement (MOA)",
+      "Acceptable Use Policy (AUP)"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Master Service Agreement (MSA) (Option A) is a blanket agreement covering general terms across multiple transactions or projects, which is then supplemented by individual Statements of Work (Option B) for each specific project. An MOA (Option C) outlines specific collaboration roles. An AUP (Option D) governs user behavior."
+  },
+  {
+    "question": "A threat actor compromises the software update infrastructure of a widely used IT monitoring tool. The attacker injects malicious code into the legitimate update, which is then downloaded and installed by thousands of government and corporate clients, bypassing their perimeter firewalls. Which term BEST describes this incident?",
+    "options": [
+      "Supply Chain Attack",
+      "Inside Threat",
+      "Hardware Spoofing",
+      "Pre-installed Rootkit"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Supply Chain Attack (Option A), such as the 2021 SolarWinds attack described in the scenario, targets a weaker link (the software vendor's update system) to gain access to a more secure primary target (the clients). An Insider Threat (Option B) comes from within the organization. Hardware attacks (Options C and D) target physical components."
+  },
+  {
+    "question": "Before hiring a third-party cybersecurity firm to conduct annual penetration tests, a company requires the firm to sign a document ensuring that any vulnerabilities discovered or proprietary network diagrams shared during the engagement will not be shared with unauthorized parties. Which document MUST be signed?",
+    "options": [
+      "Non-disclosure Agreement (NDA)",
+      "Statement of Work (SOW)",
+      "Business Partnership Agreement (BPA)",
+      "Service Level Agreement (SLA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Non-disclosure Agreement (NDA) (Option A) ensures sensitive information shared during an engagement remains confidential between parties. An SOW (Option B) defines the penetration test's scope. A BPA (Option C) is for joint ventures. An SLA (Option D) guarantees uptime or response times."
+  },
+  {
+    "question": "A government defense contractor wants to ensure that the microprocessors used in their advanced radar systems are manufactured securely and perform only their designated functions, free from foreign tampering. Which US government program should the contractor mandate their suppliers adhere to?",
+    "options": [
+      "Trusted Foundry Program",
+      "CHIPS Act",
+      "ISO 27001",
+      "GDPR"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "The Trusted Foundry Program (Option A) is used by the DoD to ensure that chips are manufactured securely and perform only their designated functions. The CHIPS Act (Option B) is a funding statute to onshore manufacturing. ISO 27001 (Option C) is an information security standard. GDPR (Option D) is a privacy regulation."
+  },
+  {
+    "question": "An organization is evaluating a new vendor for data storage. The vendor provides documentation showing they conduct regular internal security checks. However, the organization requires validation from a neutral entity with no stake in the vendor's operations before signing the contract. What is the organization requesting?",
+    "options": [
+      "Independent Assessment",
+      "Internal Audit",
+      "Vendor Questionnaire",
+      "Rules of Engagement"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "An Independent Assessment (Option A) is an evaluation conducted by a neutral third-party entity (like an ISO auditor) with no stake in the organization's operations, providing objective validation. An Internal Audit (Option B) is a self-assessment. Vendor Questionnaires (Option C) are self-reported. Rules of Engagement (Option D) govern interaction terms."
+  },
+  {
+    "question": "A company is drafting a contract for a new VoIP phone service. To guarantee business continuity, the contract specifies that the service must maintain 99.99% uptime, and if uptime drops below this metric, the vendor must credit the company's account for the downtime. Which document contains this specific metric and penalty?",
+    "options": [
+      "Service Level Agreement (SLA)",
+      "Master Service Agreement (MSA)",
+      "Statement of Work (SOW)",
+      "Memorandum of Agreement (MOA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Service Level Agreement (SLA) (Option A) defines the standard of service a client can expect (e.g., 99.99% uptime) and specifies the financial or service penalties for non-compliance. An MSA (Option B) sets blanket terms. An SOW (Option C) defines project deliverables. An MOA (Option D) formalizes collaboration roles."
+  },
+  {
+    "question": "A procurement officer is choosing between three software vendors. Vendor A is owned by the officer's sibling. To maintain the integrity of the vendor selection process, what issue must the officer disclose immediately?",
+    "options": [
+      "Conflict of Interest",
+      "Due Diligence",
+      "Supply Chain Risk",
+      "Right to Audit"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Conflict of Interest (Option A) arises when personal or financial relationships could bias the vendor selection process, requiring immediate disclosure and recusal from the decision. Due diligence (Option B) is the evaluation process itself. Supply Chain Risk (Option C) is the security threat. Right to Audit (Option D) is a contract clause."
+  },
+  {
+    "question": "A security manager is developing a document that provides step-by-step instructions on exactly how IT staff should wipe and image a laptop when an employee leaves the company. According to governance frameworks, how should this document be classified?",
+    "options": [
+      "Procedure",
+      "Policy",
+      "Standard",
+      "Guideline"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "A Procedure (Option A) provides step-by-step, granular instructions that describe exactly how to perform a specific task consistently. A Policy (Option B) is a high-level statement of intent. A Standard (Option C) is a mandatory rule (e.g., 'all drives must use AES-256'). A Guideline (Option D) is a non-mandatory recommendation."
+  },
+  {
+    "question": "An employee attempts to install a peer-to-peer file-sharing application on their corporate workstation. The installation is blocked, and the employee receives a warning that this action violates the company's rules regarding the permitted use of IT resources. Which governance document did the employee violate?",
+    "options": [
+      "Acceptable Use Policy (AUP)",
+      "Information Security Policy",
+      "Business Continuity Policy",
+      "Disaster Recovery Policy"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "The Acceptable Use Policy (AUP) (Option A) defines the 'do's and don'ts' for users interacting with organizational IT systems, including prohibiting unauthorized software installations. Information Security Policy (Option B) governs asset protection. Business Continuity (Option C) and Disaster Recovery (Option D) deal with resilience and restoration."
+  },
+  {
+    "question": "A multinational corporation is designing its data privacy framework. It operates in California, Germany, and Japan. The legal team warns that the privacy laws in Germany directly contradict some of the data retention requirements in California. What governance challenge is the organization facing?",
+    "options": [
+      "Conflict of Laws",
+      "Separation of Duties",
+      "Due Diligence",
+      "Decentralized Structure"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "Conflict of laws (Option A) occurs when an organization operates across multiple geographical jurisdictions that have contradictory legal or regulatory requirements. Separation of duties (Option B) prevents one person from having total control. Due diligence (Option C) is risk investigation. Decentralized structure (Option D) refers to distributed decision-making."
+  },
+  {
+    "question": "A hospital is required by the HIPAA regulation to implement strong access controls for patient records. The hospital conducts an exhaustive review to identify all systems housing patient data and assess their current vulnerabilities. Which compliance concept does this exhaustive review represent?",
+    "options": [
+      "Due Diligence",
+      "Due Care",
+      "Attestation",
+      "Acknowledgement"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "Due Diligence (Option A) is the investigative process of reviewing operations to identify potential compliance risks and vulnerabilities. Due Care (Option B) would be the actual steps taken to fix those vulnerabilities (e.g., installing a firewall). Attestation (Option C) is a formal declaration of compliance. Acknowledgement (Option D) is recognizing the rules."
+  },
+  {
+    "question": "A company requires all users to create passwords that are at least 12 characters long, contain numbers and symbols, and are changed every 90 days. Which element of the Governance, Risk, and Compliance (GRC) framework does this specific, mandatory password rule represent?",
+    "options": [
+      "Standard",
+      "Policy",
+      "Guideline",
+      "Playbook"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "A Standard (Option A) defines specific, mandatory rules (like exact password length and rotation frequency) that must be followed to implement a higher-level policy. A Policy (Option B) states the goal ('passwords must be secure'). A Guideline (Option C) is optional. A Playbook (Option D) is an incident response checklist."
+  },
+  {
+    "question": "Following a major security incident, a Chief Information Security Officer (CISO) formally signs a document declaring that the organization's processes and controls now fully comply with the PCI DSS standard. What compliance component has the CISO provided?",
+    "options": [
+      "Attestation",
+      "Due Diligence",
+      "Due Care",
+      "Internal Monitoring"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "Attestation (Option A) is a formal, signed declaration by a responsible party that an organization's processes and controls are compliant with a specific standard or regulation. Due diligence (Option B) is identifying risks. Due care (Option C) is mitigating them. Internal monitoring (Option D) is reviewing operations internally."
+  },
+  {
+    "question": "A junior SOC analyst detects a suspected ransomware infection on a user's workstation. To ensure a fast, consistent response, the analyst opens a pre-defined checklist that outlines the exact steps for isolation, eradication, and escalation. What is this document called?",
+    "options": [
+      "Playbook",
+      "Policy",
+      "Standard",
+      "Due Care"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "A Playbook (Option A) is a step-by-step guide or checklist designed for detecting and responding to a specific type of incident (like ransomware), ensuring consistency and speed. A Policy (Option B) is high-level intent. A Standard (Option C) is a mandatory technical rule. Due Care (Option D) is the principle of acting responsibly."
+  },
+  {
+    "question": "A critical server requires a major OS upgrade. To minimize disruption, the IT team writes a plan, obtains management approval, schedules the upgrade for Sunday at 2 AM, and prepares a rollback plan in case the server fails to boot. Which organizational procedure are they following?",
+    "options": [
+      "Change Management",
+      "Incident Response",
+      "Offboarding",
+      "Disaster Recovery"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "Change Management (Option A) is the systematic procedure for requesting, planning, approving, implementing, and reviewing IT changes (including maintenance windows and rollback plans) to minimize disruption. Incident response (Option B) handles security breaches. Offboarding (Option C) handles departing employees. Disaster Recovery (Option D) handles catastrophic failures."
+  },
+  {
+    "question": "An e-commerce company suffered a massive data breach involving the credit cards of European customers. The regulatory body determined the company demonstrated negligence and levied a penalty equal to 4% of the company's global annual revenue. Which non-compliance consequence did the company suffer, and under which likely regulation?",
+    "options": [
+      "Fine / GDPR",
+      "Sanction / HIPAA",
+      "Loss of License / PCI DSS",
+      "Reputational Damage / CCPA"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "The company suffered a Fine (a monetary penalty), specifically under the EU's GDPR (Option A), which can levy fines up to \u20ac20M or 4% of global annual turnover for severe breaches involving EU citizens' data. Sanctions (Option B) are operational bans. Loss of License (Option C) halts business operations. Reputational damage (Option D) is loss of trust."
+  },
+  {
+    "question": "To prevent fraud, a financial organization designs its access control model so that the person who submits a purchase order cannot be the same person who approves the payment. Which security principle is being enforced by this governance standard?",
+    "options": [
+      "Separation of Duties",
+      "Least Privilege",
+      "Discretionary Access Control",
+      "Due Diligence"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "Separation of Duties (Option A) is the principle that prevents any single individual from having complete control over a critical process, requiring collusion to commit fraud. Least Privilege (Option B) means giving only minimum necessary access. DAC (Option C) lets resource owners set access. Due Diligence (Option D) is risk investigation."
+  }
+]

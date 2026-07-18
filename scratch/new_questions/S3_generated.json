@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A global manufacturing company notices that an unknown entity has been silently extracting proprietary blueprints from their R&D servers over the past eight months without causing any service disruptions. The security team discovers custom, highly sophisticated malware used in the breach. Which of the following threat actors is MOST likely responsible for this attack?",
+    "options": [
+      "Nation-State Actor",
+      "Hacktivist",
+      "Unskilled Attacker",
+      "Insider Threat"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "Nation-State actors (Option A) are characterized by their high sophistication, resources, and patience, often engaging in espionage to steal intellectual property over extended periods (APT behavior). Hacktivists (Option B) seek public attention for ideological causes, not silent data theft. Unskilled attackers (Option C) lack the capability for custom malware. An Insider Threat (Option D) typically has legitimate access and wouldn't need custom malware to bypass perimeter defenses."
+  },
+  {
+    "question": "The IT department discovers that several marketing employees have been storing sensitive client data in a personal, unapproved cloud storage application because the official corporate VPN is too slow. What security risk does this BEST describe?",
+    "options": [
+      "Shadow IT",
+      "BYOD",
+      "Insider Threat",
+      "Advanced Persistent Threat"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "Shadow IT (Option A) refers to the use of IT systems or services without explicit organizational approval, often driven by a desire for convenience when official processes are restrictive. BYOD (Option B) is the practice of using personal devices, not necessarily unauthorized cloud services. While these employees act as unintentional Insider Threats (Option C), Shadow IT is the specific term for this unapproved IT usage."
+  },
+  {
+    "question": "A security analyst is reviewing a recent incident where a group defaced the homepage of an oil company to display environmental protest messages. The attackers used a publicly available script to exploit a known vulnerability. What is the PRIMARY motivation of these attackers?",
+    "options": [
+      "Philosophical / Political Beliefs",
+      "Financial Gain",
+      "Service Disruption",
+      "Revenge"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "Hacktivists are motivated by philosophical or political beliefs (Option A), using techniques like website defacement to promote their ideological agendas or protest perceived injustices. While they caused some disruption, their primary motivation is not Service Disruption (Option C) for its own sake, nor Financial Gain (Option B) or Revenge (Option D)."
+  },
+  {
+    "question": "During a forensic investigation, the incident response team identifies that the malware used in a recent attack against their financial institution was specifically designed to mimic the well-known Tactics, Techniques, and Procedures (TTPs) of a North Korean threat group. However, intelligence reveals the attack actually originated from a Russian syndicate. What type of attack does this represent?",
+    "options": [
+      "False Flag Attack",
+      "Advanced Persistent Threat",
+      "Doxxing",
+      "Evil Twin"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "A False Flag Attack (Option A) is deliberately orchestrated to appear as if it originated from a different source or threat actor, to mislead investigators and misattribute the attack. APT (Option B) refers to the prolonged nature of an attack, not the misattribution. Doxxing (Option C) is the release of private info, and Evil Twin (Option D) is a rogue Wi-Fi access point."
+  },
+  {
+    "question": "A hospital administrator wants to detect if any of their clinical staff are snooping into the medical records of high-profile celebrities. They create a dummy patient record for a famous actor, filled with fake data and no legitimate clinical use, and configure the system to alert if this record is accessed. What deception technique has the administrator implemented?",
+    "options": [
+      "Honeytoken",
+      "Honeypot",
+      "Honeynet",
+      "Bogus DNS entries"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "A Honeytoken (Option A) is a fake piece of data or resource—such as a dummy database record—with no legitimate use. Any interaction with it signals a likely breach or unauthorized access, making it effective for detecting insider threats. A Honeypot (Option B) is an entire decoy system or server, not just a single data record."
+  },
+  {
+    "question": "Which of the following is the BEST strategy for an organization to reduce its attack surface?",
+    "options": [
+      "Uninstalling unnecessary software and disabling unused network protocols.",
+      "Deploying a honeynet in a screened subnet to monitor attacker TTPs.",
+      "Implementing an acceptable use policy (AUP) for all employees.",
+      "Creating a false flag operation to misdirect potential attackers."
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "The attack surface is the sum of all potential entry points. Uninstalling unnecessary software and disabling unused protocols (Option A) directly reduces these entry points. Deploying a honeynet (Option B) studies attackers but doesn't reduce the actual attack surface of the production environment. An AUP (Option C) is a directive control, not a direct reduction of technical attack surface."
+  },
+  {
+    "question": "An attacker sits in a coffee shop and sets up a rogue wireless access point with the exact same SSID as the coffee shop's legitimate public Wi-Fi. When customers connect to the attacker's network, the attacker intercepts their credentials. What type of attack is this?",
+    "options": [
+      "Evil Twin",
+      "BlueBorne",
+      "Vishing",
+      "Shadow IT"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "An Evil Twin (Option A) is a rogue wireless access point set up to mimic a legitimate Wi-Fi network to intercept and capture user traffic. BlueBorne (Option B) targets Bluetooth vulnerabilities. Vishing (Option C) uses voice calls to extract information, and Shadow IT (Option D) involves unapproved corporate IT systems."
+  },
+  {
+    "question": "A security operations center (SOC) detects that an attacker has gained access to a corporate workstation by dropping an infected USB drive in the company parking lot, which an employee then plugged into their laptop. In this scenario, what does the USB drive represent?",
+    "options": [
+      "Threat Vector",
+      "Threat Actor",
+      "Attack Surface",
+      "Vulnerability"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "A Threat Vector (Option A) is the pathway or means through which an attacker gains unauthorized access or delivers a malicious payload (the \"how\"). The Threat Actor (Option B) is the person who dropped the drive. The Attack Surface (Option C) includes the workstation's USB ports, and the Vulnerability (Option D) is the lack of policy or technical control preventing USB usage."
+  },
+  {
+    "question": "Which of the following threat actors is PRIMARILY motivated by financial gain, operates with a highly structured hierarchy, and often utilizes advanced tools like custom ransomware?",
+    "options": [
+      "Organized Crime",
+      "Nation-State Actor",
+      "Hacktivist",
+      "Script Kiddie"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "Organized Crime (cybercrime) groups (Option A) conduct attacks primarily for financial gain and operate with defined roles and advanced tools. Nation-State actors (Option B) are typically motivated by espionage or geopolitical objectives. Hacktivists (Option C) are motivated by ideology, and Script Kiddies (Option D) lack advanced custom tools."
+  },
+  {
+    "question": "A disgruntled former IT administrator uses their still-active credentials to log into the corporate network and delete critical customer databases out of revenge. Which threat actor attribute makes this attack particularly dangerous compared to an external attacker?",
+    "options": [
+      "Intimate knowledge of the infrastructure and existing access.",
+      "High level of funding and sophisticated zero-day exploits.",
+      "Ability to remain undetected for years as an Advanced Persistent Threat.",
+      "Use of hacktivism techniques like website defacement."
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "An Insider Threat (Option A) is dangerous because they have legitimate access and intimate knowledge of the organization's infrastructure, systems, and security procedures, allowing them to bypass perimeter defenses easily. They do not necessarily have high funding (Option B) or operate as an APT (Option C)."
+  },
+  {
+    "question": "A cyber research firm observes an attacker targeting Bluetooth-enabled mobile devices in a crowded airport. The attacker successfully takes over several devices and spreads malware without the device owners ever clicking a link, downloading a file, or pairing with the attacker's device. What specific vulnerability is MOST likely being exploited?",
+    "options": [
+      "BlueBorne",
+      "BlueSmack",
+      "Evil Twin",
+      "Doxxing"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "BlueBorne (Option A) is a set of Bluetooth vulnerabilities that allows an attacker to take over devices and spread malware without any user interaction or pairing required. BlueSmack (Option B) is a Denial of Service attack against Bluetooth, not a takeover/malware spread. Evil Twin (Option C) targets Wi-Fi."
+  },
+  {
+    "question": "To improve their defensive posture, a security team studies the high-level goals, general methods, and specific step-by-step implementations used by a known ransomware gang. What cybersecurity concept is the team analyzing?",
+    "options": [
+      "Tactics, Techniques, and Procedures (TTPs)",
+      "Threat Vectors",
+      "Plan of Action and Milestones (POA&M)",
+      "Zero Trust Control Plane"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "TTPs (Option A) refer to the specific methods, behaviors, and patterns of activity associated with a threat actor. Tactics are the high-level goals, Techniques are the general methods, and Procedures are the step-by-step implementations. Threat Vectors (Option B) are just the pathways of attack, not the full behavioral profile."
+  },
+  {
+    "question": "An organization wants to study the methods of attackers who attempt to breach their web servers. They deploy a decoy web server in a screened subnet, loaded with fake data and vulnerable services, specifically designed to be compromised so the security team can log the attackers' actions. What type of control has been deployed?",
+    "options": [
+      "Honeypot",
+      "Honeyfile",
+      "Honeynet",
+      "Compensating Control"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "A Honeypot (Option A) is a decoy system or server configured to appear vulnerable to attract attackers, allowing defenders to log and study their TTPs. A Honeyfile (Option B) is just a single file. A Honeynet (Option C) is a network of multiple honeypots simulating an entire environment, not just a single web server."
+  },
+  {
+    "question": "An attacker gathers the personal home address, private phone numbers, and family details of a company's CEO and publishes them on a public forum, urging followers to harass the CEO to protest the company's environmental policies. What specific technique is the attacker using?",
+    "options": [
+      "Doxxing",
+      "Vishing",
+      "False Flag",
+      "BlueSmack"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "Doxxing (Option A) is the public release of private personal information about an individual with the intent to expose them or incite real-world action against them, frequently used by hacktivists. Vishing (Option B) is voice phishing. False Flag (Option C) is misattribution."
+  },
+  {
+    "question": "A teenager downloads a pre-compiled DDoS tool from a hacker forum and uses it to take down their school's website to avoid taking an online exam. The teenager does not understand how the tool's code actually works. Which category BEST describes this threat actor?",
+    "options": [
+      "Unskilled Attacker",
+      "Hacktivist",
+      "Insider Threat",
+      "Advanced Persistent Threat"
+    ],
+    "correctAnswer": 0,
+    "section": "S3",
+    "explanation": "An Unskilled Attacker or Script Kiddie (Option A) is an individual with limited technical knowledge who relies on pre-made scripts and tools developed by others without understanding the underlying principles. They are often motivated by thrill or personal convenience rather than ideology (Hacktivist - Option B)."
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A hospital relies on an MRI machine running Windows XP, an operating system which Microsoft no longer supports or updates. The hospital cannot upgrade the OS without breaking the proprietary MRI software. What specific type of vulnerability does this represent?",
+    "options": [
+      "End of Life (EOL) / Legacy System",
+      "Zero-Day Vulnerability",
+      "Firmware Misconfiguration",
+      "Hardware Rootkit"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "An End of Life (EOL) or Legacy System (Option A) is one that no longer receives vendor support or security patches, leaving known vulnerabilities permanently unaddressed. A Zero-Day (Option B) is a brand new, unknown vulnerability. A Firmware Misconfiguration (Option C) relates to incorrect device settings. A Rootkit (Option D) is malware, not a system classification."
+  },
+  {
+    "question": "A user sits in a coffee shop and suddenly receives several unsolicited, anonymous text messages on their smartphone via Bluetooth. The messages contain advertising but no data is stolen from the device. What attack is taking place?",
+    "options": [
+      "Bluejacking",
+      "Bluesnarfing",
+      "Bluebugging",
+      "Blueborne"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "Bluejacking (Option A) is the sending of unsolicited messages to a Bluetooth-enabled device without causing serious harm or accessing data. Bluesnarfing (Option B) involves actual theft of data (contacts, messages). Bluebugging (Option C) is taking full control of the device. Blueborne (Option D) is an airborne exploit that spreads device-to-device automatically."
+  },
+  {
+    "question": "An employee configures their corporate Android phone to install applications from a third-party website rather than the Google Play Store, bypassing Google's security review process. What practice did the employee engage in?",
+    "options": [
+      "Sideloading",
+      "Jailbreaking",
+      "Rooting",
+      "Device Spoofing"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "Sideloading (Option A) is the practice of installing applications from unofficial sources outside the official app store, increasing the risk of malware. Jailbreaking (iOS) and Rooting (Android) (Options B and C) involve escalating privileges to bypass OEM restrictions, which might enable sideloading, but sideloading itself is the act of installing the app. Device Spoofing (Option D) is faking a hardware identity."
+  },
+  {
+    "question": "A threat actor discovers a new, critical flaw in a popular web browser and immediately writes an exploit for it. Because the browser vendor is completely unaware of the flaw, there is no patch available to stop the attack. What is this type of vulnerability called?",
+    "options": [
+      "Zero-Day Vulnerability",
+      "Buffer Overflow",
+      "Race Condition",
+      "Legacy Vulnerability"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "A Zero-Day Vulnerability (Option A) is a flaw that is unknown to the vendor and has no patch available, giving defenders 'zero days' to prepare. A Buffer Overflow (Option B) and Race Condition (Option C) are specific technical software flaws, which could be zero-days, but the scenario specifically describes the timing of the discovery. A Legacy Vulnerability (Option D) affects EOL systems."
+  },
+  {
+    "question": "A web application receives input from a login form. An attacker enters `' OR 1=1; --` into the username field, which causes the backend database query to evaluate to true, granting the attacker administrative access without a valid password. What type of attack occurred?",
+    "options": [
+      "SQL Injection",
+      "XML External Entity (XXE)",
+      "Cross-Site Scripting (XSS)",
+      "Command Injection"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "SQL Injection (Option A) involves inserting malicious SQL statements (like `' OR 1=1`) into input fields to manipulate database queries. XXE (Option B) targets XML parsers. XSS (Option C) targets the browser with malicious scripts. Command Injection (Option D) targets the host OS shell."
+  },
+  {
+    "question": "An attacker submits a crafted XML file to a web application. The XML file contains a `<!ENTITY>` declaration that points to the server's local `/etc/passwd` file. The server parses the XML and returns the contents of the password file to the attacker. What type of attack is this?",
+    "options": [
+      "XML External Entity (XXE)",
+      "XML Bomb",
+      "Cross-Site Request Forgery (CSRF)",
+      "Directory Traversal"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "An XML External Entity (XXE) attack (Option A) embeds a request for a local system resource within an XML payload, forcing the parser to expose the file. An XML Bomb (Option B) causes a denial of service via memory exhaustion, not data theft. CSRF (Option C) forces a user to execute unwanted actions. Directory Traversal (Option D) uses `../` sequences in URLs."
+  },
+  {
+    "question": "An attacker leaves a comment on a popular blog containing the payload `<script>alert('Your session has been stolen')</script>`. The comment is saved in the blog's database. Every time any user visits the blog post, the script automatically executes in their browser. What type of attack is this?",
+    "options": [
+      "Persistent (Stored) XSS",
+      "Reflected XSS",
+      "DOM-Based XSS",
+      "Cross-Site Request Forgery (CSRF)"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "Persistent (Stored) XSS (Option A) occurs when the malicious script is saved permanently on the target server (like in a database comment) and served to all subsequent visitors. Reflected XSS (Option B) requires clicking a crafted link. DOM-Based XSS (Option C) manipulates the client-side Document Object Model directly. CSRF (Option D) hijacks an authenticated session to perform actions."
+  },
+  {
+    "question": "An attacker creates a malicious webpage that contains a hidden form targeting a banking website. When a victim, who is already logged into their bank in another tab, visits the malicious page, the hidden form automatically submits a money transfer request to the bank using the victim's active session. What type of attack is this?",
+    "options": [
+      "Cross-Site Request Forgery (CSRF / XSRF)",
+      "Session Hijacking",
+      "Cross-Site Scripting (XSS)",
+      "Replay Attack"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "Cross-Site Request Forgery (CSRF/XSRF) (Option A) exploits an existing authenticated session by tricking the victim's browser into submitting an unauthorized request to a trusted site. Session Hijacking (Option B) involves actually stealing the session token to use later. XSS (Option C) injects scripts into the trusted site itself. A Replay Attack (Option D) captures and resends network traffic."
+  },
+  {
+    "question": "A software program accepts a 50-character input for a username. An attacker submits 100 characters, causing the excess data to overflow the allocated memory space and overwrite the adjacent return pointer. The attacker redirects the execution to their own malicious code. What type of vulnerability did the attacker exploit?",
+    "options": [
+      "Buffer Overflow",
+      "Race Condition",
+      "Arbitrary Code Execution (ACE)",
+      "Memory Leak"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "A Buffer Overflow (Option A) occurs when a process writes more data to a memory buffer than it can hold, overwriting adjacent memory like return pointers to execute malicious code. A Race Condition (Option B) involves execution timing errors. ACE (Option C) is the *result* of the buffer overflow, but the vulnerability itself is the overflow. A Memory Leak (Option D) is a failure to release memory, causing crashes but not typically code execution."
+  },
+  {
+    "question": "An attacker writes a buffer overflow payload that begins with hundreds of `\\x90` instructions. This ensures that even if the CPU does not land exactly on the start of the malicious code, it will slide down into the execution block safely. What is this sequence called?",
+    "options": [
+      "NOP Sled",
+      "Address Space Layout Randomization (ASLR)",
+      "Mutex",
+      "Entity Expansion"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "A NOP Sled (Option A) is a sequence of No-Operation instructions that 'slide' the CPU's execution flow into the attacker's malicious payload. ASLR (Option B) is a defensive mitigation that randomizes memory to *prevent* buffer overflows. A Mutex (Option C) prevents race conditions. Entity Expansion (Option D) is used in XML Bomb attacks."
+  },
+  {
+    "question": "An attacker initiates an online banking transfer. Between the moment the application checks the account balance (Time-of-Check) and the moment it deducts the funds (Time-of-Use), the attacker initiates a second simultaneous transfer. Due to improper locking, both transfers succeed despite insufficient funds. What type of vulnerability is this?",
+    "options": [
+      "Race Condition",
+      "Buffer Overflow",
+      "Session Prediction",
+      "SQL Injection"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "A Race Condition (Option A) occurs when the outcome of an execution depends on the exact timing of events, allowing attackers to manipulate resources during the gap between Time-of-Check (TOC) and Time-of-Use (TOU). Buffer Overflow (Option B) affects memory space. Session Prediction (Option C) guesses auth tokens. SQL Injection (Option D) manipulates database queries."
+  },
+  {
+    "question": "To prevent race conditions in a database application, a developer implements a synchronization mechanism that restricts access to a critical section of code to only one thread at a time, locking the resource until the operation is complete. What is this mechanism called?",
+    "options": [
+      "Mutex",
+      "ASLR",
+      "Input Validation",
+      "Session Token"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "A Mutex (Option A) (Mutually Exclusive flag) is a locking mechanism that restricts code execution to one thread at a time, preventing concurrent modifications that cause race conditions. ASLR (Option B) prevents buffer overflows. Input Validation (Option C) prevents injections. Session Tokens (Option D) track authenticated users."
+  },
+  {
+    "question": "An organization deploys a Mobile Device Management (MDM) solution that prevents users from gaining root-level access to the operating system on their corporate-issued smartphones, ensuring the devices can continue receiving OEM security updates. What vulnerability is the MDM mitigating?",
+    "options": [
+      "Jailbreaking / Rooting",
+      "Sideloading",
+      "On-Path Attacks",
+      "Bluebugging"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "Jailbreaking (iOS) and Rooting (Android) (Option A) involve escalating privileges to bypass OEM restrictions, which breaks the device's ability to receive official security updates. Sideloading (Option B) is installing apps from unapproved sources. On-Path attacks (Option C) intercept network traffic. Bluebugging (Option D) is a Bluetooth takeover."
+  },
+  {
+    "question": "A security analyst intercepts a Bluetooth attack where the threat actor has gained full, root-level control of a victim's smartphone, using the Bluetooth connection to make unauthorized phone calls and access the internet without the victim knowing. What type of attack is this?",
+    "options": [
+      "Bluebugging",
+      "Bluesnarfing",
+      "Bluejacking",
+      "Bluesmack"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "Bluebugging (Option A) goes beyond data theft by allowing the attacker to take full control of the device's functions (making calls, accessing internet). Bluesnarfing (Option B) is only stealing data. Bluejacking (Option C) is sending spam messages. Bluesmack (Option D) is a Bluetooth DoS attack."
+  },
+  {
+    "question": "An attacker sends a phishing email with a malicious link. When the victim clicks the link, their browser executes JavaScript that manipulates the `document.cookie` property to steal the victim's session token. The script executes entirely on the client side without being sent to the server. What type of attack is this?",
+    "options": [
+      "DOM-Based XSS",
+      "Reflected XSS",
+      "Persistent XSS",
+      "XML External Entity (XXE)"
+    ],
+    "correctAnswer": 0,
+    "section": "S18",
+    "explanation": "DOM-Based XSS (Option A) is a client-side attack that exploits the Document Object Model (DOM) in the victim's browser, indicated by the manipulation of `document.*` properties. Reflected XSS (Option B) bounces off the server. Persistent XSS (Option C) is stored on the server. XXE (Option D) attacks XML parsers."
+  }
+]

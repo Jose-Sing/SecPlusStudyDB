@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A global e-commerce company experiences a massive surge in web traffic during an annual holiday sale. To prevent any single server from becoming overwhelmed and crashing, the network is configured to distribute incoming user requests evenly across a pool of twenty active web servers. Which high availability concept is being utilized?",
+    "options": [
+      "Load Balancing",
+      "Clustering",
+      "Redundant Power",
+      "Geographic Dispersion"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "Load Balancing (Option A) distributes incoming network traffic or workloads across multiple computing resources to optimize resource use, maximize throughput, and prevent any single server from overloading. Clustering (Option B) ties servers together so one takes over if another fails, focusing on fault tolerance rather than traffic distribution. Power (Option C) and Dispersion (Option D) don't manage traffic."
+  },
+  {
+    "question": "A video editing studio needs a local storage array that provides the absolute highest read and write speeds possible to handle uncompressed 8K video files. The studio does not care about redundancy, as all files are backed up nightly to the cloud. Which RAID configuration BEST meets this requirement?",
+    "options": [
+      "RAID 0",
+      "RAID 1",
+      "RAID 5",
+      "RAID 10"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "RAID 0 (Option A), or striping, splits data evenly across two or more disks purely to maximize read/write performance. It provides zero redundancy or fault tolerance; if one disk fails, all data is lost. RAID 1 (Option B) provides mirroring. RAID 5 (Option C) and 10 (Option D) provide fault tolerance but have overhead that makes them slightly slower for pure raw performance compared to RAID 0."
+  },
+  {
+    "question": "A database administrator is configuring a storage array that requires fault tolerance. The administrator wants the array to survive the failure of any single drive without downtime, but needs a more cost-effective solution than full mirroring. The administrator has three identical hard drives available. Which RAID configuration should be implemented?",
+    "options": [
+      "RAID 5",
+      "RAID 0",
+      "RAID 1",
+      "RAID 6"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "RAID 5 (Option A) uses striping with parity across a minimum of three disks. It survives the loss of one disk (fault tolerance) and is more cost-effective (less storage overhead) than RAID 1 (mirroring). RAID 0 (Option B) has no fault tolerance. RAID 1 (Option C) requires an even number of disks for mirroring. RAID 6 (Option D) requires a minimum of four disks."
+  },
+  {
+    "question": "An organization is updating its Continuity of Operations Plan (COOP). They decide that their primary web application cannot tolerate more than 30 minutes of data loss under any circumstances. Based on this requirement, the IT team configures database snapshots to run every 15 minutes. What metric did the organization define?",
+    "options": [
+      "Recovery Point Objective (RPO)",
+      "Recovery Time Objective (RTO)",
+      "Mean Time to Repair (MTTR)",
+      "Maximum Tolerable Downtime (MTD)"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "The Recovery Point Objective (RPO) (Option A) defines the maximum acceptable amount of data loss (measured in time) before the loss severely impacts the organization. It dictates backup frequency. RTO (Option B) is the target time to restore a system. MTTR (Option C) is the average repair time. MTD (Option D) is the maximum time a business can survive a process being down."
+  },
+  {
+    "question": "A company situated in a hurricane-prone region is establishing a redundant backup site. Budget constraints are tight. They decide to lease an empty warehouse in a neighboring state, equipping it only with basic utilities (power, water, restrooms). In a disaster, they plan to ship servers and desks to the site, expecting it to take three weeks to become operational. Which type of redundant site did they choose?",
+    "options": [
+      "Cold Site",
+      "Hot Site",
+      "Warm Site",
+      "Mobile Site"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "A Cold Site (Option A) is an empty facility with only basic utilities. It has no computing hardware or active network connections and takes the longest time (weeks or months) to bring online, but it is the cheapest option. A Hot Site (Option B) is fully equipped and ready instantly. A Warm Site (Option C) is partially equipped. A Mobile Site (Option D) is a portable trailer/tent."
+  },
+  {
+    "question": "During a severe thunderstorm, a data center experiences a total loss of power from the municipal grid. The facility's diesel generators take approximately 45 seconds to spin up and begin providing power. Which critical device prevents the servers from shutting down during those 45 seconds?",
+    "options": [
+      "Uninterruptible Power Supply (UPS)",
+      "Line Conditioner",
+      "Power Distribution Center (PDC)",
+      "Surge Protector"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "An Uninterruptible Power Supply (UPS) (Option A) provides immediate emergency battery power when the main source fails, bridging the critical gap until long-term generators come online. A Line Conditioner (Option B) regulates minor voltage fluctuations but cannot sustain power during a blackout. A PDC (Option C) distributes power. A Surge Protector (Option D) only blocks voltage spikes."
+  },
+  {
+    "question": "A financial institution's security team meets in a conference room. A facilitator presents a fictional scenario where a ransomware attack has encrypted their primary file servers. The team members then verbally discuss their roles, how they would communicate, and the steps they would take according to their incident response plan, without touching any actual keyboards. What type of test is this?",
+    "options": [
+      "Tabletop Exercise",
+      "Failover Test",
+      "Parallel Processing",
+      "Simulation"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "A Tabletop Exercise (Option A) is a discussion-based session where team members meet to discuss their roles and responses to a hypothetical emergency scenario. It is low-cost and does not involve actual system deployment or cutovers. A Failover Test (Option B) involves actual system transitions. Parallel Processing (Option C) runs two systems at once. A Simulation (Option D) involves hands-on virtual environments."
+  },
+  {
+    "question": "To ensure maximum fault tolerance, a systems engineer deploys a web application across three different public cloud providers (AWS, Azure, and Google Cloud). If one provider experiences a regional outage, the traffic automatically routes to the other two. What concept does this architecture BEST represent?",
+    "options": [
+      "Multi-Cloud Systems",
+      "High Availability Clustering",
+      "Virtual Warm Site",
+      "Infrastructure as Code (IaC)"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "Multi-Cloud Systems (Option A) involve distributing data, applications, and services across several different cloud-based environments as an additional layer of redundancy, mitigating the risk of a single vendor's outage (avoiding single points of failure and vendor lock-in). Clustering (Option B) usually refers to local server nodes. A Virtual Warm Site (Option C) is for disaster recovery, not active multi-cloud load."
+  },
+  {
+    "question": "A network architect is designing a backup solution for an organization that cannot tolerate any downtime. The architect implements a system where data written to the primary database in New York is instantly copied over a high-speed fiber link to a secondary database in London, keeping both locations perfectly synchronized in real-time. Which concept is being implemented?",
+    "options": [
+      "Replication",
+      "Journaling",
+      "Snapshotting",
+      "Offsite Tape Backup"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "Replication (Option A) involves making real-time or near real-time copies of data to a secondary location, keeping systems perfectly synchronized so a failover can happen instantly. Journaling (Option B) logs data changes. Snapshotting (Option C) captures data at a specific point in time (not continuously). Offsite Tape Backup (Option D) is a slow, manual/batch process."
+  },
+  {
+    "question": "The IT director of a rapidly growing hospital is analyzing the current data center's square footage, cooling capacity, and maximum power draw. The director determines they will run out of physical space for new servers in 18 months, prompting a proposal to migrate non-critical systems to the cloud. Which specific capacity planning aspect is the director addressing?",
+    "options": [
+      "Infrastructure",
+      "People",
+      "Process",
+      "Redundancy"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "Infrastructure capacity planning (Option A) focuses on the physical space, utilities, power, cooling, and facilities needed to support ongoing operations. People (Option B) focuses on workforce/skills. Process (Option C) focuses on workflows and automation. Redundancy (Option D) is a separate concept related to failovers."
+  },
+  {
+    "question": "An enterprise storage administrator implements a RAID 10 configuration using four hard drives. What combination of RAID levels is utilized in RAID 10 to provide both speed and redundancy?",
+    "options": [
+      "Striping and Mirroring",
+      "Striping and Parity",
+      "Mirroring and Double Parity",
+      "Striping and Double Parity"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "RAID 10 (Option A) combines RAID 1 (Mirroring) and RAID 0 (Striping). Data is mirrored across pairs of drives for fault tolerance, and those mirrored pairs are then striped for increased read/write performance. Striping and parity (Option B) is RAID 5. Double parity (Option D) is RAID 6."
+  },
+  {
+    "question": "A major online retailer's primary payment processing vendor unexpectedly revokes their merchant account. The retailer's IT team immediately activates a secondary, pre-configured payment gateway, allowing customer transactions to continue with minimal disruption. Which specific plan did the IT team execute?",
+    "options": [
+      "Business Continuity Plan (BCP)",
+      "Disaster Recovery Plan (DRP)",
+      "Capacity Plan",
+      "Impact Analysis"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "A Business Continuity Plan (BCP) (Option A) covers processes to respond to disruptive events (technical or non-technical, like losing a vendor) so the business can keep operating. A Disaster Recovery Plan (DRP) (Option B) specifically handles recovery from catastrophic physical disasters (hurricanes, fires). The capacity plan (Option C) and impact analysis (Option D) are planning tools, not incident response plans."
+  },
+  {
+    "question": "An organization relies on older industrial control hardware that is sensitive to minor electrical voltage drops. Even a 5% drop in voltage for a few seconds causes the controllers to reboot. Which power protection device should be installed to regulate the power signal and prevent these reboots?",
+    "options": [
+      "Line Conditioner",
+      "Diesel Generator",
+      "Surge Protector",
+      "Load Balancer"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "A Line Conditioner (Option A) regulates minor voltage fluctuations (sags, swells, and minor spikes), delivering a clean, consistent power signal to sensitive equipment. A Diesel Generator (Option B) provides long-term power during blackouts but takes time to start. A Surge Protector (Option C) only stops spikes, not sags. A Load Balancer (Option D) manages network traffic."
+  },
+  {
+    "question": "A development team wants to ensure they can easily roll back a database to a known-good state if a new software update corrupts the data. Instead of performing a slow, full backup of the 5TB database, they capture a rapid, point-in-time copy that only records subsequent changes. What did the team create?",
+    "options": [
+      "Snapshot",
+      "Journal",
+      "Mirror",
+      "Clone"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "A Snapshot (Option A) is a point-in-time copy of data that captures a consistent, frozen state. It is highly efficient because it typically only records the changes made after the snapshot was taken, allowing for rapid rollbacks. A journal (Option B) is a continuous log of every transaction. A mirror (Option C) is a full, real-time copy. A clone (Option D) is a full, independent copy."
+  },
+  {
+    "question": "An organization decides to test its disaster recovery plan by shifting its entire production workload from its primary data center in New York to its redundant hot site in Texas. The IT team executes the cutover, verifies the Texas site is handling live traffic properly, and then shifts traffic back to New York. What type of test was performed?",
+    "options": [
+      "Failover Test",
+      "Tabletop Exercise",
+      "Parallel Processing",
+      "Simulation"
+    ],
+    "correctAnswer": 0,
+    "section": "S14",
+    "explanation": "A Failover Test (Option A) involves actually transitioning live systems or applications from a primary environment to a backup component or redundant site to prove that the disaster recovery mechanics work under real conditions. A Tabletop Exercise (Option B) is a discussion. Parallel Processing (Option C) runs both sites at once without cutting over. A Simulation (Option D) uses virtual/fake traffic in a lab."
+  }
+]

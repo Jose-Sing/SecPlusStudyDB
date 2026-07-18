@@ -1,0 +1,146 @@
+[
+  {
+    "question": "A defense contractor must securely send sensitive design documents to a government agency. The agency requires mathematical proof that the documents were not altered in transit and a guarantee of the sender's identity so the sender cannot later deny transmitting them. Which of the following cryptographic concepts BEST satisfies both requirements?",
+    "options": [
+      "Digital Signatures",
+      "Symmetric Encryption",
+      "Hashing",
+      "Checksums"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Digital Signatures (Option A) combine hashing (for integrity) and asymmetric encryption (encrypting the hash with the sender's private key for authenticity), providing non-repudiation. Symmetric Encryption (Option B) provides confidentiality, not non-repudiation. Hashing (Option C) and Checksums (Option D) only provide integrity, not authenticity or non-repudiation."
+  },
+  {
+    "question": "An IT manager is classifying the organization's security controls. They recently installed a biometric fingerprint scanner on the server room door and implemented a mandatory quarterly security awareness training program for all employees. Under which control categories do these fall, respectively?",
+    "options": [
+      "Physical and Operational",
+      "Technical and Managerial",
+      "Physical and Technical",
+      "Operational and Managerial"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "The biometric scanner is a tangible real-world barrier (Physical control). The security awareness training is a day-to-day procedure governed by people (Operational control). Therefore, Option A is correct. Technical controls involve hardware/software mechanisms like firewalls, and Managerial controls involve strategic governance."
+  },
+  {
+    "question": "During a network architecture review, a security engineer recommends placing a firewall at the network perimeter to block unauthorized incoming traffic, and an Intrusion Detection System (IDS) inside the network to alert on malicious activity that bypasses the firewall. Based on their functional roles, how should these two controls be classified respectively?",
+    "options": [
+      "Preventative and Detective",
+      "Deterrent and Corrective",
+      "Directive and Compensating",
+      "Preventative and Corrective"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "A firewall blocks threats before they occur, making it a Preventative control. An IDS detects and alerts on malicious activity as it occurs, making it a Detective control. Option A is correct. Corrective controls mitigate damage after an incident (like antivirus removal), and Deterrent controls discourage attackers (like warning signs)."
+  },
+  {
+    "question": "An organization is migrating its traditional perimeter-based network to a Zero Trust architecture. When a user requests access to an internal application from a remote location, which component is responsible for evaluating the user's identity, behavior, and device health to make the access decision?",
+    "options": [
+      "Control Plane",
+      "Data Plane",
+      "Subject/System",
+      "Policy Enforcement Point"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "In Zero Trust, the Control Plane (Option A) is the overarching framework (Policy Engine) responsible for defining, managing, and making the decision to grant or deny access based on real-time context. The Data Plane (Option B) executes that decision via the Policy Enforcement Point (Option D)."
+  },
+  {
+    "question": "A newly hired Chief Information Security Officer (CISO) wants to understand the organization's current security posture compared to the ISO 27001 standard. They hire an external firm to evaluate the infrastructure and identify missing controls. What is the PRIMARY output of this evaluation process?",
+    "options": [
+      "Plan of Action and Milestones (POA&M)",
+      "Zero Trust Architecture",
+      "System Accounting Log",
+      "Threat Vector Analysis"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "A Gap Analysis compares the current posture to a desired state, and its primary output is typically documented in a Plan of Action and Milestones (POA&M) (Option A), which prioritizes fixes. Zero Trust (Option B) is an architecture model. Accounting logs (Option C) track user actions. Threat Vector Analysis (Option D) looks at attack paths, not standard compliance gaps."
+  },
+  {
+    "question": "An employee attempts to access a restricted financial database. The system first prompts for a username and password, then sends a one-time passcode (OTP) to the employee's corporate smartphone. Once verified, the system checks the employee's role and permits them to read, but not modify, the database records. Which component of the AAA model enforces the read-only restriction?",
+    "options": [
+      "Authorization",
+      "Authentication",
+      "Accounting",
+      "Auditing"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Authorization (Option A) determines what actions or resources an already-authenticated user is permitted to access or perform (e.g., read-only vs. modify). Authentication (Option B) verifies the identity (username/password + OTP). Accounting/Auditing (Option C/D) logs the actions for review later."
+  },
+  {
+    "question": "A regional bank operates in a hurricane-prone area. While the bank cannot stop a hurricane from striking, it has failed to install backup power generators for its primary datacenter. In risk management terminology, what does the lack of backup generators represent?",
+    "options": [
+      "Vulnerability",
+      "Threat",
+      "Risk",
+      "Exploit"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "A Vulnerability (Option A) is a weakness or flaw in the design or implementation (like lacking backup power) that is internal and controllable. The hurricane is the Threat (Option B), which is external and uncontrollable. The intersection of the two is the Risk (Option C)."
+  },
+  {
+    "question": "A software development team is transmitting large log files over a reliable internal network for archiving. They need a fast way to verify that the files did not suffer from accidental corruption during transmission. They do not require cryptographic proof against malicious tampering. Which of the following is the MOST efficient mechanism to use?",
+    "options": [
+      "Checksums",
+      "Digital Signatures",
+      "Symmetric Encryption",
+      "Multi-Factor Authentication"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Checksums (Option A) are a simple, fast integrity verification method used during data transmission to detect accidental corruption. While Hashing or Digital Signatures (Option B) provide stronger cryptographic proof against malicious tampering, they are computationally heavier and unnecessary here. Encryption (Option C) provides confidentiality."
+  },
+  {
+    "question": "An organization requires users to authenticate using a smart card and a PIN. A security audit recommends adding a fingerprint scan to the login process to increase security. If implemented, what type of authentication does this represent?",
+    "options": [
+      "Multi-Factor Authentication (MFA)",
+      "Single Sign-On (SSO)",
+      "Zero Trust Data Plane",
+      "Implicit Deny"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Using a smart card (possession), a PIN (knowledge), and a fingerprint (inherence) involves three independent verification factors, making it Multi-Factor Authentication (MFA) (Option A). SSO (Option B) allows one login for multiple apps. Zero Trust (Option C) is a broader architecture model."
+  },
+  {
+    "question": "During a routine audit, a compliance officer reviews the logs generated by a SIEM system to trace exactly which administrator deleted a critical configuration file the previous night. What security function does the SIEM provide in this scenario?",
+    "options": [
+      "Accounting",
+      "Authorization",
+      "Authentication",
+      "Availability"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Accounting (Option A) is the monitoring and logging of all user actions to provide an audit trail and user accountability. A SIEM is a core tool for this function. Authorization (Option B) grants permissions, Authentication (Option C) verifies identity, and Availability (Option D) ensures uptime."
+  },
+  {
+    "question": "A corporate executive is traveling internationally and connects to a hotel's public Wi-Fi. To ensure that their emails and web traffic cannot be intercepted and read by other guests on the same network, which security concept must be applied to the data in transit?",
+    "options": [
+      "Encryption",
+      "Hashing",
+      "Redundancy",
+      "Data Masking"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Encryption (Option A) is the process of converting plaintext into unreadable ciphertext, and is the primary method for ensuring the Confidentiality of data in transit against interception. Hashing (Option B) provides integrity. Redundancy (Option C) provides availability. Data Masking (Option D) obscures specific database fields, not network traffic."
+  },
+  {
+    "question": "An e-commerce company experiences a severe data breach because they were using outdated firewall rules. In response, they hire a managed security service provider (MSSP) to assume all liability and operational responsibility for their perimeter security. What risk management strategy has the company adopted?",
+    "options": [
+      "Transfer",
+      "Mitigate",
+      "Accept",
+      "Avoid"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Risk Transfer (Option A) involves shifting the financial or operational burden of a risk to a third party, such as purchasing insurance or outsourcing to an MSSP. Mitigation (Option B) would be fixing the rules themselves. Acceptance (Option C) would be ignoring the risk. Avoidance (Option D) would be shutting down the e-commerce site entirely."
+  }
+]

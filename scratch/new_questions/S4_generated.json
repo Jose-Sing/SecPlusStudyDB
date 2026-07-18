@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A data center manager wants to install a physical barrier around the building's main entrance to prevent a truck filled with explosives from ramming through the glass facade. Which of the following is the BEST control to implement?",
+    "options": [
+      "Bollards",
+      "Fencing",
+      "Access Control Vestibule",
+      "Pressure Sensors"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Bollards (Option A) are sturdy vertical posts specifically designed to control or prevent vehicular access and stop ramming attacks. Fencing (Option B) controls people, not heavy vehicles. An Access Control Vestibule (Option C) prevents tailgating of individuals, and Pressure Sensors (Option D) detect presence but don't physically stop vehicles."
+  },
+  {
+    "question": "An employee holds the door open for a person carrying two large boxes, assuming they are a delivery driver. The person does not scan a badge but thanks the employee and enters the secure facility. What type of physical security breach has occurred?",
+    "options": [
+      "Piggybacking",
+      "Tailgating",
+      "Shoulder Surfing",
+      "Baiting"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Piggybacking (Option A) is an unauthorized entry technique where an authorized individual intentionally allows an unauthorized person to pass alongside them, often through manipulation (like carrying boxes). Tailgating (Option B) is uncooperative, where the unauthorized person sneaks in without the authorized person's consent. Shoulder Surfing (Option C) and Baiting (Option D) are unrelated to physical entry through a door."
+  },
+  {
+    "question": "A high-security government facility relies on retinal scanners for access to its most sensitive rooms. The security director complains that the system is incorrectly denying access to authorized executives on a daily basis, causing frustration. To resolve this without installing a different system, which metric should the security team adjust?",
+    "options": [
+      "Decrease the False Rejection Rate (FRR) by lowering the system's sensitivity.",
+      "Decrease the False Acceptance Rate (FAR) by increasing the system's sensitivity.",
+      "Increase the Crossover Error Rate (CER) to maximum.",
+      "Replace the retinal scanner with a less secure fingerprint scanner."
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "The system is too strict, incorrectly denying authorized users, which is a high False Rejection Rate (FRR). The team should lower the sensitivity to decrease the FRR (Option A). Decreasing FAR (Option B) makes it even stricter. CER (Option C) is the balance point (lower is better). Option D involves hardware replacement, which violates the constraint."
+  },
+  {
+    "question": "A bank wants to detect intruders moving in the main vault after hours when all lights are completely turned off. Which type of sensor is the BEST choice for this specific environment?",
+    "options": [
+      "Infrared",
+      "Microwave",
+      "Ultrasonic",
+      "Pressure"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Infrared sensors (Option A) detect changes in heat (infrared radiation) emitted by warm bodies, making them highly effective in low-light or dark environments. While Microwave and Ultrasonic (Options B, C) detect motion, they rely on reflection, and Infrared is the classic choice for dark environments detecting human heat. Pressure (Option D) requires the intruder to step on a specific spot."
+  },
+  {
+    "question": "An attacker uses a Flipper Zero to capture the unencrypted signal from a security guard's access badge as they walk past each other in the cafeteria. Later that night, the attacker uses the captured data to open the main server room door. What specific attack was executed?",
+    "options": [
+      "Access Badge Cloning",
+      "BlueBorne",
+      "Piggybacking",
+      "Physical Brute Force"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Access Badge Cloning (Option A) involves capturing data from an RFID or NFC badge (often using tools like Flipper Zero) and copying it to impersonate the user. BlueBorne (Option B) targets Bluetooth vulnerabilities. Piggybacking (Option C) requires a cooperative authorized person. Physical Brute Force (Option D) involves breaking the door or lock."
+  },
+  {
+    "question": "A security engineer must design an entrance for a research laboratory that guarantees absolutely no more than one person can enter per badge swipe. Which of the following is the BEST solution?",
+    "options": [
+      "Access Control Vestibule",
+      "Biometric Door Lock",
+      "Security Guard",
+      "PTZ Camera"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "An Access Control Vestibule (Option A), formerly known as a mantrap, is a double-door system where only one door can be open at a time, physically preventing both piggybacking and tailgating. A biometric lock (Option B) or PTZ Camera (Option D) cannot physically prevent two people from walking through an open door. A security guard (Option C) can make mistakes."
+  },
+  {
+    "question": "When evaluating two different biometric fingerprint scanners for purchase, a security manager notices that Scanner A has a Crossover Error Rate (CER) of 1%, while Scanner B has a CER of 3%. What is the MOST accurate conclusion to draw from this data?",
+    "options": [
+      "Scanner A is more accurate and effective overall than Scanner B.",
+      "Scanner B will have fewer false rejections than Scanner A.",
+      "Scanner A will have a higher false acceptance rate than Scanner B.",
+      "Both scanners are equally secure, but Scanner A is faster."
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "The Crossover Error Rate (CER) is the primary benchmark for measuring the overall effectiveness of a biometric system, and a lower CER indicates a better, more accurate system (Option A). Therefore, Scanner A (1%) is superior to Scanner B (3%). Options B, C, and D misinterpret how CER functions as an overall quality indicator."
+  },
+  {
+    "question": "During a penetration test, a red team member approaches a secure fence but realizes they cannot climb it because of barbed wire. Instead, they use bolt cutters to snip a hole through the chain-link mesh and crawl through. Which category of physical attack does this represent?",
+    "options": [
+      "Forcible Entry",
+      "Tampering with Security Devices",
+      "Confronting Security Personnel",
+      "Piggybacking"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Cutting a fence with bolt cutters, breaking windows, or kicking doors are examples of Forcible Entry (Option A), a direct physical brute-force approach. Tampering with devices (Option B) involves disabling sensors or blinding cameras. Confronting personnel (Option C) and Piggybacking (Option D) involve human interaction."
+  },
+  {
+    "question": "To secure a remote, unstaffed electrical substation, the utility company needs a camera system that can monitor the perimeter, zoom in on license plates of suspicious vehicles, and follow individuals moving along the fence line, controlled from a central headquarters miles away. Which technology is required?",
+    "options": [
+      "PTZ Camera",
+      "Fixed CCTV",
+      "Infrared Sensor",
+      "Cipher Lock"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Pan-Tilt-Zoom (PTZ) cameras (Option A) allow operators to remotely adjust the direction (pan/tilt) and magnification (zoom) in real-time, making them perfect for remote monitoring. Fixed CCTV (Option B) cannot move. Sensors (Option C) and Locks (Option D) do not provide video capabilities."
+  },
+  {
+    "question": "A hospital wants to upgrade its internal pharmacy door locks so that they do not rely on electrical power, batteries, or network connectivity, but still require a specific multi-digit combination to open. Which of the following is the BEST option?",
+    "options": [
+      "Cipher Lock",
+      "Wireless RFID Lock",
+      "Biometric Scanner",
+      "Electronic Access System"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "A Cipher Lock (Option A) is a mechanical push-button combination lock that does not require any electronic dependency (power or network). Wireless, Biometric, and Electronic systems (Options B, C, D) all require electrical power or batteries to function."
+  },
+  {
+    "question": "An attacker wants to disable an outdoor security camera before breaking into a warehouse. They use a high-powered laser pointer aimed directly into the camera's lens from a distance to overload the image sensor. Which method is the attacker using to bypass the surveillance system?",
+    "options": [
+      "Blinding Sensors/Cameras",
+      "Visual Obstruction",
+      "Electromagnetic Interference (EMI)",
+      "Acoustic Interference"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Using lasers or bright flashlights to overload the lens is known as Blinding Sensors/Cameras (Option A). Visual Obstruction (Option B) involves physically covering the lens with paint or tape. EMI (Option C) attacks the wireless signal. Acoustic Interference (Option D) targets microphones."
+  },
+  {
+    "question": "A corporate office implements a policy requiring all employees to use their RFID badge combined with a 4-digit PIN to open the main entrance door. Which of the following BEST describes the primary security benefit of this configuration over using just the badge?",
+    "options": [
+      "It mitigates the risk of an attacker using a cloned badge.",
+      "It prevents tailgating during busy morning hours.",
+      "It lowers the False Acceptance Rate (FAR) of the RFID reader.",
+      "It provides non-repudiation for physical access logs."
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Combining an RFID badge with a PIN implements Multi-Factor Authentication (MFA), meaning that even if an attacker successfully clones the badge (Option A), they cannot gain access without the PIN. It does not prevent tailgating (Option B) or affect FAR (Option C), nor does it provide strict non-repudiation (Option D) like a biometric or digital signature would."
+  },
+  {
+    "question": "An unauthorized person closely follows an employee through a secure door at a datacenter right before it latches shut. The employee never noticed the person behind them. What kind of physical security breach occurred?",
+    "options": [
+      "Tailgating",
+      "Piggybacking",
+      "Shoulder Surfing",
+      "Bypassing"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Tailgating (Option A) occurs when an unauthorized person sneaks in closely behind an authorized person without their knowledge or consent. Piggybacking (Option B) happens when the authorized person intentionally allows the unauthorized person in."
+  },
+  {
+    "question": "An organization relies heavily on a wireless CCTV system to monitor its perimeter. An attacker parks a van nearby and uses a strong localized jamming device operating on the 2.4 GHz frequency, causing all cameras to lose connection with the monitoring station. Which method was used to bypass the surveillance?",
+    "options": [
+      "Electromagnetic Interference (EMI)",
+      "Physical Environment Attack",
+      "Acoustic Interference",
+      "Blinding Cameras"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Jamming wireless signals (like Wi-Fi used by cameras) is a form of Electromagnetic Interference (EMI) (Option A). A physical environment attack (Option B) would involve cutting power cables. Acoustic interference (Option C) targets sound, and blinding (Option D) targets the lens."
+  },
+  {
+    "question": "Which of the following physical security controls is PRIMARILY designed to serve as a visual deterrent, define property boundaries, and delay unauthorized entry by forcing attackers to climb or cut?",
+    "options": [
+      "Fencing",
+      "Bollards",
+      "Access Control Vestibule",
+      "Lighting"
+    ],
+    "correctAnswer": 0,
+    "section": "S4",
+    "explanation": "Fencing (Option A) serves to define boundaries (visual deterrent), prevent people from entering easily, and delay their progress so guards can respond. Bollards (Option B) stop vehicles. Access control vestibules (Option C) stop tailgating/piggybacking at doors. Lighting (Option D) deters but does not physically delay entry."
+  }
+]

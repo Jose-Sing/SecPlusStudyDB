@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A security team implements a process that automatically isolates an infected workstation, creates a forensic image of its hard drive, formats the drive, reinstalls a secure baseline OS, and returns it to the network. What concept does this sequence describe?",
+    "options": [
+      "Orchestration",
+      "Automation",
+      "Continuous Integration",
+      "Vulnerability Scanning"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Orchestration (Option A) is the coordinated, sequenced execution of multiple automated tasks to achieve a broader workflow (like a full incident response cycle). Automation (Option B) refers to executing a single task without human intervention. Continuous Integration (Option C) relates to software development. Vulnerability scanning (Option D) just finds flaws."
+  },
+  {
+    "question": "An organization is deploying a new tool that integrates with their existing SIEM, allowing it not only to generate alerts but also to automatically execute remediation workflows, such as suspending compromised user accounts. What type of tool is this?",
+    "options": [
+      "Security Orchestration, Automation, and Response (SOAR)",
+      "Data Loss Prevention (DLP)",
+      "Intrusion Detection System (IDS)",
+      "Web Application Firewall (WAF)"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "SOAR (Option A) acts as 'SIEM 2.0', combining data collection and alerting with orchestration and automation to execute incident response workflows automatically. DLP (Option B) stops data exfiltration. An IDS (Option C) only alerts. A WAF (Option D) protects web applications."
+  },
+  {
+    "question": "An incident response team uses a written checklist that details every step an analyst must take when responding to a phishing attack. The steps are performed manually by the analyst. What is this document called?",
+    "options": [
+      "Playbook",
+      "Runbook",
+      "Policy",
+      "After-Action Report"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "A Playbook (Option A) is a checklist of manual or automated steps to respond to a specific incident type. A Runbook (Option B) is an automated version of a playbook that leaves defined interaction points for humans. A Policy (Option C) is a high-level rule. An After-Action Report (Option D) is written after an incident."
+  },
+  {
+    "question": "A security automation script was written three years ago by a former employee. Because the script was poorly documented and uses outdated API calls, it constantly breaks, forcing the current team to spend hours fixing it instead of doing other work. What concept does this represent?",
+    "options": [
+      "Technical Debt",
+      "Single Point of Failure",
+      "Continuous Deployment",
+      "Orchestration"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Technical Debt (Option A) is the accumulated cost and maintenance burden of suboptimal, outdated, or poorly maintained code/automation that eventually requires significant effort to fix or refactor. A single point of failure (Option B) is a component whose failure stops the whole system. Continuous Deployment (Option C) and Orchestration (Option D) are unrelated."
+  },
+  {
+    "question": "A cloud administrator sets up an automated control that continuously monitors the configuration of all Amazon S3 buckets. If an employee accidentally makes a bucket publicly readable, the control immediately reverts the setting to private without human intervention. What is this an example of?",
+    "options": [
+      "Guardrails",
+      "Continuous Integration",
+      "User Provisioning",
+      "Ticket Escalation"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Guardrails (Option A) are automated safety controls that enforce security standards and automatically correct insecure infrastructure configurations (like an open S3 bucket). Continuous Integration (Option B) is a coding practice. User provisioning (Option C) handles accounts. Ticket escalation (Option D) moves support tickets."
+  },
+  {
+    "question": "An organization implements a system where new code committed by developers is automatically built and tested multiple times a day to ensure it integrates correctly with the main codebase. However, the final release to production is triggered manually by a manager. What practice is this?",
+    "options": [
+      "Continuous Delivery",
+      "Continuous Deployment",
+      "Continuous Integration (CI)",
+      "Agile Waterfall"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Continuous Delivery (Option A) automates testing and building so software is always ready to deploy, but the final push to production remains a manual decision. Continuous Deployment (Option B) pushes to production automatically. CI (Option C) is just the merge/build/test part. Agile Waterfall (Option D) is a contradictory term."
+  },
+  {
+    "question": "A development team needs to integrate two enterprise systems. They require a messaging protocol that provides strong security, transaction compliance, and uses a strict XML format with defined headers and bodies. Which API architecture should they use?",
+    "options": [
+      "SOAP",
+      "REST",
+      "Curl",
+      "JSON"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "SOAP (Simple Object Access Protocol) (Option A) uses a strict XML format and provides robust security and transactional compliance suitable for enterprise systems. REST (Option B) is lightweight and typically uses JSON. Curl (Option C) is a command-line tool. JSON (Option D) is a data format, not an API architecture."
+  },
+  {
+    "question": "A security analyst needs to quickly test whether a REST API endpoint is responding correctly by sending a simple HTTP POST request with JSON data from a Linux terminal. Which command-line tool is best suited for this?",
+    "options": [
+      "Curl",
+      "Netstat",
+      "Journalctl",
+      "Ping"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Curl (Option A) is a command-line tool used to transfer data over protocols like HTTP/HTTPS, making it ideal for testing API endpoints. Netstat (Option B) shows network connections. Journalctl (Option C) views Linux logs. Ping (Option D) tests network reachability, not API payloads."
+  },
+  {
+    "question": "An organization automates the process of generating helpdesk tickets when a user emails support. If a ticket remains unresolved for 4 hours, the system automatically notifies the shift supervisor. What specific process is being executed when the supervisor is notified?",
+    "options": [
+      "Automated Ticket Escalation",
+      "Ticket Creation",
+      "Incident Eradication",
+      "Continuous Delivery"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Automated Ticket Escalation (Option A) ensures that complex or high-priority tickets are addressed by appropriate personnel if predefined criteria (like a 4-hour SLA breach) are met. Ticket creation (Option B) happens initially. Incident eradication (Option C) removes malware. Continuous delivery (Option D) is software deployment."
+  },
+  {
+    "question": "A company's HR system is integrated with Active Directory. When a new employee is hired, the system automatically creates their email account, assigns them to the correct distribution lists, and grants them access to the corporate intranet based on their department. What process is this?",
+    "options": [
+      "User Provisioning",
+      "Resource Provisioning",
+      "Guardrails",
+      "Threat Hunting"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "User Provisioning (Option A) is the automated creation and management of digital user accounts and access rights during onboarding. Resource Provisioning (Option B) would be assigning them physical laptops or software licenses. Guardrails (Option C) enforce security settings. Threat hunting (Option D) finds attackers."
+  },
+  {
+    "question": "A security operations center uses an automated script that performs 90% of the steps required to respond to a malware infection. However, the script pauses and waits for a senior analyst to click 'Approve' before wiping the affected hard drive. What is this script an example of?",
+    "options": [
+      "Runbook",
+      "Playbook",
+      "Vulnerability Scan",
+      "Service Access Management"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "A Runbook (Option A) is an automated playbook that leaves clearly defined interaction points for human judgment or approval. A Playbook (Option B) is just the written checklist of steps. A Vulnerability Scan (Option C) finds flaws. Service Access Management (Option D) manages who can use which services."
+  },
+  {
+    "question": "What is a key organizational benefit of implementing security automation and orchestration?",
+    "options": [
+      "It acts as a workforce multiplier, allowing a small team to manage complex environments efficiently",
+      "It completely eliminates the need for human security analysts",
+      "It guarantees that an organization will never experience a data breach",
+      "It allows the organization to bypass legal and compliance regulations"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Automation acts as a workforce multiplier (Option A), augmenting existing staff to handle higher volumes of work without expanding the team size. It does not eliminate humans entirely (Option B), cannot guarantee perfect security (Option C), and does not bypass regulations (Option D)."
+  },
+  {
+    "question": "In a cloud environment, automation is used to assign virtual firewall rules to new web server instances as soon as they are spun up, controlling exactly what traffic can enter or leave. What are these virtual firewalls commonly called?",
+    "options": [
+      "Security Groups",
+      "Runbooks",
+      "Guardrails",
+      "Syslogs"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Security Groups (Option A) are virtual firewall rule sets applied to cloud instances to manage permitted incoming and outgoing traffic. Runbooks (Option B) are automated procedures. Guardrails (Option C) prevent misconfigurations. Syslogs (Option D) are log files."
+  },
+  {
+    "question": "An organization considers automating the process of migrating legacy user accounts. The task takes 30 minutes to do manually and will only need to be performed once every five years. Based on the principles of when to automate, what is the best decision?",
+    "options": [
+      "Do not automate it, because the upfront cost of automation outweighs the long-term time savings for a rarely performed task",
+      "Automate it, because all manual tasks in an IT environment must be automated regardless of frequency",
+      "Orchestrate it, because it is a complex task requiring multiple systems",
+      "Outsource the task to a third-party SOC"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "You should not automate a rarely performed, one-off task if the cost and time to build the automation exceed the time saved (Option A). Not everything must be automated (Option B). Orchestration (Option C) is also a waste of resources for this. Outsourcing (Option D) doesn't solve the core automation decision."
+  },
+  {
+    "question": "A software team configures their pipeline so that every code change that passes all automated tests is instantly pushed to the live customer-facing environment without any human approval. What methodology is this?",
+    "options": [
+      "Continuous Deployment",
+      "Continuous Delivery",
+      "Continuous Integration",
+      "Waterfall Development"
+    ],
+    "correctAnswer": 0,
+    "section": "S26",
+    "explanation": "Continuous Deployment (Option A) automates the entire process, including the final push to production without human intervention. Continuous Delivery (Option B) requires a manual push to production. Continuous Integration (Option C) handles code merging and testing. Waterfall (Option D) is a legacy, slow, manual process."
+  }
+]

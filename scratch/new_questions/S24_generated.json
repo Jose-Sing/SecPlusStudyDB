@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A cybersecurity analyst notices unusual outbound traffic on a server and isolates the server from the network to prevent a potential data breach from spreading. According to the CompTIA incident response model, which phase is the analyst performing?",
+    "options": [
+      "Containment",
+      "Detection",
+      "Eradication",
+      "Recovery"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Containment (Option A) is the phase where actions are taken to limit the scope and magnitude of an incident, such as isolating an infected server. Detection (Option B) is identifying the incident. Eradication (Option C) is removing the threat. Recovery (Option D) is restoring the system to normal operations."
+  },
+  {
+    "question": "Following a major ransomware attack, a company's IT department holds a meeting to discuss what went right and what went wrong during their response. They document these findings to improve future processes. What post-incident activity is this?",
+    "options": [
+      "Lessons Learned Process",
+      "Root Cause Analysis",
+      "Preparation",
+      "Threat Hunting"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "The Lessons Learned Process (Option A) documents successes and failures during an incident response to improve future readiness. Root Cause Analysis (Option B) identifies why the incident happened. Preparation (Option C) occurs before an incident. Threat hunting (Option D) is proactive searching for undetected threats."
+  },
+  {
+    "question": "An organization decides to proactively search its network for undetected threats that may have bypassed existing security monitoring tools, assuming that a breach has already occurred. What technique is this?",
+    "options": [
+      "Threat Hunting",
+      "Vulnerability Scanning",
+      "Penetration Testing",
+      "Digital Forensics"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Threat Hunting (Option A) is a proactive technique that searches for existing or emerging threats that bypassed normal monitoring. Vulnerability scanning (Option B) checks for known flaws. Penetration testing (Option C) simulates attacks. Digital Forensics (Option D) investigates devices after an incident is confirmed."
+  },
+  {
+    "question": "During a forensic investigation, an analyst creates a bit-by-bit copy of a compromised server's hard drive and computes a hash for the copy. The analyst performs all investigations on this copy. What forensic principle is being upheld?",
+    "options": [
+      "Preserving the integrity of the original evidence",
+      "Chain of Custody",
+      "Order of Volatility",
+      "File Carving"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Creating a bit-by-bit copy (disk image) and analyzing only the copy preserves the integrity of the original evidence (Option A), which is a core forensic ethic. Chain of Custody (Option B) tracks who handled it. Order of Volatility (Option C) dictates collection sequence. File carving (Option D) recovers deleted files."
+  },
+  {
+    "question": "A company is sued by a former employee. The legal department issues a formal notice instructing the IT department to preserve all emails and documents related to the employee, prohibiting any deletion. What is this notice called?",
+    "options": [
+      "Legal Hold",
+      "E-Discovery",
+      "Chain of Custody",
+      "Data Acquisition"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "A Legal Hold (Option A) is a formal notification to preserve all relevant electronic data when litigation is expected. E-Discovery (Option B) is the process of searching and producing that data. Chain of Custody (Option C) tracks evidence handling. Data acquisition (Option D) is creating forensic copies."
+  },
+  {
+    "question": "An incident response team gathers around a conference table to verbally discuss how they would handle a hypothetical data breach scenario presented by a facilitator. No actual systems are touched. What type of exercise is this?",
+    "options": [
+      "Tabletop Exercise",
+      "Simulation Exercise",
+      "Penetration Test",
+      "Root Cause Analysis"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "A Tabletop Exercise (Option A) is a discussion-based test of an incident response plan conducted verbally. A Simulation Exercise (Option B) is a realistic, hands-on test. A Penetration Test (Option C) is a simulated attack on live systems. Root Cause Analysis (Option D) investigates a real incident."
+  },
+  {
+    "question": "An organization experiences a malware infection. After analyzing the incident, they determine the initial vector was an infected USB drive. They conclude the event was caused by a lack of policy enforcement, not by the specific user who plugged it in. What process did they use to reach this conclusion?",
+    "options": [
+      "Root Cause Analysis using a no-blame approach",
+      "Lessons Learned Process",
+      "Threat Modeling",
+      "E-Discovery"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Root Cause Analysis (Option A) identifies the systemic cause of an incident to prevent recurrence, and it must use a no-blame approach to encourage honesty. Lessons learned (Option B) reviews the response itself. Threat modeling (Option C) profiles attackers. E-Discovery (Option D) is for litigation."
+  },
+  {
+    "question": "A forensic analyst arrives at a crime scene involving a powered-on computer. According to the order of volatility, which piece of evidence should the analyst collect first before the machine is powered off?",
+    "options": [
+      "System memory (CPU Cache and RAM)",
+      "The physical hard drive",
+      "Network routing tables",
+      "Remote backup tapes"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "According to the Order of Volatility, System Memory like CPU cache and RAM (Option A) must be collected first because it is highly volatile and lost when powered off. Hard drives (Option B) are persistent. Routing tables (Option C) are slightly less volatile. Backup tapes (Option D) are the least volatile."
+  },
+  {
+    "question": "To ensure that digital evidence is admissible in court, an investigator maintains a detailed log documenting who collected the evidence, where it was stored, and everyone who handled it from collection to trial. What is this documentation called?",
+    "options": [
+      "Chain of Custody",
+      "Legal Hold",
+      "After-Action Report",
+      "Order of Volatility"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Chain of Custody (Option A) is the verifiable record tracking the handling of evidence to prove it was not tampered with. Legal hold (Option B) preserves data. An After-Action Report (Option C) summarizes an incident response. Order of volatility (Option D) dictates collection priority."
+  },
+  {
+    "question": "An organization hires an external, specialized incident response team to handle a complex breach. While highly skilled, the team struggles initially because they do not understand the company's specific network architecture. What is this a common disadvantage of?",
+    "options": [
+      "Outsourced IR Teams",
+      "Internal IR Teams",
+      "Red Teams",
+      "Blue Teams"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Outsourced IR Teams (Option A) offer deep expertise but have the disadvantage of being unfamiliar with an organization's specific network environment, requiring time to learn it. Internal teams (Option B) know the network well. Red/Blue teams (Options C/D) are testing constructs, not IR models."
+  },
+  {
+    "question": "A security operations center combines internal SIEM logs with external threat intelligence feeds containing known malicious IP addresses to quickly identify compromised hosts on their network. What practice is this?",
+    "options": [
+      "Intelligence Fusion",
+      "Root Cause Analysis",
+      "File Carving",
+      "Risk Transfer"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Intelligence Fusion (Option A) is the practice of combining internal data (like SIEM logs) with external threat intelligence to produce actionable insights. Root Cause Analysis (Option B) investigates the origin of an incident. File carving (Option C) recovers data. Risk transfer (Option D) involves insurance."
+  },
+  {
+    "question": "During the recovery phase of an incident, which action is a security team most likely to perform?",
+    "options": [
+      "Restoring systems from a known-good backup",
+      "Disconnecting an infected server from the network",
+      "Removing the malicious files from a workstation",
+      "Writing the after-action report"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Restoring from known-good backups (Option A) is a core action of the Recovery phase. Disconnecting a server (Option B) is Containment. Removing files (Option C) is Eradication. Writing the report (Option D) is Post-Incident Activity."
+  },
+  {
+    "question": "A forensic analyst needs to recover deleted files from a corrupted hard drive where the file system metadata is completely destroyed. They use a tool to search for specific file headers and footers to extract the data. What technique is this?",
+    "options": [
+      "File Carving",
+      "Disk Imaging",
+      "Data Exfiltration",
+      "Threat Hunting"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "File carving (Option A) extracts files directly from storage media without relying on the file system by looking for recognizable file headers/footers. Disk imaging (Option B) copies the disk. Data exfiltration (Option C) is stealing data. Threat hunting (Option D) is proactive searching."
+  },
+  {
+    "question": "In a Windows forensic investigation, why is it critical for an analyst to capture a memory dump before analyzing the physical hard drive?",
+    "options": [
+      "Because volatile registry hives like HKLM\\HARDWARE exist only in RAM and log connected storage devices",
+      "Because the hard drive cannot be imaged if the machine is powered on",
+      "Because memory dumps automatically decrypt bitlocker volumes",
+      "Because RAM contains the only copy of the Windows event logs"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Critical registry hives like HKLM\\HARDWARE (Option A), which log USB device connections, are highly volatile and exist only in RAM. If the system is powered off or only the disk is imaged, this data is lost. Options B, C, and D are factually incorrect."
+  },
+  {
+    "question": "According to the CompTIA incident response model, in which phase does the security team create policies, establish communication plans, and assemble incident response kits before an incident even occurs?",
+    "options": [
+      "Preparation",
+      "Detection",
+      "Analysis",
+      "Containment"
+    ],
+    "correctAnswer": 0,
+    "section": "S24",
+    "explanation": "Preparation (Option A) is the first phase, focused on getting people, policies, and tools ready before an incident happens. Detection (Option B) is realizing an incident occurred. Analysis (Option C) is understanding it. Containment (Option D) is stopping the spread."
+  }
+]

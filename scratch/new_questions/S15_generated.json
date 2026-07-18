@@ -1,0 +1,182 @@
+[
+  {
+    "question": "An enterprise relies on a legacy customer management application that must run on an older, unpatched version of Windows Server. To reduce the risk of a network-wide compromise while still allowing customer service reps to access the application, the security team places the server on a dedicated VLAN with strict firewall rules blocking its access to the internet and the rest of the corporate network. What architectural security concept is being utilized?",
+    "options": [
+      "Logical Separation",
+      "Physical Separation (Air Gapping)",
+      "Containerization",
+      "Microservices"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Logical Separation (Option A) uses rule-based network devices (like VLANs and firewalls) to create boundaries within a shared physical network, isolating vulnerable systems like legacy apps. Physical Separation/Air Gapping (Option B) involves completely removing physical network connections, which is too restrictive for an app that reps need to access. Containerization (Option C) and Microservices (Option D) are software architectures, not network separation methods."
+  },
+  {
+    "question": "A startup company develops a new web application using AWS Lambda. The developers upload their code functions, and AWS automatically provisions the servers, scales the resources based on user demand, and charges the company only for the exact milliseconds the code is executing. Which computing model does this represent?",
+    "options": [
+      "Serverless Computing",
+      "Infrastructure as Code (IaC)",
+      "Containerization",
+      "On-Premise Deployment"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Serverless Computing (Option A), or Function-as-a-Service (FaaS), is a model where the cloud provider completely manages the server provisioning and scaling, allowing developers to focus solely on writing code that executes in response to events. Infrastructure as Code (Option B) automates deployment via scripts. Containerization (Option C) packages apps, but the developers still manage the containers. On-Premise (Option D) involves physical hardware."
+  },
+  {
+    "question": "A water treatment facility uses specialized controllers to manage the opening and closing of physical valves throughout the plant. These systems were installed two decades ago and are highly vulnerable to modern network attacks. What type of system is being described?",
+    "options": [
+      "Industrial Control System (ICS)",
+      "Internet of Things (IoT) Device",
+      "Software-Defined Network (SDN)",
+      "Microservice"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Industrial Control Systems (ICS) (Option A), including PLCs, are specialized systems used to manage industrial processes like water treatment, power generation, and manufacturing. They often rely on legacy hardware highly vulnerable to cyber threats. IoT devices (Option B) are consumer/commercial smart devices. SDN (Option C) manages IT networks. Microservices (Option D) are software architectures."
+  },
+  {
+    "question": "An IT team is tasked with deploying identical development, testing, and production environments for a new application. To ensure perfect consistency and avoid manual configuration errors, the team writes a YAML script that automatically provisions the required virtual machines, networks, and databases when executed. What practice is the team adopting?",
+    "options": [
+      "Infrastructure as Code (IaC)",
+      "Software-Defined Networking (SDN)",
+      "Virtual Machine Escape Mitigation",
+      "Containerization"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Infrastructure as Code (IaC) (Option A) involves automating the provisioning and management of IT infrastructure through machine-readable definition files (like YAML), ensuring consistency, speed, and auditability. SDN (Option B) specifically separates network control and data planes. VM Escape Mitigation (Option C) involves patching hypervisors. Containerization (Option D) packages software dependencies."
+  },
+  {
+    "question": "A cloud customer is reviewing their Service Level Agreement (SLA) and a document outlining that the cloud provider is responsible for patching the physical servers, while the customer is responsible for patching the guest operating systems and configuring the firewalls. What specific concept does this document describe?",
+    "options": [
+      "Responsibility Matrix (Shared Responsibility Model)",
+      "Infrastructure as Code (IaC)",
+      "Software Attestation",
+      "Capacity Planning"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "The Responsibility Matrix or Shared Responsibility Model (Option A) clearly defines the dividing line between the cloud service provider's security responsibilities (typically the underlying physical infrastructure) and the customer's responsibilities (typically data, OS, and access controls). The other options do not define security boundaries between providers and tenants."
+  },
+  {
+    "question": "A large enterprise network replaces its traditional routers with a system where a centralized server application acts as the 'brain,' dictating traffic rules to all the physical switches on the network. This allows administrators to reconfigure the entire network routing instantly via software. Which technology enables this?",
+    "options": [
+      "Software-Defined Networking (SDN)",
+      "Virtual Private Network (VPN)",
+      "Microservices",
+      "High Availability Clustering"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Software-Defined Networking (SDN) (Option A) decouples the network's control plane (the brain) from the data plane (the forwarding hardware), allowing administrators to programmatically and centrally manage network traffic. A VPN (Option B) encrypts traffic. Microservices (Option C) break down software. Clustering (Option D) provides hardware redundancy."
+  },
+  {
+    "question": "A security researcher discovers a vulnerability that allows an attacker, who has compromised a single virtual machine, to execute arbitrary code directly on the host server's VMware ESXi software, subsequently gaining access to all other virtual machines on that server. What type of vulnerability did the researcher discover?",
+    "options": [
+      "VM Escape",
+      "Privilege Escalation",
+      "VM Sprawl",
+      "Data Remnant Exposure"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "A VM Escape (Option A) occurs when an attacker breaks out of the isolation of a virtual machine to interact directly with the underlying hypervisor (like ESXi), potentially compromising the entire host and all other VMs on it. Privilege Escalation (Option B) involves gaining higher rights within a single OS. VM Sprawl (Option C) is unmanaged VM growth. Data Remnants (Option D) involve un-deleted data."
+  },
+  {
+    "question": "A hospital uses a specialized, implanted pacemaker that must process data and send electrical pulses without any buffering delay to keep a patient alive. The software running on the pacemaker is designed specifically for time-sensitive, predictable execution. What type of operating system does the pacemaker use?",
+    "options": [
+      "Real-Time Operating System (RTOS)",
+      "Type 1 Hypervisor",
+      "Software-Defined Network (SDN)",
+      "Type 2 Hypervisor"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "A Real-Time Operating System (RTOS) (Option A) is designed to process data as it arrives with zero or minimal buffering delays, making it critical for life-safety embedded systems (like medical devices or automotive brakes) where predictable execution is mandatory. Hypervisors (Options B and D) run virtual machines. SDN (Option C) manages network traffic."
+  },
+  {
+    "question": "A software development team decides to refactor a massive, monolithic application into dozens of small, independent services. Each service handles a specific business function (e.g., billing, user profiles), can be written in a different programming language, and can be updated without affecting the rest of the application. Which architectural style is the team adopting?",
+    "options": [
+      "Microservices",
+      "Centralized Architecture",
+      "Virtualization",
+      "On-Premise Deployment"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Microservices (Option A) architecture structures an application as a collection of small, autonomous services that communicate over a network, providing massive scalability and flexibility compared to monolithic designs. Centralized Architecture (Option B) relies on a single point of control. Virtualization (Option C) abstracts hardware. On-Premise (Option D) refers to hardware location."
+  },
+  {
+    "question": "An organization is executing an Infrastructure as Code (IaC) script. The administrator notices that no matter how many times the script is run against the production environment, the end result is exactly the same, and no duplicate resources are accidentally created. Which property of IaC ensures this predictable behavior?",
+    "options": [
+      "Idempotence",
+      "Air Gapping",
+      "Containerization",
+      "Microservices"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Idempotence (Option A) is the property of an operation that guarantees the end result will always be the same no matter how many times it is executed, regardless of the system's starting state. This is a core benefit of robust IaC scripts. Air gapping (Option B) is physical separation. Containerization (Option C) and Microservices (Option D) are software architectures."
+  },
+  {
+    "question": "A financial firm maintains a highly secure internal network. To provide employees access to email and HR tools from home, the firm relies heavily on cloud services. The firm keeps its trading databases strictly on local, privately owned servers, but uses AWS for web hosting. Which deployment model is the firm using?",
+    "options": [
+      "Hybrid Cloud",
+      "Public Cloud Only",
+      "Private Cloud Only",
+      "Decentralized Architecture"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "A Hybrid Cloud (Option A) architecture combines on-premise infrastructure (or private cloud) for sensitive/compliant workloads with public cloud services for flexibility and cost-effectiveness. Public cloud only (Option B) would mean no on-premise servers. Private cloud only (Option C) would mean no AWS. Decentralized Architecture (Option D) refers to distributed control nodes."
+  },
+  {
+    "question": "An organization decides to deploy an application using Docker. The developers package the application code alongside its libraries and dependencies so it can run consistently on any developer's laptop or cloud server. All deployed instances will share the host machine's OS kernel to save resources. What technology is being used?",
+    "options": [
+      "Containerization",
+      "Type 1 Virtualization",
+      "Serverless Computing",
+      "Air Gapping"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Containerization (Option A) (e.g., Docker) encapsulates an application and its dependencies into a lightweight container that shares the host OS kernel, making it highly portable and efficient. Type 1 Virtualization (Option B) involves heavy VMs with independent OSes. Serverless (Option C) abstracts the server entirely. Air Gapping (Option D) is physical network isolation."
+  },
+  {
+    "question": "A manufacturing company operates a fleet of autonomous robotic arms on the assembly line. The manufacturer discovers a critical vulnerability in the robots' firmware. Because taking the robots offline manually is too expensive, the manufacturer pushes a cryptographic patch securely over the wireless network directly to the robots. What patching method was used?",
+    "options": [
+      "Over-the-Air (OTA) Update",
+      "Infrastructure as Code (IaC)",
+      "Live VM Migration",
+      "Data-in-Transit Encryption"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "Over-the-Air (OTA) Updates (Option A) are used to remotely deliver and install firmware patches to embedded systems, IoT devices, or vehicles without requiring physical access to the hardware. IaC (Option B) manages server infrastructure. Live VM Migration (Option C) moves running virtual machines. Encryption (Option D) protects data, but is not the update mechanism itself."
+  },
+  {
+    "question": "Which of the following is the PRIMARY security concern associated with the rapid proliferation of consumer Internet of Things (IoT) devices on corporate networks?",
+    "options": [
+      "IoT devices often have weak default settings, hardcoded passwords, and lack regular patch support.",
+      "IoT devices require excessive bandwidth, leading to Denial of Service (DoS) attacks.",
+      "IoT devices natively encrypt all traffic, making network monitoring impossible.",
+      "IoT devices use Type 1 hypervisors that are susceptible to VM Escape."
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "The primary security concern with IoT devices (Option A) is their historically poor security posture—many ship with weak/hardcoded credentials, open ports, and no mechanism for patching, making them easy targets for botnets. Bandwidth (Option B) is rarely the primary security issue. Most IoT devices actually lack encryption (Option C). IoT devices do not typically run hypervisors (Option D)."
+  },
+  {
+    "question": "A system administrator spins up a new virtual machine to test a suspicious executable file. To ensure maximum efficiency, the virtualization software is installed directly onto the bare metal hardware of a dedicated server, completely bypassing any standard operating system like Windows or Linux. Which technology is the administrator using?",
+    "options": [
+      "Type 1 Hypervisor",
+      "Type 2 Hypervisor",
+      "Containerization",
+      "Software-Defined Networking (SDN)"
+    ],
+    "correctAnswer": 0,
+    "section": "S15",
+    "explanation": "A Type 1 Hypervisor (Option A), or bare-metal hypervisor (e.g., VMware ESXi), runs directly on the host hardware without requiring an underlying host operating system, providing maximum efficiency and performance. A Type 2 Hypervisor (Option B) runs on top of a standard OS. Containerization (Option C) shares the OS kernel. SDN (Option D) manages networking, not virtualization."
+  }
+]

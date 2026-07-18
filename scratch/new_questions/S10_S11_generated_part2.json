@@ -1,0 +1,122 @@
+[
+  {
+    "question": "A manufacturing company relies on a single vendor for its specialized firewall hardware. The security team realizes that if the vendor goes out of business, the company cannot replace broken firewalls and would face prolonged downtime. What type of risk does this scenario primarily describe?",
+    "options": [
+      "Supply Chain Risk",
+      "Insider Threat",
+      "Data Exfiltration",
+      "Privilege Escalation"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "Supply Chain Risk (Option A) involves the reliance on third-party vendors and the vulnerabilities that arise if they fail, get compromised, or go out of business. Insider threat (Option B) involves internal employees. Data exfiltration (Option C) is stealing data. Privilege escalation (Option D) involves gaining higher system rights."
+  },
+  {
+    "question": "Two cybersecurity organizations agree to share threat intelligence regarding new malware variants. They want to formally document their intention to collaborate but do not want to create a legally binding joint venture or profit-sharing agreement. Which document is MOST appropriate?",
+    "options": [
+      "Memorandum of Understanding (MOU)",
+      "Business Partnership Agreement (BPA)",
+      "Statement of Work (SOW)",
+      "Master Service Agreement (MSA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Memorandum of Understanding (MOU) (Option A) is a formal but generally non-binding agreement outlining the intent of two parties to work together or share information. A BPA (Option B) is for formal profit-sharing joint ventures. An SOW (Option C) defines project deliverables. An MSA (Option D) sets blanket terms for future contracts."
+  },
+  {
+    "question": "A healthcare provider mandates that its cloud hosting provider must physically shred all retired hard drives. The hosting provider agrees, but the healthcare provider wants the ability to send its own security personnel quarterly to verify the shredding process on-site. Which contractual clause enables this?",
+    "options": [
+      "Right to Audit",
+      "Non-disclosure Agreement (NDA)",
+      "Service Level Agreement (SLA)",
+      "Rules of Engagement"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "The Right to Audit clause (Option A) legally permits an organization to inspect, assess, or audit a third-party vendor's operations to ensure compliance with agreed-upon security controls. An NDA (Option B) protects secrets. An SLA (Option C) defines service uptime. Rules of Engagement (Option D) define boundaries for penetration testing."
+  },
+  {
+    "question": "An enterprise is planning to purchase a new SIEM solution. Before signing a contract, the enterprise sends a document to five potential vendors containing 100 questions regarding their data encryption practices, incident response plans, and employee background checks. What is this document?",
+    "options": [
+      "Vendor Questionnaire",
+      "Statement of Work (SOW)",
+      "Acceptable Use Policy (AUP)",
+      "Master Service Agreement (MSA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Vendor Questionnaire (Option A) is a tool used during the due diligence process to assess the security posture and practices of potential third-party vendors. An SOW (Option B) defines project tasks. An AUP (Option C) governs internal employee IT use. An MSA (Option D) sets overarching contract terms."
+  },
+  {
+    "question": "An IT contractor is hired to upgrade the corporate network infrastructure. Before granting the contractor administrative access, the company requires them to sign a document that establishes the specific tasks to be performed, the timeline for completion, and the expected deliverables for this upgrade. What is this document?",
+    "options": [
+      "Statement of Work (SOW)",
+      "Service Level Agreement (SLA)",
+      "Non-disclosure Agreement (NDA)",
+      "Memorandum of Understanding (MOU)"
+    ],
+    "correctAnswer": 0,
+    "section": "S10",
+    "explanation": "A Statement of Work (SOW) (Option A) is a detailed document that defines specific project tasks, deliverables, timelines, and expectations for a contractor or vendor. An SLA (Option B) dictates service quality metrics like uptime. An NDA (Option C) ensures confidentiality. An MOU (Option D) is a statement of intent to cooperate."
+  },
+  {
+    "question": "A company's executive board publishes a high-level document stating: 'All corporate data must be protected from unauthorized access, both at rest and in transit.' According to governance frameworks, how should this document be classified?",
+    "options": [
+      "Policy",
+      "Standard",
+      "Procedure",
+      "Guideline"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "A Policy (Option A) is a high-level, overarching statement of management's intent, rules, and goals without specifying the technical details of how to achieve them. A Standard (Option B) sets mandatory technical rules. A Procedure (Option C) provides step-by-step instructions. A Guideline (Option D) offers recommendations."
+  },
+  {
+    "question": "To comply with the organization's overarching data protection policy, the IT department publishes a mandatory document stating: 'All employee laptops must use AES-256 bit encryption for their primary storage drives.' What type of document is this?",
+    "options": [
+      "Standard",
+      "Guideline",
+      "Procedure",
+      "Playbook"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "A Standard (Option A) defines specific, mandatory technical rules, hardware requirements, or software configurations (like AES-256) that must be followed to support a policy. A Guideline (Option B) is a non-mandatory recommendation. A Procedure (Option C) is a step-by-step how-to. A Playbook (Option D) is an incident response guide."
+  },
+  {
+    "question": "A systems administrator writes a technical document detailing the exact sequence of clicks, terminal commands, and configuration menus required to enable BitLocker encryption on a Windows 11 machine. What type of document has the administrator created?",
+    "options": [
+      "Procedure",
+      "Policy",
+      "Standard",
+      "Attestation"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "A Procedure (Option A) is a highly detailed, step-by-step set of instructions that describes exactly how to execute a specific task or implement a standard. A Policy (Option B) is high-level intent. A Standard (Option C) dictates mandatory requirements but not the exact clicks to achieve them. Attestation (Option D) is proof of compliance."
+  },
+  {
+    "question": "The IT department releases a memo advising employees that they should try to lock their screens when stepping away for short coffee breaks, although screen locking is only strictly enforced at the end of the work day. What type of governance document is this memo?",
+    "options": [
+      "Guideline",
+      "Standard",
+      "Procedure",
+      "Policy"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "A Guideline (Option A) provides recommendations, best practices, or advice that is highly encouraged but not strictly mandatory. A Standard (Option B), Procedure (Option C), and Policy (Option D) are all mandatory organizational directives with varying levels of granularity."
+  },
+  {
+    "question": "A hospital's board of directors fails to investigate the cybersecurity risks of a newly acquired clinic (lack of Due Diligence). Consequently, they fail to implement necessary firewalls to protect the clinic's network. Which term best describes the failure to implement those firewalls?",
+    "options": [
+      "Lack of Due Care",
+      "Lack of Attestation",
+      "Lack of Separation of Duties",
+      "Lack of Change Management"
+    ],
+    "correctAnswer": 0,
+    "section": "S11",
+    "explanation": "Due Care (Option A) is the principle of taking the necessary, responsible actions to mitigate risks (like actually installing a firewall). Due Diligence is the research phase to find the risks. Attestation (Option B) is signing off on compliance. Separation of Duties (Option C) prevents fraud. Change management (Option D) tracks IT changes."
+  }
+]

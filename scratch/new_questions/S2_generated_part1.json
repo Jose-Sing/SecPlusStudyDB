@@ -1,0 +1,38 @@
+[
+  {
+    "question": "A financial institution is implementing a new customer service portal where agents must verify a caller's identity using their Social Security Number (SSN). However, to comply with strict privacy regulations, the agents should never see the full nine digits on their screens, while still being able to verify the caller. Which of the following is the BEST technique to achieve this?",
+    "options": [
+      "Data Masking",
+      "Full Disk Encryption",
+      "Hashing",
+      "Digital Signatures"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Data Masking (Option A) is the best technique because it obscures specific data (like showing only the last 4 digits of an SSN) while keeping the application usable for authorized agents. Hashing (Option C) verifies integrity, not partial viewing. Encryption (Option B) hides data entirely until decrypted. Digital signatures (Option D) provide non-repudiation."
+  },
+  {
+    "question": "The IT director of a hospital wants to ensure that patients' electronic health records (EHR) cannot be altered by unauthorized malware while stored on the central servers. The solution must immediately flag any unauthorized modifications to the file's contents. Which of the following is the FIRST technology the director should implement?",
+    "options": [
+      "Hashing",
+      "Encryption",
+      "Server Redundancy",
+      "Checksums"
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Hashing (Option A) creates a digital fingerprint of the data. Any modification to the original data produces a completely different hash digest, immediately signaling tampering, which is the primary tool for enforcing data integrity at rest. Checksums (Option D) are typically used for integrity during data transmission, not at rest. Encryption (Option B) provides confidentiality, and Redundancy (Option C) provides availability."
+  },
+  {
+    "question": "A global e-commerce company operates its main database from a single datacenter in London. During a critical sales event, a power failure takes the datacenter offline, rendering the database inaccessible for 4 hours. Which of the following is the BEST approach to prevent this specific issue from causing future downtime?",
+    "options": [
+      "Implement data and power redundancy across multiple locations.",
+      "Deploy fail-safe electronic locks to ensure staff can access generators.",
+      "Configure automated data masking on all active database instances.",
+      "Enable non-repudiation mechanisms for all database transactions."
+    ],
+    "correctAnswer": 0,
+    "section": "S2",
+    "explanation": "Availability is primarily achieved through redundancy (Option A). By duplicating critical components (power) and functions (data) across multiple locations, the system can failover without service interruption. Fail-safe locks (Option B) address human safety during emergencies, not system availability. Data masking (Option C) addresses confidentiality, and non-repudiation (Option D) addresses accountability."
+  }
+]

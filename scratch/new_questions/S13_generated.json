@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A financial organization hires a third-party cybersecurity firm to simulate a real-world cyberattack against their infrastructure. The external team is given zero prior knowledge about the organization's network, IP ranges, or internal systems. Which type of penetration testing environment is this?",
+    "options": [
+      "Unknown Environment",
+      "Known Environment",
+      "Partially Known Environment",
+      "Internal Assessment"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "An Unknown Environment (Option A), formerly known as black-box testing, occurs when testers receive minimal or no information about the target, simulating a real external attacker who must perform extensive reconnaissance. A Known Environment (Option B) provides full details. Partially Known (Option C) provides some details. An Internal Assessment (Option D) is conducted by internal staff."
+  },
+  {
+    "question": "During a penetration testing engagement, the testing team uses tools like WHOIS, searches social media for employee information, and reviews public job postings to identify the target's technology stack. At no point do they send any packets directly to the target's servers. Which phase of the engagement are they performing?",
+    "options": [
+      "Passive Reconnaissance",
+      "Active Reconnaissance",
+      "Initial Exploitation",
+      "Post-Exploitation"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "Passive Reconnaissance (Option A) involves gathering information without directly engaging or sending traffic to the target systems, making it highly stealthy. Active Reconnaissance (Option B) involves direct engagement, like port scanning with Nmap. Initial Exploitation (Option C) is the actual attack. Post-Exploitation (Option D) happens after a breach."
+  },
+  {
+    "question": "An organization wants to improve its overall security posture by having its internal defensive team work directly alongside an external offensive team during a live engagement. The offensive team will explain their attacks as they happen, allowing the defensive team to tune their sensors in real-time. Which type of engagement is being requested?",
+    "options": [
+      "Purple Team",
+      "Red Team",
+      "Blue Team",
+      "White Team"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "A Purple Team (Option A) is an integrated approach where the offensive (Red) and defensive (Blue) teams work collaboratively in a single engagement to maximize learning and improve defenses in real-time. Red Team (Option B) acts independently as attackers. Blue Team (Option C) acts independently as defenders. White Team (Option D) usually acts as referees in exercises."
+  },
+  {
+    "question": "An IT department is preparing for an upcoming regulatory audit. To ensure they are ready, the IT director tasks a group of internal employees to review the password policies, examine access rights, and verify least privilege enforcement using a standardized checklist. Which activity is the IT department performing?",
+    "options": [
+      "Internal Assessment / Self-Assessment",
+      "External Audit",
+      "Penetration Test",
+      "Hardware Attestation"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "An Internal Assessment or Self-Assessment (Option A) is an in-depth analysis conducted by an organization's own staff to identify gaps and prepare for formal audits. An External Audit (Option B) is conducted by an independent third party. A Penetration Test (Option C) simulates an attack. Hardware Attestation (Option D) verifies physical component integrity."
+  },
+  {
+    "question": "A penetration tester successfully exploits a vulnerability on a Windows server using Metasploit. The exploit delivers code that forces the target server to connect back to the tester's listening machine on port 443, successfully bypassing the target's inbound firewall rules. What type of payload was utilized?",
+    "options": [
+      "Reverse Shell",
+      "Bind Shell",
+      "Auxiliary Module",
+      "Encoder"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "A Reverse Shell (Option A) payload forces the compromised target to initiate an outbound connection back to the attacker's machine, which typically bypasses inbound firewall restrictions. A Bind Shell (Option B) opens a port on the target and waits for the attacker to connect inward. An Auxiliary Module (Option C) is for scanning. An Encoder (Option D) obfuscates code."
+  },
+  {
+    "question": "Following a comprehensive security review by an independent cybersecurity firm, a healthcare provider requests an official document proving that the test occurred during a specified timeframe and that the findings are authentic. This document will be shown to regulators to prove HIPAA compliance. What is the provider requesting?",
+    "options": [
+      "Letter of Attestation",
+      "Penetration Test Report",
+      "Vulnerability Scan Results",
+      "Business Impact Analysis (BIA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "A Letter of Attestation (Option A) is a formal validation provided by the assessing firm proving that the test actually occurred, serving as an official record for third parties and regulators. A Penetration Test Report (Option B) contains the technical findings and remediation steps, which are often too sensitive to share broadly. Vulnerability Scans (Option C) and BIA (Option D) do not serve as formal proof of an independent test."
+  },
+  {
+    "question": "An organization relies heavily on the Metasploit framework for internal security testing. An analyst wants to execute a port scan against a subnet without actually delivering a malicious payload or attempting an exploit. Which Metasploit module category should the analyst use?",
+    "options": [
+      "Auxiliary",
+      "Exploit",
+      "Post",
+      "Payload"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "Auxiliary modules (Option A) in Metasploit include tools like scanners, sniffers, and fuzzers that perform tasks such as port scanning or vulnerability checking without actually executing an exploit. Exploits (Option B) deliver attacks. Post modules (Option C) run after a compromise. Payloads (Option D) are the code executed upon successful exploitation."
+  },
+  {
+    "question": "A regulatory body mandates that a nuclear power plant undergo an exhaustive inspection every three years. This inspection includes technical assessments of ICS/SCADA equipment, policy reviews, and knowledge-based testing of personnel to validate they know how to respond to emergencies. Which term BEST describes this comprehensive evaluation?",
+    "options": [
+      "Examination",
+      "Vulnerability Assessment",
+      "Internal Audit",
+      "Passive Reconnaissance"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "An Examination (Option A) is a highly detailed external inspection that goes beyond technical scanning to include personnel knowledge testing, policy review, and certification verification (common in highly regulated sectors like nuclear energy). A Vulnerability Assessment (Option B) focuses only on technical flaws. Internal Audits (Option C) are not external. Reconnaissance (Option D) is info gathering."
+  },
+  {
+    "question": "During an authorized physical penetration test, an assessor successfully enters a secure data center by dressing as a delivery driver and walking closely behind an employee who just unlocked the main door with their badge. Which vulnerability did the assessor exploit?",
+    "options": [
+      "Tailgating",
+      "Shoulder Surfing",
+      "Card Cloning",
+      "Lock Picking"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "Tailgating (Option A) is the physical security vulnerability where an unauthorized person follows an authorized person into a secure area without providing their own credentials. Shoulder Surfing (Option B) involves looking at someone's screen. Card Cloning (Option C) requires copying an RFID badge. Lock picking (Option D) involves manipulating a physical lock."
+  },
+  {
+    "question": "Which group within a corporate governance structure is typically composed of board members and is ultimately responsible for overseeing the performance of internal and external audits, as well as ensuring organizational compliance with legal requirements?",
+    "options": [
+      "Audit Committee",
+      "Change Advisory Board (CAB)",
+      "Red Team",
+      "Incident Response Team"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "The Audit Committee (Option A) is a subgroup of the board of directors that oversees audit and compliance activities, ensuring executive-level accountability. The CAB (Option B) approves IT changes. The Red Team (Option C) performs offensive testing. The Incident Response Team (Option D) handles security breaches."
+  },
+  {
+    "question": "A retail company that processes thousands of credit card transactions daily must ensure its payment processing systems are secure. To avoid heavy fines and maintain the ability to process payments, which specific regulatory standard MUST the company's external audits prove compliance with?",
+    "options": [
+      "PCI DSS",
+      "HIPAA",
+      "GDPR",
+      "HITECH"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "PCI DSS (Payment Card Industry Data Security Standard) (Option A) is the mandatory standard for any organization that handles, stores, or transmits credit card data. HIPAA (Option B) and HITECH (Option D) apply to healthcare. GDPR (Option C) applies to the privacy of EU citizens' data."
+  },
+  {
+    "question": "A security analyst is using Metasploit and has successfully exploited a target, opening a Meterpreter shell. The analyst now wants to interact with a different target without losing the connection to the first one. Which command allows the analyst to place the current active communication channel into the background?",
+    "options": [
+      "Ctrl+Z",
+      "sessions -l",
+      "run",
+      "set LHOST"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "In Metasploit, pressing Ctrl+Z (Option A) backgrounds the current active session, allowing the user to return to the msfconsole prompt while keeping the connection to the compromised host open. `sessions -l` (Option B) lists the active sessions. `run` (Option C) starts an exploit. `set LHOST` (Option D) configures a variable."
+  },
+  {
+    "question": "A penetration tester is configuring an exploit in Metasploit. They need to specify the IP address of their own machine so the compromised server knows where to send the reverse shell connection back to. Which Metasploit variable must the tester configure?",
+    "options": [
+      "LHOST",
+      "RHOST",
+      "RPORT",
+      "NOP"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "LHOST (Local Host) (Option A) is the Metasploit variable that defines the IP address of the attacker's machine, crucial for reverse payloads. RHOST (Remote Host) (Option B) defines the target's IP. RPORT (Option C) defines the target's port. NOP (Option D) is a no-operation CPU instruction used in payload generation."
+  },
+  {
+    "question": "An organization wants to validate the integrity of its hardware components during the boot process to ensure no firmware rootkits have been installed. They rely on a dedicated microchip that stores cryptographic measurements of the boot sequence. What type of attestation is being utilized?",
+    "options": [
+      "Hardware Attestation",
+      "Software Attestation",
+      "System Attestation",
+      "Letter of Attestation"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "Hardware Attestation (Option A) validates the physical integrity of a device, typically using a Trusted Platform Module (TPM) to store and check cryptographic measurements during boot. Software attestation (Option B) checks code integrity (like digital signatures on updates). System attestation (Option C) checks overall compliance. A Letter of Attestation (Option D) is a document proving an audit occurred."
+  },
+  {
+    "question": "A security consultant is hired to evaluate a company's network defenses. The consultant acts exactly like a malicious hacker, actively seeking out vulnerabilities, deploying exploits, and attempting to exfiltrate data without alerting the company's internal IT staff. What specific role is the consultant performing?",
+    "options": [
+      "Red Team",
+      "Blue Team",
+      "Purple Team",
+      "Audit Committee"
+    ],
+    "correctAnswer": 0,
+    "section": "S13",
+    "explanation": "A Red Team (Option A) performs offensive penetration testing, simulating real-world attackers to proactively find and exploit vulnerabilities. A Blue Team (Option B) defends against these attacks. A Purple Team (Option C) is a collaborative effort between Red and Blue. The Audit Committee (Option D) is a governance body."
+  }
+]

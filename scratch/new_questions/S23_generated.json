@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A system administrator records a server's normal CPU, memory, and network usage over a two-week period. This data will be used to detect abnormal spikes in resource utilization in the future. What did the administrator establish?",
+    "options": [
+      "Baseline",
+      "Benchmark",
+      "Threshold",
+      "Vulnerability Scan"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "A Baseline (Option A) establishes the normal, expected performance metrics of a system so that any future deviations can be quickly identified as anomalies. A Benchmark (Option B) is a best-practice configuration standard. A Threshold (Option C) is a specific limit that triggers an alert. A Vulnerability scan (Option D) checks for known flaws."
+  },
+  {
+    "question": "A security operations center uses a tool to collect, centralize, and correlate logs from firewalls, servers, and VPNs to detect complex attacks that would be invisible if analyzing the logs individually. What type of tool is this?",
+    "options": [
+      "Security Information and Event Management (SIEM)",
+      "Simple Network Management Protocol (SNMP)",
+      "Data Loss Prevention (DLP)",
+      "Network Intrusion Prevention System (NIPS)"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "A SIEM (Option A) aggregates log data from across the enterprise and uses correlation to detect complex threat patterns. SNMP (Option B) manages and monitors network devices. DLP (Option C) prevents data exfiltration. NIPS (Option D) actively blocks malicious network traffic."
+  },
+  {
+    "question": "An administrator needs to configure a network device to proactively send an unsolicited alert to a central monitoring server whenever a network interface goes down. Which SNMP message type should be used?",
+    "options": [
+      "TRAP",
+      "SET",
+      "GET",
+      "POLL"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "An SNMP TRAP (Option A) is an unsolicited, asynchronous message sent from the agent to the manager to notify it of a significant event (like an interface going down). A SET message (Option B) changes a variable. A GET message (Option C) retrieves a variable. POLL (Option D) is the manager asking the agent for status."
+  },
+  {
+    "question": "A network monitoring system receives an SNMP alert containing only a specific Object Identifier (OID) that indicates a state change, without the full context of the event, to save network bandwidth. What type of trap is this?",
+    "options": [
+      "Granular Trap",
+      "Verbose Trap",
+      "Stateful Trap",
+      "Baseline Trap"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "A Granular Trap (Option A) sends only a unique OID representing the changed value, making it very bandwidth-efficient since the manager's MIB already knows what the OID means. A Verbose Trap (Option B) sends the full payload of the event context, using more bandwidth. Stateful and Baseline traps (Options C and D) are not standard SNMP trap types."
+  },
+  {
+    "question": "A security team wants to monitor network traffic for malicious activity but does not have the storage capacity for Full Packet Capture. They decide to record only traffic metadata, such as source/destination IPs and protocols used. What protocol provides this capability?",
+    "options": [
+      "NetFlow / IPFIX",
+      "Simple Network Management Protocol (SNMP)",
+      "Syslog",
+      "OVAL"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "NetFlow and its standardized successor IPFIX (Option A) collect network traffic metadata (flow analysis) rather than full packet contents, providing visibility while saving massive amounts of storage. SNMP (Option B) monitors device health. Syslog (Option C) is for event logs. OVAL (Option D) is an XML schema for vulnerabilities."
+  },
+  {
+    "question": "A cybersecurity analyst investigates a potential data breach and uses a tool that combines flow sampling with selective full packet capture, saving the full payload only when traffic matches specific suspicious signatures. What tool matches this description?",
+    "options": [
+      "Zeek",
+      "MRTG",
+      "Splunk",
+      "Nessus"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "Zeek (Option A) is a hybrid tool that passively samples traffic metadata (flow analysis) but can also log full packet captures when specific filters or suspicious signatures are triggered. MRTG (Option B) graphs traffic via SNMP. Splunk (Option C) is a SIEM for log analysis. Nessus (Option D) is a vulnerability scanner."
+  },
+  {
+    "question": "An organization must comply with HIPAA regulations, which require retaining audit logs for up to six years. The IT team configures their SIEM to automatically move logs older than 90 days to cheap, long-term cloud storage. What activity is this?",
+    "options": [
+      "Archiving",
+      "Reporting",
+      "Alert Tuning",
+      "Log Aggregation"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "Archiving (Option A) is the activity of storing logs and data for long-term retention to satisfy compliance requirements or future investigations. Reporting (Option B) summarizes data. Alert tuning (Option C) reduces false positives. Log aggregation (Option D) is collecting active logs into the SIEM."
+  },
+  {
+    "question": "A security team implements a dashboard that integrates alerts from the SIEM, vulnerability scanner, and endpoint detection systems into one unified interface, eliminating the need to log into multiple separate tools. What is this concept called?",
+    "options": [
+      "Single Pane of Glass (SPOG)",
+      "Management Information Base (MIB)",
+      "Flow Analysis",
+      "Unified Threat Management (UTM)"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "A Single Pane of Glass (SPOG) (Option A) is a centralized dashboard that consolidates information from multiple disparate security tools into one unified view for easier management and faster response. A MIB (Option B) translates SNMP OIDs. Flow analysis (Option C) tracks network metadata. UTM (Option D) is an all-in-one firewall appliance."
+  },
+  {
+    "question": "A security architect mandates that all network devices must use a management protocol that supports message integrity, authentication, and encryption to prevent attackers from reading community strings in plaintext. Which version of SNMP must be used?",
+    "options": [
+      "SNMPv3",
+      "SNMPv1",
+      "SNMPv2c",
+      "SNMPv4"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "SNMPv3 (Option A) introduces critical security features including message integrity, authentication, and confidentiality (encryption). SNMPv1 and v2c (Options B and C) rely on insecure plaintext community strings. SNMPv4 (Option D) does not exist."
+  },
+  {
+    "question": "An organization wants to automate the process of verifying that all Windows 10 workstations comply with the CIS baseline configuration. Which SCAP component provides the XML format for writing these automated configuration checklists?",
+    "options": [
+      "XCCDF",
+      "OVAL",
+      "CVE",
+      "CVSS"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "XCCDF (Extensible Configuration Checklist Description Format) (Option A) is the SCAP standard used to write machine-readable configuration checklists and rules for automated auditing. OVAL (Option B) describes system security states. CVE (Option C) lists vulnerabilities. CVSS (Option D) scores vulnerabilities."
+  },
+  {
+    "question": "A Data Loss Prevention (DLP) system generates hundreds of alerts a day because it is triggering on every email containing a 9-digit number, most of which are not Social Security Numbers. The analyst modifies the rule to only trigger if the words 'SSN' or 'Social' are nearby. What remediation step is this?",
+    "options": [
+      "Alert Tuning",
+      "Quarantining",
+      "Network Segmentation",
+      "Baselining"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "Alert tuning (Option A) involves modifying threshold parameters or conditions to reduce false positives, preventing alert fatigue and improving the relevance of security warnings. Quarantining (Option B) isolates infected systems. Segmentation (Option C) isolates networks. Baselining (Option D) establishes normal performance."
+  },
+  {
+    "question": "During a security audit, a scanner needs to identify the exact hardware, operating system, and application versions running on a target device using a standardized machine-readable naming scheme (e.g., cpe:/o:microsoft:windows_10). Which SCAP standard provides this?",
+    "options": [
+      "Common Platform Enumeration (CPE)",
+      "Common Configuration Enumeration (CCE)",
+      "Common Vulnerabilities and Exposures (CVE)",
+      "Asset Reporting Format (ARF)"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "CPE (Option A) is the SCAP standard used for assigning unique, machine-readable identifiers to hardware, operating systems, and applications. CCE (Option B) identifies configuration best practices. CVE (Option C) identifies known vulnerabilities. ARF (Option D) is an XML schema for reporting asset data."
+  },
+  {
+    "question": "A network administrator uses a tool that actively polls routers via SNMP to create visual graphs of network traffic flow over time, helping to identify unexpected traffic spikes at 3 AM. What tool is this?",
+    "options": [
+      "Multi Router Traffic Grapher (MRTG)",
+      "Wireshark",
+      "Nessus",
+      "Logstash"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "MRTG (Option A) creates visual graphs showing network traffic flow by polling router and switch interfaces via SNMP, helping to identify anomalies like unexplained traffic spikes. Wireshark (Option B) is a full packet capture analyzer. Nessus (Option C) is a vulnerability scanner. Logstash (Option D) is part of the ELK SIEM stack for log collection."
+  },
+  {
+    "question": "An endpoint detection system suspects a laptop is infected with ransomware. The system automatically isolates the laptop's network connection, allowing it to communicate only with the central security server for investigation. What remediation action is this?",
+    "options": [
+      "Quarantining",
+      "Alert Tuning",
+      "Log Aggregation",
+      "System Baselining"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "Quarantining (Option A) is the remediation action of isolating a suspected malicious system or file from the rest of the network to prevent the threat from spreading while it is investigated. Alert tuning (Option B) adjusts trigger parameters. Log aggregation (Option C) centralizes logs. Baselining (Option D) measures normal performance."
+  },
+  {
+    "question": "A security analyst configures a SIEM to collect logs directly from network switches and routers using standard protocols like syslog and SNMP, without installing any additional software on the devices themselves. What type of log collection is this?",
+    "options": [
+      "Agentless Collection",
+      "Agent-based Collection",
+      "Full Packet Capture",
+      "Dynamic Analysis"
+    ],
+    "correctAnswer": 0,
+    "section": "S23",
+    "explanation": "Agentless collection (Option A) uses standard protocols (like SNMP, syslog, or WMI) to gather logs directly from devices without needing to install or maintain dedicated SIEM software agents on them. Agent-based (Option B) requires software installation. Full packet capture (Option C) records payload contents. Dynamic analysis (Option D) tests running code."
+  }
+]

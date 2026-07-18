@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A hospital is upgrading its fleet of mobile devices for doctors. The hospital wants strict control over the devices to enforce security policies via MDM and ensure HIPAA compliance, but also wants to allow doctors to use the devices for personal phone calls and apps during their breaks. Which mobile deployment model BEST fits these requirements?",
+    "options": [
+      "COPE (Corporate-Owned, Personally Enabled)",
+      "BYOD (Bring Your Own Device)",
+      "CYOD (Choose Your Own Device)",
+      "COBO (Corporate-Owned, Business Only)"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "COPE (Option A) provides the organization with full ownership and MDM control over the device (ensuring security and compliance) while still allowing the employee to use it for personal tasks. BYOD (Option B) leaves ownership with the employee, making strict control difficult. CYOD (Option C) generally restricts personal use. COBO (Option D) forbids personal use entirely."
+  },
+  {
+    "question": "An IT administrator needs to securely dispose of a hard drive containing highly classified proprietary source code. The administrator must ensure the data is permanently destroyed in a way that makes the drive itself completely unusable for future storage. Which sanitization method MUST be used?",
+    "options": [
+      "Degaussing",
+      "Cryptographic Erase",
+      "Overwriting (35 passes)",
+      "Secure Erase"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "Degaussing (Option A) uses a strong magnetic field to disrupt the magnetic domains on a hard drive, permanently destroying both the data and the device's ability to ever store data again. Cryptographic Erase (Option B), Overwriting (Option C), and Secure Erase (Option D) destroy the data but leave the physical drive intact and reusable."
+  },
+  {
+    "question": "A system administrator submits a proposal to upgrade the firmware on the core organizational routers. Before the Change Advisory Board (CAB) approves the request, they ask the administrator to detail the exact steps required to return the routers to their previous firmware version if the upgrade causes a network outage. What is the CAB requesting?",
+    "options": [
+      "Backout Plan",
+      "Impact Analysis",
+      "Version Control",
+      "Standard Operating Procedure (SOP)"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "A Backout Plan (Option A) is a predetermined rollback strategy designed to restore systems to their previous stable state if a change fails or causes unexpected disruption. An Impact Analysis (Option B) happens before the change to assess risks. Version Control (Option C) tracks changes over time. An SOP (Option D) provides step-by-step instructions for the change itself."
+  },
+  {
+    "question": "An organization relies on several legacy applications that are highly sensitive to network changes. To minimize the risk of disrupting business operations, the IT department restricts all system updates and network reconfigurations to occur only between 1:00 AM and 4:00 AM on Sundays. What change management practice is being utilized?",
+    "options": [
+      "Scheduled Maintenance Windows",
+      "Impact Analysis",
+      "Version Control",
+      "Change Advisory Board (CAB) Approval"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "Scheduled Maintenance Windows (Option A) are pre-defined time slots set aside specifically for implementing changes when system usage is at its lowest, thereby minimizing disruption to business operations. Impact analysis (Option B) evaluates risks. Version control (Option C) tracks document/code changes. The CAB (Option D) approves the changes."
+  },
+  {
+    "question": "A company is leasing a fleet of laptops for a short-term project. When the lease expires, the company must return the laptops, but wants to ensure all sensitive data is sanitized in the fastest way possible (under 60 seconds) so the hardware can be safely returned intact. Which sanitization method is the BEST choice?",
+    "options": [
+      "Cryptographic Erase (CE)",
+      "Degaussing",
+      "Overwriting",
+      "Pulverizing"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "Cryptographic Erase (Option A) is the fastest method (often taking seconds). The data is pre-encrypted on the drive, and the disposal process simply destroys the encryption keys, instantly rendering the data unreadable while leaving the drive intact for repurposing/return. Degaussing (Option B) and Pulverizing (Option D) destroy the hardware. Overwriting (Option C) is very slow."
+  },
+  {
+    "question": "Following a successful migration of the company's email server to the cloud, the IT director requires the project lead to formally close the change ticket and update the organizational network diagrams to reflect the new architecture. What is the primary purpose of this final change management step?",
+    "options": [
+      "Documenting Changes",
+      "Impact Analysis",
+      "Creating a Vision",
+      "Backout Planning"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "Documenting Changes (Option A) is the final step in the change management process. It ensures accountability, provides an accurate historical record (closing the ticket), and prevents future misconfigurations by ensuring reference materials (like network diagrams) reflect the current state. The other options occur before or during the change."
+  },
+  {
+    "question": "An employee loses their company-issued smartphone while traveling. The IT department uses a centralized platform to remotely lock the device and wipe all corporate data from it before it can be compromised. What technology enabled the IT department to perform this action?",
+    "options": [
+      "Mobile Device Management (MDM)",
+      "Version Control",
+      "Asset Enumeration",
+      "Change Management"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "Mobile Device Management (MDM) (Option A) is a centralized platform that allows organizations to securely manage mobile devices, enforce policies, and perform remote actions such as locking or wiping a lost or stolen device. Version Control (Option B) manages document changes. Asset Enumeration (Option C) counts connected devices. Change Management (Option D) governs IT changes."
+  },
+  {
+    "question": "A department manager needs to urgently purchase printer ink and paper to finish a report due by the end of the day. The total cost is $45. Which acquisition method is the MOST appropriate for this low-cost, urgent scenario?",
+    "options": [
+      "Company Credit Card",
+      "Purchase Order (PO)",
+      "Request for Proposal (RFP)",
+      "Master Service Agreement (MSA)"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "A Company Credit Card (Option A) is the most appropriate method for low-cost, urgent, day-to-day items, as it avoids the lengthy approval process of formal procurement. A Purchase Order (Option B) is a formal, legally binding document used for large or expensive acquisitions. RFP (Option C) and MSA (Option D) are formal vendor selection and contracting documents."
+  },
+  {
+    "question": "During an asset management audit, a security team uses network scanning tools to identify and count every device currently connected to the corporate network, discovering several unauthorized personal tablets. Which specific asset management process did the team perform?",
+    "options": [
+      "Enumeration",
+      "Classification",
+      "Sanitization",
+      "Procurement"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "Enumeration (Option A) is the process of identifying and counting all connected assets (often using scanners) to maintain an accurate inventory and detect unauthorized devices. Classification (Option B) categorizes assets by value. Sanitization (Option C) destroys data. Procurement (Option D) is the process of acquiring assets."
+  },
+  {
+    "question": "A third-party vendor has just finished securely destroying a batch of old servers for a financial institution. The institution requests documented proof that the hardware was properly destroyed according to regulatory standards so they can maintain their audit trail. What is the institution requesting?",
+    "options": [
+      "Certification",
+      "Attestation",
+      "A Purchase Order",
+      "A Backout Plan"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "Certification (Option A) is the documented proof (often a certificate of destruction) that data or hardware has been securely sanitized or destroyed, creating an essential audit trail for regulatory compliance. Attestation (Option B) is a broader declaration of compliance. A Purchase Order (Option C) is for buying. A Backout Plan (Option D) is for change management."
+  },
+  {
+    "question": "Before authorizing a major update to the company's firewall rules, the Change Advisory Board (CAB) requires the network engineer to submit a report detailing what could go wrong, which departments would be affected by downtime, and the long-term effects on remote workers. What change management process is the engineer completing?",
+    "options": [
+      "Impact Analysis",
+      "Version Control",
+      "Asset Classification",
+      "Sanitization"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "An Impact Analysis (Option A) is performed before a change is implemented to evaluate potential risks, determine what could go wrong, and assess the immediate and long-term effects on operations and users. Version control (Option B) tracks file changes. Asset classification (Option C) groups assets by value. Sanitization (Option D) destroys data."
+  },
+  {
+    "question": "Which of the following is the PRIMARY security benefit of maintaining a strict, up-to-date IT asset management program?",
+    "options": [
+      "It ensures all connected devices are known, reducing the attack surface by identifying unauthorized or unpatched systems.",
+      "It allows the IT department to accurately calculate hardware depreciation for tax purposes.",
+      "It prevents employees from utilizing Bring Your Own Device (BYOD) deployment models.",
+      "It automates the process of rolling back failed software updates on legacy systems."
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "The primary security benefit of asset management (Option A) is visibility. You cannot secure what you do not know exists. A strict inventory ensures all devices are known, allowing administrators to enforce security protocols and identify rogue devices. Depreciation (Option B) is a financial benefit. Asset management supports BYOD (Option C) via MDM. Change management handles rollbacks (Option D)."
+  },
+  {
+    "question": "An organization is migrating its customer database. The engineer executing the change realizes the new database schema is causing application crashes. The engineer immediately references a predetermined strategy to restore the original database from a snapshot and revert the application code. What change management artifact is the engineer executing?",
+    "options": [
+      "Backout Plan",
+      "Standard Operating Procedure (SOP)",
+      "Impact Analysis",
+      "Version Control"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "A Backout Plan (Option A) is the predetermined rollback strategy used to return systems to their previous stable state when a change fails. While an SOP (Option B) provides step-by-step instructions for the change itself, the backout plan specifically handles the failure recovery. Impact analysis (Option C) is done beforehand. Version control (Option D) is a tool that facilitates the rollback."
+  },
+  {
+    "question": "A legal firm determines that all client communication records must be stored for exactly seven years to comply with industry regulations, after which they must be securely deleted to reduce liability and storage costs. What type of policy is the firm enforcing?",
+    "options": [
+      "Data Retention Policy",
+      "Acceptable Use Policy (AUP)",
+      "Change Management Policy",
+      "Mobile Device Management (MDM) Policy"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "A Data Retention Policy (Option A) defines exactly how long specific types of data must be stored before disposal, balancing regulatory requirements with storage costs and security risks. An AUP (Option B) governs user behavior. Change Management (Option C) controls system modifications. MDM (Option D) controls mobile devices."
+  },
+  {
+    "question": "An organization adopts a deployment model where employees are provided a list of pre-approved, company-owned smartphones. Employees must select a device from this list, and the devices are heavily restricted to business use only. Which mobile deployment model is this?",
+    "options": [
+      "CYOD (Choose Your Own Device)",
+      "COPE (Corporate-Owned, Personally Enabled)",
+      "BYOD (Bring Your Own Device)",
+      "VDI (Virtual Desktop Infrastructure)"
+    ],
+    "correctAnswer": 0,
+    "section": "S12",
+    "explanation": "In a CYOD (Option A) model, the organization owns the device and allows the employee to choose from a pre-approved list, but typically restricts the device heavily (limiting or forbidding personal use). COPE (Option B) allows personal use. BYOD (Option C) means the employee owns the device. VDI (Option D) is a virtualization technology, not a mobile deployment model."
+  }
+]

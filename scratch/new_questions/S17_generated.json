@@ -1,0 +1,182 @@
+[
+  {
+    "question": "An HR manager submits a request to the IT department stating that a new employee requires access to the company's internal portal, email system, and shared network drives starting next Monday. What process must IT perform?",
+    "options": [
+      "Provisioning",
+      "Authentication",
+      "Accounting",
+      "Attestation"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Provisioning (Option A) is the process of creating user accounts and assigning appropriate permissions when a new user joins an organization. Authentication (Option B) is proving identity. Accounting (Option C) is tracking user activity. Attestation (Option D) is reviewing existing permissions to ensure they are still correct."
+  },
+  {
+    "question": "Every quarter, department heads receive a report listing all employees and their current access rights to financial systems. The department heads must review the list and confirm that each user still requires their current level of access. What process is being performed?",
+    "options": [
+      "Attestation",
+      "Identity Proofing",
+      "Deprovisioning",
+      "Federation"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Attestation (Option A) is the periodic review and validation process where managers confirm that user accounts and access rights are correct and that users only have the minimum access necessary for their current role, combating permission creep. Identity Proofing (Option B) happens before account creation. Deprovisioning (Option C) is removing access. Federation (Option D) shares identities across organizations."
+  },
+  {
+    "question": "A company implements a new login system requiring users to enter a password and then provide a fingerprint scan on their laptop. Which two authentication factors are being utilized?",
+    "options": [
+      "Something you know and something you are",
+      "Something you have and something you do",
+      "Something you know and something you have",
+      "Something you are and somewhere you are"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "A password is a knowledge factor ('Something you know') and a fingerprint scan is a biometric/inherence factor ('Something you are') (Option A). 'Something you have' would be a physical token or phone. 'Something you do' is a behavioral factor like typing rhythm. 'Somewhere you are' is a location factor like GPS or IP."
+  },
+  {
+    "question": "A security policy requires employees connecting from outside the corporate office to establish a VPN connection before they can access internal applications, effectively checking their IP address. Which authentication factor is this enforcing?",
+    "options": [
+      "Somewhere you are",
+      "Something you know",
+      "Something you have",
+      "Something you do"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Restricting access based on network location, IP address, or GPS coordinates utilizes the 'Somewhere you are' (Option A) location factor. Knowledge (Option B) is passwords. Possession (Option C) is tokens. Behavior (Option D) is keystroke dynamics."
+  },
+  {
+    "question": "A user authenticates to a web application using a system where their smartphone generates a cryptographic signature based on a public/private key pair. The private key never leaves the secure enclave of the user's phone, and no password is required; the user simply unlocks their phone with a PIN to approve the login. What technology is being used?",
+    "options": [
+      "Passkeys",
+      "OAuth",
+      "LDAP",
+      "Single Sign-On (SSO)"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Passkeys (Option A) use public key cryptography where the private key is tied to the device's secure enclave and protected by the device lock screen (PIN/biometrics), providing strong, passwordless, phishing-resistant authentication. OAuth (Option B) is for delegated authorization. LDAP (Option C) is a directory protocol. SSO (Option D) allows one login for multiple apps but doesn't inherently use device-bound key pairs."
+  },
+  {
+    "question": "An attacker attempts to gain access to a corporate network by trying a small list of three common passwords (e.g., 'Welcome1!', 'Password123') against every single user account in the company's active directory, carefully staying below the five-attempt account lockout threshold. Which type of attack is this?",
+    "options": [
+      "Password Spraying",
+      "Brute Force",
+      "Dictionary Attack",
+      "Hybrid Attack"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Password Spraying (Option A) involves trying a few common passwords across a large number of accounts specifically to avoid triggering account lockout policies. Brute Force (Option B) tries every combination on one account. A Dictionary Attack (Option C) tries a massive list of words on one account. A Hybrid attack (Option D) combines dictionary words with appended numbers/symbols."
+  },
+  {
+    "question": "An attacker downloads a database of stolen password hashes. The attacker uses a tool that takes a massive list of common words and automatically replaces letters with numbers and symbols (e.g., changing 'password' to 'p@$$w0rd') to see if the resulting hashes match the stolen ones. Which technique is the attacker utilizing?",
+    "options": [
+      "Leet Speak in a Dictionary Attack",
+      "Password Spraying",
+      "Just-In-Time Provisioning",
+      "Identity Proofing"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Substituting letters for numbers or special characters (like 'p@$$w0rd' for 'password') is known as Leet Speak (Option A). Modern dictionary attacks use wordlists that include these common substitutions. Password Spraying (Option B) attacks many accounts with few passwords. JIT (Option C) and Identity Proofing (Option D) are IAM security concepts, not attacks."
+  },
+  {
+    "question": "An organization wants to allow its employees to access a third-party travel booking website using their existing corporate credentials, without ever sending their corporate passwords to the travel site. The organization acts as the Identity Provider (IdP) and sends a signed XML assertion to the travel site. Which standard is being used?",
+    "options": [
+      "SAML",
+      "LDAP",
+      "OAuth",
+      "OpenID Connect"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Security Assertion Markup Language (SAML) (Option A) is an XML-based standard used for exchanging authentication data between an Identity Provider (IdP) and a Service Provider (SP), enabling enterprise Single Sign-On (SSO). LDAP (Option B) is an internal directory protocol. OAuth (Option C) uses JSON/tokens for authorization, not XML assertions. OpenID Connect (Option D) uses JSON/JWTs on top of OAuth."
+  },
+  {
+    "question": "A web application allows users to 'Log in with Google.' When a user clicks this, they grant the web application permission to read their basic profile information from Google without giving the web application their Google password. Which protocol facilitates this delegated authorization?",
+    "options": [
+      "OAuth",
+      "SAML",
+      "LDAPS",
+      "TACACS+"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Open Authorization (OAuth) (Option A) is a standard for token-based delegated authorization that allows third-party services to access user data (like profile info) without exposing the user's password. SAML (Option B) is XML-based authentication. LDAPS (Option C) is secure directory access. TACACS+ (Option D) is an administrative authentication protocol for network devices."
+  },
+  {
+    "question": "A company collaborates with several external partner organizations. Instead of creating new accounts in its own directory for every partner employee, the company establishes a trust relationship allowing partner employees to access shared resources using their own home organization's credentials. What concept does this describe?",
+    "options": [
+      "Federation",
+      "Privileged Access Management (PAM)",
+      "Role-Based Access Control (RBAC)",
+      "Password Vaulting"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Federation (Option A) is a trusted relationship that allows for the sharing of electronic identities across multiple distinct organizations, enabling users to access external systems with their home organization's credentials. PAM (Option B) manages admin accounts. RBAC (Option C) assigns internal permissions. Vaulting (Option D) secures admin passwords."
+  },
+  {
+    "question": "A systems administrator needs to perform maintenance on a critical database server. Instead of having permanent administrative rights, the administrator requests temporary elevated privileges. The system grants the rights for exactly two hours, after which the access is automatically revoked. Which Privileged Access Management (PAM) feature is this?",
+    "options": [
+      "Just-In-Time (JIT) Permissions",
+      "Password Vaulting",
+      "Temporal Accounts",
+      "Attribute-Based Access Control (ABAC)"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Just-In-Time (JIT) Permissions (Option A) grant administrative access only when needed for a specific task and for a limited time period, automatically revoking it afterward to minimize the attack surface. Password Vaulting (Option B) securely stores passwords. Temporal Accounts (Option C) are time-limited accounts for contractors, not temporary elevation of an existing admin. ABAC (Option D) is an access model."
+  },
+  {
+    "question": "A defense contractor implements an access control system where every document and every user is assigned a strict security classification label (e.g., Secret, Top Secret). Users cannot access a document unless their clearance level matches or exceeds the document's classification, and users cannot change these labels. Which access control model is used?",
+    "options": [
+      "Mandatory Access Control (MAC)",
+      "Discretionary Access Control (DAC)",
+      "Role-Based Access Control (RBAC)",
+      "Rule-Based Access Control"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Mandatory Access Control (MAC) (Option A) uses centrally assigned security labels and clearances; it is highly restrictive and common in government/military. Discretionary Access Control (DAC) (Option B) allows the resource owner to decide who gets access. Role-Based (Option C) uses job titles. Rule-Based (Option D) applies rules globally (like firewalls)."
+  },
+  {
+    "question": "In a small design agency, a graphic designer creates a new folder for a project and manually grants read and write permissions to three specific colleagues who are helping with the design. Which access control model does this scenario represent?",
+    "options": [
+      "Discretionary Access Control (DAC)",
+      "Mandatory Access Control (MAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Role-Based Access Control (RBAC)"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Discretionary Access Control (DAC) (Option A) is a model where the owner of the resource (the designer) has the discretion to determine who can access it. MAC (Option B) relies on central labels. ABAC (Option C) relies on multiple context variables. RBAC (Option D) relies on organizational job roles, not the creator's discretion."
+  },
+  {
+    "question": "A large hospital manages access by assigning permissions to specific job titles, such as 'Attending Physician', 'Registered Nurse', and 'Billing Specialist'. When a nurse is promoted to a nursing manager, their access rights automatically change to match the new job title. Which access control model is in use?",
+    "options": [
+      "Role-Based Access Control (RBAC)",
+      "Discretionary Access Control (DAC)",
+      "Mandatory Access Control (MAC)",
+      "Rule-Based Access Control"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Role-Based Access Control (RBAC) (Option A) assigns permissions based on a user's job role or group membership within the organization, making it ideal for environments with high turnover or predictable job functions. DAC (Option B) is owner-driven. MAC (Option C) is label-driven. Rule-Based (Option D) is globally applied by admins regardless of role."
+  },
+  {
+    "question": "A security architect designs a system that only allows access to highly sensitive financial records if the user is an executive (Role), is currently located within the headquarters building (Environment), and the record was created more than 30 days ago (Resource). Which access control model evaluates all these variables simultaneously?",
+    "options": [
+      "Attribute-Based Access Control (ABAC)",
+      "Role-Based Access Control (RBAC)",
+      "Mandatory Access Control (MAC)",
+      "Discretionary Access Control (DAC)"
+    ],
+    "correctAnswer": 0,
+    "section": "S17",
+    "explanation": "Attribute-Based Access Control (ABAC) (Option A) is the most granular model, making access decisions based on a combination of user attributes (executive), environmental attributes (HQ building), and resource attributes (age of record). RBAC (Option B) only considers the role. MAC (Option C) only considers labels. DAC (Option D) only considers owner preference."
+  }
+]

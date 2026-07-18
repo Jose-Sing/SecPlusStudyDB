@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A network engineer is designing a wireless network for a large office building. They need to ensure that the access points operating in the 2.4 GHz band do not cause adjacent channel interference with each other. Which channels should they exclusively use?",
+    "options": [
+      "Channels 1, 6, and 11",
+      "Channels 2, 5, and 8",
+      "Channels 3, 7, and 10",
+      "Channels 4, 8, and 12"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "In the 2.4 GHz frequency band, there are only three non-overlapping channels available: 1, 6, and 11 (Option A). Any other combination of channels (like Options B, C, or D) will cause the signals to overlap, creating adjacent channel interference and degrading network performance."
+  },
+  {
+    "question": "After deploying a new wireless network, a security analyst walks through the building and the surrounding parking lot with specialized software to generate a graphical representation of the wireless signal strength. What did the analyst create?",
+    "options": [
+      "Heat Map",
+      "Site Survey",
+      "Packet Capture",
+      "Network Topology Diagram"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "A Heat Map (Option A) is a graphical representation of wireless signal strength and coverage created after installation to identify dead zones or signal leakage. A Site Survey (Option B) is the planning process done before installation. A Packet Capture (Option C) analyzes network traffic. A Topology Diagram (Option D) maps network connections."
+  },
+  {
+    "question": "An organization upgrades its wireless network to WPA3. Which new feature of WPA3 protects against offline dictionary attacks by replacing the traditional 4-way handshake with a Diffie-Hellman-based key exchange?",
+    "options": [
+      "Simultaneous Authentication of Equals (SAE)",
+      "Enhanced Open (OWE)",
+      "Management Frame Protection (MFP)",
+      "Temporal Key Integrity Protocol (TKIP)"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "Simultaneous Authentication of Equals (SAE) (Option A) replaces the WPA2 Pre-Shared Key (PSK) handshake. It ensures that even if an attacker captures the authentication process, they cannot brute-force the password offline. Enhanced Open (Option B) encrypts open networks. MFP (Option C) protects management frames. TKIP (Option D) is the deprecated protocol used in WPA."
+  },
+  {
+    "question": "A network administrator needs to implement a centralized authentication server for router and switch administration. They require a protocol that encrypts the entire authentication payload and completely separates the authentication, authorization, and accounting functions. Which protocol should they choose?",
+    "options": [
+      "TACACS+",
+      "RADIUS",
+      "EAP-TLS",
+      "Kerberos"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "TACACS+ (Option A) separates the AAA functions, encrypts the entire authentication payload, and uses TCP, making it ideal for device administration. RADIUS (Option B) combines Authentication and Authorization and only encrypts the password. EAP-TLS (Option C) is an authentication framework for wireless/wired ports. Kerberos (Option D) is an Active Directory authentication protocol."
+  },
+  {
+    "question": "A developer configures a session cookie with an attribute that prevents client-side JavaScript from accessing it, significantly reducing the risk of the cookie being stolen via Cross-Site Scripting (XSS). Which attribute did they use?",
+    "options": [
+      "HttpOnly",
+      "Secure",
+      "SameSite",
+      "Domain"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "The HttpOnly attribute (Option A) prevents client-side scripts (like JavaScript) from accessing the cookie, mitigating XSS attacks. The Secure attribute (Option B) ensures the cookie is only sent over encrypted HTTPS connections. The SameSite attribute (Option C) restricts cross-origin sending to mitigate CSRF. Domain (Option D) specifies which hosts can receive the cookie."
+  },
+  {
+    "question": "A security team uses an automated tool to scan an application's source code for SQL injection vulnerabilities before the application is compiled or executed. What type of testing is this?",
+    "options": [
+      "Static Application Security Testing (SAST)",
+      "Dynamic Application Security Testing (DAST)",
+      "Fuzzing",
+      "Stress Testing"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "Static Application Security Testing (SAST) (Option A) involves analyzing the application's source code without executing it. DAST (Option B) analyzes the application while it is running. Fuzzing (Option C) injects random data into a running app. Stress Testing (Option D) tests the application under heavy load."
+  },
+  {
+    "question": "A quality assurance team tests a new web application by automatically injecting large volumes of random, malformed, and unexpected data into its input fields to see if the application crashes or exposes memory leaks. What dynamic testing technique is this?",
+    "options": [
+      "Fuzzing",
+      "Input Validation",
+      "Static Analysis",
+      "Sandboxing"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "Fuzzing (Option A) is a dynamic testing technique that injects random or malformed data into an application to discover crashes and security flaws. Input Validation (Option B) is a defense mechanism, not a testing technique. Static Analysis (Option C) checks source code without running it. Sandboxing (Option D) isolates running code."
+  },
+  {
+    "question": "A university allows students to connect personal laptops to the campus network. Before granting internet access, the network requires the laptop to download a temporary agent that checks if the OS is fully patched. Once the check is complete, the agent deletes itself. What type of NAC agent is this?",
+    "options": [
+      "Non-Persistent Agent",
+      "Persistent Agent",
+      "Out-of-Band Agent",
+      "Inline Agent"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "A Non-Persistent Agent (Option A) is downloaded temporarily, performs its compliance scan, and then deletes itself, making it ideal for BYOD and guest environments. A Persistent Agent (Option B) is permanently installed for continuous monitoring on corporate-owned devices. Out-of-Band and Inline (Options C and D) describe network architecture, not the agent software behavior."
+  },
+  {
+    "question": "An organization wants to prevent its domain from being used in email spoofing attacks. They configure a DNS record that tells receiving mail servers to reject emails if the domain authenticated by SPF or DKIM does not align with the visible 'From' address. What protocol are they implementing?",
+    "options": [
+      "DMARC",
+      "DKIM",
+      "SPF",
+      "SMTP"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "DMARC (Option A) checks for alignment between the authenticated domain and the visible 'From' header, enforces policies (like reject or quarantine) when checks fail, and provides reporting. DKIM (Option B) provides a digital signature. SPF (Option C) validates the sender IP. SMTP (Option D) is the protocol for sending email."
+  },
+  {
+    "question": "A security analyst deploys a tool that continuously monitors critical operating system binaries and configuration files by comparing their current cryptographic hashes against a known-good baseline, alerting when unauthorized changes occur. What technology is this?",
+    "options": [
+      "File Integrity Monitoring (FIM)",
+      "Endpoint Detection and Response (EDR)",
+      "User Behavior Analytics (UBA)",
+      "Network Access Control (NAC)"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "File Integrity Monitoring (FIM) (Option A) uses cryptographic hashes to detect unauthorized changes to critical files. EDR (Option B) is a broader solution for endpoint threat detection and response (which may include FIM). UBA (Option C) monitors user activity patterns. NAC (Option D) controls network access based on device health."
+  },
+  {
+    "question": "A cybersecurity system uses machine learning to learn that a specific employee normally logs in from New York between 9 AM and 5 PM. When that employee's account logs in from Russia at 3 AM, the system flags it as anomalous and automatically suspends the account. What technology generated this alert?",
+    "options": [
+      "User Behavior Analytics (UBA)",
+      "File Integrity Monitoring (FIM)",
+      "Extended Detection and Response (XDR)",
+      "Data Loss Prevention (DLP)"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "User Behavior Analytics (UBA) (Option A) establishes a baseline of normal behavior for individual users and triggers alerts when deviations (like an unusual location or time) occur. FIM (Option B) monitors file hashes. XDR (Option C) correlates data across security layers but UBA is the specific technology for user anomalies. DLP (Option D) stops data exfiltration."
+  },
+  {
+    "question": "A network administrator needs to securely transfer files to a remote server over the internet. The standard FTP protocol sends data in plaintext, exposing it to interception. Which secure alternative should the administrator use?",
+    "options": [
+      "SFTP",
+      "TFTP",
+      "SNMPv3",
+      "HTTP"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "SFTP (Secure File Transfer Protocol) (Option A) uses an SSH tunnel to encrypt file transfers, protecting them from interception. TFTP (Option B) is an insecure, lightweight version of FTP. SNMPv3 (Option C) securely manages network devices. HTTP (Option D) is insecure web traffic."
+  },
+  {
+    "question": "A company develops a proprietary software application and wants to ensure that customers can verify the software was genuinely created by them and has not been altered by malware since its release. What technique should the developers use before distributing the executable?",
+    "options": [
+      "Code Signing",
+      "Sandboxing",
+      "Obfuscation",
+      "Input Validation"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "Code Signing (Option A) uses a digital signature (hash encrypted with the developer's private key) to prove the software's authenticity and integrity. Sandboxing (Option B) isolates running code. Obfuscation (Option C) hides code logic. Input Validation (Option D) sanitizes user input."
+  },
+  {
+    "question": "An organization implements a security control that prevents users from accessing known malicious websites by configuring their servers to refuse to resolve the domain names of those sites into IP addresses. What technique is this?",
+    "options": [
+      "DNS Filtering",
+      "Web Proxy",
+      "Network Access Control (NAC)",
+      "Email Gateway"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "DNS Filtering (Option A) blocks access to websites by preventing the DNS server from resolving a blocked domain name into an IP address. A Web Proxy (Option B) sits between the user and the internet to filter traffic, but DNS filtering happens at the resolution stage. NAC (Option C) controls local network access. An Email Gateway (Option D) filters email."
+  },
+  {
+    "question": "A video streaming service prioritizes transmission speed over perfect data accuracy, as losing a single frame of video is imperceptible to users, but waiting for retransmissions causes buffering. Which transport layer protocol should they use?",
+    "options": [
+      "UDP",
+      "TCP",
+      "IPSec",
+      "TLS"
+    ],
+    "correctAnswer": 0,
+    "section": "S21",
+    "explanation": "UDP (User Datagram Protocol) (Option A) is a connectionless protocol that sends data without error checking or guaranteed delivery, making it faster and ideal for streaming video or VoIP. TCP (Option B) guarantees delivery via acknowledgments, causing overhead/delay. IPSec (Option C) encrypts IP packets. TLS (Option D) encrypts application data."
+  }
+]

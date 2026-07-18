@@ -1,0 +1,182 @@
+[
+  {
+    "question": "A web server is overwhelmed by millions of TCP connection requests originating from thousands of different IP addresses worldwide. The server cannot process legitimate traffic. Which attack is occurring?",
+    "options": [
+      "Distributed Denial of Service (DDoS)",
+      "Single-Source Denial of Service (DoS)",
+      "Permanent Denial of Service (PDoS)",
+      "Fork Bomb"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "A Distributed Denial of Service (DDoS) attack (Option A) uses a botnet of compromised machines (thousands of IPs) to simultaneously flood a target. A standard DoS (Option B) comes from a single source. A PDoS (Option C) destroys firmware to permanently brick a device. A Fork Bomb (Option D) is an internal process replication attack, not network-based."
+  },
+  {
+    "question": "An attacker sends a small DNS query to an open resolver, spoofing the source IP address to match the victim's server. The resolver sends a massively larger response to the victim, overwhelming its bandwidth. What type of attack is this?",
+    "options": [
+      "DNS Amplification",
+      "DNS Cache Poisoning",
+      "DNS Tunneling",
+      "Zone Transfer Attack"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "DNS Amplification (Option A) leverages the size asymmetry between small DNS queries and large DNS responses, reflecting amplified traffic to a spoofed victim IP. DNS Cache Poisoning (Option B) alters records to redirect traffic. DNS Tunneling (Option C) hides data inside DNS traffic to bypass firewalls. A Zone Transfer Attack (Option D) steals the full DNS zone file for reconnaissance."
+  },
+  {
+    "question": "An attacker discovers that by appending `../../../../Windows/system32/cmd.exe` to a web application's URL parameter, they can access restricted system files on the host server. What type of vulnerability did the attacker exploit?",
+    "options": [
+      "Directory Traversal",
+      "Remote File Inclusion (RFI)",
+      "Cross-Site Scripting (XSS)",
+      "Command Injection"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "Directory Traversal (Option A) uses `../` sequences to navigate out of the intended web root directory and access sensitive local files. RFI (Option B) involves injecting a URL to an external malicious script. XSS (Option C) injects scripts into the browser. Command Injection (Option D) appends OS commands to input fields, rather than navigating directories."
+  },
+  {
+    "question": "A security analyst discovers a piece of malware that has embedded itself at Ring 0 of the operating system, allowing it to modify core OS files and hide its processes from antivirus software. What type of malware is this?",
+    "options": [
+      "Kernel Mode Rootkit",
+      "User Mode Rootkit",
+      "Fork Bomb",
+      "Logic Bomb"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "A Kernel Mode Rootkit (Option A) embeds itself at Ring 0, granting it the highest level of system privilege to control the OS and evade detection. A User Mode Rootkit (Option B) operates at Ring 3 with admin privileges but cannot directly modify the kernel. A Fork Bomb (Option C) exhausts CPU via process replication. A Logic Bomb (Option D) is triggered by an event."
+  },
+  {
+    "question": "An attacker intercepts a legitimate user's authentication token as it is sent over an unencrypted Wi-Fi network. Two hours later, the attacker transmits the exact same token to the server to gain unauthorized access to the user's account. What type of attack is this?",
+    "options": [
+      "Replay Attack",
+      "Session Hijacking",
+      "Downgrade Attack",
+      "SSL Stripping"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "In a Replay Attack (Option A), an attacker captures valid network traffic and retransmits it later (without modifying it) to impersonate the user. In Session Hijacking (Option B), the attacker actively steals a live session cookie and takes over the ongoing session in real-time. A Downgrade Attack (Option C) forces a weaker encryption protocol. SSL Stripping (Option D) forces HTTP instead of HTTPS."
+  },
+  {
+    "question": "A threat actor positions a rogue Wi-Fi access point in a coffee shop. When a user connects to a banking site, the attacker intercepts the initial HTTPS request and forces the user's browser to connect via unencrypted HTTP, allowing the attacker to capture the login credentials in cleartext. What type of attack is this?",
+    "options": [
+      "SSL Stripping",
+      "DNS Cache Poisoning",
+      "Session Prediction",
+      "Downgrade Attack"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "SSL Stripping (Option A) is an on-path technique that intercepts the initial connection and strips away the HTTPS encryption, forcing the victim to communicate in cleartext HTTP. DNS Cache Poisoning (Option B) alters DNS records. Session Prediction (Option C) guesses auth tokens. A Downgrade Attack (Option D) negotiates a weaker protocol (like SSL 2.0 instead of TLS 1.2), but still maintains some encryption, unlike stripping."
+  },
+  {
+    "question": "An attacker enters the following string into a web application's IP address search field: `8.8.8.8 && cat /etc/passwd`. The server executes the ping and then outputs the contents of the password file to the web page. What type of attack occurred?",
+    "options": [
+      "Command Injection",
+      "LDAP Injection",
+      "Directory Traversal",
+      "Process Injection"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "Command Injection (Option A) occurs when an attacker appends shell commands (like `&& cat /etc/passwd`) to an input field, which the server then executes. LDAP Injection (Option B) targets directory databases. Directory Traversal (Option C) uses `../` sequences to access files. Process Injection (Option D) injects code into running memory spaces."
+  },
+  {
+    "question": "A security operations center (SOC) receives an alert that a user successfully logged into the corporate VPN from New York at 8:00 AM, and then successfully logged into the email server from Beijing at 8:30 AM on the same day. Which Indicator of Compromise (IoC) does this represent?",
+    "options": [
+      "Impossible Travel",
+      "Concurrent Session Usage",
+      "Account Lockout",
+      "Out-of-Cycle Logging"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "Impossible Travel (Option A) is an IoC that flags authentication events from geographically distant locations within a timeframe that makes physical travel impossible, indicating compromised credentials. While this also involves concurrent sessions (Option B), the defining characteristic is the physical impossibility of the distance. Account Lockout (Option C) indicates failed logins. Out-of-Cycle (Option D) indicates odd hours."
+  },
+  {
+    "question": "An organization's firewall logs show massive amounts of outbound traffic over UDP port 53. Upon investigation, the security team realizes an attacker is encapsulating SSH commands within DNS queries to bypass outbound firewall restrictions. What technique is being used?",
+    "options": [
+      "DNS Tunneling",
+      "DNS Cache Poisoning",
+      "Zone Transfer Attack",
+      "DNS Amplification"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "DNS Tunneling (Option A) encapsulates non-DNS traffic (like SSH or HTTP) inside DNS queries (Port 53) to bypass firewalls for command-and-control or data exfiltration. Cache Poisoning (Option B) alters DNS records. Zone Transfer (Option C) copies the whole DNS database. Amplification (Option D) is a DDoS attack."
+  },
+  {
+    "question": "An attacker compromises a standard user account on a Linux server. The attacker then exploits a kernel vulnerability to grant the compromised account root-level administrative privileges. What type of attack has occurred?",
+    "options": [
+      "Vertical Privilege Escalation",
+      "Horizontal Privilege Escalation",
+      "Remote Code Execution (RCE)",
+      "Process Hollowing"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "Vertical Privilege Escalation (Option A) involves a user moving from a lower-privilege level (standard user) to a higher-privilege level (root/admin). Horizontal Privilege Escalation (Option B) involves accessing another user's resources at the same privilege level. RCE (Option C) executes code remotely. Process Hollowing (Option D) is a process injection technique."
+  },
+  {
+    "question": "During a forensic investigation, an analyst notices that the server's security logs have a complete gap in events between 2:00 AM and 4:00 AM on Sunday, a time when routine system processes should have generated log entries. What Indicator of Compromise (IoC) does this represent?",
+    "options": [
+      "Missing Logs",
+      "Out-of-Cycle Logging",
+      "Resource Inaccessibility",
+      "Blocked Content"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "Missing Logs (Option A) is an IoC indicating an attacker likely deleted log entries to cover their tracks and impede investigation. Out-of-Cycle Logging (Option B) refers to logs occurring at weird times, not missing entirely. Resource Inaccessibility (Option C) implies ransomware. Blocked Content (Option D) implies failed exfiltration attempts."
+  },
+  {
+    "question": "A user clicks a malicious link that causes their browser to request a script hosted on the attacker's server (e.g., `http://malware.bad/script.php`) and execute it within the context of the vulnerable web application. What specific type of attack is this?",
+    "options": [
+      "Remote File Inclusion (RFI)",
+      "Local File Inclusion (LFI)",
+      "Cross-Site Request Forgery (CSRF)",
+      "LDAP Injection"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "Remote File Inclusion (RFI) (Option A) occurs when an application accepts a URL parameter to fetch and execute an external, remote script. Local File Inclusion (LFI) (Option B) occurs when the attacker references a file already on the local server using directory traversal. CSRF (Option C) hijacks an authenticated session. LDAP Injection (Option D) attacks directories."
+  },
+  {
+    "question": "An attacker intercepts a communication session and forces the client and server to negotiate an older, vulnerable version of a security protocol (e.g., SSL 2.0 instead of TLS 1.3) to make the traffic easier to decrypt. What type of attack is this?",
+    "options": [
+      "Downgrade Attack",
+      "SSL Stripping",
+      "Replay Attack",
+      "Cache Poisoning"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "A Downgrade Attack (Option A) forces systems to negotiate weaker, older protocols that the attacker knows how to break. SSL Stripping (Option B) completely removes the encryption, downgrading HTTPS to HTTP. A Replay Attack (Option C) retransmits captured traffic. Cache Poisoning (Option D) alters DNS records."
+  },
+  {
+    "question": "An attacker injects malicious code directly into the memory space of a legitimate, currently running process (like `explorer.exe`) to hide the malicious activity from endpoint detection tools. What type of attack is this?",
+    "options": [
+      "Process Injection",
+      "Arbitrary Code Execution (ACE)",
+      "Command Injection",
+      "Buffer Overflow"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "Process Injection (Option A) executes code within a legitimate process's memory space, inheriting its permissions and evading security tools that trust the legitimate process. ACE (Option B) is the general ability to run code, but Process Injection is the specific stealth technique. Command Injection (Option C) runs OS commands via input fields. Buffer Overflow (Option D) is a memory corruption flaw."
+  },
+  {
+    "question": "A malicious script is written to continuously self-replicate new processes within a system's CPU cache until the system exhausts all available memory and crashes. The script does not spread across the network. What type of attack is this?",
+    "options": [
+      "Fork Bomb",
+      "Permanent Denial of Service (PDoS)",
+      "SYN Flood",
+      "Logic Bomb"
+    ],
+    "correctAnswer": 0,
+    "section": "S19",
+    "explanation": "A Fork Bomb (Option A) is a DoS attack that creates a rapidly self-replicating number of processes to exhaust local CPU and memory resources; it does not spread via network like a worm. A PDoS (Option B) destroys firmware. A SYN flood (Option C) exhausts network connections. A Logic Bomb (Option D) is triggered by an event, not a process replication technique."
+  }
+]
