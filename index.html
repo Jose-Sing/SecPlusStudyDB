@@ -775,7 +775,7 @@
                                 <span class="text-on-surface-variant">Answered</span>
                             </div>
                             <div class="flex items-center gap-1.5 bg-surface-container-low p-1.5 rounded border border-outline-variant/20">
-                                <div class="w-2.5 h-2.5 bg-tertiary rounded-sm"></div>
+                                <div class="w-2.5 h-2.5 bg-[#FDE047] rounded-sm"></div>
                                 <span class="text-on-surface-variant">Flagged</span>
                             </div>
                         </div>
@@ -890,6 +890,7 @@
         initializeLibraryNav();
         initializeConfidenceStats();
         initializeSimulatorSetup();
+        renderExamHistory();
         
         // Show Dashboard first
         showView('dashboard');
@@ -1649,10 +1650,10 @@
         // Update Flag button styling
         const flagBtn = document.getElementById('sim-flag-btn');
         if (flaggedQuestions[q.id]) {
-            flagBtn.className = "flex items-center gap-1.5 text-xs text-tertiary border border-tertiary px-3 py-1.5 rounded-lg bg-tertiary-container/20 transition-all";
+            flagBtn.className = "flex items-center gap-1.5 text-xs text-[#FDE047] border border-[#FDE047] px-3 py-1.5 rounded-lg bg-[#FDE047]/20 transition-all";
             flagBtn.querySelector('span').innerText = "Flagged for Review";
         } else {
-            flagBtn.className = "flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-tertiary border border-outline-variant px-3 py-1.5 rounded-lg bg-surface-container-low transition-all";
+            flagBtn.className = "flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-[#FDE047] border border-outline-variant px-3 py-1.5 rounded-lg bg-surface-container-low transition-all";
             flagBtn.querySelector('span').innerText = "Flag for Review";
         }
 
@@ -1694,7 +1695,7 @@
             const isFlagged = flaggedQuestions[q.id];
             
             if (isFlagged) {
-                classes += "bg-tertiary/15 border-tertiary text-tertiary font-bold";
+                classes += "bg-[#FDE047]/20 border-[#FDE047] text-[#FDE047] font-bold";
             } else if (isAnswered) {
                 classes += "bg-primary/20 border-primary text-primary font-bold";
             } else {
@@ -1783,6 +1784,16 @@
 
         const scorePercent = Math.round((correctCount / total) * 100);
         document.getElementById('results-score-text').innerText = scorePercent + '%';
+
+        // Save history
+        saveExamHistory({
+            date: new Date().toISOString(),
+            topics: Object.keys(sectionPerformance).map(s => s.replace('S', '')).join(', '),
+            questions: total,
+            timeTaken: examTimeElapsed,
+            score: scorePercent
+        });
+        renderExamHistory();
 
         // Check Pass/Fail
         const badge = document.getElementById('results-badge');
@@ -1880,7 +1891,7 @@
                     <div class="flex flex-wrap justify-between items-center gap-2">
                         <span class="text-[11px] font-mono text-on-surface-variant uppercase tracking-widest font-bold">Question ${idx + 1} · Section ${q.section}</span>
                         <div class="flex items-center gap-2">
-                            ${isFlagged ? '<span class="text-tertiary border border-tertiary/30 bg-tertiary/10 text-[9px] font-bold px-2 py-0.5 rounded uppercase font-mono">FLAGGED</span>' : ''}
+                            ${isFlagged ? '<span class="text-[#FDE047] border border-[#FDE047]/30 bg-[#FDE047]/10 text-[9px] font-bold px-2 py-0.5 rounded uppercase font-mono">FLAGGED</span>' : ''}
                             ${statusHTML}
                         </div>
                     </div>
@@ -1908,6 +1919,52 @@
         
         if (examTimer) clearInterval(examTimer);
         simulatorQuestions = [];
+    }
+
+    function saveExamHistory(log) {
+        let history = JSON.parse(localStorage.getItem('securityPlus_exam_history') || '[]');
+        history.unshift(log); // add to top
+        if(history.length > 50) history.pop(); // keep last 50
+        localStorage.setItem('securityPlus_exam_history', JSON.stringify(history));
+    }
+
+    function renderExamHistory() {
+        const tbody = document.getElementById('sim-history-tbody');
+        const emptyDiv = document.getElementById('sim-history-empty');
+        if (!tbody || !emptyDiv) return;
+
+        let history = JSON.parse(localStorage.getItem('securityPlus_exam_history') || '[]');
+        if (history.length === 0) {
+            tbody.innerHTML = '';
+            emptyDiv.classList.remove('hidden');
+        } else {
+            emptyDiv.classList.add('hidden');
+            let html = '';
+            history.forEach(log => {
+                const dateObj = new Date(log.date);
+                const dateStr = dateObj.toLocaleDateString() + ' ' + dateObj.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                const m = Math.floor(log.timeTaken / 60).toString().padStart(2, '0');
+                const s = (log.timeTaken % 60).toString().padStart(2, '0');
+                
+                html += `
+                    <tr class="hover:bg-surface-variant/20 transition-colors">
+                        <td class="py-3 px-3 text-on-surface whitespace-nowrap text-xs md:text-sm">${dateStr}</td>
+                        <td class="py-3 px-3 text-on-surface-variant font-mono text-xs">Sec ${log.topics}</td>
+                        <td class="py-3 px-3 text-center text-on-surface text-xs md:text-sm">${log.questions}</td>
+                        <td class="py-3 px-3 text-center text-on-surface-variant text-xs md:text-sm">${m}:${s}</td>
+                        <td class="py-3 px-3 text-right font-bold text-xs md:text-sm ${log.score >= 75 ? 'text-primary' : 'text-error'}">${log.score}%</td>
+                    </tr>
+                `;
+            });
+            tbody.innerHTML = html;
+        }
+    }
+
+    function clearExamHistory() {
+        if(confirm("Are you sure you want to clear your exam history?")) {
+            localStorage.removeItem('securityPlus_exam_history');
+            renderExamHistory();
+        }
     }
 
 
